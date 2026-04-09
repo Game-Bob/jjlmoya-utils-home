@@ -17,10 +17,10 @@ export type {
 
 export { ALL_TOOLS } from './tools';
 
-export { QRGeneratorComponent, QRGeneratorSEO, QRGeneratorBibliography } from './tool/qrGenerator';
-export { SolarCalculatorComponent, SolarCalculatorSEO, SolarCalculatorBibliography } from './tool/solarCalculator';
-export { ProjectorCalculatorComponent, ProjectorCalculatorSEO, ProjectorCalculatorBibliography } from './tool/projectorCalculator';
-export { DewPointCalculatorComponent, DewPointCalculatorSEO, DewPointCalculatorBibliography } from './tool/dewPointCalculator';
-export { LedSavingCalculatorComponent, LedSavingCalculatorSEO, LedSavingCalculatorBibliography } from './tool/ledSavingCalculator';
-export { TariffComparatorComponent, TariffComparatorSEO, TariffComparatorBibliography } from './tool/tariffComparator';
+export { QRGeneratorComponent, QRGeneratorSEO, QRGeneratorBibliography, QR_GENERATOR_TOOL } from './tool/qrGenerator';
+export { SolarCalculatorComponent, SolarCalculatorSEO, SolarCalculatorBibliography, SOLAR_CALCULATOR_TOOL } from './tool/solarCalculator';
+export { ProjectorCalculatorComponent, ProjectorCalculatorSEO, ProjectorCalculatorBibliography, PROJECTOR_CALCULATOR_TOOL } from './tool/projectorCalculator';
+export { DewPointCalculatorComponent, DewPointCalculatorSEO, DewPointCalculatorBibliography, DEW_POINT_CALCULATOR_TOOL } from './tool/dewPointCalculator';
+export { LedSavingCalculatorComponent, LedSavingCalculatorSEO, LedSavingCalculatorBibliography, LED_SAVING_CALCULATOR_TOOL } from './tool/ledSavingCalculator';
+export { TariffComparatorComponent, TariffComparatorSEO, TariffComparatorBibliography, TARIFF_COMPARATOR_TOOL } from './tool/tariffComparator';
 
