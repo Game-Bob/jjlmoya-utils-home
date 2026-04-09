@@ -1,0 +1,477 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HeatingComparatorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const compUI = ui as HeatingComparatorUI;
+---
+
+<div class="heating-wrapper">
+  <div class="main-card">
+    <div class="config-section">
+      <div class="section-header">
+        <h3 class="section-title">{compUI.titleVivienda}</h3>
+        <p class="section-desc">{compUI.helperVivienda}</p>
+      </div>
+
+      <div class="config-grid">
+        <div class="input-group">
+          <label for="house-m2">{compUI.labelM2}</label>
+          <p class="input-helper">{compUI.helperM2}</p>
+          <div class="input-wrapper">
+            <input type="number" id="house-m2" value="100" min="10" step="5" />
+            <span class="input-unit">m²</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="insulation-level">{compUI.labelAislamiento}</label>
+          <p class="input-helper">{compUI.helperAislamiento}</p>
+          <div class="input-wrapper">
+            <select id="insulation-level">
+              <option value="40">{compUI.optExcelent}</option>
+              <option value="70" selected>{compUI.optMedium}</option>
+              <option value="110">{compUI.optPoor}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h3 class="section-title">{compUI.titleCoste}</h3>
+        <p class="section-desc">{compUI.descCoste}</p>
+      </div>
+
+      <div class="config-grid">
+        <div class="input-group">
+          <label for="price-gas">{compUI.labelGasPrice}</label>
+          <p class="input-helper">{compUI.helperGasPrice}</p>
+          <div class="input-wrapper">
+            <input type="number" id="price-gas" value="0.08" step="0.001" />
+            <span class="input-unit">{compUI.unitCurrency}/kWh</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="price-elec">{compUI.labelElecPrice}</label>
+          <p class="input-helper">{compUI.helperElecPrice}</p>
+          <div class="input-wrapper">
+            <input type="number" id="price-elec" value="0.18" step="0.001" />
+            <span class="input-unit">{compUI.unitCurrency}/kWh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-section">
+      <div class="results-header">
+        <h3 class="section-title">{compUI.titleComparison}</h3>
+        <p class="section-desc">{compUI.descComparison}</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="system-card gas" id="card-gas">
+          <div class="card-header">
+            <div class="icon-box">
+              <Icon name="mdi:fire" size={24} />
+            </div>
+            <span class="card-title">{compUI.systemGas}</span>
+          </div>
+          <div class="cost-display">
+            <span class="cost-label">{compUI.labelAnnualCost}</span>
+            <span class="annual-cost" id="gas-cost">0,00 {compUI.unitCurrency}</span>
+          </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">{compUI.labelEfficiency}</span>
+              <span class="spec-value">95%</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{compUI.labelSource}</span>
+              <span class="spec-value">{compUI.valGasSource}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-card aero" id="card-aero">
+          <div class="saving-badge" id="aero-winner">{compUI.winnerBadge}</div>
+          <div class="card-header">
+            <div class="icon-box">
+              <Icon name="mdi:leaf" size={24} />
+            </div>
+            <span class="card-title">{compUI.systemAero}</span>
+          </div>
+          <div class="cost-display">
+            <span class="cost-label">{compUI.labelAnnualCost}</span>
+            <span class="annual-cost" id="aero-cost">0,00 {compUI.unitCurrency}</span>
+          </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">{compUI.labelEfficiency}</span>
+              <span class="spec-value">4.0 (400%)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{compUI.labelEnergy}</span>
+              <span class="spec-value">{compUI.valAeroEnergy}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-card air" id="card-air">
+          <div class="card-header">
+            <div class="icon-box">
+              <Icon name="mdi:air-conditioner" size={24} />
+            </div>
+            <span class="card-title">{compUI.systemAir}</span>
+          </div>
+          <div class="cost-display">
+            <span class="cost-label">{compUI.labelAnnualCost}</span>
+            <span class="annual-cost" id="air-cost">0,00 {compUI.unitCurrency}</span>
+          </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">{compUI.labelEfficiency}</span>
+              <span class="spec-value">3.2 (320%)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">{compUI.labelInstallation}</span>
+              <span class="spec-value">{compUI.valAirInstall}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ unitCurrency: compUI.unitCurrency }}>
+  const CURRENCY_CODES = { '€': 'EUR', '$': 'USD' };
+
+  function formatCurrency(val) {
+    return new Intl.NumberFormat(undefined, {
+      style: 'currency',
+      currency: CURRENCY_CODES[unitCurrency] || 'EUR',
+    }).format(val);
+  }
+
+  function getInputValues(inputs) {
+    const { m2Input, gasPriceInput, elecPriceInput, insulationInput } = inputs;
+    const required = [m2Input, gasPriceInput, elecPriceInput, insulationInput];
+    if (required.some((el) => !el)) return null;
+    return {
+      m2: parseFloat(m2Input.value) || 0,
+      gasPrice: parseFloat(gasPriceInput.value) || 0,
+      elecPrice: parseFloat(elecPriceInput.value) || 0,
+      demandPerM2: parseFloat(insulationInput.value) || 70,
+    };
+  }
+
+  function updateWinner(aeroWinner, costAero, winner) {
+    if (!aeroWinner) return;
+    if (costAero === winner) {
+      aeroWinner.classList.add('visible');
+    } else {
+      aeroWinner.classList.remove('visible');
+    }
+  }
+
+  function updateDisplays(displays, costs) {
+    const { gasCostDisplay, aeroCostDisplay, airCostDisplay, aeroWinner } = displays;
+    if (gasCostDisplay) gasCostDisplay.innerText = formatCurrency(costs.costGas);
+    if (aeroCostDisplay) aeroCostDisplay.innerText = formatCurrency(costs.costAero);
+    if (airCostDisplay) airCostDisplay.innerText = formatCurrency(costs.costAir);
+    updateWinner(aeroWinner, costs.costAero, Math.min(costs.costGas, costs.costAero, costs.costAir));
+    [gasCostDisplay, aeroCostDisplay, airCostDisplay].forEach((el) => {
+      el?.classList.add('animate-pop');
+      setTimeout(() => el?.classList.remove('animate-pop'), 200);
+    });
+  }
+
+  function calculate(inputs, displays) {
+    const values = getInputValues(inputs);
+    if (!values) return;
+    const totalDemand = values.m2 * values.demandPerM2;
+    updateDisplays(displays, {
+      costGas: (totalDemand / 0.95) * values.gasPrice,
+      costAero: (totalDemand / 4.0) * values.elecPrice,
+      costAir: (totalDemand / 3.2) * values.elecPrice,
+    });
+  }
+
+  function init() {
+    const inputs = {
+      m2Input: document.getElementById('house-m2'),
+      insulationInput: document.getElementById('insulation-level'),
+      gasPriceInput: document.getElementById('price-gas'),
+      elecPriceInput: document.getElementById('price-elec'),
+    };
+    const displays = {
+      gasCostDisplay: document.getElementById('gas-cost'),
+      aeroCostDisplay: document.getElementById('aero-cost'),
+      airCostDisplay: document.getElementById('air-cost'),
+      aeroWinner: document.getElementById('aero-winner'),
+    };
+    Object.values(inputs).forEach((el) => {
+      el?.addEventListener('input', () => calculate(inputs, displays));
+    });
+    calculate(inputs, displays);
+  }
+
+  init();
+  document.addEventListener('astro:page-load', init);
+</script>
+
+<style>
+  .heating-wrapper {
+    --p: #6366f1;
+    --gas: #f97316;
+    --aero: #10b981;
+    --air: #3b82f6;
+    
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: var(--text-main);
+  }
+
+  .main-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 32px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0.5rem 0 0;
+  }
+
+  .config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .input-helper {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: -0.25rem 0 0.25rem;
+    opacity: 0.8;
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-wrapper input,
+  .input-wrapper select {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-muted);
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 700;
+    outline: none;
+    transition: all 0.2s;
+    appearance: none;
+  }
+
+  .input-wrapper select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    background-size: 1.25rem;
+  }
+
+  .input-wrapper input:focus,
+  .input-wrapper select:focus {
+    border-color: var(--p);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  }
+
+  .input-unit {
+    position: absolute;
+    right: 1.25rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    pointer-events: none;
+  }
+
+  .results-section {
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .system-card {
+    background: var(--bg-muted);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .system-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .system-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+
+  .system-card.gas::before { background: var(--gas); }
+  .system-card.aero::before { background: var(--aero); }
+  .system-card.air::before { background: var(--air); }
+
+  .saving-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--aero);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: none;
+  }
+
+  .saving-badge.visible {
+    display: block;
+    animation: bounceIn 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gas .icon-box { background: rgba(249, 115, 22, 0.1); color: var(--gas); }
+  .aero .icon-box { background: rgba(16, 185, 129, 0.1); color: var(--aero); }
+  .air .icon-box { background: rgba(59, 130, 246, 0.1); color: var(--air); }
+
+  .card-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+
+  .cost-display {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .cost-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .annual-cost {
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  .specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  .spec-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
+
+  .spec-label { color: var(--text-muted); }
+  .spec-value { font-weight: 700; }
+
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .animate-pop {
+    animation: pop 0.2s ease-out;
+  }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+</style>

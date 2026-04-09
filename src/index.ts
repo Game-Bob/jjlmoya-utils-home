@@ -23,4 +23,5 @@ export { ProjectorCalculatorComponent, ProjectorCalculatorSEO, ProjectorCalculat
 export { DewPointCalculatorComponent, DewPointCalculatorSEO, DewPointCalculatorBibliography, DEW_POINT_CALCULATOR_TOOL } from './tool/dewPointCalculator';
 export { LedSavingCalculatorComponent, LedSavingCalculatorSEO, LedSavingCalculatorBibliography, LED_SAVING_CALCULATOR_TOOL } from './tool/ledSavingCalculator';
 export { TariffComparatorComponent, TariffComparatorSEO, TariffComparatorBibliography, TARIFF_COMPARATOR_TOOL } from './tool/tariffComparator';
+export { HeatingComparatorComponent, HeatingComparatorSEO, HeatingComparatorBibliography, HEATING_COMPARATOR_TOOL } from './tool/heatingComparator';
 

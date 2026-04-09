@@ -1,0 +1,32 @@
+export interface HeatingComparatorUI extends Record<string, string> {
+  titleVivienda: string;
+  helperVivienda: string;
+  labelM2: string;
+  helperM2: string;
+  labelAislamiento: string;
+  helperAislamiento: string;
+  optExcelent: string;
+  optMedium: string;
+  optPoor: string;
+  titleCoste: string;
+  descCoste: string;
+  labelGasPrice: string;
+  helperGasPrice: string;
+  labelElecPrice: string;
+  helperElecPrice: string;
+  titleComparison: string;
+  descComparison: string;
+  systemGas: string;
+  systemAero: string;
+  systemAir: string;
+  labelAnnualCost: string;
+  labelEfficiency: string;
+  labelSource: string;
+  labelEnergy: string;
+  labelInstallation: string;
+  valGasSource: string;
+  valAeroEnergy: string;
+  valAirInstall: string;
+  winnerBadge: string;
+  unitCurrency: string;
+}
