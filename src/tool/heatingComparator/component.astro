@@ -393,7 +393,7 @@ const compUI = ui as HeatingComparatorUI;
 
   .saving-badge.visible {
     display: block;
-    animation: bounceIn 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation: bounce-in 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   }
 
   .card-header {
@@ -412,9 +412,18 @@ const compUI = ui as HeatingComparatorUI;
     justify-content: center;
   }
 
-  .gas .icon-box { background: rgba(249, 115, 22, 0.1); color: var(--gas); }
-  .aero .icon-box { background: rgba(16, 185, 129, 0.1); color: var(--aero); }
-  .air .icon-box { background: rgba(59, 130, 246, 0.1); color: var(--air); }
+  .gas .icon-box {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--gas);
+  }
+  .aero .icon-box {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--aero);
+  }
+  .air .icon-box {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--air);
+  }
 
   .card-title {
     font-weight: 800;
@@ -455,8 +464,12 @@ const compUI = ui as HeatingComparatorUI;
     font-size: 0.85rem;
   }
 
-  .spec-label { color: var(--text-muted); }
-  .spec-value { font-weight: 700; }
+  .spec-label {
+    color: var(--text-muted);
+  }
+  .spec-value {
+    font-weight: 700;
+  }
 
   @keyframes pop {
     0% { transform: scale(1); }
@@ -468,9 +481,15 @@ const compUI = ui as HeatingComparatorUI;
     animation: pop 0.2s ease-out;
   }
 
-  @keyframes bounceIn {
-    0% { transform: scale(0.3); opacity: 0; }
-    50% { transform: scale(1.05); opacity: 1; }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
     70% { transform: scale(0.9); }
     100% { transform: scale(1); }
   }
