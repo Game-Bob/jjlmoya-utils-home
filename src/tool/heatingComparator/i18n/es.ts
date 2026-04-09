@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
 
-const slug = 'comparador-consumo-calefaccion';
+const slug = 'comparador-consumo-gas-aerotermia-aire';
 const title = 'Comparador Gas vs. Aerotermia vs. Aire: Ahorro y Consumo';
 const description =
   'Calcula cuánto ahorras al cambiar tu caldera de gas por aerotermia o bomba de calor. Comparativa real de consumo energético y eficiencia para el hogar.';
