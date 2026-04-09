@@ -1,0 +1,595 @@
+---
+import type { TariffComparatorUI } from './ui';
+import { calculateTariffs } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const tUI = ui as TariffComparatorUI;
+
+const INITIAL_CONSUMPTION = 3500;
+const INITIAL_POWER = 4.6;
+const MAX_BAR_H = 130;
+const CHART_TOP = 15;
+
+const initial = calculateTariffs({
+  consumptionKwh: INITIAL_CONSUMPTION,
+  powerKw: INITIAL_POWER,
+  solarReduction: false,
+  shiftPercent: 0,
+});
+
+const initialMax = Math.max(...initial.monthlyData);
+const months = (tUI.monthLabels ?? '').split(',');
+const initialMarketBetter = initial.marketTotal <= initial.freeTotal;
+const initialDiff = Math.round(Math.abs(initial.freeTotal - initial.marketTotal));
+
+function iBarH(val: number): number {
+  return initialMax > 0 ? Math.round((val / initialMax) * MAX_BAR_H) : 0;
+}
+---
+
+<div class="tc-wrapper">
+  <div
+    class="tc-card"
+    data-badge-better={tUI.badgeBetter}
+    data-badge-worse-year={tUI.badgeWorseYear}
+    data-currency-sign={tUI.currencySign}
+  >
+
+    <div class="tc-inputs">
+      <div class="tc-input-group">
+        <label class="tc-label" for="tc-consumption">{tUI.labelConsumption}</label>
+        <input type="range" id="tc-consumption" min="1000" max="10000" step="100" value={INITIAL_CONSUMPTION} class="tc-slider" />
+        <div class="tc-value-row">
+          <span id="tc-consumption-val" class="tc-value">{INITIAL_CONSUMPTION}</span>
+          <span class="tc-unit">{tUI.unitKwhYear}</span>
+        </div>
+      </div>
+      <div class="tc-input-group">
+        <label class="tc-label" for="tc-power">{tUI.labelPower}</label>
+        <input type="range" id="tc-power" min="2.3" max="10" step="0.1" value={INITIAL_POWER} class="tc-slider" />
+        <div class="tc-value-row">
+          <span id="tc-power-val" class="tc-value">{INITIAL_POWER.toFixed(1)}</span>
+          <span class="tc-unit">{tUI.unitKw}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-results">
+      <div class="tc-tariff-card tc-market-card">
+        <span class="tc-tariff-label tc-market-label">{tUI.labelMarket}</span>
+        <div class="tc-price-main">
+          <p id="tc-market-total" class="tc-total">{Math.round(initial.marketTotal)}{tUI.currencySign}</p>
+          <span class="tc-est">{tUI.labelAnnualEst}</span>
+        </div>
+        <div class="tc-line-items">
+          <div class="tc-line">
+            <span>{tUI.labelPowerTerm}</span>
+            <span id="tc-market-power">{initial.marketPower.toFixed(2)}{tUI.currencySign}</span>
+          </div>
+          <div class="tc-line">
+            <span>{tUI.labelEnergyTerm}</span>
+            <span id="tc-market-energy">{initial.marketEnergy.toFixed(2)}{tUI.currencySign}</span>
+          </div>
+        </div>
+        <span id="tc-market-badge" class={initialMarketBetter ? 'tc-badge tc-badge-better' : 'tc-badge tc-badge-worse'}>
+          {initialMarketBetter ? tUI.badgeBetter : `+${initialDiff}${tUI.currencySign} / ${tUI.badgeWorseYear}`}
+        </span>
+      </div>
+
+      <div class="tc-tariff-card tc-free-card">
+        <span class="tc-tariff-label tc-free-label">{tUI.labelFree}</span>
+        <div class="tc-price-main">
+          <p id="tc-free-total" class="tc-total">{Math.round(initial.freeTotal)}{tUI.currencySign}</p>
+          <span class="tc-est">{tUI.labelAnnualEst}</span>
+        </div>
+        <div class="tc-line-items">
+          <div class="tc-line">
+            <span>{tUI.labelPowerTerm}</span>
+            <span id="tc-free-power">{initial.freePower.toFixed(2)}{tUI.currencySign}</span>
+          </div>
+          <div class="tc-line">
+            <span>{tUI.labelEnergyTerm}</span>
+            <span id="tc-free-energy">{initial.freeEnergy.toFixed(2)}{tUI.currencySign}</span>
+          </div>
+        </div>
+        <span id="tc-free-badge" class={initialMarketBetter ? 'tc-badge tc-badge-worse' : 'tc-badge tc-badge-better'}>
+          {initialMarketBetter ? `+${initialDiff}${tUI.currencySign} / ${tUI.badgeWorseYear}` : tUI.badgeBetter}
+        </span>
+      </div>
+    </div>
+
+    <div class="tc-dashboard">
+      <p class="tc-section-label">{tUI.labelDashboard}</p>
+      <div class="tc-dash-grid">
+        <svg class="tc-chart-svg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid meet">
+          {initial.monthlyData.map((val, i) => {
+            const h = iBarH(val);
+            return (
+              <rect
+                id={`tc-bar-${i}`}
+                x={i * 55 + 10}
+                y={CHART_TOP + MAX_BAR_H - h}
+                width="35"
+                height={h}
+                rx="4"
+                class="tc-bar"
+              ></rect>
+            );
+          })}
+          {months.map((label, i) => (
+            <text x={i * 55 + 27.5} y="165" fill="#64748b" font-size="9" text-anchor="middle">{label}</text>
+          ))}
+        </svg>
+        <div class="tc-metrics">
+          <div class="tc-metric">
+            <span class="tc-metric-label">{tUI.labelMaxPower}</span>
+            <span id="tc-max-power" class="tc-metric-val">{initial.maxPowerKw.toFixed(1)} kW</span>
+            <span class="tc-metric-sub">{tUI.labelMaxPowerEst}</span>
+          </div>
+          <div class="tc-metric">
+            <span class="tc-metric-label">{tUI.labelCo2}</span>
+            <span id="tc-co2" class="tc-metric-val">{initial.co2Kg} kg</span>
+            <span class="tc-metric-sub">{tUI.labelCo2Est}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-simulator">
+      <p class="tc-section-label">{tUI.labelSimulator}</p>
+      <div class="tc-sim-grid">
+        <div class="tc-sim-card">
+          <p class="tc-sim-title">{tUI.labelSolar}</p>
+          <label class="tc-toggle">
+            <input type="checkbox" id="tc-solar" class="tc-toggle-input" />
+            <span class="tc-toggle-track"></span>
+          </label>
+          <p class="tc-sim-desc">{tUI.labelSolarDesc}</p>
+        </div>
+        <div class="tc-sim-card">
+          <p class="tc-sim-title">{tUI.labelShift}</p>
+          <input type="range" id="tc-shift" min="0" max="50" step="5" value="0" class="tc-slider" />
+          <p class="tc-sim-desc">{tUI.labelShiftDesc} <strong id="tc-shift-val">0%</strong></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  import { calculateTariffs } from './logic';
+
+  const MAX_BAR_H = 130;
+  const CHART_TOP = 15;
+
+  function setTxt(id: string, val: string) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  function getSliderVal(id: string): number {
+    return parseFloat((document.getElementById(id) as HTMLInputElement | null)?.value ?? '0') || 0;
+  }
+
+  function updateChart(data: number[]) {
+    const maxVal = Math.max(...data);
+    data.forEach((val, i) => {
+      const h = maxVal > 0 ? Math.round((val / maxVal) * MAX_BAR_H) : 0;
+      const bar = document.getElementById(`tc-bar-${i}`);
+      if (!bar) return;
+      bar.setAttribute('height', String(h));
+      bar.setAttribute('y', String(CHART_TOP + MAX_BAR_H - h));
+    });
+  }
+
+  function updateBadges(market: number, free: number, card: HTMLElement) {
+    const mBadge = document.getElementById('tc-market-badge');
+    const fBadge = document.getElementById('tc-free-badge');
+    if (!mBadge || !fBadge) return;
+    const better = card.dataset.badgeBetter ?? '';
+    const year = card.dataset.badgeWorseYear ?? '';
+    const curr = card.dataset.currencySign ?? '€';
+    if (market <= free) {
+      mBadge.textContent = better;
+      mBadge.className = 'tc-badge tc-badge-better';
+      fBadge.textContent = `+${Math.round(free - market)}${curr} / ${year}`;
+      fBadge.className = 'tc-badge tc-badge-worse';
+    } else {
+      fBadge.textContent = better;
+      fBadge.className = 'tc-badge tc-badge-better';
+      mBadge.textContent = `+${Math.round(market - free)}${curr} / ${year}`;
+      mBadge.className = 'tc-badge tc-badge-worse';
+    }
+  }
+
+  function calculate(card: HTMLElement) {
+    const consumption = getSliderVal('tc-consumption');
+    const power = getSliderVal('tc-power');
+    const solar = (document.getElementById('tc-solar') as HTMLInputElement | null)?.checked ?? false;
+    const shift = getSliderVal('tc-shift');
+    const r = calculateTariffs({ consumptionKwh: consumption, powerKw: power, solarReduction: solar, shiftPercent: shift });
+    const curr = card.dataset.currencySign ?? '€';
+    setTxt('tc-consumption-val', Math.round(r.effectiveConsumption).toLocaleString());
+    setTxt('tc-power-val', power.toFixed(1));
+    setTxt('tc-market-total', `${Math.round(r.marketTotal)}${curr}`);
+    setTxt('tc-market-power', `${r.marketPower.toFixed(2)}${curr}`);
+    setTxt('tc-market-energy', `${r.marketEnergy.toFixed(2)}${curr}`);
+    setTxt('tc-free-total', `${Math.round(r.freeTotal)}${curr}`);
+    setTxt('tc-free-power', `${r.freePower.toFixed(2)}${curr}`);
+    setTxt('tc-free-energy', `${r.freeEnergy.toFixed(2)}${curr}`);
+    setTxt('tc-max-power', `${r.maxPowerKw.toFixed(1)} kW`);
+    setTxt('tc-co2', `${r.co2Kg} kg`);
+    updateBadges(r.marketTotal, r.freeTotal, card);
+    updateChart(r.monthlyData);
+  }
+
+  function attachSliders(card: HTMLElement) {
+    ['tc-consumption', 'tc-power'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => calculate(card));
+    });
+    const solar = document.getElementById('tc-solar');
+    if (solar) solar.addEventListener('change', () => calculate(card));
+  }
+
+  function init() {
+    const card = document.querySelector('.tc-card') as HTMLElement | null;
+    if (!card) return;
+    const shiftSlider = document.getElementById('tc-shift') as HTMLInputElement | null;
+    const shiftVal = document.getElementById('tc-shift-val');
+    if (shiftSlider && shiftVal) {
+      shiftSlider.addEventListener('input', () => {
+        shiftVal.textContent = `${shiftSlider.value}%`;
+        calculate(card);
+      });
+    }
+    attachSliders(card);
+    calculate(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .tc-wrapper {
+    --tc-p: #f59e0b;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .tc-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  .tc-inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @media (min-width: 640px) {
+    .tc-inputs {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .tc-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tc-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tc-p);
+  }
+
+  .tc-slider {
+    width: 100%;
+    height: 6px;
+    accent-color: var(--tc-p);
+    cursor: pointer;
+    border-radius: 9999px;
+  }
+
+  .tc-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .tc-value {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1;
+  }
+
+  .tc-unit {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+
+  .tc-results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @media (min-width: 640px) {
+    .tc-results {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .tc-tariff-card {
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tc-market-card {
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  .tc-free-card {
+    background: rgba(14, 165, 233, 0.06);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+  }
+
+  .tc-tariff-label {
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    align-self: flex-start;
+  }
+
+  .tc-market-label {
+    background: #fbbf24;
+    color: #78350f;
+  }
+
+  .tc-free-label {
+    background: #38bdf8;
+    color: #0c4a6e;
+  }
+
+  .tc-price-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .tc-total {
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .tc-est {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .tc-line-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .tc-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+
+  .tc-badge {
+    align-self: flex-start;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .tc-badge-better {
+    background: #22c55e;
+    color: #fff;
+  }
+
+  .tc-badge-worse {
+    background: var(--bg-muted);
+    color: var(--text-muted);
+  }
+
+  .tc-dashboard {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tc-section-label {
+    font-size: 0.6875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--tc-p);
+    margin: 0;
+  }
+
+  .tc-dash-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .tc-dash-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .tc-chart-svg {
+    width: 100%;
+    display: block;
+  }
+
+  .tc-bar {
+    fill: var(--tc-p);
+    opacity: 0.7;
+  }
+
+  .tc-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tc-metric {
+    background: var(--bg-muted);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .tc-metric-label {
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .tc-metric-val {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+  }
+
+  .tc-metric-sub {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+  }
+
+  .tc-simulator {
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tc-sim-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .tc-sim-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .tc-sim-card {
+    background: var(--bg-muted);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tc-sim-title {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .tc-sim-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .tc-toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+  }
+
+  .tc-toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  .tc-toggle-track {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--border-color);
+    border-radius: 9999px;
+    transition: background 0.3s;
+  }
+
+  .tc-toggle-track::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 4px;
+    top: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+
+  .tc-toggle-input:checked + .tc-toggle-track {
+    background: var(--tc-p);
+  }
+
+  .tc-toggle-input:checked + .tc-toggle-track::before {
+    transform: translateX(22px);
+  }
+</style>

@@ -1,0 +1,532 @@
+---
+import type { SolarCalculatorUI } from './ui';
+import { calculateTilt } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const solarUI = ui as SolarCalculatorUI;
+const initial = calculateTilt(40.41);
+---
+
+<div class="solar-wrapper">
+  <div class="solar-card">
+    <div class="solar-left">
+      <div class="field-group">
+        <label class="field-label" for="lat-input">{solarUI.labelLatitude}</label>
+        <div class="lat-row">
+          <input
+            type="number"
+            id="lat-input"
+            value="40.41"
+            step="0.1"
+            min="-90"
+            max="90"
+            class="lat-input"
+          />
+          <span class="deg-unit">°</span>
+        </div>
+        <button
+          id="btn-locate"
+          class="locate-btn"
+          data-geo-error={solarUI.geoNotAvailable}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>{solarUI.btnLocate}</span>
+        </button>
+      </div>
+
+      <div class="optimal-card">
+        <p class="optimal-label">{solarUI.labelOptimal}</p>
+        <div class="optimal-value-row">
+          <span id="display-angle" class="optimal-value">{initial.optimal}</span>
+          <span class="optimal-deg">°</span>
+        </div>
+        <p class="efficiency-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          {solarUI.labelEfficiency}
+        </p>
+      </div>
+
+      <div class="season-grid">
+        <div class="season-card winter">
+          <div class="season-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <span class="season-name">{solarUI.labelWinter}</span>
+          </div>
+          <p id="winter-angle" class="season-value">{initial.winter}°</p>
+        </div>
+        <div class="season-card summer">
+          <div class="season-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <span class="season-name">{solarUI.labelSummer}</span>
+          </div>
+          <p id="summer-angle" class="season-value">{initial.summer}°</p>
+        </div>
+      </div>
+
+      <div
+        id="hemisphere-badge"
+        class="hemi-badge"
+        data-north={solarUI.hemisphereNorth}
+        data-south={solarUI.hemisphereSouth}
+      >
+        {initial.isNorth ? solarUI.hemisphereNorth : solarUI.hemisphereSouth}
+      </div>
+    </div>
+
+    <div class="solar-right">
+      <div class="viz-dots"></div>
+      <svg id="tilt-viz" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" class="viz-svg">
+        <defs>
+          <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3b82f6"></stop>
+            <stop offset="100%" stop-color="#1d4ed8"></stop>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="coloredBlur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <line x1="100" y1="500" x2="700" y2="500" stroke="#475569" stroke-width="2" stroke-dasharray="8 8"></line>
+
+        <g transform="translate(650, 100)">
+          <circle r="40" fill="#fbbf24" fill-opacity="0.2" class="sun-pulse"></circle>
+          <circle r="15" fill="#f59e0b" filter="url(#glow)"></circle>
+        </g>
+
+        <g id="panel-assembly" transform="translate(400, 500)">
+          <g id="panel-rect-group">
+            <line x1="0" y1="0" x2="-30" y2="0" stroke="#64748b" stroke-width="6" stroke-linecap="round"></line>
+            <rect x="-220" y="-6" width="220" height="12" rx="4" fill="url(#panel-grad)" stroke="#60a5fa" stroke-width="1"></rect>
+            <line x1="-55" y1="-6" x2="-55" y2="6" stroke="white" stroke-opacity="0.2" stroke-width="1"></line>
+            <line x1="-110" y1="-6" x2="-110" y2="6" stroke="white" stroke-opacity="0.2" stroke-width="1"></line>
+            <line x1="-165" y1="-6" x2="-165" y2="6" stroke="white" stroke-opacity="0.2" stroke-width="1"></line>
+            <line x1="-110" y1="-6" x2="-110" y2="-80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5 5" opacity="0.8"></line>
+            <circle cx="-110" cy="-80" r="3" fill="#fbbf24"></circle>
+            <text x="-100" y="-90" fill="#fbbf24" font-size="12" font-weight="bold">NORMAL</text>
+          </g>
+
+          <path id="viz-arc" d="M-80,0 A80,80 0 0,1 -64,-48" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="4" opacity="0.6"></path>
+          <text id="viz-arc-text" x="-120" y="-30" fill="#f97316" font-size="20" font-weight="bold">{initial.optimal}°</text>
+
+          <g id="ray-container"></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateTilt, toRad } from './logic';
+
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  function setText(el: HTMLElement | null, v: string) {
+    if (el) el.textContent = v;
+  }
+
+  function buildRay(x1: number, y1: number, x2: number, y2: number): SVGLineElement {
+    const line = document.createElementNS(SVG_NS, 'line');
+    line.setAttribute('x1', String(x1));
+    line.setAttribute('y1', String(y1));
+    line.setAttribute('x2', String(x2));
+    line.setAttribute('y2', String(y2));
+    line.setAttribute('stroke', '#fbbf24');
+    line.setAttribute('stroke-width', '2');
+    line.setAttribute('stroke-dasharray', '8 4');
+    line.setAttribute('opacity', '0.6');
+    const anim = document.createElementNS(SVG_NS, 'animate');
+    anim.setAttribute('attributeName', 'stroke-dashoffset');
+    anim.setAttribute('from', '12');
+    anim.setAttribute('to', '0');
+    anim.setAttribute('dur', '1s');
+    anim.setAttribute('repeatCount', 'indefinite');
+    line.appendChild(anim);
+    return line;
+  }
+
+  function updateRays(angle: number, container: Element) {
+    container.innerHTML = '';
+    const rad = toRad(angle);
+    for (let i = -1; i <= 1; i++) {
+      const off = i * 40;
+      const sx = -110 + i * 60;
+      const ray = buildRay(
+        650 + off, 100 - off,
+        400 + sx * Math.cos(rad),
+        500 + sx * Math.sin(rad)
+      );
+      container.appendChild(ray);
+    }
+  }
+
+  function updateArc(angle: number, arc: Element, arcText: Element) {
+    const r = 80;
+    const rad = toRad(angle);
+    const endX = -r * Math.cos(rad);
+    const endY = -r * Math.sin(rad);
+    const large = angle > 180 ? 1 : 0;
+    arc.setAttribute('d', `M${-r},0 A${r},${r} 0 ${large},1 ${endX.toFixed(2)},${endY.toFixed(2)}`);
+    arcText.textContent = `${angle}°`;
+    const mid = rad / 2;
+    arcText.setAttribute('x', String((-120 * Math.cos(mid)).toFixed(2)));
+    arcText.setAttribute('y', String((-120 * Math.sin(mid)).toFixed(2)));
+  }
+
+  function updateVisuals(angle: number) {
+    const panel = document.getElementById('panel-rect-group');
+    const arc = document.getElementById('viz-arc');
+    const arcText = document.getElementById('viz-arc-text');
+    const rays = document.getElementById('ray-container');
+    if (panel) panel.setAttribute('transform', `rotate(${angle})`);
+    if (arc && arcText) updateArc(angle, arc, arcText);
+    if (rays) updateRays(angle, rays);
+  }
+
+  function update() {
+    const latInput = document.getElementById('lat-input') as HTMLInputElement | null;
+    if (!latInput || !latInput.value) return;
+    const lat = parseFloat(latInput.value);
+    if (isNaN(lat)) return;
+    const data = calculateTilt(lat);
+    setText(document.getElementById('display-angle'), String(data.optimal));
+    setText(document.getElementById('winter-angle'), data.winter + '°');
+    setText(document.getElementById('summer-angle'), data.summer + '°');
+    const badge = document.getElementById('hemisphere-badge');
+    if (badge) {
+      badge.textContent = data.isNorth ? (badge.dataset.north || '') : (badge.dataset.south || '');
+    }
+    updateVisuals(data.optimal);
+  }
+
+  function attachLocate() {
+    const btn = document.getElementById('btn-locate');
+    const latInput = document.getElementById('lat-input') as HTMLInputElement | null;
+    if (!btn || !latInput) return;
+    btn.addEventListener('click', () => {
+      if (!navigator.geolocation) { alert(btn.getAttribute('data-geo-error') || ''); return; }
+      btn.classList.add('loading');
+      navigator.geolocation.getCurrentPosition(
+        (pos) => { latInput.value = pos.coords.latitude.toFixed(2); update(); btn.classList.remove('loading'); },
+        () => { btn.classList.remove('loading'); }
+      );
+    });
+  }
+
+  function init() {
+    const latInput = document.getElementById('lat-input') as HTMLInputElement | null;
+    if (!latInput) return;
+    latInput.addEventListener('input', update);
+    attachLocate();
+    update();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .solar-wrapper {
+    --solar-p: #f97316;
+    --solar-winter: #3b82f6;
+    --solar-summer: #eab308;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .solar-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  @media (min-width: 768px) {
+    .solar-card {
+      flex-direction: row;
+      min-height: 560px;
+    }
+  }
+
+  .solar-left {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .solar-left {
+      width: 340px;
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .solar-right {
+    flex: 1;
+    background: #020617;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+  }
+
+  .viz-dots {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    background-image: radial-gradient(#fff 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .viz-svg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+  }
+
+  .sun-pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .lat-row {
+    position: relative;
+  }
+
+  .lat-input {
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 4px 2.5rem 4px 0;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  .lat-input:focus {
+    border-color: var(--solar-p);
+  }
+
+  .deg-unit {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .locate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--solar-p);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s;
+  }
+
+  .locate-btn:hover {
+    opacity: 0.75;
+  }
+
+  .locate-btn.loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .locate-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .optimal-card {
+    background: var(--bg-muted);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .optimal-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.2), transparent);
+    border-radius: 0 0 0 80px;
+  }
+
+  .optimal-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+
+  .optimal-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .optimal-value {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1;
+  }
+
+  .optimal-deg {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--solar-p);
+  }
+
+  .efficiency-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: #16a34a;
+    font-weight: 600;
+    margin: 8px 0 0;
+  }
+
+  .efficiency-tag svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .season-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .season-card {
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid transparent;
+  }
+
+  .season-card.winter {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .season-card.summer {
+    background: rgba(234, 179, 8, 0.08);
+    border-color: rgba(234, 179, 8, 0.2);
+  }
+
+  .season-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .season-header svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .season-card.winter .season-header svg {
+    color: var(--solar-winter);
+  }
+
+  .season-card.summer .season-header svg {
+    color: var(--solar-summer);
+  }
+
+  .season-name {
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .season-card.winter .season-name {
+    color: var(--solar-winter);
+  }
+
+  .season-card.summer .season-name {
+    color: var(--solar-summer);
+  }
+
+  .season-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .hemi-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    align-self: flex-start;
+  }
+</style>

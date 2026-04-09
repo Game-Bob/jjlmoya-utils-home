@@ -1,0 +1,32 @@
+export interface LedSavingCalculatorUI extends Record<string, string> {
+  sectionTitle: string;
+  labelBulbs: string;
+  unitBulbs: string;
+  labelType: string;
+  labelHours: string;
+  labelPrice: string;
+  unitPrice: string;
+  resultBadge: string;
+  labelAnnual: string;
+  labelMonthly: string;
+  labelEfficiency: string;
+  labelCo2: string;
+  unitLess: string;
+  currencySign: string;
+  btnInc60Title: string;
+  btnInc60Sub: string;
+  btnInc40Title: string;
+  btnInc40Sub: string;
+  btnInc100Title: string;
+  btnInc100Sub: string;
+  btnHalo50Title: string;
+  btnHalo50Sub: string;
+  usageNever: string;
+  usageLow: string;
+  usageNormal: string;
+  usageModerate: string;
+  usageHeavy: string;
+  usagePro: string;
+  usageVeryHeavy: string;
+  usageAlways: string;
+}

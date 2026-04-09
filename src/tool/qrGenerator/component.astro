@@ -1,0 +1,499 @@
+---
+import type { QRGeneratorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const qrUI = ui as QRGeneratorUI;
+---
+
+<script define:vars={{ ui }} is:inline>
+  window.__qrUI = ui;
+</script>
+
+<div class="qr-wrapper" id="qr-gen">
+  <div class="qr-card">
+    <div class="qr-left">
+      <div class="tab-bar" id="qr-tabs">
+        <button class="tab-btn active" data-tab="wifi">{qrUI.tabWifi}</button>
+        <button class="tab-btn" data-tab="url">{qrUI.tabUrl}</button>
+        <button class="tab-btn" data-tab="vcard">{qrUI.tabContact}</button>
+      </div>
+
+      <div id="form-wifi" class="qr-form">
+        <div class="field-group">
+          <label class="field-label">{qrUI.labelSsid}</label>
+          <input type="text" name="ssid" class="qr-input field-input" placeholder={qrUI.placeholderSsid} />
+        </div>
+        <div class="field-group">
+          <label class="field-label">{qrUI.labelPassword}</label>
+          <div class="input-row">
+            <input type="password" name="password" id="wifi-password" class="qr-input field-input" placeholder={qrUI.placeholderPassword} />
+            <button type="button" id="toggle-password" class="eye-btn" aria-label="toggle password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="field-group">
+            <label class="field-label">{qrUI.labelEncryption}</label>
+            <select name="encryption" class="qr-input field-input">
+              <option value="WPA">{qrUI.encWpa}</option>
+              <option value="WEP">{qrUI.encWep}</option>
+              <option value="nopass">{qrUI.encNone}</option>
+            </select>
+          </div>
+          <div class="field-group check-group">
+            <label class="check-label">
+              <input type="checkbox" name="hidden" class="qr-input check-input" />
+              <span>{qrUI.labelHidden}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="form-url" class="qr-form hidden">
+        <div class="field-group">
+          <label class="field-label">{qrUI.labelUrl}</label>
+          <input type="url" name="url" class="qr-input field-input" placeholder={qrUI.placeholderUrl} />
+        </div>
+      </div>
+
+      <div id="form-vcard" class="qr-form hidden">
+        <div class="two-col">
+          <div class="field-group">
+            <label class="field-label">{qrUI.labelName}</label>
+            <input type="text" name="name" class="qr-input field-input" />
+          </div>
+          <div class="field-group">
+            <label class="field-label">{qrUI.labelSurname}</label>
+            <input type="text" name="surname" class="qr-input field-input" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">{qrUI.labelPhone}</label>
+          <input type="tel" name="phone" class="qr-input field-input" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">{qrUI.labelEmail}</label>
+          <input type="email" name="email" class="qr-input field-input" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">{qrUI.labelOrg}</label>
+          <input type="text" name="org" class="qr-input field-input" />
+        </div>
+      </div>
+    </div>
+
+    <div class="qr-right">
+      <div class="qr-preview-area">
+        <div class="canvas-glow">
+          <div class="canvas-box">
+            <canvas id="qr-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+      <button id="download-btn" class="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>{qrUI.downloadBtn}</span>
+      </button>
+      <p class="privacy-msg">{qrUI.privacyMsg}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import QRCode from 'qrcode';
+  import { wifi, url, vcard } from './logic';
+  const state = { type: 'wifi' };
+
+  interface FormsMap {
+    wifi: HTMLElement | null;
+    url: HTMLElement | null;
+    vcard: HTMLElement | null;
+  }
+
+  function strVal(form: HTMLElement, sel: string): string {
+    const el = form.querySelector(sel) as HTMLInputElement | null;
+    return el ? el.value : '';
+  }
+
+  function boolVal(form: HTMLElement, sel: string): boolean {
+    const el = form.querySelector(sel) as HTMLInputElement | null;
+    return el ? el.checked : false;
+  }
+
+  function getWifiPayload(form: HTMLElement | null): string {
+    if (!form) return '';
+    return wifi(
+      strVal(form, '[name="ssid"]'),
+      strVal(form, '[name="password"]'),
+      strVal(form, '[name="encryption"]') || 'WPA',
+      boolVal(form, '[name="hidden"]')
+    );
+  }
+
+  function getUrlPayload(form: HTMLElement | null): string {
+    if (!form) return '';
+    return url(strVal(form, '[name="url"]'));
+  }
+
+  function getVcardPayload(form: HTMLElement | null): string {
+    if (!form) return '';
+    return vcard({
+      name: strVal(form, '[name="name"]'),
+      surname: strVal(form, '[name="surname"]'),
+      phone: strVal(form, '[name="phone"]'),
+      email: strVal(form, '[name="email"]'),
+      org: strVal(form, '[name="org"]'),
+    });
+  }
+
+  function getPayload(type: string, forms: FormsMap): string {
+    if (type === 'wifi') return getWifiPayload(forms.wifi);
+    if (type === 'url') return getUrlPayload(forms.url);
+    if (type === 'vcard') return getVcardPayload(forms.vcard);
+    return 'https://jjlmoya.es';
+  }
+
+  async function generate(type: string, forms: FormsMap, canvas: HTMLCanvasElement) {
+    const payload = getPayload(type, forms) || 'https://jjlmoya.es';
+    const isDark = document.documentElement.classList.contains('dark')
+      || document.documentElement.classList.contains('theme-dark');
+    try {
+      await QRCode.toCanvas(canvas, payload, {
+        width: 1024,
+        margin: 2,
+        color: { dark: isDark ? '#fff' : '#000', light: isDark ? '#020617' : '#fff' },
+      });
+      canvas.style.width = '';
+      canvas.style.height = '';
+    } catch {}
+  }
+
+  function switchTab(type: string, tabs: NodeListOf<Element>, forms: FormsMap) {
+    tabs.forEach(t => t.classList.toggle('active', (t as HTMLElement).dataset.tab === type));
+    Object.entries(forms).forEach(([k, f]) => f?.classList.toggle('hidden', k !== type));
+  }
+
+  function attachTabs(tabs: NodeListOf<Element>, forms: FormsMap, canvas: HTMLCanvasElement) {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        state.type = (tab as HTMLElement).dataset.tab ?? 'wifi';
+        switchTab(state.type, tabs, forms);
+        void generate(state.type, forms, canvas);
+      });
+    });
+  }
+
+  function attachInputs(forms: FormsMap, canvas: HTMLCanvasElement) {
+    document.querySelectorAll('.qr-input').forEach(el => {
+      el.addEventListener('input', () => { void generate(state.type, forms, canvas); });
+    });
+  }
+
+  function attachDownload(btn: HTMLElement | null, canvas: HTMLCanvasElement) {
+    btn?.addEventListener('click', () => {
+      const a = document.createElement('a');
+      a.download = `qr-${state.type}.webp`;
+      a.href = canvas.toDataURL('image/webp');
+      a.click();
+    });
+  }
+
+  function attachPasswordToggle() {
+    const btn = document.getElementById('toggle-password');
+    const input = document.getElementById('wifi-password') as HTMLInputElement | null;
+    btn?.addEventListener('click', () => {
+      if (input) input.type = input.type === 'password' ? 'text' : 'password';
+    });
+  }
+
+  function init() {
+    const canvas = document.getElementById('qr-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+    const tabs = document.querySelectorAll('.tab-btn');
+    const forms: FormsMap = {
+      wifi: document.getElementById('form-wifi'),
+      url: document.getElementById('form-url'),
+      vcard: document.getElementById('form-vcard'),
+    };
+    attachTabs(tabs, forms, canvas);
+    attachInputs(forms, canvas);
+    attachDownload(document.getElementById('download-btn'), canvas);
+    attachPasswordToggle();
+    void generate(state.type, forms, canvas);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .qr-wrapper {
+    --qr-p: #3b82f6;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .qr-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  @media (min-width: 768px) {
+    .qr-card {
+      flex-direction: row;
+      min-height: 520px;
+    }
+  }
+
+  .qr-left {
+    flex: 1;
+    padding: 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .qr-left {
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .qr-right {
+    flex: 0 0 auto;
+    width: 100%;
+    background: var(--bg-muted);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .qr-right {
+      width: 340px;
+    }
+  }
+
+  .tab-bar {
+    display: flex;
+    background: var(--bg-muted);
+    padding: 4px;
+    border-radius: 14px;
+    gap: 2px;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .qr-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .qr-form.hidden {
+    display: none;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
+  .field-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+  }
+
+  .field-input:focus {
+    outline: none;
+    border-color: var(--qr-p);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .input-row {
+    position: relative;
+  }
+
+  .input-row .field-input {
+    padding-right: 44px;
+  }
+
+  .eye-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 4px;
+    display: flex;
+  }
+
+  .eye-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .check-group {
+    justify-content: flex-end;
+    padding-bottom: 2px;
+  }
+
+  .check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-top: 22px;
+  }
+
+  .check-input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--qr-p);
+  }
+
+  .qr-preview-area {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .canvas-glow {
+    position: relative;
+  }
+
+  .canvas-glow::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    border-radius: 20px;
+    filter: blur(12px);
+    opacity: 0.3;
+    transition: opacity 0.3s;
+  }
+
+  .canvas-glow:hover::before {
+    opacity: 0.55;
+  }
+
+  .canvas-box {
+    position: relative;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .canvas-box canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--qr-p);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .download-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .download-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .privacy-msg {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 220px;
+    line-height: 1.5;
+  }
+
+  .theme-dark .canvas-box {
+    background: #020617;
+  }
+</style>

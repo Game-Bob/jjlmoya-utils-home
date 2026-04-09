@@ -1,0 +1,443 @@
+---
+import type { DewPointCalculatorUI } from './ui';
+import { calculateDewPoint, getMoldRisk } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const dUI = ui as DewPointCalculatorUI;
+
+const initialTemp = 22;
+const initialHumidity = 60;
+const initialDew = calculateDewPoint(initialTemp, initialHumidity);
+const initialRisk = getMoldRisk(initialTemp, initialDew);
+
+function capitalize(s: string) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+const riskLabelKey = `risk${capitalize(initialRisk)}` as keyof DewPointCalculatorUI;
+const riskDescKey = `risk${capitalize(initialRisk)}Desc` as keyof DewPointCalculatorUI;
+
+const TRACK_X = 20;
+const TRACK_W = 260;
+const TRACK_Y = 34;
+const tempX = TRACK_X + (initialTemp / 50) * TRACK_W;
+const dewX = TRACK_X + (Math.max(0, Math.min(50, initialDew)) / 50) * TRACK_W;
+const fillX = Math.min(dewX, tempX);
+const fillW = Math.abs(tempX - dewX);
+---
+
+<div class="dew-wrapper">
+  <div
+    class="dew-card"
+    data-risk-low={dUI.riskLow}
+    data-risk-medium={dUI.riskMedium}
+    data-risk-high={dUI.riskHigh}
+    data-risk-extreme={dUI.riskExtreme}
+    data-risk-low-desc={dUI.riskLowDesc}
+    data-risk-medium-desc={dUI.riskMediumDesc}
+    data-risk-high-desc={dUI.riskHighDesc}
+    data-risk-extreme-desc={dUI.riskExtremeDesc}
+  >
+    <div class="dew-left">
+      <div class="dew-field">
+        <div class="dew-field-top">
+          <label class="dew-label" for="dew-temp">{dUI.labelTemperature}</label>
+          <span class="dew-val-display">
+            <span id="dew-temp-num">{initialTemp}</span><span class="dew-unit"> °C</span>
+          </span>
+        </div>
+        <input type="range" id="dew-temp" min="0" max="50" step="0.5" value={initialTemp} class="dew-slider" />
+        <div class="dew-steps">
+          <button class="dew-step" id="dew-temp-minus" aria-label="decrease temperature">−</button>
+          <button class="dew-step" id="dew-temp-plus" aria-label="increase temperature">+</button>
+        </div>
+      </div>
+
+      <div class="dew-field">
+        <div class="dew-field-top">
+          <label class="dew-label" for="dew-hum">{dUI.labelHumidity}</label>
+          <span class="dew-val-display">
+            <span id="dew-hum-num">{initialHumidity}</span><span class="dew-unit"> %</span>
+          </span>
+        </div>
+        <input type="range" id="dew-hum" min="10" max="95" step="1" value={initialHumidity} class="dew-slider" />
+        <div class="dew-steps">
+          <button class="dew-step" id="dew-hum-minus" aria-label="decrease humidity">−</button>
+          <button class="dew-step" id="dew-hum-plus" aria-label="increase humidity">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dew-right">
+      <div class="dew-result-section">
+        <p class="dew-result-label">{dUI.labelDewPoint}</p>
+        <p class="dew-result-value">
+          <span id="dew-display-value">{initialDew.toFixed(1)}</span><span class="dew-result-unit"> °C</span>
+        </p>
+      </div>
+
+      <div id="dew-risk-badge" class={`dew-risk-badge dew-risk-${initialRisk}`}>
+        <span class="dew-risk-dot"></span>
+        <div class="dew-risk-text">
+          <span id="dew-risk-label" class="dew-risk-name">{dUI[riskLabelKey]}</span>
+          <span id="dew-risk-desc" class="dew-risk-desc">{dUI[riskDescKey]}</span>
+        </div>
+      </div>
+
+      <svg class="dew-gauge" viewBox="0 0 300 80" preserveAspectRatio="xMidYMid meet">
+        <rect class="dew-gauge-track" x="20" y={TRACK_Y - 4} width="260" height="8" rx="4"></rect>
+        <rect id="dew-gauge-fill" x={fillX} y={TRACK_Y - 4} width={fillW} height="8" rx="4" fill="#22c55e"></rect>
+        <circle id="dew-gauge-dew" cx={dewX} cy={TRACK_Y} r="6" fill="#06b6d4"></circle>
+        <circle id="dew-gauge-temp" cx={tempX} cy={TRACK_Y} r="8" fill="#8b5cf6"></circle>
+        <text x="20" y="66" fill="#64748b" font-size="9" text-anchor="start">0°C</text>
+        <text x="280" y="66" fill="#64748b" font-size="9" text-anchor="middle">50°C</text>
+        <text id="dew-gauge-temp-txt" x={tempX} y="20" fill="#8b5cf6" font-size="9" text-anchor="middle">{initialTemp}°C</text>
+        <text id="dew-gauge-dew-txt" x={dewX} y="20" fill="#06b6d4" font-size="9" text-anchor="middle">{initialDew.toFixed(1)}°C</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateDewPoint, getMoldRisk } from './logic';
+
+  const TRACK_X = 20;
+  const TRACK_W = 260;
+
+  const RISK_COLORS: Record<string, string> = {
+    low: '#22c55e',
+    medium: '#f59e0b',
+    high: '#f97316',
+    extreme: '#ef4444',
+  };
+
+  function setTxt(id: string, val: string) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  function setAttr(id: string, attr: string, val: string) {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute(attr, val);
+  }
+
+  function toX(val: number): number {
+    return TRACK_X + (Math.max(0, Math.min(50, val)) / 50) * TRACK_W;
+  }
+
+  function cap(s: string): string {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  function updateGauge(temp: number, dew: number, risk: string) {
+    const tX = toX(temp);
+    const dX = toX(dew);
+    const color = RISK_COLORS[risk] ?? '#22c55e';
+
+    setAttr('dew-gauge-fill', 'x', String(Math.min(dX, tX)));
+    setAttr('dew-gauge-fill', 'width', String(Math.abs(tX - dX)));
+    setAttr('dew-gauge-fill', 'fill', color);
+    setAttr('dew-gauge-temp', 'cx', String(tX));
+    setAttr('dew-gauge-dew', 'cx', String(dX));
+    setAttr('dew-gauge-temp-txt', 'x', String(tX));
+    setAttr('dew-gauge-dew-txt', 'x', String(dX));
+    setTxt('dew-gauge-temp-txt', `${temp}°C`);
+    setTxt('dew-gauge-dew-txt', `${dew.toFixed(1)}°C`);
+  }
+
+  function updateRisk(risk: string, card: HTMLElement) {
+    const badge = document.getElementById('dew-risk-badge');
+    if (!badge) return;
+    badge.className = `dew-risk-badge dew-risk-${risk}`;
+    const label = card.dataset[`risk${cap(risk)}`] ?? '';
+    const desc = card.dataset[`risk${cap(risk)}Desc`] ?? '';
+    setTxt('dew-risk-label', label);
+    setTxt('dew-risk-desc', desc);
+  }
+
+  function calculate(card: HTMLElement) {
+    const tempEl = document.getElementById('dew-temp') as HTMLInputElement | null;
+    const humEl = document.getElementById('dew-hum') as HTMLInputElement | null;
+    if (!tempEl || !humEl) return;
+    const temp = parseFloat(tempEl.value);
+    const hum = parseFloat(humEl.value);
+    if (isNaN(temp) || isNaN(hum)) return;
+    const dew = calculateDewPoint(temp, hum);
+    const risk = getMoldRisk(temp, dew);
+    setTxt('dew-display-value', dew.toFixed(1));
+    setTxt('dew-temp-num', temp % 1 === 0 ? String(temp) : temp.toFixed(1));
+    setTxt('dew-hum-num', String(hum));
+    updateGauge(temp, dew, risk);
+    updateRisk(risk, card);
+  }
+
+  function attachStep(btnId: string, sliderId: string, delta: number) {
+    const btn = document.getElementById(btnId);
+    const slider = document.getElementById(sliderId) as HTMLInputElement | null;
+    if (!btn || !slider) return;
+    btn.addEventListener('click', () => {
+      const min = parseFloat(slider.min);
+      const max = parseFloat(slider.max);
+      const newVal = Math.max(min, Math.min(max, Math.round((parseFloat(slider.value) + delta) * 10) / 10));
+      slider.value = String(newVal);
+      slider.dispatchEvent(new Event('input'));
+    });
+  }
+
+  function init() {
+    const card = document.querySelector('.dew-card') as HTMLElement | null;
+    if (!card) return;
+    const tempSlider = document.getElementById('dew-temp') as HTMLInputElement | null;
+    const humSlider = document.getElementById('dew-hum') as HTMLInputElement | null;
+    if (!tempSlider || !humSlider) return;
+
+    tempSlider.addEventListener('input', () => calculate(card));
+    humSlider.addEventListener('input', () => calculate(card));
+
+    attachStep('dew-temp-minus', 'dew-temp', -0.5);
+    attachStep('dew-temp-plus', 'dew-temp', 0.5);
+    attachStep('dew-hum-minus', 'dew-hum', -1);
+    attachStep('dew-hum-plus', 'dew-hum', 1);
+
+    calculate(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .dew-wrapper {
+    --dew-p: #8b5cf6;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .dew-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  @media (min-width: 768px) {
+    .dew-card {
+      flex-direction: row;
+      min-height: 500px;
+    }
+  }
+
+  .dew-left {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .dew-left {
+      width: 340px;
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .dew-right {
+    flex: 1;
+    background: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 32px;
+    min-height: 360px;
+  }
+
+  .dew-field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dew-field-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .dew-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dew-p);
+  }
+
+  .dew-val-display {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1;
+  }
+
+  .dew-unit {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .dew-slider {
+    width: 100%;
+    height: 6px;
+    accent-color: var(--dew-p);
+    cursor: pointer;
+    border-radius: 9999px;
+  }
+
+  .dew-steps {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dew-step {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-main);
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .dew-step:hover {
+    border-color: var(--dew-p);
+    color: var(--dew-p);
+  }
+
+  .dew-result-section {
+    text-align: center;
+  }
+
+  .dew-result-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+  }
+
+  .dew-result-value {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #06b6d4;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .dew-result-unit {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  .dew-risk-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 320px;
+    transition: background 0.3s;
+  }
+
+  .dew-risk-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dew-risk-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .dew-risk-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .dew-risk-desc {
+    font-size: 0.6875rem;
+    opacity: 0.8;
+  }
+
+  .dew-risk-low {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+  }
+
+  .dew-risk-low .dew-risk-dot {
+    background: #22c55e;
+  }
+
+  .dew-risk-medium {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+  }
+
+  .dew-risk-medium .dew-risk-dot {
+    background: #f59e0b;
+  }
+
+  .dew-risk-high {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    color: #fb923c;
+  }
+
+  .dew-risk-high .dew-risk-dot {
+    background: #f97316;
+  }
+
+  .dew-risk-extreme {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #f87171;
+  }
+
+  .dew-risk-extreme .dew-risk-dot {
+    background: #ef4444;
+  }
+
+  .dew-gauge {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .dew-gauge-track {
+    fill: var(--bg-muted);
+  }
+</style>

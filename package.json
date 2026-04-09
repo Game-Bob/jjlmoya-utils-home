@@ -8,8 +8,12 @@
     ".": "./src/index.ts",
     "./data": "./src/data.ts"
   },
-  "files": ["src"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -27,16 +31,20 @@
     "major": "npm version major"
   },
   "lint-staged": {
-    "*.{ts,tsx,astro}": ["eslint --fix"]
+    "*.{ts,tsx,astro}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@jjlmoya/utils-shared": "1.0.2",
+    "@jjlmoya/utils-shared": "^1.1.0",
     "astro": "^6.1.2",
-    "astro-icon": "^1.1.0"
+    "astro-icon": "^1.1.0",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
+    "@types/qrcode": "^1.5.6",
     "eslint": "^9.39.4",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-no-comments": "^1.1.10",
@@ -52,4 +60,3 @@
     "vitest": "^4.1.2"
   }
 }
-

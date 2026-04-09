@@ -1,0 +1,520 @@
+---
+import type { LedSavingCalculatorUI } from './ui';
+import { calculateLedSaving, fmt2 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const lUI = ui as LedSavingCalculatorUI;
+
+const INITIAL_BULBS = 10;
+const INITIAL_OLD_W = 60;
+const INITIAL_LED_W = 9;
+const INITIAL_HOURS = 5;
+const INITIAL_PRICE = 0.18;
+
+const initial = calculateLedSaving({
+  numBulbs: INITIAL_BULBS,
+  oldWatts: INITIAL_OLD_W,
+  ledWatts: INITIAL_LED_W,
+  hoursPerDay: INITIAL_HOURS,
+  pricePerKwh: INITIAL_PRICE,
+});
+---
+
+<div class="led-wrapper">
+  <div
+    class="led-card"
+    data-usage-never={lUI.usageNever}
+    data-usage-low={lUI.usageLow}
+    data-usage-normal={lUI.usageNormal}
+    data-usage-moderate={lUI.usageModerate}
+    data-usage-heavy={lUI.usageHeavy}
+    data-usage-pro={lUI.usagePro}
+    data-usage-very-heavy={lUI.usageVeryHeavy}
+    data-usage-always={lUI.usageAlways}
+    data-unit-less={lUI.unitLess}
+    data-currency-sign={lUI.currencySign}
+  >
+    <div class="led-left">
+      <p class="led-section-title">{lUI.sectionTitle}</p>
+
+      <div class="led-field">
+        <label class="led-label" for="led-num-bulbs">{lUI.labelBulbs}</label>
+        <div class="led-number-row">
+          <input type="number" id="led-num-bulbs" value={INITIAL_BULBS} min="1" max="200" class="led-number-input" />
+          <span class="led-number-unit">{lUI.unitBulbs}</span>
+        </div>
+      </div>
+
+      <div class="led-field">
+        <label class="led-label">{lUI.labelType}</label>
+        <div class="led-type-grid">
+          <button class="led-type-btn led-type-active" data-old="60" data-led="9">
+            <span class="led-type-title">{lUI.btnInc60Title}</span>
+            <span class="led-type-sub">{lUI.btnInc60Sub}</span>
+          </button>
+          <button class="led-type-btn" data-old="40" data-led="5">
+            <span class="led-type-title">{lUI.btnInc40Title}</span>
+            <span class="led-type-sub">{lUI.btnInc40Sub}</span>
+          </button>
+          <button class="led-type-btn" data-old="100" data-led="14">
+            <span class="led-type-title">{lUI.btnInc100Title}</span>
+            <span class="led-type-sub">{lUI.btnInc100Sub}</span>
+          </button>
+          <button class="led-type-btn" data-old="50" data-led="6">
+            <span class="led-type-title">{lUI.btnHalo50Title}</span>
+            <span class="led-type-sub">{lUI.btnHalo50Sub}</span>
+          </button>
+        </div>
+        <input type="hidden" id="led-old-watts" value={INITIAL_OLD_W} />
+        <input type="hidden" id="led-led-watts" value={INITIAL_LED_W} />
+      </div>
+
+      <div class="led-field">
+        <label class="led-label" for="led-hours-slider">{lUI.labelHours}</label>
+        <input type="range" id="led-hours-slider" min="1" max="24" value={INITIAL_HOURS} step="1" class="led-slider" />
+        <p id="led-usage-desc" class="led-usage-desc">{lUI.usageNormal} ({INITIAL_HOURS}h)</p>
+        <input type="hidden" id="led-hours" value={INITIAL_HOURS} />
+      </div>
+
+      <div class="led-field">
+        <label class="led-label" for="led-price">{lUI.labelPrice}</label>
+        <div class="led-price-row">
+          <input type="number" id="led-price" value={INITIAL_PRICE} min="0.01" step="0.01" class="led-price-input" />
+          <span class="led-price-unit">{lUI.unitPrice}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="led-right">
+      <div class="led-result-badge">{lUI.resultBadge}</div>
+
+      <div class="led-annual-section">
+        <p class="led-annual-label">{lUI.labelAnnual}</p>
+        <p class="led-annual-value">
+          <span id="led-annual-num">{fmt2(initial.annualEuro)}</span><span id="led-currency-sign" class="led-euro-sign">{lUI.currencySign}</span>
+        </p>
+      </div>
+
+      <div class="led-stats">
+        <div class="led-stat">
+          <p class="led-stat-label">{lUI.labelMonthly}</p>
+          <p id="led-monthly" class="led-stat-value">{fmt2(initial.monthlyEuro)}{lUI.currencySign}</p>
+        </div>
+        <div class="led-stat-divider"></div>
+        <div class="led-stat">
+          <p class="led-stat-label">{lUI.labelEfficiency}</p>
+          <p id="led-efficiency" class="led-stat-value">{initial.efficiency}{lUI.unitLess}</p>
+        </div>
+      </div>
+
+      <div class="led-eco-box">
+        <div class="led-eco-dot"></div>
+        <div class="led-eco-text">
+          <span id="led-co2" class="led-eco-val">{Math.round(initial.co2Kg)} kg</span>
+          <span class="led-eco-desc">{lUI.labelCo2}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateLedSaving, fmt2 } from './logic';
+
+  function setTxt(id: string, val: string) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  function getUsageKey(h: number): string {
+    if (h === 1) return 'never';
+    if (h <= 3) return 'low';
+    if (h <= 5) return 'normal';
+    if (h <= 7) return 'moderate';
+    if (h <= 11) return 'heavy';
+    if (h <= 15) return 'pro';
+    if (h < 24) return 'veryHeavy';
+    return 'always';
+  }
+
+  function getDataset(card: HTMLElement, key: string): string {
+    return card.dataset[key] ?? '';
+  }
+
+  function getVal(id: string): number {
+    return Number((document.getElementById(id) as HTMLInputElement | null)?.value) || 0;
+  }
+
+  function calculate(card: HTMLElement) {
+    const r = calculateLedSaving({
+      numBulbs: getVal('led-num-bulbs'),
+      oldWatts: getVal('led-old-watts'),
+      ledWatts: getVal('led-led-watts'),
+      hoursPerDay: getVal('led-hours'),
+      pricePerKwh: getVal('led-price'),
+    });
+    const unitLess = getDataset(card, 'unitLess');
+    const currencySign = getDataset(card, 'currencySign');
+    setTxt('led-annual-num', fmt2(r.annualEuro));
+    setTxt('led-currency-sign', currencySign);
+    setTxt('led-monthly', `${fmt2(r.monthlyEuro)}${currencySign}`);
+    setTxt('led-efficiency', `${r.efficiency}${unitLess}`);
+    setTxt('led-co2', `${Math.round(r.co2Kg)} kg`);
+  }
+
+  function updateUsageDesc(h: number, card: HTMLElement) {
+    const key = getUsageKey(h);
+    const camel = key.charAt(0).toUpperCase() + key.slice(1);
+    const label = getDataset(card, `usage${camel}`);
+    setTxt('led-usage-desc', `${label} (${h}h)`);
+  }
+
+  function attachTypeButtons(card: HTMLElement) {
+    document.querySelectorAll<HTMLElement>('.led-type-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.led-type-btn').forEach(b => b.classList.remove('led-type-active'));
+        btn.classList.add('led-type-active');
+        const oldEl = document.getElementById('led-old-watts') as HTMLInputElement | null;
+        const ledEl = document.getElementById('led-led-watts') as HTMLInputElement | null;
+        if (oldEl && ledEl && btn.dataset.old && btn.dataset.led) {
+          oldEl.value = btn.dataset.old;
+          ledEl.value = btn.dataset.led;
+          calculate(card);
+        }
+      });
+    });
+  }
+
+  function init() {
+    const card = document.querySelector('.led-card') as HTMLElement | null;
+    if (!card) return;
+    const hoursSlider = document.getElementById('led-hours-slider') as HTMLInputElement | null;
+    const hoursHidden = document.getElementById('led-hours') as HTMLInputElement | null;
+    if (hoursSlider && hoursHidden) {
+      hoursSlider.addEventListener('input', () => {
+        hoursHidden.value = hoursSlider.value;
+        updateUsageDesc(Number(hoursSlider.value), card);
+        calculate(card);
+      });
+    }
+    attachTypeButtons(card);
+    const numBulbsEl = document.getElementById('led-num-bulbs');
+    const priceEl = document.getElementById('led-price');
+    if (numBulbsEl) numBulbsEl.addEventListener('input', () => calculate(card));
+    if (priceEl) priceEl.addEventListener('input', () => calculate(card));
+    calculate(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .led-wrapper {
+    --led-p: #f59e0b;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .led-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  @media (min-width: 768px) {
+    .led-card {
+      flex-direction: row;
+      min-height: 560px;
+    }
+  }
+
+  .led-left {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .led-left {
+      width: 380px;
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .led-right {
+    flex: 1;
+    background: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 40px 32px;
+    min-height: 360px;
+  }
+
+  .led-section-title {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--led-p);
+    margin: 0;
+  }
+
+  .led-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .led-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .led-number-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .led-number-input {
+    width: 100px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 4px 0;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .led-number-input:focus {
+    border-color: var(--led-p);
+  }
+
+  .led-number-unit {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .led-type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .led-type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+
+  .led-type-btn:hover {
+    border-color: var(--led-p);
+    color: var(--text-main);
+  }
+
+  .led-type-active {
+    background: var(--led-p);
+    border-color: var(--led-p);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  }
+
+  .led-type-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .led-type-sub {
+    font-size: 0.625rem;
+    opacity: 0.75;
+  }
+
+  .led-slider {
+    width: 100%;
+    height: 6px;
+    accent-color: var(--led-p);
+    cursor: pointer;
+    border-radius: 9999px;
+  }
+
+  .led-usage-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .led-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .led-price-input {
+    width: 90px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 4px 0;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .led-price-input:focus {
+    border-color: var(--led-p);
+  }
+
+  .led-price-unit {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .led-result-badge {
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--led-p);
+    padding: 6px 14px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 9999px;
+  }
+
+  .led-annual-section {
+    text-align: center;
+  }
+
+  .led-annual-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+  }
+
+  .led-annual-value {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--led-p);
+    line-height: 1;
+    margin: 0;
+  }
+
+  .led-euro-sign {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  .led-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .led-stat {
+    text-align: center;
+  }
+
+  .led-stat-label {
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+  }
+
+  .led-stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .led-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border-color);
+    flex-shrink: 0;
+  }
+
+  .led-eco-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .led-eco-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+  }
+
+  .led-eco-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .led-eco-val {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #4ade80;
+  }
+
+  .led-eco-desc {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+  }
+</style>

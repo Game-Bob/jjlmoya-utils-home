@@ -1,0 +1,569 @@
+---
+import type { ProjectorCalculatorUI } from './ui';
+import { calculateProjection, cmToM } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const pUI = ui as ProjectorCalculatorUI;
+const initial = calculateProjection(100, 16 / 9, 1.5);
+---
+
+<div class="proj-wrapper">
+  <div class="proj-card">
+
+    <div class="proj-left">
+      <div class="proj-header">
+        <h3 class="proj-title">{pUI.configTitle}</h3>
+        <p class="proj-subtitle">{pUI.configSubtitle}</p>
+      </div>
+
+      <div class="proj-field">
+        <div class="proj-field-header">
+          <label class="proj-label" for="proj-diagonal">{pUI.labelDiagonal}</label>
+          <span class="proj-unit">{pUI.labelDiagonalUnit}</span>
+        </div>
+        <input type="range" id="proj-diagonal-slider" min="30" max="300" value="100" step="1" class="proj-slider" />
+        <div class="proj-number-row">
+          <input type="number" id="proj-diagonal" value="100" min="30" max="300" class="proj-number-input" />
+          <span class="proj-number-unit">"</span>
+        </div>
+      </div>
+
+      <div class="proj-field">
+        <label class="proj-label">{pUI.labelFormat}</label>
+        <div class="proj-ratio-grid">
+          <button class="proj-ratio-btn proj-ratio-active" data-ratio="1.7778">
+            <span class="proj-ratio-icon ratio-169"></span>
+            16:9
+            <span class="proj-ratio-sub">{pUI.ratio169Sub}</span>
+          </button>
+          <button class="proj-ratio-btn" data-ratio="2.3333">
+            <span class="proj-ratio-icon ratio-219"></span>
+            21:9
+            <span class="proj-ratio-sub">{pUI.ratio219Sub}</span>
+          </button>
+          <button class="proj-ratio-btn" data-ratio="1.3333">
+            <span class="proj-ratio-icon ratio-43"></span>
+            4:3
+            <span class="proj-ratio-sub">{pUI.ratio43Sub}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="proj-field">
+        <div class="proj-field-header">
+          <label class="proj-label" for="proj-throw">{pUI.labelThrowRatio}</label>
+          <div class="proj-hint-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="proj-hint-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="proj-hint-tooltip">{pUI.throwRatioHint}</div>
+          </div>
+        </div>
+        <div class="proj-throw-row">
+          <input type="number" id="proj-throw" value="1.50" step="0.01" min="0.1" class="proj-throw-input" />
+          <span class="proj-throw-unit">: 1</span>
+        </div>
+      </div>
+
+      <div class="proj-results">
+        <div class="proj-results-grid">
+          <div>
+            <p class="proj-res-label">{pUI.labelWidth}</p>
+            <p id="proj-display-width" class="proj-res-val">{cmToM(initial.widthCm)} m</p>
+          </div>
+          <div>
+            <p class="proj-res-label">{pUI.labelHeight}</p>
+            <p id="proj-display-height" class="proj-res-val">{cmToM(initial.heightCm)} m</p>
+          </div>
+        </div>
+        <div class="proj-results-distance">
+          <p class="proj-res-label">{pUI.labelDistance}</p>
+          <p id="proj-display-distance" class="proj-distance-val">{cmToM(initial.distanceCm)} m</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-right">
+      <div class="proj-viz-dots"></div>
+      <div class="proj-sim-badge">
+        <span class="proj-sim-dot"></span>
+        <span>{pUI.simulationBadge}</span>
+      </div>
+      <svg id="proj-viz" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" class="proj-svg">
+        <defs>
+          <linearGradient id="proj-beam-grad" x1="1" y1="0.5" x2="0" y2="0.5">
+            <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"></stop>
+            <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"></stop>
+          </linearGradient>
+          <filter id="proj-glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="coloredBlur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+        <line x1="50" y1="550" x2="750" y2="550" stroke="#334155" stroke-width="2"></line>
+        <g id="proj-screen-group">
+          <line x1="60" y1="550" x2="60" y2="100" stroke="#475569" stroke-width="4" stroke-linecap="round"></line>
+          <line id="proj-viz-screen" x1="60" y1="200" x2="60" y2="400" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"></line>
+        </g>
+        <path id="proj-viz-beam" d="M400,300 L60,250 L60,350 Z" fill="url(#proj-beam-grad)" filter="url(#proj-glow)"></path>
+        <g id="proj-viz-projector" transform="translate(400, 300)">
+          <line x1="0" y1="-300" x2="0" y2="-20" stroke="#475569" stroke-width="2"></line>
+          <rect x="-30" y="-20" width="60" height="40" rx="4" fill="#1e293b" stroke="#475569" stroke-width="2"></rect>
+          <circle cx="-30" cy="0" r="10" fill="#06b6d4"></circle>
+          <circle cx="-30" cy="0" r="4" fill="#cffafe" class="proj-lens-pulse"></circle>
+        </g>
+        <text id="proj-viz-dist-text" x="230" y="540" fill="#94a3b8" font-size="14" text-anchor="middle">--m</text>
+        <line x1="60" y1="520" x2="750" y2="520" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"></line>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  import { calculateProjection, cmToM } from './logic';
+
+  let currentRatio = 16 / 9;
+
+  function setTxt(id: string, val: string) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  function updateVisuals(widthCm: number, distanceCm: number) {
+    const SCALE = 600 / 1000;
+    const screenX = 50;
+    const projX = Math.min(Math.max(screenX + distanceCm * SCALE, 100), 750);
+    const screenH = Math.min((widthCm * SCALE) / currentRatio, 200);
+
+    const projector = document.getElementById('proj-viz-projector');
+    const beam = document.getElementById('proj-viz-beam');
+    const distText = document.getElementById('proj-viz-dist-text');
+    const screen = document.getElementById('proj-viz-screen');
+
+    if (projector) projector.setAttribute('transform', `translate(${projX}, 300)`);
+    if (screen) {
+      screen.setAttribute('y1', String(300 - screenH / 2));
+      screen.setAttribute('y2', String(300 + screenH / 2));
+    }
+    if (beam) {
+      beam.setAttribute('d', `M${projX - 10},300 L${screenX + 10},${300 - screenH / 2} L${screenX + 10},${300 + screenH / 2} Z`);
+    }
+    if (distText) {
+      distText.textContent = `${(distanceCm / 100).toFixed(1)}m`;
+      distText.setAttribute('x', String((screenX + projX) / 2));
+    }
+  }
+
+  function calculate() {
+    const diagEl = document.getElementById('proj-diagonal') as HTMLInputElement | null;
+    const throwEl = document.getElementById('proj-throw') as HTMLInputElement | null;
+    if (!diagEl || !throwEl) return;
+    const d = parseFloat(diagEl.value);
+    const t = parseFloat(throwEl.value);
+    if (isNaN(d) || isNaN(t)) return;
+    const r = calculateProjection(d, currentRatio, t);
+    setTxt('proj-display-width', cmToM(r.widthCm) + ' m');
+    setTxt('proj-display-height', cmToM(r.heightCm) + ' m');
+    setTxt('proj-display-distance', cmToM(r.distanceCm) + ' m');
+    updateVisuals(r.widthCm, r.distanceCm);
+  }
+
+  function setActiveBtn(active: Element) {
+    document.querySelectorAll('.proj-ratio-btn').forEach(btn => {
+      btn.classList.toggle('proj-ratio-active', btn === active);
+    });
+  }
+
+  function attachRatioButtons() {
+    document.querySelectorAll('.proj-ratio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const r = (btn as HTMLElement).dataset.ratio;
+        if (!r) return;
+        currentRatio = parseFloat(r);
+        setActiveBtn(btn);
+        calculate();
+      });
+    });
+  }
+
+  function init() {
+    const diagInput = document.getElementById('proj-diagonal') as HTMLInputElement | null;
+    const slider = document.getElementById('proj-diagonal-slider') as HTMLInputElement | null;
+    const throwInput = document.getElementById('proj-throw') as HTMLInputElement | null;
+    if (!diagInput || !slider || !throwInput) return;
+    diagInput.addEventListener('input', () => { slider.value = diagInput.value; calculate(); });
+    slider.addEventListener('input', () => { diagInput.value = slider.value; calculate(); });
+    throwInput.addEventListener('input', calculate);
+    attachRatioButtons();
+    calculate();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .proj-wrapper {
+    --proj-p: #06b6d4;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .proj-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  @media (min-width: 768px) {
+    .proj-card {
+      flex-direction: row;
+      min-height: 580px;
+    }
+  }
+
+  .proj-left {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .proj-left {
+      width: 360px;
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .proj-right {
+    flex: 1;
+    background: #020617;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+  }
+
+  .proj-viz-dots {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .proj-sim-badge {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 20px 0;
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #94a3b8;
+  }
+
+  .proj-sim-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--proj-p);
+    animation: proj-pulse 2s infinite;
+  }
+
+  @keyframes proj-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .proj-lens-pulse {
+    animation: proj-pulse 2s infinite;
+  }
+
+  .proj-svg {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .proj-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .proj-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .proj-subtitle {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .proj-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .proj-field-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .proj-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--proj-p);
+  }
+
+  .proj-unit {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .proj-slider {
+    width: 100%;
+    height: 6px;
+    accent-color: var(--proj-p);
+    cursor: pointer;
+    border-radius: 9999px;
+  }
+
+  .proj-number-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .proj-number-input {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-main);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 4px 2rem 4px 0;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .proj-number-input:focus {
+    border-color: var(--proj-p);
+  }
+
+  .proj-number-unit {
+    position: absolute;
+    right: 4px;
+    bottom: 8px;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .proj-ratio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .proj-ratio-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .proj-ratio-btn:hover {
+    border-color: var(--proj-p);
+    color: var(--text-main);
+  }
+
+  .proj-ratio-active {
+    background: var(--proj-p);
+    color: #fff;
+    border-color: var(--proj-p);
+    box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+  }
+
+  .proj-ratio-icon {
+    display: block;
+    border: 2px solid currentcolor;
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+
+  .proj-ratio-active .proj-ratio-icon {
+    opacity: 1;
+    border-color: #fff;
+  }
+
+  .ratio-169 {
+    width: 28px;
+    height: 16px;
+  }
+
+  .ratio-219 {
+    width: 36px;
+    height: 14px;
+  }
+
+  .ratio-43 {
+    width: 20px;
+    height: 16px;
+  }
+
+  .proj-ratio-sub {
+    font-size: 0.625rem;
+    font-weight: 500;
+    opacity: 0.75;
+  }
+
+  .proj-hint-wrap {
+    position: relative;
+  }
+
+  .proj-hint-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+    cursor: help;
+  }
+
+  .proj-hint-tooltip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    right: 0;
+    width: 220px;
+    background: #1e293b;
+    color: #e2e8f0;
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 10px 12px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 10;
+    line-height: 1.5;
+  }
+
+  .proj-hint-wrap:hover .proj-hint-tooltip {
+    opacity: 1;
+  }
+
+  .proj-throw-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .proj-throw-input {
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 4px 3rem 4px 0;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .proj-throw-input:focus {
+    border-color: var(--proj-p);
+  }
+
+  .proj-throw-unit {
+    position: absolute;
+    right: 4px;
+    bottom: 10px;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+  }
+
+  .proj-results {
+    background: rgba(6, 182, 212, 0.06);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  .proj-results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+  }
+
+  .proj-res-label {
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--proj-p);
+    margin: 0 0 4px;
+  }
+
+  .proj-res-val {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .proj-distance-val {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1;
+  }
+</style>
