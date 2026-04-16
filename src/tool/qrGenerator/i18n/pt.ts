@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
+const slug = 'gerador-codigos-qr-offline';
 const title = 'Gerador de Códigos QR Offline';
 const description =
   'Gere códigos QR para WiFi, URLs e Contactos de forma 100% segura no seu navegador. Os seus dados nunca saem do seu dispositivo.';

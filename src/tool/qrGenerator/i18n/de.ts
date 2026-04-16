@@ -2,8 +2,8 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
-const title = 'Offline QR-Code Generator';
+const slug = 'offline-qr-code-generator-de';
+const title = 'Offline QR Code Generator';
 const description =
   'Erstellen Sie QR-Codes für WLAN, URLs und Kontakte 100 % sicher in Ihrem Browser. Ihre Daten verlassen niemals Ihr Gerät.';
 
@@ -137,22 +137,22 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'WLAN-QR',
+          title: 'WLAN QR',
           description: 'Teilen Sie Ihr WLAN mit Gästen, ohne das Passwort diktieren zu müssen.',
           icon: 'mdi:wifi',
           points: ['Kompatibel mit iOS und Android', 'Unterstützt WPA2, WEP und offene Netze'],
         },
         {
-          title: 'URL-QR',
-          description: 'Wandeln Sie Web-Links in scanbare Codes um. Ideal für Flyer oder Visitenkarten.',
+          title: 'URL QR',
+          description: 'Wandeln Sie Web Links in scanbare Codes um. Ideal für Flyer oder Visitenkarten.',
           icon: 'mdi:link',
           points: ['Jede gültige URL', 'Kein Ablaufdatum'],
         },
         {
-          title: 'vCard-QR',
+          title: 'vCard QR',
           description: 'Digitale Visitenkarte. Beim Scannen wird der Kontakt direkt im Adressbuch vorgeschlagen.',
           icon: 'mdi:card-account-details',
-          points: ['Name, Nummer, E-Mail, Firma', 'vCard 3.0 Standard'],
+          points: ['Name, Nummer, E Mail, Firma', 'vCard 3.0 Standard'],
         },
       ],
       columns: 3,

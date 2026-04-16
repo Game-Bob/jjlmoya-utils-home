@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
+const slug = 'qr-generator';
 const title = '오프라인 QR 코드 생성기';
 const description =
   'WiFi, URL, 연락처용 QR 코드를 웹 브라우저에서 100% 안전하게 생성하세요. 데이터가 기기 외부로 유출되지 않습니다.';

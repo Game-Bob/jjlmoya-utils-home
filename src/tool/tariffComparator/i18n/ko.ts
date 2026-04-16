@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
 
-const slug = 'electricity-tariff-comparison';
+const slug = 'electricity-tariff-comparator';
 const title = '전기 요금 비교: 고정 요금 vs 변동 요금';
 const description =
   '나에게 어떤 전기 요금제가 가장 유리한지 확인해 보세요. 연간 사용량을 기준으로 고정 요금제와 변동 요금제를 비교합니다.';

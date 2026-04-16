@@ -2,8 +2,8 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
-const title = 'Offline QR-code Generator';
+const slug = 'offline-qr-code-generator-nl';
+const title = 'Offline QR Code Generator';
 const description =
   'Genereer 100% veilig QR-codes voor WiFi, URL\'s en contacten in uw browser. Uw gegevens ver laten uw apparaat nooit.';
 

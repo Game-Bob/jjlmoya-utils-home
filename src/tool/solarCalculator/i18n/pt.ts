@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
 
-const slug = 'calculadora-solar';
+const slug = 'calculadora-inclinacao-paineis';
 const title = 'Calculadora de Inclinação de Painéis Solares';
 const description =
   'Calcule o ângulo de inclinação ideal para os seus painéis solares com base na sua latitude. Obtenha valores para instalações fixas e ajustes sazonais.';

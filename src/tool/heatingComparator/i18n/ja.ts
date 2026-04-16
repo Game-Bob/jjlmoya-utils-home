@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
 
-const slug = 'heating-comparator-gas-vs-heatpump-vs-ac';
+const slug = 'heating-consumption-comparator';
 const title = '暖房比較：ガス vs エコキュート（ヒートポンプ） vs エアコン';
 const description = 'ガス給湯器をエコキュートやエアコンに切り替えた場合の節約額を計算。実際のエネルギー消費量と効率を比較して、最適な住まいづくりをサポートします。';
 

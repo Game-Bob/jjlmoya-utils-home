@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
+const slug = 'pembuat-kode-qr-offline';
 const title = 'Pembuat Kode QR Offline';
 const description =
   'Buat kode QR untuk WiFi, URL, dan Kontak secara 100% aman di browser Anda. Data Anda tidak pernah meninggalkan perangkat Anda.';

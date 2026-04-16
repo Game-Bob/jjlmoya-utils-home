@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
 
-const slug = 'projector-distance-calculator';
+const slug = 'projector-throw-calculator';
 const title = '投影机距离计算器 — 投射比与屏幕';
 const description =
   '根据所需的屏幕尺寸和投影机投射比（Throw Ratio）计算精确的安装距离。支持实时模拟的视觉化工具。';

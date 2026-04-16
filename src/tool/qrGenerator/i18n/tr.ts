@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
+const slug = 'cevrimdisi-qr-kod-olusturucu';
 const title = 'Çevrimdışı QR Kod Oluşturucu';
 const description =
   'WiFi, URL ve Kişiler için tarayıcınızda %100 güvenli QR kodları oluşturun. Verileriniz asla cihazınızdan dışarı çıkmaz.';

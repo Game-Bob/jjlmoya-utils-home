@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
 
-const slug = 'kalkulator-solar';
+const slug = 'kalkulator-paneli-slonecznych';
 const title = 'Kalkulator Nachylenia Paneli Słonecznych';
 const description =
   'Oblicz optymalny kąt nachylenia paneli słonecznych na podstawie Twojej szerokości geograficznej. Wyniki dla instalacji stałych i okresowych.';

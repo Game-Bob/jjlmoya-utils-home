@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
 
-const slug = 'heating-comparator-gas-vs-heatpump-vs-ac';
+const slug = 'heating-consumption-comparator';
 const title = '난방 비교: 가스 vs 공기열 히트펌프 vs 에어컨';
 const description = '가스 보일러를 히트펌프나 에어컨으로 교체했을 때의 절약액을 계산해 보세요. 실제 에너지 소비량과 효율을 비교하여 최적의 난방 방식을 제안합니다.';
 

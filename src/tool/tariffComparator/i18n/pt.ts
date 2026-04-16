@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
 
-const slug = 'comparador-tarifas-luz';
+const slug = 'comparador-tarifas-eletricidade';
 const title = 'Comparador de Tarifas de Eletricidade: Mercado Livre vs Regulado';
 const description =
   'Descubra qual a tarifa de luz que mais lhe convém. Compare o mercado regulado vs mercado livre com base no seu consumo anual.';

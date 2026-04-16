@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
+const slug = 'qr-generator';
 const title = '离线 QR 码生成器';
 const description =
   '在您的浏览器中 100% 安全地生成 WiFi、URL 和联系人的 QR 码。您的数据绝不会离开您的设备。';

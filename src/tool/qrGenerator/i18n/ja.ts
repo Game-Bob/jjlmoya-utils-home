@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'qr';
+const slug = 'qr-generator';
 const title = 'オフラインQRコード作成';
 const description =
   'WiFi、URL、連絡先用のQRコードをブラウザ内で100%安全に作成。データがデバイスの外に送信されることはありません。';

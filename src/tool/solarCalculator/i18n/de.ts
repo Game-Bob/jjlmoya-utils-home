@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
 
 const slug = 'solar-neigung-rechner';
-const title = 'Solarpanel-Neigungsrechner';
+const title = 'Solarpanel Neigungsrechner';
 const description =
   'Berechnen Sie den optimalen Neigungswinkel für Ihre Solarmodule basierend auf Ihrem Breitengrad. Für feste Installationen und saisonale Anpassungen.';
 

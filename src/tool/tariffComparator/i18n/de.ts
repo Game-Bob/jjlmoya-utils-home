@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
 
 const slug = 'stromtarif-vergleich';
-const title = 'Stromtarif-Vergleich: Festpreis vs. Dynamisch';
+const title = 'Stromtarif Vergleich: Festpreis vs. Dynamisch';
 const description =
   'Finden Sie heraus, welcher Stromtarif am besten zu Ihnen passt. Vergleichen Sie Festpreise mit dynamischen Tarifen basierend auf Ihrem Verbrauch.';
 

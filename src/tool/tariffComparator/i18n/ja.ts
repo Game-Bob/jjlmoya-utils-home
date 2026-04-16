@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
 
-const slug = 'electricity-tariff-comparison';
+const slug = 'electricity-tariff-comparator';
 const title = '電気料金比較：自由市場 vs 規制料金';
 const description =
   'どちらの電気料金プランがあなたに最適かを見つけましょう。消費電力に基づいて自由市場プランと規制プランを比較します。';

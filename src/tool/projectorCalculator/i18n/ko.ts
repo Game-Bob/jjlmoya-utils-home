@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
 
-const slug = 'projector-distance-calculator';
+const slug = 'projector-throw-calculator';
 const title = '프로젝터 투사거리 계산기 — 화면 크기 및 위치';
 const description =
   '원하는 화면 크기와 프로젝터의 투사비(Throw Ratio)에 따른 정확한 설치 거리를 계산해 보세요. 실시간 시뮬레이션 기능을 제공합니다.';

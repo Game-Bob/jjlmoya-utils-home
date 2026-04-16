@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
 
-const slug = 'solar-calculator';
+const slug = 'solar-panel-calculator';
 const title = '태양광 패널 각도 계산기';
 const description =
   '지역 위도에 따른 태양광 패널의 최적 기울기 각도를 계산합니다. 고정식 설치 및 계절별 조정 값을 확인해 보세요.';

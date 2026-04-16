@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
 
-const slug = 'projector-distance-calculator';
+const slug = 'projector-throw-calculator';
 const title = 'プロジェクター設置距離計算機 — 投写距離と画面サイズ';
 const description =
   '希望のスクリーンサイズと投写比（Throw Ratio）に基づいて、プロジェクターの正確な設置距離を計算。リアルタイムシミュレーション機能を搭載。';

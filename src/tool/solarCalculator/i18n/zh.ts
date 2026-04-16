@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
 
-const slug = 'solar-calculator';
+const slug = 'solar-panel-calculator';
 const title = '太阳能电池板倾斜角计算器';
 const description =
   '根据您所在的地理纬度计算太阳能电池板的最佳倾斜角度。获取固定安装和季节性调整的数值。';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
 
-const slug = 'heating-comparator-gas-vs-heatpump-vs-ac';
+const slug = 'heating-consumption-comparator';
 const title = '暖房方式对比：天然气 vs 空气源热泵 vs 空调';
 const description = '计算将燃气锅炉更换为空气源热泵或空调后的省钱金额。为您提供家庭能源消耗与效率的真实对比。';
 

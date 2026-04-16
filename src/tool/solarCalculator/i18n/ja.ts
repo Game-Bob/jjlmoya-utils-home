@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
 
-const slug = 'solar-calculator';
+const slug = 'solar-panel-calculator';
 const title = 'ソーラーパネル傾斜角計算機';
 const description =
   '緯度に基づいてソーラーパネルの最適な傾斜角を計算します。固定設置および季節ごとの調整値を取得できます。';

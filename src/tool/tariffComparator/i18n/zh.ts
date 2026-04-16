@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
 
-const slug = 'electricity-tariff-comparison';
+const slug = 'electricity-tariff-comparator';
 const title = '电费套餐对比：自由市场 vs 监管市场';
 const description =
   '了解哪种电费套餐最适合您。根据您的实际用电量对比自由市场套餐与监管市场套餐。';
