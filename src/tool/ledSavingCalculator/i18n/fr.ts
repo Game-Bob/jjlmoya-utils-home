@@ -172,7 +172,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     },
     {
       type: 'summary',
-      title: 'Avantages du LED Au-delà de l\'Argent',
+      title: 'Avantages du LED Au delà de l\'Argent',
       items: [
         "Durée de vie extrême : une LED de qualité peut durer plus de 15 ans à 4h/jour.",
         "Éclairage instantané à 100%, sans temps de chauffe ni scintillements.",

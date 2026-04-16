@@ -124,7 +124,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'The Magnus-Tetens Formula',
+          title: 'The Magnus Tetens Formula',
           description: 'To calculate the dew point with scientific accuracy we use the Magnus-Tetens approximation, with constants b=17.625 and c=243.04°C recommended by the World Meteorological Organization for temperatures between 0°C and 50°C.',
           icon: 'mdi:calculator',
           points: ['Scientific accuracy validated by the WMO', 'Valid for residential temperature ranges'],

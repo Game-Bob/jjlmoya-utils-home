@@ -119,7 +119,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: "Qu'est-ce que le Throw Ratio ?",
+          title: "Qu est ce que le Throw Ratio ?",
           description: "Le rapport entre la distance de projection et la largeur de l'image. Un TR de 1.5 signifie qu'il faut 1.5m de distance par mètre de largeur d'écran.",
           icon: 'mdi:ruler',
           points: ['TR < 1 : Short Throw, idéal pour les petits espaces', 'TR 1–2 : Standard pour salons et salles de réunion', "TR > 2 : Long Throw, pour les grands auditoriums"],

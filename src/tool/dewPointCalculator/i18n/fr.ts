@@ -124,7 +124,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'La Formule de Magnus-Tetens',
+          title: 'La Formule de Magnus Tetens',
           description: "Pour calculer le point de rosée avec précision scientifique, nous utilisons l'approximation de Magnus-Tetens, avec les constantes b=17,625 et c=243,04°C recommandées par l'Organisation Météorologique Mondiale pour des températures entre 0°C et 50°C.",
           icon: 'mdi:calculator',
           points: ["Précision scientifique validée par l'OMM", 'Valide pour les plages de température résidentielles'],

@@ -124,7 +124,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'La Fórmula de Magnus-Tetens',
+          title: 'La Fórmula de Magnus Tetens',
           description: 'Para calcular el punto de rocío con precisión científica utilizamos la aproximación de Magnus-Tetens, con constantes b=17.625 y c=243.04°C recomendadas por la Organización Meteorológica Mundial para temperaturas entre 0°C y 50°C.',
           icon: 'mdi:calculator',
           points: ['Precisión científica validada por la OMM', 'Válida para rangos de temperatura habitacional'],
