@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
 
-const slug = 'perbandingan-pemanas-gas-vs-pompa-panas-vs-ac';
+const slug = 'perbandingan-pemanas-gas-pompa-panas-aircond';
 const title = 'Perbandingan Gas vs. Pompa Panas vs. AC: Hemat & Konsumsi';
 const description = 'Hitung berapa banyak Anda berhemat dengan mengganti boiler gas ke pompa panas atau AC. Perbandingan nyata konsumsi energi dan efisiensi untuk rumah Anda.';
 

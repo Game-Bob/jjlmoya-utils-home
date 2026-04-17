@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
 
-const slug = 'oflayn-qr-kod-generator-ru';
+const slug = 'oflayn-qr-kod-generator';
 const title = 'Оффлайн Генератор QR кодов';
 const description =
   'Создавайте QR-коды для WiFi, URL и Контактов полностью безопасно в вашем браузере. Ваши данные никогда не покидают устройство.';
