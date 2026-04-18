@@ -1,12 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { homeCategory as toolsCategory } from '../category/index';
-import type { CategoryLocaleContent } from '../types';
 
 const EXPECTED_LOCALES = [
   'de', 'en', 'es', 'fr', 'id', 'it', 'ja', 'ko', 'nl', 'pl', 'pt', 'ru', 'sv', 'tr', 'zh'
 ];
 
-const sharingLocales = ['ja', 'ko', 'zh'];
 
 describe('Category Validation', () => {
   it('should have all 15 required locales', () => {
