@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import DewPointCalculatorComponent from './component.astro';
-import DewPointCalculatorSEO from './seo.astro';
-import DewPointCalculatorBibliography from './bibliography.astro';
 
 import type { DewPointCalculatorUI } from './ui';
 
@@ -34,11 +31,10 @@ export const dewPointCalculator: HomeToolEntry<DewPointCalculatorUI> = {
   },
 };
 
-export { DewPointCalculatorComponent, DewPointCalculatorSEO, DewPointCalculatorBibliography };
 
 export const DEW_POINT_CALCULATOR_TOOL: ToolDefinition = {
   entry: dewPointCalculator,
-  Component: DewPointCalculatorComponent,
-  SEOComponent: DewPointCalculatorSEO,
-  BibliographyComponent: DewPointCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

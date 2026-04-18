@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import LedSavingCalculatorComponent from './component.astro';
-import LedSavingCalculatorSEO from './seo.astro';
-import LedSavingCalculatorBibliography from './bibliography.astro';
 
 import type { LedSavingCalculatorUI } from './ui';
 
@@ -33,11 +30,10 @@ export const ledSavingCalculator: HomeToolEntry<LedSavingCalculatorUI> = {
   },
 };
 
-export { LedSavingCalculatorComponent, LedSavingCalculatorSEO, LedSavingCalculatorBibliography };
 
 export const LED_SAVING_CALCULATOR_TOOL: ToolDefinition = {
   entry: ledSavingCalculator,
-  Component: LedSavingCalculatorComponent,
-  SEOComponent: LedSavingCalculatorSEO,
-  BibliographyComponent: LedSavingCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

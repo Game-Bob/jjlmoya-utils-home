@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import HeatingComparatorComponent from './component.astro';
-import HeatingComparatorSEO from './seo.astro';
-import HeatingComparatorBibliography from './bibliography.astro';
 
 import type { HeatingComparatorUI } from './ui';
 
@@ -32,11 +29,10 @@ export const heatingComparator: HomeToolEntry<HeatingComparatorUI> = {
   },
 };
 
-export { HeatingComparatorComponent, HeatingComparatorSEO, HeatingComparatorBibliography };
 
 export const HEATING_COMPARATOR_TOOL: ToolDefinition = {
   entry: heatingComparator,
-  Component: HeatingComparatorComponent,
-  SEOComponent: HeatingComparatorSEO,
-  BibliographyComponent: HeatingComparatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import QRGeneratorComponent from './component.astro';
-import QRGeneratorSEO from './seo.astro';
-import QRGeneratorBibliography from './bibliography.astro';
 
 import type { QRGeneratorUI } from './ui';
 
@@ -32,11 +29,10 @@ export const qrGenerator: HomeToolEntry<QRGeneratorUI> = {
   },
 };
 
-export { QRGeneratorComponent, QRGeneratorSEO, QRGeneratorBibliography };
 
 export const QR_GENERATOR_TOOL: ToolDefinition = {
   entry: qrGenerator,
-  Component: QRGeneratorComponent,
-  SEOComponent: QRGeneratorSEO,
-  BibliographyComponent: QRGeneratorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

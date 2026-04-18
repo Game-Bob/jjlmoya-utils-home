@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import ProjectorCalculatorComponent from './component.astro';
-import ProjectorCalculatorSEO from './seo.astro';
-import ProjectorCalculatorBibliography from './bibliography.astro';
 
 import type { ProjectorCalculatorUI } from './ui';
 
@@ -33,11 +30,10 @@ export const projectorCalculator: HomeToolEntry<ProjectorCalculatorUI> = {
   },
 };
 
-export { ProjectorCalculatorComponent, ProjectorCalculatorSEO, ProjectorCalculatorBibliography };
 
 export const PROJECTOR_CALCULATOR_TOOL: ToolDefinition = {
   entry: projectorCalculator,
-  Component: ProjectorCalculatorComponent,
-  SEOComponent: ProjectorCalculatorSEO,
-  BibliographyComponent: ProjectorCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

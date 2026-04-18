@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import SolarCalculatorComponent from './component.astro';
-import SolarCalculatorSEO from './seo.astro';
-import SolarCalculatorBibliography from './bibliography.astro';
 
 import type { SolarCalculatorUI } from './ui';
 
@@ -32,11 +29,10 @@ export const solarCalculator: HomeToolEntry<SolarCalculatorUI> = {
   },
 };
 
-export { SolarCalculatorComponent, SolarCalculatorSEO, SolarCalculatorBibliography };
 
 export const SOLAR_CALCULATOR_TOOL: ToolDefinition = {
   entry: solarCalculator,
-  Component: SolarCalculatorComponent,
-  SEOComponent: SolarCalculatorSEO,
-  BibliographyComponent: SolarCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,7 +1,4 @@
 import type { HomeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import TariffComparatorComponent from './component.astro';
-import TariffComparatorSEO from './seo.astro';
-import TariffComparatorBibliography from './bibliography.astro';
 
 import type { TariffComparatorUI } from './ui';
 
@@ -33,11 +30,10 @@ export const tariffComparator: HomeToolEntry<TariffComparatorUI> = {
   },
 };
 
-export { TariffComparatorComponent, TariffComparatorSEO, TariffComparatorBibliography };
 
 export const TARIFF_COMPARATOR_TOOL: ToolDefinition = {
   entry: tariffComparator,
-  Component: TariffComparatorComponent,
-  SEOComponent: TariffComparatorSEO,
-  BibliographyComponent: TariffComparatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
