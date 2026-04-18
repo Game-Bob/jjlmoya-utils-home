@@ -1,3 +1,4 @@
+export { ALL_ENTRIES } from './entries';
 import type { ToolDefinition } from './types';
 import { QR_GENERATOR_TOOL } from './tool/qrGenerator/index';
 import { SOLAR_CALCULATOR_TOOL } from './tool/solarCalculator/index';
@@ -17,4 +18,3 @@ export const ALL_TOOLS: ToolDefinition[] = [
   HEATING_COMPARATOR_TOOL,
 ];
 
-export const ALL_ENTRIES = ALL_TOOLS.map(t => t.entry);
