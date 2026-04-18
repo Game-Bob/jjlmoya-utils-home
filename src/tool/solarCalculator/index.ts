@@ -1,3 +1,4 @@
+import { solarCalculator } from './entry';
 export * from './entry';
 export const SOLAR_CALCULATOR_TOOL: ToolDefinition = {
   entry: solarCalculator,

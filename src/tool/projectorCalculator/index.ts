@@ -1,3 +1,4 @@
+import { projectorCalculator } from './entry';
 export * from './entry';
 export const PROJECTOR_CALCULATOR_TOOL: ToolDefinition = {
   entry: projectorCalculator,

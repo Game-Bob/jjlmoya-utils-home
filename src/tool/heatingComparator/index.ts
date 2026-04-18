@@ -1,3 +1,4 @@
+import { heatingComparator } from './entry';
 export * from './entry';
 export const HEATING_COMPARATOR_TOOL: ToolDefinition = {
   entry: heatingComparator,
