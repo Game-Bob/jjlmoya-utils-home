@@ -15,7 +15,7 @@ export type {
   ToolDefinition,
 } from './types';
 
-export { ALL_TOOLS } from './tools';
+export { ALL_ENTRIES, ALL_TOOLS } from './tools';
 
 export { QRGeneratorComponent, QRGeneratorSEO, QRGeneratorBibliography, QR_GENERATOR_TOOL } from './tool/qrGenerator';
 export { SolarCalculatorComponent, SolarCalculatorSEO, SolarCalculatorBibliography, SOLAR_CALCULATOR_TOOL } from './tool/solarCalculator';
