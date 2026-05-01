@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'energietarief-vergelijker';
 const title = 'Energietarief Vergelijker: Vast vs. Variabel';
@@ -77,12 +78,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Referenties',
-  bibliography: [
-    { name: 'ACM ConsuWijzer', url: 'https://www.consuwijzer.nl' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

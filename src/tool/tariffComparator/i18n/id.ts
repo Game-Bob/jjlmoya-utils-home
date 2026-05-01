@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'perbandingan-tarif-listrik';
 const title = 'Perbandingan Tarif Listrik: Pasar Bebas vs Teratur';
@@ -77,12 +78,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Daftar Pustaka',
-  bibliography: [
-    { name: 'Portal Energi Nasional', url: 'https://www.esdm.go.id' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

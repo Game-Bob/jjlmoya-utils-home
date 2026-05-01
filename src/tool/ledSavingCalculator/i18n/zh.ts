@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LedSavingCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'led-saving-calculator';
 const title = 'LED节电与省钱计算器';
@@ -92,19 +93,8 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '参考资料',
-  bibliography: [
-    {
-      name: '中国能效标识网',
-      url: 'http://www.energylabel.gov.cn/',
-    },
-    {
-      name: 'IEA (国际能源署) 节能指南',
-      url: 'https://www.iea.org/topics/energy-efficiency',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

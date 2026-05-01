@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'confronto-tariffe-luce';
 const title = 'Confrontatore Tariffe Luce: Mercato Libero vs Tutelato';
@@ -77,12 +78,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    { name: 'ARERA — Portale Offerte', url: 'https://www.arera.it' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

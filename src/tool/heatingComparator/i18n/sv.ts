@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'jamforelse-uppvarmning-gas-varmepump-luftkonditionering';
 const title = 'Jämför Gas vs Värmepump vs Luftkonditionering: Spara & Förbrukning';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor och referenser',
-  bibliography: [
-    {
-      name: 'Energimyndigheten: Värma upp hus',
-      url: 'https://www.energimyndigheten.se/test/varmepumpar/',
-    },
-    {
-      name: 'Svenska Kyl- & Värmepumpföreningen',
-      url: 'https://skvp.se/',
-    },
-    {
-      name: 'Konsumentverket: Guide till värmepumpar',
-      url: 'https://www.hallakonsument.se/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

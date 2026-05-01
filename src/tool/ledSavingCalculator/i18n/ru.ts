@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LedSavingCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulyator-ekonomii-led';
 const title = 'Калькулятор экономии LED';
@@ -92,19 +93,8 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    {
-      name: 'Энергосбережение — портал Россетей',
-      url: 'https://rosseti.ru/',
-    },
-    {
-      name: 'Энергетическая маркировка ЕС для ламп',
-      url: 'https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/energy-label-and-ecodesign/energy-efficient-products_en',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

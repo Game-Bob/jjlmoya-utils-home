@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'projector-throw-calculator';
 const title = 'プロジェクター設置距離計算機 — 投写距離と画面サイズ';
@@ -86,13 +87,8 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    { name: 'Projector Central — Throw Distance Calculator', url: 'https://www.projectorcentral.com/projection-calculator-pro.cfm' },
-    { name: 'Epson — 投写距離シミュレーター', url: 'https://epson.com/' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'heating-consumption-comparator';
 const title = '난방 비교: 가스 vs 공기열 히트펌프 vs 에어컨';
@@ -77,19 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '참고 문헌 및 자료',
-  bibliography: [
-    {
-      name: '한국에너지공단: 에너지 효율 가이드',
-      url: 'https://www.energy.or.kr/',
-    },
-    {
-      name: 'IEA: 히트펌프의 미래 보고서',
-      url: 'https://www.iea.org/reports/the-future-of-heat-pumps',
-    },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

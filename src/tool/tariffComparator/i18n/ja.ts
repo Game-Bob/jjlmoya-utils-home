@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'electricity-tariff-comparator';
 const title = '電気料金比較：自由市場 vs 規制料金';
@@ -77,12 +78,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    { name: '資源エネルギー庁 — 料金プラン比較', url: 'https://www.enecho.meti.go.jp' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'porownanie-taryf-pradu';
 const title = 'Porównywarka Taryf Prądu: Rynek Wolny vs Regulowany';
@@ -77,12 +78,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    { name: 'URE — Urząd Regulacji Energetyki', url: 'https://www.ure.gov.pl' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

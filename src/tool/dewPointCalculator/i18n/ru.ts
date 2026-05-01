@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { DewPointCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'tochka-rosy';
 const title = 'Калькулятор Точки Росы';
@@ -81,19 +82,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    {
-      name: 'Приближение Магнуса для точки росы',
-      url: 'https://ru.wikipedia.org/wiki/Точка_росы',
-    },
-    {
-      name: 'WMO Guide to Meteorological Instruments',
-      url: 'https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/instruments-and-methods-of-observation-programme-imop/guide-instruments-and-methods-of-observation-wmo-no-8',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

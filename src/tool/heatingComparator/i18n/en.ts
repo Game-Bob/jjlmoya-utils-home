@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'heating-consumption-comparator';
 const title = 'Gas vs. Heat Pump vs. AC: Savings & Consumption Comparator';
@@ -82,19 +83,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliography',
-  bibliography: [
-    {
-      name: 'IEA: The Future of Heat Pumps',
-      url: 'https://www.iea.org/reports/the-future-of-heat-pumps',
-    },
-    {
-      name: 'Energy Saving Trust: Air Source Heat Pumps',
-      url: 'https://energysavingtrust.org.uk/advice/air-source-heat-pumps/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

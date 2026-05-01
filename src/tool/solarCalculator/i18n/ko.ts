@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'solar-panel-calculator';
 const title = '태양광 패널 각도 계산기';
@@ -77,13 +78,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '참고 자료',
-  bibliography: [
-    { name: 'PVGIS — 유럽 연합 태양광 도구', url: 'https://re.jrc.ec.europa.eu/pvgis/' },
-    { name: 'PVWatts 계산기', url: 'https://pvwatts.nrel.gov/' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

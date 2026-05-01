@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LedSavingCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-poupanca-led';
 const title = 'Calculadora de Poupança LED';
@@ -92,19 +93,8 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'Eficiência Energética — ADENE (Portugal)',
-      url: 'https://www.adene.pt/',
-    },
-    {
-      name: 'Etiquetagem Energética UE',
-      url: 'https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/energy-label-and-ecodesign/energy-efficient-products_pt',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

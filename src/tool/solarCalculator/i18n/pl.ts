@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-paneli-slonecznych';
 const title = 'Kalkulator Nachylenia Paneli Słonecznych';
@@ -77,13 +78,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    { name: 'PVGIS — Europejskie narzędzie solarne', url: 'https://re.jrc.ec.europa.eu/pvgis/' },
-    { name: 'PVWatts Calculator', url: 'https://pvwatts.nrel.gov/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

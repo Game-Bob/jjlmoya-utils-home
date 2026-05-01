@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { DewPointCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'ponto-de-orvalho';
 const title = 'Calculadora de Ponto de Orvalho';
@@ -81,19 +82,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'Magnus Approximation of the Dew-Point — Meteorological Applications',
-      url: 'https://en.wikipedia.org/wiki/Dew_point',
-    },
-    {
-      name: 'Guide to Meteorological Instruments and Methods of Observation — WMO',
-      url: 'https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/instruments-and-methods-of-observation-programme-imop/guide-instruments-and-methods-of-observation-wmo-no-8',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

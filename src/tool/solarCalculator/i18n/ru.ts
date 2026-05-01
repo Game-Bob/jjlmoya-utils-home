@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'solnechnyj-kalkulyator';
 const title = 'Калькулятор наклона солнечных панелей';
@@ -68,12 +69,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    { name: 'PVGIS Tool — European Commission', url: 'https://re.jrc.ec.europa.eu/pvgis/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-solar';
 const title = 'Kalkulator Kemiringan Panel Surya';
@@ -82,13 +83,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Daftar Pustaka',
-  bibliography: [
-    { name: 'NREL PVWatts Calculator', url: 'https://pvwatts.nrel.gov/' },
-    { name: 'PVGIS — European Commission Solar Tool', url: 'https://re.jrc.ec.europa.eu/pvgis/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'projektsiyon-mesafe-hesaplama';
 const title = 'Projeksiyon Mesafe Hesaplayıcı — Atım Oranı';
@@ -86,13 +87,8 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynakça',
-  bibliography: [
-    { name: 'Projector Central — Throw Distance Calculator', url: 'https://www.projectorcentral.com/projection-calculator-pro.cfm' },
-    { name: 'Epson Kurulum Rehberi', url: 'https://epson.com/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

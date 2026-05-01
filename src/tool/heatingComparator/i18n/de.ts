@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'heizungs-vergleich-gas-vs-waermepumpe';
 const title = 'Heizungsvergleich: Gas vs. Wärmepumpe vs. Klimaanlage';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Literaturverzeichnis',
-  bibliography: [
-    {
-      name: 'Verband der deutschen Heizungsindustrie',
-      url: 'https://www.vdzev.de/',
-    },
-    {
-      name: 'Verbraucherzentrale: Heizungsvergleich',
-      url: 'https://www.verbraucherzentrale.de/wissen/energie/heizen-und-warmwasser/welche-heizung-fuer-ihr-haus-welche-moeglichkeiten-gibt-es-13009',
-    },
-    {
-      name: 'Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA): Förderung',
-      url: 'https://www.bafa.de/DE/Energie/Energieeffizienz/Waermentz/waermentz_node.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

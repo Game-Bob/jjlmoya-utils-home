@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'comparador-tarifas-luz';
 const title = 'Comparador de Tarifas de Luz: Mercado Libre vs PVPC';
@@ -86,16 +87,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografía',
-  bibliography: [
-    { name: 'Red Eléctrica de España (REE) — ESIOS: Seguimiento del PVPC', url: 'https://www.esios.ree.es/es' },
-    { name: 'CNMC: Portal de comparación de ofertas de energía', url: 'https://comparador.cnmc.gob.es/' },
-    { name: 'MITECO: Bono Social y legislación energética', url: 'https://www.miteco.gob.es/' },
-    { name: 'IDAE: Guías prácticas de ahorro y autoconsumo', url: 'https://www.idae.es/' },
-    { name: 'OMIE: Precios horarios del mercado diario de electricidad', url: 'https://www.omie.es/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

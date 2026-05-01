@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'confronto-riscaldamento-gas-pompa-calore-aria';
 const title = 'Confronto Gas vs. Pompa di Calore vs. Aria Condizionata';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia e Fonti',
-  bibliography: [
-    {
-      name: 'ENEA: Guida alle Pompe di Calore',
-      url: 'https://www.enea.it/it/seguici/le-guide-per-l-efficienza-energetica',
-    },
-    {
-      name: 'ARERA: Portale Offerte Luce e Gas',
-      url: 'https://www.ilportaleofferte.it/',
-    },
-    {
-      name: 'GSE: Incentivi per la riqualificazione energetica',
-      url: 'https://www.gse.it/servizi-per-te/efficienza-energetica',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LedSavingCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculateur-economies-led';
 const title = "Calculateur d'Économies LED";
@@ -97,23 +98,8 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: "Guide d'Éclairage Efficace — IDAE (Espagne)",
-      url: 'https://www.idae.es/publicaciones/guia-tecnica-de-eficiencia-energetica-en-iluminacion-oficinas',
-    },
-    {
-      name: 'Étiquetage Énergétique des Lampes — Union Européenne',
-      url: 'https://www.boe.es/buscar/doc.php?id=DOUE-L-2019-81875',
-    },
-    {
-      name: "Calculateur de Consommation Électrique — OCU",
-      url: 'https://www.ocu.org/vivienda-y-energia/gas-luz/calculadora/consumo-stand-by',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

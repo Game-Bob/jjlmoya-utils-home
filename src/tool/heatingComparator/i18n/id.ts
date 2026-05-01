@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'perbandingan-pemanas-gas-pompa-panas-aircond';
 const title = 'Perbandingan Gas vs. Pompa Panas vs. AC: Hemat & Konsumsi';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Daftar Pustaka',
-  bibliography: [
-    {
-      name: 'IEA: Masa Depan Pompa Panas',
-      url: 'https://www.iea.org/reports/the-future-of-heat-pumps',
-    },
-    {
-      name: 'Energy Saving Trust: Panduan Pompa Panas',
-      url: 'https://energysavingtrust.org.uk/advice/air-source-heat-pumps/',
-    },
-    {
-      name: 'Pusat Data dan Teknologi Informasi ESDM',
-      url: 'https://www.esdm.go.id/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

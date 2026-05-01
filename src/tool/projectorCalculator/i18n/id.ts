@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-jarak-proyektor';
 const title = 'Kalkulator Jarak Proyektor — Tembakan dan Layar';
@@ -86,14 +87,8 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Daftar Pustaka',
-  bibliography: [
-    { name: 'Projector Central — Throw Distance Calculator', url: 'https://www.projectorcentral.com/projection-calculator-pro.cfm' },
-    { name: 'Epson — Panduan Jarak Proyeksi', url: 'https://epson.com/' },
-    { name: 'BenQ — Pusat Pengetahuan', url: 'https://www.benq.com/en-us/knowledge-center/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

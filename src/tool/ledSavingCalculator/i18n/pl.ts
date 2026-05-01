@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LedSavingCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-oszczednosci-led';
 const title = 'Kalkulator Oszczędności LED';
@@ -92,19 +93,8 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'Efektywność Energetyczna — Ministerstwo Klimatu',
-      url: 'https://www.gov.pl/web/klimat/efektywnosc-energetyczna',
-    },
-    {
-      name: 'Etykiety Energetyczne UE',
-      url: 'https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/energy-label-and-ecodesign/energy-efficient-products_pl',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

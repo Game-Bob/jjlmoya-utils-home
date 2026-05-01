@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'verwarmingsvergelijker-gas-vs-warmtepomp-vs-airco';
 const title = 'Vergelijker Gas vs. Warmtepomp vs. Airco: Kosten en Besparing';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen en Referenties',
-  bibliography: [
-    {
-      name: 'Milieu Centraal: Warmtepomp gids',
-      url: 'https://www.milieucentraal.nl/energie-besparen/duurzaam-verwarmen-en-koelen/warmtepomp/',
-    },
-    {
-      name: 'RVO: Energieprijzen en Subsidies',
-      url: 'https://www.rvo.nl/onderwerpen/isde',
-    },
-    {
-      name: 'Consumentenbond: CV-ketel of warmtepomp?',
-      url: 'https://www.consumentenbond.nl/warmtepomp',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

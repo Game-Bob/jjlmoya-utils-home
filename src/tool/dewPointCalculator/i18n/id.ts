@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { DewPointCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'titik-embun';
 const title = 'Kalkulator Titik Embun';
@@ -81,19 +82,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Daftar Pustaka',
-  bibliography: [
-    {
-      name: 'Aproksimasi Magnus untuk Titik Embun',
-      url: 'https://id.wikipedia.org/wiki/Titik_embun',
-    },
-    {
-      name: 'WMO Guide to Meteorological Instruments',
-      url: 'https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/instruments-and-methods-of-observation-programme-imop/guide-instruments-and-methods-of-observation-wmo-no-8',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

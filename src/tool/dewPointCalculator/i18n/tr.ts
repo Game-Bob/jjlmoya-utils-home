@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { DewPointCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'ciglesme-noktasi-hesaplama';
 const title = 'Çiğleşme Noktası Hesaplayıcı';
@@ -81,19 +82,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynakça',
-  bibliography: [
-    {
-      name: 'Magnus-Tetens Çiğleşme Noktası Yaklaşımı',
-      url: 'https://tr.wikipedia.org/wiki/Çiğ_noktası',
-    },
-    {
-      name: 'Dünya Meteoroloji Örgütü (WMO) Gözlem Rehberi',
-      url: 'https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/instruments-and-methods-of-observation-programme-imop/guide-instruments-and-methods-of-observation-wmo-no-8',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

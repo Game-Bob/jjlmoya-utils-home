@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'projector-throw-calculator';
 const title = '프로젝터 투사거리 계산기 — 화면 크기 및 위치';
@@ -86,13 +87,8 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '참고 자료',
-  bibliography: [
-    { name: 'Projector Central — 투사거리 계산기', url: 'https://www.projectorcentral.com/projection-calculator-pro.cfm' },
-    { name: 'Epson 투사 시뮬레이터', url: 'https://epson.com/' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

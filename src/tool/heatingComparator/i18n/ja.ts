@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'heating-consumption-comparator';
 const title = '暖房比較：ガス vs エコキュート（ヒートポンプ） vs エアコン';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  faq: faqData,
-  bibliographyTitle: '参考文献・リソース',
-  bibliography: [
-    {
-      name: '資源エネルギー庁：省エネポータル',
-      url: 'https://www.enecho.meti.go.jp/category/saving_and_new/saving/',
-    },
-    {
-      name: '一般財団法人 ヒートポンプ・蓄熱センター',
-      url: 'https://www.hptcj.or.jp/',
-    },
-    {
-      name: '電力・ガス比較サイト（価格.comなど）',
-      url: 'https://kakaku.com/energy/',
-    },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

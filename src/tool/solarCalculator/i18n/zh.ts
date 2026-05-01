@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'solar-panel-calculator';
 const title = '太阳能电池板倾斜角计算器';
@@ -77,13 +78,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
-  faq: faqData,
-  bibliographyTitle: '参考资料',
-  bibliography: [
-    { name: 'NREL PVWatts 计算器', url: 'https://pvwatts.nrel.gov/' },
-    { name: 'PVGIS — 欧盟太阳能计算工具', url: 'https://re.jrc.ec.europa.eu/pvgis/' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

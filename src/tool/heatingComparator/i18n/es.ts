@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'comparador-consumo-gas-aerotermia-aire';
 const title = 'Comparador Gas vs. Aerotermia vs. Aire: Ahorro y Consumo';
@@ -82,23 +83,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografía',
-  bibliography: [
-    {
-      name: 'IDAE: Guía de Bombas de Calor y Aerotermia',
-      url: 'https://www.idae.es/sites/default/files/documentos/publicaciones_idae/Guias_IDAE_La_Bomba_de_calor_2023_V11.pdf',
-    },
-    {
-      name: 'Portal del Consumidor: Precios de la Energía (CNMC)',
-      url: 'https://comparador.cnmc.gob.es/',
-    },
-    {
-      name: 'UNE: Eficiencia Energética en Edificios',
-      url: 'https://www.une.org/encuentra-tu-norma/busca-tu-norma/norma?c=N0060747',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

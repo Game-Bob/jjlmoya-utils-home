@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'oflayn-qr-kod-generator';
 const title = 'Оффлайн Генератор QR кодов';
@@ -86,13 +87,8 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто Задаваемые Вопросы',
-  faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    { name: 'библиотека node-qrcode', url: 'https://github.com/soldair/node-qrcode' },
-    { name: 'vCard стандарт RFC 6350', url: 'https://www.rfc-editor.org/rfc/rfc6350' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

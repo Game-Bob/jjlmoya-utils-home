@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ProjectorCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculateur-distance-projecteur';
 const title = 'Calculateur de Distance de Projection';
@@ -86,14 +87,8 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    { name: 'Projector Central — Calculateur de Distance de Projection', url: 'https://www.projectorcentral.com/projection-calculator-pro.cfm' },
-    { name: 'Epson — Guide de Distance de Projection', url: 'https://epson.com/' },
-    { name: 'BenQ — Centre de Connaissances', url: 'https://www.benq.com/en-us/knowledge-center/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

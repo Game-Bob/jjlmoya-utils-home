@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { QRGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'cevrimdisi-qr-kod-olusturucu';
 const title = 'Çevrimdışı QR Kod Oluşturucu';
@@ -86,13 +87,8 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
-  faq: faqData,
-  bibliographyTitle: 'Kaynakça',
-  bibliography: [
-    { name: 'node-qrcode kütüphanesi', url: 'https://github.com/soldair/node-qrcode' },
-    { name: 'RFC 6350: vCard Spesifikasyonu', url: 'https://www.rfc-editor.org/rfc/rfc6350' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

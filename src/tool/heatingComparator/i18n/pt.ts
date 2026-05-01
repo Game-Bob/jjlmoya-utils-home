@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'comparador-aquecimento-gas-aerotermia-ar-condicionado';
 const title = 'Comparador Gás vs. Aerotermia vs. Ar Condicionado';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia e Fontes',
-  bibliography: [
-    {
-      name: 'ADENE: Agência para a Energia',
-      url: 'https://www.adene.pt/',
-    },
-    {
-      name: 'Direção-Geral de Energia e Geologia (DGEG)',
-      url: 'https://www.dgeg.gov.pt/',
-    },
-    {
-      name: 'Portal Poupa Energia',
-      url: 'https://www.poupaenergia.pt/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

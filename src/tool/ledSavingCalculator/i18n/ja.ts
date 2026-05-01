@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LedSavingCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'led-saving-calculator';
 const title = 'LED節電・節約計算機';
@@ -92,19 +93,8 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    {
-      name: '省エネポータルサイト — 資源エネルギー庁',
-      url: 'https://www.enecho.meti.go.jp/category/saving_and_new/saving/',
-    },
-    {
-      name: 'LED照明ナビ — 日本照明工業会',
-      url: 'https://www.jlma.or.jp/led-navi/index.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

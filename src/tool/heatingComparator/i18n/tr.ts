@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'isitma-karsilastirma-dogalgaz-isi-pompasi-klima';
 const title = 'Doğalgaz vs. Isı Pompası vs. Klima Karşılaştırması';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynakça ve Kaynaklar',
-  bibliography: [
-    {
-      name: 'Enerji Verimliliği ve Çevre Dairesi Başkanlığı',
-      url: 'https://enerji.gov.tr/',
-    },
-    {
-      name: 'Isı Pompası Sistemleri Genel Rehberi',
-      url: 'https://www.iskid.org.tr/',
-    },
-    {
-      name: 'TMMOB Makina Mühendisleri Odası',
-      url: 'https://www.mmo.org.tr/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

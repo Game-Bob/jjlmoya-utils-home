@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'sravnenie-otopleniya-gaz-teplovoy-nasos-konditsioner';
 const title = 'Сравнение отопления: Газ vs Тепловой насос vs Кондиционер';
@@ -77,19 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Источники и литература',
-  bibliography: [
-    {
-      name: 'МЭА: Будущее тепловых насосов',
-      url: 'https://www.iea.org/reports/the-future-of-heat-pumps',
-    },
-    {
-      name: 'Справочник по энергосбережению в быту',
-      url: 'https://energysavingtrust.org.uk/advice/air-source-heat-pumps/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'comparateur-tarifs-electricite';
 const title = 'Comparateur de Tarifs d\'Électricité : Prix Fixe vs Prix Variable';
@@ -86,16 +87,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    { name: 'Red Eléctrica de España (REE) — ESIOS : Suivi du PVPC', url: 'https://www.esios.ree.es/es' },
-    { name: 'CNMC : Portail de comparaison des offres d\'énergie', url: 'https://comparador.cnmc.gob.es/' },
-    { name: 'MITECO : Bonus Social et législation énergétique', url: 'https://www.miteco.gob.es/' },
-    { name: 'IDAE : Guides pratiques d\'économies et d\'autoconsommation', url: 'https://www.idae.es/' },
-    { name: 'OMIE : Prix horaires du marché journalier de l\'électricité', url: 'https://www.omie.es/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

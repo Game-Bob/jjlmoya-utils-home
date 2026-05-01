@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'comparateur-consommation-chauffage';
 const title = 'Comparateur Gaz vs. Aérothermie vs. Air: Économies et Consommation';
@@ -82,19 +83,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: 'ADEME: La pompe à chaleur',
-      url: 'https://librairie.ademe.fr/chaleur-climatisation-et-ventilation/1429-pompe-a-chaleur.html',
-    },
-    {
-      name: 'Service-Public: Chauffage et climatisation',
-      url: 'https://www.service-public.fr/particuliers/vosdroits/F1710',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

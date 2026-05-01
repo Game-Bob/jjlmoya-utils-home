@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'jamfor-deltra-priser';
 const title = 'Jämför Elavtal: Rörligt vs Fast Pris';
@@ -64,12 +65,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga Frågor',
   faq: faqData,
-  bibliographyTitle: 'Referenser',
-  bibliography: [
-    { name: 'Energimarknadsinspektionen', url: 'https://www.ei.se' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

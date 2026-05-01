@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'porownanie-ogrzewania-gaz-pompa-ciepla-klimatyzacja';
 const title = 'Porównanie: Gaz vs. Pompa Ciepła vs. Klimatyzacja';
@@ -77,23 +78,8 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia i źródła',
-  bibliography: [
-    {
-      name: 'PORT PC: Polska Organizacja Rozwoju Technologii Pomp Ciepła',
-      url: 'https://portpc.pl/',
-    },
-    {
-      name: 'Program Czyste Powietrze: Dotacje do ogrzewania',
-      url: 'https://czystepowietrze.gov.pl/',
-    },
-    {
-      name: 'Urząd Regulacji Energetyki: Ceny energii',
-      url: 'https://www.ure.gov.pl/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

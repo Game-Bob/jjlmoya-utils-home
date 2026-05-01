@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'stromtarif-vergleich';
 const title = 'Stromtarif Vergleich: Festpreis vs. Dynamisch';
@@ -77,12 +78,8 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
-  faq: faqData,
-  bibliographyTitle: 'Quellen',
-  bibliography: [
-    { name: 'Bundesnetzagentur — Stromtarife', url: 'https://www.bundesnetzagentur.de' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

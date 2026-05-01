@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SolarCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'solar-neigung-rechner';
 const title = 'Solarpanel Neigungsrechner';
@@ -82,13 +83,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
-  faq: faqData,
-  bibliographyTitle: 'Quellen',
-  bibliography: [
-    { name: 'NREL PVWatts Rechner', url: 'https://pvwatts.nrel.gov/' },
-    { name: 'PVGIS — Europäisches Solar-Tool', url: 'https://re.jrc.ec.europa.eu/pvgis/' },
-  ],
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
