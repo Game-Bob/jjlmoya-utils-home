@@ -1,10 +1,6 @@
 {
     "name": "@jjlmoya/utils-home",
-<<<<<<< HEAD
-    "version": "1.17.0",
-=======
     "version": "1.19.0",
->>>>>>> 638938e0bbab6839d130035682549e1b3f4a5c20
     "type": "module",
     "main": "./src/index.ts",
     "types": "./src/index.ts",
