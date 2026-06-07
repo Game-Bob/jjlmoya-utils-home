@@ -1,6 +1,7 @@
 import type { Point, Segment, PlacedObject, PlacedDevice, SignalResult } from './logic';
 import { calculateSignalFromSketch, getVerdictColor, computeStreamingVerdict } from './logic';
 import { renderRouter, renderRays } from './sketch-render';
+import { getUI } from './i18n-utils';
 
 const CIRCUMFERENCE = 2 * Math.PI * 70;
 
@@ -27,24 +28,20 @@ function updateRing(percent: number, color: string) {
   setText('sketch-ring-pct', `${percent}%`);
 }
 
-function getStatusCol(status: string): string {
-  const val = status.toLowerCase();
-  const good = ['perfect', 'low latency', 'stable', 'pass'];
-  const warn = ['buffering', 'lag', 'pixelated'];
-  const bad = ['impossible', 'disconnect', 'dropped', 'unusable'];
-  if (good.some((k) => val.includes(k))) return '#22c55e';
-  if (warn.some((k) => val.includes(k))) return '#f59e0b';
-  if (bad.some((k) => val.includes(k))) return '#ef4444';
-  return '#64748b';
+function getStatusCol(status: string, pct: number): string {
+  if (pct >= 60) return '#22c55e';
+  if (pct >= 30) return '#f59e0b';
+  return '#ef4444';
 }
 
 function updateStreaming(result: ReturnType<typeof calculateSignalFromSketch>) {
   const keys = ['4kStreaming', 'onlineGaming', 'videoCalls', 'basicBrowsing'];
+  const thresholds: Record<string, number> = { '4kStreaming': result.strengthPercent, onlineGaming: result.strengthPercent, videoCalls: result.strengthPercent, basicBrowsing: result.strengthPercent };
   keys.forEach((k) => {
     const el = document.getElementById(`sketch-badge-${k}`);
     if (!el) return;
     el.textContent = result.streamingVerdict[k];
-    const col = getStatusCol(result.streamingVerdict[k]);
+    const col = getStatusCol(result.streamingVerdict[k], thresholds[k]);
     (el as HTMLElement).style.color = col;
     (el as HTMLElement).style.background = col + '14';
   });
@@ -57,6 +54,7 @@ function buildMiniBar(percent: number, color: string): string {
 
 function buildDeviceCard(dev: PlacedDevice, result: ReturnType<typeof calculateSignalFromSketch>): string {
   const color = getVerdictColor(result.verdict);
+  const ui = getUI();
   return `
     <div class="sketch-device-card">
       <div class="sketch-device-header">
@@ -66,7 +64,7 @@ function buildDeviceCard(dev: PlacedDevice, result: ReturnType<typeof calculateS
       </div>
       <div class="sketch-device-bar-row">
         ${buildMiniBar(result.strengthPercent, color)}
-        <span class="sketch-device-range">${result.effectiveRange}m</span>
+        <span class="sketch-device-range">${result.effectiveRange}${ui.labelMeters}</span>
       </div>
     </div>
   `;
@@ -75,7 +73,8 @@ function buildDeviceCard(dev: PlacedDevice, result: ReturnType<typeof calculateS
 function renderDevicePanel(devices: PlacedDevice[], router: Point, walls: Segment[], objects: PlacedObject[]) {
   const panel = document.getElementById('sketch-device-panel');
   if (!panel) return;
-  panel.innerHTML = '<div class="sketch-device-section-title">Per Device</div>';
+  const ui = getUI();
+  panel.innerHTML = `<div class="sketch-device-section-title">${ui.labelPerDevice}</div>`;
   devices.forEach((dev) => {
     const result = calculateSignalFromSketch(router, dev, walls, objects);
     const div = document.createElement('div');
@@ -85,25 +84,26 @@ function renderDevicePanel(devices: PlacedDevice[], router: Point, walls: Segmen
 }
 
 function buildTips(walls: Segment[], objects: PlacedObject[], result: ReturnType<typeof calculateSignalFromSketch>): string[] {
+  const ui = getUI();
   const tips: string[] = [];
   const concreteCount = walls.filter((w) => w.material === 'concrete').length;
   const metalCount = walls.filter((w) => w.material === 'metalDoor').length;
   const total = walls.length + objects.length;
 
   if (concreteCount > 0 || metalCount > 0) {
-    tips.push('Moving your router just 1 meter away from concrete or metal could boost signal by up to 40%.');
+    tips.push(ui.tipMoveRouter);
   }
   if (total >= 3) {
-    tips.push('Each additional wall halves the signal. Try to reduce obstacles between router and device.');
+    tips.push(ui.tipReduceObstacles);
   }
   if (result.verdict === 'dead' || result.verdict === 'poor') {
-    tips.push('Elevate the router to chest height. Signals spread horizontally and the floor absorbs more than you think.');
+    tips.push(ui.tipElevateRouter);
   }
   if (objects.some((o) => o.material === 'aquarium')) {
-    tips.push('A fish tank blocks Wi-Fi like a concrete wall. Move the router or device away from it.');
+    tips.push(ui.tipFishTank);
   }
   if (objects.some((o) => o.material === 'microwave')) {
-    tips.push('Microwaves jam the 2.4 GHz band when running. Use 5 GHz or move the router further from the kitchen.');
+    tips.push(ui.tipMicrowave);
   }
   return tips;
 }
@@ -120,7 +120,8 @@ function renderTips(tips: string[]) {
   });
 }
 
-function averageResults(results: ReturnType<typeof calculateSignalFromSketch>[]): ReturnType<typeof calculateSignalFromSketch> {
+function averageResults(results: ReturnType<typeof calculateSignalFromSketch>[]): SignalResult {
+  const ui = getUI();
   const avgPct = Math.round(results.reduce((s, r) => s + r.strengthPercent, 0) / results.length);
   const avgRange = Math.round(results.reduce((s, r) => s + r.effectiveRange, 0) / results.length);
   let verdict: SignalResult['verdict'];
@@ -133,7 +134,7 @@ function averageResults(results: ReturnType<typeof calculateSignalFromSketch>[])
     strengthPercent: avgPct,
     effectiveRange: avgRange,
     verdict,
-    streamingVerdict: computeStreamingVerdict(avgPct),
+    streamingVerdict: computeStreamingVerdict(avgPct, ui),
     rayCount: 1,
   };
 }
@@ -146,12 +147,13 @@ export function updateDashboard(
 ) {
   if (devices.length === 0) return;
 
+  const ui = getUI();
   const allResults = devices.map((dev) => calculateSignalFromSketch(router, dev, walls, objects));
   const avgResult = averageResults(allResults);
   const color = getVerdictColor(avgResult.verdict);
 
   updateRing(avgResult.strengthPercent, color);
-  setText('sketch-range-val', `${avgResult.effectiveRange} m`);
+  setText('sketch-range-val', `${avgResult.effectiveRange} ${ui.labelMeters}`);
   updateStreaming(avgResult);
   renderTips(buildTips(walls, objects, avgResult));
   renderDevicePanel(devices, router, walls, objects);

@@ -136,28 +136,45 @@ function streamStatus(pct: number, thresholds: number[], labels: string[]): stri
   return labels[labels.length - 1];
 }
 
-function streaming4K(pct: number): string {
-  return streamStatus(pct, [70, 40], ['Perfect', 'Buffering Risk', 'Impossible']);
+function streaming4K(pct: number, labels: string[]): string {
+  return streamStatus(pct, [70, 40], labels);
 }
 
-function streamingGaming(pct: number): string {
-  return streamStatus(pct, [60, 30], ['Low Latency', 'Lag Warning', 'Disconnect']);
+function streamingGaming(pct: number, labels: string[]): string {
+  return streamStatus(pct, [60, 30], labels);
 }
 
-function streamingCalls(pct: number): string {
-  return streamStatus(pct, [50, 25], ['Stable', 'Pixelated', 'Dropped']);
+function streamingCalls(pct: number, labels: string[]): string {
+  return streamStatus(pct, [50, 25], labels);
 }
 
-function streamingBrowsing(pct: number): string {
-  return streamStatus(pct, [20], ['Pass', 'Unusable']);
+function streamingBrowsing(pct: number, labels: string[]): string {
+  return streamStatus(pct, [20], labels);
 }
 
-export function computeStreamingVerdict(pct: number): Record<string, string> {
+const DEFAULT_STATUS_LABELS = {
+  statusPerfect: 'Perfect',
+  statusGood: 'Good',
+  statusFair: 'Fair',
+  statusPoor: 'Poor',
+  statusImpossible: 'Impossible',
+  statusLowLatency: 'Low Latency',
+  statusLagWarning: 'Lag Warning',
+  statusDisconnect: 'Disconnect',
+  statusStable: 'Stable',
+  statusPixelated: 'Pixelated',
+  statusDropped: 'Dropped',
+  statusPass: 'Pass',
+  statusUnusable: 'Unusable',
+};
+
+export function computeStreamingVerdict(pct: number, labels?: typeof DEFAULT_STATUS_LABELS): Record<string, string> {
+  const l = labels || DEFAULT_STATUS_LABELS;
   return {
-    '4kStreaming': streaming4K(pct),
-    onlineGaming: streamingGaming(pct),
-    videoCalls: streamingCalls(pct),
-    basicBrowsing: streamingBrowsing(pct),
+    '4kStreaming': streaming4K(pct, [l.statusPerfect, l.statusGood, l.statusImpossible]),
+    onlineGaming: streamingGaming(pct, [l.statusLowLatency, l.statusLagWarning, l.statusDisconnect]),
+    videoCalls: streamingCalls(pct, [l.statusStable, l.statusPixelated, l.statusDropped]),
+    basicBrowsing: streamingBrowsing(pct, [l.statusPass, l.statusUnusable]),
   };
 }
 

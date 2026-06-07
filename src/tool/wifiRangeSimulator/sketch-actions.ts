@@ -5,6 +5,7 @@ import { renderObjects, renderWalls, renderRouter, renderDevices } from './sketc
 import { updateDashboard } from './sketch-render-dash';
 import { renderDeviceSelection } from './sketch-state';
 import { spawnParticle } from './sketch-render';
+import { getUI } from './i18n-utils';
 
 export function addToHistory(h: History, s: State) {
   if (h.pos < h.stack.length - 1) {
@@ -59,8 +60,9 @@ export function getNextDeviceId(s: State): number {
 }
 
 export function addDevice(s: State, h: History) {
+  const ui = getUI();
   if (s.devices.length >= 4) {
-    spawnParticle(400, 250, 'Max 4 devices');
+    spawnParticle(400, 250, ui.labelMaxDevices);
     return;
   }
   const id = getNextDeviceId(s);
@@ -69,7 +71,7 @@ export function addDevice(s: State, h: History) {
     id: `dev-${id}`,
     x: 680,
     y: 160 + (s.devices.length * 80),
-    name: `Device ${s.devices.length + 1}`,
+    name: `${ui.labelDevicePrefix} ${s.devices.length + 1}`,
   };
   s.devices.push(dev);
   saveState(s);
@@ -94,9 +96,10 @@ function doUndo(s: State, h: History) {
 }
 
 function doClear(s: State, h: History) {
+  const ui = getUI();
   s.walls = [];
   s.objects = [];
-  s.devices = [{ id: 'dev-1', x: 680, y: 250, name: 'Device 1' }];
+  s.devices = [{ id: 'dev-1', x: 680, y: 250, name: `${ui.labelDevicePrefix} 1` }];
   s.nextId = 2;
   s.selectedDeviceId = null;
   saveState(s);

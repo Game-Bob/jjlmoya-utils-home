@@ -1,6 +1,7 @@
 import type { Point, Segment, PlacedObject, PlacedDevice } from './logic';
 import { calculateSignalFromSketch, getVerdictColor, MATERIALS } from './logic';
 import { buildDeviceSVG } from './sketch-render-device';
+import { getUI } from './i18n-utils';
 
 export function renderWalls(walls: Segment[]) {
   const layer = document.getElementById('sketch-walls-layer');
@@ -34,6 +35,7 @@ function buildObjRect(g: SVGGElement, obj: PlacedObject) {
 }
 
 function buildObjLabel(g: SVGGElement, obj: PlacedObject) {
+  const ui = getUI();
   const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
   txt.setAttribute('y', '4');
   txt.setAttribute('text-anchor', 'middle');
@@ -41,7 +43,7 @@ function buildObjLabel(g: SVGGElement, obj: PlacedObject) {
   txt.setAttribute('font-size', '7');
   txt.setAttribute('font-weight', '700');
   txt.setAttribute('style', 'text-shadow:0 1px 2px rgba(0,0,0,0.4);pointer-events:none');
-  txt.textContent = `${obj.attenuation}dB`;
+  txt.textContent = `${obj.attenuation}${ui.labelDb}`;
   g.appendChild(txt);
 }
 

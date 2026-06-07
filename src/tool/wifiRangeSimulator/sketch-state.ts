@@ -1,4 +1,5 @@
 import type { Point, Segment, PlacedDevice, PlacedObject } from './logic';
+import { getUI } from './i18n-utils';
 
 export interface State {
   tool: string;
@@ -34,12 +35,13 @@ export interface History {
 }
 
 export function defaultState(): State {
+  const ui = getUI();
   return {
     tool: 'select',
     drawing: false,
     drawStart: { x: 0, y: 0 },
     router: { x: 150, y: 250 },
-    devices: [{ id: 'dev-1', x: 400, y: 250, name: 'Device 1' }],
+    devices: [{ id: 'dev-1', x: 400, y: 250, name: `${ui.labelDevicePrefix} 1` }],
     selectedDeviceId: null,
     walls: [],
     objects: [],
