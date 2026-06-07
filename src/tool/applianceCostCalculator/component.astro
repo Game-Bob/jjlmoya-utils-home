@@ -1,0 +1,322 @@
+---
+import type { ApplianceCostCalculatorUI } from './ui';
+import { calculateCycleCost, fmt2 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const aUI = ui as ApplianceCostCalculatorUI;
+
+const DEF_APP = 'washer';
+const DEF_CYCLE = 'normal';
+const DEF_ELEC = 0.18;
+const DEF_WATER = 0.003;
+const DEF_DET = true;
+const DEF_HOUR = 12;
+const DEF_CYCLES = 3;
+
+const initial = calculateCycleCost(DEF_APP, DEF_CYCLE, DEF_ELEC, DEF_WATER, DEF_DET, DEF_HOUR, DEF_CYCLES);
+const HOURS = Array.from({ length: 24 }, (_, i) => i);
+const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
+---
+
+<div class="apc-root">
+  <div class="apc-card"
+    data-cs={aUI.currencySign}
+    data-curr-usd={aUI.btnCurrUSD}
+    data-curr-eur={aUI.btnCurrEUR}
+    data-curr-gbp={aUI.btnCurrGBP}
+    data-curr-jpy={aUI.btnCurrJPY}
+    data-pb={aUI.peakBadge}
+    data-op={aUI.offPeakBadge}
+    data-rpy={aUI.receiptPerYear}
+    data-ct={aUI.comparisonText}
+    data-csav={aUI.comparisonSavings}
+    data-uc={aUI.unitCycles}
+  >
+    <div class="apc-stage">
+      <div class="apc-stage-glow"></div>
+      <div class="apc-carousel" id="apc-carousel">
+        <button class="apc-appliance apc-active" data-app="washer" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M12 14v-2"/></svg>
+          <span>{aUI.applianceWasher}</span>
+        </button>
+        <button class="apc-appliance" data-app="dishwasher" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 14h.01M16 14h.01"/></svg>
+          <span>{aUI.applianceDishwasher}</span>
+        </button>
+        <button class="apc-appliance" data-app="dryer" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2"/></svg>
+          <span>{aUI.applianceDryer}</span>
+        </button>
+      </div>
+      <div class="apc-hero-num">
+        <p class="apc-hero-label">{aUI.receiptTotal}</p>
+        <p class="apc-hero-value">
+          <span id="apc-total-num">{fmt2(initial.totalCost)}</span>
+          <span id="apc-total-unit" class="apc-hero-unit">{aUI.currencySign}</span>
+        </p>
+      </div>
+      <div class="apc-currency-row">
+        <span class="apc-currency-label">{aUI.labelCurrency}</span>
+        <div class="apc-currency-btns">
+          <button class="apc-currency-btn apc-currency-active" data-currency="usd" type="button">{aUI.btnCurrUSD}</button>
+          <button class="apc-currency-btn" data-currency="eur" type="button">{aUI.btnCurrEUR}</button>
+          <button class="apc-currency-btn" data-currency="gbp" type="button">{aUI.btnCurrGBP}</button>
+          <button class="apc-currency-btn" data-currency="jpy" type="button">{aUI.btnCurrJPY}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="apc-body">
+      <p class="apc-section-label">{aUI.labelCycle}</p>
+      <div class="apc-pill-track" id="apc-pill-track">
+        <div class="apc-pill-indicator" id="apc-pill-indicator"></div>
+        <button class="apc-pill-btn" data-cycle="eco" type="button">{aUI.cycleEco}</button>
+        <button class="apc-pill-btn apc-active" data-cycle="normal" type="button">{aUI.cycleNormal}</button>
+        <button class="apc-pill-btn" data-cycle="intensive" type="button">{aUI.cycleIntensive}</button>
+      </div>
+
+      <div class="apc-fields">
+        <div class="apc-field">
+          <label class="apc-field-label" for="apc-elec">{aUI.labelElectricityPrice}</label>
+          <div style="display:flex;align-items:baseline;gap:0.4rem">
+            <input type="number" id="apc-elec" class="apc-field-input" value={DEF_ELEC} min="0" step="0.01" />
+            <span class="apc-field-unit">{aUI.unitPriceKwh}</span>
+          </div>
+        </div>
+        <div class="apc-field">
+          <label class="apc-field-label" for="apc-water">{aUI.labelWaterPrice}</label>
+          <div style="display:flex;align-items:baseline;gap:0.4rem">
+            <input type="number" id="apc-water" class="apc-field-input" value={DEF_WATER} min="0" step="0.001" />
+            <span class="apc-field-unit">{aUI.unitPriceLiter}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="apc-field">
+        <label class="apc-field-label" for="apc-cycles">{aUI.labelCyclesPerWeek}</label>
+        <input type="number" id="apc-cycles" class="apc-field-input" value={DEF_CYCLES} min="1" max="50" step="1" style="width:80px" />
+      </div>
+
+      <label class="apc-toggle">
+        <input type="checkbox" id="apc-det" checked={DEF_DET} />
+        <span class="apc-toggle-track"></span>
+        <span class="apc-toggle-text">{aUI.labelDetergentToggle}</span>
+      </label>
+
+      <p class="apc-section-label">{aUI.labelHour}</p>
+      <div class="apc-clock">
+        <div class="apc-clock-dial">
+          <div class="apc-clock-hand" id="apc-hand"></div>
+          <div class="apc-clock-center"></div>
+        </div>
+        <div class="apc-clock-hours" id="apc-hours">
+          {HOURS.map((h) => (
+            <button
+              class={`apc-hour-chip ${h === DEF_HOUR ? 'apc-active' : ''} ${PEAK.has(h) ? 'apc-peak' : ''}`}
+              data-hour={h}
+              type="button"
+            >
+              {String(h).padStart(2, '0')}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="apc-receipt" id="apc-receipt">
+        <p class="apc-receipt-title">{aUI.receiptTitle}</p>
+        <div class="apc-receipt-row">
+          <span class="apc-receipt-name">{aUI.receiptElectricity}</span>
+          <span class="apc-receipt-price" id="apc-r-elec">{fmt2(initial.electricityCost)} {aUI.currencySign}</span>
+        </div>
+        <div class="apc-receipt-row">
+          <span class="apc-receipt-name">{aUI.receiptWater}</span>
+          <span class="apc-receipt-price" id="apc-r-water">{fmt2(initial.waterCost)} {aUI.currencySign}</span>
+        </div>
+        <div class="apc-receipt-row" id="apc-r-det-row">
+          <span class="apc-receipt-name">{aUI.receiptDetergent}</span>
+          <span class="apc-receipt-price" id="apc-r-det">{fmt2(initial.detergentCost)} {aUI.currencySign}</span>
+        </div>
+        <div class="apc-receipt-total">
+          <span class="apc-receipt-total-name">{aUI.receiptTotal}</span>
+          <span class="apc-receipt-total-price" id="apc-r-total">{fmt2(initial.totalCost)} {aUI.currencySign}</span>
+        </div>
+        <p class="apc-receipt-year" id="apc-r-year">{aUI.receiptPerYear}: {fmt2(initial.annualCost)} {aUI.currencySign}</p>
+      </div>
+    </div>
+
+    <div class="apc-tip">
+      <div class="apc-tip-card">
+        <p class="apc-tip-title">{aUI.comparisonTitle}</p>
+        <p class="apc-tip-text" id="apc-tip-text">{aUI.comparisonText}</p>
+        <span class="apc-tip-badge" id="apc-tip-badge">
+          {aUI.comparisonSavings}: {fmt2(initial.ecoSavingsPerYear)} {aUI.currencySign} / {aUI.unitCycles}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateCycleCost, fmt2 } from './logic';
+
+  const RATES: Record<string, number> = { eur: 1, usd: 1.08, gbp: 0.85, jpy: 160 };
+  const LS_KEY_CURRENCY = 'appliance-cost-currency';
+  let currency: 'usd' | 'eur' | 'gbp' | 'jpy' = 'eur';
+  let baseElec = 0.18;
+  let baseWater = 0.003;
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, val: string) { const e = el(id); if (e) e.textContent = val; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+  function setVal(id: string, val: number) { const e = el(id) as HTMLInputElement | null; if (e) e.value = String(val); }
+  function getChk(id: string): boolean { const e = el(id) as HTMLInputElement | null; return e ? e.checked : false; }
+  function ds(card: HTMLElement, k: string): string { return card.dataset[k] ?? ''; }
+
+  function getCS(card: HTMLElement): string {
+    const key = `curr${currency.charAt(0).toUpperCase()}${currency.slice(1)}`;
+    return ds(card, key) || ds(card, 'cs') || '€';
+  }
+
+  function toBase(val: number) { return val / RATES[currency]; }
+  function fromBase(val: number) { return val * RATES[currency]; }
+
+  function readState(card: HTMLElement) {
+    const a = card.querySelector('.apc-appliance.apc-active') as HTMLElement | null;
+    const c = card.querySelector('.apc-pill-btn.apc-active') as HTMLElement | null;
+    const ah = card.querySelector('.apc-hour-chip.apc-active') as HTMLElement | null;
+    return {
+      applianceId: a?.dataset.app || 'washer',
+      cycle: (c?.dataset.cycle || 'normal') as 'eco' | 'normal' | 'intensive',
+      electricityPrice: getNum('apc-elec'),
+      waterPrice: getNum('apc-water'),
+      detergentEnabled: getChk('apc-det'),
+      hour: parseInt(ah?.dataset.hour || '12', 10),
+      cyclesPerWeek: getNum('apc-cycles'),
+    };
+  }
+
+  function setHand(hour: number) {
+    const hand = el('apc-hand') as HTMLElement | null;
+    if (!hand) return;
+    hand.style.transform = `translate(-50%, -100%) rotate(${(hour % 12) * 30}deg)`;
+  }
+
+  function moveIndicator(track: HTMLElement, activeBtn: HTMLElement) {
+    const ind = el('apc-pill-indicator') as HTMLElement | null;
+    if (!ind || !track || !activeBtn) return;
+    const tRect = track.getBoundingClientRect();
+    const bRect = activeBtn.getBoundingClientRect();
+    ind.style.width = `${bRect.width}px`;
+    ind.style.transform = `translateX(${bRect.left - tRect.left}px)`;
+  }
+
+  function renderReceipt(card: HTMLElement, r: ReturnType<typeof calculateCycleCost>, cs: string, det: boolean) {
+    setTxt('apc-total-num', fmt2(r.totalCost));
+    setTxt('apc-total-unit', cs);
+    setTxt('apc-r-elec', `${fmt2(r.electricityCost)} ${cs}`);
+    setTxt('apc-r-water', `${fmt2(r.waterCost)} ${cs}`);
+    setTxt('apc-r-det', `${fmt2(r.detergentCost)} ${cs}`);
+    setTxt('apc-r-total', `${fmt2(r.totalCost)} ${cs}`);
+    setTxt('apc-r-year', `${ds(card, 'rpy') || 'Per year'}: ${fmt2(r.annualCost)} ${cs}`);
+    const dRow = el('apc-r-det-row') as HTMLElement | null;
+    if (dRow) dRow.style.display = det ? 'flex' : 'none';
+  }
+
+  function renderTip(card: HTMLElement, r: ReturnType<typeof calculateCycleCost>, cs: string) {
+    const tipT = el('apc-tip-text') as HTMLElement | null;
+    if (tipT) tipT.textContent = (ds(card, 'ct') || 'Switch to Eco to save') + ` (${fmt2(r.ecoSavingsPerYear)} ${cs}/${ds(card, 'uc') || 'year'})`;
+    const tipB = el('apc-tip-badge') as HTMLElement | null;
+    if (tipB) tipB.textContent = `${ds(card, 'csav') || 'Savings'}: ${fmt2(r.ecoSavingsPerYear)} ${cs} / ${ds(card, 'uc') || 'year'}`;
+  }
+
+  function update(card: HTMLElement) {
+    const s = readState(card);
+    const r = calculateCycleCost(s);
+    const cs = getCS(card);
+    renderReceipt(card, r, cs, s.detergentEnabled);
+    renderTip(card, r, cs);
+  }
+
+  function applyCurrency(curr: 'usd' | 'eur' | 'gbp' | 'jpy', card: HTMLElement) {
+    baseElec = toBase(getNum('apc-elec'));
+    baseWater = toBase(getNum('apc-water'));
+    currency = curr;
+    localStorage.setItem(LS_KEY_CURRENCY, curr);
+    document.querySelectorAll('.apc-currency-btn').forEach((b) => b.classList.toggle('apc-currency-active', (b as HTMLElement).dataset.currency === curr));
+    setVal('apc-elec', fromBase(baseElec));
+    setVal('apc-water', fromBase(baseWater));
+    update(card);
+  }
+
+  function toggle(container: HTMLElement, sel: string, target: HTMLElement, cls: string) {
+    container.querySelectorAll(sel).forEach((b) => b.classList.toggle(cls, b === target));
+  }
+
+  function bindInputs(card: HTMLElement) {
+    ['apc-elec', 'apc-water', 'apc-cycles'].forEach((id) => { const i = el(id) as HTMLInputElement | null; if (i) i.addEventListener('input', () => update(card)); });
+    const det = el('apc-det') as HTMLInputElement | null;
+    if (det) det.addEventListener('change', () => update(card));
+  }
+
+  function bindCarousel(card: HTMLElement) {
+    const car = el('apc-carousel');
+    if (car) car.querySelectorAll('.apc-appliance').forEach((b) => b.addEventListener('click', () => { toggle(car, '.apc-appliance', b as HTMLElement, 'apc-active'); update(card); }));
+  }
+
+  function bindPills(card: HTMLElement) {
+    const track = el('apc-pill-track') as HTMLElement | null;
+    if (!track) return;
+    const normalBtn = track.querySelector('[data-cycle="normal"]') as HTMLElement | null;
+    if (normalBtn) moveIndicator(track, normalBtn);
+    track.querySelectorAll('.apc-pill-btn').forEach((b) => b.addEventListener('click', () => {
+      toggle(track, '.apc-pill-btn', b as HTMLElement, 'apc-active');
+      moveIndicator(track, b as HTMLElement);
+      update(card);
+    }));
+  }
+
+  function bindHours(card: HTMLElement) {
+    const hrs = el('apc-hours');
+    if (hrs) hrs.querySelectorAll('.apc-hour-chip').forEach((b) => b.addEventListener('click', () => {
+      toggle(hrs, '.apc-hour-chip', b as HTMLElement, 'apc-active');
+      setHand(parseInt((b as HTMLElement).dataset.hour || '12', 10));
+      update(card);
+    }));
+  }
+
+  function bindCurrency(card: HTMLElement) {
+    document.querySelectorAll('.apc-currency-btn').forEach((b) => b.addEventListener('click', () => {
+      const c = (b as HTMLElement).dataset.currency as 'usd' | 'eur' | 'gbp' | 'jpy';
+      if (c) applyCurrency(c, card);
+    }));
+  }
+
+  function init() {
+    const card = document.querySelector('.apc-card') as HTMLElement | null;
+    if (!card) return;
+
+    const saved = localStorage.getItem(LS_KEY_CURRENCY) as 'usd' | 'eur' | 'gbp' | 'jpy' | null;
+    if (saved) {
+      currency = saved;
+      setVal('apc-elec', fromBase(baseElec));
+      setVal('apc-water', fromBase(baseWater));
+    }
+    document.querySelectorAll('.apc-currency-btn').forEach((b) => b.classList.toggle('apc-currency-active', (b as HTMLElement).dataset.currency === currency));
+
+    bindCarousel(card);
+    bindPills(card);
+    bindHours(card);
+    bindCurrency(card);
+    bindInputs(card);
+
+    setHand(DEF_HOUR);
+    update(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

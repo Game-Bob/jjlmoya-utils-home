@@ -27,4 +27,5 @@ export { HEATING_COMPARATOR_TOOL } from './tool/heatingComparator';
 export { WALL_PAINTING_CALCULATOR_TOOL } from './tool/wallPaintingCalculator';
 export { VAMPIRE_DRAW_SIMULATOR_TOOL } from './tool/vampireDrawSimulator';
 export { DESK_ERGONOMICS_TOOL } from './tool/deskErgonomics';
+export { APPLIANCE_COST_CALCULATOR_TOOL } from './tool/applianceCostCalculator';
 
