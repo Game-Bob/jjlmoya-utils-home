@@ -4,13 +4,9 @@ let _ui: WifiRangeSimulatorUI | null = null;
 
 export function getUI(): WifiRangeSimulatorUI {
   if (_ui) return _ui;
-  const el = document.getElementById('sketch-ui-store');
-  if (el) {
-    try {
-      _ui = JSON.parse(el.textContent || '{}') as WifiRangeSimulatorUI;
-    } catch {
-      _ui = {} as WifiRangeSimulatorUI;
-    }
+  const w = window as unknown as { __wifiUI?: WifiRangeSimulatorUI };
+  if (w.__wifiUI) {
+    _ui = w.__wifiUI;
   } else {
     _ui = {} as WifiRangeSimulatorUI;
   }

@@ -14,7 +14,6 @@ const circumference = 2 * Math.PI * 70;
 const initialRouter: Point = { x: 150, y: 250 };
 const initialDevice: Point = { x: 400, y: 250 };
 const initialResult = calculateSignalFromSketch(initialRouter, initialDevice, [], []);
-const uiJson = JSON.stringify(wUI).replace(/<\/script>/g, '<\\/script>');
 ---
 
 <div class="sketch-wrapper">
@@ -160,7 +159,9 @@ const uiJson = JSON.stringify(wUI).replace(/<\/script>/g, '<\\/script>');
   </div>
 </div>
 
-<script id="sketch-ui-store" type="application/json" set:text={uiJson} />
+<script define:vars={{ ui }} is:inline>
+  window.__wifiUI = ui;
+</script>
 
 <script>
   import { initSketch } from './sketch';
