@@ -1,0 +1,214 @@
+---
+import type { VampireDrawSimulatorUI } from './ui';
+import { calculateVampireDraw, fmt2 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const vUI = ui as VampireDrawSimulatorUI;
+
+const DEFAULT_DEVICES = [
+  { name: 'Smart TV', watts: 12, hours: 24 },
+  { name: 'Router / WiFi', watts: 8, hours: 24 },
+  { name: 'Game Console', watts: 15, hours: 24 },
+  { name: 'Desktop PC (sleep)', watts: 15, hours: 24 },
+  { name: 'Set Top Box', watts: 20, hours: 24 },
+  { name: 'Microwave (clock)', watts: 3, hours: 24 },
+  { name: 'Printer', watts: 5, hours: 24 },
+  { name: 'Phone Charger', watts: 0.5, hours: 24 },
+];
+
+const INITIAL_PRICE = 0.18;
+
+const initial = calculateVampireDraw(DEFAULT_DEVICES.map((d) => ({ name: d.name, watts: d.watts, hoursPerDay: d.hours })), INITIAL_PRICE);
+---
+
+<div class="vamp-wrapper">
+  <div class="vamp-card"
+    data-currency-sign={vUI.currencySign}
+    data-curr-usd={vUI.btnCurrUSD}
+    data-curr-eur={vUI.btnCurrEUR}
+    data-curr-gbp={vUI.btnCurrGBP}
+    data-curr-jpy={vUI.btnCurrJPY}
+    data-cat-low={vUI.categoryLow}
+    data-cat-moderate={vUI.categoryModerate}
+    data-cat-high={vUI.categoryHigh}
+    data-cat-extreme={vUI.categoryExtreme}
+  >
+    <div class="vamp-left">
+      <p class="vamp-section-title">{vUI.sectionTitle}</p>
+      <div class="vamp-field">
+        <label class="vamp-label">{vUI.labelDevices}</label>
+        <div class="vamp-device-list" id="vamp-device-list">
+          {DEFAULT_DEVICES.map((d) => (
+            <div class="vamp-device-row" data-name={d.name} data-watts={d.watts}>
+              <span class="vamp-device-name">{d.name}</span>
+              <span class="vamp-device-watts">{d.watts} {vUI.unitWatts}</span>
+              <input type="number" class="vamp-device-hours" value={d.hours} min="0" max="24" step="1" />
+              <span class="vamp-device-watts">{vUI.unitHours}</span>
+              <button class="vamp-remove-btn">{vUI.removeDevice}</button>
+            </div>
+          ))}
+        </div>
+        <button class="vamp-add-btn" id="vamp-add-btn">+ {vUI.addDevice}</button>
+      </div>
+      <div class="vamp-field">
+        <label class="vamp-label" for="vamp-price">{vUI.labelPrice}</label>
+        <div class="vamp-price-row">
+          <input type="number" id="vamp-price" value={INITIAL_PRICE} min="0.01" step="0.01" class="vamp-price-input" />
+          <span class="vamp-price-unit" id="vamp-price-unit">{vUI.currencySign}{vUI.unitPrice}</span>
+        </div>
+      </div>
+    </div>
+    <div class="vamp-right">
+      <div class="vamp-result-badge">{vUI.resultBadge}</div>
+      <div class="vamp-annual-section">
+        <p class="vamp-annual-label">{vUI.labelAnnualCost}</p>
+        <p class="vamp-annual-value">
+          <span id="vamp-annual-num">{fmt2(initial.annualCost)}</span>
+          <span id="vamp-annual-unit" class="vamp-annual-unit">{vUI.currencySign}</span>
+        </p>
+      </div>
+      <div id="vamp-category-badge" class="vamp-category-badge vamp-cat-{initial.category}">{vUI[`category${initial.category.charAt(0).toUpperCase()}${initial.category.slice(1)}` as keyof VampireDrawSimulatorUI]}</div>
+      <div class="vamp-stats">
+        <div class="vamp-stat">
+          <p class="vamp-stat-label">{vUI.labelAnnualKwh}</p>
+          <p id="vamp-kwh" class="vamp-stat-value">{fmt2(initial.annualKwh)} kWh</p>
+        </div>
+        <div class="vamp-stat-divider"></div>
+        <div class="vamp-stat">
+          <p class="vamp-stat-label">{vUI.labelMonthlyCost}</p>
+          <p id="vamp-monthly" class="vamp-stat-value">{vUI.currencySign}{fmt2(initial.monthlyCost)}</p>
+        </div>
+        <div class="vamp-stat-divider"></div>
+        <div class="vamp-stat">
+          <p class="vamp-stat-label">{vUI.labelTotalWatts}</p>
+          <p id="vamp-watts" class="vamp-stat-value">{initial.totalWatts} {vUI.unitWatts}</p>
+        </div>
+      </div>
+      <div class="vamp-currency-toggle">
+        <span class="vamp-currency-label">{vUI.labelCurrency}</span>
+        <div class="vamp-currency-btns">
+          <button class="vamp-currency-btn vamp-currency-active" data-currency="usd">{vUI.btnCurrUSD}</button>
+          <button class="vamp-currency-btn" data-currency="eur">{vUI.btnCurrEUR}</button>
+          <button class="vamp-currency-btn" data-currency="gbp">{vUI.btnCurrGBP}</button>
+          <button class="vamp-currency-btn" data-currency="jpy">{vUI.btnCurrJPY}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateVampireDraw, fmt2 } from './logic';
+
+  const LS_KEY_CURRENCY = 'vampire-draw-currency';
+  let currency: 'usd' | 'eur' | 'gbp' | 'jpy' = 'usd';
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, val: string) { const e = el(id); if (e) e.textContent = val; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+  function getDataset(card: HTMLElement, key: string): string { return card.dataset[key] ?? ''; }
+
+  function getCurrencySign(card: HTMLElement): string {
+    const key = `curr${currency.charAt(0).toUpperCase()}${currency.slice(1)}`;
+    return getDataset(card, key) || getDataset(card, 'currencySign') || '$';
+  }
+
+  function readDevices(): { name: string; watts: number; hoursPerDay: number }[] {
+    const list = el('vamp-device-list');
+    if (!list) return [];
+    return Array.from(list.querySelectorAll('.vamp-device-row')).map((row) => {
+      const name = (row.querySelector('.vamp-device-name') as HTMLElement)?.textContent ?? '';
+      const watts = parseFloat(row.dataset.watts ?? '0');
+      const hours = parseFloat((row.querySelector('.vamp-device-hours') as HTMLInputElement)?.value ?? '24');
+      return { name, watts, hoursPerDay: hours };
+    });
+  }
+
+  function updateCategoryBadge(card: HTMLElement, category: string) {
+    const badge = el('vamp-category-badge');
+    if (!badge) return;
+    badge.className = `vamp-category-badge vamp-cat-${category}`;
+    const key = `cat${category.charAt(0).toUpperCase()}${category.slice(1)}`;
+    badge.textContent = getDataset(card, key) || category;
+  }
+
+  function calculate(card: HTMLElement) {
+    const devices = readDevices();
+    const price = getNum('vamp-price');
+    const r = calculateVampireDraw(devices, price);
+    const currencySign = getCurrencySign(card);
+    setTxt('vamp-annual-num', fmt2(r.annualCost));
+    setTxt('vamp-annual-unit', currencySign);
+    setTxt('vamp-kwh', `${fmt2(r.annualKwh)} kWh`);
+    setTxt('vamp-monthly', `${currencySign}${fmt2(r.monthlyCost)}`);
+    setTxt('vamp-watts', `${r.totalWatts} W`);
+    updateCategoryBadge(card, r.category);
+  }
+
+  function attachRowListeners(row: HTMLElement, card: HTMLElement) {
+    const hoursInput = row.querySelector('.vamp-device-hours') as HTMLInputElement | null;
+    const removeBtn = row.querySelector('.vamp-remove-btn') as HTMLButtonElement | null;
+    if (hoursInput) hoursInput.addEventListener('input', () => calculate(card));
+    if (removeBtn) {
+      removeBtn.addEventListener('click', () => {
+        row.remove();
+        calculate(card);
+      });
+    }
+  }
+
+  function addDevice(card: HTMLElement) {
+    const list = el('vamp-device-list');
+    if (!list) return;
+    const row = document.createElement('div');
+    row.className = 'vamp-device-row';
+    row.dataset.name = 'Device';
+    row.dataset.watts = '5';
+    row.innerHTML = `<span class="vamp-device-name">Device</span><span class="vamp-device-watts">5 W</span><input type="number" class="vamp-device-hours" value="24" min="0" max="24" step="1" /><span class="vamp-device-watts">h</span><button class="vamp-remove-btn">Remove</button>`;
+    list.appendChild(row);
+    attachRowListeners(row, card);
+    calculate(card);
+  }
+
+  function toggleClass(sel: string, attr: string, val: string, cls: string) {
+    document.querySelectorAll(sel).forEach((b) => b.classList.toggle(cls, (b as HTMLElement).dataset[attr] === val));
+  }
+
+  function applyCurrency(curr: 'usd' | 'eur' | 'gbp' | 'jpy', card: HTMLElement) {
+    currency = curr;
+    localStorage.setItem(LS_KEY_CURRENCY, curr);
+    toggleClass('.vamp-currency-btn', 'currency', curr, 'vamp-currency-active');
+    const currencySign = getCurrencySign(card);
+    setTxt('vamp-price-unit', `${currencySign}/kWh`);
+    calculate(card);
+  }
+
+  function init() {
+    const card = document.querySelector('.vamp-card') as HTMLElement | null;
+    if (!card) return;
+    const savedCurr = localStorage.getItem(LS_KEY_CURRENCY) as 'usd' | 'eur' | 'gbp' | 'jpy' | null;
+    if (savedCurr) currency = savedCurr;
+    toggleClass('.vamp-currency-btn', 'currency', currency, 'vamp-currency-active');
+    const currencySign = getCurrencySign(card);
+    setTxt('vamp-price-unit', `${currencySign}/kWh`);
+    document.querySelectorAll('.vamp-device-row').forEach((row) => attachRowListeners(row as HTMLElement, card));
+    const addBtn = el('vamp-add-btn');
+    if (addBtn) addBtn.addEventListener('click', () => addDevice(card));
+    const priceInput = el('vamp-price');
+    if (priceInput) priceInput.addEventListener('input', () => calculate(card));
+    document.querySelectorAll('.vamp-currency-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const c = (btn as HTMLElement).dataset.currency as 'usd' | 'eur' | 'gbp' | 'jpy';
+        if (c) applyCurrency(c, card);
+      });
+    });
+    calculate(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

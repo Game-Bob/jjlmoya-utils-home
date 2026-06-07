@@ -25,4 +25,5 @@ export { LED_SAVING_CALCULATOR_TOOL } from './tool/ledSavingCalculator';
 export { TARIFF_COMPARATOR_TOOL } from './tool/tariffComparator';
 export { HEATING_COMPARATOR_TOOL } from './tool/heatingComparator';
 export { WALL_PAINTING_CALCULATOR_TOOL } from './tool/wallPaintingCalculator';
+export { VAMPIRE_DRAW_SIMULATOR_TOOL } from './tool/vampireDrawSimulator';
 
