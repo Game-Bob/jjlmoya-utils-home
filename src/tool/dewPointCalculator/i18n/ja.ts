@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'stats',
       items: [
         { value: '差 > 5°C', label: '安全圏', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: '理想的な湿度', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: '理想的な湿度', icon: 'mdi:water-percent' },
         { value: '差 < 1°C', label: '結露の危険', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>低リスク (差 &gt; 5°C):</strong> 安全な状態です。 <strong>中リスク (3–5°C):</strong> 部屋の隅などに注意が必要です。 <strong>高リスク (1–3°C):</strong> 窓ガラスなどで結露の可能性が高いです。直ちに換気をしてください。 <strong>非常に危険 (差 &lt; 1°C):</strong> 結露が発生しており、黒カビ増殖の緊急リスクがあります。',
+      html: '<strong>低リスク (差 &gt; 5°C):</strong> 安全な状態です。 <strong>中リスク (3-5°C):</strong> 部屋の隅などに注意が必要です。 <strong>高リスク (1-3°C):</strong> 窓ガラスなどで結露の可能性が高いです。直ちに換気をしてください。 <strong>非常に危険 (差 &lt; 1°C):</strong> 結露が発生しており、黒カビ増殖の緊急リスクがあります。',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: '高リスク',
     riskExtreme: '非常に危険',
     riskLowDesc: '差 > 5°C。表面は安全です。',
-    riskMediumDesc: '差 3–5°C。部屋の隅に注意。',
-    riskHighDesc: '差 1–3°C。直ちに換気が必要。',
+    riskMediumDesc: '差 3-5°C。部屋の隅に注意。',
+    riskHighDesc: '差 1-3°C。直ちに換気が必要。',
     riskExtremeDesc: '差 < 1°C。結露が発生中。',
   },
 };

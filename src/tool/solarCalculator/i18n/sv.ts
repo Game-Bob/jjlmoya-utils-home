@@ -100,8 +100,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Maximal Effektivitet',
     labelWinter: 'Vinter',
     labelSummer: 'Sommar',
-    hemisphereNorth: 'Norra Halvklotet — Rikta mot SÖDER',
-    hemisphereSouth: 'Södra Halvklotet — Rikta mot NORR',
+    hemisphereNorth: 'Norra Halvklotet: Rikta mot SÖDER',
+    hemisphereSouth: 'Södra Halvklotet: Rikta mot NORR',
     geoNotAvailable: 'Positionering är inte tillgänglig i denna webbläsare.',
   },
 };

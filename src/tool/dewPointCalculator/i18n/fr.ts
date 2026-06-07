@@ -22,7 +22,7 @@ const faqData = [
   {
     question: "Comment puis-je réduire l'humidité chez moi ?",
     answer:
-      "La méthode la plus efficace est la ventilation — surtout après la douche ou la cuisine — et l'utilisation de déshumidificateurs. Maintenir une température constante aide aussi l'air à retenir plus de vapeur sans condenser.",
+      "La méthode la plus efficace est la ventilation: surtout après la douche ou la cuisine: et l'utilisation de déshumidificateurs. Maintenir une température constante aide aussi l'air à retenir plus de vapeur sans condenser.",
   },
   {
     question: "La moisissure par condensation est-elle dangereuse ?",
@@ -99,13 +99,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: "Le point de rosée est la température à laquelle l'air doit refroidir pour que la vapeur d'eau se condense en eau liquide. Dans un logement, ce concept marque la frontière entre une maison saine et une maison avec des problèmes structurels d'humidité. Lorsque la température d'une surface (comme un mur mal isolé) descend sous le point de rosée, des gouttelettes d'eau apparaissent — le terrain idéal pour l'<em>Aspergillus</em> et autres champignons nocifs.",
+      html: "Le point de rosée est la température à laquelle l'air doit refroidir pour que la vapeur d'eau se condense en eau liquide. Dans un logement, ce concept marque la frontière entre une maison saine et une maison avec des problèmes structurels d'humidité. Lorsque la température d'une surface (comme un mur mal isolé) descend sous le point de rosée, des gouttelettes d'eau apparaissent: le terrain idéal pour l'<em>Aspergillus</em> et autres champignons nocifs.",
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Différence Sûre', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Humidité Idéale', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Humidité Idéale', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Danger Extrême', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: "<strong>Risque Faible (différence &gt; 5°C) :</strong> L'air est loin de la saturation. Vos murs sont sûrs. <strong>Risque Moyen (3–5°C) :</strong> Surveillez les coins et les ponts thermiques. <strong>Risque Élevé (1–3°C) :</strong> Condensation probable sur les vitres et les zones froides — ventilez immédiatement. <strong>Danger Extrême (&lt; 1°C) :</strong> Condensation active avec risque imminent de prolifération de moisissures noires.",
+      html: "<strong>Risque Faible (différence &gt; 5°C) :</strong> L'air est loin de la saturation. Vos murs sont sûrs. <strong>Risque Moyen (3-5°C) :</strong> Surveillez les coins et les ponts thermiques. <strong>Risque Élevé (1-3°C) :</strong> Condensation probable sur les vitres et les zones froides: ventilez immédiatement. <strong>Danger Extrême (&lt; 1°C) :</strong> Condensation active avec risque imminent de prolifération de moisissures noires.",
     },
     {
       type: 'diagnostic',
@@ -166,8 +166,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Risque Élevé',
     riskExtreme: 'Danger Extrême',
     riskLowDesc: 'Différence > 5°C. Surfaces sûres.',
-    riskMediumDesc: 'Différence 3–5°C. Surveillez les coins.',
-    riskHighDesc: 'Différence 1–3°C. Ventilez immédiatement.',
+    riskMediumDesc: 'Différence 3-5°C. Surveillez les coins.',
+    riskHighDesc: 'Différence 1-3°C. Ventilez immédiatement.',
     riskExtremeDesc: 'Différence < 1°C. Condensation active.',
   },
 };

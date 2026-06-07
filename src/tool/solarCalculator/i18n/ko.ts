@@ -110,8 +110,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: '최대 효율',
     labelWinter: '겨울철',
     labelSummer: '여름철',
-    hemisphereNorth: '북반구 — 남쪽 방향 지향',
-    hemisphereSouth: '남반구 — 북쪽 방향 지향',
+    hemisphereNorth: '북반구: 남쪽 방향 지향',
+    hemisphereSouth: '남반구: 북쪽 방향 지향',
     geoNotAvailable: '이 브라우저에서는 위치 정보 서비스를 사용할 수 없습니다.',
   },
 };

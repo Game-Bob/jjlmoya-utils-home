@@ -99,13 +99,13 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'The difference between a zero-euro electricity bill and an underperforming investment lies, literally, in the angles. <strong>Solar radiation</strong> is not uniform — it is a dynamic flow that changes with the hour, the day, and the season. Understanding celestial geometry is the first step to turning your roof into a high-performance power plant.',
+      html: 'The difference between a zero-euro electricity bill and an underperforming investment lies, literally, in the angles. <strong>Solar radiation</strong> is not uniform: it is a dynamic flow that changes with the hour, the day, and the season. Understanding celestial geometry is the first step to turning your roof into a high-performance power plant.',
     },
     {
       type: 'stats',
       items: [
         { value: 'Lat × 0.87', label: 'General Formula', icon: 'mdi:angle-acute' },
-        { value: 'Lat × 0.76 + 3.1', label: 'Latitudes 25°–50°', icon: 'mdi:map-marker' },
+        { value: 'Lat × 0.76 + 3.1', label: 'Latitudes 25°-50°', icon: 'mdi:map-marker' },
         { value: '± 15°', label: 'Seasonal Adjustment', icon: 'mdi:calendar-sync' },
       ],
       columns: 3,
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Summer:</strong> The sun reaches its zenith. Panels should be nearly flat — subtract ~15° from your latitude. Take advantage of long days and intense direct radiation. <strong>Winter:</strong> The sun travels low near the horizon. Tilt panels steeper by adding ~15° to your latitude. A steeper angle also helps snow slide off without blocking the cells.',
+      html: '<strong>Summer:</strong> The sun reaches its zenith. Panels should be nearly flat: subtract ~15° from your latitude. Take advantage of long days and intense direct radiation. <strong>Winter:</strong> The sun travels low near the horizon. Tilt panels steeper by adding ~15° to your latitude. A steeper angle also helps snow slide off without blocking the cells.',
     },
     {
       type: 'diagnostic',
@@ -164,8 +164,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Maximum Efficiency',
     labelWinter: 'Winter',
     labelSummer: 'Summer',
-    hemisphereNorth: 'Northern Hemisphere — Face SOUTH',
-    hemisphereSouth: 'Southern Hemisphere — Face NORTH',
+    hemisphereNorth: 'Northern Hemisphere: Face SOUTH',
+    hemisphereSouth: 'Southern Hemisphere: Face NORTH',
     geoNotAvailable: 'Geolocation is not available in this browser.',
   },
 };

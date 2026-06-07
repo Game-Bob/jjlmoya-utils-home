@@ -110,8 +110,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Maksimum Verim',
     labelWinter: 'Kış',
     labelSummer: 'Yaz',
-    hemisphereNorth: 'Kuzey Yarımküre — GÜNEY\'e yöneltin',
-    hemisphereSouth: 'Güney Yarımküre — KUZEY\'e yöneltin',
+    hemisphereNorth: 'Kuzey Yarımküre: GÜNEY\'e yöneltin',
+    hemisphereSouth: 'Güney Yarımküre: KUZEY\'e yöneltin',
     geoNotAvailable: 'Konum servisleri kullanılamıyor.',
   },
 };

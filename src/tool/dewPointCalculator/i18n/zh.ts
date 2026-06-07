@@ -14,7 +14,7 @@ const faqData = [
   },
   {
     question: '为什么我家的墙角会出现霉菌？',
-    answer: '墙角通常是“热桥”所在，墙体温度通常较低。如果该表面温度降至露点以下，就会形成冷凝水。霉菌在这种持续潮湿的环境中会迅速滋生。',
+    answer: '墙角通常是"热桥"所在，墙体温度通常较低。如果该表面温度降至露点以下，就会形成冷凝水。霉菌在这种持续潮湿的环境中会迅速滋生。',
   },
   {
     question: '我该如何降低家里的湿度？',
@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'stats',
       items: [
         { value: '> 5°C', label: '安全温差', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: '理想湿度', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: '理想湿度', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: '极度危险', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>低风险 (温差 &gt; 5°C):</strong> 墙壁处于安全状态。 <strong>中风险 (3–5°C):</strong> 需留意墙角和热桥。 <strong>高风险 (1–3°C):</strong> 玻璃和冷区可能出现冷凝，请立即通风。 <strong>极度危险 (&lt; 1°C):</strong> 正在发生冷凝，极易滋生黑霉。',
+      html: '<strong>低风险 (温差 &gt; 5°C):</strong> 墙壁处于安全状态。 <strong>中风险 (3-5°C):</strong> 需留意墙角和热桥。 <strong>高风险 (1-3°C):</strong> 玻璃和冷区可能出现冷凝，请立即通风。 <strong>极度危险 (&lt; 1°C):</strong> 正在发生冷凝，极易滋生黑霉。',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: '高风险',
     riskExtreme: '极度危险',
     riskLowDesc: '温差 > 5°C。表面安全。',
-    riskMediumDesc: '温差 3–5°C。留意墙角。',
-    riskHighDesc: '温差 1–3°C。立即通风。',
+    riskMediumDesc: '温差 3-5°C。留意墙角。',
+    riskHighDesc: '温差 1-3°C。立即通风。',
     riskExtremeDesc: '温差 < 1°C。正在冷凝。',
   },
 };

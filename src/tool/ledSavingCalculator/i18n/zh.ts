@@ -32,7 +32,7 @@ const faqData = [
   {
     question: '我可以在带调光器的灯具上使用LED吗？',
     answer:
-      '仅当灯泡明确标注为“可调光”（Dimmable）时。标准LED在旧式调光器上表现不佳，可能会出现闪烁或嗡嗡声。',
+      '仅当灯泡明确标注为"可调光"（Dimmable）时。标准LED在旧式调光器上表现不佳，可能会出现闪烁或嗡嗡声。',
   },
   {
     question: '需要更换整个灯具吗？',
@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: '能源节省率', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: '能源节省率', icon: 'mdi:lightning-bolt' },
         { value: '25,000h', label: 'LED 寿命', icon: 'mdi:clock-outline' },
         { value: '< 4 个月', label: '投资回本周期', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: '现代 LED 技术',
           description: '当前的家庭节能标准。即开即亮，热量排放极低。',
           icon: 'mdi:led-outline',
-          points: ['85–90% 直接节能', '寿命：25,000–50,000 小时', '发热量极低'],
+          points: ['85-90% 直接节能', '寿命：25,000-50,000 小时', '发热量极低'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: '快速等效表',
       icon: 'mdi:table',
       badge: '参考',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W 白热灯</strong> → LED 5–6W (450 lm)</li><li><strong>60W 白热灯</strong> → LED 8–10W (800 lm)</li><li><strong>100W 白热灯</strong> → LED 13–15W (1500 lm)</li><li><strong>50W 卤素灯</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W 白热灯</strong> → LED 5-6W (450 lm)</li><li><strong>60W 白热灯</strong> → LED 8-10W (800 lm)</li><li><strong>100W 白热灯</strong> → LED 13-15W (1500 lm)</li><li><strong>50W 卤素灯</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

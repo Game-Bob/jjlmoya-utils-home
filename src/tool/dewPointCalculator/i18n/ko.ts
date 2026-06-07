@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'stats',
       items: [
         { value: '> 5°C', label: '안전 범위', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: '이상적 습도', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: '이상적 습도', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: '매우 위험', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>낮은 위험 (차이 &gt; 5°C):</strong> 벽면이 안전한 상태입니다. <strong>중간 위험 (3–5°C):</strong> 구석진 곳을 주의 깊게 살피세요. <strong>높은 위험 (1–3°C):</strong> 유리창 등에 결로 가능성이 큽니다 - 즉시 환기하세요. <strong>매우 위험 (차이 &lt; 1°C):</strong> 현재 결로가 진행 중이며 곰팡이 증식 위험이 매우 높습니다.',
+      html: '<strong>낮은 위험 (차이 &gt; 5°C):</strong> 벽면이 안전한 상태입니다. <strong>중간 위험 (3-5°C):</strong> 구석진 곳을 주의 깊게 살피세요. <strong>높은 위험 (1-3°C):</strong> 유리창 등에 결로 가능성이 큽니다 - 즉시 환기하세요. <strong>매우 위험 (차이 &lt; 1°C):</strong> 현재 결로가 진행 중이며 곰팡이 증식 위험이 매우 높습니다.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: '높은 위험',
     riskExtreme: '매우 위험',
     riskLowDesc: '차이 > 5°C. 안전한 상태.',
-    riskMediumDesc: '차이 3–5°C. 구석을 살피세요.',
-    riskHighDesc: '차이 1–3°C. 즉시 환기 필요.',
+    riskMediumDesc: '차이 3-5°C. 구석을 살피세요.',
+    riskHighDesc: '차이 1-3°C. 즉시 환기 필요.',
     riskExtremeDesc: '차이 < 1°C. 결로 진행 중.',
   },
 };

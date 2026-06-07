@@ -115,8 +115,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Efisiensi Maksimal',
     labelWinter: 'Musim Dingin',
     labelSummer: 'Musim Panas',
-    hemisphereNorth: 'Belahan Bumi Utara — Hadapkan ke SELATAN',
-    hemisphereSouth: 'Belahan Bumi Selatan — Hadapkan ke UTARA',
+    hemisphereNorth: 'Belahan Bumi Utara: Hadapkan ke SELATAN',
+    hemisphereSouth: 'Belahan Bumi Selatan: Hadapkan ke UTARA',
     geoNotAvailable: 'Geolokasi tidak tersedia pada browser ini.',
   },
 };

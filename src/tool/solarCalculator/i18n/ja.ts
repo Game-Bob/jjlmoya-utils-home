@@ -115,8 +115,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: '最大効率',
     labelWinter: '冬期',
     labelSummer: '夏期',
-    hemisphereNorth: '北半球 — 南に向けて設置',
-    hemisphereSouth: '南半球 — 北に向けて設置',
+    hemisphereNorth: '北半球: 南に向けて設置',
+    hemisphereSouth: '南半球: 北に向けて設置',
     geoNotAvailable: 'このブラウザでは位置情報が利用できません。',
   },
 };

@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Memilih sistem iklim yang tepat untuk rumah adalah salah satu keputusan keuangan dan kenyamanan terpenting. Di tengah harga energi yang fluktuatif dan meningkatnya kepedulian terhadap keberlanjutan, mengetahui sistem mana yang paling efisien—dan mana yang paling hemat—sangatlah penting.',
+      html: 'Memilih sistem iklim yang tepat untuk rumah adalah salah satu keputusan keuangan dan kenyamanan terpenting. Di tengah harga energi yang fluktuatif dan meningkatnya kepedulian terhadap keberlanjutan, mengetahui sistem mana yang paling efisien: dan mana yang paling hemat: sangatlah penting.',
     },
     {
       type: 'paragraph',

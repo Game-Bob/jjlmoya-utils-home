@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Risparmio Energetico', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Risparmio Energetico', icon: 'mdi:lightning-bolt' },
         { value: '25.000h', label: 'Vita Utile LED', icon: 'mdi:clock-outline' },
         { value: '< 4 mesi', label: 'Ammortamento', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Tecnologia LED Moderna',
           description: 'Lo standard di efficienza attuale. Accensione istantanea e minima emissione di calore.',
           icon: 'mdi:led-outline',
-          points: ['85–90% risparmio diretto', 'Vita utile: 25.000–50.000 ore', 'Pochissimo calore'],
+          points: ['85-90% risparmio diretto', 'Vita utile: 25.000-50.000 ore', 'Pochissimo calore'],
         },
       ],
       columns: 2,
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Una lampadina incandescente converte solo il 5% di energia in luce. I LED usano semiconduttori per una efficienza superiore. <strong>Non guardare i watt, guarda i lumen:</strong> una vecchia lampadina da 60W emette circa 800 lm; oggi bastano 8–9W LED.',
+      html: 'Una lampadina incandescente converte solo il 5% di energia in luce. I LED usano semiconduttori per una efficienza superiore. <strong>Non guardare i watt, guarda i lumen:</strong> una vecchia lampadina da 60W emette circa 800 lm; oggi bastano 8-9W LED.',
     },
     {
       type: 'diagnostic',
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Tabella Equivalenze Rapide',
       icon: 'mdi:table',
       badge: 'Riferimento',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescente</strong> → LED 5–6W (450 lm)</li><li><strong>60W incandescente</strong> → LED 8–10W (800 lm)</li><li><strong>100W incandescente</strong> → LED 13–15W (1500 lm)</li><li><strong>50W alogena</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescente</strong> → LED 5-6W (450 lm)</li><li><strong>60W incandescente</strong> → LED 8-10W (800 lm)</li><li><strong>100W incandescente</strong> → LED 13-15W (1500 lm)</li><li><strong>50W alogena</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

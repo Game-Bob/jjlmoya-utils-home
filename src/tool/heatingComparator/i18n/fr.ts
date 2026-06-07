@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Quelle est la différence entre l\'aérothermie et une pompe à chaleur normale ?',
     answer:
-      'Techniquement, les deux sont des pompes à chaleur. La principale différence réside dans le milieu auquel elles fournissent la chaleur : l\'aérothermie est généralement "air-eau", tandis que la pompe à chaleur conventionnelle est "air-air".',
+      'Techniquement, les deux sont des pompes à chaleur. La principale différence réside dans le milieu auquel elles fournissent la chaleur: l\'aérothermie est généralement "air-eau", tandis que la pompe à chaleur conventionnelle est "air-air".',
   },
   {
     question: 'Peut-on installer l\'aérothermie dans un appartement avec d\'anciens radiateurs ?',
@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'title',
-      text: 'Comparaison de consommation : Gaz vs Aérothermie vs Air climatisé',
+      text: 'Comparaison de consommation: Gaz vs Aérothermie vs Air climatisé',
       level: 2,
     },
     {
@@ -137,7 +137,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'title',
-      text: '1. Chaudière à gaz naturel : la norme traditionnelle',
+      text: '1. Chaudière à gaz naturel: la norme traditionnelle',
       level: 3,
     },
     {
@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'title',
-      text: '2. Aérothermie : Efficacité extrême (Air-Eau)',
+      text: '2. Aérothermie: Efficacité extrême (Air-Eau)',
       level: 3,
     },
     {
@@ -223,18 +223,18 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'card',
-      title: 'Exemple réel : Logement de 100m²',
+      title: 'Exemple réel: Logement de 100m²',
       icon: 'mdi:home-analytics',
       html: '<p>Pour 7 000 kWh/an :</p><ul><li><strong>Gaz :</strong> 589 €/an</li><li><strong>Aéro :</strong> 315 €/an</li><li><strong>Air :</strong> 393 €/an</li></ul>',
     },
     {
       type: 'title',
-      text: 'Conclusion : L\'avenir est électrique',
+      text: 'Conclusion: L\'avenir est électrique',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'La tendance européenne est claire : la décarbonation. Le gaz naturel a une date d\'expiration.',
+      html: 'La tendance européenne est claire: la décarbonation. Le gaz naturel a une date d\'expiration.',
     },
     {
       type: 'paragraph',

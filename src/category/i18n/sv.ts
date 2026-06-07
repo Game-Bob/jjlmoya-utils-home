@@ -16,7 +16,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Ett effektivt hem är inte en lyx — det är ett tekniskt beslut. Skillnaden mellan ett hushåll med en skenande elräkning och ett med kontrollerad förbrukning beror sällan på tariffpriset: det handlar om att veta exakt hur mycket varje enhet förbrukar, när det är vettigt att generera egen energi och var förlusterna uppstår.',
+      html: 'Ett effektivt hem är inte en lyx: det är ett tekniskt beslut. Skillnaden mellan ett hushåll med en skenande elräkning och ett med kontrollerad förbrukning beror sällan på tariffpriset: det handlar om att veta exakt hur mycket varje enhet förbrukar, när det är vettigt att generera egen energi och var förlusterna uppstår.',
     },
     {
       type: 'title',
@@ -25,7 +25,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Fotovoltaiska installationer för bostäder har en verklig avkastning på investeringen som beror på tre variabler: instrålningen på din plats, panelernas lutningsvinkel och din förbrukning per timme. En panel som lutar 10° under det optimala kan förlora <strong>15–20 % av den årliga produktionen</strong>. Vår solkalkylator ger dig den exakta vinkeln och en uppskattning av den månatliga generationen.',
+      html: 'Fotovoltaiska installationer för bostäder har en verklig avkastning på investeringen som beror på tre variabler: instrålningen på din plats, panelernas lutningsvinkel och din förbrukning per timme. En panel som lutar 10° under det optimala kan förlora <strong>15-20 % av den årliga produktionen</strong>. Vår solkalkylator ger dig den exakta vinkeln och en uppskattning av den månatliga generationen.',
     },
     {
       type: 'paragraph',
@@ -42,7 +42,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Att välja rätt eltariff är lika viktigt. Fastprisavtal kan vara fördelaktiga för konsumenter med regelbundna vanor; rörliga tariffer fluktuerar med grossistmarknaden och belönar dem som flyttar sin förbrukning till lågtidstimmar. Att jämföra båda alternativen med dina faktiska förbrukningsdata kan göra en skillnad på <strong>100–300 € per år</strong>.',
+      html: 'Att välja rätt eltariff är lika viktigt. Fastprisavtal kan vara fördelaktiga för konsumenter med regelbundna vanor; rörliga tariffer fluktuerar med grossistmarknaden och belönar dem som flyttar sin förbrukning till lågtidstimmar. Att jämföra båda alternativen med dina faktiska förbrukningsdata kan göra en skillnad på <strong>100-300 € per år</strong>.',
     },
     {
       type: 'title',
@@ -51,7 +51,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Ihållande relativ luftfuktighet över 70 % leder till kondens vid köldbryggor, mögeltillväxt och strukturell försämring. Daggpunktstemperaturen — det värde vid vilket vattenånga i luften kondenserar — är nyckeltalet. Om ytan på din innervägg är under den punkten kommer kondens att bildas oavsett om du kan se den eller inte.',
+      html: 'Ihållande relativ luftfuktighet över 70 % leder till kondens vid köldbryggor, mögeltillväxt och strukturell försämring. Daggpunktstemperaturen: det värde vid vilket vattenånga i luften kondenserar: är nyckeltalet. Om ytan på din innervägg är under den punkten kommer kondens att bildas oavsett om du kan se den eller inte.',
     },
     {
       type: 'paragraph',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'En projektor placeras inte "var den än får plats". Projektionsförhållandet (throw ratio) — förhållandet mellan projektionsavstånd och bildbredd — avgör exakt hur långt bak du behöver placera enheten för att uppnå önskad skärmstorlek. Ett placeringsfel på 50 cm kan innebära en 20 cm mindre bild, eller tvinga fram en digital zoom som minskar den effektiva upplösningen.',
+      html: 'En projektor placeras inte "var den än får plats". Projektionsförhållandet (throw ratio): förhållandet mellan projektionsavstånd och bildbredd: avgör exakt hur långt bak du behöver placera enheten för att uppnå önskad skärmstorlek. Ett placeringsfel på 50 cm kan innebära en 20 cm mindre bild, eller tvinga fram en digital zoom som minskar den effektiva upplösningen.',
     },
     {
       type: 'paragraph',
@@ -77,12 +77,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Det moderna hemmet integrerar teknik på alla nivåer: Wi-Fi-nätverk, IoT-enheter, QR-kodsbaserad åtkomst. QR-kodgeneratorn låter dig skapa genvägar till ditt hem-Wi-Fi, kontaktkort, URL:er till smarta enheter eller all information du enkelt vill dela med gäster eller mellan enheter — utan att behöva skriva.',
+      html: 'Det moderna hemmet integrerar teknik på alla nivåer: Wi-Fi-nätverk, IoT-enheter, QR-kodsbaserad åtkomst. QR-kodgeneratorn låter dig skapa genvägar till ditt hem-Wi-Fi, kontaktkort, URL:er till smarta enheter eller all information du enkelt vill dela med gäster eller mellan enheter: utan att behöva skriva.',
     },
     {
       type: 'list',
       items: [
-        '<strong>Kvantifierbara besparingar:</strong> Varje verktyg levererar konkreta siffror — sparade euro per år, genererade kWh per månad, optimala lutningsvinklar. Inga vaga uppskattningar.',
+        '<strong>Kvantifierbara besparingar:</strong> Varje verktyg levererar konkreta siffror: sparade euro per år, genererade kWh per månad, optimala lutningsvinklar. Inga vaga uppskattningar.',
         '<strong>Ingen installation krävs:</strong> Onlinekalkylatorer som körs direkt i webbläsaren, inga appar eller konton krävs.',
         '<strong>Baserat på tekniska standarder:</strong> Psykrometriska formler (ASHRAE), projektionsoptik, solinstrålning per breddgrad och relevanta elföreskrifter.',
         '<strong>Användbart innan du köper:</strong> Validera köpbeslut innan du binder dig. Lönar sig solpaneler på ditt tak? Hur mycket sparar LED-lampor egentligen? Räkna först.',
@@ -95,7 +95,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Förbättringar av hemets energieffektivitet har en konkret ROI. En väl dimensionerad solcellsanläggning kan betala sig själv på 6–9 år med nuvarande elpriser. Ett fullständigt byte till LED i ett genomsnittligt hem betalar sig på under 2 år. En väl vald tariff sparar pengar från första månaden. Startpunkten är alltid densamma: <strong>mät innan du agerar</strong>.',
+      html: 'Förbättringar av hemets energieffektivitet har en konkret ROI. En väl dimensionerad solcellsanläggning kan betala sig själv på 6-9 år med nuvarande elpriser. Ett fullständigt byte till LED i ett genomsnittligt hem betalar sig på under 2 år. En väl vald tariff sparar pengar från första månaden. Startpunkten är alltid densamma: <strong>mät innan du agerar</strong>.',
     },
     {
       type: 'paragraph',

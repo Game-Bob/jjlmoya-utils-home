@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Escolher o sistema de climatização adequado para o lar é uma das decisões financeiras e de conforto mais importantes que podemos tomar. Num contexto de preços energéticos voláteis e de uma crescente preocupação com a sustentabilidade, saber que sistema é mais eficiente — e qual nos fará poupar mais ao final do mês — é fundamental.',
+      html: 'Escolher o sistema de climatização adequado para o lar é uma das decisões financeiras e de conforto mais importantes que podemos tomar. Num contexto de preços energéticos voláteis e de uma crescente preocupação com a sustentabilidade, saber que sistema é mais eficiente: e qual nos fará poupar mais ao final do mês: é fundamental.',
     },
     {
       type: 'paragraph',

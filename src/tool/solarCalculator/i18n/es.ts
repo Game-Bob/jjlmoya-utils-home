@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
       type: 'stats',
       items: [
         { value: 'Lat × 0.87', label: 'Fórmula General', icon: 'mdi:angle-acute' },
-        { value: 'Lat × 0.76 + 3.1', label: 'Latitudes 25°–50°', icon: 'mdi:map-marker' },
+        { value: 'Lat × 0.76 + 3.1', label: 'Latitudes 25°-50°', icon: 'mdi:map-marker' },
         { value: '± 15°', label: 'Ajuste Estacional', icon: 'mdi:calendar-sync' },
       ],
       columns: 3,
@@ -164,8 +164,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Eficiencia Máxima',
     labelWinter: 'Invierno',
     labelSummer: 'Verano',
-    hemisphereNorth: 'Hemisferio Norte — Orientar al SUR',
-    hemisphereSouth: 'Hemisferio Sur — Orientar al NORTE',
+    hemisphereNorth: 'Hemisferio Norte: Orientar al SUR',
+    hemisphereSouth: 'Hemisferio Sur: Orientar al NORTE',
     geoNotAvailable: 'Geolocalización no disponible en este navegador.',
   },
 };

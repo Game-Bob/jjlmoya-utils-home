@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Energieersparnis', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Energieersparnis', icon: 'mdi:lightning-bolt' },
         { value: '25.000h', label: 'Lebensdauer LED', icon: 'mdi:clock-outline' },
         { value: '< 4 Monate', label: 'Amortisation', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Moderne LED Technik',
           description: 'Der aktuelle Standard für Energieeffizienz zu Hause. Sofort 100 % Helligkeit beim Einschalten.',
           icon: 'mdi:led-outline',
-          points: ['85–90 % direkte Ersparnis', 'Lebensdauer: bis zu 50.000 Stunden', 'Minimale Wärmeabgabe'],
+          points: ['85-90 % direkte Ersparnis', 'Lebensdauer: bis zu 50.000 Stunden', 'Minimale Wärmeabgabe'],
         },
       ],
       columns: 2,
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Eine Glühbirne wandelt nur 5 % des Stroms in Licht um. LEDs hingegen nutzen Halbleiter, um Elektrizität fast direkt in Licht umzuwandeln. <strong>Achten Sie nicht auf die Watt, sondern auf die Lumen:</strong> Eine alte 60W Birne liefert ca. 800 lm – moderne LEDs schaffen das mit nur 8–9W.',
+      html: 'Eine Glühbirne wandelt nur 5 % des Stroms in Licht um. LEDs hingegen nutzen Halbleiter, um Elektrizität fast direkt in Licht umzuwandeln. <strong>Achten Sie nicht auf die Watt, sondern auf die Lumen:</strong> Eine alte 60W Birne liefert ca. 800 lm - moderne LEDs schaffen das mit nur 8-9W.',
     },
     {
       type: 'diagnostic',
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Schnelle Vergleichstabelle',
       icon: 'mdi:table',
       badge: 'Referenz',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W Glühbirne</strong> → LED 5–6W (450 lm)</li><li><strong>60W Glühbirne</strong> → LED 8–10W (800 lm)</li><li><strong>100W Glühbirne</strong> → LED 13–15W (1500 lm)</li><li><strong>50W Halogen</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W Glühbirne</strong> → LED 5-6W (450 lm)</li><li><strong>60W Glühbirne</strong> → LED 8-10W (800 lm)</li><li><strong>100W Glühbirne</strong> → LED 13-15W (1500 lm)</li><li><strong>50W Halogen</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

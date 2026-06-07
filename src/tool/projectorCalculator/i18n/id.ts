@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-jarak-proyektor';
-const title = 'Kalkulator Jarak Proyektor — Tembakan dan Layar';
+const title = 'Kalkulator Jarak Proyektor: Tembakan dan Layar';
 const description =
   'Hitung jarak tepat untuk memasang proyektor Anda berdasarkan ukuran layar yang diinginkan dan Throw Ratio. Alat visual dengan simulasi real-time.';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'Apa itu Throw Ratio?',
           description: 'Ini adalah hubungan antara jarak proyeksi dan lebar gambar. TR 1.5 berarti Anda butuh jarak 1.5m untuk setiap meter lebar layar.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Short Throw, ideal untuk ruang sempit', 'TR 1–2: Standar untuk ruang tamu', 'TR > 2: Long Throw, untuk auditorium besar'],
+          points: ['TR < 1: Short Throw, ideal untuk ruang sempit', 'TR 1-2: Standar untuk ruang tamu', 'TR > 2: Long Throw, untuk auditorium besar'],
         },
         {
           title: 'Format dan Rasio Aspek',

@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: '消費電力削減', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: '消費電力削減', icon: 'mdi:lightning-bolt' },
         { value: '25,000h', label: 'LEDの寿命', icon: 'mdi:clock-outline' },
         { value: '4ヶ月以内', label: 'コスト回収', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: '最新のLEDテクノロジー',
           description: '家庭に最適な現在の標準。点けた瞬間に最大輝度になり、発熱も最小限です。',
           icon: 'mdi:led-outline',
-          points: ['85–90%の直接的な節電', '寿命：25,000〜50,000時間', '低発熱で安全'],
+          points: ['85-90%の直接的な節電', '寿命：25,000〜50,000時間', '低発熱で安全'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: '電球の明るさ目安表',
       icon: 'mdi:table',
       badge: 'クイック参照',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W相当</strong> → LED 5–6W (450 lm)</li><li><strong>60W相当</strong> → LED 8–10W (800 lm)</li><li><strong>100W相当</strong> → LED 13–15W (1500 lm)</li><li><strong>50W相当（ハロゲン）</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W相当</strong> → LED 5-6W (450 lm)</li><li><strong>60W相当</strong> → LED 8-10W (800 lm)</li><li><strong>100W相当</strong> → LED 13-15W (1500 lm)</li><li><strong>50W相当（ハロゲン）</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

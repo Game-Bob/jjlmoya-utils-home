@@ -187,7 +187,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
       items: [
         'Toutes les données sont traitées dans votre navigateur, jamais sur un serveur externe.',
         'Le QR WiFi nécessite le SSID et le mot de passe exacts (sensible à la casse).',
-        'Les codes QR générés sont statiques : si vous changez votre mot de passe WiFi, générez-en un nouveau.',
+        'Les codes QR générés sont statiques: si vous changez votre mot de passe WiFi, générez-en un nouveau.',
         'Téléchargez en WebP pour une qualité maximale lors de l\'impression ou du partage.',
         'Essayez de scanner le QR depuis l\'écran avant de l\'imprimer.',
       ],

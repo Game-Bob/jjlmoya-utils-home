@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: '에너지 절감률', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: '에너지 절감률', icon: 'mdi:lightning-bolt' },
         { value: '25,000h', label: 'LED 수명', icon: 'mdi:clock-outline' },
         { value: '4개월 이내', label: '회수 기간', icon: 'mdi:calendar-check' },
       ],
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: '빠른 전구 비교표',
       icon: 'mdi:table',
       badge: '참고용',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W 백열전구</strong> → LED 5–6W (450 lm)</li><li><strong>60W 백열전구</strong> → LED 8–10W (800 lm)</li><li><strong>100W 백열전구</strong> → LED 13–15W (1500 lm)</li><li><strong>50W 할로겐</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W 백열전구</strong> → LED 5-6W (450 lm)</li><li><strong>60W 백열전구</strong> → LED 8-10W (800 lm)</li><li><strong>100W 백열전구</strong> → LED 13-15W (1500 lm)</li><li><strong>50W 할로겐</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

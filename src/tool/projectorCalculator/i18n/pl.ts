@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-odleglosci-projektora';
-const title = 'Kalkulator Odległości Projektora — Rzut i Ekran';
+const title = 'Kalkulator Odległości Projektora: Rzut i Ekran';
 const description =
   'Oblicz dokładną odległość montażu projektora w zależności od rozmiaru ekranu i współczynnika rzutu (Throw Ratio).';
 
@@ -99,7 +99,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Montaż projektora "na oko" może popsuć seans. Za blisko — obraz za mały, za daleko — stracisz jasność. Kluczem jest <strong>Throw Ratio</strong>, który precyzyjnie określa relację odległości do obrazu.',
+      html: 'Montaż projektora "na oko" może popsuć seans. Za blisko: obraz za mały, za daleko: stracisz jasność. Kluczem jest <strong>Throw Ratio</strong>, który precyzyjnie określa relację odległości do obrazu.',
     },
     {
       type: 'stats',
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'Co to jest Throw Ratio?',
           description: 'To stosunek odległości do szerokości obrazu. TR 1.5 oznacza 1.5m dystansu na każdy metr szerokości ekranu.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Short Throw, do małych pokoi', 'TR 1–2: Standard do salonu', 'TR > 2: Long Throw, do dużych sal'],
+          points: ['TR < 1: Short Throw, do małych pokoi', 'TR 1-2: Standard do salonu', 'TR > 2: Long Throw, do dużych sal'],
         },
         {
           title: 'Format (Aspect Ratio)',
