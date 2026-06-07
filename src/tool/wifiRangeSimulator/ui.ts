@@ -1,0 +1,36 @@
+export interface WifiRangeSimulatorUI extends Record<string, string> {
+  labelObstacles: string;
+  labelAddObstacle: string;
+  labelRemove: string;
+  labelSignalStrength: string;
+  labelEffectiveRange: string;
+  labelMeters: string;
+  labelPercent: string;
+  labelStreamingVerdict: string;
+  verdictPerfect: string;
+  verdictGood: string;
+  verdictFair: string;
+  verdictPoor: string;
+  verdictDead: string;
+  tipTitle: string;
+  label4kStreaming: string;
+  labelOnlineGaming: string;
+  labelVideoCalls: string;
+  labelBasicBrowsing: string;
+  statusPerfect: string;
+  statusGood: string;
+  statusFair: string;
+  statusPoor: string;
+  statusImpossible: string;
+  statusLowLatency: string;
+  statusLagWarning: string;
+  statusDisconnect: string;
+  statusStable: string;
+  statusPixelated: string;
+  statusDropped: string;
+  statusPass: string;
+  statusUnusable: string;
+  tipMoveRouter: string;
+  tipElevateRouter: string;
+  tipReduceObstacles: string;
+}
