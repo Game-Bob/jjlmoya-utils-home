@@ -1,0 +1,32 @@
+export interface VampireDrawSimulatorUI extends Record<string, string> {
+  sectionTitle: string;
+  labelDevices: string;
+  labelHours: string;
+  unitHours: string;
+  labelPrice: string;
+  unitPrice: string;
+  resultBadge: string;
+  labelAnnualKwh: string;
+  labelAnnualCost: string;
+  labelMonthlyCost: string;
+  labelDevicesCount: string;
+  labelTotalWatts: string;
+  unitWatts: string;
+  currencySign: string;
+  labelCurrency: string;
+  btnCurrUSD: string;
+  btnCurrEUR: string;
+  btnCurrGBP: string;
+  btnCurrJPY: string;
+  categoryLow: string;
+  categoryModerate: string;
+  categoryHigh: string;
+  categoryExtreme: string;
+  addDevice: string;
+  removeDevice: string;
+  modalAddTitle: string;
+  labelDeviceName: string;
+  labelDeviceWatts: string;
+  btnSave: string;
+  btnCancel: string;
+}
