@@ -11,6 +11,7 @@ import { WIFI_RANGE_SIMULATOR_TOOL } from './tool/wifiRangeSimulator/index';
 import { AC_TONNAGE_CALCULATOR_TOOL } from './tool/acTonnageCalculator/index';
 import { WALL_PAINTING_CALCULATOR_TOOL } from './tool/wallPaintingCalculator/index';
 import { VAMPIRE_DRAW_SIMULATOR_TOOL } from './tool/vampireDrawSimulator/index';
+import { DESK_ERGONOMICS_TOOL } from './tool/deskErgonomics/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   QR_GENERATOR_TOOL,
@@ -24,5 +25,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   AC_TONNAGE_CALCULATOR_TOOL,
   WALL_PAINTING_CALCULATOR_TOOL,
   VAMPIRE_DRAW_SIMULATOR_TOOL,
+  DESK_ERGONOMICS_TOOL,
 ];
 

@@ -1,0 +1,192 @@
+---
+import type { DeskErgonomicsUI } from './ui';
+import { calculateErgonomics, fmt0 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const eUI = ui as DeskErgonomicsUI;
+
+const defaultHeight = 175;
+const initial = calculateErgonomics(defaultHeight, 'male', 'sit');
+
+const maxVal = 140;
+const chairPct = Math.min((initial.chairHeight / maxVal) * 100, 100);
+const deskPct = Math.min((initial.deskHeight / maxVal) * 100, 100);
+const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
+---
+
+<div class="ergo-wrapper">
+  <div class="ergo-card" id="ergo-card">
+    <div class="ergo-header">
+      <div class="ergo-mode-toggle" id="ergo-mode-toggle">
+        <button class="ergo-mode-btn ergo-mode-active" data-mode="sit">{eUI.modeSit}</button>
+        <button class="ergo-mode-btn" data-mode="stand">{eUI.modeStand}</button>
+      </div>
+      <div class="ergo-field">
+        <div class="ergo-field-top">
+          <span class="ergo-label">{eUI.labelHeight}</span>
+          <span class="ergo-val" id="ergo-height-val">{defaultHeight} {eUI.unitCm}</span>
+        </div>
+        <input type="range" class="ergo-slider" id="ergo-height" min="140" max="210" step="1" value={defaultHeight} />
+      </div>
+      <div class="ergo-gender-row" id="ergo-gender-row">
+        <button class="ergo-gender-btn ergo-gender-active" data-gender="male">{eUI.genderMale}</button>
+        <button class="ergo-gender-btn" data-gender="female">{eUI.genderFemale}</button>
+      </div>
+    </div>
+
+    <div class="ergo-viz" id="ergo-viz">
+      <div class="ergo-ruler" id="ergo-ruler" />
+
+      <div class="ergo-arc" id="ergo-arc">
+        <span class="ergo-arc-label" id="arc-label">{initial.monitorDistance} {eUI.unitCm}</span>
+      </div>
+
+      <div class="ergo-tower">
+        <div class="ergo-tower-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 11l7-7 7 7M12 4v16"/></svg>
+        </div>
+        <div class="ergo-tower-track" id="tower-chair">
+          <div class="ergo-tower-zone" id="zone-chair" />
+          <div class="ergo-tower-fill" id="fill-chair" style={`height:${chairPct}%`} />
+          <div class="ergo-tower-pip" id="pip-chair" style={`bottom:${chairPct}%`} />
+        </div>
+        <span class="ergo-tower-label">{eUI.labelChair}</span>
+        <span class="ergo-tower-val" id="val-chair">{fmt0(initial.chairHeight)}</span>
+        <span class="ergo-tower-unit">{eUI.unitCm}</span>
+      </div>
+
+      <div class="ergo-tower">
+        <div class="ergo-tower-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 17v4M18 17v4"/></svg>
+        </div>
+        <div class="ergo-tower-track" id="tower-desk">
+          <div class="ergo-tower-zone" id="zone-desk" />
+          <div class="ergo-tower-fill" id="fill-desk" style={`height:${deskPct}%`} />
+          <div class="ergo-tower-pip" id="pip-desk" style={`bottom:${deskPct}%`} />
+        </div>
+        <span class="ergo-tower-label">{eUI.labelDesk}</span>
+        <span class="ergo-tower-val" id="val-desk">{fmt0(initial.deskHeight)}</span>
+        <span class="ergo-tower-unit">{eUI.unitCm}</span>
+      </div>
+
+      <div class="ergo-tower">
+        <div class="ergo-tower-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="ergo-tower-track" id="tower-monitor">
+          <div class="ergo-tower-zone" id="zone-monitor" />
+          <div class="ergo-tower-fill" id="fill-monitor" style={`height:${monPct}%`} />
+          <div class="ergo-tower-pip" id="pip-monitor" style={`bottom:${monPct}%`} />
+        </div>
+        <span class="ergo-tower-label">{eUI.labelMonitor}</span>
+        <span class="ergo-tower-val" id="val-monitor">{fmt0(initial.monitorHeight)}</span>
+        <span class="ergo-tower-unit">{eUI.unitCm}</span>
+      </div>
+    </div>
+
+    <div class="ergo-footer">
+      <div class="ergo-stat">
+        <p class="ergo-stat-label">{eUI.labelChair}</p>
+        <p class="ergo-stat-value" id="stat-chair">{fmt0(initial.chairHeight)} {eUI.unitCm}</p>
+      </div>
+      <div class="ergo-stat">
+        <p class="ergo-stat-label">{eUI.labelDesk}</p>
+        <p class="ergo-stat-value" id="stat-desk">{fmt0(initial.deskHeight)} {eUI.unitCm}</p>
+      </div>
+      <div class="ergo-stat">
+        <p class="ergo-stat-label">{eUI.labelMonitor}</p>
+        <p class="ergo-stat-value" id="stat-monitor">{fmt0(initial.monitorHeight)} {eUI.unitCm}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateErgonomics, fmt0 } from './logic';
+
+  function el(id) { return document.getElementById(id); }
+  function setTxt(id, val) { const e = el(id); if (e) e.textContent = val; }
+  function setStyle(id, styles) { const e = el(id); if (!e) return; Object.entries(styles).forEach(([k, v]) => { e.style[k] = v; }); }
+  function toggleClass(sel, attr, val, cls) { document.querySelectorAll(sel).forEach((b) => b.classList.toggle(cls, (b as HTMLElement).dataset[attr] === val)); }
+
+  let height = 175;
+  let gender = 'male';
+  let mode = 'sit';
+
+  const MAX_V = 140;
+
+  function pct(v) { return Math.min((v / MAX_V) * 100, 100); }
+
+  function updateTower(p) {
+    setStyle(`fill-${p.id}`, { height: `${pct(p.val)}%` });
+    setStyle(`pip-${p.id}`, { bottom: `${pct(p.val)}%` });
+    setTxt(`val-${p.id}`, fmt0(p.val));
+  }
+
+  function updateZone(p) {
+    const zone = el(`zone-${p.id}`);
+    if (!zone) return;
+    const topPct = pct(p.optMax);
+    const botPct = pct(p.optMin);
+    zone.style.top = `${100 - topPct}%`;
+    zone.style.height = `${topPct - botPct}%`;
+  }
+
+  function calculate() {
+    const r = calculateErgonomics(height, gender, mode);
+    setTxt('stat-chair', `${fmt0(r.chairHeight)} cm`);
+    setTxt('stat-desk', `${fmt0(r.deskHeight)} cm`);
+    setTxt('stat-monitor', `${fmt0(r.monitorHeight)} cm`);
+    setTxt('arc-label', `${fmt0(r.monitorDistance)} cm`);
+
+    updateTower({ id: 'chair', val: r.chairHeight });
+    updateTower({ id: 'desk', val: r.deskHeight });
+    updateTower({ id: 'monitor', val: r.monitorHeight });
+
+    updateZone({ id: 'chair', optMin: r.chairHeight - 3, optMax: r.chairHeight + 3 });
+    updateZone({ id: 'desk', optMin: r.deskHeight - 3, optMax: r.deskHeight + 3 });
+    updateZone({ id: 'monitor', optMin: r.monitorHeight - 5, optMax: r.monitorHeight + 5 });
+  }
+
+  function bindSlider() {
+    const slider = el('ergo-height');
+    const val = el('ergo-height-val');
+    if (slider) {
+      slider.addEventListener('input', () => {
+        height = parseInt(slider.value, 10);
+        if (val) val.textContent = `${height} cm`;
+        calculate();
+      });
+    }
+  }
+
+  function bindToggles() {
+    document.querySelectorAll('#ergo-mode-toggle .ergo-mode-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        mode = (btn as HTMLElement).dataset.mode;
+        toggleClass('#ergo-mode-toggle .ergo-mode-btn', 'mode', mode, 'ergo-mode-active');
+        calculate();
+      });
+    });
+    document.querySelectorAll('#ergo-gender-row .ergo-gender-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        gender = (btn as HTMLElement).dataset.gender;
+        toggleClass('#ergo-gender-row .ergo-gender-btn', 'gender', gender, 'ergo-gender-active');
+        calculate();
+      });
+    });
+  }
+
+  function init() {
+    bindSlider();
+    bindToggles();
+    calculate();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
