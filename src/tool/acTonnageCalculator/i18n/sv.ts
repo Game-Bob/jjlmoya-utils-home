@@ -4,7 +4,7 @@ import type { AcTonnageCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'tonnage-kalkylator-luftkonditionering';
-const title = 'Tonnage- och Kylkapacitetskalkylator för Luftkonditionering';
+const title = 'Tonnage och Kylkapacitetskalkylator för Luftkonditionering';
 const description =
   'Beräkna exakt luftkonditioneringsstorlek för ditt rum i BTU, frigorier och ton. Ange rumsstorlek, takhöjd, personer och värmekällor.';
 
@@ -42,7 +42,7 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
   seo: [
     { type: 'title', text: 'Vilken luftkonditioneringsstorlek behöver jag?', level: 2 },
     { type: 'paragraph', html: 'Rätt storlek beror på area, takhöjd, personer och sol. Använd denna kalkylator för exakta BTU, frigorier och ton.' },
-    { type: 'table', headers: ['Area', 'Rekommenderade BTU', 'Tonnage', 'Typisk användning'], rows: [['10 m² (litet sovrum)', '6 000 – 7 000 BTU', '0,5 – 0,75 t', 'Gästrum'], ['15 m² (sovrum)', '9 000 – 10 000 BTU', '0,75 – 1 t', 'Huvudsovrum'], ['20 m² (vardagsrum)', '12 000 – 14 000 BTU', '1 – 1,25 t', 'Litet vardagsrum'], ['30 m² (öppen planlösning)', '18 000 – 21 000 BTU', '1,5 – 1,75 t', 'Studio'], ['40 m² (stort vardagsrum)', '24 000 – 28 000 BTU', '2 – 2,5 t', 'Stort vardagsrum + matsal']] },
+    { type: 'table', headers: ['Area', 'Rekommenderade BTU', 'Tonnage', 'Typisk användning'], rows: [['10 m² (litet sovrum)', '6 000 - 7 000 BTU', '0,5 - 0,75 t', 'Gästrum'], ['15 m² (sovrum)', '9 000 - 10 000 BTU', '0,75 - 1 t', 'Huvudsovrum'], ['20 m² (vardagsrum)', '12 000 - 14 000 BTU', '1 - 1,25 t', 'Litet vardagsrum'], ['30 m² (öppen planlösning)', '18 000 - 21 000 BTU', '1,5 - 1,75 t', 'Studio'], ['40 m² (stort vardagsrum)', '24 000 - 28 000 BTU', '2 - 2,5 t', 'Stort vardagsrum + matsal']] },
     { type: 'title', text: 'Varför fel storlek kostar pengar', level: 2 },
     { type: 'paragraph', html: 'En för liten AC kör oavbrutet, når aldrig temperaturen och sliter ut kompressorn i förtid. En för stor blåser korta kalla luftstötar och lämnar rummet fuktigt.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU per m² bas', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU per ton', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU per frigorie', icon: 'mdi:calculator' }], columns: 3 },

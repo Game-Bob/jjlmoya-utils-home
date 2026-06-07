@@ -4,7 +4,7 @@ import type { AcTonnageCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'klimaanlage-tonnage-rechner';
-const title = 'Klimaanlagen-Tonnage und Kühlleistungsrechner';
+const title = 'Klimaanlagentonnage und Kühlleistungsrechner';
 const description =
   'Berechne die exakte Klimaanlagengröße für deinen Raum in BTU, Frigorien und Tonnen. Gib Raumgröße, Deckenhöhe, Personen, Wärmequellen und Sonneneinstrahlung ein, um eine präzise Kühlempfehlung zu erhalten.';
 
@@ -44,7 +44,7 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
   seo: [
     { type: 'title', text: 'Welche Klimaanlagengröße brauche ich?', level: 2 },
     { type: 'paragraph', html: 'Die richtige Klimaanlagengröße hängt von der Raumfläche, Deckenhöhe, Personenanzahl, Sonneneinstrahlung und Wärmequellen ab. Verwende diesen Rechner, um die genauen BTU-, Frigorien- und Tonnage-Werte für deinen Raum zu erhalten.' },
-    { type: 'table', headers: ['Raumgröße', 'Empfohlene BTU', 'Tonnage', 'Typische Nutzung'], rows: [['10 m² (kleines Schlafzimmer)', '6.000 – 7.000 BTU', '0,5 – 0,75 Tonnen', 'Gästezimmer, Homeoffice'], ['15 m² (Schlafzimmer)', '9.000 – 10.000 BTU', '0,75 – 1 Tonne', 'Hauptschlafzimmer'], ['20 m² (Wohnzimmer)', '12.000 – 14.000 BTU', '1 – 1,25 Tonnen', 'Kleines Wohnzimmer'], ['30 m² (offener Grundriss)', '18.000 – 21.000 BTU', '1,5 – 1,75 Tonnen', 'Studio oder offene Küche'], ['40 m² (großes Wohnzimmer)', '24.000 – 28.000 BTU', '2 – 2,5 Tonnen', 'Großes Wohnzimmer + Essbereich']] },
+    { type: 'table', headers: ['Raumgröße', 'Empfohlene BTU', 'Tonnage', 'Typische Nutzung'], rows: [['10 m² (kleines Schlafzimmer)', '6.000 - 7.000 BTU', '0,5 - 0,75 Tonnen', 'Gästezimmer, Homeoffice'], ['15 m² (Schlafzimmer)', '9.000 - 10.000 BTU', '0,75 - 1 Tonne', 'Hauptschlafzimmer'], ['20 m² (Wohnzimmer)', '12.000 - 14.000 BTU', '1 - 1,25 Tonnen', 'Kleines Wohnzimmer'], ['30 m² (offener Grundriss)', '18.000 - 21.000 BTU', '1,5 - 1,75 Tonnen', 'Studio oder offene Küche'], ['40 m² (großes Wohnzimmer)', '24.000 - 28.000 BTU', '2 - 2,5 Tonnen', 'Großes Wohnzimmer + Essbereich']] },
     { type: 'title', text: 'Warum die falsche Größe dich Geld kostet', level: 2 },
     { type: 'paragraph', html: 'Eine zu kleine Klimaanlage läuft ununterbrochen, erreicht nie die gewünschte Temperatur und verschleißt den Kompressor vorzeitig. Eine zu große Anlage bläst kurze Kaltluftstöße, schaltet sich vor der Entfeuchtung ab und hinterlässt ein kaltes, feuchtes Raumklima. Beide Fehler kosten Geld.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU pro m² Basis', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU pro Tonne', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU pro Frigoríe', icon: 'mdi:calculator' }], columns: 3 },

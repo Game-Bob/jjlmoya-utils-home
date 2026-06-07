@@ -42,7 +42,7 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
   seo: [
     { type: 'title', text: '我需要多大尺寸的空调？', level: 2 },
     { type: 'paragraph', html: '正确的尺寸取决于面积、天花板高度、人数和日照。使用此计算器获取准确的BTU、frigorías和吨位。' },
-    { type: 'table', headers: ['面积', '推荐BTU', '吨位', '典型用途'], rows: [['10 m²（小卧室）', '6,000 – 7,000 BTU', '0.5 – 0.75 t', '客房'], ['15 m²（卧室）', '9,000 – 10,000 BTU', '0.75 – 1 t', '主卧室'], ['20 m²（客厅）', '12,000 – 14,000 BTU', '1 – 1.25 t', '小客厅'], ['30 m²（开放式）', '18,000 – 21,000 BTU', '1.5 – 1.75 t', '工作室'], ['40 m²（大客厅）', '24,000 – 28,000 BTU', '2 – 2.5 t', '大客厅+餐厅']] },
+    { type: 'table', headers: ['面积', '推荐BTU', '吨位', '典型用途'], rows: [['10 m²（小卧室）', '6,000 - 7,000 BTU', '0.5 - 0.75 t', '客房'], ['15 m²（卧室）', '9,000 - 10,000 BTU', '0.75 - 1 t', '主卧室'], ['20 m²（客厅）', '12,000 - 14,000 BTU', '1 - 1.25 t', '小客厅'], ['30 m²（开放式）', '18,000 - 21,000 BTU', '1.5 - 1.75 t', '工作室'], ['40 m²（大客厅）', '24,000 - 28,000 BTU', '2 - 2.5 t', '大客厅+餐厅']] },
     { type: 'title', text: '为什么尺寸错误会浪费钱', level: 2 },
     { type: 'paragraph', html: '过小的空调持续运行，永远达不到设定温度，并提前磨损压缩机。过大的空调短促吹出冷风，让房间又冷又湿。' },
     { type: 'stats', items: [{ value: '600', label: '每m²基准BTU', icon: 'mdi:thermometer' }, { value: '12000', label: '每吨BTU', icon: 'mdi:snowflake' }, { value: '3.968', label: '每frigoría的BTU', icon: 'mdi:calculator' }], columns: 3 },
