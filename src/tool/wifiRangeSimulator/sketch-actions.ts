@@ -1,11 +1,10 @@
 import type { PlacedDevice } from './logic';
 import type { State, Snapshot, History } from './sketch-state';
-import { saveState } from './sketch-state';
-import { renderObjects, renderWalls, renderRouter, renderDevices } from './sketch-render';
+import { saveState, renderDeviceSelection } from './sketch-state';
+import { renderObjects, renderWalls, renderRouter, renderDevices, spawnParticle } from './sketch-render';
 import { updateDashboard } from './sketch-render-dash';
-import { renderDeviceSelection } from './sketch-state';
-import { spawnParticle } from './sketch-render';
 import { getUI } from './i18n-utils';
+export { saveState };
 
 export function addToHistory(h: History, s: State) {
   if (h.pos < h.stack.length - 1) {
