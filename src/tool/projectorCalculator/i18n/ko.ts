@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projector-throw-calculator';
-const title = '프로젝터 투사거리 계산기 — 화면 크기 및 위치';
+const title = '프로젝터 투사거리 계산기: 화면 크기 및 위치';
 const description =
   '원하는 화면 크기와 프로젝터의 투사비(Throw Ratio)에 따른 정확한 설치 거리를 계산해 보세요. 실시간 시뮬레이션 기능을 제공합니다.';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: '투사비란?',
           description: '거리와 화면 폭의 비율입니다. 투사비 1.5는 화면 폭 1m당 1.5m의 거리가 필요함을 뜻합니다.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: 단초점, 좁은 방에 최적', 'TR 1–2: 거실용 표준 규격', 'TR > 2: 대강당용 장초점'],
+          points: ['TR < 1: 단초점, 좁은 방에 최적', 'TR 1-2: 거실용 표준 규격', 'TR > 2: 대강당용 장초점'],
         },
         {
           title: '화면 비율(포맷)',

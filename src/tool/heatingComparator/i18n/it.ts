@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Scegliere il sistema di climatizzazione giusto per la casa è una delle decisioni finanziarie e di comfort più importanti. In un contesto di prezzi energetici instabili e con la crescente attenzione alla sostenibilità, sapere quale sistema è più efficiente — e quale ti farà risparmiare di più — è fondamentale.',
+      html: 'Scegliere il sistema di climatizzazione giusto per la casa è una delle decisioni finanziarie e di comfort più importanti. In un contesto di prezzi energetici instabili e con la crescente attenzione alla sostenibilità, sapere quale sistema è più efficiente: e quale ti farà risparmiare di più: è fondamentale.',
     },
     {
       type: 'paragraph',

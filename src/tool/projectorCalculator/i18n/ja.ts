@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projector-throw-calculator';
-const title = 'プロジェクター設置距離計算機 — 投写距離と画面サイズ';
+const title = 'プロジェクター設置距離計算機: 投写距離と画面サイズ';
 const description =
   '希望のスクリーンサイズと投写比（Throw Ratio）に基づいて、プロジェクターの正確な設置距離を計算。リアルタイムシミュレーション機能を搭載。';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: '投写比とは？',
           description: '投写距離と画面幅の比率です。TRが1.5の場合、画面幅1mあたり1.5mの距離が必要です。',
           icon: 'mdi:ruler',
-          points: ['TR < 1: 短焦点。狭い部屋に最適', 'TR 1–2: 標準的。リビング等に', 'TR > 2: 長焦点。広い講堂等に'],
+          points: ['TR < 1: 短焦点。狭い部屋に最適', 'TR 1-2: 標準的。リビング等に', 'TR > 2: 長焦点。広い講堂等に'],
         },
         {
           title: 'アスペクト比（フォーマット）',

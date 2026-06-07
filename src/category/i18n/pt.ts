@@ -16,7 +16,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Uma casa eficiente não é um luxo — é uma decisão técnica. A diferença entre um agregado familiar com uma fatura de eletricidade descontrolada e um com consumo monitorizado raramente reside no preço da tarifa: reside em saber exatamente quanto consome cada dispositivo, quando faz sentido autogerar energia e onde ocorrem as perdas.',
+      html: 'Uma casa eficiente não é um luxo: é uma decisão técnica. A diferença entre um agregado familiar com uma fatura de eletricidade descontrolada e um com consumo monitorizado raramente reside no preço da tarifa: reside em saber exatamente quanto consome cada dispositivo, quando faz sentido autogerar energia e onde ocorrem as perdas.',
     },
     {
       type: 'title',
@@ -25,7 +25,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'As instalações fotovoltaicas residenciais têm um retorno real do investimento que depende de três variáveis: a irradiação no seu local, o ângulo de inclinação dos painéis e o seu consumo horário. Um painel inclinado 10° abaixo do ideal pode perder <strong>15–20% da produção anual</strong>. A nossa calculadora solar indica-lhe o ângulo exato e a estimativa de geração mensal.',
+      html: 'As instalações fotovoltaicas residenciais têm um retorno real do investimento que depende de três variáveis: a irradiação no seu local, o ângulo de inclinação dos painéis e o seu consumo horário. Um painel inclinado 10° abaixo do ideal pode perder <strong>15-20% da produção anual</strong>. A nossa calculadora solar indica-lhe o ângulo exato e a estimativa de geração mensal.',
     },
     {
       type: 'paragraph',
@@ -42,7 +42,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Escolher a tarifa de eletricidade correta é igualmente importante. Os contratos de mercado com preço fixo podem ser vantajosos para consumidores com hábitos regulares; as tarifas indexadas flutuam com o mercado grossista e recompensam quem desloca o consumo para as horas de vazio. Comparar ambas as opções com os seus dados de consumo reais pode fazer uma diferença de <strong>100–300 € por ano</strong>.',
+      html: 'Escolher a tarifa de eletricidade correta é igualmente importante. Os contratos de mercado com preço fixo podem ser vantajosos para consumidores com hábitos regulares; as tarifas indexadas flutuam com o mercado grossista e recompensam quem desloca o consumo para as horas de vazio. Comparar ambas as opções com os seus dados de consumo reais pode fazer uma diferença de <strong>100-300 € por ano</strong>.',
     },
     {
       type: 'title',
@@ -51,7 +51,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'A humidade relativa sustentada acima de 70% leva à condensação em pontes térmicas, ao crescimento de bolor e à deterioração estrutural. A temperatura do ponto de orvalho — o valor no qual o vapor de água no ar condensa — é a métrica principal. Se a superfície da sua parede interior estiver abaixo desse ponto, a condensação formar-se-á independentemente de poder vê-la ou não.',
+      html: 'A humidade relativa sustentada acima de 70% leva à condensação em pontes térmicas, ao crescimento de bolor e à deterioração estrutural. A temperatura do ponto de orvalho: o valor no qual o vapor de água no ar condensa: é a métrica principal. Se a superfície da sua parede interior estiver abaixo desse ponto, a condensação formar-se-á independentemente de poder vê-la ou não.',
     },
     {
       type: 'paragraph',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Um projetor não se coloca "onde calhar". O rácio de projeção (throw ratio) — a relação entre a distância de projeção e a largura da imagem — determina exatamente quão atrás precisa de posicionar a unidade para alcançar o tamanho de ecrã desejado. Um erro de posicionamento de 50 cm pode significar uma imagem 20 cm mais pequena, ou forçar um zoom digital que reduz a resolução efetiva.',
+      html: 'Um projetor não se coloca "onde calhar". O rácio de projeção (throw ratio): a relação entre a distância de projeção e a largura da imagem: determina exatamente quão atrás precisa de posicionar a unidade para alcançar o tamanho de ecrã desejado. Um erro de posicionamento de 50 cm pode significar uma imagem 20 cm mais pequena, ou forçar um zoom digital que reduz a resolução efetiva.',
     },
     {
       type: 'paragraph',
@@ -77,12 +77,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'A casa moderna integra tecnologia em todos os níveis: redes Wi-Fi, dispositivos IoT, acesso baseado em códigos QR. O gerador de códigos QR permite-lhe criar atalhos para o seu Wi-Fi doméstico, cartões de contacto, URLs de dispositivos inteligentes ou qualquer informação que queira partilhar facilmente com convidados ou entre dispositivos — sem precisar de digitar.',
+      html: 'A casa moderna integra tecnologia em todos os níveis: redes Wi-Fi, dispositivos IoT, acesso baseado em códigos QR. O gerador de códigos QR permite-lhe criar atalhos para o seu Wi-Fi doméstico, cartões de contacto, URLs de dispositivos inteligentes ou qualquer informação que queira partilhar facilmente com convidados ou entre dispositivos: sem precisar de digitar.',
     },
     {
       type: 'list',
       items: [
-        '<strong>Poupança quantificável:</strong> Cada ferramenta devolve números concretos — euros poupados por ano, kWh gerados por mês, graus de inclinação ideais. Sem estimativas vagas.',
+        '<strong>Poupança quantificável:</strong> Cada ferramenta devolve números concretos: euros poupados por ano, kWh gerados por mês, graus de inclinação ideais. Sem estimativas vagas.',
         '<strong>Sem necessidade de instalação:</strong> Calculadoras online que correm diretamente no navegador, sem necessidade de aplicações ou contas.',
         '<strong>Baseado em normas técnicas:</strong> Fórmulas psicrométricas (ASHRAE), ótica de projeção, radiação solar por latitude e regulamentos elétricos relevantes.',
         '<strong>Útil antes de comprar:</strong> Valide decisões de compra antes de se comprometer. Os painéis solares compensam no seu telhado? Quanto é que os LEDs poupam realmente? Calcule primeiro.',
@@ -95,7 +95,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'As melhorias na eficiência energética doméstica têm um ROI concreto. Uma instalação fotovoltaica bem dimensionada pode pagar-se em 6–9 anos com os preços atuais da eletricidade. Uma substituição total por LEDs numa casa média paga-se em menos de 2 anos. Uma tarifa bem escolhida poupa dinheiro desde o primeiro mês. O ponto de partida é sempre o mesmo: <strong>medir antes de agir</strong>.',
+      html: 'As melhorias na eficiência energética doméstica têm um ROI concreto. Uma instalação fotovoltaica bem dimensionada pode pagar-se em 6-9 anos com os preços atuais da eletricidade. Uma substituição total por LEDs numa casa média paga-se em menos de 2 anos. Uma tarifa bem escolhida poupa dinheiro desde o primeiro mês. O ponto de partida é sempre o mesmo: <strong>medir antes de agir</strong>.',
     },
     {
       type: 'paragraph',

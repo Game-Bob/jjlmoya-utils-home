@@ -114,13 +114,13 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'PVPC — Regulated Market',
+          title: 'PVPC: Regulated Market',
           description: 'The energy price changes every hour according to the wholesale market. On days with high renewable generation, it can drop to very low levels.',
           icon: 'mdi:lightning-bolt',
           points: ['No lock-in, free to switch', 'Access to Social Bonus for vulnerable consumers', 'Peak/Off-peak/Valley time-of-use pricing'],
         },
         {
-          title: 'Free Market — Fixed Price',
+          title: 'Free Market: Fixed Price',
           description: 'Energy suppliers set a price per kWh that remains stable throughout the year, regardless of the wholesale market.',
           icon: 'mdi:tag-outline',
           points: ['Stability and predictability', 'No surprises on the bill', 'May include additional services'],
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Peak (most expensive):</strong> Mon–Fri 10:00–14:00 and 18:00–22:00. <strong>Standard (mid-price):</strong> Mon–Fri 08:00–10:00, 14:00–18:00 and 22:00–00:00. <strong>Off-peak (cheapest):</strong> Mon–Fri 00:00–08:00 and all day on Saturdays, Sundays and public holidays. Scheduling washing machines, dishwashers and electric car charging during off-peak hours is the key to extreme savings.',
+      html: '<strong>Peak (most expensive):</strong> Mon-Fri 10:00-14:00 and 18:00-22:00. <strong>Standard (mid-price):</strong> Mon-Fri 08:00-10:00, 14:00-18:00 and 22:00-00:00. <strong>Off-peak (cheapest):</strong> Mon-Fri 00:00-08:00 and all day on Saturdays, Sundays and public holidays. Scheduling washing machines, dishwashers and electric car charging during off-peak hours is the key to extreme savings.',
     },
     {
       type: 'diagnostic',

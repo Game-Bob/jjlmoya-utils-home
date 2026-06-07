@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Choosing the right climate system for your home is one of the most important financial and comfort decisions. In a context of volatile energy prices and growing concern for sustainability, knowing which system is most efficient—and which will save us more per month—is essential.',
+      html: 'Choosing the right climate system for your home is one of the most important financial and comfort decisions. In a context of volatile energy prices and growing concern for sustainability, knowing which system is most efficient: and which will save us more per month: is essential.',
     },
     {
       type: 'paragraph',

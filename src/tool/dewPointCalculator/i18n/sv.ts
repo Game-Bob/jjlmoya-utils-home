@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Daggpunkten är den temperatur där vattenånga i luften blir flytande. I hemmet markerar detta gränsen mellan ett hälsosamt hus och ett med fuktproblem. När yttemperaturen på en vägg faller under daggpunkten uppstår kondens — en perfekt grogrund för mögel.',
+      html: 'Daggpunkten är den temperatur där vattenånga i luften blir flytande. I hemmet markerar detta gränsen mellan ett hälsosamt hus och ett med fuktproblem. När yttemperaturen på en vägg faller under daggpunkten uppstår kondens: en perfekt grogrund för mögel.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Säker Marginal', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Ideal Fuktighet', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Ideal Fuktighet', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Hög Risk', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Låg risk (diff &gt; 5°C):</strong> Dina väggar är säkra. <strong>Medelrisk (3–5°C):</strong> Håll koll på hörn. <strong>Hög risk (1–3°C):</strong> Kondens på rutor trolig — ventilera direkt. <strong>Fara (&lt; 1°C):</strong> Aktiv kondens med risk för svartmögel.',
+      html: '<strong>Låg risk (diff &gt; 5°C):</strong> Dina väggar är säkra. <strong>Medelrisk (3-5°C):</strong> Håll koll på hörn. <strong>Hög risk (1-3°C):</strong> Kondens på rutor trolig: ventilera direkt. <strong>Fara (&lt; 1°C):</strong> Aktiv kondens med risk för svartmögel.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Hög risk',
     riskExtreme: 'Fara',
     riskLowDesc: 'Differens > 5°C. Ytorna är säkra.',
-    riskMediumDesc: 'Differens 3–5°C. Kolla hörnen.',
-    riskHighDesc: 'Differens 1–3°C. Ventilera genast.',
+    riskMediumDesc: 'Differens 3-5°C. Kolla hörnen.',
+    riskHighDesc: 'Differens 1-3°C. Ventilera genast.',
     riskExtremeDesc: 'Differens < 1°C. Aktiv kondensation.',
   },
 };

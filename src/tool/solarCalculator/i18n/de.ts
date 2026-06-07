@@ -135,8 +135,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Maximale Effizienz',
     labelWinter: 'Winter',
     labelSummer: 'Sommer',
-    hemisphereNorth: 'Nordhalbkugel — Nach SÜDEN ausrichten',
-    hemisphereSouth: 'Südhalbkugel — Nach NORDEN ausrichten',
+    hemisphereNorth: 'Nordhalbkugel: Nach SÜDEN ausrichten',
+    hemisphereSouth: 'Südhalbkugel: Nach NORDEN ausrichten',
     geoNotAvailable: 'Geolokalisierung wird nicht unterstützt.',
   },
 };

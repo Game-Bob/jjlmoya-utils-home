@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projektor-abstand-rechner';
-const title = 'Projektor Abstandsrechner — Verhältnis & Leinwand';
+const title = 'Projektor Abstandsrechner: Verhältnis & Leinwand';
 const description =
   'Berechnen Sie den exakten Abstand für die Installation Ihres Projektors basierend auf der Leinwandgröße und dem Projektionsverhältnis (Throw Ratio).';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'Was ist das Throw Ratio?',
           description: 'Es ist das Verhältnis zwischen Projektionsabstand und Bildbreite. Ein TR von 1,5 bedeutet 1,5 m Abstand pro Meter Bildbreite.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Kurzdistanz, ideal für kleine Räume', 'TR 1–2: Standard für Wohnzimmer', 'TR > 2: Langdistanz für Hörsäle'],
+          points: ['TR < 1: Kurzdistanz, ideal für kleine Räume', 'TR 1-2: Standard für Wohnzimmer', 'TR > 2: Langdistanz für Hörsäle'],
         },
         {
           title: 'Seitenverhältnis (Format)',

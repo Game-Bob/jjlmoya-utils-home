@@ -1,0 +1,169 @@
+---
+import type { WifiRangeSimulatorUI } from './ui';
+import type { Point } from './logic';
+import { calculateSignalFromSketch, getVerdictColor } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const wUI = ui as WifiRangeSimulatorUI;
+
+const circumference = 2 * Math.PI * 70;
+const initialRouter: Point = { x: 150, y: 250 };
+const initialDevice: Point = { x: 400, y: 250 };
+const initialResult = calculateSignalFromSketch(initialRouter, initialDevice, [], []);
+const uiJson = JSON.stringify(wUI).replace(/<\/script>/g, '<\\/script>');
+---
+
+<div class="sketch-wrapper">
+  <div class="sketch-card">
+    <div class="sketch-toolbar" id="sketch-toolbar">
+      <div class="sketch-tool-group">
+        <button class="sketch-tool active" data-tool="select" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>
+          <span>{wUI.labelMove}</span>
+        </button>
+      </div>
+      <div class="sketch-tool-sep" />
+      <div class="sketch-tool-group">
+        <span class="sketch-tool-section-label">{wUI.labelWalls}</span>
+        <button class="sketch-tool" data-tool="drywall" type="button"><span class="sketch-tool-swatch" style="background:#e7e5e4" /><span>{wUI.labelDrywall}</span></button>
+        <button class="sketch-tool" data-tool="brick" type="button"><span class="sketch-tool-swatch" style="background:#a16207" /><span>{wUI.labelBrick}</span></button>
+        <button class="sketch-tool" data-tool="concrete" type="button"><span class="sketch-tool-swatch" style="background:#57534e" /><span>{wUI.labelConcrete}</span></button>
+        <button class="sketch-tool" data-tool="stoneWall" type="button"><span class="sketch-tool-swatch" style="background:#44403c" /><span>{wUI.labelStone}</span></button>
+      </div>
+      <div class="sketch-tool-sep" />
+      <div class="sketch-tool-group">
+        <span class="sketch-tool-section-label">{wUI.labelObjects}</span>
+        <button class="sketch-tool" data-tool="woodDoor" type="button"><span class="sketch-tool-swatch" style="background:#92400e" /><span>{wUI.labelWood}</span></button>
+        <button class="sketch-tool" data-tool="metalDoor" type="button"><span class="sketch-tool-swatch" style="background:#334155" /><span>{wUI.labelMetal}</span></button>
+        <button class="sketch-tool" data-tool="window" type="button"><span class="sketch-tool-swatch" style="background:#bfdbfe" /><span>{wUI.labelWindow}</span></button>
+        <button class="sketch-tool" data-tool="fridge" type="button"><span class="sketch-tool-swatch" style="background:#94a3b8" /><span>{wUI.labelFridge}</span></button>
+        <button class="sketch-tool" data-tool="aquarium" type="button"><span class="sketch-tool-swatch" style="background:#0ea5e9" /><span>{wUI.labelFish}</span></button>
+        <button class="sketch-tool" data-tool="microwave" type="button"><span class="sketch-tool-swatch" style="background:#475569" /><span>{wUI.labelMicro}</span></button>
+        <button class="sketch-tool" data-tool="mirror" type="button"><span class="sketch-tool-swatch" style="background:#c0c0c0" /><span>{wUI.labelMirror}</span></button>
+        <button class="sketch-tool" data-tool="furniture" type="button"><span class="sketch-tool-swatch" style="background:#78350f" /><span>{wUI.labelFurn}</span></button>
+      </div>
+      <div class="sketch-tool-sep" />
+      <div class="sketch-tool-group">
+        <span class="sketch-tool-section-label">{wUI.labelActions}</span>
+        <button class="sketch-tool" data-tool="undo" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
+          <span>{wUI.labelUndo}</span>
+        </button>
+        <button class="sketch-tool" data-tool="addDevice" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+          <span>{wUI.labelAddDevice}</span>
+        </button>
+        <button class="sketch-tool sketch-tool-danger" data-tool="clearWalls" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+          <span>{wUI.labelClearWalls}</span>
+        </button>
+        <button class="sketch-tool sketch-tool-danger" data-tool="clearObjects" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+          <span>{wUI.labelClearObjects}</span>
+        </button>
+        <button class="sketch-tool sketch-tool-danger" data-tool="clear" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+          <span>{wUI.labelClearAll}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sketch-body">
+      <div class="sketch-canvas-wrap" id="sketch-canvas-wrap">
+        <div class="sketch-world" id="sketch-world">
+          <svg class="sketch-svg" id="sketch-svg" viewBox="0 0 800 500" width="800" height="500">
+            <defs>
+              <pattern id="sketch-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--sketch-grid-color)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="800" height="500" fill="url(#sketch-grid)" />
+            <g id="sketch-walls-layer" />
+            <g id="sketch-objs-layer" />
+            <g id="sketch-rays-layer" style="pointer-events:none" />
+            <g id="sketch-router-group" transform={`translate(${initialRouter.x}, ${initialRouter.y})`} style="cursor:grab">
+              <circle id="sketch-router-glow" cx="0" cy="0" r="28" fill="none" stroke={getVerdictColor(initialResult.verdict)} stroke-width="2" opacity="0.3" />
+              <rect x="-16" y="-16" width="32" height="32" rx="8" fill="var(--bg-surface)" stroke="var(--border-color)" stroke-width="1" />
+              <svg x="-10" y="-10" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={getVerdictColor(initialResult.verdict)} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h.01" /><path d="M2 8.82a15 15 0 0 1 20 0" /><path d="M5 12.859a10 10 0 0 1 14 0" /><path d="M8.5 16.429a5 5 0 0 1 7 0" />
+              </svg>
+              <text x="0" y="28" text-anchor="middle" fill="var(--text-muted)" font-size="8" font-weight="700">{wUI.labelRouter}</text>
+            </g>
+            <line id="sketch-draw-line" x1="0" y1="0" x2="0" y2="0" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="6 4" opacity="0" pointer-events="none" />
+          </svg>
+        </div>
+        <div class="sketch-zoom-controls">
+          <button class="sketch-zoom-btn" data-tool="zoomIn" type="button" title={wUI.labelZoomIn}>+</button>
+          <button class="sketch-zoom-btn" data-tool="zoomOut" type="button" title={wUI.labelZoomOut}>−</button>
+        </div>
+        <div class="sketch-scale-bar" id="sketch-scale-bar">
+          <div class="sketch-scale-track" id="sketch-scale-track">
+            <div class="sketch-scale-segment dark" />
+            <div class="sketch-scale-segment light" />
+            <div class="sketch-scale-segment dark" />
+            <div class="sketch-scale-segment light" />
+            <div class="sketch-scale-segment dark" />
+          </div>
+          <div class="sketch-scale-labels">
+            <span class="sketch-scale-label">0</span>
+            <span class="sketch-scale-label end">{wUI.labelScaleMeters}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sketch-panel">
+        <div class="sketch-avg-label">{wUI.labelAverageSignal}</div>
+        <div class="sketch-ring" id="sketch-ring">
+          <svg viewBox="0 0 160 160" width="120" height="120">
+            <circle class="sketch-ring-bg" cx="80" cy="80" r="70" />
+            <circle
+              class="sketch-ring-fill"
+              id="sketch-ring-fill"
+              cx="80"
+              cy="80"
+              r="70"
+              stroke-dasharray={circumference}
+              stroke-dashoffset={circumference - (circumference * initialResult.strengthPercent) / 100}
+              stroke={getVerdictColor(initialResult.verdict)}
+            />
+          </svg>
+          <div class="sketch-ring-inner">
+            <div class="sketch-ring-pct" id="sketch-ring-pct" style={`color:${getVerdictColor(initialResult.verdict)}`}>{initialResult.strengthPercent}%</div>
+            <div class="sketch-ring-label">{wUI.labelSignalStrength}</div>
+          </div>
+        </div>
+        <div class="sketch-range"><span class="sketch-range-val" id="sketch-range-val">{initialResult.effectiveRange} {wUI.labelMeters}</span></div>
+        <div class="sketch-streams">
+          <span class="sketch-streams-title">{wUI.labelStreamingVerdict}</span>
+          {[
+            { key: '4kStreaming', label: wUI.label4kStreaming },
+            { key: 'onlineGaming', label: wUI.labelOnlineGaming },
+            { key: 'videoCalls', label: wUI.labelVideoCalls },
+            { key: 'basicBrowsing', label: wUI.labelBasicBrowsing },
+          ].map((item) => (
+            <div class="sketch-stream-row">
+              <span class="sketch-stream-name">{item.label}</span>
+              <span class="sketch-stream-badge" id={`sketch-badge-${item.key}`}>{initialResult.streamingVerdict[item.key]}</span>
+            </div>
+          ))}
+        </div>
+        <div class="sketch-device-panel" id="sketch-device-panel" />
+        <div class="sketch-tip-area" id="sketch-tip-area" />
+      </div>
+    </div>
+
+    <div class="sketch-hint" id="sketch-hint">{wUI.hintText}</div>
+  </div>
+</div>
+
+<script id="sketch-ui-store" type="application/json" set:text={uiJson} />
+
+<script>
+  import { initSketch } from './sketch';
+  document.addEventListener('astro:page-load', initSketch);
+  initSketch();
+</script>

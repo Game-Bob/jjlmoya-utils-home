@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'What is the Throw Ratio?',
           description: 'The ratio between the projection distance and the image width. A TR of 1.5 means you need 1.5m of distance per metre of screen width.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Short Throw, ideal for small rooms', 'TR 1–2: Standard for living rooms and meeting rooms', 'TR > 2: Long Throw, for large auditoriums'],
+          points: ['TR < 1: Short Throw, ideal for small rooms', 'TR 1-2: Standard for living rooms and meeting rooms', 'TR > 2: Long Throw, for large auditoriums'],
         },
         {
           title: 'Format and Aspect Ratio',

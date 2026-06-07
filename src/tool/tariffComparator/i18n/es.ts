@@ -114,13 +114,13 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'PVPC — Mercado Regulado',
+          title: 'PVPC: Mercado Regulado',
           description: 'El precio de la energía cambia cada hora según el mercado mayorista. En días de mucha generación renovable, puede caer a niveles muy bajos.',
           icon: 'mdi:lightning-bolt',
           points: ['Sin permanencia, cambio libre', 'Acceso al Bono Social para vulnerables', 'Discriminación horaria Punta/Llano/Valle'],
         },
         {
-          title: 'Mercado Libre — Precio Fijo',
+          title: 'Mercado Libre: Precio Fijo',
           description: 'Las comercializadoras fijan un precio por kWh que se mantiene durante el año, independientemente del mercado mayorista.',
           icon: 'mdi:tag-outline',
           points: ['Estabilidad y previsibilidad', 'Sin sorpresas en la factura', 'Puede incluir servicios adicionales'],
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Punta (más caro):</strong> L-V de 10:00–14:00 y 18:00–22:00. <strong>Llano (intermedio):</strong> L-V de 08:00–10:00, 14:00–18:00 y 22:00–00:00. <strong>Valle (más barato):</strong> L-V de 00:00–08:00 y las 24h de sábados, domingos y festivos. Planificar lavadoras, lavavajillas y carga del coche eléctrico en horas valle es la clave del ahorro extremo.',
+      html: '<strong>Punta (más caro):</strong> L-V de 10:00-14:00 y 18:00-22:00. <strong>Llano (intermedio):</strong> L-V de 08:00-10:00, 14:00-18:00 y 22:00-00:00. <strong>Valle (más barato):</strong> L-V de 00:00-08:00 y las 24h de sábados, domingos y festivos. Planificar lavadoras, lavavajillas y carga del coche eléctrico en horas valle es la clave del ahorro extremo.',
     },
     {
       type: 'diagnostic',

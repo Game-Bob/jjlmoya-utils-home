@@ -16,7 +16,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'An efficient home is not a luxury — it is a technical decision. The difference between a household with a spiralling electricity bill and one with controlled consumption is rarely the tariff price: it is knowing exactly how much each device consumes, when it makes sense to self-generate energy, and where the losses occur.',
+      html: 'An efficient home is not a luxury: it is a technical decision. The difference between a household with a spiralling electricity bill and one with controlled consumption is rarely the tariff price: it is knowing exactly how much each device consumes, when it makes sense to self-generate energy, and where the losses occur.',
     },
     {
       type: 'title',
@@ -25,7 +25,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Residential photovoltaic installations have a real return on investment that depends on three variables: the irradiation at your location, the tilt angle of the panels, and your hourly consumption. A panel tilted 10° below optimal can lose <strong>15–20% of annual output</strong>. Our solar calculator gives you the exact angle and monthly generation estimate.',
+      html: 'Residential photovoltaic installations have a real return on investment that depends on three variables: the irradiation at your location, the tilt angle of the panels, and your hourly consumption. A panel tilted 10° below optimal can lose <strong>15-20% of annual output</strong>. Our solar calculator gives you the exact angle and monthly generation estimate.',
     },
     {
       type: 'paragraph',
@@ -42,7 +42,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Choosing the right electricity tariff is equally important. Fixed-price market contracts can be advantageous for consumers with regular habits; indexed tariffs fluctuate with the wholesale market and reward those who shift consumption to off-peak hours. Comparing both options with your actual consumption data can make a difference of <strong>100–300 € per year</strong>.',
+      html: 'Choosing the right electricity tariff is equally important. Fixed-price market contracts can be advantageous for consumers with regular habits; indexed tariffs fluctuate with the wholesale market and reward those who shift consumption to off-peak hours. Comparing both options with your actual consumption data can make a difference of <strong>100-300 € per year</strong>.',
     },
     {
       type: 'title',
@@ -51,7 +51,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Sustained relative humidity above 70% leads to condensation at thermal bridges, mould growth, and structural deterioration. The dew point temperature — the value at which water vapour in the air condenses — is the key metric. If your interior wall surface is below that point, condensation will form regardless of whether you can see it.',
+      html: 'Sustained relative humidity above 70% leads to condensation at thermal bridges, mould growth, and structural deterioration. The dew point temperature: the value at which water vapour in the air condenses: is the key metric. If your interior wall surface is below that point, condensation will form regardless of whether you can see it.',
     },
     {
       type: 'paragraph',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'A projector is not placed "wherever it fits". The throw ratio — the relationship between projection distance and image width — determines exactly how far back you need to position the unit to achieve the desired screen size. A 50 cm positioning error can mean an image 20 cm smaller, or force a digital zoom that reduces effective resolution.',
+      html: 'A projector is not placed "wherever it fits". The throw ratio: the relationship between projection distance and image width: determines exactly how far back you need to position the unit to achieve the desired screen size. A 50 cm positioning error can mean an image 20 cm smaller, or force a digital zoom that reduces effective resolution.',
     },
     {
       type: 'paragraph',
@@ -77,12 +77,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'The modern home integrates technology at every level: Wi-Fi networks, IoT devices, QR-code-based access. The QR code generator lets you create shortcuts to your home Wi-Fi, contact cards, smart device URLs, or any information you want to share easily with guests or between devices — no typing required.',
+      html: 'The modern home integrates technology at every level: Wi-Fi networks, IoT devices, QR-code-based access. The QR code generator lets you create shortcuts to your home Wi-Fi, contact cards, smart device URLs, or any information you want to share easily with guests or between devices: no typing required.',
     },
     {
       type: 'list',
       items: [
-        '<strong>Quantifiable savings:</strong> Each tool returns concrete numbers — euros saved per year, kWh generated per month, optimal tilt degrees. No vague estimates.',
+        '<strong>Quantifiable savings:</strong> Each tool returns concrete numbers: euros saved per year, kWh generated per month, optimal tilt degrees. No vague estimates.',
         '<strong>No installation needed:</strong> Online calculators that run directly in the browser, no apps or accounts required.',
         '<strong>Based on technical standards:</strong> Psychrometric formulas (ASHRAE), projection optics, solar radiation by latitude, and relevant electrical regulations.',
         '<strong>Useful before you buy:</strong> Validate purchasing decisions before committing. Do solar panels pay off on your roof? How much do LEDs actually save? Calculate first.',
@@ -95,7 +95,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Home energy efficiency improvements have a concrete ROI. A well-sized photovoltaic installation can pay for itself in 6–9 years at current electricity prices. A full LED retrofit in an average home pays back in under 2 years. A well-chosen tariff saves money from the first month. The starting point is always the same: <strong>measure before you act</strong>.',
+      html: 'Home energy efficiency improvements have a concrete ROI. A well-sized photovoltaic installation can pay for itself in 6-9 years at current electricity prices. A full LED retrofit in an average home pays back in under 2 years. A well-chosen tariff saves money from the first month. The starting point is always the same: <strong>measure before you act</strong>.',
     },
     {
       type: 'paragraph',

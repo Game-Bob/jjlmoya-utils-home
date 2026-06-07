@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Energibesparing', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Energibesparing', icon: 'mdi:lightning-bolt' },
         { value: '25.000h', label: 'Livslängd LED', icon: 'mdi:clock-outline' },
         { value: '< 4 mån', label: 'Återbetalning', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Modern LED teknik',
           description: 'Nuvarande standard för effektivitet. Tänds direkt och minimal värmeavgivning.',
           icon: 'mdi:led-outline',
-          points: ['85–90 % direkt besparing', 'Livslängd: upp till 50 000 timmar', 'Minimal värme'],
+          points: ['85-90 % direkt besparing', 'Livslängd: upp till 50 000 timmar', 'Minimal värme'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Snabbguide för utbyte',
       icon: 'mdi:table',
       badge: 'Referens',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W glödlampa</strong> → LED 5–6W (450 lm)</li><li><strong>60W glödlampa</strong> → LED 8–10W (800 lm)</li><li><strong>100W glödlampa</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halogen</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W glödlampa</strong> → LED 5-6W (450 lm)</li><li><strong>60W glödlampa</strong> → LED 8-10W (800 lm)</li><li><strong>100W glödlampa</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halogen</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

@@ -16,7 +16,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Rumah yang efisien bukanlah kemewahan — ini adalah keputusan teknis. Perbedaan antara rumah tangga dengan tagihan listrik yang membengkak dan rumah tangga dengan konsumsi terkendali jarang terletak pada harga tarif: melainkan pada pengetahuan tepat tentang berapa konsumsi setiap perangkat, kapan waktu yang tepat untuk menghasilkan energi sendiri, dan di mana kebocoran terjadi.',
+      html: 'Rumah yang efisien bukanlah kemewahan: ini adalah keputusan teknis. Perbedaan antara rumah tangga dengan tagihan listrik yang membengkak dan rumah tangga dengan konsumsi terkendali jarang terletak pada harga tarif: melainkan pada pengetahuan tepat tentang berapa konsumsi setiap perangkat, kapan waktu yang tepat untuk menghasilkan energi sendiri, dan di mana kebocoran terjadi.',
     },
     {
       type: 'title',
@@ -25,7 +25,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Instalasi fotovoltaik residensial memiliki pengembalian investasi nyata yang bergantung pada tiga variabel: radiasi di lokasi Anda, sudut kemiringan panel, dan konsumsi per jam Anda. Panel yang miring 10° di bawah optimal dapat kehilangan <strong>15–20% output tahunan</strong>. Kalkulator surya kami memberikan sudut yang tepat dan estimasi hasil bulanan.',
+      html: 'Instalasi fotovoltaik residensial memiliki pengembalian investasi nyata yang bergantung pada tiga variabel: radiasi di lokasi Anda, sudut kemiringan panel, dan konsumsi per jam Anda. Panel yang miring 10° di bawah optimal dapat kehilangan <strong>15-20% output tahunan</strong>. Kalkulator surya kami memberikan sudut yang tepat dan estimasi hasil bulanan.',
     },
     {
       type: 'paragraph',
@@ -42,7 +42,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Memilih tarif listrik yang tepat sama pentingnya. Kontrak pasar harga tetap dapat menguntungkan bagi konsumen dengan kebiasaan teratur; tarif terindeks berfluktuasi dengan pasar grosir dan memberi imbalan bagi mereka yang mengalihkan konsumsi ke jam di luar beban puncak. Membandingkan kedua opsi dengan data konsumsi aktual Anda dapat membuat perbedaan sebesar <strong>100–300 € per tahun</strong>.',
+      html: 'Memilih tarif listrik yang tepat sama pentingnya. Kontrak pasar harga tetap dapat menguntungkan bagi konsumen dengan kebiasaan teratur; tarif terindeks berfluktuasi dengan pasar grosir dan memberi imbalan bagi mereka yang mengalihkan konsumsi ke jam di luar beban puncak. Membandingkan kedua opsi dengan data konsumsi aktual Anda dapat membuat perbedaan sebesar <strong>100-300 € per tahun</strong>.',
     },
     {
       type: 'title',
@@ -51,7 +51,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Kelembapan relatif yang berkelanjutan di atas 70% menyebabkan kondensasi pada jembatan termal, pertumbuhan jamur, und kerusakan struktural. Suhu titik embun — nilai di mana uap air di udara mengembun — adalah metrik kuncinya. Jika suhu permukaan dinding interior Anda di bawah titik tersebut, kondensasi akan terbentuk terlepas dari apakah Anda dapat melihatnya.',
+      html: 'Kelembapan relatif yang berkelanjutan di atas 70% menyebabkan kondensasi pada jembatan termal, pertumbuhan jamur, und kerusakan struktural. Suhu titik embun: nilai di mana uap air di udara mengembun: adalah metrik kuncinya. Jika suhu permukaan dinding interior Anda di bawah titik tersebut, kondensasi akan terbentuk terlepas dari apakah Anda dapat melihatnya.',
     },
     {
       type: 'paragraph',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Proyektor tidak diletakkan "di mana saja asal muat". Rasio tembak (throw ratio) — hubungan antara jarak proyeksi dan lebar gambar — menentukan seberapa jauh ke belakang Anda perlu menempatkan unit untuk mencapai ukuran layar yang diinginkan. Kesalahan posisi 50 cm dapat berarti gambar menjadi 20 cm lebih kecil, atau memaksa zoom digital yang mengurangi resolusi efektif.',
+      html: 'Proyektor tidak diletakkan "di mana saja asal muat". Rasio tembak (throw ratio): hubungan antara jarak proyeksi dan lebar gambar: menentukan seberapa jauh ke belakang Anda perlu menempatkan unit untuk mencapai ukuran layar yang diinginkan. Kesalahan posisi 50 cm dapat berarti gambar menjadi 20 cm lebih kecil, atau memaksa zoom digital yang mengurangi resolusi efektif.',
     },
     {
       type: 'paragraph',
@@ -77,12 +77,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Rumah modern mengintegrasikan teknologi di setiap level: jaringan Wi-Fi, perangkat IoT, akses berbasis kode QR. Pembuat kode QR memungkinkan Anda membuat pintasan ke Wi-Fi rumah, kartu kontak, URL perangkat pintar, atau informasi apa pun yang ingin Anda bagikan dengan mudah kepada tamu atau antar perangkat — tanpa perlu mengetik.',
+      html: 'Rumah modern mengintegrasikan teknologi di setiap level: jaringan Wi-Fi, perangkat IoT, akses berbasis kode QR. Pembuat kode QR memungkinkan Anda membuat pintasan ke Wi-Fi rumah, kartu kontak, URL perangkat pintar, atau informasi apa pun yang ingin Anda bagikan dengan mudah kepada tamu atau antar perangkat: tanpa perlu mengetik.',
     },
     {
       type: 'list',
       items: [
-        '<strong>Penghematan yang dapat dikuantifikasi:</strong> Setiap alat mengembalikan angka konkret — euro yang dihemat per tahun, kWh yang dihasilkan per bulan, derajat kemiringan optimal. Bukan sekadar perkiraan samar.',
+        '<strong>Penghematan yang dapat dikuantifikasi:</strong> Setiap alat mengembalikan angka konkret: euro yang dihemat per tahun, kWh yang dihasilkan per bulan, derajat kemiringan optimal. Bukan sekadar perkiraan samar.',
         '<strong>Tanpa perlu instalasi:</strong> Kalkulator online yang berjalan langsung di browser, tidak memerlukan aplikasi atau akun.',
         '<strong>Berdasarkan standar teknis:</strong> Formula psikrometrik (ASHRAE), optik proyeksi, radiasi surya berdasarkan lintang, dan regulasi listrik yang relevan.',
         '<strong>Berguna sebelum Anda membeli:</strong> Validasi keputusan pembelian sebelum berkomitmen. Apakah panel surya sepadan pada atap Anda? Berapa banyak penghematan sebenarnya dari LED? Hitung terlebih dahulu.',
@@ -95,7 +95,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Peningkatan efisiensi energi rumah memiliki ROI yang konkret. Instalasi fotovoltaik dengan ukuran yang tepat dapat melunasi dirinya sendiri dalam 6–9 tahun pada harga listrik saat ini. Penggantian LED secara menyeluruh di rumah rata-rata terbayar dalam kurang dari 2 tahun. Tarif yang dipilih dengan baik menghemat uang sejak bulan pertama. Titik mulanya selalu sama: <strong>ukur sebelum bertindak</strong>.',
+      html: 'Peningkatan efisiensi energi rumah memiliki ROI yang konkret. Instalasi fotovoltaik dengan ukuran yang tepat dapat melunasi dirinya sendiri dalam 6-9 tahun pada harga listrik saat ini. Penggantian LED secara menyeluruh di rumah rata-rata terbayar dalam kurang dari 2 tahun. Tarif yang dipilih dengan baik menghemat uang sejak bulan pertama. Titik mulanya selalu sama: <strong>ukur sebelum bertindak</strong>.',
     },
     {
       type: 'paragraph',

@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '%85–90', label: 'Enerji Tasarrufu', icon: 'mdi:lightning-bolt' },
+        { value: '%85-90', label: 'Enerji Tasarrufu', icon: 'mdi:lightning-bolt' },
         { value: '25.000s', label: 'LED Ömrü', icon: 'mdi:clock-outline' },
         { value: '< 4 ay', label: 'Amortisman', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Modern LED Teknolojisi',
           description: 'Güncel enerji verimliliği standardı. Anında tam parlaklık ve düşük ısı yayılımı.',
           icon: 'mdi:led-outline',
-          points: ['%85–90 doğrudan tasarruf', 'Ömür: 25.000–50.000 saat', 'Minimum ısı yayılımı'],
+          points: ['%85-90 doğrudan tasarruf', 'Ömür: 25.000-50.000 saat', 'Minimum ısı yayılımı'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Hızlı Değişim Tablosu',
       icon: 'mdi:table',
       badge: 'Referans',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W Akkor</strong> → LED 5–6W (450 lm)</li><li><strong>60W Akkor</strong> → LED 8–10W (800 lm)</li><li><strong>100W Akkor</strong> → LED 13–15W (1500 lm)</li><li><strong>50W Halojen</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W Akkor</strong> → LED 5-6W (450 lm)</li><li><strong>60W Akkor</strong> → LED 8-10W (800 lm)</li><li><strong>100W Akkor</strong> → LED 13-15W (1500 lm)</li><li><strong>50W Halojen</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

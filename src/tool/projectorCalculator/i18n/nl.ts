@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projector-afstand-calculator';
-const title = 'Projector Afstand Calculator — Throw Ratio';
+const title = 'Projector Afstand Calculator: Throw Ratio';
 const description =
   'Bereken de exacte afstand voor uw projector aan de hand van de gewenste schermgrootte en de throw ratio van uw apparaat.';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'Wat is Throw Ratio?',
           description: 'De verhouding tussen afstand en breedte. Een TR van 1.5 betekent 1,5m afstand per meter beeldbreedte.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Short Throw, voor kleine kamers', 'TR 1–2: Standaard voor woonkamers', 'TR > 2: Long Throw, voor grote zalen'],
+          points: ['TR < 1: Short Throw, voor kleine kamers', 'TR 1-2: Standaard voor woonkamers', 'TR > 2: Long Throw, voor grote zalen'],
         },
         {
           title: 'Beeldverhouding (Formaat)',

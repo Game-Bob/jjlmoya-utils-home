@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'De keuze van het juiste verwarmingssysteem is een van de belangrijkste financiële beslissingen voor uw huis. In een tijd van schommelende energieprijzen en een groeiende focus op duurzaamheid, is het essentieel om te weten welk systeem het meest efficiënt is — en waarmee u per maand het meeste bespaart.',
+      html: 'De keuze van het juiste verwarmingssysteem is een van de belangrijkste financiële beslissingen voor uw huis. In een tijd van schommelende energieprijzen en een groeiende focus op duurzaamheid, is het essentieel om te weten welk systeem het meest efficiënt is: en waarmee u per maand het meeste bespaart.',
     },
     {
       type: 'paragraph',

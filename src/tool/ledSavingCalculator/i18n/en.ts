@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Energy Saving', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Energy Saving', icon: 'mdi:lightning-bolt' },
         { value: '25,000h', label: 'LED Lifespan', icon: 'mdi:clock-outline' },
         { value: '< 4 months', label: 'Payback Period', icon: 'mdi:calendar-check' },
       ],
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Modern LED Technology',
           description: "Today's energy efficiency standard for the home. Instant full brightness from the very first second.",
           icon: 'mdi:led-outline',
-          points: ['85–90% direct saving', 'Lifespan: 25,000–50,000 hours', 'Minimal heat emission'],
+          points: ['85-90% direct saving', 'Lifespan: 25,000-50,000 hours', 'Minimal heat emission'],
         },
       ],
       columns: 2,
@@ -146,7 +146,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'An incandescent bulb works by heating a tungsten filament. <strong>95% of the energy</strong> is wasted as heat and only 5% becomes visible light. LEDs, on the other hand, convert electricity directly into light through semiconductors with vastly superior efficiency. <strong>Look at lumens, not watts:</strong> an old 60W bulb produces around 800 lm; today you can get those same 800 lm from a LED using just 8–9W.',
+      html: 'An incandescent bulb works by heating a tungsten filament. <strong>95% of the energy</strong> is wasted as heat and only 5% becomes visible light. LEDs, on the other hand, convert electricity directly into light through semiconductors with vastly superior efficiency. <strong>Look at lumens, not watts:</strong> an old 60W bulb produces around 800 lm; today you can get those same 800 lm from a LED using just 8-9W.',
     },
     {
       type: 'diagnostic',
@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Quick Equivalence Reference',
       icon: 'mdi:table',
       badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescent</strong> → LED 5–6W (450 lm)</li><li><strong>60W incandescent</strong> → LED 8–10W (800 lm)</li><li><strong>100W incandescent</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halogen (spotlight)</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescent</strong> → LED 5-6W (450 lm)</li><li><strong>60W incandescent</strong> → LED 8-10W (800 lm)</li><li><strong>100W incandescent</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halogen (spotlight)</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

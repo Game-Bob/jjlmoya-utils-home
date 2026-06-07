@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projektsiyon-mesafe-hesaplama';
-const title = 'Projeksiyon Mesafe Hesaplayıcı — Atım Oranı';
+const title = 'Projeksiyon Mesafe Hesaplayıcı: Atım Oranı';
 const description =
   'İstediğiniz ekran boyutuna ve projeksiyon cihazınızın Atım Oranı\'na (Throw Ratio) göre tam kurulum mesafesini hesaplayın.';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'Atım Oranı (Throw Ratio) Nedir?',
           description: 'Mesafe ile genişlik arasındaki orandır. 1.5 AO, her 1 metre genişlik için 1.5 metre mesafe gerektiği anlamına gelir.',
           icon: 'mdi:ruler',
-          points: ['AO < 1: Kısa atımlı, dar alanlar için ideal', 'AO 1–2: Oturma odaları için standart', 'AO > 2: Büyük salonlar için uzun atımlı'],
+          points: ['AO < 1: Kısa atımlı, dar alanlar için ideal', 'AO 1-2: Oturma odaları için standart', 'AO > 2: Büyük salonlar için uzun atımlı'],
         },
         {
           title: 'Format ve En Boy Oranı',
