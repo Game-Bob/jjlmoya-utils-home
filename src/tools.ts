@@ -9,6 +9,7 @@ import { TARIFF_COMPARATOR_TOOL } from './tool/tariffComparator/index';
 import { HEATING_COMPARATOR_TOOL } from './tool/heatingComparator/index';
 import { WIFI_RANGE_SIMULATOR_TOOL } from './tool/wifiRangeSimulator/index';
 import { AC_TONNAGE_CALCULATOR_TOOL } from './tool/acTonnageCalculator/index';
+import { WALL_PAINTING_CALCULATOR_TOOL } from './tool/wallPaintingCalculator/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   QR_GENERATOR_TOOL,
@@ -20,5 +21,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   HEATING_COMPARATOR_TOOL,
   WIFI_RANGE_SIMULATOR_TOOL,
   AC_TONNAGE_CALCULATOR_TOOL,
+  WALL_PAINTING_CALCULATOR_TOOL,
 ];
 

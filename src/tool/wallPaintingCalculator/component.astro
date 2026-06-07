@@ -1,0 +1,340 @@
+---
+import type { WallPaintingCalculatorUI } from './ui';
+import { calculateWallPainting, fmt2 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const wUI = ui as WallPaintingCalculatorUI;
+
+const M2_TO_FT2 = 10.7639;
+const LITRE_TO_GALLON = 0.264172;
+const M2PERL_TO_FT2PERGAL = 40.745;
+
+const INITIAL_AREA = 30;
+const INITIAL_YIELD = 12;
+const INITIAL_COATS = 2;
+const INITIAL_PRICE = 15;
+const INITIAL_DILUTION = 5;
+
+const initial = calculateWallPainting({
+  area: INITIAL_AREA,
+  yieldM2PerLitre: INITIAL_YIELD,
+  coats: INITIAL_COATS,
+  pricePerLitre: INITIAL_PRICE,
+  dilutionPercent: INITIAL_DILUTION,
+});
+---
+
+<div class="wall-wrapper">
+  <div class="wall-card"
+    data-label-area={wUI.labelArea}
+    data-label-area-ft={wUI.labelAreaFt}
+    data-unit-area={wUI.unitArea}
+    data-unit-area-ft={wUI.unitAreaFt}
+    data-label-yield={wUI.labelYield}
+    data-label-yield-ft={wUI.labelYieldFt}
+    data-unit-yield={wUI.unitYield}
+    data-unit-yield-ft={wUI.unitYieldFt}
+    data-label-price={wUI.labelPrice}
+    data-label-price-ft={wUI.labelPriceFt}
+    data-unit-price={wUI.unitPrice}
+    data-unit-price-gal={wUI.unitPriceGal}
+    data-label-paint={wUI.labelPaint}
+    data-label-paint-gal={wUI.labelPaintGal}
+    data-label-water={wUI.labelWater}
+    data-label-water-gal={wUI.labelWaterGal}
+    data-label-total={wUI.labelTotalVolume}
+    data-label-total-gal={wUI.labelTotalVolumeGal}
+    data-currency-sign={wUI.currencySign}
+    data-curr-usd={wUI.btnCurrUSD}
+    data-curr-eur={wUI.btnCurrEUR}
+    data-curr-gbp={wUI.btnCurrGBP}
+    data-curr-jpy={wUI.btnCurrJPY}
+    data-m2-to-ft2={M2_TO_FT2}
+    data-l-to-gal={LITRE_TO_GALLON}
+    data-m2pl-to-ft2pgal={M2PERL_TO_FT2PERGAL}
+    data-unit-coats={wUI.unitCoats}
+  >
+    <div class="wall-left">
+      <p class="wall-section-title">{wUI.sectionTitle}</p>
+
+      <div class="wall-unit-toggle">
+        <button class="wall-unit-btn wall-unit-active" data-unit="metric">{wUI.labelMetric}</button>
+        <button class="wall-unit-btn" data-unit="imperial">{wUI.labelImperial}</button>
+      </div>
+
+      <div class="wall-field">
+        <label class="wall-label" for="wall-area" id="wall-area-label">{wUI.labelArea}</label>
+        <div class="wall-number-row">
+          <input type="number" id="wall-area" value={INITIAL_AREA} min="1" max="5000" step="1" class="wall-number-input" />
+          <span class="wall-number-unit" id="wall-area-unit">{wUI.unitArea}</span>
+        </div>
+      </div>
+
+      <div class="wall-field">
+        <label class="wall-label" for="wall-yield" id="wall-yield-label">{wUI.labelYield}</label>
+        <div class="wall-number-row">
+          <input type="number" id="wall-yield" value={INITIAL_YIELD} min="1" max="5000" step="0.5" class="wall-number-input" />
+          <span class="wall-number-unit" id="wall-yield-unit">{wUI.unitYield}</span>
+        </div>
+      </div>
+
+      <div class="wall-field">
+        <label class="wall-label">{wUI.labelType}</label>
+        <div class="wall-type-grid">
+          <button class="wall-type-btn wall-type-active" data-metric-yield="10" data-imperial-yield="406.8" data-dilution="5">
+            <span class="wall-type-title">{wUI.btnPlasticMatTitle}</span>
+            <span class="wall-type-sub">{wUI.btnPlasticMatSub}</span>
+          </button>
+          <button class="wall-type-btn" data-metric-yield="12" data-imperial-yield="488.9" data-dilution="5">
+            <span class="wall-type-title">{wUI.btnPlasticSatinTitle}</span>
+            <span class="wall-type-sub">{wUI.btnPlasticSatinSub}</span>
+          </button>
+          <button class="wall-type-btn" data-metric-yield="11" data-imperial-yield="448.2" data-dilution="10">
+            <span class="wall-type-title">{wUI.btnEnamelTitle}</span>
+            <span class="wall-type-sub">{wUI.btnEnamelSub}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="wall-field">
+        <label class="wall-label" for="wall-coats">{wUI.labelCoats}</label>
+        <input type="range" id="wall-coats" min="1" max="4" value={INITIAL_COATS} step="1" class="wall-slider" />
+        <p id="wall-coats-desc" class="wall-coats-desc">{INITIAL_COATS} {wUI.unitCoats}</p>
+      </div>
+
+      <div class="wall-field">
+        <label class="wall-label" for="wall-price" id="wall-price-label">{wUI.labelPrice}</label>
+        <div class="wall-number-row">
+          <input type="number" id="wall-price" value={INITIAL_PRICE} min="0.01" step="0.01" class="wall-price-input" />
+          <span class="wall-number-unit" id="wall-price-unit">{wUI.currencySign}{wUI.unitPrice}</span>
+        </div>
+      </div>
+
+      <div class="wall-field">
+        <label class="wall-label" for="wall-dilution">{wUI.labelDilution}</label>
+        <div class="wall-number-row">
+          <input type="number" id="wall-dilution" value={INITIAL_DILUTION} min="0" max="50" step="1" class="wall-number-input" />
+          <span class="wall-number-unit">{wUI.unitDilution}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wall-right">
+      <div class="wall-result-badge">{wUI.resultBadge}</div>
+
+      <div class="wall-paint-section">
+        <p class="wall-paint-label" id="wall-paint-label">{wUI.labelPaint}</p>
+        <p class="wall-paint-value">
+          <span id="wall-paint-num">{fmt2(initial.paintLitres)}</span>
+          <span id="wall-paint-unit" class="wall-paint-unit">{wUI.unitYield.split('/')[1]}</span>
+        </p>
+      </div>
+
+      <div class="wall-stats">
+        <div class="wall-stat">
+          <p class="wall-stat-label">{wUI.labelCost}</p>
+          <p id="wall-cost" class="wall-stat-value">{wUI.currencySign}{fmt2(initial.totalCost)}</p>
+        </div>
+        <div class="wall-stat-divider"></div>
+        <div class="wall-stat">
+          <p class="wall-stat-label" id="wall-water-label">{wUI.labelWater}</p>
+          <p id="wall-water" class="wall-stat-value">{fmt2(initial.waterLitres)} {wUI.unitYield.split('/')[1]}</p>
+        </div>
+        <div class="wall-stat-divider"></div>
+        <div class="wall-stat">
+          <p class="wall-stat-label" id="wall-total-label">{wUI.labelTotalVolume}</p>
+          <p id="wall-total" class="wall-stat-value">{fmt2(initial.totalVolume)} {wUI.unitYield.split('/')[1]}</p>
+        </div>
+      </div>
+
+      <div class="wall-currency-toggle">
+        <span class="wall-currency-label">{wUI.labelCurrency}</span>
+        <div class="wall-currency-btns">
+          <button class="wall-currency-btn wall-currency-active" data-currency="usd">{wUI.btnCurrUSD}</button>
+          <button class="wall-currency-btn" data-currency="eur">{wUI.btnCurrEUR}</button>
+          <button class="wall-currency-btn" data-currency="gbp">{wUI.btnCurrGBP}</button>
+          <button class="wall-currency-btn" data-currency="jpy">{wUI.btnCurrJPY}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateWallPainting, fmt2 } from './logic';
+
+  const LS_KEY_UNIT = 'wall-painting-unit-system';
+  const LS_KEY_CURRENCY = 'wall-painting-currency';
+
+  let unitSystem: 'metric' | 'imperial' = 'metric';
+  let currency: 'usd' | 'eur' | 'gbp' | 'jpy' = 'usd';
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, val: string) { const e = el(id); if (e) e.textContent = val; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+  function getDataset(card: HTMLElement, key: string): string { return card.dataset[key] ?? ''; }
+  function getFactor(card: HTMLElement, key: string): number { return parseFloat(getDataset(card, key)) || 1; }
+  function toMetric(v: number, f: number) { return unitSystem === 'imperial' ? v / f : v; }
+  function fromMetric(v: number, f: number) { return unitSystem === 'imperial' ? v * f : v; }
+
+  function getCurrencySign(card: HTMLElement): string {
+    const key = `curr${currency.charAt(0).toUpperCase()}${currency.slice(1)}`;
+    return getDataset(card, key) || getDataset(card, 'currencySign') || '$';
+  }
+
+  function calculate(card: HTMLElement) {
+    const m2ToFt2 = getFactor(card, 'm2ToFt2');
+    const lToGal = getFactor(card, 'lToGal');
+    const m2plToFt2pgal = getFactor(card, 'm2plToFt2pgal');
+    const currencySign = getCurrencySign(card);
+    const area = toMetric(getNum('wall-area'), m2ToFt2);
+    const yieldVal = toMetric(getNum('wall-yield'), m2plToFt2pgal);
+    const coats = getNum('wall-coats');
+    const price = toMetric(getNum('wall-price'), 1 / lToGal);
+    const dilution = getNum('wall-dilution');
+    const r = calculateWallPainting({ area, yieldM2PerLitre: yieldVal, coats, pricePerLitre: price, dilutionPercent: dilution });
+    setTxt('wall-paint-num', fmt2(fromMetric(r.paintLitres, lToGal)));
+    setTxt('wall-cost', `${currencySign}${fmt2(r.totalCost)}`);
+    setTxt('wall-water', `${fmt2(fromMetric(r.waterLitres, lToGal))} ${unitSystem === 'imperial' ? 'gal' : 'L'}`);
+    setTxt('wall-total', `${fmt2(fromMetric(r.totalVolume, lToGal))} ${unitSystem === 'imperial' ? 'gal' : 'L'}`);
+  }
+
+  function setAreaLabels(card: HTMLElement, i: boolean) {
+    setTxt('wall-area-label', i ? getDataset(card, 'labelAreaFt') : getDataset(card, 'labelArea'));
+    setTxt('wall-area-unit', i ? getDataset(card, 'unitAreaFt') : getDataset(card, 'unitArea'));
+  }
+
+  function setYieldLabels(card: HTMLElement, i: boolean) {
+    setTxt('wall-yield-label', i ? getDataset(card, 'labelYieldFt') : getDataset(card, 'labelYield'));
+    setTxt('wall-yield-unit', i ? getDataset(card, 'unitYieldFt') : getDataset(card, 'unitYield'));
+  }
+
+  function setPriceLabels(card: HTMLElement, i: boolean) {
+    const currencySign = getCurrencySign(card);
+    setTxt('wall-price-label', i ? getDataset(card, 'labelPriceFt') : getDataset(card, 'labelPrice'));
+    setTxt('wall-price-unit', `${currencySign}${i ? getDataset(card, 'unitPriceGal') : getDataset(card, 'unitPrice')}`);
+  }
+
+  function setResultLabels(card: HTMLElement, i: boolean) {
+    setTxt('wall-paint-label', i ? getDataset(card, 'labelPaintGal') : getDataset(card, 'labelPaint'));
+    setTxt('wall-paint-unit', i ? 'gal' : 'L');
+    setTxt('wall-water-label', i ? getDataset(card, 'labelWaterGal') : getDataset(card, 'labelWater'));
+    setTxt('wall-total-label', i ? getDataset(card, 'labelTotalGal') : getDataset(card, 'labelTotal'));
+  }
+
+  function updateLabels(card: HTMLElement) {
+    const i = unitSystem === 'imperial';
+    setAreaLabels(card, i);
+    setYieldLabels(card, i);
+    setPriceLabels(card, i);
+    setResultLabels(card, i);
+  }
+
+  function toggleClass(sel: string, attr: string, val: string, cls: string) {
+    document.querySelectorAll(sel).forEach((b) => b.classList.toggle(cls, (b as HTMLElement).dataset[attr] === val));
+  }
+
+  function applyUnitSystem(sys: 'metric' | 'imperial', card: HTMLElement) {
+    unitSystem = sys;
+    localStorage.setItem(LS_KEY_UNIT, sys);
+    toggleClass('.wall-unit-btn', 'unit', sys, 'wall-unit-active');
+    const m2ToFt2 = getFactor(card, 'm2ToFt2');
+    const m2plToFt2pgal = getFactor(card, 'm2plToFt2pgal');
+    const lToGal = getFactor(card, 'lToGal');
+    const areaEl = el('wall-area') as HTMLInputElement | null;
+    const yieldEl = el('wall-yield') as HTMLInputElement | null;
+    const priceEl = el('wall-price') as HTMLInputElement | null;
+    if (areaEl) areaEl.value = String(sys === 'imperial' ? Math.round(getNum('wall-area') * m2ToFt2) : Math.round(getNum('wall-area') / m2ToFt2));
+    if (yieldEl) yieldEl.value = String(sys === 'imperial' ? Math.round(getNum('wall-yield') * m2plToFt2pgal * 10) / 10 : Math.round(getNum('wall-yield') / m2plToFt2pgal * 10) / 10);
+    if (priceEl) priceEl.value = String(sys === 'imperial' ? Math.round(getNum('wall-price') / lToGal * 100) / 100 : Math.round(getNum('wall-price') * lToGal * 100) / 100);
+    updateLabels(card);
+    calculate(card);
+  }
+
+  function applyCurrency(curr: 'usd' | 'eur' | 'gbp' | 'jpy', card: HTMLElement) {
+    currency = curr;
+    localStorage.setItem(LS_KEY_CURRENCY, curr);
+    toggleClass('.wall-currency-btn', 'currency', curr, 'wall-currency-active');
+    const i = unitSystem === 'imperial';
+    const currencySign = getCurrencySign(card);
+    setTxt('wall-price-unit', `${currencySign}${i ? getDataset(card, 'unitPriceGal') : getDataset(card, 'unitPrice')}`);
+    calculate(card);
+  }
+
+  function attachTypeButtons(card: HTMLElement) {
+    document.querySelectorAll<HTMLElement>('.wall-type-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.wall-type-btn').forEach((b) => b.classList.remove('wall-type-active'));
+        btn.classList.add('wall-type-active');
+        const yieldEl = el('wall-yield') as HTMLInputElement | null;
+        const dilEl = el('wall-dilution') as HTMLInputElement | null;
+        if (!yieldEl || !dilEl) return;
+        const isImperial = unitSystem === 'imperial';
+        const yieldKey = isImperial ? 'imperialYield' : 'metricYield';
+        if (btn.dataset[yieldKey]) yieldEl.value = btn.dataset[yieldKey]!;
+        if (btn.dataset.dilution) dilEl.value = btn.dataset.dilution;
+        calculate(card);
+      });
+    });
+  }
+
+  function restoreState() {
+    const savedUnit = localStorage.getItem(LS_KEY_UNIT) as 'metric' | 'imperial' | null;
+    if (savedUnit) unitSystem = savedUnit;
+    const savedCurr = localStorage.getItem(LS_KEY_CURRENCY) as 'usd' | 'eur' | 'gbp' | 'jpy' | null;
+    if (savedCurr) currency = savedCurr;
+  }
+
+  function attachUnitToggle(card: HTMLElement) {
+    document.querySelectorAll('.wall-unit-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const s = (btn as HTMLElement).dataset.unit as 'metric' | 'imperial';
+        if (s) applyUnitSystem(s, card);
+      });
+    });
+  }
+
+  function attachCurrencyToggle(card: HTMLElement) {
+    document.querySelectorAll('.wall-currency-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const c = (btn as HTMLElement).dataset.currency as 'usd' | 'eur' | 'gbp' | 'jpy';
+        if (c) applyCurrency(c, card);
+      });
+    });
+  }
+
+  function attachInputListeners(card: HTMLElement) {
+    ['wall-area', 'wall-yield', 'wall-price', 'wall-dilution'].forEach((id) => {
+      const e = el(id);
+      if (e) e.addEventListener('input', () => calculate(card));
+    });
+  }
+
+  function init() {
+    const card = document.querySelector('.wall-card') as HTMLElement | null;
+    if (!card) return;
+    restoreState();
+    toggleClass('.wall-unit-btn', 'unit', unitSystem, 'wall-unit-active');
+    toggleClass('.wall-currency-btn', 'currency', currency, 'wall-currency-active');
+    updateLabels(card);
+    attachUnitToggle(card);
+    attachCurrencyToggle(card);
+    attachTypeButtons(card);
+    const coatsSlider = el('wall-coats') as HTMLInputElement | null;
+    if (coatsSlider) {
+      coatsSlider.addEventListener('input', () => {
+        setTxt('wall-coats-desc', `${coatsSlider.value} ${getDataset(card, 'unitCoats')}`);
+        calculate(card);
+      });
+    }
+    attachInputListeners(card);
+    calculate(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

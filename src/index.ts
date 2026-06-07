@@ -24,4 +24,5 @@ export { DEW_POINT_CALCULATOR_TOOL } from './tool/dewPointCalculator';
 export { LED_SAVING_CALCULATOR_TOOL } from './tool/ledSavingCalculator';
 export { TARIFF_COMPARATOR_TOOL } from './tool/tariffComparator';
 export { HEATING_COMPARATOR_TOOL } from './tool/heatingComparator';
+export { WALL_PAINTING_CALCULATOR_TOOL } from './tool/wallPaintingCalculator';
 
