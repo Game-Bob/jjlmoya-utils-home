@@ -14,7 +14,7 @@ const faqData = [
   },
   {
     question: 'Was ist der Unterschied zwischen einer Wärmepumpe und einer normalen Klimaanlage?',
-    answer: 'Technisch gesehen sind beides Wärmepumpen. Der Hauptunterschied liegt im Medium, an das sie die Wärme abgeben: Eine klassische Wärmepumpe ist meist ein „Luft-Wasser“-System (erwärmt das Wasser in Heizkörpern oder der Fußbodenheizung), während eine herkömmliche Klimaanlage ein „Luft-Luft“-System ist (erwärmt die Luft direkt über Innengeräte).',
+    answer: 'Technisch gesehen sind beides Wärmepumpen. Der Hauptunterschied liegt im Medium, an das sie die Wärme abgeben: Eine klassische Wärmepumpe ist meist ein "Luft-Wasser"-System (erwärmt das Wasser in Heizkörpern oder der Fußbodenheizung), während eine herkömmliche Klimaanlage ein "Luft-Luft"-System ist (erwärmt die Luft direkt über Innengeräte).',
   },
   {
     question: 'Kann man eine Wärmepumpe in einer Wohnung mit alten Heizkörpern installieren?',
@@ -89,7 +89,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       items: [
         'Eine <strong>Wärmepumpe</strong> ist bis zu 400 % effizienter als eine Gasheizung.',
         'Eine gute <strong>Dämmung</strong> senkt Ihre Rechnung stärker als jeder Kessel.',
-        'Die <strong>Amortisation</strong> elektrischer Systeme liegt bei etwa 6–8 Jahren.',
+        'Die <strong>Amortisation</strong> elektrischer Systeme liegt bei etwa 6-8 Jahren.',
         'Kombinieren Sie <strong>Solaranlagen</strong> für fast kostenlose Wärme.',
       ],
     },
@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Die Wahl des richtigen Heizsystems ist eine der wichtigsten finanziellen Entscheidungen für Ihr Zuhause. In Zeiten schwankender Energiepreise und wachsender Bedeutung von Nachhaltigkeit ist es entscheidend zu wissen, welches System am effizientesten ist – und womit Sie am meisten Geld sparen.',
+      html: 'Die Wahl des richtigen Heizsystems ist eine der wichtigsten finanziellen Entscheidungen für Ihr Zuhause. In Zeiten schwankender Energiepreise und wachsender Bedeutung von Nachhaltigkeit ist es entscheidend zu wissen, welches System am effizientesten ist - und womit Sie am meisten Geld sparen.',
     },
     {
       type: 'paragraph',
@@ -161,13 +161,13 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       items: [
         '<strong>Effizienz (COP):</strong> Ein modernes System erreicht oft einen COP von 4. Das bedeutet: Aus 1 kWh Strom werden 4 kWh Wärme für Ihr Haus.',
         '<strong>Vorteile:</strong> Nachhaltig (besonders mit Photovoltaik), ein Gerät für Heizung und Kühlung, niedrigste Betriebskosten.',
-        '<strong>Nachteile:</strong> Hohe Anfangsinvestition (die sich aber meist in 5–8 Jahren amortisiert).',
+        '<strong>Nachteile:</strong> Hohe Anfangsinvestition (die sich aber meist in 5-8 Jahren amortisiert).',
       ],
     },
     {
       type: 'tip',
       title: 'Spartipp',
-      html: 'Die Wärmepumpe arbeitet am effizientesten mit einer Fußbodenheizung, da die Vorlauftemperatur nur etwa 35 °C betragen muss, statt der 60–70 °C bei klassischen Heizkörpern.',
+      html: 'Die Wärmepumpe arbeitet am effizientesten mit einer Fußbodenheizung, da die Vorlauftemperatur nur etwa 35 °C betragen muss, statt der 60-70 °C bei klassischen Heizkörpern.',
     },
     {
       type: 'proscons',
@@ -264,9 +264,9 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>„Wärmepumpen funktionieren bei Frost nicht“:</strong> Falsch. Moderne Geräte arbeiten bis -15 °C oder sogar -20 °C zuverlässig.',
-        '<strong>„Heizungsluft macht die Augen trocken“:</strong> Das gilt nur für Luft-Systeme. Eine Wärmepumpe mit Fußbodenheizung bietet höchsten Komfort ohne Luftzug.',
-        '<strong>„Strom ist zu teuer“:</strong> Obwohl Strom teurer als Gas ist, macht die Effizienz von 400 % diesen Preisunterschied mehr als wett.',
+        '<strong>"Wärmepumpen funktionieren bei Frost nicht":</strong> Falsch. Moderne Geräte arbeiten bis -15 °C oder sogar -20 °C zuverlässig.',
+        '<strong>"Heizungsluft macht die Augen trocken":</strong> Das gilt nur für Luft-Systeme. Eine Wärmepumpe mit Fußbodenheizung bietet höchsten Komfort ohne Luftzug.',
+        '<strong>"Strom ist zu teuer":</strong> Obwohl Strom teurer als Gas ist, macht die Effizienz von 400 % diesen Preisunterschied mehr als wett.',
       ],
     },
     {

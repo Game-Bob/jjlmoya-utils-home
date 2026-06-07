@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Titik embun adalah suhu di mana uap air di udara berubah menjadi cair. Di dalam rumah, nilai ini menandai batas antara rumah yang sehat dan rumah dengan masalah kelembapan struktural. Ketika suhu permukaan (seperti dinding yang kurang isolasi) jatuh di bawah titik embun, tetesan air muncul — tempat berkembang biak yang ideal bagi jamur berbahaya.',
+      html: 'Titik embun adalah suhu di mana uap air di udara berubah menjadi cair. Di dalam rumah, nilai ini menandai batas antara rumah yang sehat dan rumah dengan masalah kelembapan struktural. Ketika suhu permukaan (seperti dinding yang kurang isolasi) jatuh di bawah titik embun, tetesan air muncul: tempat berkembang biak yang ideal bagi jamur berbahaya.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Selisih Aman', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Kelembapan Ideal', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Kelembapan Ideal', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Bahaya Ekstrem', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Risiko Rendah (selisih &gt; 5°C):</strong> Dinding Anda aman. <strong>Risiko Sedang (3–5°C):</strong> Perhatikan sudut-sudut ruangan. <strong>Risiko Tinggi (1–3°C):</strong> Embun mungkin muncul di kaca — segera ventilasi. <strong>Bahaya Ekstrem (&lt; 1°C):</strong> Kondensasi aktif dengan risiko jamur hitam.',
+      html: '<strong>Risiko Rendah (selisih &gt; 5°C):</strong> Dinding Anda aman. <strong>Risiko Sedang (3-5°C):</strong> Perhatikan sudut-sudut ruangan. <strong>Risiko Tinggi (1-3°C):</strong> Embun mungkin muncul di kaca: segera ventilasi. <strong>Bahaya Ekstrem (&lt; 1°C):</strong> Kondensasi aktif dengan risiko jamur hitam.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Risiko Tinggi',
     riskExtreme: 'Bahaya Ekstrem',
     riskLowDesc: 'Selisih > 5°C. Permukaan aman.',
-    riskMediumDesc: 'Selisih 3–5°C. Pantau sudut ruangan.',
-    riskHighDesc: 'Selisih 1–3°C. Segera ventilasi.',
+    riskMediumDesc: 'Selisih 3-5°C. Pantau sudut ruangan.',
+    riskHighDesc: 'Selisih 1-3°C. Segera ventilasi.',
     riskExtremeDesc: 'Selisih < 1°C. Kondensasi aktif.',
   },
 };

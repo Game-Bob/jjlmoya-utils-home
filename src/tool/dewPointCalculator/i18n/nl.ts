@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Het dauwpunt is de temperatuur waarbij waterdamp in de lucht vloeibaar wordt. In huis markeert dit de grens tussen een gezonde woning en een woning met vochtproblemen. Wanneer de temperatuur van een oppervlak onder het dauwpunt zakt, ontstaan er waterdruppels — de ideale voedingsbodem voor schimmels.',
+      html: 'Het dauwpunt is de temperatuur waarbij waterdamp in de lucht vloeibaar wordt. In huis markeert dit de grens tussen een gezonde woning en een woning met vochtproblemen. Wanneer de temperatuur van een oppervlak onder het dauwpunt zakt, ontstaan er waterdruppels: de ideale voedingsbodem voor schimmels.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Veilige Marge', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Ideale Vochtigheid', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Ideale Vochtigheid', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Groot Risico', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Laag Risico (verschil &gt; 5°C):</strong> Uw muren zijn veilig. <strong>Gemiddeld Risico (3–5°C):</strong> Let op de hoeken. <strong>Hoog Risico (1–3°C):</strong> Condensatie op ramen waarschijnlijk — ventileer direct. <strong>Groot Gevaar (&lt; 1°C):</strong> Actieve condensatie met risico op zwarte schimmel.',
+      html: '<strong>Laag Risico (verschil &gt; 5°C):</strong> Uw muren zijn veilig. <strong>Gemiddeld Risico (3-5°C):</strong> Let op de hoeken. <strong>Hoog Risico (1-3°C):</strong> Condensatie op ramen waarschijnlijk: ventileer direct. <strong>Groot Gevaar (&lt; 1°C):</strong> Actieve condensatie met risico op zwarte schimmel.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Hoog Risico',
     riskExtreme: 'Groot Risico',
     riskLowDesc: 'Verschil > 5°C. Oppervlakken veilig.',
-    riskMediumDesc: 'Verschil 3–5°C. Controleer hoeken.',
-    riskHighDesc: 'Verschil 1–3°C. Direct ventileren.',
+    riskMediumDesc: 'Verschil 3-5°C. Controleer hoeken.',
+    riskHighDesc: 'Verschil 1-3°C. Direct ventileren.',
     riskExtremeDesc: 'Verschil < 1°C. Actieve condensatie.',
   },
 };

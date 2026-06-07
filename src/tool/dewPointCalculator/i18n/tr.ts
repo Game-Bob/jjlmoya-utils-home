@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Güvenli Fark', icon: 'mdi:shield-check' },
-        { value: '%40–60', label: 'İdeal Nem', icon: 'mdi:water-percent' },
+        { value: '%40-60', label: 'İdeal Nem', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Aşırı Tehlike', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Düşük Risk (fark &gt; 5°C):</strong> Duvarlarınız güvende. <strong>Orta Risk (3–5°C):</strong> Köşeleri kontrol edin. <strong>Yüksek Risk (1–3°C):</strong> Camlarda yoğuşma muhtemel — hemen havalandırın. <strong>Aşırı Tehlike (&lt; 1°C):</strong> Aktif yoğuşma ve siyah küf riski.',
+      html: '<strong>Düşük Risk (fark &gt; 5°C):</strong> Duvarlarınız güvende. <strong>Orta Risk (3-5°C):</strong> Köşeleri kontrol edin. <strong>Yüksek Risk (1-3°C):</strong> Camlarda yoğuşma muhtemel: hemen havalandırın. <strong>Aşırı Tehlike (&lt; 1°C):</strong> Aktif yoğuşma ve siyah küf riski.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Yüksek Risk',
     riskExtreme: 'Aşırı Tehlike',
     riskLowDesc: 'Fark > 5°C. Yüzeyler güvende.',
-    riskMediumDesc: 'Fark 3–5°C. Köşelere dikkat.',
-    riskHighDesc: 'Fark 1–3°C. Hemen havalandırın.',
+    riskMediumDesc: 'Fark 3-5°C. Köşelere dikkat.',
+    riskHighDesc: 'Fark 1-3°C. Hemen havalandırın.',
     riskExtremeDesc: 'Fark < 1°C. Aktif yoğuşma.',
   },
 };

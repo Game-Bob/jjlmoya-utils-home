@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projector-throw-calculator';
-const title = '投影机距离计算器 — 投射比与屏幕';
+const title = '投影机距离计算器: 投射比与屏幕';
 const description =
   '根据所需的屏幕尺寸和投影机投射比（Throw Ratio）计算精确的安装距离。支持实时模拟的视觉化工具。';
 
@@ -12,7 +12,7 @@ const faqData = [
   {
     question: '什么是投射比（Throw Ratio）？',
     answer:
-      '投射比定义了投影机在特定距离下能投射出多大的画面。计算公式为“投射距离 ÷ 画面宽度”。例如，投射比为 1.5 意味着从 1.5 米外投影，可以获得 1 米宽的画面。',
+      '投射比定义了投影机在特定距离下能投射出多大的画面。计算公式为"投射距离 ÷ 画面宽度"。例如，投射比为 1.5 意味着从 1.5 米外投影，可以获得 1 米宽的画面。',
   },
   {
     question: '100 英寸的屏幕需要多远的距离？',
@@ -34,7 +34,7 @@ const faqData = [
 const howToData = [
   {
     name: '查询投射比',
-    text: '在投影机机身、手册或包装盒上查找类似“1.2:1”或“1.5-1.8:1”的数值。',
+    text: '在投影机机身、手册或包装盒上查找类似"1.2:1"或"1.5-1.8:1"的数值。',
   },
   {
     name: '确定屏幕尺寸',
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: '什么是投射比？',
           description: '投射比是投影距离与画面宽度的比值。TR 为 1.5 意味着每 1 米画面宽度需要 1.5 米的投影距离。',
           icon: 'mdi:ruler',
-          points: ['TR < 1: 短焦，适合小空间', 'TR 1–2: 客厅及会议室标准', 'TR > 2: 长焦，适合大型礼堂'],
+          points: ['TR < 1: 短焦，适合小空间', 'TR 1-2: 客厅及会议室标准', 'TR > 2: 长焦，适合大型礼堂'],
         },
         {
           title: '画面格式与比例',

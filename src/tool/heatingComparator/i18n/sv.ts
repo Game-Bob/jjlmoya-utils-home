@@ -89,7 +89,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       items: [
         'En <strong>värmepump</strong> är upp till 400 % mer effektiv än en gaspanna.',
         'Bra <strong>isolering</strong> sänker dina fakturor mer än någon panna.',
-        '<strong>Återbetalningstiden</strong> för elsystem är ca 6–8 år.',
+        '<strong>Återbetalningstiden</strong> för elsystem är ca 6-8 år.',
         'Kombinera med <strong>solceller</strong> för nästan gratis värme.',
       ],
     },
@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Att välja rätt klimatsystem för sitt hem är ett av de viktigaste besluten för både plånboken och komforten. Med volatila energipriser och ett ökat fokus på hållbarhet är det avgörande att veta vilket system som är mest effektivt — och vilket som sparar mest pengar varje månad.',
+      html: 'Att välja rätt klimatsystem för sitt hem är ett av de viktigaste besluten för både plånboken och komforten. Med volatila energipriser och ett ökat fokus på hållbarhet är det avgörande att veta vilket system som är mest effektivt: och vilket som sparar mest pengar varje månad.',
     },
     {
       type: 'paragraph',
@@ -161,13 +161,13 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       items: [
         '<strong>Effektivitet (COP):</strong> En värmepump har ofta ett genomsnittligt COP på 4. Det betyder att för varje 1 kWh el du stoppar in får du 4 kWh värme i huset.',
         '<strong>Fördelar:</strong> Mycket hållbart med solceller, ett system för både värme och kyla, samt marknadens lägsta driftskostnad.',
-        '<strong>Nackdelar:</strong> Hög investeringskostnad (som dock tjänas in på 5–8 år) och behov av plats för utomhusenhet.',
+        '<strong>Nackdelar:</strong> Hög investeringskostnad (som dock tjänas in på 5-8 år) och behov av plats för utomhusenhet.',
       ],
     },
     {
       type: 'tip',
       title: 'Sparatips',
-      html: 'Värmepumpen fungerar bäst ihop med golvvärme eftersom vattnet bara behöver värmas till ca 35 °C, till skillnad från 60–70 °C i vanliga radiatorer.',
+      html: 'Värmepumpen fungerar bäst ihop med golvvärme eftersom vattnet bara behöver värmas till ca 35 °C, till skillnad från 60-70 °C i vanliga radiatorer.',
     },
     {
       type: 'proscons',

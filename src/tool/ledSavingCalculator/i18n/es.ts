@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Ahorro Energético', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Ahorro Energético', icon: 'mdi:lightning-bolt' },
         { value: '25.000h', label: 'Vida Útil LED', icon: 'mdi:clock-outline' },
         { value: '< 4 meses', label: 'Amortización', icon: 'mdi:calendar-check' },
       ],
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Tecnología LED Moderna',
           description: 'El estándar actual de eficiencia energética para el hogar. Encendido instantáneo al 100% de brillo desde el primer segundo.',
           icon: 'mdi:led-outline',
-          points: ['85–90% de ahorro directo', 'Vida útil: 25.000–50.000 horas', 'Mínima emisión de calor'],
+          points: ['85-90% de ahorro directo', 'Vida útil: 25.000-50.000 horas', 'Mínima emisión de calor'],
         },
       ],
       columns: 2,
@@ -146,7 +146,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Una bombilla incandescente funciona calentando un filamento de tungsteno. El <strong>95% de la energía</strong> se desperdicia en calor y solo un 5% se convierte en luz. Los LED, en cambio, convierten directamente la electricidad en luz mediante semiconductores, con una eficiencia radicalmente superior. <strong>No mires los vatios, mira los lúmenes:</strong> una vieja bombilla de 60W ofrece unos 800 lm; hoy puedes conseguir esos mismos 800 lm con un LED de solo 8–9W.',
+      html: 'Una bombilla incandescente funciona calentando un filamento de tungsteno. El <strong>95% de la energía</strong> se desperdicia en calor y solo un 5% se convierte en luz. Los LED, en cambio, convierten directamente la electricidad en luz mediante semiconductores, con una eficiencia radicalmente superior. <strong>No mires los vatios, mira los lúmenes:</strong> una vieja bombilla de 60W ofrece unos 800 lm; hoy puedes conseguir esos mismos 800 lm con un LED de solo 8-9W.',
     },
     {
       type: 'diagnostic',
@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Tabla de Equivalencias Rápidas',
       icon: 'mdi:table',
       badge: 'Referencia',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescente</strong> → LED 5–6W (450 lm)</li><li><strong>60W incandescente</strong> → LED 8–10W (800 lm)</li><li><strong>100W incandescente</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halógena (foco)</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescente</strong> → LED 5-6W (450 lm)</li><li><strong>60W incandescente</strong> → LED 8-10W (800 lm)</li><li><strong>100W incandescente</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halógena (foco)</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

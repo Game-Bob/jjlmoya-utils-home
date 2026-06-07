@@ -51,7 +51,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'La humedad relativa por encima del 70% sostenida en el tiempo genera condensación en puentes térmicos, formación de moho y deterioro de estructuras. La temperatura de punto de rocío —el valor al que el vapor de agua del aire se condensa— es la métrica clave. Si tu pared interior está por debajo de ese punto, habrá condensación, independientemente de si lo notas a simple vista.',
+      html: 'La humedad relativa por encima del 70% sostenida en el tiempo genera condensación en puentes térmicos, formación de moho y deterioro de estructuras. La temperatura de punto de rocío: el valor al que el vapor de agua del aire se condensa:  es la métrica clave. Si tu pared interior está por debajo de ese punto, habrá condensación, independientemente de si lo notas a simple vista.',
     },
     {
       type: 'paragraph',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Un proyector no se coloca "donde quepa". El <em>throw ratio</em> —relación entre distancia de proyección y ancho de imagen— determina exactamente la distancia necesaria para conseguir el tamaño de pantalla deseado. Un error de 50 cm en la posición puede significar una imagen 20 cm más pequeña o forzar un zoom digital que reduce resolución efectiva.',
+      html: 'Un proyector no se coloca "donde quepa". El <em>throw ratio</em>: relación entre distancia de proyección y ancho de imagen:  determina exactamente la distancia necesaria para conseguir el tamaño de pantalla deseado. Un error de 50 cm en la posición puede significar una imagen 20 cm más pequeña o forzar un zoom digital que reduce resolución efectiva.',
     },
     {
       type: 'paragraph',

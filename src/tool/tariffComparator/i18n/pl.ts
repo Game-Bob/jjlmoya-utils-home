@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Co to jest moc umowna?',
     answer:
-      'To maksymalna ilość energii (kW), jaką możesz pobierać jednocześnie. W domach standard to 12.5–16 kW.',
+      'To maksymalna ilość energii (kW), jaką możesz pobierać jednocześnie. W domach standard to 12.5-16 kW.',
   },
 ];
 

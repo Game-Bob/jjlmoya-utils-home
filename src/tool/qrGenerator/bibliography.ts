@@ -8,7 +8,7 @@ export const bibliography = [
     url: 'https://www.rfc-editor.org/rfc/rfc6350',
   },
   {
-    name: 'ZXing: Barcode Contents — WiFi, vCard y URL',
+    name: 'ZXing: Barcode Contents: WiFi, vCard y URL',
     url: 'https://github.com/zxing/zxing/wiki/Barcode-Contents',
   },
 ];

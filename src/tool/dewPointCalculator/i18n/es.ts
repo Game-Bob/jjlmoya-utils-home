@@ -99,13 +99,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'El punto de rocío es la temperatura a la cual el aire debe enfriarse para que el vapor de agua se condense en agua líquida. En el contexto de una vivienda, este concepto marca la frontera entre una casa sana y una con problemas estructurales de humedad. Cuando la temperatura de una superficie (como una pared mal aislada) cae por debajo del punto de rocío, aparecen gotas de agua — el caldo de cultivo ideal para el <em>Aspergillus</em> y otros hongos nocivos.',
+      html: 'El punto de rocío es la temperatura a la cual el aire debe enfriarse para que el vapor de agua se condense en agua líquida. En el contexto de una vivienda, este concepto marca la frontera entre una casa sana y una con problemas estructurales de humedad. Cuando la temperatura de una superficie (como una pared mal aislada) cae por debajo del punto de rocío, aparecen gotas de agua: el caldo de cultivo ideal para el <em>Aspergillus</em> y otros hongos nocivos.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Diferencia Segura', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Humedad Ideal', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Humedad Ideal', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Peligro Extremo', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Riesgo Bajo (diferencia &gt; 5°C):</strong> El aire está lejos de saturarse. Tus paredes están seguras. <strong>Riesgo Medio (3–5°C):</strong> Vigila las esquinas y los puentes térmicos. <strong>Riesgo Alto (1–3°C):</strong> Condensación probable en cristales y zonas frías — ventila inmediatamente. <strong>Peligro Extremo (&lt; 1°C):</strong> Condensación activa con riesgo inmediato de proliferación de moho negro.',
+      html: '<strong>Riesgo Bajo (diferencia &gt; 5°C):</strong> El aire está lejos de saturarse. Tus paredes están seguras. <strong>Riesgo Medio (3-5°C):</strong> Vigila las esquinas y los puentes térmicos. <strong>Riesgo Alto (1-3°C):</strong> Condensación probable en cristales y zonas frías: ventila inmediatamente. <strong>Peligro Extremo (&lt; 1°C):</strong> Condensación activa con riesgo inmediato de proliferación de moho negro.',
     },
     {
       type: 'diagnostic',
@@ -166,8 +166,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Riesgo Alto',
     riskExtreme: 'Peligro Extremo',
     riskLowDesc: 'Diferencia > 5°C. Superficies seguras.',
-    riskMediumDesc: 'Diferencia 3–5°C. Vigila las esquinas.',
-    riskHighDesc: 'Diferencia 1–3°C. Ventila inmediatamente.',
+    riskMediumDesc: 'Diferencia 3-5°C. Vigila las esquinas.',
+    riskHighDesc: 'Diferencia 1-3°C. Ventila inmediatamente.',
     riskExtremeDesc: 'Diferencia < 1°C. Condensación activa.',
   },
 };

@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Il punto di rugiada è la temperatura alla quale l\'aria deve raffreddarsi affinché il vapore acqueo si condensi. In casa, questo valore segna il confine tra una casa sana e una con problemi di umidità. Quando la temperatura di una parete scende sotto questo punto, appare la condensa — l\'ambiente ideale per la proliferazione di muffe nocive.',
+      html: 'Il punto di rugiada è la temperatura alla quale l\'aria deve raffreddarsi affinché il vapore acqueo si condensi. In casa, questo valore segna il confine tra una casa sana e una con problemi di umidità. Quando la temperatura di una parete scende sotto questo punto, appare la condensa: l\'ambiente ideale per la proliferazione di muffe nocive.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Differenza Sicura', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Umidità Ideale', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Umidità Ideale', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Pericolo Estremo', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Rischio Basso (diff. &gt; 5°C):</strong> Le tue pareti sono sicure. <strong>Rischio Medio (3–5°C):</strong> Controlla gli angoli. <strong>Rischio Alto (1–3°C):</strong> Condensa probabile sui vetri — ventila subito. <strong>Pericolo Estremo (&lt; 1°C):</strong> Condensa attiva con rischio muffa nera.',
+      html: '<strong>Rischio Basso (diff. &gt; 5°C):</strong> Le tue pareti sono sicure. <strong>Rischio Medio (3-5°C):</strong> Controlla gli angoli. <strong>Rischio Alto (1-3°C):</strong> Condensa probabile sui vetri: ventila subito. <strong>Pericolo Estremo (&lt; 1°C):</strong> Condensa attiva con rischio muffa nera.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Rischio Alto',
     riskExtreme: 'Pericolo Estremo',
     riskLowDesc: 'Differenza > 5°C. Pareti sicure.',
-    riskMediumDesc: 'Differenza 3–5°C. Controlla gli angoli.',
-    riskHighDesc: 'Differenza 1–3°C. Ventila subito.',
+    riskMediumDesc: 'Differenza 3-5°C. Controlla gli angoli.',
+    riskHighDesc: 'Differenza 1-3°C. Ventila subito.',
     riskExtremeDesc: 'Differenza < 1°C. Condensa attiva.',
   },
 };

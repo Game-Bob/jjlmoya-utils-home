@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>For Home (WiFi):</strong> Tired of hunting for the WiFi password note every time friends visit? Generate a QR with your SSID and password. Print it and stick it somewhere visible. Your guests just need to open their camera app, point and done — they connect without typing anything.',
+      html: '<strong>For Home (WiFi):</strong> Tired of hunting for the WiFi password note every time friends visit? Generate a QR with your SSID and password. Print it and stick it somewhere visible. Your guests just need to open their camera app, point and done: they connect without typing anything.',
     },
     {
       type: 'paragraph',

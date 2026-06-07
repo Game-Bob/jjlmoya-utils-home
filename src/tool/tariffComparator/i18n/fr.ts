@@ -4,7 +4,7 @@ import type { TariffComparatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'comparateur-tarifs-electricite';
-const title = 'Comparateur de Tarifs d\'Électricité : Prix Fixe vs Prix Variable';
+const title = 'Comparateur de Tarifs d\'Électricité: Prix Fixe vs Prix Variable';
 const description =
   'Découvrez quel tarif d\'électricité vous convient le mieux. Comparez le marché régulé (PVPC) et le marché libre selon votre consommation et économisez des centaines d\'euros sur votre facture.';
 
@@ -94,7 +94,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Comparateur de Tarifs Électriques : Marché Libre vs Marché Régulé',
+      text: 'Comparateur de Tarifs Électriques: Marché Libre vs Marché Régulé',
       level: 2,
     },
     {
@@ -114,13 +114,13 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'PVPC — Marché Régulé',
+          title: 'PVPC: Marché Régulé',
           description: 'Le prix de l\'énergie change chaque heure selon le marché de gros. Les jours de forte production renouvelable, il peut descendre à des niveaux très bas.',
           icon: 'mdi:lightning-bolt',
           points: ['Sans engagement, changement libre', 'Accès au Bonus Social pour les personnes vulnérables', 'Tarification horaire Pointe/Standard/Creuses'],
         },
         {
-          title: 'Marché Libre — Prix Fixe',
+          title: 'Marché Libre: Prix Fixe',
           description: 'Les fournisseurs d\'énergie fixent un prix par kWh qui reste stable tout au long de l\'année, indépendamment du marché de gros.',
           icon: 'mdi:tag-outline',
           points: ['Stabilité et prévisibilité', 'Pas de mauvaises surprises sur la facture', 'Peut inclure des services supplémentaires'],
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Pointe (plus cher) :</strong> Lun–Ven de 10h00 à 14h00 et de 18h00 à 22h00. <strong>Standard (intermédiaire) :</strong> Lun–Ven de 08h00 à 10h00, de 14h00 à 18h00 et de 22h00 à 00h00. <strong>Heures creuses (moins cher) :</strong> Lun–Ven de 00h00 à 08h00 et toute la journée le samedi, dimanche et jours fériés. Planifier les machines à laver, lave-vaisselle et la recharge de voiture électrique aux heures creuses est la clé des économies maximales.',
+      html: '<strong>Pointe (plus cher) :</strong> Lun-Ven de 10h00 à 14h00 et de 18h00 à 22h00. <strong>Standard (intermédiaire) :</strong> Lun-Ven de 08h00 à 10h00, de 14h00 à 18h00 et de 22h00 à 00h00. <strong>Heures creuses (moins cher) :</strong> Lun-Ven de 00h00 à 08h00 et toute la journée le samedi, dimanche et jours fériés. Planifier les machines à laver, lave-vaisselle et la recharge de voiture électrique aux heures creuses est la clé des économies maximales.',
     },
     {
       type: 'diagnostic',
@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Si vous appréciez la stabilité et ne voulez pas surveiller l\'horloge, choisissez un prix fixe.',
         'Avec des panneaux solaires, le PVPC permet de compenser les surplus au prix horaire du marché.',
         'Réduire la puissance souscrite est souvent le moyen le plus rapide de diminuer la facture.',
-        'Le PVPC n\'a pas d\'engagement : vous pouvez revenir à tout moment.',
+        'Le PVPC n\'a pas d\'engagement: vous pouvez revenir à tout moment.',
       ],
     },
   ],

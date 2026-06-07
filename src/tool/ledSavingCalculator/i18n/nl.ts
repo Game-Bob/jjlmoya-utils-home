@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Energiebesparing', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Energiebesparing', icon: 'mdi:lightning-bolt' },
         { value: '25.000u', label: 'Levensduur LED', icon: 'mdi:clock-outline' },
         { value: '< 4 mnd', label: 'Terugverdientijd', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Moderne LED techniek',
           description: 'De huidige standaard voor efficiëntie. Direct licht en minimale warmteafgifte.',
           icon: 'mdi:led-outline',
-          points: ['85–90% directe besparing', 'Levensduur: tot 50.000 uur', 'Nauwelijks warmte'],
+          points: ['85-90% directe besparing', 'Levensduur: tot 50.000 uur', 'Nauwelijks warmte'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Snelle Vergelijkingstabel',
       icon: 'mdi:table',
       badge: 'Naslag',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W gloeilamp</strong> → LED 5–6W (450 lm)</li><li><strong>60W gloeilamp</strong> → LED 8–10W (800 lm)</li><li><strong>100W gloeilamp</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halogeen</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W gloeilamp</strong> → LED 5-6W (450 lm)</li><li><strong>60W gloeilamp</strong> → LED 8-10W (800 lm)</li><li><strong>100W gloeilamp</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halogeen</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

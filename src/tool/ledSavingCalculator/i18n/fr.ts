@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: "Guide d'Économies LED : Comment Réduire Votre Facture d'Électricité",
+      text: "Guide d'Économies LED: Comment Réduire Votre Facture d'Électricité",
       level: 2,
     },
     {
@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: "Économie d'Énergie", icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: "Économie d'Énergie", icon: 'mdi:lightning-bolt' },
         { value: '25 000h', label: 'Durée de Vie LED', icon: 'mdi:clock-outline' },
         { value: '< 4 mois', label: 'Amortissement', icon: 'mdi:calendar-check' },
       ],
@@ -128,13 +128,13 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Éclairage Incandescent',
           description: "La technologie du XXe siècle basée sur le chauffage d'un filament de tungstène. 95% de l'énergie est gaspillée sous forme de chaleur.",
           icon: 'mdi:lightbulb-outline',
-          points: ["95% d'énergie gaspillée en chaleur", 'Durée de vie : 1 000 heures', 'Coût de fonctionnement très élevé'],
+          points: ["95% d'énergie gaspillée en chaleur", 'Durée de vie: 1 000 heures', 'Coût de fonctionnement très élevé'],
         },
         {
           title: 'Technologie LED Moderne',
           description: "Le standard actuel d'efficacité énergétique pour le domicile. Éclairage instantané à 100% dès la première seconde.",
           icon: 'mdi:led-outline',
-          points: ['85–90% d\'économie directe', 'Durée de vie : 25 000–50 000 heures', 'Émission de chaleur minimale'],
+          points: ['85-90% d\'économie directe', 'Durée de vie: 25 000-50 000 heures', 'Émission de chaleur minimale'],
         },
       ],
       columns: 2,
@@ -146,7 +146,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: "Une ampoule incandescente fonctionne en chauffant un filament de tungstène. <strong>95% de l'énergie</strong> est gaspillée en chaleur et seulement 5% devient de la lumière visible. Les LED, en revanche, convertissent directement l'électricité en lumière via des semi-conducteurs avec une efficacité bien supérieure. <strong>Regardez les lumens, pas les watts :</strong> une vieille ampoule de 60W produit environ 800 lm ; aujourd'hui vous pouvez obtenir ces mêmes 800 lm avec une LED de seulement 8–9W.",
+      html: "Une ampoule incandescente fonctionne en chauffant un filament de tungstène. <strong>95% de l'énergie</strong> est gaspillée en chaleur et seulement 5% devient de la lumière visible. Les LED, en revanche, convertissent directement l'électricité en lumière via des semi-conducteurs avec une efficacité bien supérieure. <strong>Regardez les lumens, pas les watts :</strong> une vieille ampoule de 60W produit environ 800 lm ; aujourd'hui vous pouvez obtenir ces mêmes 800 lm avec une LED de seulement 8-9W.",
     },
     {
       type: 'diagnostic',
@@ -154,15 +154,15 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Tableau des Équivalences Rapides',
       icon: 'mdi:table',
       badge: 'Référence',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescente</strong> → LED 5–6W (450 lm)</li><li><strong>60W incandescente</strong> → LED 8–10W (800 lm)</li><li><strong>100W incandescente</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halogène (spot)</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W incandescente</strong> → LED 5-6W (450 lm)</li><li><strong>60W incandescente</strong> → LED 8-10W (800 lm)</li><li><strong>100W incandescente</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halogène (spot)</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',
       title: 'Avantages du LED Au delà de l\'Argent',
       items: [
-        "Durée de vie extrême : une LED de qualité peut durer plus de 15 ans à 4h/jour.",
+        "Durée de vie extrême: une LED de qualité peut durer plus de 15 ans à 4h/jour.",
         "Éclairage instantané à 100%, sans temps de chauffe ni scintillements.",
-        "Pas d'émission de chaleur : réduit la charge de climatisation en été.",
+        "Pas d'émission de chaleur: réduit la charge de climatisation en été.",
         "Sans mercure ni gaz toxiques, plus facile à recycler que les tubes fluorescents.",
         "Compatible avec la plupart des douilles existantes (E27, E14, GU10).",
       ],

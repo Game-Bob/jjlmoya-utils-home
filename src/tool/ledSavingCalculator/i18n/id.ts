@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Hemat Energi', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Hemat Energi', icon: 'mdi:lightning-bolt' },
         { value: '25.000j', label: 'Masa Pakai LED', icon: 'mdi:clock-outline' },
         { value: '< 4 bulan', label: 'Balik Modal', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Teknologi LED Modern',
           description: 'Standar efisiensi energi saat ini untuk rumah tangga. Menyala instan dan emisi panas yang minimal.',
           icon: 'mdi:led-outline',
-          points: ['85–90% hemat langsung', 'Masa pakai: 25.000–50.000 jam', 'Emisi panas minimal'],
+          points: ['85-90% hemat langsung', 'Masa pakai: 25.000-50.000 jam', 'Emisi panas minimal'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Tabel Kesetaraan Cepat',
       icon: 'mdi:table',
       badge: 'Referensi',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W pijar</strong> → LED 5–6W (450 lm)</li><li><strong>60W pijar</strong> → LED 8–10W (800 lm)</li><li><strong>100W pijar</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halogen</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W pijar</strong> → LED 5-6W (450 lm)</li><li><strong>60W pijar</strong> → LED 8-10W (800 lm)</li><li><strong>100W pijar</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halogen</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

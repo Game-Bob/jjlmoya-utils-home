@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'projektor-avstands-kalkylator';
-const title = 'Projektor Avståndskalkylator — Kastförhållande och Skärm';
+const title = 'Projektor Avståndskalkylator: Kastförhållande och Skärm';
 const description =
   'Beräkna exakt avstånd för att installera din projektor baserat på önskad skärmstorlek och kastförhållande (Throw Ratio).';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'Vad är Throw Ratio?',
           description: 'Förhållandet mellan avstånd och bildbredd. TR 1.5 betyder 1.5m avstånd per meter skärmbredd.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Short Throw, för små rum', 'TR 1–2: Standard för vardagsrum', 'TR > 2: Long Throw, för hörsalar'],
+          points: ['TR < 1: Short Throw, för små rum', 'TR 1-2: Standard för vardagsrum', 'TR > 2: Long Throw, för hörsalar'],
         },
         {
           title: 'Format och Proproportioner',

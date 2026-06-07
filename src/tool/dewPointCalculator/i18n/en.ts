@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'How can I reduce humidity at home?',
     answer:
-      'The most effective method is ventilation — especially after showering or cooking — and using dehumidifiers. Maintaining a constant temperature also helps the air retain more vapour without condensing.',
+      'The most effective method is ventilation: especially after showering or cooking: and using dehumidifiers. Maintaining a constant temperature also helps the air retain more vapour without condensing.',
   },
   {
     question: 'Is condensation mould dangerous?',
@@ -99,13 +99,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'The dew point is the temperature to which air must cool for water vapour to condense into liquid water. In a home, this concept marks the boundary between a healthy house and one with structural moisture problems. When the temperature of a surface (such as a poorly insulated wall) falls below the dew point, water droplets appear — the ideal breeding ground for <em>Aspergillus</em> and other harmful fungi.',
+      html: 'The dew point is the temperature to which air must cool for water vapour to condense into liquid water. In a home, this concept marks the boundary between a healthy house and one with structural moisture problems. When the temperature of a surface (such as a poorly insulated wall) falls below the dew point, water droplets appear: the ideal breeding ground for <em>Aspergillus</em> and other harmful fungi.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Safe Difference', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Ideal Humidity', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Ideal Humidity', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Extreme Danger', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Low Risk (difference &gt; 5°C):</strong> The air is far from saturation. Your walls are safe. <strong>Medium Risk (3–5°C):</strong> Watch corners and thermal bridges. <strong>High Risk (1–3°C):</strong> Condensation likely on glass and cold zones — ventilate immediately. <strong>Extreme Danger (&lt; 1°C):</strong> Active condensation with imminent risk of black mould growth.',
+      html: '<strong>Low Risk (difference &gt; 5°C):</strong> The air is far from saturation. Your walls are safe. <strong>Medium Risk (3-5°C):</strong> Watch corners and thermal bridges. <strong>High Risk (1-3°C):</strong> Condensation likely on glass and cold zones: ventilate immediately. <strong>Extreme Danger (&lt; 1°C):</strong> Active condensation with imminent risk of black mould growth.',
     },
     {
       type: 'diagnostic',
@@ -166,8 +166,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'High Risk',
     riskExtreme: 'Extreme Danger',
     riskLowDesc: 'Difference > 5°C. Surfaces are safe.',
-    riskMediumDesc: 'Difference 3–5°C. Watch the corners.',
-    riskHighDesc: 'Difference 1–3°C. Ventilate immediately.',
+    riskMediumDesc: 'Difference 3-5°C. Watch the corners.',
+    riskHighDesc: 'Difference 1-3°C. Ventilate immediately.',
     riskExtremeDesc: 'Difference < 1°C. Active condensation.',
   },
 };

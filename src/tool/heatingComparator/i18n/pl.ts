@@ -100,7 +100,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Wybór odpowiedniego systemu ogrzewania to jedna z najważniejszych decyzji finansowych dotyczących Twojego domu. W dobie zmiennych cen energii i rosnącej troski o ekologię, wiedza o tym, który system jest najsprawniejszy — i który pozwoli najwięcej zaoszczędzić — jest kluczowa.',
+      html: 'Wybór odpowiedniego systemu ogrzewania to jedna z najważniejszych decyzji finansowych dotyczących Twojego domu. W dobie zmiennych cen energii i rosnącej troski o ekologię, wiedza o tym, który system jest najsprawniejszy: i który pozwoli najwięcej zaoszczędzić: jest kluczowa.',
     },
     {
       type: 'paragraph',

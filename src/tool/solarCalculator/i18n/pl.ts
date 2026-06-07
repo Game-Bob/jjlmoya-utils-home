@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'W którą stronę powinny patrzeć panele?',
     answer:
-      'Na półkuli północnej zawsze na południe (azymut 180°). Na południowej — na północ.',
+      'Na półkuli północnej zawsze na południe (azymut 180°). Na południowej: na północ.',
   },
 ];
 
@@ -110,8 +110,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Maks. Efektywność',
     labelWinter: 'Zima',
     labelSummer: 'Lato',
-    hemisphereNorth: 'Półkula Północna — Kieruj na POŁUDNIE',
-    hemisphereSouth: 'Półkula Południowa — Kieruj na PÓŁNOC',
+    hemisphereNorth: 'Półkula Północna: Kieruj na POŁUDNIE',
+    hemisphereSouth: 'Półkula Południowa: Kieruj na PÓŁNOC',
     geoNotAvailable: 'Lokalizacja niedostępna w tej przeglądarce.',
   },
 };

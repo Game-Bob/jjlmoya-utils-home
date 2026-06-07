@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
     {
       type: 'stats',
       items: [
-        { value: '85–90%', label: 'Oszczędność Energii', icon: 'mdi:lightning-bolt' },
+        { value: '85-90%', label: 'Oszczędność Energii', icon: 'mdi:lightning-bolt' },
         { value: '25.000h', label: 'Żywotność LED', icon: 'mdi:clock-outline' },
         { value: '< 4 m-ce', label: 'Amortyzacja', icon: 'mdi:calendar-check' },
       ],
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
           title: 'Nowoczesny LED',
           description: 'Obecny standard efektywności. Błyskawiczny start i minimalne wydzielanie ciepła.',
           icon: 'mdi:led-outline',
-          points: ['85–90% oszczędności', 'Żywotność: 25.000–50.000 godzin', 'Bezpieczna temperatura'],
+          points: ['85-90% oszczędności', 'Żywotność: 25.000-50.000 godzin', 'Bezpieczna temperatura'],
         },
       ],
       columns: 2,
@@ -149,7 +149,7 @@ export const content: ToolLocaleContent<LedSavingCalculatorUI> = {
       title: 'Tabela Zamienników',
       icon: 'mdi:table',
       badge: 'Ściąga',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W tradycyjna</strong> → LED 5–6W (450 lm)</li><li><strong>60W tradycyjna</strong> → LED 8–10W (800 lm)</li><li><strong>100W tradycyjna</strong> → LED 13–15W (1500 lm)</li><li><strong>50W halogen</strong> → LED 6–7W (450–500 lm)</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>40W tradycyjna</strong> → LED 5-6W (450 lm)</li><li><strong>60W tradycyjna</strong> → LED 8-10W (800 lm)</li><li><strong>100W tradycyjna</strong> → LED 13-15W (1500 lm)</li><li><strong>50W halogen</strong> → LED 6-7W (450-500 lm)</li></ul>',
     },
     {
       type: 'summary',

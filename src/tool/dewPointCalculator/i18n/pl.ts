@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Punkt rosy to temperatura, w której para wodna w powietrzu skrapla się. W domu wartość ta wyznacza granicę między zdrowym budynkiem a takim z problemami wilgotnościowymi. Gdy temperatura powierzchni spadnie poniżej punktu rosy, pojawiają się krople wody — idealne podłoże dla szkodliwych grzybów i pleśni.',
+      html: 'Punkt rosy to temperatura, w której para wodna w powietrzu skrapla się. W domu wartość ta wyznacza granicę między zdrowym budynkiem a takim z problemami wilgotnościowymi. Gdy temperatura powierzchni spadnie poniżej punktu rosy, pojawiają się krople wody: idealne podłoże dla szkodliwych grzybów i pleśni.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Bezpieczny Margin', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Idealna Wilgotność', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Idealna Wilgotność', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Ekstremalne Ryzyko', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Niskie Ryzyko (różnica &gt; 5°C):</strong> Ściany są bezpieczne. <strong>Średnie Ryzyko (3–5°C):</strong> Obserwuj narożniki. <strong>Wysokie Ryzyko (1–3°C):</strong> Skraplanie na szybach — natychmiast przewietrz. <strong>Ekstremalne Ryzyko (&lt; 1°C):</strong> Aktywne skraplanie z ryzykiem czarnej pleśni.',
+      html: '<strong>Niskie Ryzyko (różnica &gt; 5°C):</strong> Ściany są bezpieczne. <strong>Średnie Ryzyko (3-5°C):</strong> Obserwuj narożniki. <strong>Wysokie Ryzyko (1-3°C):</strong> Skraplanie na szybach: natychmiast przewietrz. <strong>Ekstremalne Ryzyko (&lt; 1°C):</strong> Aktywne skraplanie z ryzykiem czarnej pleśni.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Wysokie Ryzyko',
     riskExtreme: 'Ekstremalne Ryzyko',
     riskLowDesc: 'Różnica > 5°C. Ściany bezpieczne.',
-    riskMediumDesc: 'Różnica 3–5°C. Sprawdź rogi.',
-    riskHighDesc: 'Różnica 1–3°C. Przewietrz teraz.',
+    riskMediumDesc: 'Różnica 3-5°C. Sprawdź rogi.',
+    riskHighDesc: 'Różnica 1-3°C. Przewietrz teraz.',
     riskExtremeDesc: 'Różnica < 1°C. Aktywne skraplanie.',
   },
 };

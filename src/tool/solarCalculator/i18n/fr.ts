@@ -46,7 +46,7 @@ const howToData = [
   },
   {
     name: "Vérifiez l'orientation",
-    text: "Consultez l'indicateur d'hémisphère : vos panneaux doivent être orientés vers le Sud si vous êtes dans l'hémisphère nord, et vers le Nord dans l'hémisphère sud.",
+    text: "Consultez l'indicateur d'hémisphère: vos panneaux doivent être orientés vers le Sud si vous êtes dans l'hémisphère nord, et vers le Nord dans l'hémisphère sud.",
   },
 ];
 
@@ -99,13 +99,13 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: "La différence entre une facture d'électricité nulle et un investissement qui ne porte pas ses fruits se mesure, littéralement, en degrés. Le <strong>rayonnement solaire</strong> n'est pas uniforme : c'est un flux dynamique qui varie selon l'heure, le jour et la saison. Comprendre la géométrie céleste est la première étape pour transformer votre toit en centrale électrique haute performance.",
+      html: "La différence entre une facture d'électricité nulle et un investissement qui ne porte pas ses fruits se mesure, littéralement, en degrés. Le <strong>rayonnement solaire</strong> n'est pas uniforme: c'est un flux dynamique qui varie selon l'heure, le jour et la saison. Comprendre la géométrie céleste est la première étape pour transformer votre toit en centrale électrique haute performance.",
     },
     {
       type: 'stats',
       items: [
         { value: 'Lat × 0.87', label: 'Formule Générale', icon: 'mdi:angle-acute' },
-        { value: 'Lat × 0.76 + 3.1', label: 'Latitudes 25°–50°', icon: 'mdi:map-marker' },
+        { value: 'Lat × 0.76 + 3.1', label: 'Latitudes 25°-50°', icon: 'mdi:map-marker' },
         { value: '± 15°', label: 'Ajustement Saisonnier', icon: 'mdi:calendar-sync' },
       ],
       columns: 3,
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: "<strong>Été :</strong> Le soleil atteint son zénith. Les panneaux doivent être presque plats — soustrayez ~15° à votre latitude. Profitez des longues journées et d'un rayonnement direct intense. <strong>Hiver :</strong> Le soleil voyage bas près de l'horizon. Inclinez davantage les panneaux en ajoutant ~15° à votre latitude. Une inclinaison plus forte aide aussi la neige à glisser sans bloquer les cellules.",
+      html: "<strong>Été :</strong> Le soleil atteint son zénith. Les panneaux doivent être presque plats: soustrayez ~15° à votre latitude. Profitez des longues journées et d'un rayonnement direct intense. <strong>Hiver :</strong> Le soleil voyage bas près de l'horizon. Inclinez davantage les panneaux en ajoutant ~15° à votre latitude. Une inclinaison plus forte aide aussi la neige à glisser sans bloquer les cellules.",
     },
     {
       type: 'diagnostic',
@@ -164,8 +164,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Efficacité Maximale',
     labelWinter: 'Hiver',
     labelSummer: 'Été',
-    hemisphereNorth: 'Hémisphère Nord — Orienter vers le SUD',
-    hemisphereSouth: 'Hémisphère Sud — Orienter vers le NORD',
+    hemisphereNorth: 'Hémisphère Nord: Orienter vers le SUD',
+    hemisphereSouth: 'Hémisphère Sud: Orienter vers le NORD',
     geoNotAvailable: "La géolocalisation n'est pas disponible dans ce navigateur.",
   },
 };

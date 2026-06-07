@@ -42,7 +42,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Doğru elektrik tarifesini seçmek de bir o kadar önemlidir. Sabit fiyatlı piyasa sözleşmeleri, düzenli alışkanlıkları olan tüketiciler için avantajlı olabilir; endeksli tarifeler toptan satış piyasasıyla dalgalanır ve tüketimini yoğun olmayan saatlere kaydıranları ödüllendirir. Her iki seçeneği de gerçek tüketim verilerinizle karşılaştırmak, <strong>yılda 100–300 €</strong> fark yaratabilir.',
+      html: 'Doğru elektrik tarifesini seçmek de bir o kadar önemlidir. Sabit fiyatlı piyasa sözleşmeleri, düzenli alışkanlıkları olan tüketiciler için avantajlı olabilir; endeksli tarifeler toptan satış piyasasıyla dalgalanır ve tüketimini yoğun olmayan saatlere kaydıranları ödüllendirir. Her iki seçeneği de gerçek tüketim verilerinizle karşılaştırmak, <strong>yılda 100-300 €</strong> fark yaratabilir.',
     },
     {
       type: 'title',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Bir projektör "nereye sığarsa oraya" yerleştirilmez. Yansıtma oranı (throw ratio) — yansıtma mesafesi ile görüntü genişliği arasındaki ilişki — istediğiniz ekran boyutuna ulaşmak için üniteyi tam olarak ne kadar geriye yerleştirmeniz gerektiğini belirler. 50 cm\'lik bir yerleştirme hatası, görüntünün 20 cm daha küçük olması veya efektif çözünürlüğü azaltan bir dijital zoom kullanımına zorlanmak anlamına gelebilir.',
+      html: 'Bir projektör "nereye sığarsa oraya" yerleştirilmez. Yansıtma oranı (throw ratio): yansıtma mesafesi ile görüntü genişliği arasındaki ilişki: istediğiniz ekran boyutuna ulaşmak için üniteyi tam olarak ne kadar geriye yerleştirmeniz gerektiğini belirler. 50 cm\'lik bir yerleştirme hatası, görüntünün 20 cm daha küçük olması veya efektif çözünürlüğü azaltan bir dijital zoom kullanımına zorlanmak anlamına gelebilir.',
     },
     {
       type: 'paragraph',
@@ -77,12 +77,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Modern ev, teknolojiyi her düzeyde entegre eder: Wi-Fi ağları, IoT cihazları, QR kod tabanlı erişim. QR kod oluşturucu, ev Wi-Fi ağınıza kısayollar, kartvizitler, akıllı cihaz URL\'leri veya misafirlerle ya da cihazlar arasında kolayca paylaşmak istediğiniz her türlü bilgiyi — yazma gerektirmeden — oluşturmanıza olanak tanır.',
+      html: 'Modern ev, teknolojiyi her düzeyde entegre eder: Wi-Fi ağları, IoT cihazları, QR kod tabanlı erişim. QR kod oluşturucu, ev Wi-Fi ağınıza kısayollar, kartvizitler, akıllı cihaz URL\'leri veya misafirlerle ya da cihazlar arasında kolayca paylaşmak istediğiniz her türlü bilgiyi: yazma gerektirmeden: oluşturmanıza olanak tanır.',
     },
     {
       type: 'list',
       items: [
-        '<strong>Ölçülebilir tasarruf:</strong> Her araç somut rakamlar verir — yılda kaç euro tasarruf edildiği, ayda kaç kWh üretildiği, optimal eğim açıları. Belirsiz tahminler yok.',
+        '<strong>Ölçülebilir tasarruf:</strong> Her araç somut rakamlar verir: yılda kaç euro tasarruf edildiği, ayda kaç kWh üretildiği, optimal eğim açıları. Belirsiz tahminler yok.',
         '<strong>Kurulum gerekmez:</strong> Doğrudan tarayıcıda çalışan çevrimiçi hesaplayıcılar, uygulama veya hesap gerekmez.',
         '<strong>Teknik standartlara dayalı:</strong> Psikrometrik formüller (ASHRAE), projeksiyon optiği, enleme göre güneş radyasyonu ve ilgili elektrik yönetmelikleri.',
         '<strong>Satın almadan önce faydalı:</strong> Satın alma kararlarını taahhüt altına girmeden önce doğrulayın. Güneş panelleri çatınızda kendisini amorti eder mi? LED\'ler gerçekte ne kadar tasarruf sağlar? Önce hesaplayın.',

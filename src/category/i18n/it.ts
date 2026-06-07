@@ -25,7 +25,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Gli impianti fotovoltaici residenziali hanno un ritorno sull\'investimento reale che dipende da tre variabili: l\'irraggiamento nella tua zona, l\'angolo di inclinazione dei pannelli e il tuo consumo orario. Un pannello inclinato di 10° al di sotto dell\'ottimale può perdere il <strong>15–20% della produzione annuale</strong>. Il nostro calcolatore solare ti fornisce l\'angolo esatto e la stima della generazione mensile.',
+      html: 'Gli impianti fotovoltaici residenziali hanno un ritorno sull\'investimento reale che dipende da tre variabili: l\'irraggiamento nella tua zona, l\'angolo di inclinazione dei pannelli e il tuo consumo orario. Un pannello inclinato di 10° al di sotto dell\'ottimale può perdere il <strong>15-20% della produzione annuale</strong>. Il nostro calcolatore solare ti fornisce l\'angolo esatto e la stima della generazione mensile.',
     },
     {
       type: 'paragraph',
@@ -42,7 +42,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Scegliere la giusta tariffa elettrica è altrettanto importante. I contratti a prezzo fisso possono essere vantaggiosi per consumatori con abitudini regolari; le tariffe indicizzate oscillano con il mercato all\'ingrosso e premiano chi sposta i consumi nelle ore fuori picco. Confrontare entrambe le opzioni con i tuoi dati di consumo reali può fare una differenza di <strong>100–300 € all\'anno</strong>.',
+      html: 'Scegliere la giusta tariffa elettrica è altrettanto importante. I contratti a prezzo fisso possono essere vantaggiosi per consumatori con abitudini regolari; le tariffe indicizzate oscillano con il mercato all\'ingrosso e premiano chi sposta i consumi nelle ore fuori picco. Confrontare entrambe le opzioni con i tuoi dati di consumo reali può fare una differenza di <strong>100-300 € all\'anno</strong>.',
     },
     {
       type: 'title',
@@ -51,7 +51,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Un\'umidità relativa sostenuta sopra il 70% porta alla condensa sui ponti termici, alla crescita di muffe e al deterioramento strutturale. La temperatura del punto di rugiada — il valore al quale il vapore acqueo nell\'aria condensa — è la metrica chiave. Se la superficie della tua parete interna è al di sotto di quel punto, la condensa si formerà indipendentemente dal fatto che tu possa vederla.',
+      html: 'Un\'umidità relativa sostenuta sopra il 70% porta alla condensa sui ponti termici, alla crescita di muffe e al deterioramento strutturale. La temperatura del punto di rugiada: il valore al quale il vapore acqueo nell\'aria condensa: è la metrica chiave. Se la superficie della tua parete interna è al di sotto di quel punto, la condensa si formerà indipendentemente dal fatto che tu possa vederla.',
     },
     {
       type: 'paragraph',
@@ -64,7 +64,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Un proiettore non si posiziona "dove capita". Il rapporto di tiro (throw ratio) — la relazione tra distanza di proiezione e larghezza dell\'immagine — determina esattamente quanto indietro devi posizionare l\'unità per ottenere la dimensione dello schermo desiderata. Un errore di posizionamento di 50 cm può significare un\'immagine più piccola di 20 cm, o costringere a uno zoom digitale che riduce la risoluzione effettiva.',
+      html: 'Un proiettore non si posiziona "dove capita". Il rapporto di tiro (throw ratio): la relazione tra distanza di proiezione e larghezza dell\'immagine: determina esattamente quanto indietro devi posizionare l\'unità per ottenere la dimensione dello schermo desiderata. Un errore di posizionamento di 50 cm può significare un\'immagine più piccola di 20 cm, o costringere a uno zoom digitale che riduce la risoluzione effettiva.',
     },
     {
       type: 'paragraph',
@@ -77,12 +77,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'La casa moderna integra la tecnologia a ogni livello: reti Wi-Fi, dispositivi IoT, accesso basato su codici QR. Il generatore di codici QR ti permette di creare scorciatoie per il tuo Wi-Fi di casa, biglietti da visita, URL di dispositivi smart o qualsiasi informazione desideri condividere facilmente con gli ospiti o tra i dispositivi — senza dover digitare nulla.',
+      html: 'La casa moderna integra la tecnologia a ogni livello: reti Wi-Fi, dispositivi IoT, accesso basato su codici QR. Il generatore di codici QR ti permette di creare scorciatoie per il tuo Wi-Fi di casa, biglietti da visita, URL di dispositivi smart o qualsiasi informazione desideri condividere facilmente con gli ospiti o tra i dispositivi: senza dover digitare nulla.',
     },
     {
       type: 'list',
       items: [
-        '<strong>Risparmio quantificabile:</strong> Ogni strumento restituisce numeri concreti — euro risparmiati all\'anno, kWh generati al mese, gradi di inclinazione ottimali. Nessuna stima vaga.',
+        '<strong>Risparmio quantificabile:</strong> Ogni strumento restituisce numeri concreti: euro risparmiati all\'anno, kWh generati al mese, gradi di inclinazione ottimali. Nessuna stima vaga.',
         '<strong>Nessuna installazione necessaria:</strong> Calcolatori online che funzionano direttamente nel browser, senza bisogno di app o account.',
         '<strong>Basati su standard tecnici:</strong> Formule psicrometriche (ASHRAE), ottica di proiezione, radiazione solare per latitudine e normative elettriche pertinenti.',
         '<strong>Utili prima dell\'acquisto:</strong> Valida le decisioni d\'acquisto prima di impegnarti. I pannelli solari convengono sul tuo tetto? Quanto risparmiano effettivamente i LED? Calcola prima.',
@@ -95,7 +95,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'I miglioramenti dell\'efficienza energetica domestica hanno un ROI concreto. Un impianto fotovoltaico ben dimensionato può ripagarsi in 6–9 anni con i prezzi attuali dell\'elettricità. Una sostituzione completa dei LED in una casa media si ripaga in meno di 2 anni. Una tariffa ben scelta fa risparmiare fin dal primo mese. Il punto di partenza è sempre lo stesso: <strong>misurare prima di agire</strong>.',
+      html: 'I miglioramenti dell\'efficienza energetica domestica hanno un ROI concreto. Un impianto fotovoltaico ben dimensionato può ripagarsi in 6-9 anni con i prezzi attuali dell\'elettricità. Una sostituzione completa dei LED in una casa media si ripaga in meno di 2 anni. Una tariffa ben scelta fa risparmiare fin dal primo mese. Il punto di partenza è sempre lo stesso: <strong>misurare prima di agire</strong>.',
     },
     {
       type: 'paragraph',

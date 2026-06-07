@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Der Taupunkt markiert die Temperatur, bei der Luftfeuchtigkeit zu Wasser wird. In Wohnräumen ist dieser Wert entscheidend für die Vermeidung von Bauschäden. Wenn die Temperatur einer Oberfläche (z. B. einer schlecht gedämmten Außenwand) unter den Taupunkt sinkt, entsteht Kondenswasser – der ideale Nährboden für <em>Aspergillus</em> und andere gesundheitsschädliche Pilze.',
+      html: 'Der Taupunkt markiert die Temperatur, bei der Luftfeuchtigkeit zu Wasser wird. In Wohnräumen ist dieser Wert entscheidend für die Vermeidung von Bauschäden. Wenn die Temperatur einer Oberfläche (z. B. einer schlecht gedämmten Außenwand) unter den Taupunkt sinkt, entsteht Kondenswasser - der ideale Nährboden für <em>Aspergillus</em> und andere gesundheitsschädliche Pilze.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Sicherer Bereich', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Ideale Feuchte', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Ideale Feuchte', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Akute Gefahr', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Geringes Risiko (Diff. &gt; 5°C):</strong> Die Wände sind sicher. <strong>Mittleres Risiko (3–5°C):</strong> Achten Sie auf Ecken und Wärmebrücken. <strong>Hohes Risiko (1–3°C):</strong> Kondensation an Scheiben wahrscheinlich – sofort lüften. <strong>Akute Gefahr (&lt; 1°C):</strong> Aktive Kondensation mit sofortigem Risiko für schwarzen Schimmel.',
+      html: '<strong>Geringes Risiko (Diff. &gt; 5°C):</strong> Die Wände sind sicher. <strong>Mittleres Risiko (3-5°C):</strong> Achten Sie auf Ecken und Wärmebrücken. <strong>Hohes Risiko (1-3°C):</strong> Kondensation an Scheiben wahrscheinlich - sofort lüften. <strong>Akute Gefahr (&lt; 1°C):</strong> Aktive Kondensation mit sofortigem Risiko für schwarzen Schimmel.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Hohes Risiko',
     riskExtreme: 'Akute Gefahr',
     riskLowDesc: 'Differenz > 5°C. Wände sind sicher.',
-    riskMediumDesc: 'Differenz 3–5°C. Ecken prüfen.',
-    riskHighDesc: 'Differenz 1–3°C. Sofort lüften!',
+    riskMediumDesc: 'Differenz 3-5°C. Ecken prüfen.',
+    riskHighDesc: 'Differenz 1-3°C. Sofort lüften!',
     riskExtremeDesc: 'Differenz < 1°C. Aktive Kondensation.',
   },
 };

@@ -110,8 +110,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: 'Maximale Efficiëntie',
     labelWinter: 'Winter',
     labelSummer: 'Zomer',
-    hemisphereNorth: 'Noordelijk Halfrond — Richt op ZUIDEN',
-    hemisphereSouth: 'Zuidelijk Halfrond — Richt op NOORDEN',
+    hemisphereNorth: 'Noordelijk Halfrond: Richt op ZUIDEN',
+    hemisphereSouth: 'Zuidelijk Halfrond: Richt op NOORDEN',
     geoNotAvailable: 'Locatiebepaling niet beschikbaar.',
   },
 };

@@ -4,7 +4,7 @@ import type { ProjectorCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-distancia-projetor';
-const title = 'Calculadora de Distância do Projetor — Tiro e Ecrã';
+const title = 'Calculadora de Distância do Projetor: Tiro e Ecrã';
 const description =
   'Calcule a distância exata para instalar o seu projetor de acordo com o tamanho do ecrã pretendido e o Throw Ratio.';
 
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<ProjectorCalculatorUI> = {
           title: 'O que é o Throw Ratio?',
           description: 'É a relação entre a distância de projeção e a largura da imagem. Um TR de 1.5 significa que precisa de 1.5m de distância por cada metro de largura de ecrã.',
           icon: 'mdi:ruler',
-          points: ['TR < 1: Short Throw, ideal para espaços pequenos', 'TR 1–2: Padrão para salas', 'TR > 2: Long Throw, para grandes auditórios'],
+          points: ['TR < 1: Short Throw, ideal para espaços pequenos', 'TR 1-2: Padrão para salas', 'TR > 2: Long Throw, para grandes auditórios'],
         },
         {
           title: 'Formato e Rácio de Aspeto',

@@ -94,13 +94,13 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'O ponto de orvalho é a temperatura à qual o ar deve arrefecer para que o vapor de água se condense. No contexto de uma habitação, este conceito marca a fronteira entre uma casa sã e uma com problemas estruturais de humidade. Quando a temperatura de uma superfície cai abaixo do ponto de orvalho, aparecem gotas de água — o ambiente ideal para o aparecimento de fungos nocivos.',
+      html: 'O ponto de orvalho é a temperatura à qual o ar deve arrefecer para que o vapor de água se condense. No contexto de uma habitação, este conceito marca a fronteira entre uma casa sã e uma com problemas estruturais de humidade. Quando a temperatura de uma superfície cai abaixo do ponto de orvalho, aparecem gotas de água: o ambiente ideal para o aparecimento de fungos nocivos.',
     },
     {
       type: 'stats',
       items: [
         { value: '> 5°C', label: 'Diferença Segura', icon: 'mdi:shield-check' },
-        { value: '40–60%', label: 'Humidade Ideal', icon: 'mdi:water-percent' },
+        { value: '40-60%', label: 'Humidade Ideal', icon: 'mdi:water-percent' },
         { value: '< 1°C', label: 'Perigo Extremo', icon: 'mdi:alert' },
       ],
       columns: 3,
@@ -130,7 +130,7 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Risco Baixo (diferença &gt; 5°C):</strong> As suas paredes estão seguras. <strong>Risco Médio (3–5°C):</strong> Vigie os cantos e as pontes térmicas. <strong>Risco Alto (1–3°C):</strong> Condensação provável em vidros — ventile imediatamente. <strong>Perigo Extremo (&lt; 1°C):</strong> Condensação ativa com risco imediato de bolor negro.',
+      html: '<strong>Risco Baixo (diferença &gt; 5°C):</strong> As suas paredes estão seguras. <strong>Risco Médio (3-5°C):</strong> Vigie os cantos e as pontes térmicas. <strong>Risco Alto (1-3°C):</strong> Condensação provável em vidros: ventile imediatamente. <strong>Perigo Extremo (&lt; 1°C):</strong> Condensação ativa com risco imediato de bolor negro.',
     },
     {
       type: 'diagnostic',
@@ -161,8 +161,8 @@ export const content: ToolLocaleContent<DewPointCalculatorUI> = {
     riskHigh: 'Risco Alto',
     riskExtreme: 'Perigo Extremo',
     riskLowDesc: 'Diferença > 5°C. Superfícies seguras.',
-    riskMediumDesc: 'Diferença 3–5°C. Vigie os cantos.',
-    riskHighDesc: 'Diferenza 1–3°C. Ventile imediatamente.',
+    riskMediumDesc: 'Diferença 3-5°C. Vigie os cantos.',
+    riskHighDesc: 'Diferenza 1-3°C. Ventile imediatamente.',
     riskExtremeDesc: 'Diferença < 1°C. Condensação ativa.',
   },
 };

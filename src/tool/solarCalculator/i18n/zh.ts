@@ -33,7 +33,7 @@ const howToData = [
   },
   {
     name: '查看最佳角度',
-    text: '“全年最佳角度”是固定安装方式的主要参考数值。',
+    text: '"全年最佳角度"是固定安装方式的主要参考数值。',
   },
   {
     name: '季节性调整（可选）',
@@ -110,8 +110,8 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
     labelEfficiency: '最大效率',
     labelWinter: '冬季',
     labelSummer: '夏季',
-    hemisphereNorth: '北半球 — 请朝向南方',
-    hemisphereSouth: '南半球 — 请朝向北方',
+    hemisphereNorth: '北半球: 请朝向南方',
+    hemisphereSouth: '南半球: 请朝向北方',
     geoNotAvailable: '当前浏览器不支持地理定位。',
   },
 };
