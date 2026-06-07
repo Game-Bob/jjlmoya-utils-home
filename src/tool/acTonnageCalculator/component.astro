@@ -1,0 +1,186 @@
+---
+import type { AcTonnageCalculatorUI } from './ui';
+import { calculateAcTonnage } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const aUI = ui as AcTonnageCalculatorUI;
+
+const defaults = {
+  area: 30,
+  height: 2.7,
+  people: 2,
+  heat: 1,
+  sun: 'medium',
+  room: 'living',
+};
+
+const initial = calculateAcTonnage({
+  area: defaults.area,
+  ceilingHeight: defaults.height,
+  people: defaults.people,
+  heatSources: defaults.heat,
+  sunExposure: defaults.sun as 'light' | 'medium' | 'heavy',
+  roomType: defaults.room as 'bedroom' | 'living' | 'kitchen' | 'office' | 'server',
+});
+
+const maxBtu = 60000;
+const ringOffset = 2 * Math.PI * 90 - (2 * Math.PI * 90 * Math.min(initial.btu, maxBtu)) / maxBtu;
+let initialColor = '#ef4444';
+if (initial.btu < 18000) initialColor = '#22c55e';
+else if (initial.btu < 36000) initialColor = '#f59e0b';
+
+function roomLabel(btu: number): string {
+  if (btu < 18000) return aUI.labelRoomCozy;
+  if (btu < 36000) return aUI.labelRoomWarm;
+  return aUI.labelRoomHot;
+}
+
+function breakdownLabel(key: string): string {
+  if (key === 'baseCooling') return aUI.bdBaseCooling;
+  if (key === 'ceilingHeight') return aUI.bdCeilingHeight;
+  if (key === 'people') return aUI.bdPeople;
+  if (key === 'heatSources') return aUI.bdHeatSources;
+  return aUI.bdSunRoom;
+}
+---
+
+<div class="ac-wrapper">
+  <div class="ac-card" id="ac-card">
+    <div class="ac-left">
+      <div class="ac-unit-toggle" id="ac-unit-toggle">
+        <button class="active" data-unit="metric">{aUI.labelMetric}</button>
+        <button data-unit="imperial">{aUI.labelImperial}</button>
+      </div>
+      <div class="ac-field">
+        <div class="ac-field-top">
+          <span class="ac-label">{aUI.labelRoomSize}</span>
+          <span class="ac-val" id="ac-area-num">{defaults.area}</span>
+        </div>
+        <input class="ac-slider" type="range" id="ac-area" min="5" max="120" step="1" value={defaults.area} />
+        <div class="ac-steps">
+          <button class="ac-step" data-target="ac-area" data-delta="-5">−</button>
+          <button class="ac-step" data-target="ac-area" data-delta="5">+</button>
+        </div>
+      </div>
+      <div class="ac-field">
+        <div class="ac-field-top">
+          <span class="ac-label">{aUI.labelCeilingHeight}</span>
+          <span class="ac-val" id="ac-height-num">{defaults.height}</span>
+        </div>
+        <input class="ac-slider" type="range" id="ac-height" min="2" max="6" step="0.1" value={defaults.height} />
+      </div>
+      <div class="ac-field">
+        <div class="ac-field-top">
+          <span class="ac-label">{aUI.labelPeople}</span>
+          <span class="ac-val" id="ac-people-num">{defaults.people}</span>
+        </div>
+        <input class="ac-slider" type="range" id="ac-people" min="0" max="20" step="1" value={defaults.people} />
+      </div>
+      <div class="ac-field">
+        <div class="ac-field-top">
+          <span class="ac-label">{aUI.labelHeatSources}</span>
+          <span class="ac-val" id="ac-heat-num">{defaults.heat}</span>
+        </div>
+        <input class="ac-slider" type="range" id="ac-heat" min="0" max="20" step="1" value={defaults.heat} />
+      </div>
+      <div class="ac-row">
+        <div class="ac-select-wrap">
+          <span class="ac-label">{aUI.labelSunExposure}</span>
+          <select class="ac-select" id="ac-sun">
+            <option value="light">{aUI.sunLight}</option>
+            <option value="medium" selected>{aUI.sunMedium}</option>
+            <option value="heavy">{aUI.sunHeavy}</option>
+          </select>
+        </div>
+        <div class="ac-select-wrap">
+          <span class="ac-label">{aUI.labelRoomType}</span>
+          <select class="ac-select" id="ac-room">
+            <option value="bedroom">{aUI.roomBedroom}</option>
+            <option value="living" selected>{aUI.roomLiving}</option>
+            <option value="kitchen">{aUI.roomKitchen}</option>
+            <option value="office">{aUI.roomOffice}</option>
+            <option value="server">{aUI.roomServer}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="ac-right">
+      <div class="ac-unit-toggle ac-power-toggle" id="ac-power-toggle">
+        <button class="active" data-power="btu">{aUI.labelUnitBtu}</button>
+        <button data-power="frigorias">{aUI.labelUnitFrigorias}</button>
+        <button data-power="tons">{aUI.labelUnitTons}</button>
+      </div>
+      <div class="ac-ring-wrap">
+        <div class="ac-ring-glow" id="ac-ring-glow" />
+        <svg viewBox="0 0 200 200" width="160" height="160">
+          <circle class="ac-ring-bg" cx="100" cy="100" r="90" />
+          <circle id="ac-ring-fill" class="ac-ring-fill" cx="100" cy="100" r="90"
+            stroke-dasharray={2 * Math.PI * 90}
+            stroke-dashoffset={ringOffset}
+            stroke={initialColor} />
+        </svg>
+        <div class="ac-ring-inner">
+          <div class="ac-ring-label">{aUI.labelRequired}</div>
+          <div class="ac-ring-btu" id="ac-ring-btu">{initial.btu.toLocaleString()}</div>
+          <div class="ac-ring-unit" id="ac-ring-unit">{aUI.labelBtus}</div>
+        </div>
+      </div>
+
+      <div class="ac-mini-room" id="ac-mini-room">
+        <svg viewBox="0 0 180 120" width="180" height="120">
+          <rect class="ac-room-wall" x="15" y="15" width="150" height="90" rx="6" />
+          <rect class="ac-room-window" x="65" y="10" width="50" height="8" rx="4" />
+          <circle class="ac-room-person" cx="50" cy="80" r="8" />
+          <circle class="ac-room-person" cx="80" cy="80" r="8" />
+          <rect class="ac-room-pc" x="110" y="72" width="18" height="10" rx="2" />
+          <rect class="ac-room-sun" x="140" y="25" width="16" height="16" rx="8" />
+          <circle cx="145" cy="22" r="14" fill="url(#heat-glow)" opacity="0.3">
+            <animate attributeName="r" values="14;18;14" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <rect x="55" y="98" width="70" height="18" rx="9" fill="var(--ac-surface)" stroke="var(--ac-border)" stroke-width="1" />
+          <text x="90" y="110" text-anchor="middle" fill="var(--ac-text)" font-size="10" font-weight="800" font-family="system-ui, -apple-system, sans-serif">{roomLabel(initial.btu)}</text>
+          <defs>
+            <radialGradient id="heat-glow" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="rgba(239,68,68,0.2)" />
+              <stop offset="100%" stop-color="rgba(239,68,68,0)" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="ac-stats">
+        <div class="ac-stat">
+          <span class="ac-stat-label">{aUI.labelFrigorias}</span>
+          <span class="ac-stat-val" id="ac-frig">{initial.frigorias.toLocaleString()}</span>
+        </div>
+        <div class="ac-stat">
+          <span class="ac-stat-label">{aUI.labelTons}</span>
+          <span class="ac-stat-val" id="ac-tons">{initial.tons}</span>
+        </div>
+      </div>
+
+      <div class="ac-breakdown" id="ac-breakdown">
+        {initial.breakdown.map((b) => (
+          <div class="ac-bd-row">
+            <span class="ac-bd-label">{breakdownLabel(b.key)}</span>
+            <div class="ac-bd-bar-wrap">
+              <div class="ac-bd-bar" style={`width:${Math.min(100, (b.value / (initial.btu || 1)) * 100)}%`} />
+            </div>
+            <span class="ac-bd-val">{b.value.toLocaleString()}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display:none" data-labels={JSON.stringify({ bdBaseCooling: aUI.bdBaseCooling, bdCeilingHeight: aUI.bdCeilingHeight, bdPeople: aUI.bdPeople, bdHeatSources: aUI.bdHeatSources, bdSunRoom: aUI.bdSunRoom, labelBtus: aUI.labelBtus, labelFrigorias: aUI.labelFrigorias, labelTons: aUI.labelTons, labelRequired: aUI.labelRequired, labelRoomCozy: aUI.labelRoomCozy, labelRoomWarm: aUI.labelRoomWarm, labelRoomHot: aUI.labelRoomHot, labelUnitBtu: aUI.labelUnitBtu, labelUnitFrigorias: aUI.labelUnitFrigorias, labelUnitTons: aUI.labelUnitTons })} id="ac-labels" />
+
+<script>
+  import('./client.ts');
+</script>
