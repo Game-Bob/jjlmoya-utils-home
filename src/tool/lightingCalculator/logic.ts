@@ -70,7 +70,8 @@ function getSuggestedProducts(
 ): string {
   const typeName = bulbType.toUpperCase();
   const watt = Math.round(optimalWatt);
-  return `${bulbsNeeded} x ${typeName} ${watt}W bulbs ≈ ${bulbsNeeded * watt * (LUMENS_PER_WATT[bulbType] ?? 100)} lumens total`;
+  const lumens = bulbsNeeded * watt * (LUMENS_PER_WATT[bulbType] ?? 100);
+  return `${bulbsNeeded} x ${typeName} ${watt}W (${lumens} lm)`;
 }
 
 function getStatus(currentLux: number, targetLux: number): 'optimal' | 'insufficient' | 'excess' {
