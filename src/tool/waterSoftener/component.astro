@@ -1,0 +1,321 @@
+---
+import type { WaterSoftenerUI } from './ui';
+import { calculateScale, calculateSalt, calculateApplianceLifespan, toGpg, getHardnessCategory, fmt1 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const wUI = ui as WaterSoftenerUI;
+
+const DEF_HARDNESS = 12;
+const DEF_UNIT = 'gpg';
+const DEF_OCCUPANTS = 3;
+const DEF_CAPACITY = 32000;
+
+const gpg = toGpg(DEF_HARDNESS, DEF_UNIT as 'gpg' | 'fH');
+const cat = getHardnessCategory(gpg);
+const scale = calculateScale(gpg);
+const salt = calculateSalt({ hardnessValue: DEF_HARDNESS, hardnessUnit: DEF_UNIT as 'gpg' | 'fH', occupants: DEF_OCCUPANTS, softenerGrains: DEF_CAPACITY });
+const apps = calculateApplianceLifespan(gpg);
+---
+
+<div class="ws-root">
+  <div class="ws-card"
+    data-bl={wUI.applianceBaseline}
+    data-cl={wUI.applianceWithHardness}
+    data-sl={wUI.badgeSaved}
+    data-ul={wUI.applianceSaved}
+    data-um={wUI.scaleUnitMetric}
+    data-ui={wUI.scaleUnitImperial}
+  >
+    <div class="ws-stage">
+      <div class="ws-stage-glow"></div>
+      <div class="ws-unit-system" id="ws-unit-system">
+        <span class="ws-unit-label">{wUI.labelUnitSystem}</span>
+        <div class="ws-pill-track" id="ws-sys-pill-track">
+          <button class="ws-pill-btn ws-active" data-sys="metric" type="button">{wUI.btnMetric}</button>
+          <button class="ws-pill-btn" data-sys="imperial" type="button">{wUI.btnImperial}</button>
+        </div>
+      </div>
+      <p class="ws-section-label">{wUI.labelHardness}</p>
+      <div class="ws-hero">
+        <p class="ws-hero-value">
+          <span id="ws-hero-num">{DEF_HARDNESS}</span>
+          <span class="ws-hero-unit" id="ws-hero-unit">{wUI.unitGpg}</span>
+        </p>
+        <p class="ws-hero-label" id="ws-hero-label">{cat.label}</p>
+      </div>
+      <div class="ws-slider-track" id="ws-slider-track">
+        <div class="ws-slider-fill" id="ws-slider-fill"></div>
+        <div class="ws-slider-thumb" id="ws-slider-thumb"></div>
+      </div>
+      <div class="ws-pill-track" id="ws-pill-track" style="margin-top:1rem">
+        <button class="ws-pill-btn ws-active" data-unit="gpg" type="button">{wUI.unitGpg}</button>
+        <button class="ws-pill-btn" data-unit="fH" type="button">{wUI.unitFH}</button>
+      </div>
+    </div>
+
+    <div class="ws-body">
+      <div class="ws-fields">
+        <div class="ws-field">
+          <label class="ws-field-label" for="ws-hard">{wUI.labelHardness}</label>
+          <div class="ws-field-row">
+            <input type="number" id="ws-hard" class="ws-field-input" value={DEF_HARDNESS} min="0" max="50" step="0.5" />
+            <span class="ws-field-unit" id="ws-hard-unit">{wUI.unitGpg}</span>
+          </div>
+        </div>
+        <div class="ws-field">
+          <label class="ws-field-label" for="ws-occ">{wUI.labelOccupants}</label>
+          <div class="ws-field-row">
+            <input type="number" id="ws-occ" class="ws-field-input" value={DEF_OCCUPANTS} min="1" max="20" step="1" />
+            <span class="ws-field-unit">{wUI.unitPeople}</span>
+          </div>
+        </div>
+        <div class="ws-field">
+          <label class="ws-field-label" for="ws-cap">{wUI.labelSoftenerCapacity}</label>
+          <div class="ws-field-row">
+            <input type="number" id="ws-cap" class="ws-field-input" value={DEF_CAPACITY} min="5000" max="100000" step="1000" />
+            <span class="ws-field-unit">{wUI.unitGrains}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ws-pipe">
+        <p class="ws-section-label">{wUI.scaleTitle}</p>
+        <div class="ws-pipe-visual">
+          <svg viewBox="0 0 200 120">
+            <defs>
+              <clipPath id="ws-pipe-clip">
+                <rect x="14" y="14" width="172" height="92" rx="46" />
+              </clipPath>
+            </defs>
+            <rect x="10" y="10" width="180" height="100" rx="50" fill="none" stroke="var(--ws-border)" stroke-width="4" />
+            <rect x="14" y="14" width="172" height="92" rx="46" fill="var(--ws-surface)" />
+            <rect id="ws-scale-fill" x="14" y="106" width="172" height="0" fill="#e5e7eb" opacity="0.9" clip-path="url(#ws-pipe-clip)" />
+            <line x1="100" y1="10" x2="100" y2="110" stroke="var(--ws-border)" stroke-width="2" stroke-dasharray="4 4" opacity="0.5" />
+          </svg>
+        </div>
+        <p class="ws-pipe-num" id="ws-pipe-num">{fmt1(scale.rateMmPerYear)} <span class="ws-pipe-unit" id="ws-pipe-unit">{wUI.scaleUnitMetric}</span></p>
+      </div>
+
+      <div class="ws-salt">
+        <p class="ws-section-label">{wUI.saltTitle}</p>
+        <div class="ws-salt-grid" id="ws-salt-grid">
+          {Array.from({ length: 10 }, (_, i) => (
+            <div class={`ws-salt-bag ${i < Math.min(10, Math.ceil(salt.bagsPerYear)) ? 'ws-filled' : ''}`} data-idx={i}></div>
+          ))}
+        </div>
+        <div class="ws-salt-info">
+          <div class="ws-salt-item">
+            <span class="ws-salt-num" id="ws-salt-mass">{fmt1(salt.annualSaltKg)}</span>
+            <span class="ws-salt-label" id="ws-salt-mass-label">{wUI.saltAnnual}</span>
+          </div>
+          <div class="ws-salt-item">
+            <span class="ws-salt-num" id="ws-salt-bags">{fmt1(salt.bagsPerYear)}</span>
+            <span class="ws-salt-label">{wUI.saltBags}</span>
+          </div>
+          <div class="ws-salt-item">
+            <span class="ws-salt-num" id="ws-salt-days">{salt.daysPerBag}</span>
+            <span class="ws-salt-label">{wUI.saltDaysPerBag}</span>
+          </div>
+          <div class="ws-salt-item">
+            <span class="ws-salt-num" id="ws-salt-weeks">{fmt1(salt.weeksPerBag)}</span>
+            <span class="ws-salt-label">{wUI.saltWeeksPerBag}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ws-appliances" id="ws-appliances">
+        <div class="ws-app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M12 14v-2"/></svg>
+          <p class="ws-app-name">{wUI.applianceWasher}</p>
+          <p class="ws-app-years" id="ws-app-w-base">{apps.washer.baseline}</p>
+          <p class="ws-app-sub" id="ws-app-w-sub">{wUI.applianceBaseline}</p>
+          <p class="ws-app-years" id="ws-app-w-cur">{apps.washer.withHardness}</p>
+          <p class="ws-app-sub">{wUI.applianceWithHardness}</p>
+          <span class="ws-app-saved" id="ws-app-w-saved">{wUI.badgeSaved} {fmt1(apps.washer.saved)} {wUI.applianceSaved}</span>
+        </div>
+        <div class="ws-app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <p class="ws-app-name">{wUI.applianceHeater}</p>
+          <p class="ws-app-years" id="ws-app-h-base">{apps.heater.baseline}</p>
+          <p class="ws-app-sub" id="ws-app-h-sub">{wUI.applianceBaseline}</p>
+          <p class="ws-app-years" id="ws-app-h-cur">{apps.heater.withHardness}</p>
+          <p class="ws-app-sub">{wUI.applianceWithHardness}</p>
+          <span class="ws-app-saved" id="ws-app-h-saved">{wUI.badgeSaved} {fmt1(apps.heater.saved)} {wUI.applianceSaved}</span>
+        </div>
+        <div class="ws-app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <p class="ws-app-name">{wUI.applianceCoffee}</p>
+          <p class="ws-app-years" id="ws-app-c-base">{apps.coffee.baseline}</p>
+          <p class="ws-app-sub" id="ws-app-c-sub">{wUI.applianceBaseline}</p>
+          <p class="ws-app-years" id="ws-app-c-cur">{apps.coffee.withHardness}</p>
+          <p class="ws-app-sub">{wUI.applianceWithHardness}</p>
+          <span class="ws-app-saved" id="ws-app-c-saved">{wUI.badgeSaved} {fmt1(apps.coffee.saved)} {wUI.applianceSaved}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateScale, calculateSalt, calculateApplianceLifespan, toGpg, getHardnessCategory, mmToInches, kgToLbs, fmt1 } from './logic';
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, val: string) { const e = el(id); if (e) e.textContent = val; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+
+  const MAX_GPG_VISUAL = 35;
+
+  let unitSystem: 'metric' | 'imperial' = 'metric';
+
+  function readHardUnit(): 'gpg' | 'fH' {
+    const track = el('ws-pill-track');
+    const active = track?.querySelector('.ws-pill-btn.ws-active') as HTMLElement | null;
+    return (active?.dataset.unit || 'gpg') as 'gpg' | 'fH';
+  }
+
+  function setHardUnit(unit: 'gpg' | 'fH') {
+    const track = el('ws-pill-track');
+    if (!track) return;
+    track.querySelectorAll('.ws-pill-btn').forEach((b) => b.classList.toggle('ws-active', (b as HTMLElement).dataset.unit === unit));
+    setTxt('ws-hard-unit', unit === 'gpg' ? 'GPG' : 'fH');
+    setTxt('ws-hero-unit', unit === 'gpg' ? 'GPG' : 'fH');
+  }
+
+  function setSys(sys: 'metric' | 'imperial') {
+    const track = el('ws-sys-pill-track');
+    if (!track) return;
+    track.querySelectorAll('.ws-pill-btn').forEach((b) => b.classList.toggle('ws-active', (b as HTMLElement).dataset.sys === sys));
+    unitSystem = sys;
+  }
+
+  function setSlider(gpg: number) {
+    const pct = Math.min(100, (gpg / MAX_GPG_VISUAL) * 100);
+    const fill = el('ws-slider-fill') as HTMLElement | null;
+    const thumb = el('ws-slider-thumb') as HTMLElement | null;
+    if (fill) fill.style.width = `${pct}%`;
+    if (thumb) thumb.style.left = `${pct}%`;
+  }
+
+  function setHero(val: number, unit: string, label: string) {
+    setTxt('ws-hero-num', fmt1(val));
+    setTxt('ws-hero-unit', unit);
+    setTxt('ws-hero-label', label);
+  }
+
+  function setPipe(gpg: number) {
+    const scale = calculateScale(gpg);
+    const isMetric = unitSystem === 'metric';
+    const rate = isMetric ? scale.rateMmPerYear : mmToInches(scale.rateMmPerYear);
+    const unit = isMetric ? 'mm/yr' : 'in/yr';
+    setTxt('ws-pipe-num', `${fmt1(rate)} ${unit}`);
+    const maxRate = isMetric ? 5 : mmToInches(5);
+    const h = Math.min(92, (rate / maxRate) * 92);
+    const rect = el('ws-scale-fill') as SVGRectElement | null;
+    if (rect) {
+      rect.setAttribute('y', String(106 - h));
+      rect.setAttribute('height', String(h));
+    }
+  }
+
+  function setSalt(salt: { annualSaltKg: number; bagsPerYear: number; daysPerBag: number; weeksPerBag: number }) {
+    const isMetric = unitSystem === 'metric';
+    const mass = isMetric ? salt.annualSaltKg : kgToLbs(salt.annualSaltKg);
+    const massUnit = isMetric ? 'kg' : 'lbs';
+    setTxt('ws-salt-mass', `${fmt1(mass)} ${massUnit}`);
+    setTxt('ws-salt-bags', fmt1(salt.bagsPerYear));
+    setTxt('ws-salt-days', String(salt.daysPerBag));
+    setTxt('ws-salt-weeks', fmt1(salt.weeksPerBag));
+    const fullBags = Math.floor(salt.bagsPerYear);
+    const frac = salt.bagsPerYear - fullBags;
+    document.querySelectorAll('.ws-salt-bag').forEach((b, i) => {
+      const bag = b as HTMLElement;
+      if (i < fullBags) {
+        bag.classList.add('ws-filled');
+        bag.style.setProperty('--fill', '100%');
+      } else if (i === fullBags && frac > 0) {
+        bag.classList.add('ws-filled');
+        bag.style.setProperty('--fill', `${frac * 100}%`);
+      } else {
+        bag.classList.remove('ws-filled');
+        bag.style.setProperty('--fill', '0%');
+      }
+    });
+  }
+
+  interface AppArgs { idPrefix: string; r: { baseline: number; withHardness: number; saved: number }; baseLabel: string; curLabel: string; savedLabel: string; unitLabel: string }
+
+  function setApp(a: AppArgs) {
+    setTxt(`ws-app-${a.idPrefix}-base`, fmt1(a.r.baseline));
+    setTxt(`ws-app-${a.idPrefix}-sub`, a.baseLabel);
+    setTxt(`ws-app-${a.idPrefix}-cur`, fmt1(a.r.withHardness));
+    const savedEl = el(`ws-app-${a.idPrefix}-saved`) as HTMLElement | null;
+    if (savedEl) savedEl.textContent = `${a.savedLabel} ${fmt1(a.r.saved)} ${a.unitLabel}`;
+  }
+
+  function readState() {
+    return {
+      hardnessValue: getNum('ws-hard'),
+      hardnessUnit: readHardUnit(),
+      occupants: getNum('ws-occ'),
+      softenerGrains: getNum('ws-cap'),
+    };
+  }
+
+  function update() {
+    const s = readState();
+    const gpg = toGpg(s.hardnessValue, s.hardnessUnit);
+    const cat = getHardnessCategory(gpg);
+    setSlider(gpg);
+    setHero(s.hardnessValue, s.hardnessUnit === 'gpg' ? 'GPG' : 'fH', cat.label);
+    setPipe(gpg);
+    setSalt(calculateSalt(s));
+    const apps = calculateApplianceLifespan(gpg);
+    const card = document.querySelector('.ws-card') as HTMLElement | null;
+    const bl = card?.dataset.bl || 'With softener';
+    const cl = card?.dataset.cl || 'With hard water';
+    const sl = card?.dataset.sl || 'Extended by';
+    const ul = card?.dataset.ul || 'yrs';
+    setApp({ idPrefix: 'w', r: apps.washer, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
+    setApp({ idPrefix: 'h', r: apps.heater, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
+    setApp({ idPrefix: 'c', r: apps.coffee, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
+  }
+
+  function bindSysPills() {
+    const track = el('ws-sys-pill-track');
+    if (!track) return;
+    track.querySelectorAll('.ws-pill-btn').forEach((b) => b.addEventListener('click', () => {
+      setSys((b as HTMLElement).dataset.sys as 'metric' | 'imperial');
+      update();
+    }));
+  }
+
+  function bindHardPills() {
+    const track = el('ws-pill-track');
+    if (!track) return;
+    track.querySelectorAll('.ws-pill-btn').forEach((b) => b.addEventListener('click', () => {
+      setHardUnit((b as HTMLElement).dataset.unit as 'gpg' | 'fH');
+      update();
+    }));
+  }
+
+  function bindInputs() {
+    ['ws-hard', 'ws-occ', 'ws-cap'].forEach((id) => {
+      const i = el(id) as HTMLInputElement | null;
+      if (i) i.addEventListener('input', update);
+    });
+  }
+
+  function init() {
+    bindSysPills();
+    bindHardPills();
+    bindInputs();
+    update();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

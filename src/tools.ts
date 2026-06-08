@@ -16,6 +16,7 @@ import { APPLIANCE_COST_CALCULATOR_TOOL } from './tool/applianceCostCalculator/i
 import { TILE_LAYOUT_CALCULATOR_TOOL } from './tool/tileLayoutCalculator/index';
 import { LIGHTING_CALCULATOR_TOOL } from './tool/lightingCalculator/index';
 import { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator/index';
+import { WATER_SOFTENER_TOOL } from './tool/waterSoftener/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   QR_GENERATOR_TOOL,
@@ -34,5 +35,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   TILE_LAYOUT_CALCULATOR_TOOL,
   LIGHTING_CALCULATOR_TOOL,
   HUMIDITY_CALCULATOR_TOOL,
+  WATER_SOFTENER_TOOL,
 ];
 

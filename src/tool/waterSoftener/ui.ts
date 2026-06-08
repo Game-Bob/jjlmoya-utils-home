@@ -1,0 +1,34 @@
+export interface WaterSoftenerUI extends Record<string, string> {
+  labelHardness: string;
+  unitGpg: string;
+  unitFH: string;
+  labelOccupants: string;
+  unitPeople: string;
+  labelSoftenerCapacity: string;
+  unitGrains: string;
+  hardnessSoft: string;
+  hardnessSlightly: string;
+  hardnessModerate: string;
+  hardnessHard: string;
+  hardnessVery: string;
+  hardnessExtreme: string;
+  scaleTitle: string;
+  scaleUnitMetric: string;
+  scaleUnitImperial: string;
+  saltTitle: string;
+  saltAnnual: string;
+  saltBags: string;
+  saltDaysPerBag: string;
+  saltWeeksPerBag: string;
+  applianceTitle: string;
+  applianceWasher: string;
+  applianceHeater: string;
+  applianceCoffee: string;
+  applianceBaseline: string;
+  applianceWithHardness: string;
+  applianceSaved: string;
+  badgeSaved: string;
+  labelUnitSystem: string;
+  btnMetric: string;
+  btnImperial: string;
+}
