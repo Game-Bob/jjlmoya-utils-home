@@ -1,0 +1,37 @@
+export interface TileLayoutCalculatorUI extends Record<string, string> {
+  sectionTitle: string;
+  labelRoomWidth: string;
+  labelRoomLength: string;
+  labelTileWidth: string;
+  labelTileLength: string;
+  labelGrout: string;
+  labelWaste: string;
+  labelTilesPerBox: string;
+  labelPrice: string;
+  labelPattern: string;
+  unitMetricRoom: string;
+  unitImperialRoom: string;
+  unitMetricTile: string;
+  unitImperialTile: string;
+  unitGroutMetric: string;
+  unitGroutImperial: string;
+  unitPercent: string;
+  unitBoxes: string;
+  unitPrice: string;
+  resultBadge: string;
+  labelArea: string;
+  labelTiles: string;
+  labelBoxes: string;
+  labelCost: string;
+  labelWasteCount: string;
+  labelCuts: string;
+  currency: string;
+  btnMetric: string;
+  btnImperial: string;
+  btnPatternStraight: string;
+  btnPatternBrick: string;
+  btnPatternDiagonal: string;
+  badgeOptimal: string;
+  badgeWarning: string;
+  visualTitle: string;
+}

@@ -1,0 +1,402 @@
+---
+import type { TileLayoutCalculatorUI } from './ui';
+import { fmt1 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const tUI = ui as TileLayoutCalculatorUI;
+
+const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT_W = 10, INIT_TPB = 8, INIT_P = 25;
+---
+
+<div class="tile-wrapper">
+  <div
+    class="tile-card"
+    data-u-mr={tUI.unitMetricRoom}
+    data-u-ir={tUI.unitImperialRoom}
+    data-u-mt={tUI.unitMetricTile}
+    data-u-it={tUI.unitImperialTile}
+    data-u-mg={tUI.unitGroutMetric}
+    data-u-ig={tUI.unitGroutImperial}
+    data-u-pct={tUI.unitPercent}
+    data-u-box={tUI.unitBoxes}
+    data-currency={tUI.currency}
+  >
+    <div class="tile-left">
+      <p class="tile-section-title">{tUI.sectionTitle}</p>
+      <div class="tile-unit-toggle">
+        <button class="tile-unit-btn tile-unit-active" data-unit="metric">{tUI.btnMetric}</button>
+        <button class="tile-unit-btn" data-unit="imperial">{tUI.btnImperial}</button>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label">{tUI.labelPattern}</label>
+        <div class="tile-pattern-toggle">
+          <button class="tile-pattern-btn tile-pattern-active" data-pattern="straight">{tUI.btnPatternStraight}</button>
+          <button class="tile-pattern-btn" data-pattern="brick">{tUI.btnPatternBrick}</button>
+          <button class="tile-pattern-btn" data-pattern="diagonal">{tUI.btnPatternDiagonal}</button>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-rw">{tUI.labelRoomWidth}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-rw" value={INIT_R_W} min="0.1" max="50" step="0.1" class="tile-number-input" />
+          <span class="tile-number-unit" id="tl-rw-u">{tUI.unitMetricRoom}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-rl">{tUI.labelRoomLength}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-rl" value={INIT_R_L} min="0.1" max="50" step="0.1" class="tile-number-input" />
+          <span class="tile-number-unit" id="tl-rl-u">{tUI.unitMetricRoom}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-tw">{tUI.labelTileWidth}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-tw" value={INIT_T_W} min="5" max="200" step="1" class="tile-number-input" />
+          <span class="tile-number-unit" id="tl-tw-u">{tUI.unitMetricTile}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-tl">{tUI.labelTileLength}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-tl" value={INIT_T_L} min="5" max="200" step="1" class="tile-number-input" />
+          <span class="tile-number-unit" id="tl-tl-u">{tUI.unitMetricTile}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-g">{tUI.labelGrout}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-g" value={INIT_G} min="0" step="0.5" class="tile-number-input" />
+          <span class="tile-number-unit" id="tl-g-u">{tUI.unitGroutMetric}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-w">{tUI.labelWaste}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-w" value={INIT_W} min="0" max="50" step="1" class="tile-number-input" />
+          <span class="tile-number-unit">{tUI.unitPercent}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-tpb">{tUI.labelTilesPerBox}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-tpb" value={INIT_TPB} min="1" step="1" class="tile-number-input" />
+          <span class="tile-number-unit">{tUI.unitBoxes}</span>
+        </div>
+      </div>
+      <div class="tile-field">
+        <label class="tile-label" for="tl-p">{tUI.labelPrice}</label>
+        <div class="tile-number-row">
+          <input type="number" id="tl-p" value={INIT_P} min="0" step="0.01" class="tile-price-input" />
+          <span class="tile-number-unit" id="tl-p-u">{tUI.unitPrice}</span>
+        </div>
+      </div>
+    </div>
+    <div class="tile-right">
+      <div class="tile-visual-title">{tUI.visualTitle}</div>
+      <div class="tile-svg-wrap" id="tl-sw"><div class="tile-dim-label" id="tl-dl"></div></div>
+      <div class="tile-result-badge" id="tl-rb">{tUI.resultBadge}</div>
+      <div class="tile-stats">
+        <div class="tile-stat">
+          <p class="tile-stat-label">{tUI.labelArea}</p>
+          <p id="tl-a" class="tile-stat-value">{fmt1(INIT_R_W * INIT_R_L)} m²</p>
+        </div>
+        <div class="tile-stat-divider"></div>
+        <div class="tile-stat">
+          <p class="tile-stat-label">{tUI.labelTiles}</p>
+          <p id="tl-t" class="tile-stat-value">0</p>
+        </div>
+        <div class="tile-stat-divider"></div>
+        <div class="tile-stat">
+          <p class="tile-stat-label">{tUI.labelBoxes}</p>
+          <p id="tl-b" class="tile-stat-value">0</p>
+        </div>
+        <div class="tile-stat-divider"></div>
+        <div class="tile-stat">
+          <p class="tile-stat-label">{tUI.labelCost}</p>
+          <p id="tl-c" class="tile-stat-value">0</p>
+        </div>
+      </div>
+      <div class="tile-waste-row">
+        <p class="tile-waste-label">{tUI.labelWasteCount}</p>
+        <p id="tl-wc" class="tile-waste-value">0</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateTileLayout, fmt0, fmt2 } from './logic';
+  import type { TileLayoutResult } from './logic';
+
+  const LS_U = 'tile-layout-unit';
+  const LS_P = 'tile-layout-pattern';
+  const LS_V = 'tile-layout-values';
+  let unitSys: 'metric' | 'imperial' = 'metric';
+  let pattern: 'straight' | 'brick' | 'diagonal' = 'straight';
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, v: string) { const e = el(id); if (e) e.textContent = v; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+  function ds(c: HTMLElement, k: string): string { return c.dataset[k] ?? ''; }
+
+  function factors() {
+    return unitSys === 'metric'
+      ? { rm: 1, tm: 0.01, gm: 0.001 }
+      : { rm: 0.3048, tm: 0.0254, gm: 0.0254 };
+  }
+
+  function makeSVG(ns: string, r: TileLayoutResult): SVGElement {
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${r.roomWidthM} ${r.roomLengthM}`); svg.setAttribute('class', 'tile-svg');
+    svg.style.width = '100%'; svg.style.height = '100%';
+    return svg;
+  }
+
+  function drawSimple(ns: string, svg: SVGElement, r: TileLayoutResult) {
+    const bg = document.createElementNS(ns, 'rect');
+    bg.setAttribute('x', '0'); bg.setAttribute('y', '0');
+    bg.setAttribute('width', String(r.roomWidthM)); bg.setAttribute('height', String(r.roomLengthM));
+    bg.setAttribute('class', 'tile-rect-primary'); svg.appendChild(bg);
+    const step = Math.max(r.tileWidthM, r.tileLengthM);
+    for (let x = 0; x < r.roomWidthM; x += step) {
+      const l = document.createElementNS(ns, 'line');
+      l.setAttribute('x1', String(x)); l.setAttribute('y1', '0');
+      l.setAttribute('x2', String(x)); l.setAttribute('y2', String(r.roomLengthM));
+      l.setAttribute('class', 'tile-grid-bg'); svg.appendChild(l);
+    }
+    for (let y = 0; y < r.roomLengthM; y += step) {
+      const l = document.createElementNS(ns, 'line');
+      l.setAttribute('x1', '0'); l.setAttribute('y1', String(y));
+      l.setAttribute('x2', String(r.roomWidthM)); l.setAttribute('y2', String(y));
+      l.setAttribute('class', 'tile-grid-bg'); svg.appendChild(l);
+    }
+  }
+
+  function drawTile(ns: string, r: TileLayoutResult, parent: SVGElement, cell: { c: number; ro: number; x: number; y: number }) {
+    const w = Math.max(0, Math.min(r.tileWidthM, r.roomWidthM - cell.x));
+    const h = Math.max(0, Math.min(r.tileLengthM, r.roomLengthM - cell.y));
+    if (w <= 0 || h <= 0) return;
+    const rect = document.createElementNS(ns, 'rect');
+    rect.setAttribute('x', String(cell.x)); rect.setAttribute('y', String(cell.y));
+    rect.setAttribute('width', String(w)); rect.setAttribute('height', String(h));
+    rect.setAttribute('rx', String(Math.max(r.groutM * 0.3, 0.002)));
+    rect.setAttribute('class', (cell.c + cell.ro) % 2 === 0 ? 'tile-rect-primary' : 'tile-rect-secondary');
+    parent.appendChild(rect);
+  }
+
+  function drawStraight(ns: string, svg: SVGElement, r: TileLayoutResult) {
+    for (let c = 0; c < r.cols; c++) {
+      for (let ro = 0; ro < r.rows; ro++) {
+        const x = c * (r.tileWidthM + r.groutM);
+        const y = ro * (r.tileLengthM + r.groutM);
+        drawTile(ns, r, svg, { c, ro, x, y });
+      }
+    }
+  }
+
+  function drawBrick(ns: string, svg: SVGElement, r: TileLayoutResult) {
+    const offset = (r.tileWidthM + r.groutM) / 2;
+    svg.setAttribute('viewBox', `-${offset} 0 ${r.roomWidthM + offset} ${r.roomLengthM}`);
+    for (let ro = 0; ro < r.rows; ro++) {
+      const rowOffset = ro % 2 === 1 ? offset : 0;
+      const cStart = rowOffset > 0 ? -1 : 0;
+      for (let c = cStart; c < r.cols; c++) {
+        const x = c * (r.tileWidthM + r.groutM) + rowOffset;
+        const y = ro * (r.tileLengthM + r.groutM);
+        drawTile(ns, r, svg, { c, ro, x, y });
+      }
+    }
+  }
+
+  function drawDiagonal(ns: string, svg: SVGElement, r: TileLayoutResult) {
+    const g = document.createElementNS(ns, 'g');
+    g.setAttribute('transform', `rotate(45 ${r.roomWidthM / 2} ${r.roomLengthM / 2})`);
+    for (let c = 0; c < r.cols; c++) {
+      for (let ro = 0; ro < r.rows; ro++) {
+        const x = c * (r.tileWidthM + r.groutM);
+        const y = ro * (r.tileLengthM + r.groutM);
+        drawTile(ns, r, g, { c, ro, x, y });
+      }
+    }
+    svg.appendChild(g);
+  }
+
+  function buildSVG(r: TileLayoutResult) {
+    const wrap = el('tl-sw');
+    if (!wrap) return;
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = makeSVG(ns, r);
+    const totalTiles = r.cols * r.rows;
+    if (totalTiles > 2000) {
+      drawSimple(ns, svg, r);
+    } else if (pattern === 'brick') {
+      drawBrick(ns, svg, r);
+    } else if (pattern === 'diagonal') {
+      drawDiagonal(ns, svg, r);
+    } else {
+      drawStraight(ns, svg, r);
+    }
+    const oldSvg = wrap.querySelector('svg');
+    if (oldSvg) oldSvg.remove();
+    wrap.appendChild(svg);
+  }
+
+  function setState(r: TileLayoutResult) {
+    const wrap = el('tl-sw');
+    if (!wrap) return;
+    wrap.classList.remove('tile-state-optimal', 'tile-state-warning');
+    const cutW = r.cols * r.tileWidthM + (r.cols - 1) * r.groutM;
+    const cutL = r.rows * r.tileLengthM + (r.rows - 1) * r.groutM;
+    const hasCut = cutW > r.roomWidthM + 0.01 || cutL > r.roomLengthM + 0.01;
+    if (r.wastePercent <= 5 && !hasCut) {
+      wrap.classList.add('tile-state-optimal');
+    } else if (r.wastePercent >= 20 || hasCut) {
+      wrap.classList.add('tile-state-warning');
+    }
+  }
+
+  function calculate(card: HTMLElement) {
+    const f = factors();
+    const r = calculateTileLayout({
+      roomWidthM: getNum('tl-rw') * f.rm,
+      roomLengthM: getNum('tl-rl') * f.rm,
+      tileWidthM: getNum('tl-tw') * f.tm,
+      tileLengthM: getNum('tl-tl') * f.tm,
+      groutM: getNum('tl-g') * f.gm,
+      wastePercent: getNum('tl-w'),
+      tilesPerBox: getNum('tl-tpb'),
+      pricePerBox: getNum('tl-p'),
+    });
+    const areaUnit = unitSys === 'metric' ? 'm²' : 'ft²';
+    const currencyCode = ds(card, 'currency') || 'USD';
+    const costFormatted = new Intl.NumberFormat('en', { style: 'currency', currency: currencyCode }).format(r.totalCost);
+    setTxt('tl-a', `${fmt2(r.roomArea)} ${areaUnit}`);
+    setTxt('tl-t', fmt0(r.totalTiles));
+    setTxt('tl-b', fmt0(r.boxes));
+    setTxt('tl-c', costFormatted);
+    setTxt('tl-wc', fmt0(r.wasteTiles));
+    buildSVG(r);
+    setTxt('tl-dl', `${r.cols} x ${r.rows}`);
+    setState(r);
+  }
+
+  function saveValues() {
+    const v = {
+      rw: getNum('tl-rw'),
+      rl: getNum('tl-rl'),
+      tw: getNum('tl-tw'),
+      tl: getNum('tl-tl'),
+      g: getNum('tl-g'),
+      w: getNum('tl-w'),
+      tpb: getNum('tl-tpb'),
+      p: getNum('tl-p'),
+    };
+    localStorage.setItem(LS_V, JSON.stringify(v));
+  }
+
+  function restoreValues() {
+    const s = localStorage.getItem(LS_V);
+    if (!s) return;
+    try {
+      const v = JSON.parse(s) as Record<string, number>;
+      const ids = ['tl-rw', 'tl-rl', 'tl-tw', 'tl-tl', 'tl-g', 'tl-w', 'tl-tpb', 'tl-p'];
+      ids.forEach((id) => {
+        const e = el(id) as HTMLInputElement | null;
+        if (e && v[id.replace('tl-', '')] !== undefined) e.value = String(v[id.replace('tl-', '')]);
+      });
+    } catch {}
+  }
+
+  function updateLabels(card: HTMLElement) {
+    const i = unitSys === 'imperial';
+    setTxt('tl-rw-u', i ? ds(card, 'uIr') : ds(card, 'uMr'));
+    setTxt('tl-rl-u', i ? ds(card, 'uIr') : ds(card, 'uMr'));
+    setTxt('tl-tw-u', i ? ds(card, 'uIt') : ds(card, 'uMt'));
+    setTxt('tl-tl-u', i ? ds(card, 'uIt') : ds(card, 'uMt'));
+    setTxt('tl-g-u', i ? ds(card, 'uIg') : ds(card, 'uMg'));
+  }
+
+  function applyUnit(s: 'metric' | 'imperial', card: HTMLElement) {
+    unitSys = s;
+    localStorage.setItem(LS_U, s);
+    document.querySelectorAll('.tile-unit-btn').forEach((b) => b.classList.toggle('tile-unit-active', (b as HTMLElement).dataset.unit === s));
+    const isM = s === 'metric';
+    function upd(id: string, factor: number) {
+      const e = el(id) as HTMLInputElement | null;
+      if (e) e.value = String(Math.round((getNum(id) * factor) * 10) / 10);
+    }
+    upd('tl-rw', isM ? 0.3048 : 1 / 0.3048);
+    upd('tl-rl', isM ? 0.3048 : 1 / 0.3048);
+    upd('tl-tw', isM ? 2.54 : 1 / 2.54);
+    upd('tl-tl', isM ? 2.54 : 1 / 2.54);
+    upd('tl-g', isM ? 25.4 : 1 / 25.4);
+    updateLabels(card);
+    calculate(card);
+  }
+
+  function applyPattern(p: 'straight' | 'brick' | 'diagonal', card: HTMLElement) {
+    pattern = p;
+    localStorage.setItem(LS_P, p);
+    document.querySelectorAll('.tile-pattern-btn').forEach((b) => b.classList.toggle('tile-pattern-active', (b as HTMLElement).dataset.pattern === p));
+    calculate(card);
+  }
+
+  function onClickParticle(ev: MouseEvent) {
+    for (let i = 0; i < 5; i++) {
+      const p = document.createElement('span');
+      p.className = 'tile-particle';
+      p.textContent = ['+', '~', '*'][Math.floor(Math.random() * 3)];
+      const a = Math.random() * 6.28;
+      const d = 20 + Math.random() * 30;
+      p.style.left = `${ev.clientX}px`;
+      p.style.top = `${ev.clientY}px`;
+      p.style.setProperty('--tx', `${Math.cos(a) * d}px`);
+      p.style.setProperty('--ty', `${Math.sin(a) * d}px`);
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 800);
+    }
+  }
+
+  function bindInputs(card: HTMLElement) {
+    ['tl-rw', 'tl-rl', 'tl-tw', 'tl-tl', 'tl-g', 'tl-w', 'tl-tpb', 'tl-p'].forEach((id) => {
+      const e = el(id);
+      if (e) e.addEventListener('input', () => { saveValues(); calculate(card); });
+    });
+    document.querySelectorAll('.tile-unit-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const s = (btn as HTMLElement).dataset.unit as 'metric' | 'imperial';
+        if (s) applyUnit(s, card);
+      });
+    });
+    document.querySelectorAll('.tile-pattern-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const p = (btn as HTMLElement).dataset.pattern as 'straight' | 'brick' | 'diagonal';
+        if (p) applyPattern(p, card);
+      });
+    });
+    document.querySelectorAll('input, button').forEach((b) => b.addEventListener('click', onClickParticle as EventListener));
+  }
+
+  function init() {
+    const card = document.querySelector('.tile-card') as HTMLElement | null;
+    if (!card) return;
+    const saved = localStorage.getItem(LS_U) as 'metric' | 'imperial' | null;
+    if (saved) unitSys = saved;
+    const savedP = localStorage.getItem(LS_P) as 'straight' | 'brick' | 'diagonal' | null;
+    if (savedP) pattern = savedP;
+    document.querySelectorAll('.tile-unit-btn').forEach((b) => b.classList.toggle('tile-unit-active', (b as HTMLElement).dataset.unit === unitSys));
+    document.querySelectorAll('.tile-pattern-btn').forEach((b) => b.classList.toggle('tile-pattern-active', (b as HTMLElement).dataset.pattern === pattern));
+    restoreValues();
+    updateLabels(card);
+    bindInputs(card);
+    calculate(card);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
