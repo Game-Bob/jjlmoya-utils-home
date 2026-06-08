@@ -201,11 +201,24 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT
 
   function drawBrick(ns: string, svg: SVGElement, r: TileLayoutResult) {
     const offset = (r.tileWidthM + r.groutM) / 2;
-    svg.setAttribute('viewBox', `-${offset} 0 ${r.roomWidthM + offset} ${r.roomLengthM}`);
     for (let ro = 0; ro < r.rows; ro++) {
       const rowOffset = ro % 2 === 1 ? offset : 0;
-      const cStart = rowOffset > 0 ? -1 : 0;
-      for (let c = cStart; c < r.cols; c++) {
+      if (rowOffset > 0) {
+        const halfW = r.tileWidthM - rowOffset;
+        const y = ro * (r.tileLengthM + r.groutM);
+        const h = Math.max(0, Math.min(r.tileLengthM, r.roomLengthM - y));
+        if (halfW > 0 && h > 0) {
+          const rect = document.createElementNS(ns, 'rect');
+          rect.setAttribute('x', '0');
+          rect.setAttribute('y', String(y));
+          rect.setAttribute('width', String(Math.min(halfW, r.roomWidthM)));
+          rect.setAttribute('height', String(h));
+          rect.setAttribute('rx', String(Math.max(r.groutM * 0.3, 0.002)));
+          rect.setAttribute('class', (-1 + ro) % 2 === 0 ? 'tile-rect-primary' : 'tile-rect-secondary');
+          svg.appendChild(rect);
+        }
+      }
+      for (let c = 0; c < r.cols; c++) {
         const x = c * (r.tileWidthM + r.groutM) + rowOffset;
         const y = ro * (r.tileLengthM + r.groutM);
         drawTile(ns, r, svg, { c, ro, x, y });
@@ -274,7 +287,7 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT
     });
     const areaUnit = unitSys === 'metric' ? 'm²' : 'ft²';
     const currencyCode = ds(card, 'currency') || 'USD';
-    const costFormatted = new Intl.NumberFormat('en', { style: 'currency', currency: currencyCode }).format(r.totalCost);
+    const costFormatted = new Intl.NumberFormat(navigator.language, { style: 'currency', currency: currencyCode }).format(r.totalCost);
     setTxt('tl-a', `${fmt2(r.roomArea)} ${areaUnit}`);
     setTxt('tl-t', fmt0(r.totalTiles));
     setTxt('tl-b', fmt0(r.boxes));
