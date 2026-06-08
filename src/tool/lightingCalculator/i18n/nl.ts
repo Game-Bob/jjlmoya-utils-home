@@ -3,56 +3,56 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LightingCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'verlichtingscalculator';
-const title = 'Home Lighting and Lumens Calculator';
+const slug = 'verlichtings-en-lumenrekenmachine-voor-thuis';
+const title = 'Verlichtings en Lumenrekenmachine voor Thuis';
 const description =
-  'Calculate exactly how many lumens and light bulbs you need for any room. Select your room type, dimensions, and bulb type to get a professional lighting plan with real-time lux estimates.';
+  'Bereken exact hoeveel lumen en lampen u nodig heeft voor elke kamer. Selecteer het kamertype, de dimensies en het lamptype om een professioneel verlichtingsplan te krijgen met real-time lux-schattingen.';
 
 const faqData = [
   {
-    question: 'How many lumens do I need for a living room?',
+    question: 'Hoeveel lumen heb ik nodig voor een woonkamer?',
     answer:
-      'For a typical living room, aim for around 150 lux on the floor. Multiply the room area in square meters by 150 to get the required lumens. For a 20 square meter room, you need approximately 3,000 lumens.',
+      'Voor een typische woonkamer, richt u op ongeveer 150 lux op de vloer. Vermenigvuldig de kamerooppervlakte in vierkante meters met 150 om de benodigde lumen te krijgen. Voor een kamer van 20 vierkante meter heeft u ongeveer 3.000 lumen nodig.',
   },
   {
-    question: 'What is the difference between lux and lumens?',
+    question: 'Wat is het verschil tussen lux en lumen?',
     answer:
-      'Lumens measure the total light output from a bulb. Lux measures the light that actually reaches a surface. A room with high ceilings or dark walls needs more lumens to achieve the same lux level because light is lost to distance and absorption.',
+      'Lumen meten de totale lichtopbrengst van een lamp. Lux meten het licht dat daadwerkelijk een oppervlak bereikt. Een kamer met hoge plafonds of donkere muren heeft meer lumen nodig om dezelfde luxniveau te bereiken omdat licht verloren gaat door afstand en absorptie.',
   },
   {
-    question: 'Do LED bulbs really save energy?',
+    question: 'Besparen LED-lampen echt energie?',
     answer:
-      'Yes. LED bulbs produce about 100 lumens per watt, while incandescent bulbs produce only about 15. A 10W LED bulb gives the same light as a 60W incandescent bulb, using one-sixth of the electricity.',
+      'Ja. LED-lampen produceren ongeveer 100 lumen per watt, terwijl gloeilampen slechts ongeveer 15 produceren. Een 10W LED-lamp geeft evenveel licht als een 60W gloeilamp en gebruikt slechts een zesde van de elektriciteit.',
   },
   {
-    question: 'How does room color affect lighting needs?',
+    question: 'Hoe beïnvloedt de kamerkleur de verlichtingsbehoefte?',
     answer:
-      'Dark walls and ceilings absorb light. In a room with dark surfaces, you may need 50% more lumens than the standard recommendation. The calculator lets you adjust for low, medium, or high reflectance.',
+      'Donkere muren en plafonds absorberen licht. In een kamer met donkere oppervlakken heeft u mogelijk 50% meer lumen nodig dan de standaardaanbeveling.',
   },
   {
-    question: 'What is a good lux level for reading?',
+    question: 'Wat is een goed lux-niveau voor lezen?',
     answer:
-      'For comfortable reading, you need 300 to 500 lux on the page. General ambient lighting usually provides 150 to 200 lux, so add a task lamp near your reading spot for the extra brightness.',
+      'Voor comfortabel lezen heeft u 300 tot 500 lux op de pagina nodig. Algemene omgevingsverlichting levert meestal 150 tot 200 lux, dus voeg een taa lamp toe bij uw leesplek voor extra lichtsterkte.',
   },
   {
-    question: 'Can I dim LED bulbs?',
+    question: 'Kan ik LED-lampen dimmen?',
     answer:
-      'Only if they are marked as dimmable. Standard LEDs may flicker or have a shortened lifespan when connected to a dimmer. Always check the packaging for the dimmable symbol before installing.',
+      'Alleen als ze gemarkeerd zijn als dimbaar. Standaard LEDs kunnen knipperen of een verkorte levensduur hebben wanneer ze op een dimmer worden aangesloten. Controleer altijd de verpakking voor het dimbaar-symbool voordat u installeert.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Choose your room type',
-    text: 'Select the room function. Kitchens and offices need brighter light than bedrooms or hallways.',
+    name: 'Kies uw kamertype',
+    text: 'Selecteer de kamerfunctie. Keukens en kantoren hebben helderder licht nodig dan slaapkamers of hallen.',
   },
   {
-    name: 'Enter dimensions',
-    text: 'Input the room width, length, and ceiling height. The calculator uses these to determine the room index and light utilization factor.',
+    name: 'Voer de afmetingen in',
+    text: 'Voer de kamerbreedte, -lengte en plafondhoogte in. De rekenmachine gebruikt deze om de kamerindex en het lichtutilisatiefactor te bepalen.',
   },
   {
-    name: 'Select bulb type and count',
-    text: 'Choose your preferred bulb technology and how many fixtures you have. The calculator will tell you if you need more bulbs.',
+    name: 'Selecteer lamptype en aantal',
+    text: 'Kies uw favoriete lamptechnologie en hoeveel armaturen u heeft. De rekenmachine zal u vertellen of u meer lampen nodig heeft.',
   },
 ];
 
@@ -86,7 +86,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
+  inLanguage: 'nl',
 };
 
 export const content: ToolLocaleContent<LightingCalculatorUI> = {
@@ -100,19 +100,19 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Complete Guide to Home Lighting Design and Lumens Planning',
+      text: 'Complete Gids voor Woningverlichtingsontwerp en Lumenplanning',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Proper lighting transforms a house into a home. Beyond aesthetics, the right amount of light affects mood, productivity, and even eye health. <strong>Our home lighting calculator</strong> helps you determine exactly how many lumens you need for any room, taking into account room size, ceiling height, surface colors, and bulb type.',
+      html: 'Goede verlichting verandert een huis in een thuis. Buiten de esthetiek om beïnvloedt de juiste hoeveelheid licht het humeur, de productiviteit en zelfs de ooggezondheid. <strong>Onze woningverlichtingsrekenmachine</strong> helpt u exact te bepalen hoeveel lumen u nodig heeft voor elke kamer, rekening houdend met de kamerafmetingen, plafondhoogte, oppervlaktekleuren en lamptype.',
     },
     {
       type: 'stats',
       items: [
-        { value: '150-500', label: 'Recommended Lux Range', icon: 'mdi:brightness-6' },
-        { value: '100 lm/W', label: 'LED Efficiency', icon: 'mdi:lightbulb' },
-        { value: '80%', label: 'Maintenance Factor', icon: 'mdi:tools' },
+        { value: '150-500', label: 'Aanbevolen Lux Bereik', icon: 'mdi:brightness-6' },
+        { value: '100 lm/W', label: 'LED Efficiëntie', icon: 'mdi:lightbulb' },
+        { value: '80%', label: 'Onderhoudsfactor', icon: 'mdi:tools' },
       ],
       columns: 3,
     },
@@ -120,97 +120,94 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'Warm Ambient Lighting',
-          description: 'Ideal for living rooms and bedrooms. Creates a cozy atmosphere and reduces eye strain in the evening.',
+          title: 'Warme Sfeerverlichting',
+          description: 'Ideaal voor woonkamers en slaapkamers. Creëert een gezellige sfeer en vermindert \'s avonds oogvermoeidheid.',
           icon: 'mdi:weather-night',
-          points: ['150-200 lux', 'Warm color temperature (2700K)', 'Multiple dimmable sources'],
+          points: ['150-200 lux', 'Warme kleurtemperatuur (2700K)', 'Meerdere dimbare bronnen'],
         },
         {
-          title: 'Bright Task Lighting',
-          description: 'Essential for kitchens, offices, and bathrooms. Provides clear visibility for detailed work.',
+          title: 'Helder Taakverlichting',
+          description: 'Essentieel voor keukens, kantoren en badkamers. Biedt duidelijk zicht voor gedetailleerd werk.',
           icon: 'mdi:white-balance-sunny',
-          points: ['300-500 lux', 'Cool white (4000K)', 'Focused on work surfaces'],
+          points: ['300-500 lux', 'Koel wit (4000K)', 'Gericht op werkoppervlakken'],
         },
       ],
       columns: 2,
     },
     {
       type: 'title',
-      text: 'Why Room Dimensions Matter',
+      text: 'Waarom Kamerafmetingen Belangrijk Zijn',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Light spreads and weakens with distance. A bulb that is bright enough for a 2.5 meter ceiling may be too dim for a 4 meter ceiling. The calculator accounts for this by using the room index formula, which considers both floor area and mounting height to estimate how much light actually reaches your work plane.',
+      html: 'Licht verspreidt zich en wordt zwakker met de afstand. Een lamp die helder genoeg is voor een 2,5 meter hoog plafond, kan te dof zijn voor een 4 meter hoog plafond. De rekenmachine houdt hier rekening mee door de kamerindex-formule te gebruiken, die zowel de vloeroppervlakte als de montagehoogte meeneemt om te schatten hoeveel licht daadwerkelijk uw werkvlak bereikt.',
     },
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Quick Reference Lux Table',
+      title: 'Snelle Referentie Lux Tabel',
       icon: 'mdi:table',
-      badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Living room</strong> → 150 lux</li><li><strong>Kitchen</strong> → 300 lux</li><li><strong>Bedroom</strong> → 100 lux</li><li><strong>Bathroom</strong> → 200 lux</li><li><strong>Office</strong> → 500 lux</li><li><strong>Hallway</strong> → 100 lux</li></ul>',
+      badge: 'Referentie',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Woonkamer</strong> → 150 lux</li><li><strong>Keuken</strong> → 300 lux</li><li><strong>Slaapkamer</strong> → 100 lux</li><li><strong>Badkamer</strong> → 200 lux</li><li><strong>Kantoor</strong> → 500 lux</li><li><strong>Hall</strong> → 100 lux</li></ul>',
     },
     {
       type: 'summary',
-      title: 'Pro Tips for Better Lighting',
+      title: 'Pro Tips voor Betere Verlichting',
       items: [
-        'Layer three types of light: ambient, task, and accent.',
-        'Use dimmers to adjust brightness for different times of day.',
-        'Choose LED bulbs for long life and low energy consumption.',
-        'Place task lights on the opposite side of your dominant hand to avoid shadows.',
-        'Consider smart bulbs for automated scheduling and color temperature changes.',
+        'Combineer drie soorten licht: algemeen, taak- en accentverlichting.',
+        'Gebruik dimmers om de helderheid aan te passen aan verschillende momenten van de dag.',
+        'Kies LED-lampen voor een lange levensduur en laag energieverbruik.',
+        'Plaats taaklampen aan de tegenoverliggende kant van uw dominante hand om schaduw te voorkomen.',
+        'Overweeg smart lamps voor geautomatiseerde planning en kleurtemperatuurwijzigingen.',
       ],
     },
   ],
   ui: {
-    sectionTitle: 'Room Configuration',
-    labelRoomType: 'Room type',
-    labelRoomWidth: 'Room width',
-    labelRoomLength: 'Room length',
-    labelHeight: 'Ceiling height',
-    labelWorkPlane: 'Work plane height',
-    labelReflectance: 'Surface reflectance',
-    labelBulbType: 'Bulb type',
-    labelBulbWatt: 'Bulb wattage',
-    labelFixtures: 'Number of fixtures',
-    labelDimmer: 'Dimmer level',
+    sectionTitle: 'Kamerverlichtingsrekenmachine',
+    labelRoomType: 'Kamertype',
+    labelRoomWidth: 'Breedte',
+    labelRoomLength: 'Lengte',
+    labelHeight: 'Plafond',
+    labelBulbType: 'Lamp',
+    labelBulbWatt: 'Vermogen',
+    labelFixtures: 'Armaturen',
+    labelAmbient: 'Sfeer',
+    btnAmbientCozy: 'Gezellig',
+    btnAmbientNormal: 'Normaal',
+    btnAmbientBright: 'Helder',
     unitMetricRoom: 'm',
     unitImperialRoom: 'ft',
     unitHeight: 'm',
-    unitPercent: '%',
-    unitBulbs: 'pcs',
+    unitBulbs: 'st',
     unitWatt: 'W',
-    unitLumens: 'lm',
     unitLux: 'lux',
-    resultBadge: 'Lighting status',
-    labelTargetLux: 'Target lux',
-    labelRequiredLumens: 'Required lumens',
-    labelCurrentLumens: 'Current lumens',
-    labelCurrentLux: 'Current lux',
-    labelBulbsNeeded: 'Bulbs needed',
-    labelStatus: 'Status',
-    statusOptimal: 'Optimal',
-    statusInsufficient: 'Insufficient',
-    statusExcess: 'Excess',
-    btnLiving: 'Living',
-    btnKitchen: 'Kitchen',
-    btnBedroom: 'Bedroom',
-    btnBathroom: 'Bathroom',
-    btnOffice: 'Office',
-    btnHallway: 'Hallway',
-    btnReflectLow: 'Dark',
-    btnReflectMedium: 'Medium',
-    btnReflectHigh: 'Light',
+    labelTargetLux: 'Doel lux',
+    labelCurrentLux: 'Huidige lux',
+    labelBulbsNeeded: 'Lampen nodig',
+    labelRoomArea: 'Oppervlakte',
+    statusOptimal: 'Perfect',
+    statusInsufficient: 'Te Donker',
+    statusExcess: 'Te Helder',
+    btnLiving: 'Woonkamer',
+    btnKitchen: 'Keuken',
+    btnBedroom: 'Slaapkamer',
+    btnBathroom: 'Badkamer',
+    btnOffice: 'Kantoor',
+    btnHallway: 'Gang',
     btnBulbLED: 'LED',
     btnBulbCFL: 'CFL',
-    btnBulbHalogen: 'Halogen',
-    btnBulbIncandescent: 'Incandescent',
-    tipAmbient: 'Ambient lighting provides overall illumination.',
-    tipTask: 'Add task lighting for work areas.',
-    tipAccent: 'Use accent lights to highlight features.',
-    visualTitle: 'Room preview',
+    btnBulbHalogen: 'Halogeen',
+    btnBulbIncandescent: 'Gloeilamp',
+    btnMetric: 'M',
+    btnImperial: 'ft',
+    tipOptimal: 'Uw verlichting is perfect in evenwicht voor deze kamer.',
+    tipInsufficient: 'Voeg meer armaturen of lampen met hoger vermogen toe.',
+    tipExcess: 'Verminder armaturen of dim om energie te besparen.',
+    labelManualAdjust: 'Handmatige aanpassing',
+    labelSummary: 'Uw verlichtingsplan',
+    labelTotalLumens: 'Totaal benodigde lumen',
+    labelSuggestedSetup: 'Aanbevolen opstelling',
+    btnExport: 'PDF exporteren',
   },
 };
-
-

@@ -3,56 +3,56 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LightingCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'aydinlatma-hesaplayici';
-const title = 'Home Lighting and Lumens Calculator';
+const slug = 'ev-aydinlatma-ve-lumen-hesaplayici';
+const title = 'Ev Aydınlatma ve Lümen Hesaplayıcı';
 const description =
-  'Calculate exactly how many lumens and light bulbs you need for any room. Select your room type, dimensions, and bulb type to get a professional lighting plan with real-time lux estimates.';
+  'Herhangi bir oda için tam olarak kaç lümen ve ampule ihtiyacınız olduğunu hesaplayın. Oda tipi, boyutlar ve ampul tipini seçerek gerçek zamanlı lüks tahminleriyle profesyonel bir aydınlatma planı elde edin.';
 
 const faqData = [
   {
-    question: 'How many lumens do I need for a living room?',
+    question: 'Oturma odası için kaç lümen gerekiyor?',
     answer:
-      'For a typical living room, aim for around 150 lux on the floor. Multiply the room area in square meters by 150 to get the required lumens. For a 20 square meter room, you need approximately 3,000 lumens.',
+      'Tipik bir oturma odası için zeminde yaklaşık 150 lüks hedefleyin. Oda alanını metrekare cinsinden 150 ile çarparak gerekli lümeni bulun. 20 metrekarelik bir oda için yaklaşık 3.000 lümen gereklidir.',
   },
   {
-    question: 'What is the difference between lux and lumens?',
+    question: 'Lüks ile lümen arasındaki fark nedir?',
     answer:
-      'Lumens measure the total light output from a bulb. Lux measures the light that actually reaches a surface. A room with high ceilings or dark walls needs more lumens to achieve the same lux level because light is lost to distance and absorption.',
+      'Lümen, bir ampulün toplam ışık çıktısını ölçer. Lüks, gerçekten bir yüzeye ulaşan ışığı ölçer. Yüksek tavanlı veya koyu duvarlı bir oda, mesafe ve emilim nedeniyle ışık kaybı yaşadığından aynı lüks seviyesine ulaşmak için daha fazla lümen gerektirir.',
   },
   {
-    question: 'Do LED bulbs really save energy?',
+    question: 'LED ampuller gerçekten enerji tasarrufu sağlar mı?',
     answer:
-      'Yes. LED bulbs produce about 100 lumens per watt, while incandescent bulbs produce only about 15. A 10W LED bulb gives the same light as a 60W incandescent bulb, using one-sixth of the electricity.',
+      'Evet. LED ampuller yaklaşık 100 lümen/watt üretirken, akkor ampuller sadece yaklaşık 15 lümen/watt üretir. 10W\'lık bir LED ampul, 60W\'lık bir akkor ampulle aynı ışığı verir ve elektriğin altıda birini kullanır.',
   },
   {
-    question: 'How does room color affect lighting needs?',
+    question: 'Oda rengi aydınlatma ihtiyacını nasıl etkiler?',
     answer:
-      'Dark walls and ceilings absorb light. In a room with dark surfaces, you may need 50% more lumens than the standard recommendation. The calculator lets you adjust for low, medium, or high reflectance.',
+      'Koyu duvarlar ve tavanlar ışığı emer. Koyu yüzeylere sahip bir odada, standart öneriye göre yüzde 50 daha fazla lümen gerekebilir.',
   },
   {
-    question: 'What is a good lux level for reading?',
+    question: 'Okumak için iyi bir lüks seviyesi nedir?',
     answer:
-      'For comfortable reading, you need 300 to 500 lux on the page. General ambient lighting usually provides 150 to 200 lux, so add a task lamp near your reading spot for the extra brightness.',
+      'Rahat okumak için sayfada 300 ila 500 lüks gerekir. Genel ortam aydınlatması genellikle 150 ila 200 lüks sağlar, bu nedenle ek parlaklık için okuma yerinizin yakınına bir çalışma lambası ekleyin.',
   },
   {
-    question: 'Can I dim LED bulbs?',
+    question: 'LED ampulleri kısabilir miyim?',
     answer:
-      'Only if they are marked as dimmable. Standard LEDs may flicker or have a shortened lifespan when connected to a dimmer. Always check the packaging for the dimmable symbol before installing.',
+      'Yalnızca kısılabilir olarak işaretlenmişse. Standart LED\'ler bir kısıcıya bağlandığında titreyebilir veya ömrü kısalabilir. Kurulumdan önce her zaman ambalajdaki kısılabilir sembolünü kontrol edin.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Choose your room type',
-    text: 'Select the room function. Kitchens and offices need brighter light than bedrooms or hallways.',
+    name: 'Oda tipinizi seçin',
+    text: 'Oda işlevini seçin. Mutfaklar ve ofisler, yatak odaları veya koridorlardan daha parlak ışığa ihtiyaç duyar.',
   },
   {
-    name: 'Enter dimensions',
-    text: 'Input the room width, length, and ceiling height. The calculator uses these to determine the room index and light utilization factor.',
+    name: 'Boyutları girin',
+    text: 'Oda genişliği, uzunluğu ve tavan yüksekliğini girin. Hesaplayıcı, bunları oda indeksini ve ışık kullanım faktörünü belirlemek için kullanır.',
   },
   {
-    name: 'Select bulb type and count',
-    text: 'Choose your preferred bulb technology and how many fixtures you have. The calculator will tell you if you need more bulbs.',
+    name: 'Ampul tipi ve sayısını seçin',
+    text: 'Tercih ettiğiniz ampul teknolojisini ve sahip olduğunuz armatür sayısını seçin. Hesaplayıcı, daha fazla ampule ihtiyacınız olup olmadığını söyler.',
   },
 ];
 
@@ -86,7 +86,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
+  inLanguage: 'tr',
 };
 
 export const content: ToolLocaleContent<LightingCalculatorUI> = {
@@ -100,19 +100,19 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Complete Guide to Home Lighting Design and Lumens Planning',
+      text: 'Ev Aydınlatma Tasarımı ve Lümen Planlaması için Tam Kılavuz',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Proper lighting transforms a house into a home. Beyond aesthetics, the right amount of light affects mood, productivity, and even eye health. <strong>Our home lighting calculator</strong> helps you determine exactly how many lumens you need for any room, taking into account room size, ceiling height, surface colors, and bulb type.',
+      html: 'Doğru aydınlatma, bir evi yuva haline getirir. Estetiğin ötesinde, doğru ışık miktarı ruh halini, verimliliği ve hatta göz sağlığını etkiler. <strong>Ev aydınlatma hesaplayıcımız</strong>, oda büyüklüğü, tavan yüksekliği, yüzey renkleri ve ampul tipini göz önünde bulundurarak herhangi bir oda için tam olarak kaç lümen gerektiğini belirlemenize yardımcı olur.',
     },
     {
       type: 'stats',
       items: [
-        { value: '150-500', label: 'Recommended Lux Range', icon: 'mdi:brightness-6' },
-        { value: '100 lm/W', label: 'LED Efficiency', icon: 'mdi:lightbulb' },
-        { value: '80%', label: 'Maintenance Factor', icon: 'mdi:tools' },
+        { value: '150-500', label: 'Önerilen Lüks Aralığı', icon: 'mdi:brightness-6' },
+        { value: '100 lm/W', label: 'LED Verimliliği', icon: 'mdi:lightbulb' },
+        { value: '80%', label: 'Bakım Faktörü', icon: 'mdi:tools' },
       ],
       columns: 3,
     },
@@ -120,97 +120,94 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'Warm Ambient Lighting',
-          description: 'Ideal for living rooms and bedrooms. Creates a cozy atmosphere and reduces eye strain in the evening.',
+          title: 'Sıcak Ortam Aydınlatması',
+          description: 'Oturma odaları ve yatak odaları için ideal. Rahat bir atmosfer yaratır ve akşamları göz yorgunluğunu azaltır.',
           icon: 'mdi:weather-night',
-          points: ['150-200 lux', 'Warm color temperature (2700K)', 'Multiple dimmable sources'],
+          points: ['150-200 lux', 'Sıcak renk sıcaklığı (2700K)', 'Birden fazla kısılabilir kaynak'],
         },
         {
-          title: 'Bright Task Lighting',
-          description: 'Essential for kitchens, offices, and bathrooms. Provides clear visibility for detailed work.',
+          title: 'Parlak Görev Aydınlatması',
+          description: 'Mutfaklar, ofisler ve banyolar için zorunlu. Detaylı işler için net görünürlük sağlar.',
           icon: 'mdi:white-balance-sunny',
-          points: ['300-500 lux', 'Cool white (4000K)', 'Focused on work surfaces'],
+          points: ['300-500 lux', 'Serin beyaz (4000K)', 'Çalışma yüzeylerine odaklanmış'],
         },
       ],
       columns: 2,
     },
     {
       type: 'title',
-      text: 'Why Room Dimensions Matter',
+      text: 'Neden Oda Boyutları Önemli',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Light spreads and weakens with distance. A bulb that is bright enough for a 2.5 meter ceiling may be too dim for a 4 meter ceiling. The calculator accounts for this by using the room index formula, which considers both floor area and mounting height to estimate how much light actually reaches your work plane.',
+      html: 'Işık yayılır ve mesafe ile zayıflar. 2,5 metrelik bir tavan için yeterince parlak olan bir ampul, 4 metrelik bir tavan için çok loş olabilir. Hesaplayıcı, bu durumu oda indeksi formülü kullanarak hesaba katar; formül hem zemin alanını hem de montaj yüksekliğini dikkate alarak gerçekten çalışma düzleminize ulaşan ışık miktarını tahmin eder.',
     },
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Quick Reference Lux Table',
+      title: 'Hızlı Referans Lüks Tablosu',
       icon: 'mdi:table',
-      badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Living room</strong> → 150 lux</li><li><strong>Kitchen</strong> → 300 lux</li><li><strong>Bedroom</strong> → 100 lux</li><li><strong>Bathroom</strong> → 200 lux</li><li><strong>Office</strong> → 500 lux</li><li><strong>Hallway</strong> → 100 lux</li></ul>',
+      badge: 'Referans',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Oturma odası</strong> → 150 lux</li><li><strong>Mutfak</strong> → 300 lux</li><li><strong>Yatak odası</strong> → 100 lux</li><li><strong>Banyo</strong> → 200 lux</li><li><strong>Ofis</strong> → 500 lux</li><li><strong>Koridor</strong> → 100 lux</li></ul>',
     },
     {
       type: 'summary',
-      title: 'Pro Tips for Better Lighting',
+      title: 'Daha İyi Aydınlatma için Uzman İpuçları',
       items: [
-        'Layer three types of light: ambient, task, and accent.',
-        'Use dimmers to adjust brightness for different times of day.',
-        'Choose LED bulbs for long life and low energy consumption.',
-        'Place task lights on the opposite side of your dominant hand to avoid shadows.',
-        'Consider smart bulbs for automated scheduling and color temperature changes.',
+        'Ortam, görev ve vurgu olmak üzere üç aydınlatma türünü katmanlayın.',
+        'Günün farklı saatlerinde parlaklığı ayarlamak için kısıcılar kullanın.',
+        'Uzun ömür ve düşük enerji tüketimi için LED ampuller seçin.',
+        'Gölge oluşumunu önlemek için çalışma lambalarını baskın elinizin karşı tarafına yerleştirin.',
+        'Otomatik planlama ve renk sıcaklığı değişimi için akıllı ampulleri düşünün.',
       ],
     },
   ],
   ui: {
-    sectionTitle: 'Room Configuration',
-    labelRoomType: 'Room type',
-    labelRoomWidth: 'Room width',
-    labelRoomLength: 'Room length',
-    labelHeight: 'Ceiling height',
-    labelWorkPlane: 'Work plane height',
-    labelReflectance: 'Surface reflectance',
-    labelBulbType: 'Bulb type',
-    labelBulbWatt: 'Bulb wattage',
-    labelFixtures: 'Number of fixtures',
-    labelDimmer: 'Dimmer level',
+    sectionTitle: 'Oda Aydınlatma Hesaplayıcı',
+    labelRoomType: 'Oda tipi',
+    labelRoomWidth: 'Genişlik',
+    labelRoomLength: 'Uzunluk',
+    labelHeight: 'Tavan',
+    labelBulbType: 'Ampul',
+    labelBulbWatt: 'Güç',
+    labelFixtures: 'Armatür',
+    labelAmbient: 'Ortam',
+    btnAmbientCozy: 'Rahat',
+    btnAmbientNormal: 'Normal',
+    btnAmbientBright: 'Parlak',
     unitMetricRoom: 'm',
     unitImperialRoom: 'ft',
     unitHeight: 'm',
-    unitPercent: '%',
-    unitBulbs: 'pcs',
+    unitBulbs: 'ad',
     unitWatt: 'W',
-    unitLumens: 'lm',
     unitLux: 'lux',
-    resultBadge: 'Lighting status',
-    labelTargetLux: 'Target lux',
-    labelRequiredLumens: 'Required lumens',
-    labelCurrentLumens: 'Current lumens',
-    labelCurrentLux: 'Current lux',
-    labelBulbsNeeded: 'Bulbs needed',
-    labelStatus: 'Status',
-    statusOptimal: 'Optimal',
-    statusInsufficient: 'Insufficient',
-    statusExcess: 'Excess',
-    btnLiving: 'Living',
-    btnKitchen: 'Kitchen',
-    btnBedroom: 'Bedroom',
-    btnBathroom: 'Bathroom',
-    btnOffice: 'Office',
-    btnHallway: 'Hallway',
-    btnReflectLow: 'Dark',
-    btnReflectMedium: 'Medium',
-    btnReflectHigh: 'Light',
+    labelTargetLux: 'Hedef lüks',
+    labelCurrentLux: 'Mevcut lüks',
+    labelBulbsNeeded: 'Gerekli ampul',
+    labelRoomArea: 'Alan',
+    statusOptimal: 'Mükemmel',
+    statusInsufficient: 'Çok Loş',
+    statusExcess: 'Çok Parlak',
+    btnLiving: 'Oturma',
+    btnKitchen: 'Mutfak',
+    btnBedroom: 'Yatak',
+    btnBathroom: 'Banyo',
+    btnOffice: 'Ofis',
+    btnHallway: 'Koridor',
     btnBulbLED: 'LED',
     btnBulbCFL: 'CFL',
-    btnBulbHalogen: 'Halogen',
-    btnBulbIncandescent: 'Incandescent',
-    tipAmbient: 'Ambient lighting provides overall illumination.',
-    tipTask: 'Add task lighting for work areas.',
-    tipAccent: 'Use accent lights to highlight features.',
-    visualTitle: 'Room preview',
+    btnBulbHalogen: 'Halojen',
+    btnBulbIncandescent: 'Akkor',
+    btnMetric: 'M',
+    btnImperial: 'ft',
+    tipOptimal: 'Aydınlatmanız bu oda için mükemmel dengelenmiş.',
+    tipInsufficient: 'Daha fazla armatür veya daha yüksek güçte ampul ekleyin.',
+    tipExcess: 'Enerji tasarrufu için armatür azaltın veya kısın.',
+    labelManualAdjust: 'Manuel ayar',
+    labelSummary: 'Aydınlatma planınız',
+    labelTotalLumens: 'Toplam gerekli lümen',
+    labelSuggestedSetup: 'Önerilen kurulum',
+    btnExport: 'PDF İndir',
   },
 };
-
-

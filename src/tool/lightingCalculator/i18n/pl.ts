@@ -3,56 +3,56 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LightingCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'kalkulator-oswietlenia';
-const title = 'Home Lighting and Lumens Calculator';
+const slug = 'kalkulator-oswietlenia-i-lumenow-dla-domu';
+const title = 'Kalkulator Oświetlenia i Lumenów dla Domu';
 const description =
-  'Calculate exactly how many lumens and light bulbs you need for any room. Select your room type, dimensions, and bulb type to get a professional lighting plan with real-time lux estimates.';
+  'Oblicz dokładnie, ile lumenów i żarówek potrzebujesz do każdego pomieszczenia. Wybierz typ pokoju, wymiary oraz rodzaj żarówki, aby uzyskać profesjonalny plan oświetlenia z szacunkami lux w czasie rzeczywistym.';
 
 const faqData = [
   {
-    question: 'How many lumens do I need for a living room?',
+    question: 'Ile lumenów potrzebuję do salonu?',
     answer:
-      'For a typical living room, aim for around 150 lux on the floor. Multiply the room area in square meters by 150 to get the required lumens. For a 20 square meter room, you need approximately 3,000 lumens.',
+      'W typowym salonie należy dążyć do około 150 lux na podłodze. Pomnóż powierzchnię pomieszczenia w metrach kwadratowych przez 150, aby uzyskać wymaganą liczbę lumenów. W pomieszczeniu o powierzchni 20 metrów kwadratowych potrzeba około 3000 lumenów.',
   },
   {
-    question: 'What is the difference between lux and lumens?',
+    question: 'Jaka jest różnica między lux a lumenami?',
     answer:
-      'Lumens measure the total light output from a bulb. Lux measures the light that actually reaches a surface. A room with high ceilings or dark walls needs more lumens to achieve the same lux level because light is lost to distance and absorption.',
+      'Lumeny mierzą całkowitą ilość światła wypływającego z żarówki. Luxy mierzą światło, które faktycznie dociera do powierzchni. Pomieszczenie z wysokimi sufitami lub ciemnymi ścianami potrzebuje więcej lumenów, aby osiągnąć ten sam poziom lux, ponieważ światło jest tracone na skutek odległości i absorpcji.',
   },
   {
-    question: 'Do LED bulbs really save energy?',
+    question: 'Czy żarówki LED naprawdę oszczędzają energię?',
     answer:
-      'Yes. LED bulbs produce about 100 lumens per watt, while incandescent bulbs produce only about 15. A 10W LED bulb gives the same light as a 60W incandescent bulb, using one-sixth of the electricity.',
+      'Tak. Żarówki LED produkują około 100 lumenów na wat, podczas gdy żarówki tradycyjne produkują tylko około 15. Żarówka LED 10W daje tyle samo światła co żarówka tradycyjna 60W, zużywając jedną szóstą energii elektrycznej.',
   },
   {
-    question: 'How does room color affect lighting needs?',
+    question: 'Jak kolor pomieszczenia wpływa na zapotrzebowanie na oświetlenie?',
     answer:
-      'Dark walls and ceilings absorb light. In a room with dark surfaces, you may need 50% more lumens than the standard recommendation. The calculator lets you adjust for low, medium, or high reflectance.',
+      'Ciemne ściany i sufity absorbują światło. W pomieszczeniu o ciemnych powierzchniach może być potrzeba o 50% więcej lumenów niż wynika to ze standardowego zalecenia.',
   },
   {
-    question: 'What is a good lux level for reading?',
+    question: 'Jaki poziom lux jest dobry do czytania?',
     answer:
-      'For comfortable reading, you need 300 to 500 lux on the page. General ambient lighting usually provides 150 to 200 lux, so add a task lamp near your reading spot for the extra brightness.',
+      'Do komfortowego czytania potrzeba od 300 do 500 lux na stronie. Ogólne oświetlenie otoczenia zazwyczaj zapewnia 150 do 200 lux, dlatego dodaj lampę biurkową w pobliżu miejsca do czytania, aby uzyskać dodatkową jasność.',
   },
   {
-    question: 'Can I dim LED bulbs?',
+    question: 'Czy można ściemniać żarówki LED?',
     answer:
-      'Only if they are marked as dimmable. Standard LEDs may flicker or have a shortened lifespan when connected to a dimmer. Always check the packaging for the dimmable symbol before installing.',
+      'Tylko jeśli są oznaczone jako ściemnialne. Standardowe LED-y mogą migać lub mieć skróconą żywotność po podłączeniu do ściemniacza. Zawsze sprawdź na opakowaniu symbol ściemnialności przed instalacją.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Choose your room type',
-    text: 'Select the room function. Kitchens and offices need brighter light than bedrooms or hallways.',
+    name: 'Wybierz typ pomieszczenia',
+    text: 'Wybierz funkcję pomieszczenia. Kuchnie i biura potrzebują jaśniejszego światła niż sypialnie czy korytarze.',
   },
   {
-    name: 'Enter dimensions',
-    text: 'Input the room width, length, and ceiling height. The calculator uses these to determine the room index and light utilization factor.',
+    name: 'Wprowadź wymiary',
+    text: 'Wprowadź szerokość, długość i wysokość sufitu pomieszczenia. Kalkulator używa ich do określenia wskaźnika pomieszczenia i współczynnika wykorzystania światła.',
   },
   {
-    name: 'Select bulb type and count',
-    text: 'Choose your preferred bulb technology and how many fixtures you have. The calculator will tell you if you need more bulbs.',
+    name: 'Wybierz rodzaj żarówki i ich liczbę',
+    text: 'Wybierz preferowaną technologię żarówek i liczbę opraw, które posiadasz. Kalkulator pokaże, czy potrzebujesz więcej żarówek.',
   },
 ];
 
@@ -86,7 +86,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
+  inLanguage: 'pl',
 };
 
 export const content: ToolLocaleContent<LightingCalculatorUI> = {
@@ -100,19 +100,19 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Complete Guide to Home Lighting Design and Lumens Planning',
+      text: 'Kompletny Przewodnik po Projektowaniu Oświetlenia Domowego i Planowaniu Lumenów',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Proper lighting transforms a house into a home. Beyond aesthetics, the right amount of light affects mood, productivity, and even eye health. <strong>Our home lighting calculator</strong> helps you determine exactly how many lumens you need for any room, taking into account room size, ceiling height, surface colors, and bulb type.',
+      html: 'Właściwe oświetlenie przekształca dom w przytulne miejsce. Poza estetyką, odpowiednia ilość światła wpływa na nastrój, produktywność, a nawet zdrowie oczu. <strong>Nasz kalkulator oświetlenia domowego</strong> pomaga dokładnie określić, ile lumenów potrzebujesz do każdego pomieszczenia, uwzględniając wielkość pomieszczenia, wysokość sufitu, kolory powierzchni i rodzaj żarówki.',
     },
     {
       type: 'stats',
       items: [
-        { value: '150-500', label: 'Recommended Lux Range', icon: 'mdi:brightness-6' },
-        { value: '100 lm/W', label: 'LED Efficiency', icon: 'mdi:lightbulb' },
-        { value: '80%', label: 'Maintenance Factor', icon: 'mdi:tools' },
+        { value: '150-500', label: 'Zalecany Zakres Lux', icon: 'mdi:brightness-6' },
+        { value: '100 lm/W', label: 'Wydajność LED', icon: 'mdi:lightbulb' },
+        { value: '80%', label: 'Współczynnik Utrzymania', icon: 'mdi:tools' },
       ],
       columns: 3,
     },
@@ -120,97 +120,94 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'Warm Ambient Lighting',
-          description: 'Ideal for living rooms and bedrooms. Creates a cozy atmosphere and reduces eye strain in the evening.',
+          title: 'Ciepłe Oświetlenie Ogólne',
+          description: 'Idealne do salonów i sypialni. Tworzy przytulną atmosferę i zmniejsza zmęczenie oczu wieczorem.',
           icon: 'mdi:weather-night',
-          points: ['150-200 lux', 'Warm color temperature (2700K)', 'Multiple dimmable sources'],
+          points: ['150-200 lux', 'Ciepła temperatura barwowa (2700K)', 'Wiele źródeł ściemnialnych'],
         },
         {
-          title: 'Bright Task Lighting',
-          description: 'Essential for kitchens, offices, and bathrooms. Provides clear visibility for detailed work.',
+          title: 'Jasne Oświetlenie Robocze',
+          description: 'Niezbędne w kuchniach, biurach i łazienkach. Zapewnia wyraźną widoczność do prac szczegółowych.',
           icon: 'mdi:white-balance-sunny',
-          points: ['300-500 lux', 'Cool white (4000K)', 'Focused on work surfaces'],
+          points: ['300-500 lux', 'Zimna biel (4000K)', 'Skoncentrowane na powierzchniach roboczych'],
         },
       ],
       columns: 2,
     },
     {
       type: 'title',
-      text: 'Why Room Dimensions Matter',
+      text: 'Dlaczego Wymiary Pomieszczenia Mają Znaczenie',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Light spreads and weakens with distance. A bulb that is bright enough for a 2.5 meter ceiling may be too dim for a 4 meter ceiling. The calculator accounts for this by using the room index formula, which considers both floor area and mounting height to estimate how much light actually reaches your work plane.',
+      html: 'Światło rozprzestrzenia się i słabnie wraz z odległością. Żarówka, która jest wystarczająco jasna dla sufitu o wysokości 2,5 metra, może być zbyt słaba dla sufitu o wysokości 4 metrów. Kalkulator uwzględnia to, wykorzystując wzór na wskaźnik pomieszczenia, który bierze pod uwagę zarówno powierzchnię podłogi, jak i wysokość montażu, aby oszacować, ile światła faktycznie dociera do płaszczyzny pracy.',
     },
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Quick Reference Lux Table',
+      title: 'Szybka Tabela Referencyjna Lux',
       icon: 'mdi:table',
-      badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Living room</strong> → 150 lux</li><li><strong>Kitchen</strong> → 300 lux</li><li><strong>Bedroom</strong> → 100 lux</li><li><strong>Bathroom</strong> → 200 lux</li><li><strong>Office</strong> → 500 lux</li><li><strong>Hallway</strong> → 100 lux</li></ul>',
+      badge: 'Referencja',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Salon</strong> → 150 lux</li><li><strong>Kuchnia</strong> → 300 lux</li><li><strong>Sypialnia</strong> → 100 lux</li><li><strong>Łazienka</strong> → 200 lux</li><li><strong>Biuro</strong> → 500 lux</li><li><strong>Korytarz</strong> → 100 lux</li></ul>',
     },
     {
       type: 'summary',
-      title: 'Pro Tips for Better Lighting',
+      title: 'Wskazówki Ekspertów dla Lepszego Oświetlenia',
       items: [
-        'Layer three types of light: ambient, task, and accent.',
-        'Use dimmers to adjust brightness for different times of day.',
-        'Choose LED bulbs for long life and low energy consumption.',
-        'Place task lights on the opposite side of your dominant hand to avoid shadows.',
-        'Consider smart bulbs for automated scheduling and color temperature changes.',
+        'Warstwuj trzy rodzaje światła: ogólne, robocze i akcentowe.',
+        'Używaj ściemniaczy, aby dostosować jasność do różnych pór dnia.',
+        'Wybieraj żarówki LED dla długiej żywotności i niskiego zużycia energii.',
+        'Umieszczaj lampy biurkowe po przeciwnej stronie względem dominującej ręki, aby uniknąć cieni.',
+        'Rozważ żarówki smart dla automatycznego planowania i zmiany temperatury barwowej.',
       ],
     },
   ],
   ui: {
-    sectionTitle: 'Room Configuration',
-    labelRoomType: 'Room type',
-    labelRoomWidth: 'Room width',
-    labelRoomLength: 'Room length',
-    labelHeight: 'Ceiling height',
-    labelWorkPlane: 'Work plane height',
-    labelReflectance: 'Surface reflectance',
-    labelBulbType: 'Bulb type',
-    labelBulbWatt: 'Bulb wattage',
-    labelFixtures: 'Number of fixtures',
-    labelDimmer: 'Dimmer level',
+    sectionTitle: 'Kalkulator Oświetlenia Pokoju',
+    labelRoomType: 'Typ pomieszczenia',
+    labelRoomWidth: 'Szerokość',
+    labelRoomLength: 'Długość',
+    labelHeight: 'Sufit',
+    labelBulbType: 'Żarówka',
+    labelBulbWatt: 'Moc',
+    labelFixtures: 'Oprawy',
+    labelAmbient: 'Nastrój',
+    btnAmbientCozy: 'Przytulny',
+    btnAmbientNormal: 'Normalny',
+    btnAmbientBright: 'Jasny',
     unitMetricRoom: 'm',
     unitImperialRoom: 'ft',
     unitHeight: 'm',
-    unitPercent: '%',
-    unitBulbs: 'pcs',
+    unitBulbs: 'szt',
     unitWatt: 'W',
-    unitLumens: 'lm',
     unitLux: 'lux',
-    resultBadge: 'Lighting status',
-    labelTargetLux: 'Target lux',
-    labelRequiredLumens: 'Required lumens',
-    labelCurrentLumens: 'Current lumens',
-    labelCurrentLux: 'Current lux',
-    labelBulbsNeeded: 'Bulbs needed',
-    labelStatus: 'Status',
-    statusOptimal: 'Optimal',
-    statusInsufficient: 'Insufficient',
-    statusExcess: 'Excess',
-    btnLiving: 'Living',
-    btnKitchen: 'Kitchen',
-    btnBedroom: 'Bedroom',
-    btnBathroom: 'Bathroom',
-    btnOffice: 'Office',
-    btnHallway: 'Hallway',
-    btnReflectLow: 'Dark',
-    btnReflectMedium: 'Medium',
-    btnReflectHigh: 'Light',
+    labelTargetLux: 'Docelowy lux',
+    labelCurrentLux: 'Aktualny lux',
+    labelBulbsNeeded: 'Potrzebne żarówki',
+    labelRoomArea: 'Powierzchnia',
+    statusOptimal: 'Idealnie',
+    statusInsufficient: 'Za Ciemno',
+    statusExcess: 'Za Jasno',
+    btnLiving: 'Salon',
+    btnKitchen: 'Kuchnia',
+    btnBedroom: 'Sypialnia',
+    btnBathroom: 'Łazienka',
+    btnOffice: 'Biuro',
+    btnHallway: 'Korytarz',
     btnBulbLED: 'LED',
     btnBulbCFL: 'CFL',
-    btnBulbHalogen: 'Halogen',
-    btnBulbIncandescent: 'Incandescent',
-    tipAmbient: 'Ambient lighting provides overall illumination.',
-    tipTask: 'Add task lighting for work areas.',
-    tipAccent: 'Use accent lights to highlight features.',
-    visualTitle: 'Room preview',
+    btnBulbHalogen: 'Halog.',
+    btnBulbIncandescent: 'Żarówka',
+    btnMetric: 'M',
+    btnImperial: 'ft',
+    tipOptimal: 'Oświetlenie jest idealnie zrównoważone dla tego pomieszczenia.',
+    tipInsufficient: 'Dodaj więcej opraw lub żarówek o wyższej mocy.',
+    tipExcess: 'Zmniejsz liczbę opraw lub ściemniaj, aby oszczędzać energię.',
+    labelManualAdjust: 'Regulacja ręczna',
+    labelSummary: 'Twój plan oświetlenia',
+    labelTotalLumens: 'Całkowita liczba lumenów',
+    labelSuggestedSetup: 'Zalecana konfiguracja',
+    btnExport: 'Eksportuj PDF',
   },
 };
-
-

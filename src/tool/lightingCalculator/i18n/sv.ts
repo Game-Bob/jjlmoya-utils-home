@@ -3,56 +3,56 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LightingCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'belysningskalkylator';
-const title = 'Home Lighting and Lumens Calculator';
+const slug = 'belysnings-och-lumenkalkylator-for-hemmet';
+const title = 'Belysnings och Lumenkalkylator för Hemmet';
 const description =
-  'Calculate exactly how many lumens and light bulbs you need for any room. Select your room type, dimensions, and bulb type to get a professional lighting plan with real-time lux estimates.';
+  'Beräkna exakt hur många lumen och lampor du behöver för varje rum. Välj rumstyp, dimensioner och lamptyp för att få en professionell belysningsplan med realtidsuppskattningar av lux.';
 
 const faqData = [
   {
-    question: 'How many lumens do I need for a living room?',
+    question: 'Hur många lumen behöver jag för ett vardagsrum?',
     answer:
-      'For a typical living room, aim for around 150 lux on the floor. Multiply the room area in square meters by 150 to get the required lumens. For a 20 square meter room, you need approximately 3,000 lumens.',
+      'För ett typiskt vardagsrum, sikta på cirka 150 lux på golvet. Multiplicera rummets area i kvadratmeter med 150 för att få de nödvändiga lumenen. För ett rum på 20 kvadratmeter behöver du cirka 3000 lumen.',
   },
   {
-    question: 'What is the difference between lux and lumens?',
+    question: 'Vad är skillnaden mellan lux och lumen?',
     answer:
-      'Lumens measure the total light output from a bulb. Lux measures the light that actually reaches a surface. A room with high ceilings or dark walls needs more lumens to achieve the same lux level because light is lost to distance and absorption.',
+      'Lumen mäter den totala ljusutbytet från en lampa. Lux mäter det ljus som faktiskt når en yta. Ett rum med höga tak eller mörka väggar behöver fler lumen för att uppnå samma luxnivå eftersom ljus går förlorat till följd av avstånd och absorption.',
   },
   {
-    question: 'Do LED bulbs really save energy?',
+    question: 'Sparar LED-lampor verkligen energi?',
     answer:
-      'Yes. LED bulbs produce about 100 lumens per watt, while incandescent bulbs produce only about 15. A 10W LED bulb gives the same light as a 60W incandescent bulb, using one-sixth of the electricity.',
+      'Ja. LED-lampor producerar cirka 100 lumen per watt, medan glödlampor bara producerar cirka 15. En 10W LED-lampa ger samma ljus som en 60W glödlampa och använder en sjättedel av elen.',
   },
   {
-    question: 'How does room color affect lighting needs?',
+    question: 'Hur påverkar rumsfärgen belysningsbehovet?',
     answer:
-      'Dark walls and ceilings absorb light. In a room with dark surfaces, you may need 50% more lumens than the standard recommendation. The calculator lets you adjust for low, medium, or high reflectance.',
+      'Mörka väggar och tak absorberar ljus. I ett rum med mörka ytor kan du behöva 50% fler lumen än standardrekommendationen.',
   },
   {
-    question: 'What is a good lux level for reading?',
+    question: 'Vilken luxnivå är bra för läsning?',
     answer:
-      'For comfortable reading, you need 300 to 500 lux on the page. General ambient lighting usually provides 150 to 200 lux, so add a task lamp near your reading spot for the extra brightness.',
+      'För bekväm läsning behöver du 300 till 500 lux på sidan. Allmänbelysning ger vanligtvis 150 till 200 lux, så lägg till en arbetslampa vid din läsplats för extra ljusstyrka.',
   },
   {
-    question: 'Can I dim LED bulbs?',
+    question: 'Kan jag dimma LED-lampor?',
     answer:
-      'Only if they are marked as dimmable. Standard LEDs may flicker or have a shortened lifespan when connected to a dimmer. Always check the packaging for the dimmable symbol before installing.',
+      'Bara om de är märkta som dimbara. Standard-LED kan blinka eller få förkortad livslängd när de ansluts till en dimmer. Kontrollera alltid förpackningen för dimbar-symbolen innan du installerar.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Choose your room type',
-    text: 'Select the room function. Kitchens and offices need brighter light than bedrooms or hallways.',
+    name: 'Välj din rumstyp',
+    text: 'Välj rummets funktion. Kök och kontor behöver ljusare ljus än sovrum eller hallar.',
   },
   {
-    name: 'Enter dimensions',
-    text: 'Input the room width, length, and ceiling height. The calculator uses these to determine the room index and light utilization factor.',
+    name: 'Ange dimensioner',
+    text: 'Ange rummets bredd, längd och takhöjd. Kalkylatorn använder dessa för att bestämma rumsindexet och ljusutnyttjandefaktorn.',
   },
   {
-    name: 'Select bulb type and count',
-    text: 'Choose your preferred bulb technology and how many fixtures you have. The calculator will tell you if you need more bulbs.',
+    name: 'Välj lamptyp och antal',
+    text: 'Välj din föredragna lampteknik och hur många armaturer du har. Kalkylatorn säger till om du behöver fler lampor.',
   },
 ];
 
@@ -86,7 +86,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
+  inLanguage: 'sv',
 };
 
 export const content: ToolLocaleContent<LightingCalculatorUI> = {
@@ -100,19 +100,19 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Complete Guide to Home Lighting Design and Lumens Planning',
+      text: 'Komplett Guide till Hemmabelysningsdesign och Lumenplanering',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Proper lighting transforms a house into a home. Beyond aesthetics, the right amount of light affects mood, productivity, and even eye health. <strong>Our home lighting calculator</strong> helps you determine exactly how many lumens you need for any room, taking into account room size, ceiling height, surface colors, and bulb type.',
+      html: 'Rätt belysning förvandlar ett hus till ett hem. Bortom estetiken påverkar rätt mängd ljus humöret, produktiviteten och till och med ögonhälsan. <strong>Vår hem-belysningskalkylator</strong> hjälper dig att bestämma exakt hur många lumen du behöver för varje rum, med hänsyn till rummets storlek, takhöjd, ytfärger och lamptyp.',
     },
     {
       type: 'stats',
       items: [
-        { value: '150-500', label: 'Recommended Lux Range', icon: 'mdi:brightness-6' },
-        { value: '100 lm/W', label: 'LED Efficiency', icon: 'mdi:lightbulb' },
-        { value: '80%', label: 'Maintenance Factor', icon: 'mdi:tools' },
+        { value: '150-500', label: 'Rekommenderat Luxintervall', icon: 'mdi:brightness-6' },
+        { value: '100 lm/W', label: 'LED Effektivitet', icon: 'mdi:lightbulb' },
+        { value: '80%', label: 'Underhållsfaktor', icon: 'mdi:tools' },
       ],
       columns: 3,
     },
@@ -120,97 +120,94 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'Warm Ambient Lighting',
-          description: 'Ideal for living rooms and bedrooms. Creates a cozy atmosphere and reduces eye strain in the evening.',
+          title: 'Varm Omgivande Belysning',
+          description: 'Idealisk för vardagsrum och sovrum. Skapar en mysig atmosfär och minskar ögontröttheten på kvällen.',
           icon: 'mdi:weather-night',
-          points: ['150-200 lux', 'Warm color temperature (2700K)', 'Multiple dimmable sources'],
+          points: ['150-200 lux', 'Varm färgtemperatur (2700K)', 'Flera dimbara källor'],
         },
         {
-          title: 'Bright Task Lighting',
-          description: 'Essential for kitchens, offices, and bathrooms. Provides clear visibility for detailed work.',
+          title: 'Ljus Arbetsbelysning',
+          description: 'Viktigt för kök, kontor och badrum. Ger tydlig sikt för detaljarbete.',
           icon: 'mdi:white-balance-sunny',
-          points: ['300-500 lux', 'Cool white (4000K)', 'Focused on work surfaces'],
+          points: ['300-500 lux', 'Kallvitt (4000K)', 'Fokuserad på arbetsytor'],
         },
       ],
       columns: 2,
     },
     {
       type: 'title',
-      text: 'Why Room Dimensions Matter',
+      text: 'Varför Rumsdimensioner Spelar Roll',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Light spreads and weakens with distance. A bulb that is bright enough for a 2.5 meter ceiling may be too dim for a 4 meter ceiling. The calculator accounts for this by using the room index formula, which considers both floor area and mounting height to estimate how much light actually reaches your work plane.',
+      html: 'Ljus sprider sig och försvagas med avståndet. En lampa som är tillräckligt ljus för ett 2,5 meter högt tak kan vara för svag för ett 4 meter högt tak. Kalkylatorn tar hänsyn till detta genom att använda rumsindex-formeln, som beaktar både golvarean och monteringshöjden för att uppskatta hur mycket ljus som faktiskt når arbetsplanet.',
     },
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Quick Reference Lux Table',
+      title: 'Snabb Referenstabell för Lux',
       icon: 'mdi:table',
-      badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Living room</strong> → 150 lux</li><li><strong>Kitchen</strong> → 300 lux</li><li><strong>Bedroom</strong> → 100 lux</li><li><strong>Bathroom</strong> → 200 lux</li><li><strong>Office</strong> → 500 lux</li><li><strong>Hallway</strong> → 100 lux</li></ul>',
+      badge: 'Referens',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Vardagsrum</strong> → 150 lux</li><li><strong>Kök</strong> → 300 lux</li><li><strong>Sovrum</strong> → 100 lux</li><li><strong>Badrum</strong> → 200 lux</li><li><strong>Kontor</strong> → 500 lux</li><li><strong>Hall</strong> → 100 lux</li></ul>',
     },
     {
       type: 'summary',
-      title: 'Pro Tips for Better Lighting',
+      title: 'Proffstips för Bättre Belysning',
       items: [
-        'Layer three types of light: ambient, task, and accent.',
-        'Use dimmers to adjust brightness for different times of day.',
-        'Choose LED bulbs for long life and low energy consumption.',
-        'Place task lights on the opposite side of your dominant hand to avoid shadows.',
-        'Consider smart bulbs for automated scheduling and color temperature changes.',
+        'Varva tre typer av ljus: allmänt, arbets- och accentbelysning.',
+        'Använd dimmers för att justera ljusstyrkan vid olika tider på dygnet.',
+        'Välj LED-lampor för lång livslängd och låg energiförbrukning.',
+        'Placera arbetslampor på motsatt sida om din dominanta hand för att undvika skuggor.',
+        'Överväg smarta lampor för automatisk schemaläggning och färgtemperaturändringar.',
       ],
     },
   ],
   ui: {
-    sectionTitle: 'Room Configuration',
-    labelRoomType: 'Room type',
-    labelRoomWidth: 'Room width',
-    labelRoomLength: 'Room length',
-    labelHeight: 'Ceiling height',
-    labelWorkPlane: 'Work plane height',
-    labelReflectance: 'Surface reflectance',
-    labelBulbType: 'Bulb type',
-    labelBulbWatt: 'Bulb wattage',
-    labelFixtures: 'Number of fixtures',
-    labelDimmer: 'Dimmer level',
+    sectionTitle: 'Rumsbelysningskalkylator',
+    labelRoomType: 'Rumstyp',
+    labelRoomWidth: 'Bredd',
+    labelRoomLength: 'Längd',
+    labelHeight: 'Tak',
+    labelBulbType: 'Lampa',
+    labelBulbWatt: 'Effekt',
+    labelFixtures: 'Armaturer',
+    labelAmbient: 'Atmosfär',
+    btnAmbientCozy: 'Mysig',
+    btnAmbientNormal: 'Normal',
+    btnAmbientBright: 'Ljus',
     unitMetricRoom: 'm',
     unitImperialRoom: 'ft',
     unitHeight: 'm',
-    unitPercent: '%',
-    unitBulbs: 'pcs',
+    unitBulbs: 'st',
     unitWatt: 'W',
-    unitLumens: 'lm',
     unitLux: 'lux',
-    resultBadge: 'Lighting status',
-    labelTargetLux: 'Target lux',
-    labelRequiredLumens: 'Required lumens',
-    labelCurrentLumens: 'Current lumens',
-    labelCurrentLux: 'Current lux',
-    labelBulbsNeeded: 'Bulbs needed',
-    labelStatus: 'Status',
-    statusOptimal: 'Optimal',
-    statusInsufficient: 'Insufficient',
-    statusExcess: 'Excess',
-    btnLiving: 'Living',
-    btnKitchen: 'Kitchen',
-    btnBedroom: 'Bedroom',
-    btnBathroom: 'Bathroom',
-    btnOffice: 'Office',
-    btnHallway: 'Hallway',
-    btnReflectLow: 'Dark',
-    btnReflectMedium: 'Medium',
-    btnReflectHigh: 'Light',
+    labelTargetLux: 'Mål lux',
+    labelCurrentLux: 'Nuvarande lux',
+    labelBulbsNeeded: 'Lampor behövs',
+    labelRoomArea: 'Area',
+    statusOptimal: 'Perfekt',
+    statusInsufficient: 'För Mörkt',
+    statusExcess: 'För Ljust',
+    btnLiving: 'Vardagsrum',
+    btnKitchen: 'Kök',
+    btnBedroom: 'Sovrum',
+    btnBathroom: 'Badrum',
+    btnOffice: 'Kontor',
+    btnHallway: 'Hall',
     btnBulbLED: 'LED',
     btnBulbCFL: 'CFL',
     btnBulbHalogen: 'Halogen',
-    btnBulbIncandescent: 'Incandescent',
-    tipAmbient: 'Ambient lighting provides overall illumination.',
-    tipTask: 'Add task lighting for work areas.',
-    tipAccent: 'Use accent lights to highlight features.',
-    visualTitle: 'Room preview',
+    btnBulbIncandescent: 'Glödlampa',
+    btnMetric: 'M',
+    btnImperial: 'ft',
+    tipOptimal: 'Din belysning är perfekt balanserad för detta rum.',
+    tipInsufficient: 'Lägg till fler armaturer eller lampor med högre effekt.',
+    tipExcess: 'Minska armaturer eller dimma för att spara energi.',
+    labelManualAdjust: 'Manuell justering',
+    labelSummary: 'Din belysningsplan',
+    labelTotalLumens: 'Totalt lumen behövs',
+    labelSuggestedSetup: 'Rekommenderad uppställning',
+    btnExport: 'Exportera PDF',
   },
 };
-
-

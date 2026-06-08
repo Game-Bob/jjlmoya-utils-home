@@ -3,56 +3,56 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LightingCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'lighting-calculator';
-const title = 'Home Lighting and Lumens Calculator';
+const slug = 'how-many-lights-per-room';
+const title = '住宅照明与流明计算器';
 const description =
-  'Calculate exactly how many lumens and light bulbs you need for any room. Select your room type, dimensions, and bulb type to get a professional lighting plan with real-time lux estimates.';
+  '精确计算每个房间所需的流明数和灯泡数量。选择房间类型、尺寸和灯泡类型，即可获得包含实时照度估算的专业照明方案。';
 
 const faqData = [
   {
-    question: 'How many lumens do I need for a living room?',
+    question: '客厅需要多少流明？',
     answer:
-      'For a typical living room, aim for around 150 lux on the floor. Multiply the room area in square meters by 150 to get the required lumens. For a 20 square meter room, you need approximately 3,000 lumens.',
+      '对于一般客厅，地面照度目标约为150勒克斯。将房间面积（平方米）乘以150，即可得出所需流明数。20平方米的房间大约需要3000流明。',
   },
   {
-    question: 'What is the difference between lux and lumens?',
+    question: '勒克斯和流明有什么区别？',
     answer:
-      'Lumens measure the total light output from a bulb. Lux measures the light that actually reaches a surface. A room with high ceilings or dark walls needs more lumens to achieve the same lux level because light is lost to distance and absorption.',
+      '流明衡量灯泡发出的总光量。勒克斯衡量实际到达某一表面的光量。天花板较高或墙壁较暗的房间需要更多流明才能达到相同勒克斯水平，因为光线会因距离和吸收而损失。',
   },
   {
-    question: 'Do LED bulbs really save energy?',
+    question: 'LED灯泡真的省电吗？',
     answer:
-      'Yes. LED bulbs produce about 100 lumens per watt, while incandescent bulbs produce only about 15. A 10W LED bulb gives the same light as a 60W incandescent bulb, using one-sixth of the electricity.',
+      '是的。LED灯泡每瓦约产生100流明，而白炽灯泡仅约15流明。10瓦LED灯泡的亮度与60瓦白炽灯泡相当，但耗电量仅为其六分之一。',
   },
   {
-    question: 'How does room color affect lighting needs?',
+    question: '房间颜色如何影响照明需求？',
     answer:
-      'Dark walls and ceilings absorb light. In a room with dark surfaces, you may need 50% more lumens than the standard recommendation. The calculator lets you adjust for low, medium, or high reflectance.',
+      '深色墙壁和天花板会吸收光线。在深色表面的房间中，您可能需要比标准建议多50%的流明。',
   },
   {
-    question: 'What is a good lux level for reading?',
+    question: '阅读需要多少勒克斯？',
     answer:
-      'For comfortable reading, you need 300 to 500 lux on the page. General ambient lighting usually provides 150 to 200 lux, so add a task lamp near your reading spot for the extra brightness.',
+      '舒适阅读需要页面照度达到300至500勒克斯。一般环境照明通常提供150至200勒克斯，因此请在阅读位置附近添加一盏台灯以补充亮度。',
   },
   {
-    question: 'Can I dim LED bulbs?',
+    question: 'LED灯泡可以调光吗？',
     answer:
-      'Only if they are marked as dimmable. Standard LEDs may flicker or have a shortened lifespan when connected to a dimmer. Always check the packaging for the dimmable symbol before installing.',
+      '只有标有可调光字样的LED灯泡才能调光。普通LED连接调光器时可能会闪烁或缩短寿命。安装前务必检查包装上的可调光标志。',
   },
 ];
 
 const howToData = [
   {
-    name: 'Choose your room type',
-    text: 'Select the room function. Kitchens and offices need brighter light than bedrooms or hallways.',
+    name: '选择房间类型',
+    text: '选择房间功能。厨房和办公室比卧室或走廊需要更明亮的光线。',
   },
   {
-    name: 'Enter dimensions',
-    text: 'Input the room width, length, and ceiling height. The calculator uses these to determine the room index and light utilization factor.',
+    name: '输入尺寸',
+    text: '输入房间的宽度、长度和天花板高度。计算器将据此计算室形指数和照明利用系数。',
   },
   {
-    name: 'Select bulb type and count',
-    text: 'Choose your preferred bulb technology and how many fixtures you have. The calculator will tell you if you need more bulbs.',
+    name: '选择灯泡类型和数量',
+    text: '选择您偏好的灯泡技术和现有灯具数量。计算器会告诉您是否需要更多灯泡。',
   },
 ];
 
@@ -86,7 +86,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
+  inLanguage: 'zh',
 };
 
 export const content: ToolLocaleContent<LightingCalculatorUI> = {
@@ -100,19 +100,19 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Complete Guide to Home Lighting Design and Lumens Planning',
+      text: '住宅照明设计与流明规划完整指南',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Proper lighting transforms a house into a home. Beyond aesthetics, the right amount of light affects mood, productivity, and even eye health. <strong>Our home lighting calculator</strong> helps you determine exactly how many lumens you need for any room, taking into account room size, ceiling height, surface colors, and bulb type.',
+      html: '恰当的照明能把房子变成家。除了美观之外，合适的光量还会影响情绪、生产力，甚至眼睛健康。<strong>我们的住宅照明计算器</strong>会综合考虑房间大小、天花板高度、表面颜色和灯泡类型，帮助您精确计算每个房间所需的流明数。',
     },
     {
       type: 'stats',
       items: [
-        { value: '150-500', label: 'Recommended Lux Range', icon: 'mdi:brightness-6' },
-        { value: '100 lm/W', label: 'LED Efficiency', icon: 'mdi:lightbulb' },
-        { value: '80%', label: 'Maintenance Factor', icon: 'mdi:tools' },
+        { value: '150-500', label: '推荐照度范围', icon: 'mdi:brightness-6' },
+        { value: '100 lm/W', label: 'LED效率', icon: 'mdi:lightbulb' },
+        { value: '80%', label: '维护系数', icon: 'mdi:tools' },
       ],
       columns: 3,
     },
@@ -120,97 +120,94 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'Warm Ambient Lighting',
-          description: 'Ideal for living rooms and bedrooms. Creates a cozy atmosphere and reduces eye strain in the evening.',
+          title: '温馨环境照明',
+          description: '适用于客厅和卧室。营造舒适氛围，并在夜间减轻眼睛疲劳。',
           icon: 'mdi:weather-night',
-          points: ['150-200 lux', 'Warm color temperature (2700K)', 'Multiple dimmable sources'],
+          points: ['150-200 lux', '暖色温（2700K）', '多个可调光光源'],
         },
         {
-          title: 'Bright Task Lighting',
-          description: 'Essential for kitchens, offices, and bathrooms. Provides clear visibility for detailed work.',
+          title: '明亮任务照明',
+          description: '厨房、办公室和浴室必备。为精细工作提供清晰视野。',
           icon: 'mdi:white-balance-sunny',
-          points: ['300-500 lux', 'Cool white (4000K)', 'Focused on work surfaces'],
+          points: ['300-500 lux', '冷白色（4000K）', '聚焦工作台面'],
         },
       ],
       columns: 2,
     },
     {
       type: 'title',
-      text: 'Why Room Dimensions Matter',
+      text: '为什么房间尺寸很重要',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Light spreads and weakens with distance. A bulb that is bright enough for a 2.5 meter ceiling may be too dim for a 4 meter ceiling. The calculator accounts for this by using the room index formula, which considers both floor area and mounting height to estimate how much light actually reaches your work plane.',
+      html: '光线会随着距离扩散而减弱。一盏在2.5米天花板下足够明亮的灯泡，在4米天花板下可能显得太暗。计算器通过室形指数公式来考虑这一点，该公式同时参考地板面积和安装高度，以估算实际到达工作面的光量。',
     },
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Quick Reference Lux Table',
+      title: '快速参考照度表',
       icon: 'mdi:table',
-      badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Living room</strong> → 150 lux</li><li><strong>Kitchen</strong> → 300 lux</li><li><strong>Bedroom</strong> → 100 lux</li><li><strong>Bathroom</strong> → 200 lux</li><li><strong>Office</strong> → 500 lux</li><li><strong>Hallway</strong> → 100 lux</li></ul>',
+      badge: '参考',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>客厅</strong> → 150 lux</li><li><strong>厨房</strong> → 300 lux</li><li><strong>卧室</strong> → 100 lux</li><li><strong>浴室</strong> → 200 lux</li><li><strong>办公室</strong> → 500 lux</li><li><strong>走廊</strong> → 100 lux</li></ul>',
     },
     {
       type: 'summary',
-      title: 'Pro Tips for Better Lighting',
+      title: '优化照明的专业建议',
       items: [
-        'Layer three types of light: ambient, task, and accent.',
-        'Use dimmers to adjust brightness for different times of day.',
-        'Choose LED bulbs for long life and low energy consumption.',
-        'Place task lights on the opposite side of your dominant hand to avoid shadows.',
-        'Consider smart bulbs for automated scheduling and color temperature changes.',
+        '将三种照明叠加使用：环境照明、任务照明和重点照明。',
+        '使用调光器根据不同时间段调整亮度。',
+        '选择LED灯泡，寿命长且耗电低。',
+        '将台灯放在惯用手的另一侧，可避免阴影。',
+        '考虑使用智能灯泡，实现自动定时和色温变化。',
       ],
     },
   ],
   ui: {
-    sectionTitle: 'Room Configuration',
-    labelRoomType: 'Room type',
-    labelRoomWidth: 'Room width',
-    labelRoomLength: 'Room length',
-    labelHeight: 'Ceiling height',
-    labelWorkPlane: 'Work plane height',
-    labelReflectance: 'Surface reflectance',
-    labelBulbType: 'Bulb type',
-    labelBulbWatt: 'Bulb wattage',
-    labelFixtures: 'Number of fixtures',
-    labelDimmer: 'Dimmer level',
+    sectionTitle: '房间照明计算器',
+    labelRoomType: '房间类型',
+    labelRoomWidth: '宽度',
+    labelRoomLength: '长度',
+    labelHeight: '天花板',
+    labelBulbType: '灯泡',
+    labelBulbWatt: '功率',
+    labelFixtures: '灯具',
+    labelAmbient: '氛围',
+    btnAmbientCozy: '温馨',
+    btnAmbientNormal: '普通',
+    btnAmbientBright: '明亮',
     unitMetricRoom: 'm',
     unitImperialRoom: 'ft',
     unitHeight: 'm',
-    unitPercent: '%',
-    unitBulbs: 'pcs',
+    unitBulbs: '个',
     unitWatt: 'W',
-    unitLumens: 'lm',
     unitLux: 'lux',
-    resultBadge: 'Lighting status',
-    labelTargetLux: 'Target lux',
-    labelRequiredLumens: 'Required lumens',
-    labelCurrentLumens: 'Current lumens',
-    labelCurrentLux: 'Current lux',
-    labelBulbsNeeded: 'Bulbs needed',
-    labelStatus: 'Status',
-    statusOptimal: 'Optimal',
-    statusInsufficient: 'Insufficient',
-    statusExcess: 'Excess',
-    btnLiving: 'Living',
-    btnKitchen: 'Kitchen',
-    btnBedroom: 'Bedroom',
-    btnBathroom: 'Bathroom',
-    btnOffice: 'Office',
-    btnHallway: 'Hallway',
-    btnReflectLow: 'Dark',
-    btnReflectMedium: 'Medium',
-    btnReflectHigh: 'Light',
+    labelTargetLux: '目标照度',
+    labelCurrentLux: '当前照度',
+    labelBulbsNeeded: '所需灯泡',
+    labelRoomArea: '面积',
+    statusOptimal: '完美',
+    statusInsufficient: '太暗',
+    statusExcess: '太亮',
+    btnLiving: '客厅',
+    btnKitchen: '厨房',
+    btnBedroom: '卧室',
+    btnBathroom: '浴室',
+    btnOffice: '办公室',
+    btnHallway: '走廊',
     btnBulbLED: 'LED',
     btnBulbCFL: 'CFL',
-    btnBulbHalogen: 'Halogen',
-    btnBulbIncandescent: 'Incandescent',
-    tipAmbient: 'Ambient lighting provides overall illumination.',
-    tipTask: 'Add task lighting for work areas.',
-    tipAccent: 'Use accent lights to highlight features.',
-    visualTitle: 'Room preview',
+    btnBulbHalogen: '卤素',
+    btnBulbIncandescent: '白炽',
+    btnMetric: 'M',
+    btnImperial: 'ft',
+    tipOptimal: '该房间的照明平衡完美。',
+    tipInsufficient: '请增加灯具或更换更高瓦数的灯泡。',
+    tipExcess: '减少灯具或调光以节省能源。',
+    labelManualAdjust: '手动调整',
+    labelSummary: '您的照明方案',
+    labelTotalLumens: '所需总流明',
+    labelSuggestedSetup: '推荐配置',
+    btnExport: '导出PDF',
   },
 };
-
-

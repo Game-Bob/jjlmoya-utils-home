@@ -3,56 +3,56 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LightingCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'kalkulyator-osveshcheniya';
-const title = 'Home Lighting and Lumens Calculator';
+const slug = 'kalkulyator-osveshcheniya-i-lyumenov-dlya-doma';
+const title = 'Калькулятор Освещения и Люменов для Дома';
 const description =
-  'Calculate exactly how many lumens and light bulbs you need for any room. Select your room type, dimensions, and bulb type to get a professional lighting plan with real-time lux estimates.';
+  'Точно рассчитайте, сколько люменов и лампочек вам нужно для любой комнаты. Выберите тип комнаты, размеры и тип лампы, чтобы получить профессиональный план освещения с оценками люкс в реальном времени.';
 
 const faqData = [
   {
-    question: 'How many lumens do I need for a living room?',
+    question: 'Сколько люменов мне нужно для гостиной?',
     answer:
-      'For a typical living room, aim for around 150 lux on the floor. Multiply the room area in square meters by 150 to get the required lumens. For a 20 square meter room, you need approximately 3,000 lumens.',
+      'Для типичной гостиной ориентируйтесь на примерно 150 люкс на полу. Умножьте площадь комнаты в квадратных метрах на 150, чтобы получить необходимое количество люменов. Для комнаты площадью 20 квадратных метров требуется примерно 3000 люменов.',
   },
   {
-    question: 'What is the difference between lux and lumens?',
+    question: 'В чём разница между люксами и люменами?',
     answer:
-      'Lumens measure the total light output from a bulb. Lux measures the light that actually reaches a surface. A room with high ceilings or dark walls needs more lumens to achieve the same lux level because light is lost to distance and absorption.',
+      'Люмены измеряют общий световой поток лампочки. Люксы измеряют свет, который действительно достигает поверхности. Комната с высокими потолками или тёмными стенами требует больше люменов для достижения того же уровня люкс, потому что свет теряется из-за расстояния и поглощения.',
   },
   {
-    question: 'Do LED bulbs really save energy?',
+    question: 'Действительно ли светодиодные лампы экономят энергию?',
     answer:
-      'Yes. LED bulbs produce about 100 lumens per watt, while incandescent bulbs produce only about 15. A 10W LED bulb gives the same light as a 60W incandescent bulb, using one-sixth of the electricity.',
+      'Да. Светодиодные лампы производят около 100 люменов на ватт, тогда как лампы накаливания производят только около 15. Светодиодная лампа 10W даёт такой же свет, как лампа накаливания 60W, используя одну шестую часть электроэнергии.',
   },
   {
-    question: 'How does room color affect lighting needs?',
+    question: 'Как цвет комнаты влияет на потребность в освещении?',
     answer:
-      'Dark walls and ceilings absorb light. In a room with dark surfaces, you may need 50% more lumens than the standard recommendation. The calculator lets you adjust for low, medium, or high reflectance.',
+      'Тёмные стены и потолки поглощают свет. В комнате с тёмными поверхностями может потребоваться на 50% больше люменов, чем рекомендуется по стандарту.',
   },
   {
-    question: 'What is a good lux level for reading?',
+    question: 'Какой уровень люкс хорош для чтения?',
     answer:
-      'For comfortable reading, you need 300 to 500 lux on the page. General ambient lighting usually provides 150 to 200 lux, so add a task lamp near your reading spot for the extra brightness.',
+      'Для комфортного чтения нужно 300-500 люкс на странице. Обычное общее освещение обычно обеспечивает 150-200 люкс, поэтому добавьте настольную лампу рядом с местом для чтения для дополнительной яркости.',
   },
   {
-    question: 'Can I dim LED bulbs?',
+    question: 'Можно ли диммировать светодиодные лампы?',
     answer:
-      'Only if they are marked as dimmable. Standard LEDs may flicker or have a shortened lifespan when connected to a dimmer. Always check the packaging for the dimmable symbol before installing.',
+      'Только если они маркированы как диммируемые. Стандартные светодиоды могут мигать или иметь сокращённый срок службы при подключении к диммеру. Всегда проверяйте упаковку на наличие символа диммируемости перед установкой.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Choose your room type',
-    text: 'Select the room function. Kitchens and offices need brighter light than bedrooms or hallways.',
+    name: 'Выберите тип комнаты',
+    text: 'Выберите функцию комнаты. Кухням и офисам нужен более яркий свет, чем спальням или коридорам.',
   },
   {
-    name: 'Enter dimensions',
-    text: 'Input the room width, length, and ceiling height. The calculator uses these to determine the room index and light utilization factor.',
+    name: 'Введите размеры',
+    text: 'Введите ширину, длину и высоту потолка комнаты. Калькулятор использует их для определения индекса помещения и коэффициента использования света.',
   },
   {
-    name: 'Select bulb type and count',
-    text: 'Choose your preferred bulb technology and how many fixtures you have. The calculator will tell you if you need more bulbs.',
+    name: 'Выберите тип лампы и их количество',
+    text: 'Выберите предпочтительную технологию ламп и количество светильников. Калькулятор подскажет, нужны ли вам дополнительные лампы.',
   },
 ];
 
@@ -86,7 +86,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
+  inLanguage: 'ru',
 };
 
 export const content: ToolLocaleContent<LightingCalculatorUI> = {
@@ -100,19 +100,19 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Complete Guide to Home Lighting Design and Lumens Planning',
+      text: 'Полное Руководство по Дизайну Домашнего Освещения и Планированию Люменов',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Proper lighting transforms a house into a home. Beyond aesthetics, the right amount of light affects mood, productivity, and even eye health. <strong>Our home lighting calculator</strong> helps you determine exactly how many lumens you need for any room, taking into account room size, ceiling height, surface colors, and bulb type.',
+      html: 'Правильное освещение превращает дом в уютное жилище. Помимо эстетики, правильное количество света влияет на настроение, продуктивность и даже здоровье глаз. <strong>Наш калькулятор домашнего освещения</strong> помогает точно определить, сколько люменов вам нужно для любой комнаты, учитывая размер комнаты, высоту потолка, цвета поверхностей и тип лампы.',
     },
     {
       type: 'stats',
       items: [
-        { value: '150-500', label: 'Recommended Lux Range', icon: 'mdi:brightness-6' },
-        { value: '100 lm/W', label: 'LED Efficiency', icon: 'mdi:lightbulb' },
-        { value: '80%', label: 'Maintenance Factor', icon: 'mdi:tools' },
+        { value: '150-500', label: 'Рекомендуемый Диапазон Люкс', icon: 'mdi:brightness-6' },
+        { value: '100 lm/W', label: 'Эффективность LED', icon: 'mdi:lightbulb' },
+        { value: '80%', label: 'Коэффициент Запаса', icon: 'mdi:tools' },
       ],
       columns: 3,
     },
@@ -120,97 +120,94 @@ export const content: ToolLocaleContent<LightingCalculatorUI> = {
       type: 'comparative',
       items: [
         {
-          title: 'Warm Ambient Lighting',
-          description: 'Ideal for living rooms and bedrooms. Creates a cozy atmosphere and reduces eye strain in the evening.',
+          title: 'Тёплое Окружающее Освещение',
+          description: 'Идеально для гостиных и спален. Создаёт уютную атмосферу и снижает нагрузку на глаза вечером.',
           icon: 'mdi:weather-night',
-          points: ['150-200 lux', 'Warm color temperature (2700K)', 'Multiple dimmable sources'],
+          points: ['150-200 lux', 'Тёплая цветовая температура (2700K)', 'Несколько диммируемых источников'],
         },
         {
-          title: 'Bright Task Lighting',
-          description: 'Essential for kitchens, offices, and bathrooms. Provides clear visibility for detailed work.',
+          title: 'Яркое Рабочее Освещение',
+          description: 'Необходимо для кухонь, офисов и ванных комнат. Обеспечивает чёткую видимость для детальной работы.',
           icon: 'mdi:white-balance-sunny',
-          points: ['300-500 lux', 'Cool white (4000K)', 'Focused on work surfaces'],
+          points: ['300-500 lux', 'Холодный белый (4000K)', 'Сфокусировано на рабочих поверхностях'],
         },
       ],
       columns: 2,
     },
     {
       type: 'title',
-      text: 'Why Room Dimensions Matter',
+      text: 'Почему Размеры Комнаты Имеют Значение',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Light spreads and weakens with distance. A bulb that is bright enough for a 2.5 meter ceiling may be too dim for a 4 meter ceiling. The calculator accounts for this by using the room index formula, which considers both floor area and mounting height to estimate how much light actually reaches your work plane.',
+      html: 'Свет распространяется и ослабевает с расстоянием. Лампочка, достаточно яркая для потолка высотой 2,5 метра, может быть слишком тусклой для потолка высотой 4 метра. Калькулятор учитывает это, используя формулу индекса помещения, которая учитывает как площадь пола, так и высоту монтажа, чтобы оценить, сколько света действительно достигает вашей рабочей поверхности.',
     },
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Quick Reference Lux Table',
+      title: 'Быстрая Справочная Таблица Люкс',
       icon: 'mdi:table',
-      badge: 'Reference',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Living room</strong> → 150 lux</li><li><strong>Kitchen</strong> → 300 lux</li><li><strong>Bedroom</strong> → 100 lux</li><li><strong>Bathroom</strong> → 200 lux</li><li><strong>Office</strong> → 500 lux</li><li><strong>Hallway</strong> → 100 lux</li></ul>',
+      badge: 'Справка',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>Гостиная</strong> → 150 lux</li><li><strong>Кухня</strong> → 300 lux</li><li><strong>Спальня</strong> → 100 lux</li><li><strong>Ванная</strong> → 200 lux</li><li><strong>Офис</strong> → 500 lux</li><li><strong>Коридор</strong> → 100 lux</li></ul>',
     },
     {
       type: 'summary',
-      title: 'Pro Tips for Better Lighting',
+      title: 'Профессиональные Советы для Лучшего Освещения',
       items: [
-        'Layer three types of light: ambient, task, and accent.',
-        'Use dimmers to adjust brightness for different times of day.',
-        'Choose LED bulbs for long life and low energy consumption.',
-        'Place task lights on the opposite side of your dominant hand to avoid shadows.',
-        'Consider smart bulbs for automated scheduling and color temperature changes.',
+        'Используйте три типа освещения: общее, рабочее и акцентное.',
+        'Используйте диммеры для регулировки яркости в разное время суток.',
+        'Выбирайте светодиодные лампы для долгого срока службы и низкого энергопотребления.',
+        'Размещайте рабочие лампы с противоположной стороны от вашей ведущей руки, чтобы избежать теней.',
+        'Рассмотрите умные лампы для автоматического расписания и изменения цветовой температуры.',
       ],
     },
   ],
   ui: {
-    sectionTitle: 'Room Configuration',
-    labelRoomType: 'Room type',
-    labelRoomWidth: 'Room width',
-    labelRoomLength: 'Room length',
-    labelHeight: 'Ceiling height',
-    labelWorkPlane: 'Work plane height',
-    labelReflectance: 'Surface reflectance',
-    labelBulbType: 'Bulb type',
-    labelBulbWatt: 'Bulb wattage',
-    labelFixtures: 'Number of fixtures',
-    labelDimmer: 'Dimmer level',
-    unitMetricRoom: 'm',
+    sectionTitle: 'Калькулятор Освещения Комнаты',
+    labelRoomType: 'Тип комнаты',
+    labelRoomWidth: 'Ширина',
+    labelRoomLength: 'Длина',
+    labelHeight: 'Потолок',
+    labelBulbType: 'Лампа',
+    labelBulbWatt: 'Мощность',
+    labelFixtures: 'Светильники',
+    labelAmbient: 'Атмосфера',
+    btnAmbientCozy: 'Уютная',
+    btnAmbientNormal: 'Нормальная',
+    btnAmbientBright: 'Яркая',
+    unitMetricRoom: 'м',
     unitImperialRoom: 'ft',
-    unitHeight: 'm',
-    unitPercent: '%',
-    unitBulbs: 'pcs',
-    unitWatt: 'W',
-    unitLumens: 'lm',
-    unitLux: 'lux',
-    resultBadge: 'Lighting status',
-    labelTargetLux: 'Target lux',
-    labelRequiredLumens: 'Required lumens',
-    labelCurrentLumens: 'Current lumens',
-    labelCurrentLux: 'Current lux',
-    labelBulbsNeeded: 'Bulbs needed',
-    labelStatus: 'Status',
-    statusOptimal: 'Optimal',
-    statusInsufficient: 'Insufficient',
-    statusExcess: 'Excess',
-    btnLiving: 'Living',
-    btnKitchen: 'Kitchen',
-    btnBedroom: 'Bedroom',
-    btnBathroom: 'Bathroom',
-    btnOffice: 'Office',
-    btnHallway: 'Hallway',
-    btnReflectLow: 'Dark',
-    btnReflectMedium: 'Medium',
-    btnReflectHigh: 'Light',
+    unitHeight: 'м',
+    unitBulbs: 'шт',
+    unitWatt: 'Вт',
+    unitLux: 'люкс',
+    labelTargetLux: 'Целевые люкс',
+    labelCurrentLux: 'Текущие люкс',
+    labelBulbsNeeded: 'Нужно ламп',
+    labelRoomArea: 'Площадь',
+    statusOptimal: 'Идеально',
+    statusInsufficient: 'Слишком Тускло',
+    statusExcess: 'Слишком Ярко',
+    btnLiving: 'Гостиная',
+    btnKitchen: 'Кухня',
+    btnBedroom: 'Спальня',
+    btnBathroom: 'Ванная',
+    btnOffice: 'Офис',
+    btnHallway: 'Коридор',
     btnBulbLED: 'LED',
-    btnBulbCFL: 'CFL',
-    btnBulbHalogen: 'Halogen',
-    btnBulbIncandescent: 'Incandescent',
-    tipAmbient: 'Ambient lighting provides overall illumination.',
-    tipTask: 'Add task lighting for work areas.',
-    tipAccent: 'Use accent lights to highlight features.',
-    visualTitle: 'Room preview',
+    btnBulbCFL: 'КЛЛ',
+    btnBulbHalogen: 'Галоген',
+    btnBulbIncandescent: 'Лампа накал.',
+    btnMetric: 'M',
+    btnImperial: 'ft',
+    tipOptimal: 'Ваше освещение идеально сбалансировано для этой комнаты.',
+    tipInsufficient: 'Добавьте больше светильников или ламп большей мощности.',
+    tipExcess: 'Уменьшите количество светильников или приглушите, чтобы сэкономить энергию.',
+    labelManualAdjust: 'Ручная корректировка',
+    labelSummary: 'Ваш план освещения',
+    labelTotalLumens: 'Всего люменов необходимо',
+    labelSuggestedSetup: 'Рекомендуемая конфигурация',
+    btnExport: 'Экспорт PDF',
   },
 };
-
-

@@ -44,6 +44,7 @@
         "@jjlmoya/utils-shared": "1.2.0",
         "astro": "^6.1.2",
         "astro-icon": "^1.1.0",
+        "jspdf": "^4.2.1",
         "qrcode": "^1.5.4"
     },
     "devDependencies": {

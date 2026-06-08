@@ -4,7 +4,7 @@ import type { LightingCalculatorUI } from './ui';
 export type LightingCalculatorLocaleContent = ToolLocaleContent<LightingCalculatorUI>;
 
 export const lightingCalculator: HomeToolEntry<LightingCalculatorUI> = {
-  id: 'lighting-calculator',
+  id: 'how-many-lights-per-room',
   icons: {
     bg: 'mdi:lightbulb',
     fg: 'mdi:flash',

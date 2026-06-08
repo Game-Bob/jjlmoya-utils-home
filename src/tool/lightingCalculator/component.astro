@@ -8,919 +8,301 @@ interface Props {
 const { ui = {} } = Astro.props;
 const lUI = ui as LightingCalculatorUI;
 
-const INIT_R_W = 4, INIT_R_L = 5, INIT_H = 2.7, INIT_WP = 0.8, INIT_W = 9, INIT_F = 6, INIT_D = 100;
+const INIT_R_W = 4, INIT_R_L = 5, INIT_H = 2.7, INIT_W = 9, INIT_F = 6;
 ---
 
-<div class="lux-wrapper">
-  <div class="lux-card">
-    <div class="lux-left">
-      <p class="lux-section-title">{lUI.sectionTitle}</p>
-      <div class="lux-field">
-        <label class="lux-label">{lUI.labelRoomType}</label>
-        <div class="lux-room-grid">
-          <button class="lux-room-btn lux-room-active" data-room="living" data-icon="sofa">
-            <span class="lux-room-icon">Li</span>
-            <span class="lux-room-name">{lUI.btnLiving}</span>
-          </button>
-          <button class="lux-room-btn" data-room="kitchen" data-icon="chef">
-            <span class="lux-room-icon">Ki</span>
-            <span class="lux-room-name">{lUI.btnKitchen}</span>
-          </button>
-          <button class="lux-room-btn" data-room="bedroom" data-icon="bed">
-            <span class="lux-room-icon">Be</span>
-            <span class="lux-room-name">{lUI.btnBedroom}</span>
-          </button>
-          <button class="lux-room-btn" data-room="bathroom" data-icon="bath">
-            <span class="lux-room-icon">Ba</span>
-            <span class="lux-room-name">{lUI.btnBathroom}</span>
-          </button>
-          <button class="lux-room-btn" data-room="office" data-icon="desk">
-            <span class="lux-room-icon">Of</span>
-            <span class="lux-room-name">{lUI.btnOffice}</span>
-          </button>
-          <button class="lux-room-btn" data-room="hallway" data-icon="door">
-            <span class="lux-room-icon">Ha</span>
-            <span class="lux-room-name">{lUI.btnHallway}</span>
-          </button>
+<div class="lc-wrap">
+  <div class="lc-card">
+    <div class="lc-head">
+      <span class="lc-title">{lUI.sectionTitle}</span>
+      <div class="lc-unit-toggle">
+        <button class="lc-unit-btn lc-unit-active" data-unit="metric">{lUI.btnMetric}</button>
+        <button class="lc-unit-btn" data-unit="imperial">{lUI.btnImperial}</button>
+      </div>
+    </div>
+    <div class="lc-row">
+      <div class="lc-input-group">
+        <label class="lc-input-label" for="lc-w">{lUI.labelRoomWidth}</label>
+        <div class="lc-input-wrap">
+          <input id="lc-w" type="number" value={INIT_R_W} min="0.1" max="50" step="0.1" class="lc-input" />
+          <span class="lc-input-unit" id="lc-w-u">{lUI.unitMetricRoom}</span>
         </div>
       </div>
-      <div class="lux-row">
-        <div class="lux-field lux-field-half">
-          <label class="lux-label" for="lc-rw">{lUI.labelRoomWidth}</label>
-          <div class="lux-input-group">
-            <input type="number" id="lc-rw" value={INIT_R_W} min="0.1" max="50" step="0.1" class="lux-input" />
-            <span class="lux-unit">{lUI.unitMetricRoom}</span>
-          </div>
-        </div>
-        <div class="lux-field lux-field-half">
-          <label class="lux-label" for="lc-rl">{lUI.labelRoomLength}</label>
-          <div class="lux-input-group">
-            <input type="number" id="lc-rl" value={INIT_R_L} min="0.1" max="50" step="0.1" class="lux-input" />
-            <span class="lux-unit">{lUI.unitMetricRoom}</span>
-          </div>
+      <div class="lc-input-group">
+        <label class="lc-input-label" for="lc-l">{lUI.labelRoomLength}</label>
+        <div class="lc-input-wrap">
+          <input id="lc-l" type="number" value={INIT_R_L} min="0.1" max="50" step="0.1" class="lc-input" />
+          <span class="lc-input-unit" id="lc-l-u">{lUI.unitMetricRoom}</span>
         </div>
       </div>
-      <div class="lux-row">
-        <div class="lux-field lux-field-half">
-          <label class="lux-label" for="lc-h">{lUI.labelHeight}</label>
-          <div class="lux-input-group">
-            <input type="number" id="lc-h" value={INIT_H} min="1.5" max="10" step="0.1" class="lux-input" />
-            <span class="lux-unit">{lUI.unitHeight}</span>
-          </div>
-        </div>
-        <div class="lux-field lux-field-half">
-          <label class="lux-label" for="lc-wp">{lUI.labelWorkPlane}</label>
-          <div class="lux-input-group">
-            <input type="number" id="lc-wp" value={INIT_WP} min="0" max="2" step="0.1" class="lux-input" />
-            <span class="lux-unit">{lUI.unitHeight}</span>
-          </div>
-        </div>
-      </div>
-      <div class="lux-field">
-        <label class="lux-label">{lUI.labelReflectance}</label>
-        <div class="lux-segment">
-          <button class="lux-segment-btn lux-segment-active" data-reflect="low">{lUI.btnReflectLow}</button>
-          <button class="lux-segment-btn" data-reflect="medium">{lUI.btnReflectMedium}</button>
-          <button class="lux-segment-btn" data-reflect="high">{lUI.btnReflectHigh}</button>
-        </div>
-      </div>
-      <div class="lux-field">
-        <label class="lux-label">{lUI.labelBulbType}</label>
-        <div class="lux-bulb-bar">
-          <button class="lux-bulb-btn lux-bulb-active" data-bulb="led">
-            <span class="lux-bulb-glow led"></span>
-            <span class="lux-bulb-label">{lUI.btnBulbLED}</span>
-          </button>
-          <button class="lux-bulb-btn" data-bulb="cfl">
-            <span class="lux-bulb-glow cfl"></span>
-            <span class="lux-bulb-label">{lUI.btnBulbCFL}</span>
-          </button>
-          <button class="lux-bulb-btn" data-bulb="halogen">
-            <span class="lux-bulb-glow halogen"></span>
-            <span class="lux-bulb-label">{lUI.btnBulbHalogen}</span>
-          </button>
-          <button class="lux-bulb-btn" data-bulb="incandescent">
-            <span class="lux-bulb-glow incandescent"></span>
-            <span class="lux-bulb-label">{lUI.btnBulbIncandescent}</span>
-          </button>
-        </div>
-      </div>
-      <div class="lux-row">
-        <div class="lux-field lux-field-half">
-          <label class="lux-label" for="lc-w">{lUI.labelBulbWatt}</label>
-          <div class="lux-input-group">
-            <input type="number" id="lc-w" value={INIT_W} min="1" max="200" step="1" class="lux-input" />
-            <span class="lux-unit">{lUI.unitWatt}</span>
-          </div>
-        </div>
-        <div class="lux-field lux-field-half">
-          <label class="lux-label" for="lc-f">{lUI.labelFixtures}</label>
-          <div class="lux-input-group">
-            <input type="number" id="lc-f" value={INIT_F} min="1" max="50" step="1" class="lux-input" />
-            <span class="lux-unit">{lUI.unitBulbs}</span>
-          </div>
-        </div>
-      </div>
-      <div class="lux-field">
-        <label class="lux-label" for="lc-d">{lUI.labelDimmer}</label>
-        <div class="lux-dimmer-track">
-          <input type="range" id="lc-d" value={INIT_D} min="10" max="100" step="5" class="lux-dimmer-input" />
-          <div class="lux-dimmer-fill" id="lc-dfill"></div>
-          <span class="lux-dimmer-value" id="lc-dv">{INIT_D}%</span>
+      <div class="lc-input-group">
+        <label class="lc-input-label" for="lc-h">{lUI.labelHeight}</label>
+        <div class="lc-input-wrap">
+          <input id="lc-h" type="number" value={INIT_H} min="1.5" max="10" step="0.1" class="lc-input" />
+          <span class="lc-input-unit" id="lc-h-u">{lUI.unitHeight}</span>
         </div>
       </div>
     </div>
-    <div class="lux-right">
-      <div class="lux-stage" id="lc-stage">
-        <div class="lux-ceiling" id="lc-ceiling"></div>
-        <div class="lux-floor" id="lc-floor"></div>
-        <div class="lux-walls">
-          <div class="lux-wall lux-wall-left"></div>
-          <div class="lux-wall lux-wall-right"></div>
-        </div>
-        <div class="lux-furniture" id="lc-furniture"></div>
-        <div class="lux-light-rays" id="lc-rays"></div>
-        <div class="lux-particles" id="lc-particles"></div>
+    <div class="lc-row">
+      <div class="lc-chips">
+        <button class="lc-chip lc-chip-active" data-room="living">
+          <svg class="lc-chip-icon" viewBox="0 0 24 24"><path d="M7 6h10v3h-2V7H9v2H7V6zm-2 5h14v8h-2v-6H9v6H7v-8z"/></svg>
+          <span>{lUI.btnLiving}</span>
+        </button>
+        <button class="lc-chip" data-room="kitchen">
+          <svg class="lc-chip-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          <span>{lUI.btnKitchen}</span>
+        </button>
+        <button class="lc-chip" data-room="bedroom">
+          <svg class="lc-chip-icon" viewBox="0 0 24 24"><path d="M7 14c1.66 0 3-1.34 3-3S8.66 8 7 8s-3 1.34-3 3 1.34 3 3 3zm12-3c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3zm-3 4H7c-2.21 0-4 1.79-4 4v2h16v-2c0-2.21-1.79-4-4-4z"/></svg>
+          <span>{lUI.btnBedroom}</span>
+        </button>
+        <button class="lc-chip" data-room="bathroom">
+          <svg class="lc-chip-icon" viewBox="0 0 24 24"><path d="M7 7c0-2.21 1.79-4 4-4s4 1.79 4 4v3H7V7zm12 4H5v8c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-8z"/></svg>
+          <span>{lUI.btnBathroom}</span>
+        </button>
+        <button class="lc-chip" data-room="office">
+          <svg class="lc-chip-icon" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5z"/></svg>
+          <span>{lUI.btnOffice}</span>
+        </button>
+        <button class="lc-chip" data-room="hallway">
+          <svg class="lc-chip-icon" viewBox="0 0 24 24"><path d="M19 19V5c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v14H3v2h18v-2h-2zm-2 0H7V5h10v14z"/></svg>
+          <span>{lUI.btnHallway}</span>
+        </button>
       </div>
-      <div class="lux-dial-container">
-        <div class="lux-dial" id="lc-dial">
-          <div class="lux-dial-track"></div>
-          <div class="lux-dial-fill" id="lc-dial-fill"></div>
-          <div class="lux-dial-center">
-            <span class="lux-dial-lux" id="lc-dial-lux">0</span>
-            <span class="lux-dial-unit">{lUI.unitLux}</span>
+    </div>
+    <div class="lc-row">
+      <div class="lc-input-group">
+        <label class="lc-input-label">{lUI.labelAmbient}</label>
+        <div class="lc-bulb-bar">
+          <button class="lc-ambient-btn" data-ambient="0.7">{lUI.btnAmbientCozy}</button>
+          <button class="lc-ambient-btn lc-ambient-active" data-ambient="1">{lUI.btnAmbientNormal}</button>
+          <button class="lc-ambient-btn" data-ambient="1.3">{lUI.btnAmbientBright}</button>
+        </div>
+      </div>
+      <div class="lc-input-group lc-grow">
+        <label class="lc-input-label">{lUI.labelBulbType}</label>
+        <div class="lc-bulb-bar">
+          <button class="lc-bulb lc-bulb-active" data-bulb="led">
+            <span class="lc-bulb-dot" style="background:#22c55e;box-shadow:0 0 8px #22c55e"></span>
+            <span>{lUI.btnBulbLED}</span>
+          </button>
+          <button class="lc-bulb" data-bulb="cfl">
+            <span class="lc-bulb-dot" style="background:#f59e0b;box-shadow:0 0 8px #f59e0b"></span>
+            <span>{lUI.btnBulbCFL}</span>
+          </button>
+          <button class="lc-bulb" data-bulb="halogen">
+            <span class="lc-bulb-dot" style="background:#f97316;box-shadow:0 0 8px #f97316"></span>
+            <span>{lUI.btnBulbHalogen}</span>
+          </button>
+          <button class="lc-bulb" data-bulb="incandescent">
+            <span class="lc-bulb-dot" style="background:#ef4444;box-shadow:0 0 8px #ef4444"></span>
+            <span>{lUI.btnBulbIncandescent}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="lc-plan-wrap" id="lc-plan-wrap">
+      <svg class="lc-plan" viewBox="0 0 300 200" id="lc-plan"></svg>
+    </div>
+    <div class="lc-dial-row">
+      <div class="lc-dial-wrap">
+        <svg class="lc-dial" viewBox="0 0 120 70" id="lc-dial-lux"></svg>
+        <span class="lc-dial-label">{lUI.labelCurrentLux}</span>
+      </div>
+    </div>
+    <div class="lc-status" id="lc-status">
+      <span class="lc-status-dot" id="lc-status-dot"></span>
+      <div class="lc-status-body">
+        <span class="lc-status-text" id="lc-status-text">{lUI.statusOptimal}</span>
+        <span class="lc-status-desc" id="lc-status-desc"></span>
+      </div>
+    </div>
+    <div class="lc-victory" id="lc-victory">
+      <div class="lc-victory-title">{lUI.labelSummary}</div>
+      <div class="lc-victory-row">
+        <span class="lc-victory-label">{lUI.labelTotalLumens}</span>
+        <span class="lc-victory-value" id="lc-v-lumens">0</span>
+      </div>
+      <div class="lc-victory-row">
+        <span class="lc-victory-label">{lUI.labelSuggestedSetup}</span>
+        <span class="lc-victory-value" id="lc-v-setup">-</span>
+      </div>
+      <button class="lc-export-btn" id="lc-export">{lUI.btnExport}</button>
+    </div>
+    <div class="lc-manual-toggle" id="lc-manual-toggle">
+      <svg viewBox="0 0 24 24"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+      {lUI.labelManualAdjust}
+    </div>
+    <div class="lc-manual" id="lc-manual">
+      <div class="lc-row">
+        <div class="lc-input-group">
+          <label class="lc-input-label" for="lc-bw">{lUI.labelBulbWatt}</label>
+          <div class="lc-input-wrap">
+            <input id="lc-bw" type="number" value={INIT_W} min="1" max="200" step="1" class="lc-input" />
+            <span class="lc-input-unit">{lUI.unitWatt}</span>
           </div>
         </div>
-        <div class="lux-dial-labels">
-          <span class="lux-dial-label">{lUI.labelCurrentLux}</span>
-          <span class="lux-dial-target" id="lc-dial-target">0 {lUI.unitLux}</span>
+        <div class="lc-input-group">
+          <label class="lc-input-label" for="lc-f">{lUI.labelFixtures}</label>
+          <div class="lc-input-wrap">
+            <input id="lc-f" type="number" value={INIT_F} min="1" max="50" step="1" class="lc-input" />
+            <span class="lc-input-unit">{lUI.unitBulbs}</span>
+          </div>
         </div>
       </div>
-      <div class="lux-glass-stats">
-        <div class="lux-glass-stat">
-          <span class="lux-glass-icon" style="background: var(--lux-accent);">Lm</span>
-          <span class="lux-glass-value" id="lc-rlm">0</span>
-          <span class="lux-glass-label">{lUI.labelRequiredLumens}</span>
-        </div>
-        <div class="lux-glass-stat">
-          <span class="lux-glass-icon" style="background: var(--lux-warm);">Bn</span>
-          <span class="lux-glass-value" id="lc-bn">0</span>
-          <span class="lux-glass-label">{lUI.labelBulbsNeeded}</span>
-        </div>
-        <div class="lux-glass-stat">
-          <span class="lux-glass-icon" style="background: var(--lux-cool);">Lx</span>
-          <span class="lux-glass-value" id="lc-cl">0</span>
-          <span class="lux-glass-label">{lUI.labelCurrentLux}</span>
-        </div>
-      </div>
-      <div class="lux-mood-badge" id="lc-mood">
-        <span class="lux-mood-icon" id="lc-mood-icon">*</span>
-        <span class="lux-mood-text" id="lc-mood-text">{lUI.statusOptimal}</span>
-      </div>
-      <div class="lux-tip" id="lc-tip">{lUI.tipAmbient}</div>
     </div>
   </div>
 </div>
 
-<style>
-  :root {
-    --lux-bg: #0f0f1a;
-    --lux-card: #1a1a2e;
-    --lux-surface: #16213e;
-    --lux-accent: #e94560;
-    --lux-warm: #f39c12;
-    --lux-cool: #00d2ff;
-    --lux-success: #00b894;
-    --lux-warning: #fdcb6e;
-    --lux-danger: #d63031;
-    --lux-text: #dfe6e9;
-    --lux-text-dim: #74b9ff;
-    --lux-border: rgba(255, 255, 255, 0.1);
-    --lux-glow: rgba(233, 69, 96, 0.3);
-  }
-
-  .lux-wrapper {
-    width: 100%;
-    padding: 2rem 0;
-    background: var(--lux-bg);
-    min-height: 100vh;
-  }
-
-  .lux-card {
-    display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  .lux-left {
-    background: var(--lux-card);
-    border-radius: 24px;
-    padding: 2rem;
-    border: 1px solid var(--lux-border);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  }
-
-  .lux-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 0 1.5rem;
-    color: var(--lux-text);
-    background: var(--lux-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .lux-field {
-    margin-bottom: 1.25rem;
-  }
-
-  .lux-field-half {
-    flex: 1;
-  }
-
-  .lux-row {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .lux-label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-    color: var(--lux-text-dim);
-  }
-
-  .lux-room-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-  }
-
-  .lux-room-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.75rem 0.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--lux-border);
-    background: var(--lux-surface);
-    color: var(--lux-text);
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 0.75rem;
-  }
-
-  .lux-room-btn:hover {
-    border-color: var(--lux-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--lux-glow);
-  }
-
-  .lux-room-active {
-    background: var(--lux-accent);
-    border-color: var(--lux-accent);
-    box-shadow: 0 4px 16px var(--lux-glow);
-  }
-
-  .lux-room-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
-  .lux-room-name {
-    font-weight: 500;
-  }
-
-  .lux-input-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--lux-surface);
-    border-radius: 12px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--lux-border);
-    transition: border-color 0.2s;
-  }
-
-  .lux-input-group:focus-within {
-    border-color: var(--lux-accent);
-    box-shadow: 0 0 0 3px var(--lux-glow);
-  }
-
-  .lux-input {
-    background: transparent;
-    border: none;
-    color: var(--lux-text);
-    font-size: 1rem;
-    font-weight: 600;
-    width: 80px;
-    outline: none;
-  }
-
-  .lux-unit {
-    font-size: 0.75rem;
-    color: var(--lux-text-dim);
-    font-weight: 500;
-  }
-
-  .lux-segment {
-    display: flex;
-    background: var(--lux-surface);
-    border-radius: 12px;
-    padding: 0.25rem;
-    border: 1px solid var(--lux-border);
-  }
-
-  .lux-segment-btn {
-    flex: 1;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    border: none;
-    background: transparent;
-    color: var(--lux-text-dim);
-    cursor: pointer;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.2s;
-  }
-
-  .lux-segment-btn:hover {
-    color: var(--lux-text);
-  }
-
-  .lux-segment-active {
-    background: var(--lux-accent);
-    color: var(--lux-text);
-    box-shadow: 0 2px 8px var(--lux-glow);
-  }
-
-  .lux-bulb-bar {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .lux-bulb-btn {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 0.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--lux-border);
-    background: var(--lux-surface);
-    color: var(--lux-text);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .lux-bulb-btn:hover {
-    border-color: var(--lux-warm);
-  }
-
-  .lux-bulb-active {
-    border-color: var(--lux-warm);
-    box-shadow: 0 0 16px rgba(243, 156, 18, 0.2);
-  }
-
-  .lux-bulb-glow {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    transition: all 0.3s;
-  }
-
-  .lux-bulb-glow.led {
-    background: #0f8;
-    box-shadow: 0 0 12px #0f8;
-  }
-
-  .lux-bulb-glow.cfl {
-    background: #fff700;
-    box-shadow: 0 0 12px #fff700;
-  }
-
-  .lux-bulb-glow.halogen {
-    background: #ff9500;
-    box-shadow: 0 0 12px #ff9500;
-  }
-
-  .lux-bulb-glow.incandescent {
-    background: #ff6b6b;
-    box-shadow: 0 0 12px #ff6b6b;
-  }
-
-  .lux-bulb-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  .lux-dimmer-track {
-    position: relative;
-    height: 40px;
-    background: var(--lux-surface);
-    border-radius: 20px;
-    border: 1px solid var(--lux-border);
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
-    overflow: hidden;
-  }
-
-  .lux-dimmer-input {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    height: 4px;
-    outline: none;
-  }
-
-  .lux-dimmer-input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--lux-accent);
-    box-shadow: 0 0 12px var(--lux-glow);
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-
-  .lux-dimmer-input::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-  }
-
-  .lux-dimmer-fill {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background: var(--lux-accent);
-    opacity: 0.2;
-    border-radius: 20px;
-    transition: width 0.3s;
-    pointer-events: none;
-  }
-
-  .lux-dimmer-value {
-    position: absolute;
-    right: 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--lux-accent);
-    z-index: 1;
-  }
-
-  .lux-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .lux-stage {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    border-radius: 24px;
-    overflow: hidden;
-    background: var(--lux-card);
-    border: 1px solid var(--lux-border);
-    perspective: 1000px;
-  }
-
-  .lux-ceiling {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    background: var(--lux-surface);
-    transform: rotateX(30deg);
-    transform-origin: top;
-    border-bottom: 2px solid var(--lux-border);
-  }
-
-  .lux-floor {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 20%;
-    background: var(--lux-surface);
-    transform: rotateX(-20deg);
-    transform-origin: bottom;
-    border-top: 2px solid var(--lux-border);
-  }
-
-  .lux-walls {
-    position: absolute;
-    inset: 30% 0 20%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .lux-wall {
-    width: 15%;
-    background: var(--lux-surface);
-    border: 1px solid var(--lux-border);
-  }
-
-  .lux-wall-left {
-    transform: rotateY(20deg);
-    transform-origin: left;
-  }
-
-  .lux-wall-right {
-    transform: rotateY(-20deg);
-    transform-origin: right;
-  }
-
-  .lux-furniture {
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 60px;
-    background: var(--lux-surface);
-    border-radius: 8px;
-    border: 1px solid var(--lux-border);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  }
-
-  .lux-light-rays {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s;
-    background: radial-gradient(ellipse at 50% 20%, rgba(255, 255, 200, 0.1) 0%, transparent 70%);
-  }
-
-  .lux-particles {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .lux-particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--lux-warm);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--lux-warm);
-    animation: lux-float 3s ease-in-out infinite;
-  }
-
-  @keyframes lux-float {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-      opacity: 0;
-    }
-    50% {
-      transform: translateY(-40px) scale(1.5);
-      opacity: 1;
-    }
-  }
-
-  .lux-dial-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .lux-dial {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: var(--lux-card);
-    border: 2px solid var(--lux-border);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .lux-dial-track {
-    position: absolute;
-    inset: 8px;
-    border-radius: 50%;
-    border: 8px solid var(--lux-surface);
-  }
-
-  .lux-dial-fill {
-    position: absolute;
-    inset: 8px;
-    border-radius: 50%;
-    border: 8px solid transparent;
-    border-top-color: var(--lux-accent);
-    border-right-color: var(--lux-accent);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: rotate(-135deg);
-  }
-
-  .lux-dial-center {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .lux-dial-lux {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--lux-text);
-    line-height: 1;
-  }
-
-  .lux-dial-unit {
-    font-size: 0.875rem;
-    color: var(--lux-text-dim);
-    font-weight: 500;
-  }
-
-  .lux-dial-labels {
-    display: flex;
-    justify-content: space-between;
-    width: 180px;
-    font-size: 0.75rem;
-    color: var(--lux-text-dim);
-  }
-
-  .lux-dial-target {
-    color: var(--lux-accent);
-    font-weight: 600;
-  }
-
-  .lux-glass-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .lux-glass-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid var(--lux-border);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .lux-glass-stat:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  }
-
-  .lux-glass-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-  }
-
-  .lux-glass-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--lux-text);
-  }
-
-  .lux-glass-label {
-    font-size: 0.75rem;
-    color: var(--lux-text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .lux-mood-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem 1.5rem;
-    border-radius: 16px;
-    background: var(--lux-surface);
-    border: 1px solid var(--lux-border);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--lux-text);
-    transition: all 0.3s;
-  }
-
-  .lux-mood-badge.optimal {
-    background: rgba(0, 184, 148, 0.1);
-    border-color: var(--lux-success);
-    color: var(--lux-success);
-    box-shadow: 0 0 24px rgba(0, 184, 148, 0.2);
-  }
-
-  .lux-mood-badge.insufficient {
-    background: rgba(253, 203, 110, 0.1);
-    border-color: var(--lux-warning);
-    color: var(--lux-warning);
-    box-shadow: 0 0 24px rgba(253, 203, 110, 0.2);
-  }
-
-  .lux-mood-badge.excess {
-    background: rgba(214, 48, 49, 0.1);
-    border-color: var(--lux-danger);
-    color: var(--lux-danger);
-    box-shadow: 0 0 24px rgba(214, 48, 49, 0.2);
-  }
-
-  .lux-mood-icon {
-    font-size: 1.5rem;
-    animation: lux-pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes lux-pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-
-  .lux-tip {
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
-    background: var(--lux-surface);
-    border: 1px solid var(--lux-border);
-    font-size: 0.875rem;
-    color: var(--lux-text-dim);
-    line-height: 1.5;
-  }
-
-  @media (max-width: 900px) {
-    .lux-card {
-      grid-template-columns: 1fr;
-    }
-    .lux-left {
-      order: 2;
-    }
-    .lux-right {
-      order: 1;
-    }
-  }
-</style>
-
 <script>
-  import { calculateLighting } from './logic';
+  import { loadState, saveState, restoreInputs, runCalc, updateUnitLabels, convertValue } from './state';
+  import { drawPlan, drawDial, generatePDF } from './draw';
+  import type { State } from './state';
+  import type { LightingResult } from './logic';
 
-  let roomType = 'living';
-  let reflectance: 'low' | 'medium' | 'high' = 'low';
-  let bulbType = 'led';
+  const st: State = loadState();
 
   function el(id: string) { return document.getElementById(id); }
   function setTxt(id: string, v: string) { const e = el(id); if (e) e.textContent = v; }
   function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+  function setVal(id: string, v: string) { const e = el(id) as HTMLInputElement | null; if (e) e.value = v; }
 
-  function spawnParticles(count: number) {
-    const container = el('lc-particles');
-    if (!container) return;
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('div');
-      p.className = 'lux-particle';
-      p.style.left = `${20 + Math.random() * 60}%`;
-      p.style.top = `${20 + Math.random() * 60}%`;
-      p.style.animationDelay = `${Math.random() * 2}s`;
-      p.style.animationDuration = `${2 + Math.random() * 2}s`;
-      container.appendChild(p);
-      setTimeout(() => p.remove(), 4000);
+  function updateStatus(r: LightingResult) {
+    const statusEl = el('lc-status');
+    const stText = el('lc-status-text');
+    const stDesc = el('lc-status-desc');
+    const planWrap = el('lc-plan-wrap');
+    if (statusEl) statusEl.className = 'lc-status ' + r.status;
+    if (planWrap) planWrap.className = 'lc-plan-wrap ' + r.status;
+    if (stText) {
+      if (r.status === 'optimal') stText.textContent = 'Perfect';
+      else if (r.status === 'insufficient') stText.textContent = 'Too Dim';
+      else stText.textContent = 'Too Bright';
     }
+    if (stDesc) stDesc.textContent = r.sensoryContext;
   }
 
-  function updateDial(currentLux: number, targetLux: number) {
-    const fill = el('lc-dial-fill');
-    const dialLux = el('lc-dial-lux');
-    const dialTarget = el('lc-dial-target');
-    if (fill) {
-      const ratio = Math.min(currentLux / (targetLux || 1), 1.5);
-      const angle = -135 + ratio * 270;
-      fill.style.transform = `rotate(${angle}deg)`;
-    }
-    if (dialLux) dialLux.textContent = String(Math.round(currentLux));
-    if (dialTarget) dialTarget.textContent = `${targetLux} lux`;
+  function updateVictory(r: LightingResult) {
+    setTxt('lc-v-lumens', String(r.requiredLumens));
+    setTxt('lc-v-setup', r.suggestedProducts);
   }
 
-  function updateStage(brightness: number) {
-    const stage = el('lc-stage');
-    const rays = el('lc-rays');
-    if (stage) {
-      const b = Math.min(brightness, 1);
-      stage.style.background = `rgb(${15 + 40 * b}, ${15 + 30 * b}, ${26 + 20 * b})`;
-    }
-    if (rays) {
-      rays.style.opacity = String(b * 0.6);
-    }
+  function render() {
+    const r = runCalc(st, getNum);
+    const f = st.unitSys === 'metric' ? 1 : 0.3048;
+    const w = getNum('lc-w') * f;
+    const l = getNum('lc-l') * f;
+    const plan = el('lc-plan') as SVGSVGElement | null;
+    if (plan) drawPlan(plan, { widthM: w, lengthM: l, optimalBulbs: r.optimalBulbs, luxRatio: r.luxRatio, ambiance: st.luxMultiplier, status: r.status });
+    const maxDial = Math.max(r.targetLux, r.currentLux) * 1.2;
+    const dialLux = el('lc-dial-lux') as SVGSVGElement | null;
+    if (dialLux) drawDial(dialLux, { value: r.currentLux, target: r.targetLux, max: maxDial, label: 'LUX' });
+    updateStatus(r);
+    updateVictory(r);
   }
 
-  function calculate() {
-    const r = calculateLighting({
-      roomWidthM: getNum('lc-rw'),
-      roomLengthM: getNum('lc-rl'),
-      roomHeightM: getNum('lc-h'),
-      workPlaneM: getNum('lc-wp'),
-      roomType,
-      reflectance,
-      bulbType,
-      bulbWatt: getNum('lc-w'),
-      fixtures: getNum('lc-f'),
-      dimmer: getNum('lc-d'),
-    });
-    setTxt('lc-rlm', String(r.requiredLumens));
-    setTxt('lc-bn', String(r.bulbsNeeded));
-    setTxt('lc-cl', String(r.currentLux));
-    updateDial(r.currentLux, r.targetLux);
-    updateStage(r.currentLux / 1000);
-    const mood = el('lc-mood');
-    const moodText = el('lc-mood-text');
-    const moodIcon = el('lc-mood-icon');
-    const tip = el('lc-tip');
-    const statusMap: Record<string, { text: string; icon: string; tip: string }> = {
-      optimal: { text: 'Perfect Lighting', icon: '*', tip: 'Your lighting is perfectly balanced for this room type.' },
-      insufficient: { text: 'Too Dim', icon: 'o', tip: 'Add more fixtures or use higher wattage bulbs to reach the target.' },
-      excess: { text: 'Too Bright', icon: '+', tip: 'Consider reducing fixtures or dimming to avoid glare and save energy.' },
-    };
-    const s = statusMap[r.status] || statusMap.optimal;
-    if (mood) {
-      mood.className = `lux-mood-badge ${r.status}`;
-    }
-    if (moodText) moodText.textContent = s.text;
-    if (moodIcon) moodIcon.textContent = s.icon;
-    if (tip) tip.textContent = s.tip;
-    spawnParticles(3);
+  function persist() { saveState(st, getNum); }
+
+  function applyUnit(s: 'metric' | 'imperial') {
+    st.unitSys = s;
+    persist();
+    document.querySelectorAll('.lc-unit-btn').forEach((b) => b.classList.toggle('lc-unit-active', (b as HTMLElement).dataset.unit === s));
+    const toMetric = s === 'metric';
+    convertValue('lc-w', getNum, setVal, toMetric);
+    convertValue('lc-l', getNum, setVal, toMetric);
+    convertValue('lc-h', getNum, setVal, toMetric);
+    updateUnitLabels(st.unitSys, setTxt);
+    render();
   }
 
   function setRoom(type: string) {
-    roomType = type;
-    document.querySelectorAll('.lux-room-btn').forEach((b) => b.classList.toggle('lux-room-active', (b as HTMLElement).dataset.room === type));
-    calculate();
-  }
-
-  function setReflect(ref: 'low' | 'medium' | 'high') {
-    reflectance = ref;
-    document.querySelectorAll('.lux-segment-btn').forEach((b) => b.classList.toggle('lux-segment-active', (b as HTMLElement).dataset.reflect === ref));
-    calculate();
+    st.roomType = type;
+    persist();
+    document.querySelectorAll('.lc-chip').forEach((b) => b.classList.toggle('lc-chip-active', (b as HTMLElement).dataset.room === type));
+    render();
   }
 
   function setBulb(type: string) {
-    bulbType = type;
-    document.querySelectorAll('.lux-bulb-btn').forEach((b) => b.classList.toggle('lux-bulb-active', (b as HTMLElement).dataset.bulb === type));
-    calculate();
+    st.bulbType = type;
+    persist();
+    document.querySelectorAll('.lc-bulb').forEach((b) => b.classList.toggle('lc-bulb-active', (b as HTMLElement).dataset.bulb === type));
+    render();
+  }
+
+  function setAmbient(m: string) {
+    st.luxMultiplier = parseFloat(m);
+    persist();
+    document.querySelectorAll('.lc-ambient-btn').forEach((b) => b.classList.toggle('lc-ambient-active', (b as HTMLElement).dataset.ambient === m));
+    render();
   }
 
   function init() {
-    document.querySelectorAll('.lux-room-btn').forEach((b) => {
-      b.addEventListener('click', () => setRoom((b as HTMLElement).dataset.room || 'living'));
+    restoreInputs(getNum, setVal);
+    updateUnitLabels(st.unitSys, setTxt);
+    document.querySelectorAll('.lc-unit-btn').forEach((b) => b.classList.toggle('lc-unit-active', (b as HTMLElement).dataset.unit === st.unitSys));
+    document.querySelectorAll('.lc-chip').forEach((b) => b.classList.toggle('lc-chip-active', (b as HTMLElement).dataset.room === st.roomType));
+    document.querySelectorAll('.lc-bulb').forEach((b) => b.classList.toggle('lc-bulb-active', (b as HTMLElement).dataset.bulb === st.bulbType));
+    document.querySelectorAll('.lc-ambient-btn').forEach((b) => b.classList.toggle('lc-ambient-active', (b as HTMLElement).dataset.ambient === String(st.luxMultiplier)));
+    const fInput = el('lc-f') as HTMLInputElement | null;
+    if (fInput && !fInput.value) {
+      const calc = runCalc(st, getNum);
+      setVal('lc-f', String(calc.optimalBulbs));
+    }
+    document.querySelectorAll('.lc-unit-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const u = (btn as HTMLElement).dataset.unit as 'metric' | 'imperial';
+        if (u) applyUnit(u);
+      });
     });
-    document.querySelectorAll('.lux-segment-btn').forEach((b) => {
-      b.addEventListener('click', () => setReflect((b as HTMLElement).dataset.reflect as 'low' | 'medium' | 'high'));
+    document.querySelectorAll('.lc-chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const t = (btn as HTMLElement).dataset.room || 'living';
+        setRoom(t);
+      });
     });
-    document.querySelectorAll('.lux-bulb-btn').forEach((b) => {
-      b.addEventListener('click', () => setBulb((b as HTMLElement).dataset.bulb || 'led'));
+    document.querySelectorAll('.lc-bulb').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const t = (btn as HTMLElement).dataset.bulb || 'led';
+        setBulb(t);
+      });
     });
-    ['lc-rw', 'lc-rl', 'lc-h', 'lc-wp', 'lc-w', 'lc-f'].forEach((id) => {
+    document.querySelectorAll('.lc-ambient-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const m = (btn as HTMLElement).dataset.ambient || '1';
+        setAmbient(m);
+      });
+    });
+    ['lc-w', 'lc-l', 'lc-h', 'lc-bw', 'lc-f'].forEach((id) => {
       const e = el(id);
-      if (e) e.addEventListener('input', calculate);
+      if (e) e.addEventListener('input', () => { persist(); render(); });
     });
-    const d = el('lc-d');
-    const dFill = el('lc-dfill');
-    if (d) {
-      d.addEventListener('input', () => {
-        const val = (d as HTMLInputElement).value;
-        const dv = el('lc-dv');
-        if (dv) dv.textContent = `${val}%`;
-        if (dFill) dFill.style.width = `${val}%`;
-        calculate();
+    const manualToggle = el('lc-manual-toggle');
+    const manual = el('lc-manual');
+    if (manualToggle && manual) {
+      manualToggle.addEventListener('click', () => {
+        manual.classList.toggle('lc-manual-open');
       });
     }
-    calculate();
+    const exportBtn = el('lc-export');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        const r = runCalc(st, getNum);
+        const unitLabel = st.unitSys === 'metric' ? 'm' : 'ft';
+        generatePDF({
+          roomType: st.roomType,
+          width: getNum('lc-w'),
+          length: getNum('lc-l'),
+          height: getNum('lc-h'),
+          r,
+          unitSys: st.unitSys,
+          unitLabel,
+        });
+      });
+    }
+    render();
   }
 
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-
