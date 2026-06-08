@@ -1,0 +1,296 @@
+---
+import type { HumidityCalculatorUI } from './ui';
+import { calculateHumidity, fmt2 } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const hUI = ui as HumidityCalculatorUI;
+
+const DEF_ROOM = 25;
+const DEF_TEMP = 22;
+const DEF_CUR = 70;
+const DEF_TAR = 50;
+const DEF_CAP = 12;
+
+const initial = calculateHumidity({ roomM2: DEF_ROOM, tempC: DEF_TEMP, currentRH: DEF_CUR, targetRH: DEF_TAR, capacityLPerDay: DEF_CAP });
+---
+
+<div class="hc-root">
+  <div class="hc-card"
+    data-mh={hUI.moldRiskHigh}
+    data-mm={hUI.moldRiskMedium}
+    data-ml={hUI.moldRiskLow}
+    data-bh={hUI.badgeHigh}
+    data-bm={hUI.badgeMedium}
+    data-bl={hUI.badgeLow}
+    data-uh={hUI.runtimeUnitH}
+    data-um={hUI.runtimeUnitM}
+  >
+    <div class="hc-stage">
+      <div class="hc-stage-glow"></div>
+      <p class="hc-section-label">{hUI.comfortDialTitle}</p>
+      <svg class="hc-dial" viewBox="0 0 200 160" id="hc-dial-svg">
+        <defs>
+          <linearGradient id="hc-grad-low" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3b82f6" />
+            <stop offset="100%" stop-color="#22c55e" />
+          </linearGradient>
+          <linearGradient id="hc-grad-medium" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f59e0b" />
+            <stop offset="100%" stop-color="#eab308" />
+          </linearGradient>
+          <linearGradient id="hc-grad-high" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ef4444" />
+            <stop offset="100%" stop-color="#f97316" />
+          </linearGradient>
+        </defs>
+        <path id="hc-track" d="" fill="none" stroke="var(--hc-track)" stroke-width="10" stroke-linecap="round" />
+        <path id="hc-fill" d="" fill="none" stroke="url(#hc-grad-high)" stroke-width="10" stroke-linecap="round" />
+        <circle id="hc-handle-c" r="6" fill="#fff" stroke="#ef4444" stroke-width="3" />
+        <circle id="hc-handle-t" r="6" fill="#fff" stroke="#f97316" stroke-width="3" />
+        <text x="100" y="118" text-anchor="middle" class="hc-dial-center">
+          <tspan id="hc-dial-num" x="100">{DEF_CUR}{hUI.unitPercent}</tspan>
+          <tspan id="hc-dial-sub" x="100" dy="22" class="hc-dial-sub">{hUI.comfortCurrent}</tspan>
+        </text>
+      </svg>
+      <div class="hc-dial-labels">
+        <span>{hUI.comfortCurrent}: <b id="hc-lbl-c">{DEF_CUR}{hUI.unitPercent}</b></span>
+        <span>{hUI.comfortTarget}: <b id="hc-lbl-t">{DEF_TAR}{hUI.unitPercent}</b></span>
+      </div>
+    </div>
+
+    <div class="hc-body">
+      <div class="hc-fields hc-fields-3">
+        <div class="hc-field">
+          <label class="hc-field-label" for="hc-room">{hUI.labelRoomSize}</label>
+          <div class="hc-field-row">
+            <input type="number" id="hc-room" class="hc-field-input" value={DEF_ROOM} min="1" max="500" step="1" />
+            <span class="hc-field-unit">{hUI.unitM2}</span>
+          </div>
+        </div>
+        <div class="hc-field">
+          <label class="hc-field-label" for="hc-temp">{hUI.labelTemperature}</label>
+          <div class="hc-field-row">
+            <input type="number" id="hc-temp" class="hc-field-input" value={DEF_TEMP} min="5" max="35" step="1" />
+            <span class="hc-field-unit">{hUI.unitCelsius}</span>
+          </div>
+        </div>
+        <div class="hc-field">
+          <label class="hc-field-label" for="hc-rh-c">{hUI.labelCurrentHumidity}</label>
+          <div class="hc-field-row">
+            <input type="number" id="hc-rh-c" class="hc-field-input" value={DEF_CUR} min="0" max="100" step="1" />
+            <span class="hc-field-unit">{hUI.unitPercent}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hc-sliders">
+        <div class="hc-slider-group">
+          <label class="hc-slider-label">{hUI.labelTargetHumidity}</label>
+          <input type="range" id="hc-rh-t" class="hc-slider" min="0" max="100" value={DEF_TAR} />
+          <span class="hc-slider-val" id="hc-rh-t-val">{DEF_TAR}{hUI.unitPercent}</span>
+        </div>
+        <div class="hc-slider-group">
+          <label class="hc-slider-label">{hUI.labelCapacity}</label>
+          <input type="range" id="hc-cap" class="hc-slider" min="0" max="100" value={DEF_CAP} />
+          <span class="hc-slider-val" id="hc-cap-val">{DEF_CAP}{hUI.unitLitersDay}</span>
+        </div>
+      </div>
+
+      <div class="hc-tank">
+        <p class="hc-section-label">{hUI.tankTitle}</p>
+        <div class="hc-tank-visual">
+          <div class="hc-tank-body">
+            <div class="hc-tank-water" id="hc-water"></div>
+            <div class="hc-tank-marks">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="hc-tank-info">
+            <span class="hc-tank-num" id="hc-tank-num">{fmt2(initial.litersToExtract)}</span>
+            <span class="hc-tank-unit">{hUI.tankLiters}</span>
+            <span class="hc-tank-sub" id="hc-tank-sub">{hUI.extractionLabel}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hc-runtime">
+        <p class="hc-runtime-label">{hUI.runtimeTitle}</p>
+        <div class="hc-runtime-ring" id="hc-runtime-ring">
+          <span class="hc-runtime-value" id="hc-runtime-val">{initial.runtimeHours}{hUI.runtimeUnitH} {initial.runtimeMinutes}{hUI.runtimeUnitM}</span>
+        </div>
+      </div>
+
+      <div class="hc-mold hc-mold-high" id="hc-mold">
+        <span class="hc-mold-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </span>
+        <span class="hc-mold-text" id="hc-mold-text">{hUI.moldRiskHigh}</span>
+        <span class="hc-mold-badge" id="hc-mold-badge">{hUI.badgeHigh}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateHumidity, fmt2 } from './logic';
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, val: string) { const e = el(id); if (e) e.textContent = val; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+
+  function clamp(n: number, min: number, max: number) { return Math.max(min, Math.min(max, n)); }
+
+  function polar(cx: number, cy: number, r: number, aDeg: number) {
+    const a = (aDeg * Math.PI) / 180;
+    return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+  }
+
+  interface ArcArgs { cx: number; cy: number; r: number; a1: number; a2: number }
+
+  function arcPath(a: ArcArgs) {
+    const p1 = polar(a.cx, a.cy, a.r, a.a1);
+    const p2 = polar(a.cx, a.cy, a.r, a.a2);
+    const large = Math.abs(a.a2 - a.a1) > 180 ? 1 : 0;
+    const sweep = a.a2 > a.a1 ? 1 : 0;
+    return `M ${fmt2(p1.x)} ${fmt2(p1.y)} A ${a.r} ${a.r} 0 ${large} ${sweep} ${fmt2(p2.x)} ${fmt2(p2.y)}`;
+  }
+
+  function angleFor(val: number) {
+    return 210 + (val / 100) * 120;
+  }
+
+  const RISK_COLORS: Record<string, { fill: string; c: string; t: string }> = {
+    low: { fill: 'url(#hc-grad-low)', c: '#3b82f6', t: '#22c55e' },
+    medium: { fill: 'url(#hc-grad-medium)', c: '#f59e0b', t: '#eab308' },
+    high: { fill: 'url(#hc-grad-high)', c: '#ef4444', t: '#f97316' },
+  };
+
+  function setTrack() {
+    const track = el('hc-track') as SVGPathElement | null;
+    if (track) track.setAttribute('d', arcPath({ cx: 100, cy: 132, r: 86, a1: 210, a2: 330 }));
+  }
+
+  function setGauge(c: number, t: number, risk: 'high' | 'medium' | 'low') {
+    const ac = angleFor(c);
+    const at = angleFor(t);
+    const aStart = Math.min(ac, at);
+    const aEnd = Math.max(ac, at);
+    const fill = el('hc-fill') as SVGPathElement | null;
+    if (fill) {
+      fill.setAttribute('d', arcPath({ cx: 100, cy: 132, r: 86, a1: aStart, a2: aEnd }));
+      fill.setAttribute('stroke', RISK_COLORS[risk].fill);
+    }
+    const hc = polar(100, 132, 86, ac);
+    const ht = polar(100, 132, 86, at);
+    const handleC = el('hc-handle-c') as SVGCircleElement | null;
+    const handleT = el('hc-handle-t') as SVGCircleElement | null;
+    if (handleC) { handleC.setAttribute('cx', String(hc.x)); handleC.setAttribute('cy', String(hc.y)); handleC.setAttribute('stroke', RISK_COLORS[risk].c); }
+    if (handleT) { handleT.setAttribute('cx', String(ht.x)); handleT.setAttribute('cy', String(ht.y)); handleT.setAttribute('stroke', RISK_COLORS[risk].t); }
+  }
+
+  function setTank(liters: number) {
+    const maxL = 10;
+    const pct = Math.min(100, (liters / maxL) * 100);
+    const water = el('hc-water') as HTMLElement | null;
+    if (water) water.style.height = `${pct}%`;
+    setTxt('hc-tank-num', fmt2(liters));
+  }
+
+  function setRuntime(h: number, m: number, uh: string, um: string) {
+    setTxt('hc-runtime-val', `${h}${uh} ${m}${um}`);
+    const ring = el('hc-runtime-ring') as HTMLElement | null;
+    if (ring) {
+      ring.classList.remove('hc-pulse');
+      void ring.offsetWidth;
+      ring.classList.add('hc-pulse');
+    }
+  }
+
+  interface MoldLabels { highText: string; medText: string; lowText: string; highBadge: string; medBadge: string; lowBadge: string }
+
+  function setMold(risk: 'high' | 'medium' | 'low', labels: MoldLabels) {
+    const mold = el('hc-mold') as HTMLElement | null;
+    if (!mold) return;
+    mold.classList.remove('hc-mold-high', 'hc-mold-medium', 'hc-mold-low');
+    if (risk === 'high') {
+      mold.classList.add('hc-mold-high');
+      setTxt('hc-mold-text', labels.highText);
+      setTxt('hc-mold-badge', labels.highBadge);
+    } else if (risk === 'medium') {
+      mold.classList.add('hc-mold-medium');
+      setTxt('hc-mold-text', labels.medText);
+      setTxt('hc-mold-badge', labels.medBadge);
+    } else {
+      mold.classList.add('hc-mold-low');
+      setTxt('hc-mold-text', labels.lowText);
+      setTxt('hc-mold-badge', labels.lowBadge);
+    }
+  }
+
+  function readAndSync() {
+    const room = clamp(getNum('hc-room'), 1, 500);
+    const temp = clamp(getNum('hc-temp'), 5, 35);
+    const currentRH = clamp(getNum('hc-rh-c'), 20, 95);
+    const targetRH = clamp(getNum('hc-rh-t'), 30, 60);
+    const cap = clamp(getNum('hc-cap'), 1, 100);
+
+    const tarSlider = el('hc-rh-t') as HTMLInputElement | null;
+    if (tarSlider && parseFloat(tarSlider.value) !== targetRH) tarSlider.value = String(targetRH);
+    const capSlider = el('hc-cap') as HTMLInputElement | null;
+    if (capSlider && parseFloat(capSlider.value) !== cap) capSlider.value = String(cap);
+
+    const roomIn = el('hc-room') as HTMLInputElement | null;
+    if (roomIn && parseFloat(roomIn.value) !== room) roomIn.value = String(room);
+    const tempIn = el('hc-temp') as HTMLInputElement | null;
+    if (tempIn && parseFloat(tempIn.value) !== temp) tempIn.value = String(temp);
+    const curIn = el('hc-rh-c') as HTMLInputElement | null;
+    if (curIn && parseFloat(curIn.value) !== currentRH) curIn.value = String(currentRH);
+
+    return { roomM2: room, tempC: temp, currentRH, targetRH, capacityLPerDay: cap };
+  }
+
+  function update() {
+    const s = readAndSync();
+    const r = calculateHumidity(s);
+    setGauge(s.currentRH, s.targetRH, r.moldRisk);
+    setTank(r.litersToExtract);
+    const card = document.querySelector('.hc-card') as HTMLElement | null;
+    const uh = card?.dataset.uh || 'h';
+    const um = card?.dataset.um || 'm';
+    setRuntime(r.runtimeHours, r.runtimeMinutes, uh, um);
+    if (card) {
+      const highTxt = card.dataset.mh || 'High Risk';
+      const medTxt = card.dataset.mm || 'Moderate Risk';
+      const lowTxt = card.dataset.ml || 'Low Risk';
+      const highBadge = card.dataset.bh || 'High';
+      const medBadge = card.dataset.bm || 'Medium';
+      const lowBadge = card.dataset.bl || 'Low';
+      setMold(r.moldRisk, { highText: highTxt, medText: medTxt, lowText: lowTxt, highBadge, medBadge, lowBadge });
+    }
+    setTxt('hc-rh-t-val', `${s.targetRH}%`);
+    setTxt('hc-cap-val', `${s.capacityLPerDay} L/day`);
+    setTxt('hc-lbl-c', `${s.currentRH}%`);
+    setTxt('hc-lbl-t', `${s.targetRH}%`);
+    setTxt('hc-dial-num', `${s.currentRH}%`);
+  }
+
+  function bindInputs() {
+    ['hc-room', 'hc-temp', 'hc-rh-c', 'hc-rh-t', 'hc-cap'].forEach((id) => {
+      const i = el(id) as HTMLInputElement | null;
+      if (i) i.addEventListener('input', update);
+    });
+  }
+
+  function init() {
+    setTrack();
+    bindInputs();
+    update();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

@@ -29,4 +29,5 @@ export { VAMPIRE_DRAW_SIMULATOR_TOOL } from './tool/vampireDrawSimulator';
 export { DESK_ERGONOMICS_TOOL } from './tool/deskErgonomics';
 export { APPLIANCE_COST_CALCULATOR_TOOL } from './tool/applianceCostCalculator';
 export { TILE_LAYOUT_CALCULATOR_TOOL } from './tool/tileLayoutCalculator';
+export { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator';
 

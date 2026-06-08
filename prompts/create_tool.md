@@ -10,6 +10,8 @@ NO Comments in Code: Do not write any comments (// or /* */) in TypeScript, fram
 NO Emojis: Do not use emojis in code, UI text, logs, titles, metadata, or translations.
 
 2. High-Dopamine User Experience
+Tools Must Be Extremely Visual and Useful: Every tool must feel like a crafted product, not a form. Use spatial visuals, animated data representations, tactile controls and immediate feedback to make abstract numbers tangible for the user.
+
 Interactive Outcomes: Visual result banners must include detailed logical breakdowns displaying custom geometric badges or status indicators that match the exact category and context of the output.
 
 Epic Feedback Animations:
@@ -53,6 +55,8 @@ src/tool/$TOOL_ID/$TOOL_ID.css (Scoped styles)
 
 Map all i18n properties in the entry file to the English dictionary temporarily.
 
+Register only the en locale loader in the tool's entry configuration during this step. Do not add other locale loaders until Step 4.
+
 Add the new tool entry to the central registration files (indexes, categories, and routing lists).
 
 Step 2: Component Refactoring & Clean Up
@@ -61,13 +65,15 @@ Enforce strict style linting compliance: Do not use literal design values (hex, 
 Keep functions under 30 lines and source code files under 250 lines to maintain maintainability.
 
 Step 3: Verification & QA
-Run linting to check for formatting, syntax, and comment violations:
+Do not run lint or test suites automatically. Present the completed English tool to the user first and ask for feedback.
+
+Only after the user validates the baseline and explicitly requests it, run linting to check for formatting, syntax, and comment violations:
 npm run lint
 
-Run unit tests to check core mathematical, parsing, or business logic:
+Only after lint passes and the user confirms, run unit tests to check core mathematical, parsing, or business logic:
 npm run test -- --testPathIgnorePatterns=i18n_coverage
 
-After this, ask for the user's feedback.
+After this, ask for the user's final approval before proceeding to translations.
 
 Step 4: Multi-Language Translation
 Once the baseline English tool is validated by the user, translate the content to the supported production locales:
@@ -82,7 +88,7 @@ For all other locales, translate and fully localize the URL slug to its respecti
 
 Separators Validation: Double check that no titles in the translated files contain - or |.
 
-Register the loaders for the new locales in the tool's entry configuration.
+Register the loaders for the new locales in the tool's entry configuration. Add each target locale to the i18n object in the entry file.
 
 Step 5: Final Verification
 Run the complete automated lint and test suites to verify all locales and configurations are fully compliant:

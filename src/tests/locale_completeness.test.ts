@@ -17,8 +17,8 @@ describe('Locale Completeness Validation', () => {
     });
   });
 
-  it('should have 15 tools registered', () => {
-    expect(ALL_TOOLS.length).toBe(15);
+  it('should have 16 tools registered', () => {
+    expect(ALL_TOOLS.length).toBe(16);
   });
 });
 

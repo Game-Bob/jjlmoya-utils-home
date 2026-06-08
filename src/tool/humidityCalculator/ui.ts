@@ -1,0 +1,29 @@
+export interface HumidityCalculatorUI extends Record<string, string> {
+  labelRoomSize: string;
+  unitM2: string;
+  labelTemperature: string;
+  unitCelsius: string;
+  labelCurrentHumidity: string;
+  labelTargetHumidity: string;
+  labelCapacity: string;
+  unitLitersDay: string;
+  comfortDialTitle: string;
+  comfortCurrent: string;
+  comfortTarget: string;
+  tankTitle: string;
+  tankLiters: string;
+  runtimeTitle: string;
+  runtimeUnitH: string;
+  runtimeUnitM: string;
+  moldRiskTitle: string;
+  moldRiskHigh: string;
+  moldRiskMedium: string;
+  moldRiskLow: string;
+  extractionLabel: string;
+  tipEnergy: string;
+  tipMold: string;
+  unitPercent: string;
+  badgeHigh: string;
+  badgeMedium: string;
+  badgeLow: string;
+}
