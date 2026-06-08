@@ -14,6 +14,7 @@ import { VAMPIRE_DRAW_SIMULATOR_TOOL } from './tool/vampireDrawSimulator/index';
 import { DESK_ERGONOMICS_TOOL } from './tool/deskErgonomics/index';
 import { APPLIANCE_COST_CALCULATOR_TOOL } from './tool/applianceCostCalculator/index';
 import { TILE_LAYOUT_CALCULATOR_TOOL } from './tool/tileLayoutCalculator/index';
+import { LIGHTING_CALCULATOR_TOOL } from './tool/lightingCalculator/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   QR_GENERATOR_TOOL,
@@ -30,5 +31,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   DESK_ERGONOMICS_TOOL,
   APPLIANCE_COST_CALCULATOR_TOOL,
   TILE_LAYOUT_CALCULATOR_TOOL,
+  LIGHTING_CALCULATOR_TOOL,
 ];
 

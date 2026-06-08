@@ -1,0 +1,424 @@
+---
+import type { LightingCalculatorUI } from './ui';
+
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const lUI = ui as LightingCalculatorUI;
+
+const INIT_R_W = 4, INIT_R_L = 5, INIT_H = 2.7, INIT_WP = 0.8, INIT_W = 9, INIT_F = 6, INIT_D = 100;
+---
+
+<div class="lighting-wrapper">
+  <div class="lighting-card">
+    <div class="lighting-left">
+      <p class="lighting-section-title">{lUI.sectionTitle}</p>
+      <div class="lighting-field">
+        <label class="lighting-label">{lUI.labelRoomType}</label>
+        <div class="lighting-room-toggle">
+          <button class="lighting-room-btn lighting-room-active" data-room="living">{lUI.btnLiving}</button>
+          <button class="lighting-room-btn" data-room="kitchen">{lUI.btnKitchen}</button>
+          <button class="lighting-room-btn" data-room="bedroom">{lUI.btnBedroom}</button>
+          <button class="lighting-room-btn" data-room="bathroom">{lUI.btnBathroom}</button>
+          <button class="lighting-room-btn" data-room="office">{lUI.btnOffice}</button>
+          <button class="lighting-room-btn" data-room="hallway">{lUI.btnHallway}</button>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-rw">{lUI.labelRoomWidth}</label>
+        <div class="lighting-number-row">
+          <input type="number" id="lc-rw" value={INIT_R_W} min="0.1" max="50" step="0.1" class="lighting-number-input" />
+          <span class="lighting-number-unit">{lUI.unitMetricRoom}</span>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-rl">{lUI.labelRoomLength}</label>
+        <div class="lighting-number-row">
+          <input type="number" id="lc-rl" value={INIT_R_L} min="0.1" max="50" step="0.1" class="lighting-number-input" />
+          <span class="lighting-number-unit">{lUI.unitMetricRoom}</span>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-h">{lUI.labelHeight}</label>
+        <div class="lighting-number-row">
+          <input type="number" id="lc-h" value={INIT_H} min="1.5" max="10" step="0.1" class="lighting-number-input" />
+          <span class="lighting-number-unit">{lUI.unitHeight}</span>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-wp">{lUI.labelWorkPlane}</label>
+        <div class="lighting-number-row">
+          <input type="number" id="lc-wp" value={INIT_WP} min="0" max="2" step="0.1" class="lighting-number-input" />
+          <span class="lighting-number-unit">{lUI.unitHeight}</span>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label">{lUI.labelReflectance}</label>
+        <div class="lighting-reflect-toggle">
+          <button class="lighting-reflect-btn lighting-reflect-active" data-reflect="low">{lUI.btnReflectLow}</button>
+          <button class="lighting-reflect-btn" data-reflect="medium">{lUI.btnReflectMedium}</button>
+          <button class="lighting-reflect-btn" data-reflect="high">{lUI.btnReflectHigh}</button>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label">{lUI.labelBulbType}</label>
+        <div class="lighting-bulb-toggle">
+          <button class="lighting-bulb-btn lighting-bulb-active" data-bulb="led">{lUI.btnBulbLED}</button>
+          <button class="lighting-bulb-btn" data-bulb="cfl">{lUI.btnBulbCFL}</button>
+          <button class="lighting-bulb-btn" data-bulb="halogen">{lUI.btnBulbHalogen}</button>
+          <button class="lighting-bulb-btn" data-bulb="incandescent">{lUI.btnBulbIncandescent}</button>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-w">{lUI.labelBulbWatt}</label>
+        <div class="lighting-number-row">
+          <input type="number" id="lc-w" value={INIT_W} min="1" max="200" step="1" class="lighting-number-input" />
+          <span class="lighting-number-unit">{lUI.unitWatt}</span>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-f">{lUI.labelFixtures}</label>
+        <div class="lighting-number-row">
+          <input type="number" id="lc-f" value={INIT_F} min="1" max="50" step="1" class="lighting-number-input" />
+          <span class="lighting-number-unit">{lUI.unitBulbs}</span>
+        </div>
+      </div>
+      <div class="lighting-field">
+        <label class="lighting-label" for="lc-d">{lUI.labelDimmer}</label>
+        <div class="lighting-slider-row">
+          <input type="range" id="lc-d" value={INIT_D} min="10" max="100" step="5" class="lighting-slider-input" />
+          <span class="lighting-slider-value" id="lc-dv">{INIT_D}%</span>
+        </div>
+      </div>
+    </div>
+    <div class="lighting-right">
+      <div class="lighting-visual" id="lc-vis">
+        <div class="lighting-room-preview" id="lc-preview">
+          <div class="lighting-room-furniture">
+            <div class="lighting-furniture-item"></div>
+            <div class="lighting-furniture-item"></div>
+          </div>
+        </div>
+        <div class="lighting-lux-overlay" id="lc-overlay">
+          <span class="lighting-lux-value" id="lc-lux">0</span>
+          <span class="lighting-lux-unit">{lUI.unitLux}</span>
+        </div>
+      </div>
+      <div class="lighting-result-badge" id="lc-rb">{lUI.resultBadge}</div>
+      <div class="lighting-stats">
+        <div class="lighting-stat">
+          <p class="lighting-stat-label">{lUI.labelTargetLux}</p>
+          <p id="lc-tl" class="lighting-stat-value">0</p>
+        </div>
+        <div class="lighting-stat-divider"></div>
+        <div class="lighting-stat">
+          <p class="lighting-stat-label">{lUI.labelRequiredLumens}</p>
+          <p id="lc-rlm" class="lighting-stat-value">0</p>
+        </div>
+        <div class="lighting-stat-divider"></div>
+        <div class="lighting-stat">
+          <p class="lighting-stat-label">{lUI.labelCurrentLux}</p>
+          <p id="lc-cl" class="lighting-stat-value">0</p>
+        </div>
+        <div class="lighting-stat-divider"></div>
+        <div class="lighting-stat">
+          <p class="lighting-stat-label">{lUI.labelBulbsNeeded}</p>
+          <p id="lc-bn" class="lighting-stat-value">0</p>
+        </div>
+      </div>
+      <div class="lighting-tips" id="lc-tips">
+        <p class="lighting-tip" id="lc-tip">{lUI.tipAmbient}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .lighting-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .lighting-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: var(--bg-surface);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .lighting-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+  }
+  .lighting-field {
+    margin-bottom: 1rem;
+  }
+  .lighting-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+  .lighting-room-toggle, .lighting-reflect-toggle, .lighting-bulb-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .lighting-room-btn, .lighting-reflect-btn, .lighting-bulb-btn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+  .lighting-room-btn:hover, .lighting-reflect-btn:hover, .lighting-bulb-btn:hover {
+    border-color: var(--accent-color);
+  }
+  .lighting-room-active, .lighting-reflect-active, .lighting-bulb-active {
+    background: var(--accent-color);
+    color: var(--bg-surface);
+    border-color: var(--accent-color);
+  }
+  .lighting-number-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .lighting-number-input {
+    width: 100px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+  }
+  .lighting-number-unit {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  .lighting-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .lighting-slider-input {
+    flex: 1;
+  }
+  .lighting-slider-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    min-width: 3rem;
+    text-align: right;
+  }
+  .lighting-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1a1a2e;
+    transition: background 0.3s;
+  }
+  .lighting-room-preview {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .lighting-furniture-item {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+  .lighting-lux-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--bg-surface);
+  }
+  .lighting-lux-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .lighting-lux-unit {
+    font-size: 0.875rem;
+    margin-left: 0.25rem;
+  }
+  .lighting-result-badge {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    background: var(--bg-muted);
+    color: var(--text-primary);
+  }
+  .lighting-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .lighting-stat {
+    text-align: center;
+  }
+  .lighting-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .lighting-stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.25rem 0 0;
+  }
+  .lighting-stat-divider {
+    display: none;
+  }
+  .lighting-tips {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: var(--bg-muted);
+  }
+  .lighting-tip {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  .lighting-status-optimal {
+    background: var(--success-color);
+    color: var(--bg-surface);
+  }
+  .lighting-status-insufficient {
+    background: var(--warning-color);
+    color: var(--bg-surface);
+  }
+  .lighting-status-excess {
+    background: var(--danger-color);
+    color: var(--bg-surface);
+  }
+
+  @media (max-width: 768px) {
+    .lighting-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { calculateLighting } from './logic';
+  
+
+  let roomType = 'living';
+  let reflectance: 'low' | 'medium' | 'high' = 'low';
+  let bulbType = 'led';
+
+  function el(id: string) { return document.getElementById(id); }
+  function setTxt(id: string, v: string) { const e = el(id); if (e) e.textContent = v; }
+  function getNum(id: string): number { const e = el(id) as HTMLInputElement | null; return e ? parseFloat(e.value) || 0 : 0; }
+
+  function calculate() {
+    const r = calculateLighting({
+      roomWidthM: getNum('lc-rw'),
+      roomLengthM: getNum('lc-rl'),
+      roomHeightM: getNum('lc-h'),
+      workPlaneM: getNum('lc-wp'),
+      roomType,
+      reflectance,
+      bulbType,
+      bulbWatt: getNum('lc-w'),
+      fixtures: getNum('lc-f'),
+      dimmer: getNum('lc-d'),
+    });
+    setTxt('lc-tl', String(r.targetLux));
+    setTxt('lc-rlm', String(r.requiredLumens));
+    setTxt('lc-cl', String(r.currentLux));
+    setTxt('lc-bn', String(r.bulbsNeeded));
+    setTxt('lc-lux', String(r.currentLux));
+    const rb = el('lc-rb');
+    const vis = el('lc-vis');
+    const tip = el('lc-tip');
+    const statusLabels: Record<string, string> = { optimal: 'Optimal', insufficient: 'Insufficient', excess: 'Excess' };
+    const statusTips: Record<string, string> = {
+      insufficient: 'Add more fixtures or higher wattage bulbs.',
+      excess: 'Consider dimming or reducing fixtures.',
+      optimal: 'Lighting levels are well balanced.',
+    };
+    if (rb) {
+      rb.className = `lighting-result-badge lighting-status-${r.status}`;
+      rb.textContent = statusLabels[r.status] || 'Optimal';
+    }
+    if (vis) {
+      const brightness = Math.min(r.currentLux / 1000, 1);
+      vis.style.background = `rgb(${26 + 229 * brightness}, ${26 + 229 * brightness}, ${46 + 209 * brightness})`;
+    }
+    if (tip) {
+      tip.textContent = statusTips[r.status] || 'Lighting levels are well balanced.';
+    }
+  }
+
+  function setRoom(type: string) {
+    roomType = type;
+    document.querySelectorAll('.lighting-room-btn').forEach((b) => b.classList.toggle('lighting-room-active', (b as HTMLElement).dataset.room === type));
+    calculate();
+  }
+
+  function setReflect(ref: 'low' | 'medium' | 'high') {
+    reflectance = ref;
+    document.querySelectorAll('.lighting-reflect-btn').forEach((b) => b.classList.toggle('lighting-reflect-active', (b as HTMLElement).dataset.reflect === ref));
+    calculate();
+  }
+
+  function setBulb(type: string) {
+    bulbType = type;
+    document.querySelectorAll('.lighting-bulb-btn').forEach((b) => b.classList.toggle('lighting-bulb-active', (b as HTMLElement).dataset.bulb === type));
+    calculate();
+  }
+
+  function init() {
+    document.querySelectorAll('.lighting-room-btn').forEach((b) => {
+      b.addEventListener('click', () => setRoom((b as HTMLElement).dataset.room || 'living'));
+    });
+    document.querySelectorAll('.lighting-reflect-btn').forEach((b) => {
+      b.addEventListener('click', () => setReflect((b as HTMLElement).dataset.reflect as 'low' | 'medium' | 'high'));
+    });
+    document.querySelectorAll('.lighting-bulb-btn').forEach((b) => {
+      b.addEventListener('click', () => setBulb((b as HTMLElement).dataset.bulb || 'led'));
+    });
+    ['lc-rw', 'lc-rl', 'lc-h', 'lc-wp', 'lc-w', 'lc-f'].forEach((id) => {
+      const e = el(id);
+      if (e) e.addEventListener('input', calculate);
+    });
+    const d = el('lc-d');
+    if (d) {
+      d.addEventListener('input', () => {
+        const dv = el('lc-dv');
+        if (dv) dv.textContent = `${(d as HTMLInputElement).value}%`;
+        calculate();
+      });
+    }
+    calculate();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

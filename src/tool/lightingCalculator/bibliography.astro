@@ -1,0 +1,36 @@
+---
+import type { BibliographyEntry } from '../../types';
+import { bibliography } from './bibliography';
+
+interface Props {
+  title?: string;
+  links?: BibliographyEntry[];
+}
+
+const { links = bibliography } = Astro.props;
+---
+
+<ul class="lighting-bibliography">
+  {links.map((link) => (
+    <li>
+      <a href={link.url} target="_blank" rel="noopener noreferrer">
+        {link.name}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .lighting-bibliography {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .lighting-bibliography li {
+    margin-bottom: 0.5rem;
+  }
+  .lighting-bibliography a {
+    color: var(--text-primary);
+    text-decoration: underline;
+  }
+</style>
