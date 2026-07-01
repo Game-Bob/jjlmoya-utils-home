@@ -329,8 +329,8 @@
   gap: 10px;
   padding: 10px 16px;
   border-radius: 12px;
-  background: var(--tile-bg-glow);
-  border: 1px solid var(--tile-stroke);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   width: 100%;
   max-width: 320px;
 }
