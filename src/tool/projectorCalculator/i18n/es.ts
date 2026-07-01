@@ -20,7 +20,7 @@ const faqData = [
       'Depende del Throw Ratio de tu proyector. Con un ratio estándar de 1.5:1 necesitarías unos 3.3m. Con un proyector de tiro corto (Short Throw) podrías lograrlo a menos de 1m.',
   },
   {
-    question: '¿Qué diferencia hay entre 16:9 y 4:3?',
+    question: '¿Qué diferencia hay entre el formato 16/9 y el 4/3?',
     answer:
       '16:9 es el formato panorámico para películas y series modernas. 4:3 es el formato clásico para presentaciones y retroproyectores. Elegir el correcto evita bordes negros excesivos.',
   },

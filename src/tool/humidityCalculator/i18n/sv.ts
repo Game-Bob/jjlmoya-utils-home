@@ -6,65 +6,65 @@ import { bibliography } from '../bibliography';
 const slug = 'luftfuktighetskalkylator';
 const title = 'Hemluftfuktighet och Avfuktare Drifttid Estimator';
 const description =
-  'Berakna hur mycket vatten din avfuktare maste avlagsna for att fora ett fuktigt rum till en halsosam luftfuktighetsniva. Se beraknad drifttid, mogelriskvarningar och komfortzonsvisualiseringar i ett interaktivt verktyg.';
+  'Beräkna hur mycket vatten din avfuktare måste avlägsna för att föra ett fuktigt rum till en hälsosam luftfuktighetsnivå. Se beräknad drifttid, mögelriskvarningar och komfortzonsvisualiseringar i ett interaktivt verktyg.';
 
 const faqData = [
   {
-    question: 'Hur lange ska en avfuktare ga per dag?',
+    question: 'Hur länge ska en avfuktare gå per dag?',
     answer:
-      'I ett mattligt fuktigt rum behover en standard hushallsavfuktare vanligtvis ga mellan 8 och 12 timmar per dag for att bibehalla 50 procent relativ luftfuktighet. Vid mycket fuktiga forhallanden eller efter vattenskador kan kontinuerlig drift i 24 till 48 timmar vara nodvandig for att uppna baslinjetorrhet.',
+      'I ett måttligt fuktigt rum behöver en standard hushållsavfuktare vanligtvis gå mellan 8 och 12 timmar per dag för att bibehålla 50 procent relativ luftfuktighet. Vid mycket fuktiga förhållanden eller efter vattenskador kan kontinuerlig drift i 24 till 48 timmar vara nödvändig för att uppnå baslinjetorrhet.',
   },
   {
-    question: 'Vilken inomhusluftfuktighetsniva forhindrar mogel?',
+    question: 'Vilken inomhusluftfuktighetsnivå förhindrar mögel?',
     answer:
-      'Mogelvaxt hammas nar inomhus relativ luftfuktighet halls under 60 procent. Den ideala komfortzonen for manniskors halsa och byggnadens bevarande ligger mellan 40 och 50 procent relativ luftfuktighet. Nivaer over 70 procent skapar en hogriskmiljo for mogelsporer att gro inom 24 till 48 timmar.',
+      'Mögelväxt hämmas när inomhus relativ luftfuktighet hålls under 60 procent. Den ideala komfortzonen för människors hälsa och byggnadens bevarande ligger mellan 40 och 50 procent relativ luftfuktighet. Nivåer över 70 procent skapar en högriskmiljö för mögelsporer att gro inom 24 till 48 timmar.',
   },
   {
-    question: 'Hur mycket vatten kan luft halla?',
+    question: 'Hur mycket vatten kan luft hålla?',
     answer:
-      'Mangden vattenanga luft kan halla beror pa temperaturen. Vid 20 grader Celsius innehaller mattad luft cirka 17 gram vatten per kubikmeter. Vid 25 grader Celsius stiger detta till ungefar 23 gram per kubikmeter. Ett 30 kvadratmeter stort rum vid 25 grader Celsius och 70 procent luftfuktighet innehaller ungefar 8 liter osynligt vatten i luften.',
+      'Mängden vattenånga luft kan hålla beror på temperaturen. Vid 20 grader Celsius innehåller mättad luft cirka 17 gram vatten per kubikmeter. Vid 25 grader Celsius stiger detta till ungefär 23 gram per kubikmeter. Ett 30 kvadratmeter stort rum vid 25 grader Celsius och 70 procent luftfuktighet innehåller ungefär 8 liter osynligt vatten i luften.',
   },
   {
-    question: 'Paverkar temperatur avfuktarens effektivitet?',
+    question: 'Påverkar temperatur avfuktarens effektivitet?',
     answer:
-      'Ja. Kompressorbaserade avfuktare fungerar blast over 18 grader Celsius. Under 15 grader Celsius sjunker deras prestanda eftersom forangarspolar kan frysa over. Dessicant avfuktare ar battre lamplade for kalla utrymmen som garage eller kallare eftersom de anvander en kemisk torkningsprocess istallet for kondensering.',
+      'Ja. Kompressorbaserade avfuktare fungerar bäst över 18 grader Celsius. Under 15 grader Celsius sjunker deras prestanda eftersom förångarspolar kan frysa över. Dessicant avfuktare är bättre lämpade för kalla utrymmen som garage eller källare eftersom de använder en kemisk torkningsprocess istället för kondensering.',
   },
   {
-    question: 'Vilken storlek pa avfuktare behover jag?',
+    question: 'Vilken storlek på avfuktare behöver jag?',
     answer:
-      'For ett mattligt fuktigt rum upp till 50 kvadratmeter racker vanligtvis en enhet pa 10 till 12 liter per dag. For mycket fuktiga rum eller utrymmen over 50 kvadratmeter, valj en 20 liter per dag modell. Efter oversvamning eller svar fuktighet aterstaller en industriell enhet pa 30 liter per dag forhallandena snabbare.',
+      'För ett måttligt fuktigt rum upp till 50 kvadratmeter räcker vanligtvis en enhet på 10 till 12 liter per dag. För mycket fuktiga rum eller utrymmen över 50 kvadratmeter, välj en 20 liter per dag modell. Efter översvämning eller svår fuktighet återställer en industriell enhet på 30 liter per dag förhållandena snabbare.',
   },
   {
-    question: 'Kan en avfuktare torka tvatt?',
+    question: 'Kan en avfuktare torka tvätt?',
     answer:
-      'Ja. En avfuktare med tvattlage kan effektivt torka klader inomhus samtidigt som den avlagsnar fukt fran omgivande luft. Den anvander mindre energi an en torktumlare och forhindrar kondens pa fonster och vaggar. Forvanta dig torktider liknande utomhus torkning i varmt vader.',
+      'Ja. En avfuktare med tvättläge kan effektivt torka kläder inomhus samtidigt som den avlägsnar fukt från omgivande luft. Den använder mindre energi än en torktumlare och förhindrar kondens på fönster och väggar. Förvänta dig torktider liknande utomhus torkning i varmt väder.',
   },
 ];
 
 const howToData = [
   {
     name: 'Ange rumsstorlek',
-    text: 'Skriv in golvytan pa rummet i kvadratmeter. Kalkylatorn forutsatter en standard takhojd pa 2,5 meter for att uppskatta total luftvolym.',
+    text: 'Skriv in golvytan på rummet i kvadratmeter. Kalkylatorn förutsätter en standard takhöjd på 2,5 meter för att uppskatta total luftvolym.',
   },
   {
-    name: 'Stall in temperatur',
-    text: 'Mata in aktuell rumstemperatur i grader Celsius. Varmare luft hallmer fukt, sa temperaturen paverkar direkt hur mycket vatten som maste avlagsnas.',
+    name: 'Ställ in temperatur',
+    text: 'Mata in aktuell rumstemperatur i grader Celsius. Varmare luft håller mer fukt, så temperaturen påverkar direkt hur mycket vatten som måste avlägsnas.',
   },
   {
-    name: 'Valj aktuell luftfuktighet',
-    text: 'Anvand komfortreglaget eller numerisk inmatning for att stalla in aktuell procent relativ luftfuktighet. Varden over 60 procent markeras i varningsfarger.',
+    name: 'Välj aktuell luftfuktighet',
+    text: 'Använd komfortreglaget eller numerisk inmatning för att ställa in aktuell procent relativ luftfuktighet. Värden över 60 procent markeras i varningsfärger.',
   },
   {
-    name: 'Valj malluftfuktighet',
-    text: 'Stall in onskad relativ luftfuktighet. 50 procent rekommenderas for komfort och mogelforebyggande. 40 procent ar idealiskt for allergiker.',
+    name: 'Välj målluftfuktighet',
+    text: 'Ställ in önskad relativ luftfuktighet. 50 procent rekommenderas för komfort och mögelförebyggande. 40 procent är idealiskt för allergiker.',
   },
   {
     name: 'Mata in avfuktarkapacitet',
-    text: 'Ange avfuktarens kapacitet i liter per dag. Detta star vanligtvis pa framsidans etikett eller i bruksanvisningen.',
+    text: 'Ange avfuktarens kapacitet i liter per dag. Detta står vanligtvis på framsidans etikett eller i bruksanvisningen.',
   },
   {
     name: 'Granska resultat',
-    text: 'Las vattenavlagsningssimuleringen, drifttidsuppskattningen och mogelriskbannern for att besluta hur lange du ska kora din apparat.',
+    text: 'Läs vattenavlagsningssimuleringen, drifttidsuppskattningen och mögelriskbannern för att besluta hur länge du ska köra din apparat.',
   },
 ];
 
@@ -112,45 +112,45 @@ export const content: ToolLocaleContent<HumidityCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Det dolda vattnet i dina vaggar',
+      text: 'Det dolda vattnet i dina väggar',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'De flesta husagare inser aldrig att fuktig luft inte bara ar obekvam, utan ocksa dyr och farlig. Ett enda fuktigt rum kan halla flera liter osynlig vattenanga. Med tiden kondenserar denna fukt pa kalla ytor, ger naring at mogelkolonier och forsamar puts, farg och timmer. Att forsta exakt hur mycket vatten som maste avlagsnas och hur lang tid det tar ar det forsta steget for att skydda ditt hem och din halsa.',
+      html: 'De flesta husägare inser aldrig att fuktig luft inte bara är obekväm, utan också dyr och farlig. Ett enda fuktigt rum kan hålla flera liter osynlig vattenånga. Med tiden kondenserar denna fukt på kalla ytor, ger näring åt mögelkolonier och försämrar puts, färg och timmer. Att förstå exakt hur mycket vatten som måste avlägsnas och hur lång tid det tar är det första steget för att skydda ditt hem och din hälsa.',
     },
     {
       type: 'stats',
       items: [
         { value: '50%', label: 'Ideal inomhusluftfuktighet', icon: 'mdi:water-percent' },
         { value: '8h', label: 'Genomsnittlig daglig drifttid', icon: 'mdi:timer-outline' },
-        { value: '70%', label: 'Mogelriskgrans', icon: 'mdi:alert-outline' },
+        { value: '70%', label: 'Mögelriskgräns', icon: 'mdi:alert-outline' },
       ],
       columns: 3,
     },
     {
       type: 'title',
-      text: 'Varfor relativ luftfuktighet spelar roll',
+      text: 'Varför relativ luftfuktighet spelar roll',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Relativ luftfuktighet ar inte mangden vatten i luften, det ar procentandelen vatten som luften haller i forhallande till maximalt vad den skulle kunna halla vid den temperaturen. Varm luft ar som en storre svamp. Vid 30 grader Celsius kan luft halla nastan dubbelt sa mycket fukt som vid 15 grader Celsius. Det ar darfor ett rum kannas klibbigt aven efter att du har oppnat fonstren. Fuktigheten ar fortfarande dar, bara mindre synlig.',
+      html: 'Relativ luftfuktighet är inte mängden vatten i luften, det är procentandelen vatten som luften håller i förhållande till maximalt vad den skulle kunna hålla vid den temperaturen. Varm luft är som en större svamp. Vid 30 grader Celsius kan luft hålla nästan dubbelt så mycket fukt som vid 15 grader Celsius. Det är därför ett rum känns klibbigt även efter att du har öppnat fönstren. Fuktigheten är fortfarande där, bara mindre synlig.',
     },
     {
       type: 'comparative',
       items: [
         {
-          title: 'Hog luftfuktighet',
-          description: 'Over 60 procent relativ luftfuktighet. Risk for mogel, kvalster och kondensationsskador.',
+          title: 'Hög luftfuktighet',
+          description: 'Över 60 procent relativ luftfuktighet. Risk för mögel, kvalster och kondensationsskador.',
           icon: 'mdi:alert',
-          points: ['Kondens pa fonster och vaggar', 'Instangda lukter och mikrobiell tillvaxt', 'Okad andningsirritation', 'Hogre uppvarmningskostnader pa grund av termisk ledningsformaga hos fuktig luft'],
+          points: ['Kondens på fönster och väggar', 'Instängda lukter och mikrobiell tillväxt', 'Ökad andningsirritation', 'Högre uppvärmningskostnader på grund av termisk ledningsförmåga hos fuktig luft'],
         },
         {
           title: 'Optimal luftfuktighet',
-          description: 'Mellan 40 och 50 procent relativ luftfuktighet. Bekvamt, halsosamt och energieffektivt.',
+          description: 'Mellan 40 och 50 procent relativ luftfuktighet. Bekvämt, hälsosamt och energieffektivt.',
           icon: 'mdi:check-circle',
-          points: ['Ingen kondens pa kalla ytor', 'Mogelsporer forblir vilande', 'Hud och andningskomfort', 'Bevarande av mobler och virke'],
+          points: ['Ingen kondens på kalla ytor', 'Mögelsporer förblir vilande', 'Hud och andningskomfort', 'Bevarande av möbler och virke'],
         },
       ],
       columns: 2,
@@ -160,58 +160,58 @@ export const content: ToolLocaleContent<HumidityCalculatorUI> = {
       variant: 'info',
       title: 'Snabb fuktighetskontroll',
       icon: 'mdi:clipboard-check',
-      badge: 'Atgard',
-      html: '<p style="margin:0">Kontrollera fonster efter kondensering varje morgon. Om droppar visas regelbundet ar din luftfuktighet for hog. Kor en avfuktare i 12 timmar dagligen tills kondenseringen upphor. Flytta enheten till det fuktigaste rummet, vanligtvis koket, badrummet eller kallaren. Tom tanken dagligen och rengor filtret varannan vecka.</p>',
+      badge: 'Åtgärd',
+      html: '<p style="margin:0">Kontrollera fönster efter kondensering varje morgon. Om droppar visas regelbundet är din luftfuktighet för hög. Kör en avfuktare i 12 timmar dagligen tills kondenseringen upphör. Flytta enheten till det fuktigaste rummet, vanligtvis köket, badrummet eller källaren. Töm tanken dagligen och rengör filtret varannan vecka.</p>',
     },
     {
       type: 'title',
-      text: 'Ratt dimensionering av din avfuktare',
+      text: 'Rätt dimensionering av din avfuktare',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Ett vanligt misstag ar att kopa en avfuktare som ar for liten for utrymmet. En 10 liter per dag maskin i en 60 kvadratmeter fuktig kallare kommer att ga kontinuerligt utan att nagonsin na malluftfuktigheten. Anvand denna kalkylator for att se den exakta avfuktningsvolymen ditt rum kraver. Om drifttidsuppskattningen overstiger 20 timmar per dag behover du en enhet med storre kapacitet eller battre ventilation.',
+      html: 'Ett vanligt misstag är att köpa en avfuktare som är för liten för utrymmet. En 10 liter per dag maskin i en 60 kvadratmeter fuktig källare kommer att gå kontinuerligt utan att någonsin nå målluftfuktigheten. Använd denna kalkylator för att se den exakta avfuktningsvolymen ditt rum kräver. Om drifttidsuppskattningen överstiger 20 timmar per dag behöver du en enhet med större kapacitet eller bättre ventilation.',
     },
     {
       type: 'summary',
-      title: 'Hur du haller ditt hem torrt',
+      title: 'Hur du håller ditt hem torrt',
       items: [
-        'Anvand denna kalkylator for att faststalla den exakta vattenavfuktning som behovs for varje rum.',
-        'Underhall inomhus relativ luftfuktighet mellan 40 och 50 procent for halsa och komfort.',
-        'Kor avfuktaren tills mogelriskbannern blir gron.',
-        'Tom vattentanken innan den fylls for att forhindra automatisk avstangning.',
-        'Rengor filter regelbundet for att halla luftflode och avfuktningstakt pa maximum.',
-        'Forbattr rumsventilationen vid sidan av avfuktning for snabbare resultat.',
+        'Använd denna kalkylator för att fastställa den exakta vattenavfuktning som behövs för varje rum.',
+        'Underhåll inomhus relativ luftfuktighet mellan 40 och 50 procent för hälsa och komfort.',
+        'Kör avfuktaren tills mögelriskbannern blir grön.',
+        'Töm vattentanken innan den fylls för att förhindra automatisk avstängning.',
+        'Rengör filter regelbundet för att hålla luftflöde och avfuktningstakt på maximum.',
+        'Förbättra rumsventilationen vid sidan av avfuktning för snabbare resultat.',
       ],
     },
   ],
   ui: {
     labelRoomSize: 'Rumsstorlek',
-    unitM2: 'm2',
+    unitM2: 'm²',
     labelTemperature: 'Temperatur',
     unitCelsius: '°C',
     labelCurrentHumidity: 'Aktuell luftfuktighet',
-    labelTargetHumidity: 'Malluftfuktighet',
+    labelTargetHumidity: 'Målluftfuktighet',
     labelCapacity: 'Avfuktarkapacitet',
     unitLitersDay: 'L/dag',
     comfortDialTitle: 'Komfortzon',
     comfortCurrent: 'Aktuell',
-    comfortTarget: 'Mal',
+    comfortTarget: 'Mål',
     tankTitle: 'Vatten i luften',
     tankLiters: 'liter',
-    runtimeTitle: 'Beraknad drifttid',
+    runtimeTitle: 'Beräknad drifttid',
     runtimeUnitH: 't',
     runtimeUnitM: 'm',
-    moldRiskTitle: 'Mogelrisk',
-    moldRiskHigh: 'Hog risk',
-    moldRiskMedium: 'Mattlig risk',
-    moldRiskLow: 'Lag risk',
-    extractionLabel: 'att avlagsna',
-    tipEnergy: 'Att kora din avfuktare under laglasttimmar kan sanka elrakningen avsevart.',
-    tipMold: 'Att halla luftfuktigheten under 50 procent forhindrar att mogelsporer gror pa ytor.',
+    moldRiskTitle: 'Mögelrisk',
+    moldRiskHigh: 'Hög risk',
+    moldRiskMedium: 'Måttlig risk',
+    moldRiskLow: 'Låg risk',
+    extractionLabel: 'att avlägsna',
+    tipEnergy: 'Att köra din avfuktare under låglasttimmar kan sänka elräkningen avsevärt.',
+    tipMold: 'Att hålla luftfuktigheten under 50 procent förhindrar att mögelsporer gror på ytor.',
     unitPercent: '%',
-    badgeHigh: 'Hog',
-    badgeMedium: 'Mattlig',
-    badgeLow: 'Lag',
+    badgeHigh: 'Hög',
+    badgeMedium: 'Måttlig',
+    badgeLow: 'Låg',
   },
 };

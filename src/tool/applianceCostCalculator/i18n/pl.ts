@@ -4,67 +4,67 @@ import type { ApplianceCostCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-kosztow-urzadzen';
-const title = 'Kalkulator Kosztow na Cykl Urzadzen Domowych';
+const title = 'Kalkulator Kosztów na Cykl Urządzeń Domowych';
 const description =
-  'Oblicz rzeczywisty koszt kazdego prania w pralce, zmywarce i suszarce. Zobacz dokladnie, ile energii elektrycznej, wody i srodka czyszczacego kosztuje kazdy cykl i odkryj, ile mozesz zaoszczedzic, przechodzac w tryb Eco.';
+  'Oblicz rzeczywisty koszt każdego prania w pralce, zmywarce i suszarce. Zobacz dokładnie, ile energii elektrycznej, wody i środka czyszczącego kosztuje każdy cykl i odkryj, ile możesz zaoszczędzić, przechodząc w tryb Eco.';
 
 const faqData = [
   {
     question: 'Ile kosztuje cykl prania w pralce?',
     answer:
-      'Typowy cykl Eco w 40C zuzywa okolo 0,45 kWh energii elektrycznej i 40 litrow wody. Przy przecietnych europejskich cenach kosztuje to okolo 0,10 do 0,15 euro na pranie. Cykl intensywny w 60C moze zuzywac ponad 1,2 kWh i 70 litrow, podnoszac koszt powyzej 0,30 euro.',
+      'Typowy cykl Eco w 40°C zużywa około 0,45 kWh energii elektrycznej i 40 litrów wody. Przy przeciętnych europejskich cenach kosztuje to około 0,10 do 0,15 euro na pranie. Cykl intensywny w 60°C może zużywać ponad 1,2 kWh i 70 litrów, podnosząc koszt powyżej 0,30 euro.',
   },
   {
-    question: 'Czy korzystanie ze zmywarki w nocy jest tansze?',
+    question: 'Czy korzystanie ze zmywarki w nocy jest tańsze?',
     answer:
-      'Jesli Twoj dostawca energii elektrycznej stosuje taryfy z roznicowaniem godzinowym, uruchamianie zmywarki poza szczytem moze obnizyc koszt energii o 30 procent lub wiecej. Godziny szczytu to zazwyczaj poranki i wieczory w dni powszednie.',
+      'Jeśli Twój dostawca energii elektrycznej stosuje taryfy z różnicowaniem godzinowym, uruchamianie zmywarki poza szczytem może obniżyć koszt energii o 30 procent lub więcej. Godziny szczytu to zazwyczaj poranki i wieczory w dni powszednie.',
   },
   {
-    question: 'Czy suszarka zuzywa duzo pradu?',
+    question: 'Czy suszarka zużywa dużo prądu?',
     answer:
-      'Tak. Suszarka jest jednym z najbardziej energochlonnych urzadzen domowych. Pelne pranie moze zuzywac od 2,5 do 3,5 kWh, kosztujac od 0,50 do 0,80 euro na cykl. Uzycie suszarki z pompa ciepla lub suszenie odziezy na zewnatrz moze obnizyc ten koszt o 60 do 80 procent.',
+      'Tak. Suszarka jest jednym z najbardziej energochłonnych urządzeń domowych. Pełne pranie może zużywać od 2,5 do 3,5 kWh, kosztując od 0,50 do 0,80 euro na cykl. Użycie suszarki z pompą ciepła lub suszenie odzieży na zewnątrz może obniżyć ten koszt o 60 do 80 procent.',
   },
   {
-    question: 'Ile wody zuzywa zmywarka?',
+    question: 'Ile wody zużywa zmywarka?',
     answer:
-      'Nowoczesne zmywarki sa zaskakujaco wydajne. Standardowy cykl Eco zuzywa tylko 8 do 12 litrow wody na pranie, podczas gdy program intensywny moze zuzywac 14 do 16 litrow. Jest to znacznie mniej niz mycie tych samych naczyn recznie pod biezaca woda, co zazwyczaj zuzywa 40 do 60 litrow.',
+      'Nowoczesne zmywarki są zaskakująco wydajne. Standardowy cykl Eco zużywa tylko 8 do 12 litrów wody na pranie, podczas gdy program intensywny może zużywać 14 do 16 litrów. Jest to znacznie mniej niż mycie tych samych naczyń ręcznie pod bieżącą wodą, co zazwyczaj zużywa 40 do 60 litrów.',
   },
   {
-    question: 'Jaka jest najtansza pora na korzystanie z urzadzen?',
+    question: 'Jaka jest najtańsza pora na korzystanie z urządzeń?',
     answer:
-      'Przy taryfach z roznicowaniem godzinowym najtansze okresy to zazwyczec pozna noc, bardzo wczesny ranek i weekendy. Te okresy poza szczytem moga byc o 30 do 50 procent tansze niz szczytowe godziny w dni powszednie.',
+      'Przy taryfach z różnicowaniem godzinowym najtańsze okresy to zazwyczaj późna noc, bardzo wczesny ranek i weekendy. Te okresy poza szczytem mogą być o 30 do 50 procent tańsze niż szczytowe godziny w dni powszednie.',
   },
   {
-    question: 'Czy przejscie w tryb Eco naprawde pozwala zaoszczedzic?',
+    question: 'Czy przejście w tryb Eco naprawdę pozwala zaoszczędzić?',
     answer:
-      'Absolutnie. Tryby Eco wykorzystuja nizsze temperatury, krotsze fazy nagrzewania i mniej wody. Przez caly rok, przechodzenie z Normalnego na Eco w pralce i zmywarce moze zaoszczedzic od 50 do 100 euro lacznie na energii elektrycznej i wodzie, w zaleznosci od czestotliwosci uzycia i lokalnych cen.',
+      'Absolutnie. Tryby Eco wykorzystują niższe temperatury, krótsze fazy nagrzewania i mniej wody. Przez cały rok, przechodzenie z Normalnego na Eco w pralce i zmywarce może zaoszczędzić od 50 do 100 euro łącznie na energii elektrycznej i wodzie, w zależności od częstotliwości użycia i lokalnych cen.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Wybierz urzadzenie',
-    text: 'Dotknij ikony pralki, zmywarki lub suszarki u gory kalkulatora. Kazde urzadzenie ma inny profil zuycia energii i wody.',
+    name: 'Wybierz urządzenie',
+    text: 'Dotknij ikony pralki, zmywarki lub suszarki u góry kalkulatora. Każde urządzenie ma inny profil zużycia energii i wody.',
   },
   {
     name: 'Wybierz typ cyklu',
-    text: 'Uzyj suwaka Eco, Normalny lub Intensywny, aby ustawic program prania. Eco zuzywa mniej energii i wody. Intensywny zuzywa najwiecej.',
+    text: 'Użyj suwaka Eco, Normalny lub Intensywny, aby ustawić program prania. Eco zużywa mniej energii i wody. Intensywny zużywa najwięcej.',
   },
   {
-    name: 'Wprowadz lokalne ceny',
-    text: 'Wpisz cene energii elektrycznej za kWh i cene wody za litro. Mozesz je znalezc na rachunku lub na stronie dostawcy.',
+    name: 'Wprowadź lokalne ceny',
+    text: 'Wpisz cenę energii elektrycznej za kWh i cenę wody za litr. Możesz je znaleźć na rachunku lub na stronie dostawcy.',
   },
   {
-    name: 'Ustaw czestotliwosc uzycia',
-    text: 'Podaj, ile cykli uruchamiasz w tygodniu. Pozwala to kalkulatorowi oszacowac koszt roczny i potencjalne oszczednosci.',
+    name: 'Ustaw częstotliwość użycia',
+    text: 'Podaj, ile cykli uruchamiasz w tygodniu. Pozwala to kalkulatorowi oszacować koszt roczny i potencjalne oszczędności.',
   },
   {
-    name: 'Wybierz godzine uzycia',
-    text: 'Wybierz godzine, w ktorej planujesz uruchomic urzadzenie. Godziny szczytu sa podswietlone na czerwono. Godziny poza szczytem sa zielone i tansze, jesli masz taryfe z roznicowaniem godzinowym.',
+    name: 'Wybierz godzinę użycia',
+    text: 'Wybierz godzinę, w której planujesz uruchomić urządzenie. Godziny szczytu są podświetlone na czerwono. Godziny poza szczytem są zielone i tańsze, jeśli masz taryfę z różnicowaniem godzinowym.',
   },
   {
-    name: 'Wlacz koszty srodka czyszczacego',
-    text: 'Wlacz przelacznik srodka czyszczacego, jesli chcesz, aby rachunek zawieral szacunek proszku, plynu lub kapsulek na cykl.',
+    name: 'Włącz koszty środka czyszczącego',
+    text: 'Włącz przełącznik środka czyszczącego, jeśli chcesz, aby rachunek zawierał szacunek proszku, płynu lub kapsułek na cykl.',
   },
 ];
 
@@ -112,45 +112,45 @@ export const content: ToolLocaleContent<ApplianceCostCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Ukryty Koszt Kazdego Prania',
+      text: 'Ukryty Koszt Każdego Prania',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Wiekszosc osob nie ma pojecia, ile rzeczywiscie kosztuje cykl prania w pralce. Widza kwartalny rachunek za energie elektryczna i zakladaja, ze urzadzenia sa tanie w eksploatacji. Rzeczywistosc jest taka, ze rodzina wykonujaca piec pran w tygodniu moze wydawac ponad 200 euro rocznie tylko na pranie. Dodajmy zmywarke trzy razy w tygodniu i suszarke dwa razy, a suma przekracza 500 euro rocznie. Ten kalkulator szczegolowo analizuje kazdy grosz, aby zoptymalizowac Twoje nawyki.',
+      html: 'Większość osób nie ma pojęcia, ile rzeczywiście kosztuje cykl prania w pralce. Widzą kwartalny rachunek za energię elektryczną i zakładają, że urządzenia są tanie w eksploatacji. Rzeczywistość jest taka, że rodzina wykonująca pięć prań w tygodniu może wydawać ponad 200 euro rocznie tylko na pranie. Dodajmy zmywarkę trzy razy w tygodniu i suszarkę dwa razy, a suma przekracza 500 euro rocznie. Ten kalkulator szczegółowo analizuje każdy grosz, aby zoptymalizować Twoje nawyki.',
     },
     {
       type: 'stats',
       items: [
         { value: '0,45', label: 'kWh Pranie Eco', icon: 'mdi:washing-machine' },
         { value: '40L', label: 'Woda Pranie Eco', icon: 'mdi:water' },
-        { value: '30%', label: 'Doplata Szczytowa', icon: 'mdi:lightning-bolt' },
+        { value: '30%', label: 'Dopłata Szczytowa', icon: 'mdi:lightning-bolt' },
       ],
       columns: 3,
     },
     {
       type: 'title',
-      text: 'Dlaczego Male Zmiany Sie Mnoza',
+      text: 'Dlaczego Małe Zmiany Się Mnożą',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Jeden stopien temperatury lub kilka litrow wody wydaje sie nieistotne w jednym cyklu. Ale w ciagu 250 cykli rocznie, te male roznice przekladaja sie na powazne pieniadze. Spadek z 60C do 40C zmniejsza zuycie energii o okolo 40 procent na pranie. Przejscie z Normalnego na Eco w zmywarce oszczedza okolo 3 litrow wody i 0,3 kWh za kazdym razem. To nie sa marginalne zyski. To najszybszy sposob na zmniejszenie rachunkow bez kupowania nowych urzadzen.',
+      html: 'Jeden stopień temperatury lub kilka litrów wody wydaje się nieistotne w jednym cyklu. Ale w ciągu 250 cykli rocznie, te małe różnice przekładają się na poważne pieniądze. Spadek z 60°C do 40°C zmniejsza zużycie energii o około 40 procent na pranie. Przejście z Normalnego na Eco w zmywarce oszczędza około 3 litrów wody i 0,3 kWh za każdym razem. To nie są marginalne zyski. To najszybszy sposób na zmniejszenie rachunków bez kupowania nowych urządzeń.',
     },
     {
       type: 'comparative',
       items: [
         {
           title: 'Cykl Intensywny',
-          description: 'Maksymalne cieplo i woda dla silnie zabrudzonych pran.',
+          description: 'Maksymalne ciepło i woda dla silnie zabrudzonych prań.',
           icon: 'mdi:alert',
-          points: ['Od 1,2 do 3,5 kWh na pranie', '70 litrow w pralce', 'Obowiazuje doplata w szczycie', 'Najwyzszy koszt roczny'],
+          points: ['Od 1,2 do 3,5 kWh na pranie', '70 litrów w pralce', 'Obowiązuje dopłata w szczycie', 'Najwyższy koszt roczny'],
         },
         {
           title: 'Cykl Eco',
-          description: 'Nizsza temperatura, zoptymalizowany czas, minimalna ilosc wody.',
+          description: 'Niższa temperatura, zoptymalizowany czas, minimalna ilość wody.',
           icon: 'mdi:check-circle',
-          points: ['Od 0,45 do 1,5 kWh na pranie', 'Tylko 8 do 40 litrow', 'Mozliwosc uruchomienia poza szczytem', 'Najnizszy koszt roczny'],
+          points: ['Od 0,45 do 1,5 kWh na pranie', 'Tylko 8 do 40 litrów', 'Możliwość uruchomienia poza szczytem', 'Najniższy koszt roczny'],
         },
       ],
       columns: 2,
@@ -158,35 +158,35 @@ export const content: ToolLocaleContent<ApplianceCostCalculatorUI> = {
     {
       type: 'diagnostic',
       variant: 'info',
-      title: 'Szybki Audyt Urzadzen',
+      title: 'Szybki Audyt Urządzeń',
       icon: 'mdi:clipboard-check',
-      badge: 'Dzialanie',
-      html: '<p style="margin:0">Uzywaj pralki tylko przy pelnym zaladowaniu. Uzywaj programu Eco przy normalnym zabrudzeniu. Ustaw zmywarke na opozniony start po 22:00, jesli masz taryfe z roznicowaniem godzinowym. Czysc filtr suszarki po kazdym cyklu, aby zachowac wydajnosc. Susz odziez na zewnatrz lub na suszarce, gdy pozwala na to pogoda.</p>',
+      badge: 'Działanie',
+      html: '<p style="margin:0">Używaj pralki tylko przy pełnym załadowaniu. Używaj programu Eco przy normalnym zabrudzeniu. Ustaw zmywarkę na opóźniony start po 22:00, jeśli masz taryfę z różnicowaniem godzinowym. Czyść filtr suszarki po każdym cyklu, aby zachować wydajność. Susz odzież na zewnątrz lub na suszarce, gdy pozwala na to pogoda.</p>',
     },
     {
       type: 'title',
-      text: 'Taryfy z Roznicowaniem Godzinowym i Godziny Szczytu',
+      text: 'Taryfy z Różnicowaniem Godzinowym i Godziny Szczytu',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Wielu dostawcow energii elektrycznej obecnie stosuje rozne stawki w zaleznosci od pory dnia. Okresy szczytowe, zazwyczaj poranki i wieczory w dni powszednie, moga byc o 30 do 50 procent drozsze niz okresy poza szczytem. Takie samo pranie o 20:00 moze kosztowac 0,18 euro, podczas gdy to samo pranie o 02:00 kosztuje tylko 0,12 euro. W ciagu roku, wlasciwe planowanie korzystania z urzadzen moze zaoszczedzic od 50 do 100 euro bez zmiany niczego innego. Ten kalkulator podswietla godziny szczytu na czerwono, a poza szczytem na zielono, aby mozna bylo planowac.',
+      html: 'Wielu dostawców energii elektrycznej obecnie stosuje różne stawki w zależności od pory dnia. Okresy szczytowe, zazwyczaj poranki i wieczory w dni powszednie, mogą być o 30 do 50 procent droższe niż okresy poza szczytem. Takie samo pranie o 20:00 może kosztować 0,18 euro, podczas gdy to samo pranie o 02:00 kosztuje tylko 0,12 euro. W ciągu roku, właściwe planowanie korzystania z urządzeń może zaoszczędzić od 50 do 100 euro bez zmiany niczego innego. Ten kalkulator podświetla godziny szczytu na czerwono, a poza szczytem na zielono, aby można było planować.',
     },
     {
       type: 'summary',
-      title: 'Jak Ograniczyc Koszty Urzadzen',
+      title: 'Jak Ograniczyć Koszty Urządzeń',
       items: [
-        'Uzyj tego kalkulatora, aby poznac rzeczywisty koszt kazdego cyklu Twoich urzadzen.',
-        'Przechodz w tryb Eco zawsze, gdy to mozliwe, aby zaoszczedzic do 40 procent energii.',
-        'Uruchamiaj pelne zaladowania zamiast czesciowych, aby zmaksymalizowac wydajnosc.',
-        'Opozniaj cykle na godziny poza szczytem, jesli Twoja taryfa przewiduje ceny godzinowe.',
-        'Susz odziez na zewnatrz zamiast uzywac suszarki, aby calkowicie wyeliminowac ten koszt.',
-        'Regularnie czysc filtry i odkamieniaj urzadzenia, aby utrzymac je na nominalnej wydajnosci.',
+        'Użyj tego kalkulatora, aby poznać rzeczywisty koszt każdego cyklu Twoich urządzeń.',
+        'Przechodź w tryb Eco zawsze, gdy to możliwe, aby zaoszczędzić do 40 procent energii.',
+        'Uruchamiaj pełne załadowania zamiast częściowych, aby zmaksymalizować wydajność.',
+        'Opóźniaj cykle na godziny poza szczytem, jeśli Twoja taryfa przewiduje ceny godzinowe.',
+        'Susz odzież na zewnątrz zamiast używać suszarki, aby całkowicie wyeliminować ten koszt.',
+        'Regularnie czyść filtry i odkamieniaj urządzenia, aby utrzymać je na nominalnej wydajności.',
       ],
     },
   ],
   ui: {
-    labelAppliance: 'Urzadzenie',
+    labelAppliance: 'Urządzenie',
     applianceWasher: 'Pralka',
     applianceDishwasher: 'Zmywarka',
     applianceDryer: 'Suszarka',
@@ -198,21 +198,21 @@ export const content: ToolLocaleContent<ApplianceCostCalculatorUI> = {
     unitPriceKwh: '€/kWh',
     labelWaterPrice: 'Cena Wody',
     unitPriceLiter: '€/L',
-    labelDetergent: 'Srodek Czyszczacy',
-    labelDetergentToggle: 'Uwzglednij koszt srodka',
+    labelDetergent: 'Środek Czyszczący',
+    labelDetergentToggle: 'Uwzględnij koszt środka',
     labelHour: 'Planowana Godzina',
     peakBadge: 'Aktywna taryfa szczytowa',
     offPeakBadge: 'Taryfa poza szczytem',
-    receiptTitle: 'Podsumowanie Kosztow',
+    receiptTitle: 'Podsumowanie Kosztów',
     receiptElectricity: 'Energia',
     receiptWater: 'Woda',
-    receiptDetergent: 'Srodek',
+    receiptDetergent: 'Środek',
     receiptTotal: 'Razem na cykl',
     receiptPerYear: 'Szacunkowo rocznie',
     comparisonTitle: 'Inteligentna Zmiana',
-    comparisonText: 'Przejscie z Normalnego na Eco oszczedza pieniadze przy kazdym praniu.',
-    comparisonSavings: 'Oszczednosci roczne',
-    comparisonMonths: 'miesiecy srodka',
+    comparisonText: 'Przejście z Normalnego na Eco oszczędza pieniądze przy każdym praniu.',
+    comparisonSavings: 'Oszczędności roczne',
+    comparisonMonths: 'miesięcy środka',
     badgePeak: 'Szczyt',
     badgeOffPeak: 'Poza Szczytem',
     unitKwh: 'kWh',
