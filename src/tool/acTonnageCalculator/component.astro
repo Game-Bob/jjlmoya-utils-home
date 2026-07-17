@@ -57,7 +57,7 @@ function breakdownLabel(key: string): string {
       </div>
       <div class="ac-field">
         <div class="ac-field-top">
-          <span class="ac-label">{aUI.labelRoomSize}</span>
+          <label class="ac-label" for="ac-area">{aUI.labelRoomSize}</label>
           <span class="ac-val" id="ac-area-num">{defaults.area}</span>
         </div>
         <input class="ac-slider" type="range" id="ac-area" min="5" max="120" step="1" value={defaults.area} />
@@ -68,28 +68,28 @@ function breakdownLabel(key: string): string {
       </div>
       <div class="ac-field">
         <div class="ac-field-top">
-          <span class="ac-label">{aUI.labelCeilingHeight}</span>
+          <label class="ac-label" for="ac-height">{aUI.labelCeilingHeight}</label>
           <span class="ac-val" id="ac-height-num">{defaults.height}</span>
         </div>
         <input class="ac-slider" type="range" id="ac-height" min="2" max="6" step="0.1" value={defaults.height} />
       </div>
       <div class="ac-field">
         <div class="ac-field-top">
-          <span class="ac-label">{aUI.labelPeople}</span>
+          <label class="ac-label" for="ac-people">{aUI.labelPeople}</label>
           <span class="ac-val" id="ac-people-num">{defaults.people}</span>
         </div>
         <input class="ac-slider" type="range" id="ac-people" min="0" max="20" step="1" value={defaults.people} />
       </div>
       <div class="ac-field">
         <div class="ac-field-top">
-          <span class="ac-label">{aUI.labelHeatSources}</span>
+          <label class="ac-label" for="ac-heat">{aUI.labelHeatSources}</label>
           <span class="ac-val" id="ac-heat-num">{defaults.heat}</span>
         </div>
         <input class="ac-slider" type="range" id="ac-heat" min="0" max="20" step="1" value={defaults.heat} />
       </div>
       <div class="ac-row">
         <div class="ac-select-wrap">
-          <span class="ac-label">{aUI.labelSunExposure}</span>
+          <label class="ac-label" for="ac-sun">{aUI.labelSunExposure}</label>
           <select class="ac-select" id="ac-sun">
             <option value="light">{aUI.sunLight}</option>
             <option value="medium" selected>{aUI.sunMedium}</option>
@@ -97,7 +97,7 @@ function breakdownLabel(key: string): string {
           </select>
         </div>
         <div class="ac-select-wrap">
-          <span class="ac-label">{aUI.labelRoomType}</span>
+          <label class="ac-label" for="ac-room">{aUI.labelRoomType}</label>
           <select class="ac-select" id="ac-room">
             <option value="bedroom">{aUI.roomBedroom}</option>
             <option value="living" selected>{aUI.roomLiving}</option>

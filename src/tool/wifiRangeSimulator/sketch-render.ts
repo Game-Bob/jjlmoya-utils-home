@@ -3,6 +3,10 @@ import { calculateSignalFromSketch, getVerdictColor, MATERIALS } from './logic';
 import { buildDeviceSVG } from './sketch-render-device';
 import { getUI } from './i18n-utils';
 
+function getRect(el: HTMLElement): DOMRect {
+  return el.getBoundingClientRect();
+}
+
 export function renderWalls(walls: Segment[]) {
   const layer = document.getElementById('sketch-walls-layer');
   if (!layer) return;
@@ -121,10 +125,10 @@ export function renderRays(router: Point, devices: PlacedDevice[], walls: Segmen
 export function spawnParticle(x: number, y: number, text: string) {
   const wrap = document.getElementById('sketch-canvas-wrap');
   if (!wrap) return;
+  const rect = getRect(wrap);
   const p = document.createElement('span');
   p.className = 'sketch-particle';
   p.textContent = text;
-  const rect = wrap.getBoundingClientRect();
   p.style.left = `${x - rect.left}px`;
   p.style.top = `${y - rect.top}px`;
   wrap.appendChild(p);

@@ -88,7 +88,7 @@ function renderResult(res: ReturnType<typeof calculateAcTonnage>, people: number
   updateMiniRoom(res.btu);
   spawnRipple();
   const card = el('ac-card');
-  if (card) { card.classList.remove('ac-peak'); void card.offsetWidth; card.classList.add('ac-peak'); }
+  if (card) { card.classList.remove('ac-peak'); requestAnimationFrame(() => { card!.classList.add('ac-peak'); }); }
 }
 
 function update() {

@@ -69,7 +69,7 @@ const initial = calculateVampireDraw(DEFAULT_DEVICES.map((d) => ({ name: d.name,
           <div class="vamp-device-row" data-name={d.name} data-watts={d.watts}>
             <span class="vamp-device-name">{d.name}</span>
             <span class="vamp-device-watts">{d.watts} {vUI.unitWatts}</span>
-            <input type="number" class="vamp-device-hours" value={d.hours} min="0" max="24" step="1" />
+            <input type="number" class="vamp-device-hours" value={d.hours} min="0" max="24" step="1" aria-label={vUI.labelHours} />
             <span class="vamp-device-watts">{vUI.unitHours}</span>
             <button class="vamp-remove-btn">{vUI.removeDevice}</button>
           </div>
@@ -223,7 +223,7 @@ const initial = calculateVampireDraw(DEFAULT_DEVICES.map((d) => ({ name: d.name,
     row.className = 'vamp-device-row';
     row.dataset.name = name;
     row.dataset.watts = String(watts);
-    row.innerHTML = `<span class="vamp-device-name">${name}</span><span class="vamp-device-watts">${watts} ${unitW}</span><input type="number" class="vamp-device-hours" value="${hours}" min="0" max="24" step="1" /><span class="vamp-device-watts">${unitH}</span><button class="vamp-remove-btn">${removeLabel}</button>`;
+    row.innerHTML = `<span class="vamp-device-name">${name}</span><span class="vamp-device-watts">${watts} ${unitW}</span><input type="number" class="vamp-device-hours" value="${hours}" min="0" max="24" step="1" aria-label="hours" /><span class="vamp-device-watts">${unitH}</span><button class="vamp-remove-btn">${removeLabel}</button>`;
     list.appendChild(row);
     attachRowListeners(row, card);
     calculate(card);

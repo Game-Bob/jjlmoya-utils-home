@@ -163,8 +163,10 @@ export function updateDashboard(
   const ring = document.getElementById('sketch-ring');
   if (ring) {
     ring.classList.remove('sketch-peak-anim', 'sketch-danger-anim');
-    void ring.offsetWidth;
-    if (avgResult.verdict === 'perfect') ring.classList.add('sketch-peak-anim');
-    if (avgResult.verdict === 'dead') ring.classList.add('sketch-danger-anim');
+    requestAnimationFrame(() => {
+      if (!ring) return;
+      if (avgResult.verdict === 'perfect') ring.classList.add('sketch-peak-anim');
+      if (avgResult.verdict === 'dead') ring.classList.add('sketch-danger-anim');
+    });
   }
 }

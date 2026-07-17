@@ -25,7 +25,7 @@ const initial = calculateProjection(100, 16 / 9, 1.5);
           <label class="proj-label" for="proj-diagonal">{pUI.labelDiagonal}</label>
           <span class="proj-unit">{pUI.labelDiagonalUnit}</span>
         </div>
-        <input type="range" id="proj-diagonal-slider" min="30" max="300" value="100" step="1" class="proj-slider" />
+        <input type="range" id="proj-diagonal-slider" min="30" max="300" value="100" step="1" class="proj-slider" aria-label={pUI.labelDiagonal} />
         <div class="proj-number-row">
           <input type="number" id="proj-diagonal" value="100" min="30" max="300" class="proj-number-input" />
           <span class="proj-number-unit">"</span>

@@ -89,12 +89,12 @@ const initial = calculateHumidity({ roomM2: DEF_ROOM, tempC: DEF_TEMP, currentRH
 
       <div class="hc-sliders">
         <div class="hc-slider-group">
-          <label class="hc-slider-label">{hUI.labelTargetHumidity}</label>
+          <label class="hc-slider-label" for="hc-rh-t">{hUI.labelTargetHumidity}</label>
           <input type="range" id="hc-rh-t" class="hc-slider" min="0" max="100" value={DEF_TAR} />
           <span class="hc-slider-val" id="hc-rh-t-val">{DEF_TAR}{hUI.unitPercent}</span>
         </div>
         <div class="hc-slider-group">
-          <label class="hc-slider-label">{hUI.labelCapacity}</label>
+          <label class="hc-slider-label" for="hc-cap">{hUI.labelCapacity}</label>
           <input type="range" id="hc-cap" class="hc-slider" min="0" max="100" value={DEF_CAP} />
           <span class="hc-slider-val" id="hc-cap-val">{DEF_CAP}{hUI.unitLitersDay}</span>
         </div>
@@ -205,8 +205,7 @@ const initial = calculateHumidity({ roomM2: DEF_ROOM, tempC: DEF_TEMP, currentRH
     const ring = el('hc-runtime-ring') as HTMLElement | null;
     if (ring) {
       ring.classList.remove('hc-pulse');
-      void ring.offsetWidth;
-      ring.classList.add('hc-pulse');
+      requestAnimationFrame(() => { ring!.classList.add('hc-pulse'); });
     }
   }
 

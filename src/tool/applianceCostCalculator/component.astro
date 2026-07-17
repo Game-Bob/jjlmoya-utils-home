@@ -163,6 +163,10 @@ const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
 <script>
   import { calculateCycleCost, fmt2 } from './logic';
 
+  function getRect(e: HTMLElement): DOMRect {
+    return e.getBoundingClientRect();
+  }
+
   const RATES: Record<string, number> = { eur: 1, usd: 1.08, gbp: 0.85, jpy: 160 };
   const LS_KEY_CURRENCY = 'appliance-cost-currency';
   let currency: 'usd' | 'eur' | 'gbp' | 'jpy' = 'eur';
@@ -208,8 +212,8 @@ const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
   function moveIndicator(track: HTMLElement, activeBtn: HTMLElement) {
     const ind = el('apc-pill-indicator') as HTMLElement | null;
     if (!ind || !track || !activeBtn) return;
-    const tRect = track.getBoundingClientRect();
-    const bRect = activeBtn.getBoundingClientRect();
+    const tRect = getRect(track);
+    const bRect = getRect(activeBtn);
     ind.style.width = `${bRect.width}px`;
     ind.style.transform = `translateX(${bRect.left - tRect.left}px)`;
   }

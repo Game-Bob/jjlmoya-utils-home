@@ -27,7 +27,7 @@ const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
       </div>
       <div class="ergo-field">
         <div class="ergo-field-top">
-          <span class="ergo-label">{eUI.labelHeight}</span>
+          <label class="ergo-label" for="ergo-height">{eUI.labelHeight}</label>
           <span class="ergo-val" id="ergo-height-val">{defaultHeight} {eUI.unitCm}</span>
         </div>
         <input type="range" class="ergo-slider" id="ergo-height" min="140" max="210" step="1" value={defaultHeight} />

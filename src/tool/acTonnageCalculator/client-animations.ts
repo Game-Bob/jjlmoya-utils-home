@@ -1,3 +1,7 @@
+function getStrokeColor(el: HTMLElement | null): string {
+  return el ? getComputedStyle(el).stroke : '#0ea5e9';
+}
+
 function getLabels(): Record<string, string> {
   const el = document.getElementById('ac-labels');
   if (!el) return {};
@@ -24,18 +28,11 @@ function roomLabel(btu: number): string {
   return labels.labelRoomHot ?? '';
 }
 
-export function updateMiniRoom(btu: number) {
-  const svg = document.querySelector('.ac-mini-room svg');
-  if (!svg) return;
-  const txt = svg.querySelector('text');
-  if (txt) txt.textContent = roomLabel(btu);
-}
-
 export function spawnRipple() {
   const wrap = document.querySelector('.ac-ring-wrap');
   if (!wrap) return;
   const el = document.getElementById('ac-ring-fill');
-  const color = el ? getComputedStyle(el).stroke : '#0ea5e9';
+  const color = getStrokeColor(el as HTMLElement | null);
   const ripple = document.createElement('div');
   ripple.className = 'ac-ripple';
   ripple.style.left = '50%';
@@ -44,6 +41,13 @@ export function spawnRipple() {
   ripple.style.border = `2px solid ${color}`;
   wrap.appendChild(ripple);
   setTimeout(() => ripple.remove(), 800);
+}
+
+export function updateMiniRoom(btu: number) {
+  const svg = document.querySelector('.ac-mini-room svg');
+  if (!svg) return;
+  const txt = svg.querySelector('text');
+  if (txt) txt.textContent = roomLabel(btu);
 }
 
 export function pulseGlow() {

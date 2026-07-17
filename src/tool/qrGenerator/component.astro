@@ -24,11 +24,11 @@ const qrUI = ui as QRGeneratorUI;
 
       <div id="form-wifi" class="qr-form">
         <div class="field-group">
-          <label class="field-label">{qrUI.labelSsid}</label>
-          <input type="text" name="ssid" class="qr-input field-input" placeholder={qrUI.placeholderSsid} />
+          <label class="field-label" for="qr-ssid">{qrUI.labelSsid}</label>
+          <input type="text" name="ssid" id="qr-ssid" class="qr-input field-input" placeholder={qrUI.placeholderSsid} />
         </div>
         <div class="field-group">
-          <label class="field-label">{qrUI.labelPassword}</label>
+          <label class="field-label" for="wifi-password">{qrUI.labelPassword}</label>
           <div class="input-row">
             <input type="password" name="password" id="wifi-password" class="qr-input field-input" placeholder={qrUI.placeholderPassword} />
             <button type="button" id="toggle-password" class="eye-btn" aria-label="toggle password">
@@ -38,8 +38,8 @@ const qrUI = ui as QRGeneratorUI;
         </div>
         <div class="two-col">
           <div class="field-group">
-            <label class="field-label">{qrUI.labelEncryption}</label>
-            <select name="encryption" class="qr-input field-input">
+            <label class="field-label" for="qr-encryption">{qrUI.labelEncryption}</label>
+            <select name="encryption" id="qr-encryption" class="qr-input field-input">
               <option value="WPA">{qrUI.encWpa}</option>
               <option value="WEP">{qrUI.encWep}</option>
               <option value="nopass">{qrUI.encNone}</option>
@@ -56,33 +56,33 @@ const qrUI = ui as QRGeneratorUI;
 
       <div id="form-url" class="qr-form hidden">
         <div class="field-group">
-          <label class="field-label">{qrUI.labelUrl}</label>
-          <input type="url" name="url" class="qr-input field-input" placeholder={qrUI.placeholderUrl} />
+          <label class="field-label" for="qr-url">{qrUI.labelUrl}</label>
+          <input type="url" name="url" id="qr-url" class="qr-input field-input" placeholder={qrUI.placeholderUrl} />
         </div>
       </div>
 
       <div id="form-vcard" class="qr-form hidden">
         <div class="two-col">
           <div class="field-group">
-            <label class="field-label">{qrUI.labelName}</label>
-            <input type="text" name="name" class="qr-input field-input" />
+            <label class="field-label" for="qr-name">{qrUI.labelName}</label>
+            <input type="text" name="name" id="qr-name" class="qr-input field-input" />
           </div>
           <div class="field-group">
-            <label class="field-label">{qrUI.labelSurname}</label>
-            <input type="text" name="surname" class="qr-input field-input" />
+            <label class="field-label" for="qr-surname">{qrUI.labelSurname}</label>
+            <input type="text" name="surname" id="qr-surname" class="qr-input field-input" />
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label">{qrUI.labelPhone}</label>
-          <input type="tel" name="phone" class="qr-input field-input" />
+          <label class="field-label" for="qr-phone">{qrUI.labelPhone}</label>
+          <input type="tel" name="phone" id="qr-phone" class="qr-input field-input" />
         </div>
         <div class="field-group">
-          <label class="field-label">{qrUI.labelEmail}</label>
-          <input type="email" name="email" class="qr-input field-input" />
+          <label class="field-label" for="qr-email">{qrUI.labelEmail}</label>
+          <input type="email" name="email" id="qr-email" class="qr-input field-input" />
         </div>
         <div class="field-group">
-          <label class="field-label">{qrUI.labelOrg}</label>
-          <input type="text" name="org" class="qr-input field-input" />
+          <label class="field-label" for="qr-org">{qrUI.labelOrg}</label>
+          <input type="text" name="org" id="qr-org" class="qr-input field-input" />
         </div>
       </div>
     </div>
