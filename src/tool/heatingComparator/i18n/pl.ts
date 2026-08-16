@@ -261,6 +261,34 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Trend w Europie jest jasny: dekarbonizacja budownictwa. Ceny gazu będą prawdopodobnie rosły. Połączenie fotowoltaiki i pompy ciepła to dziś najlepszy sposób na komfort i oszczędności.',
     },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 7.",
+    },
   ],
   ui: {
     titleVivienda: '1. Dane Twojego domu',

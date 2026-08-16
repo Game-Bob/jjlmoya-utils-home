@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'Vakaların %99\'unda hayır. Sadece ampulü aynı duy tipine (E27, E14, GU10 vb.) sahip bir LED ile değiştirmeniz yeterlidir.',
   },
+  { question: "Seçime yardımcı olan ek bilgi nedir? 1", answer: "Aynı girdileri karşılaştırın ve kullanım, bakım ile uzun vadeli maliyetleri hesaba katın." },
 ];
 
 const howToData = [

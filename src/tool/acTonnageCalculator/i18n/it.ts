@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Perché sbagliare dimensione costa denaro', level: 2 },
     { type: 'paragraph', html: 'Un condizionatore sottodimensionato funziona sempre, non raggiunge mai la temperatura e usurà il compressore. Uno sovradimensionato emette aria fredda a raffiche e lascia la stanza umida.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU per m² base', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU per tonnellata', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU per frigoria', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Superficie stanza', labelRoomSizeFt: 'Superficie', labelCeilingHeight: 'Altezza soffitto', labelCeilingHeightFt: 'Altezza',

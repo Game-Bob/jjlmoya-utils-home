@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'Statische QR: bij een nieuw wachtwoord moet u een nieuwe QR maken.',
         'Test de code altijd even voor u hem print.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 7.",
     },
   ],
   ui: {

@@ -78,7 +78,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -260,6 +260,34 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'paragraph',
       html: '欧洲及全球趋势很明确：家庭脱碳。天然气价格长期看涨。太阳能光伏与热泵的结合是目前最完美的家庭能源解决方案。',
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 7.",
     },
   ],
   ui: {

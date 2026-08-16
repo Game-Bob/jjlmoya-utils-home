@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'To maksymalna ilość energii (kW), jaką możesz pobierać jednocześnie. W domach standard to 12.5-16 kW.',
   },
+  { question: "Jaka dodatkowa informacja pomaga w wyborze? 1", answer: "Porównaj te same dane i uwzględnij użytkowanie, konserwację oraz koszty długoterminowe." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Porównaj wyniki',
     text: 'Zobacz szacunkową różnicę w kosztach rocznych.',
   },
+  { name: "Jaka dodatkowa informacja pomaga w wyborze? 1", text: "Porównaj te same dane i uwzględnij użytkowanie, konserwację oraz koszty długoterminowe." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Zmniejsz moc umowną, jeśli nigdy nie przekraczasz progu.',
         'Przenieś duże zużycie na tańsze godziny w taryfie G12.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 5.",
     },
   ],
   ui: {

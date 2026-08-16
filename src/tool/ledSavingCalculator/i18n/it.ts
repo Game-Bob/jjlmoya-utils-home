@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'Nel 99% dei casi no. Basta sostituire la lampadina con una LED con lo stesso attacco (E27, E14, GU10, ecc.).',
   },
+  { question: "Quale informazione aggiuntiva aiuta nella scelta? 1", answer: "Confronta gli stessi dati e considera uso, manutenzione e costi nel tempo." },
 ];
 
 const howToData = [

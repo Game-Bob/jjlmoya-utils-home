@@ -39,6 +39,10 @@ const faqData = [
     answer:
       'In 99 % der Fälle nein. Sie müssen nur das Leuchtmittel durch eine LED mit der gleichen Fassung (E27, E14, GU10 etc.) ersetzen.',
   },
+  {
+    question: 'Lohnt sich der Wechsel auf LED auch bei kurzer Nutzungsdauer?',
+    answer: 'Meistens ja, weil LED Lampen wenig Strom verbrauchen und sehr lange halten. Der Rechner zeigt die mögliche Amortisationszeit für Ihre Nutzung.',
+  },
 ];
 
 const howToData = [

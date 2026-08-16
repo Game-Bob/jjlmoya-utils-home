@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         '정적 QR은 비밀번호가 바뀌면 새로 생성해야 합니다.',
         '인쇄하기 전에 항상 화면을 직접 스캔하여 테스트하세요.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 7.",
     },
   ],
   ui: {

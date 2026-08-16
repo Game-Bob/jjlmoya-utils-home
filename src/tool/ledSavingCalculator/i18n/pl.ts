@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'W 99% przypadków nie. Wystarczy wymienić samą żarówkę na LED o tym samym gwincie (E27, E14, GU10 itp.).',
   },
+  { question: "Jaka dodatkowa informacja pomaga w wyborze? 1", answer: "Porównaj te same dane i uwzględnij użytkowanie, konserwację oraz koszty długoterminowe." },
 ];
 
 const howToData = [

@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'QR codes estáticos: se mudar a pass, gere um novo.',
         'Teste sempre o scan antes de imprimir.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 7.",
     },
   ],
   ui: {

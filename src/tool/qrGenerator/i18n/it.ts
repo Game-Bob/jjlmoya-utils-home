@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -142,6 +142,26 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'I QR sono statici: se cambi dati, rigenera il codice.',
         'Testa il codice prima di stamparlo.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 5.",
     },
   ],
   ui: {

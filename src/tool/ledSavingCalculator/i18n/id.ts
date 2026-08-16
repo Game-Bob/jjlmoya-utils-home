@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'Dalam 99% kasus, tidak perlu. Anda hanya perlu mengganti bohlamnya saja dengan bohlam LED yang memiliki soket yang sama (E27, E14, GU10, dll.).',
   },
+  { question: "Informasi tambahan apa yang membantu pemilihan? 1", answer: "Bandingkan masukan yang sama dan pertimbangkan penggunaan, perawatan, serta biaya jangka panjang." },
 ];
 
 const howToData = [

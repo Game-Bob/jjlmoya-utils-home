@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: '为什么尺寸错误会浪费钱', level: 2 },
     { type: 'paragraph', html: '过小的空调持续运行，永远达不到设定温度，并提前磨损压缩机。过大的空调短促吹出冷风，让房间又冷又湿。' },
     { type: 'stats', items: [{ value: '600', label: '每m²基准BTU', icon: 'mdi:thermometer' }, { value: '12000', label: '每吨BTU', icon: 'mdi:snowflake' }, { value: '3.968', label: '每frigoría的BTU', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 9.",
+    },
   ],
   ui: {
     labelRoomSize: '房间面积', labelRoomSizeFt: '面积', labelCeilingHeight: '天花板高度', labelCeilingHeightFt: '高度',

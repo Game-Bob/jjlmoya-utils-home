@@ -24,6 +24,7 @@ const faqData = [
     answer:
       '在北半球，应始终朝南（方位角 180°）。在南半球，应朝北。偏离正南/正北可能会导致显著的效率下降。',
   },
+  { question: "哪些额外信息有助于选择？ 1", answer: "请使用相同输入进行比较，并考虑使用情况、维护和长期成本。" },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: '季节性调整（可选）',
     text: '如果支架可调节，建议根据冬季和夏季角度进行调整以最大化产量。',
   },
+  { name: "哪些额外信息有助于选择？ 1", text: "请使用相同输入进行比较，并考虑使用情况、维护和长期成本。" },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,7 +80,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -101,6 +103,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         '避免阴影遮挡比追求精准角度更重要。',
         '北半球应朝南安装。',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 5.",
     },
   ],
   ui: {

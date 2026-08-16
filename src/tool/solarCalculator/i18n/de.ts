@@ -44,6 +44,7 @@ const howToData = [
     name: 'Saisonal anpassen (optional)',
     text: 'Wenn Ihre Halterung verstellbar ist, nutzen Sie die Winter- und Sommerwinkel für maximale Erträge.',
   },
+  { name: "Welche zusätzliche Information hilft bei der Auswahl? 1", text: "Vergleichen Sie dieselben Eingaben und berücksichtigen Sie Nutzung, Wartung und langfristige Kosten." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -83,7 +84,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -126,6 +127,20 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Verschattung vermeiden ist wichtiger als der exakte Winkel.',
         'Auf der Nordhalbkugel nach Süden ausrichten.',
       ],
+    },
+    {
+      type: 'title',
+      text: 'Solarmodule richtig ausrichten',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Ausrichtung und Neigungswinkel beeinflussen den Jahresertrag. Verschattung durch Bäume, Gebäude oder Schornsteine kann jedoch wichtiger sein als eine kleine Winkelabweichung.',
+    },
+    {
+      type: 'tip',
+      title: 'Verschattung zuerst prüfen',
+      html: '<p>Beobachten Sie den Standort zu verschiedenen Tageszeiten und Jahreszeiten. Eine freie Fläche liefert oft mehr Energie als eine perfekt geneigte, aber verschattete Fläche.</p>',
     },
   ],
   ui: {

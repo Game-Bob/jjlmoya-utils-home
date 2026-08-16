@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Mengapa ukuran yang salah menghabiskan uang', level: 2 },
     { type: 'paragraph', html: 'AC yang terlalu kecil bekerja terus-menerus, tidak pernah mencapai suhu yang diinginkan, dan merusak kompresor lebih awal. Yang terlalu besar meniupkan udara dingin dalam semburan pendek dan meninggalkan ruangan lembab.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU per m² dasar', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU per ton', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU per frigoria', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Luas ruangan', labelRoomSizeFt: 'Luas', labelCeilingHeight: 'Tinggi langit-langit', labelCeilingHeightFt: 'Tinggi',

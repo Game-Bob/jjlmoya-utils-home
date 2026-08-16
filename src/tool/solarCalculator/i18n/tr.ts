@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Kuzey Yarımküre\'de her zaman Güney\'e bakmalıdır. Güney Yarımküre\'de ise Kuzey\'e.',
   },
+  { question: "Seçime yardımcı olan ek bilgi nedir? 1", answer: "Aynı girdileri karşılaştırın ve kullanım, bakım ile uzun vadeli maliyetleri hesaba katın." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Mevsimsel ayar (isteğe bağlı)',
     text: 'Desteğiniz uygunsa, kış ve yaz açılarını kullanarak verimi artırın.',
   },
+  { name: "Seçime yardımcı olan ek bilgi nedir? 1", text: "Aynı girdileri karşılaştırın ve kullanım, bakım ile uzun vadeli maliyetleri hesaba katın." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -101,6 +103,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Gölge en büyük engeldir.',
         'Kuzey yarımkürede Güney\'e yönelin.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 5.",
     },
   ],
   ui: {

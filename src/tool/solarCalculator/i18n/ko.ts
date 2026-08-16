@@ -24,6 +24,7 @@ const faqData = [
     answer:
       '북반구에서는 항상 남쪽(방위각 180°)을 향해야 합니다. 남반구에서는 북쪽을 향해야 합니다.',
   },
+  { question: "선택에 도움이 되는 추가 정보는 무엇인가요? 1", answer: "같은 조건으로 비교하고 사용량, 유지 관리, 장기 비용도 고려하세요." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: '계절별 조정 (선택 사항)',
     text: '가변형 거치대를 사용 중이라면 겨울과 여름 각도를 참고하여 발전량을 높이세요.',
   },
+  { name: "선택에 도움이 되는 추가 정보는 무엇인가요? 1", text: "같은 조건으로 비교하고 사용량, 유지 관리, 장기 비용도 고려하세요." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,7 +80,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -101,6 +103,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         '정확한 각도보다 그림자 방지가 최우선입니다.',
         '북반구에서는 항상 정남향으로 설치하세요.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 5.",
     },
   ],
   ui: {

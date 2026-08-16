@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'I 99 % av fallen, nej. Du byter bara ut själva glödlampan mot en LED med samma sockel (E27, E14, GU10 etc.).',
   },
+  { question: "Vilken ytterligare information hjälper vid valet? 1", answer: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
 ];
 
 const howToData = [

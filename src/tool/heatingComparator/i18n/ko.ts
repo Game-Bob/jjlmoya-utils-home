@@ -78,7 +78,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -260,6 +260,34 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'paragraph',
       html: '세계적인 추세는 명확합니다. 바로 가정의 "탈탄소화"입니다. 가스 가격은 장기적으로 상승할 가능성이 높으며, 태양광과 히트펌프의 조합은 현시점에서 가장 현명한 에너지 솔루션 중 하나입니다.',
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 7.",
     },
   ],
   ui: {

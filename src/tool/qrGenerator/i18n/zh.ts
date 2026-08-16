@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         '静态 QR：如果更改了密码，请生成新的 QR。',
         '打印前请先进行扫描测试。',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 7.",
     },
   ],
   ui: {

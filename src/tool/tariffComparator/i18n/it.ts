@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'È il limite massimo di kW che puoi usare contemporaneamente. Per una casa standard è solitamente 3 kW.',
   },
+  { question: "Quale informazione aggiuntiva aiuta nella scelta? 1", answer: "Confronta gli stessi dati e considera uso, manutenzione e costi nel tempo." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Confronta i costi',
     text: 'Guarda la stima del costo annuo per le due opzioni.',
   },
+  { name: "Quale informazione aggiuntiva aiuta nella scelta? 1", text: "Confronta gli stessi dati e considera uso, manutenzione e costi nel tempo." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Il prezzo fisso ti protegge dai rincari improvvisi.',
         'Ridurre la potenza può abbassare i costi fissi.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 5.",
     },
   ],
   ui: {

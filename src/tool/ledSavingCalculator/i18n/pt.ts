@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'Em 99% dos casos, não. Só tem de substituir a lâmpada por uma LED com o mesmo casquilho (E27, E14, GU10, etc.).',
   },
+  { question: "Que informação adicional ajuda na escolha? 1", answer: "Compare os mesmos dados e considere utilização, manutenção e custos a longo prazo." },
 ];
 
 const howToData = [

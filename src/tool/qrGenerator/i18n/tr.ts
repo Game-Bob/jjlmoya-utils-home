@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'Statik QR: Şifre değişirse yeni kod oluşturun.',
         'Yazdırmadan önce mutlaka kodu test edin.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 7.",
     },
   ],
   ui: {

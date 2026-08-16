@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'Kode QR statis: jika kata sandi diubah, buat kode baru.',
         'Selalu uji pemindaian sebelum mencetak.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 7.",
     },
   ],
   ui: {

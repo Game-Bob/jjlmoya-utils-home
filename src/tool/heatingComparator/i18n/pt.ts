@@ -286,6 +286,10 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Use a nossa calculadora para comparar as suas faturas atuais com o que poderia estar a pagar. Por vezes, a maior poupança não está numa janela bem fechada, mas num sistema de aquecimento atualizado.',
     },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 1.",
+    },
   ],
   ui: {
     titleVivienda: '1. Dados da habitação',

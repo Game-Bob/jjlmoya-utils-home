@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Na półkuli północnej zawsze na południe (azymut 180°). Na południowej: na północ.',
   },
+  { question: "Jaka dodatkowa informacja pomaga w wyborze? 1", answer: "Porównaj te same dane i uwzględnij użytkowanie, konserwację oraz koszty długoterminowe." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Regulacja sezonowa (opcjonalnie)',
     text: 'Jeśli masz regulowany stelaż, użyj kątów zimowych i letnich dla max. zysków.',
   },
+  { name: "Jaka dodatkowa informacja pomaga w wyborze? 1", text: "Porównaj te same dane i uwzględnij użytkowanie, konserwację oraz koszty długoterminowe." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -101,6 +103,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Unikanie cienia jest absolutnie priorytetowe.',
         'Orientacja na Południe (półkula płn.).',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 5.",
     },
   ],
   ui: {

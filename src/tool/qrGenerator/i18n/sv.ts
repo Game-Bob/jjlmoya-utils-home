@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'Statiska QR: om du byter lösenord måste du göra en ny kod.',
         'Testskanna alltid koden innan utskrift.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 7.",
     },
   ],
   ui: {

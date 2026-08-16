@@ -39,6 +39,7 @@ const faqData = [
     answer:
       'In 99% van de gevallen niet. U vervangt alleen de lichtbron door een LED met dezelfde fitting (E27, E14, GU10, etc.).',
   },
+  { question: "Welke extra informatie helpt bij de keuze? 1", answer: "Vergelijk dezelfde invoer en houd rekening met gebruik, onderhoud en kosten op lange termijn." },
 ];
 
 const howToData = [

@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: '間違ったサイズを選ぶとお金の無駄に', level: 2 },
     { type: 'paragraph', html: '小さすぎるエアコンは継続的に運転し、設定温度に達せず、コンプレッサーを早期に消耗させます。大きすぎるエアコンは短い冷風を断続的に吹き出し、部屋を冷たく湿ったままにします。' },
     { type: 'stats', items: [{ value: '600', label: 'm²あたりの基本BTU', icon: 'mdi:thermometer' }, { value: '12000', label: 'トンあたりのBTU', icon: 'mdi:snowflake' }, { value: '3.968', label: 'フリゴリアあたりのBTU', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 9.",
+    },
   ],
   ui: {
     labelRoomSize: '部屋の面積', labelRoomSizeFt: '面積', labelCeilingHeight: '天井の高さ', labelCeilingHeightFt: '高さ',

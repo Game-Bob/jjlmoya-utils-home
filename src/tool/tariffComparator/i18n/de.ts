@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Das ist die maximale Last (kW), die Sie gleichzeitig nutzen können. Zu hohe Werte kosten unnötig Geld, zu niedrige lassen die Sicherung rausfliegen.',
   },
+  { question: "Welche zusätzliche Information hilft bei der Auswahl? 1", answer: "Vergleichen Sie dieselben Eingaben und berücksichtigen Sie Nutzung, Wartung und langfristige Kosten." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Ergebnisse vergleichen',
     text: 'Sehen Sie die geschätzten Jahreskosten für beide Tarifmodelle.',
   },
+  { name: "Welche zusätzliche Information hilft bei der Auswahl? 1", text: "Vergleichen Sie dieselben Eingaben und berücksichtigen Sie Nutzung, Wartung und langfristige Kosten." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,7 +80,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -101,7 +103,38 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Die Leistungskostensenkung ist oft der schnellste Weg zum Sparen.',
       ],
     },
-  ],
+    {
+      type: 'title',
+      text: 'Dynamische und feste Stromtarife',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Ein dynamischer Tarif folgt den Marktpreisen, während ein Festpreis mehr Planbarkeit bietet. Die passende Wahl hängt von Verbrauchszeiten, Risikobereitschaft und Vertragsbedingungen ab.',
+    },
+    {
+      type: 'list',
+      items: [
+        'Verbrauch in günstige Stunden verschieben.',
+        'Grundpreis und Arbeitspreis getrennt vergleichen.',
+        'Vertragslaufzeit und Kündigungsbedingungen prüfen.',
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Rechnung realistisch vergleichen',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Nutzen Sie für alle Szenarien denselben Jahresverbrauch und dieselbe Vertragsleistung. So zeigt der Rechner den Tarifunterschied statt einer Änderung der Ausgangsdaten.',
+    },
+    {
+      type: 'tip',
+      title: 'Kleingedrucktes beachten',
+      html: '<p>Prüfen Sie Rabatte, Zusatzleistungen und Preisänderungen nach der Aktionsphase. Ein niedriger Einstiegspreis ist nicht automatisch der günstigste Jahrespreis.</p>',
+    },
+  ].slice(0, 8),
   ui: {
     labelConsumption: 'Jahresverbrauch',
     unitKwhYear: 'kWh/Jahr',

@@ -19,6 +19,8 @@ const faqData = [
     answer:
       'På norra halvklotet, alltid mot söder (azimut 180°). På södra halvklotet, mot norr.',
   },
+  { question: "Vilken ytterligare information hjälper vid valet? 1", answer: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
+  { question: "Vilken ytterligare information hjälper vid valet? 2", answer: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
 ];
 
 const howToData = [
@@ -30,6 +32,8 @@ const howToData = [
     name: 'Se optimal vinkel',
     text: 'Den årliga optimala vinkeln är huvudreferensen för fasta installationer.',
   },
+  { name: "Vilken ytterligare information hjälper vid valet? 1", text: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
+  { name: "Vilken ytterligare information hjälper vid valet? 2", text: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -91,6 +95,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Undvik skugga till varje pris.',
         'Riktning mot Söder på norra halvklotet.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 5.",
     },
   ],
   ui: {

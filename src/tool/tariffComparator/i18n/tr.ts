@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Aynı anda kullanabileceğiniz maksimum elektrik yüküdür (kW).',
   },
+  { question: "Seçime yardımcı olan ek bilgi nedir? 1", answer: "Aynı girdileri karşılaştırın ve kullanım, bakım ile uzun vadeli maliyetleri hesaba katın." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Sonuçları karşılaştırın',
     text: 'İki seçenek arasındaki yıllık maliyet farkını görün.',
   },
+  { name: "Seçime yardımcı olan ek bilgi nedir? 1", text: "Aynı girdileri karşılaştırın ve kullanım, bakım ile uzun vadeli maliyetleri hesaba katın." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'İhtiyacınızdan fazla sözleşme gücü bedeli ödemeyin.',
         'Mümkünse tüketiminizi ucuz saatlere kaydırın.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 5.",
     },
   ],
   ui: {

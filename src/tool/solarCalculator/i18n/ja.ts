@@ -44,6 +44,7 @@ const howToData = [
     name: '季節ごとに調整する（オプション）',
     text: '架台が可動式の場合は、冬と夏の角度を使用して季節ごとの発電量を最大化します。',
   },
+  { name: "選択に役立つ追加情報は何ですか？ 1", text: "同じ条件で比較し、使用状況、保守、長期費用も考慮してください。" },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -83,7 +84,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -106,6 +107,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         '正確な角度よりも「影を避ける」ことを最優先する。',
         '北半球では常に南向きに設置する。',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 5.",
     },
   ],
   ui: {

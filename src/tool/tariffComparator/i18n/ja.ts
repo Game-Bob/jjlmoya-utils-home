@@ -24,6 +24,7 @@ const faqData = [
     answer:
       '一度に使える電気の上限（kWまたはA）です。高すぎると基本料金が無駄になり、低すぎるとブレーカーが落ちやすくなります。',
   },
+  { question: "選択に役立つ追加情報は何ですか？ 1", answer: "同じ条件で比較し、使用状況、保守、長期費用も考慮してください。" },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: '結果を比較',
     text: '２つのプランの年間推定金額を確認します。',
   },
+  { name: "選択に役立つ追加情報は何ですか？ 1", text: "同じ条件で比較し、使用状況、保守、長期費用も考慮してください。" },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,7 +80,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         '無理のない範囲で契約容量を適正化する。',
         '可能であれば安い時間帯に電力をシフトする。',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 5.",
     },
   ],
   ui: {

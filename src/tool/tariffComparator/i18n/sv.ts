@@ -19,6 +19,8 @@ const faqData = [
     answer:
       'Denna siffra hittar du på din senaste årsfaktura från ditt elbolag, angivet i kWh.',
   },
+  { question: "Vilken ytterligare information hjälper vid valet? 1", answer: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
+  { question: "Vilken ytterligare information hjälper vid valet? 2", answer: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
 ];
 
 const howToData = [
@@ -26,6 +28,9 @@ const howToData = [
     name: 'Kolla fakturan',
     text: 'Leta upp årsförbrukning (kWh) och din säkringsstorlek (kW).',
   },
+  { name: "Vilken ytterligare information hjälper vid valet? 1", text: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
+  { name: "Vilken ytterligare information hjälper vid valet? 2", text: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
+  { name: "Vilken ytterligare information hjälper vid valet? 3", text: "Jämför samma indata och ta hänsyn till användning, underhåll och långsiktiga kostnader." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,6 +83,30 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
     {
       type: 'paragraph',
       html: 'Att välja rätt avtal kan spara tusenlappar per år.',
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 6.",
     },
   ],
   ui: {

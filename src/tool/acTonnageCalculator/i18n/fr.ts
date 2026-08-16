@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Pourquoi une erreur de taille coûte cher', level: 2 },
     { type: 'paragraph', html: 'Un climatiseur sous-dimensionné tourne en continu, n\'atteint jamais la température et use son compresseur prématurément. Un surdimensionné souffle de l\'air froid par courtes rafales et laisse la pièce froide et humide.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU par m² base', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU par tonne', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU par frigorie', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Cette section complète les indications utiles pour comparer les scénarios et interpréter le résultat. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Superficie', labelRoomSizeFt: 'Superficie', labelCeilingHeight: 'Hauteur sous plafond', labelCeilingHeightFt: 'Hauteur',

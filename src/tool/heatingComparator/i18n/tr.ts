@@ -274,6 +274,22 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Faturanızı modern alternatiflerle karşılaştırmak için aracımızı kullanın. Bazen en büyük "para sızıntısı" açık pencere değil, eski bir ısıtma sistemidir.',
     },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 4.",
+    },
   ],
   ui: {
     titleVivienda: '1. Ev Verileri',

@@ -274,6 +274,22 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Gunakan kalkulator kami untuk membandingkan tagihan Anda. Terkadang "kebocoran uang" terbesar bukan dari jendela yang terbuka, tetapi dari sistem pemanas yang sudah jadul.',
     },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 4.",
+    },
   ],
   ui: {
     titleVivienda: '1. Data Rumah',

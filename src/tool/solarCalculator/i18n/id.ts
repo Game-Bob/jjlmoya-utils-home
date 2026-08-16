@@ -44,6 +44,7 @@ const howToData = [
     name: 'Sesuaikan menurut musim (opsional)',
     text: 'Jika dudukan Anda memungkinkan, gunakan sudut musim dingin dan musim panas untuk memaksimalkan produksi.',
   },
+  { name: "Informasi tambahan apa yang membantu pemilihan? 1", text: "Bandingkan masukan yang sama dan pertimbangkan penggunaan, perawatan, serta biaya jangka panjang." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -106,6 +107,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Prioritaskan menghindari bayangan daripada mencari sudut yang sempurna.',
         'Di Belahan Bumi Utara, arahkan panel ke Selatan.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 5.",
     },
   ],
   ui: {

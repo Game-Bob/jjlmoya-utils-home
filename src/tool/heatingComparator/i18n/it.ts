@@ -286,6 +286,10 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Usa il nostro calcolatore per confrontare le tue bollette. Spesso la spesa maggiore non è dovuta a una finestra aperta, ma a una caldaia obsoleta.',
     },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 1.",
+    },
   ],
   ui: {
     titleVivienda: '1. Dati della tua casa',

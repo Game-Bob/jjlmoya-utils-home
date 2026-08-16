@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Op het noordelijk halfrond altijd naar het zuiden. Op het zuidelijk halfrond naar het noorden.',
   },
+  { question: "Welke extra informatie helpt bij de keuze? 1", answer: "Vergelijk dezelfde invoer en houd rekening met gebruik, onderhoud en kosten op lange termijn." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Seizoensaanpassing (optioneel)',
     text: 'Gebruik de winter- en zomerhoeken voor extra rendement bij verstelbare systemen.',
   },
+  { name: "Welke extra informatie helpt bij de keuze? 1", text: "Vergelijk dezelfde invoer en houd rekening met gebruik, onderhoud en kosten op lange termijn." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -101,6 +103,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Schaduw is de grootste vijand.',
         'Richt op het zuiden op het noordelijk halfrond.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 5.",
     },
   ],
   ui: {

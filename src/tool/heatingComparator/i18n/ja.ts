@@ -78,7 +78,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -260,6 +260,34 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'paragraph',
       html: '世界的なトレンドは明確で、家庭の「脱炭素化」です。ガスの価格は長期的に上昇する傾向にあります。太陽光発電とヒートポンプの組み合わせは、今の時代、家計と地球の両方に優しい「正解」の一つです。',
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 7.",
     },
   ],
   ui: {

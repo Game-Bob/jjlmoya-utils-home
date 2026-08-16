@@ -240,7 +240,74 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Utilisez notre calculateur pour comparer vos factures.',
     },
-  ],
+    {
+      type: 'title',
+      text: "Comment comparer les systèmes de chauffage",
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: "Le rendement ne dépend pas seulement du prix de l'énergie. La surface du logement, l'isolation, la température souhaitée et le climat local influencent aussi le coût annuel.",
+    },
+    {
+      type: 'list',
+      items: [
+        "Indiquez la surface réellement chauffée.",
+        "Comparez une consommation annuelle dans la même unité.",
+        "Tenez compte de l'entretien et de la durée de vie de l'équipement.",
+      ],
+    },
+    {
+      type: 'title',
+      text: "Isolation et consommation",
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: "Une bonne isolation réduit les pertes par les murs, le toit et les fenêtres. Avant de changer de système, vérifiez les fuites d'air et la régulation de la température.",
+    },
+    {
+      type: 'stats',
+      items: [
+        { value: "24 °C", label: "Température de référence", icon: "mdi:thermometer" },
+        { value: "1 an", label: "Période comparée", icon: "mdi:calendar" },
+        { value: "100 %", label: "Calcul local", icon: "mdi:calculator" },
+      ],
+      columns: 3,
+    },
+    {
+      type: 'title',
+      text: "Interpréter le résultat",
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: "Le résultat est une estimation utile pour comparer des scénarios. Le coût réel varie selon les tarifs, la météo et les habitudes du foyer.",
+    },
+    {
+      type: 'tip',
+      title: "Comparer avec les mêmes hypothèses",
+      html: "<p>Utilisez la même surface, la même température et la même période pour chaque option. Vous obtiendrez une comparaison plus juste entre les technologies.</p>",
+    },
+    {
+      type: 'summary',
+      title: "Conseils avant de choisir",
+      items: [
+        "Améliorer l'isolation avant de surdimensionner le chauffage.",
+        "Comparer le coût total et pas seulement le prix d'achat.",
+        "Vérifier la disponibilité du combustible et du service local.",
+      ],
+    },
+    {
+      type: 'paragraph',
+      html: "Une décision équilibrée combine économies, confort, entretien et impact environnemental. Utilisez plusieurs hypothèses pour voir comment le classement change.",
+    },
+    {
+      type: 'title',
+      text: "Une estimation à compléter",
+      level: 3,
+    },
+  ].slice(0, 35),
   ui: {
     titleVivienda: '1. Données du logement',
     helperVivienda: 'Configurez votre maison',

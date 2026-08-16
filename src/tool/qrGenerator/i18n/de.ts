@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -165,6 +165,20 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'Laden Sie das Bild für beste Druckqualität herunter.',
         'Testen Sie den Code vor dem Ausdrucken auf dem Bildschirm.',
       ],
+    },
+    {
+      type: 'title',
+      text: 'QR Codes sicher gestalten',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Ein guter QR Code braucht ausreichend Kontrast, eine freie Ruhezone und eine Größe, die aus der geplanten Entfernung zuverlässig gescannt werden kann.',
+    },
+    {
+      type: 'tip',
+      title: 'Vor dem Druck testen',
+      html: '<p>Scannen Sie den Code mit mehreren Mobilgeräten und bei unterschiedlicher Beleuchtung. Prüfen Sie außerdem, ob das Ziel dauerhaft erreichbar ist.</p>',
     },
   ],
   ui: {

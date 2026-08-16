@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         '静的QRのため、パスワードを変えたら新しく作成してください。',
         '印刷する前に必ず読み取りテストを行ってください。',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、条件を比較して結果を理解するための補足を説明します。 7.",
     },
   ],
   ui: {

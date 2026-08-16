@@ -24,6 +24,7 @@ const faqData = [
     answer:
       '동시에 사용할 수 있는 최대 전기 부하(kW)를 말합니다.',
   },
+  { question: "선택에 도움이 되는 추가 정보는 무엇인가요? 1", answer: "같은 조건으로 비교하고 사용량, 유지 관리, 장기 비용도 고려하세요." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: '결과 비교',
     text: '두 방식의 연간 예상 비용 차이를 확인합니다.',
   },
+  { name: "선택에 도움이 되는 추가 정보는 무엇인가요? 1", text: "같은 조건으로 비교하고 사용량, 유지 관리, 장기 비용도 고려하세요." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,7 +80,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         '불필요하게 높은 계약 전력을 조정하여 기본료를 줄이세요.',
         '가능하다면 요금이 저렴한 시간대에 가전제품을 사용하세요.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 5.",
     },
   ],
   ui: {

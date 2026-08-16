@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Ini adalah batas beban maksimum (kW) yang dapat Anda gunakan secara bersamaan.',
   },
+  { question: "Informasi tambahan apa yang membantu pemilihan? 1", answer: "Bandingkan masukan yang sama dan pertimbangkan penggunaan, perawatan, serta biaya jangka panjang." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Bandingkan hasil',
     text: 'Lihat perkiraan biaya tahunan untuk kedua skema tarif.',
   },
+  { name: "Informasi tambahan apa yang membantu pemilihan? 1", text: "Bandingkan masukan yang sama dan pertimbangkan penggunaan, perawatan, serta biaya jangka panjang." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Sesuaikan daya kontrak agar tidak membayar yang tidak perlu.',
         'Gunakan listrik di jam hemat jika tarifnya berbeda.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini melengkapi panduan untuk membandingkan skenario dan memahami hasilnya. 5.",
     },
   ],
   ui: {

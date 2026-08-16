@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Yanlış boyut neden para kaybettirir?', level: 2 },
     { type: 'paragraph', html: 'Çok küçük bir klima sürekli çalışır, sıcaklığa asla ulaşamaz ve kompresörü erken yıpratır. Çok büyük bir klima kısa soğuk hava patlamaları yapar ve odayı nemli bırakır.' },
     { type: 'stats', items: [{ value: '600', label: 'm² başına BTU baz', icon: 'mdi:thermometer' }, { value: '12000', label: 'Ton başına BTU', icon: 'mdi:snowflake' }, { value: '3.968', label: 'Frigori başına BTU', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm senaryoları karşılaştırmak ve sonucu anlamak için ek bilgiler verir. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Oda alanı', labelRoomSizeFt: 'Alan', labelCeilingHeight: 'Tavan yüksekliği', labelCeilingHeightFt: 'Yükseklik',

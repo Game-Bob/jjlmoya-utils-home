@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Por que errar o tamanho custa dinheiro', level: 2 },
     { type: 'paragraph', html: 'Um ar condicionado subdimensionado funciona sem parar, nunca atinge a temperatura e desgasta o compressor. Um superdimensionado sopra ar frio em rajadas curtas e deixa o ambiente úmido.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU por m² base', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU por tonelada', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU por frigoria', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Área do cômodo', labelRoomSizeFt: 'Área', labelCeilingHeight: 'Pé-direito', labelCeilingHeightFt: 'Altura',

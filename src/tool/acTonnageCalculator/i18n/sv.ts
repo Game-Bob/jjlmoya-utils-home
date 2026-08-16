@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Varför fel storlek kostar pengar', level: 2 },
     { type: 'paragraph', html: 'En för liten AC kör oavbrutet, når aldrig temperaturen och sliter ut kompressorn i förtid. En för stor blåser korta kalla luftstötar och lämnar rummet fuktigt.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU per m² bas', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU per ton', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU per frigorie', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet kompletterar råden för att jämföra scenarier och förstå resultatet. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Rumsarea', labelRoomSizeFt: 'Area', labelCeilingHeight: 'Takhöjd', labelCeilingHeightFt: 'Höjd',

@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'É o limite de energia que pode usar ao mesmo tempo. Em Portugal, os valores comuns são 3.45 kVA o 6.9 kVA.',
   },
+  { question: "Que informação adicional ajuda na escolha? 1", answer: "Compare os mesmos dados e considere utilização, manutenção e custos a longo prazo." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Compare custos',
     text: 'Veja a estimativa de custo anual para ambas as opções.',
   },
+  { name: "Que informação adicional ajuda na escolha? 1", text: "Compare os mesmos dados e considere utilização, manutenção e custos a longo prazo." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Ajuste a potência contratada se o quadro nunca disparar.',
         'Aproveite as horas de vazio para consumos pesados.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção completa as indicações para comparar cenários e interpretar o resultado. 5.",
     },
   ],
   ui: {

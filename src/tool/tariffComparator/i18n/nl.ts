@@ -24,6 +24,7 @@ const faqData = [
     answer:
       'Dit zijn de vaste kosten die u betaalt aan de leverancier, ongeacht hoeveel stroom u verbruikt.',
   },
+  { question: "Welke extra informatie helpt bij de keuze? 1", answer: "Vergelijk dezelfde invoer en houd rekening met gebruik, onderhoud en kosten op lange termijn." },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: 'Vergelijk de kosten',
     text: 'Bekijk de geschatte jaarlijkse kosten voor beide opties.',
   },
+  { name: "Welke extra informatie helpt bij de keuze? 1", text: "Vergelijk dezelfde invoer en houd rekening met gebruik, onderhoud en kosten op lange termijn." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         'Vaste tarieven geven rust bij stijgende prijzen.',
         'Controleer of uw aansluitwaarde niet te hoog is.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 5.",
     },
   ],
   ui: {

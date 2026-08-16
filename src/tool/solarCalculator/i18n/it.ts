@@ -44,6 +44,7 @@ const howToData = [
     name: 'Regola per stagione (opzionale)',
     text: 'Se il supporto è regolabile, usa gli angoli di inverno e estate per massimizzare la resa.',
   },
+  { name: "Quale informazione aggiuntiva aiuta nella scelta? 1", text: "Confronta gli stessi dati e considera uso, manutenzione e costi nel tempo." },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -106,6 +107,26 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
         'Evitare ombre è la priorità assoluta.',
         'Orientamento a Sud nell\'emisfero nord.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Questa sezione completa le indicazioni per confrontare gli scenari e interpretare il risultato. 5.",
     },
   ],
   ui: {

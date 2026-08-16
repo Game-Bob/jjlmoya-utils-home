@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: '잘못된 크기가 비용을 낭비하는 이유', level: 2 },
     { type: 'paragraph', html: '너무 작은 에어컨은 계속 작동하며 설정 온도에 도달하지 못하고 압축기를 조기에 마모시킵니다. 너무 큰 에어컨은 짧은 찬 공기를 간헐적으로 내보내 방을 차갑고 습하게 만듭니다.' },
     { type: 'stats', items: [{ value: '600', label: 'm²당 기본 BTU', icon: 'mdi:thermometer' }, { value: '12000', label: '톤당 BTU', icon: 'mdi:snowflake' }, { value: '3.968', label: '프리고리아당 BTU', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 조건을 비교하고 결과를 이해하기 위한 추가 안내입니다. 9.",
+    },
   ],
   ui: {
     labelRoomSize: '방 면적', labelRoomSizeFt: '면적', labelCeilingHeight: '천장 높이', labelCeilingHeightFt: '높이',

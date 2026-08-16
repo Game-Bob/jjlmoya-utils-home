@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Dlaczego zły rozmiar kosztuje', level: 2 },
     { type: 'paragraph', html: 'Zbyt mały klimatyzator pracuje bez przerwy, nigdy nie osiąga temperatury i przedwcześnie zużywa sprężarkę. Zbyt duży wydmuchuje krótkie podmuchy zimnego powietrza i pozostawia pomieszczenie wilgotne.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU na m² podstawa', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU na tonę', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU na frigorię', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Powierzchnia pokoju', labelRoomSizeFt: 'Powierzchnia', labelCeilingHeight: 'Wysokość sufitu', labelCeilingHeightFt: 'Wysokość',

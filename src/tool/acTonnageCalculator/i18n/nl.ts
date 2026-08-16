@@ -46,6 +46,42 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'title', text: 'Waarom de verkeerde maat geld kost', level: 2 },
     { type: 'paragraph', html: 'Een te kleine airco draait continu, bereikt nooit de temperatuur en slijt de compressor voortijdig. Een te grote blaast korte koude luchtstoten en laat de kamer vochtig.' },
     { type: 'stats', items: [{ value: '600', label: 'BTU per m² basis', icon: 'mdi:thermometer' }, { value: '12000', label: 'BTU per ton', icon: 'mdi:snowflake' }, { value: '3.968', label: 'BTU per frigorie', icon: 'mdi:calculator' }], columns: 3 },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 7.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 8.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 9.",
+    },
   ],
   ui: {
     labelRoomSize: 'Ruimte', labelRoomSizeFt: 'Ruimte', labelCeilingHeight: 'Plafondhoogte', labelCeilingHeightFt: 'Hoogte',

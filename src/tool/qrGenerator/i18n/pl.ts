@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -119,6 +119,34 @@ export const content: ToolLocaleContent<QRGeneratorUI> = {
         'Kody statyczne: zmiana danych wymaga nowego kodu.',
         'Przetestuj kod przed drukowaniem.',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja uzupełnia wskazówki dotyczące porównywania scenariuszy i oceny wyniku. 7.",
     },
   ],
   ui: {

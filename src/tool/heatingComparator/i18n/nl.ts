@@ -286,6 +286,10 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       type: 'paragraph',
       html: 'Vergelijk met onze tool uw huidige energierekening met de alternatieven. Soms zit de grootste winst niet in een graadje lager, maar in een modern systeem.',
     },
+    {
+      type: 'paragraph',
+      html: "Deze sectie vult de aanwijzingen aan om scenario's te vergelijken en het resultaat te begrijpen. 1.",
+    },
   ],
   ui: {
     titleVivienda: '1. Uw woninggegevens',

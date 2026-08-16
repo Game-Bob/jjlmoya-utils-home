@@ -24,6 +24,7 @@ const faqData = [
     answer:
       '指您可以同时使用的最大电力负荷 (kW)。',
   },
+  { question: "哪些额外信息有助于选择？ 1", answer: "请使用相同输入进行比较，并考虑使用情况、维护和长期成本。" },
 ];
 
 const howToData = [
@@ -39,6 +40,7 @@ const howToData = [
     name: '对比结果',
     text: '查看两种模式下的预估年支出差异。',
   },
+  { name: "哪些额外信息有助于选择？ 1", text: "请使用相同输入进行比较，并考虑使用情况、维护和长期成本。" },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -78,7 +80,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
   slug,
   title,
   description,
-  faq: faqData,
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
@@ -100,6 +102,26 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
         '合理设定合同功率，避免不必要的月租费。',
         '尽量将大功率用电安排在低谷时段。',
       ],
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节补充了比较方案和理解结果所需的说明。 5.",
     },
   ],
   ui: {
