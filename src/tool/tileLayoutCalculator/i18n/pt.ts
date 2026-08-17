@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<TileLayoutCalculatorUI> = {
       title: 'Tabela de Referência Rápida de Cobertura',
       icon: 'mdi:table',
       badge: 'Referência',
-      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>30 x 30 cm</strong> → 11 azulejos por m²</li><li><strong>45 x 45 cm</strong> → 5 azulejos por m²</li><li><strong>60 x 60 cm</strong> → 3 azulejos por m²</li><li><strong>60 x 120 cm</strong> → 1,5 azulejos por m²</li></ul>',
+      html: '<ul style="margin:0;padding-left:1.2em"><li><strong>30 x 30 cm</strong> → 11 ladrilhos por m²</li><li><strong>45 x 45 cm</strong> → 5 ladrilhos por m²</li><li><strong>60 x 60 cm</strong> → 3 ladrilhos por m²</li><li><strong>60 x 120 cm</strong> → 1,5 ladrilhos por m²</li></ul>',
     },
     {
       type: 'summary',
