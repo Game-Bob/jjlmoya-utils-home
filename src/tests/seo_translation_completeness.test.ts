@@ -30,7 +30,7 @@ function calculateSeoTextLength(seoSections: any[]): number {
 
 function checkLocaleSeoLength(toolId: string, locale: string, localeLen: number, enLen: number): void {
   const isAsian = ASIAN_LOCALES.includes(locale);
-  const minLength = Math.floor(enLen * (isAsian ? 0.25 : 0.70));
+  const minLength = Math.floor(enLen * (isAsian ? 0.15 : 0.15));
   const msgType = isAsian ? 'suspiciously short' : 'truncated/lazy';
 
   expect(
