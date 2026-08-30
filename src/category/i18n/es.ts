@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'hogar',
   title: 'Calculadoras y Herramientas para el Hogar',
-  description: 'Optimiza tu hogar con datos reales. Herramientas gratuitas para calcular el ahorro energético, comparar tarifas de luz, dimensionar placas solares, evitar condensaciones y planificar tu instalación audiovisual.',
+  description: 'Herramientas gratuitas para calcular energía, comparar tarifas, dimensionar placas solares, evitar condensación y planificar tu instalación audiovisual.',
   seo: [
     {
       type: 'title',

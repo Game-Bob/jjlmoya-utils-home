@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'dom',
   title: 'Kalkulatory i Narzędzia Domowe',
-  description: 'Zoptymalizuj swój dom dzięki realnym danym. Darmowe narzędzia do obliczania oszczędności energii, porównywania taryf prądu, dobierania paneli słonecznych, zapobiegania kondensacji i planowania instalacji audiowizualnych.',
+  description: 'Darmowe narzędzia do energii, taryf prądu, doboru paneli słonecznych, kondensacji i planowania instalacji audiowizualnej.',
   seo: [
     {
       type: 'title',

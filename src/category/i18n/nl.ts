@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'huis',
   title: 'Huiscalculators en Hulpmiddelen',
-  description: 'Optimaliseer uw woning met echte data. Gratis tools om energiebesparingen te berekenen, energietarieven te vergelijken, zonnepanelen te dimensioneren, condensatie te voorkomen en uw audiovisuele installatie te plannen.',
+  description: 'Gratis tools voor energie, tarieven, zonnepanelen, condensatie en de planning van uw audiovisuele installatie thuis.',
   seo: [
     {
       type: 'title',

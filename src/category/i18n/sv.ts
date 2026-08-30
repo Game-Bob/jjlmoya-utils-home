@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'hem',
   title: 'Hemkalkylatorer och Verktyg',
-  description: 'Optimera ditt hem med verkliga data. Gratis verktyg för att beräkna energibesparingar, jämföra eltariffer, dimensionera solpaneler, förhindra kondens och planera din audiovisuella installation.',
+  description: 'Gratis verktyg för energi, eltariffer, solpaneler, kondens och planering av din audiovisuella installation hemma.',
   seo: [
     {
       type: 'title',

@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'ev',
   title: 'Ev Hesaplayıcıları ve Gereçleri',
-  description: 'Evinizi gerçek verilerle optimize edin. Enerji tasarrufunu hesaplamak, elektrik tarifelerini karşılaştırmak, güneş panellerini boyutlandırmak, yoğuşmayı önlemek ve görsel-işitsel kurulumunuzu planlamak için ücretsiz araçlar.',
+  description: 'Enerji, elektrik tarifeleri, güneş panelleri, yoğuşma ve görsel-işitsel kurulum planı için ücretsiz ev araçları.',
   seo: [
     {
       type: 'title',

@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'haushalt',
   title: 'Hausrechner und Hilfsmittel',
-  description: 'Optimieren Sie Ihr Zuhause mit echten Daten. Kostenlose Tools zur Berechnung von Energieeinsparungen, zum Vergleich von Stromtarifen, zur Dimensionierung von Solarmodulen, zur Vermeidung von Kondensation und zur Planung Ihres audiovisuellen Setups.',
+  description: 'Kostenlose Tools für Energie, Stromtarife, Solarpanels, Kondensation und die Planung Ihrer audiovisuellen Anlage zu Hause.',
   seo: [
     {
       type: 'title',

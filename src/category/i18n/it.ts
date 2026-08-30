@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'casa',
   title: 'Calcolatori e Utilità per la Casa',
-  description: 'Ottimizza la tua casa con dati reali. Strumenti gratuiti per calcolare il risparmio energetico, confrontare le tariffe elettriche, dimensionare i pannelli solari, prevenire la condensa e pianificare la tua installazione audiovisiva.',
+  description: 'Strumenti gratuiti per calcolare energia, confrontare tariffe, dimensionare pannelli solari, prevenire la condensa e pianificare l\'impianto audiovisivo.',
   seo: [
     {
       type: 'title',

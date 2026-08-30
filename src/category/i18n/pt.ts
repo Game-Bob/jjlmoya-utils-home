@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'lar',
   title: 'Calculadoras e Utilitários Domésticos',
-  description: 'Otimize a sua casa com dados reais. Ferramentas gratuitas para calcular a poupança de energia, comparar tarifas de eletricidade, dimensionar painéis solares, prevenir a condensação e planear a sua instalação audiovisual.',
+  description: 'Ferramentas gratuitas para energia, tarifas, dimensionar painéis solares, prevenir condensação e planear a instalação audiovisual.',
   seo: [
     {
       type: 'title',

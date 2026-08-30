@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'rumah',
   title: 'Kalkulator dan Utilitas Rumah',
-  description: 'Optimalkan rumah Anda dengan data nyata. Alat gratis untuk menghitung penghematan energi, membandingkan tarif listrik, menentukan ukuran panel surya, mencegah kondensasi, und merencanakan pengaturan audio visual Anda.',
+  description: 'Alat gratis untuk menghitung energi, membandingkan tarif listrik, menentukan panel surya, mencegah kondensasi, dan merencanakan audio visual rumah.',
   seo: [
     {
       type: 'title',

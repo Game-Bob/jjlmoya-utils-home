@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'maison',
   title: 'Calculatrices et Outils pour la Maison',
-  description: 'Optimisez votre maison avec des données réelles. Outils gratuits pour calculer les économies d\'énergie, comparer les tarifs électriques, dimensionner vos panneaux solaires, prévenir la condensation et planifier votre installation audiovisuelle.',
+  description: 'Outils gratuits pour calculer l\'énergie, comparer les tarifs, dimensionner les panneaux solaires, prévenir la condensation et planifier votre installation audiovisuelle.',
   seo: [
     {
       type: 'title',
