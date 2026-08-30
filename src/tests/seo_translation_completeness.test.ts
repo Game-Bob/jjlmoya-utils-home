@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { ALL_TOOLS } from '../tools';
 
 const ASIAN_LOCALES = ['ja', 'ko', 'zh'];
+const DIAGNOSTIC_VARIANTS = new Set(['warning', 'error', 'info', 'success']);
 
 function getSimpleSectionLength(section: any): number {
   if (section.type === 'title') return section.text ? section.text.length : 0;
@@ -26,6 +27,22 @@ function getSectionLength(section: any): number {
 
 function calculateSeoTextLength(seoSections: any[]): number {
   return seoSections.reduce((acc, section) => acc + getSectionLength(section), 0);
+}
+
+function findInvalidDiagnosticVariants(
+  toolId: string,
+  locale: string,
+  seoSections: any[],
+): string[] {
+  return seoSections.flatMap((section, index) => {
+    if (section.type !== 'diagnostic' || DIAGNOSTIC_VARIANTS.has(section.variant)) {
+      return [];
+    }
+
+    return [
+      `[INVALID SEO DIAGNOSTIC] Tool "${toolId}" locale "${locale}" section ${index + 1} has unsupported variant "${String(section.variant)}"; expected one of warning, error, info, success`,
+    ];
+  });
 }
 
 function checkLocaleSeoLength(toolId: string, locale: string, localeLen: number, enLen: number): string | null {
@@ -67,6 +84,24 @@ describe('SEO Translation Completeness & Laziness Audit', () => {
           failures,
           failures.length > 0
             ? `SEO translation completeness failures for "${entry.id}":\n${failures.map((failure, index) => `${index + 1}. ${failure}`).join('\n')}`
+            : undefined,
+        ).toEqual([]);
+      });
+
+      it('should use supported diagnostic variants in every locale', async () => {
+        const failures: string[] = [];
+
+        for (const [locale, loader] of Object.entries(entry.i18n)) {
+          const content = await loader();
+          if (!content.seo || !Array.isArray(content.seo)) continue;
+
+          failures.push(...findInvalidDiagnosticVariants(entry.id, locale, content.seo));
+        }
+
+        expect(
+          failures,
+          failures.length > 0
+            ? `SEO diagnostic variant failures for "${entry.id}":\n${failures.map((failure, index) => `${index + 1}. ${failure}`).join('\n')}`
             : undefined,
         ).toEqual([]);
       });

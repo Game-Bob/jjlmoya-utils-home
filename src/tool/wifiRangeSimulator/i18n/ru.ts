@@ -218,7 +218,7 @@ export const content: ToolLocaleContent<WifiRangeSimulatorUI> = {
     },
     {
       type: 'diagnostic',
-      variant: 'wарнинг',
+      variant: 'warning',
       title: 'Ловушка аквариума',
       icon: 'mdi:fish',
       badge: 'Неожиданный блокировщик',
@@ -226,7 +226,7 @@ export const content: ToolLocaleContent<WifiRangeSimulatorUI> = {
     },
     {
       type: 'diagnostic',
-      variant: 'wарнинг',
+      variant: 'warning',
       title: 'Эффект зеркала',
       icon: 'mdi:mirror',
       badge: 'Опасност отражения',
@@ -234,7 +234,7 @@ export const content: ToolLocaleContent<WifiRangeSimulatorUI> = {
     },
     {
       type: 'diagnostic',
-      variant: 'wарнинг',
+      variant: 'warning',
       title: 'Помехи от микроволновки',
       icon: 'mdi:microwave',
       badge: 'Активный глушител',
