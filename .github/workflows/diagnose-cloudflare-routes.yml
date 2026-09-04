@@ -28,5 +28,5 @@ jobs:
                           -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
                           -H "Content-Type: application/json" \
                           "https://api.cloudflare.com/client/v4/zones/$zone_id/workers/routes?per_page=1000" \
-                          | jq -r '.result[] | select(.pattern | test("hogar|home|calculadora-solar|qr|punto-de-rocio|led|tarif|wifi|tonelaje|pintura|standby|ergonomia|electrodomesticos|azulejos|iluminacion|humedad|descalcificador"; "i")) | [.id, .pattern, (.script // "<none>")] | @tsv'
+                          | jq -r '.result[] | [.id, .pattern, (.script // "<none>")] | @tsv'
                   done
