@@ -1,0 +1,28 @@
+name: Debug Cloudflare deployment
+
+on:
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        environment: production
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "22.18.0"
+                  cache: "npm"
+            - run: npm ci
+            - run: npm run build
+              env:
+                  PUBLIC_APP_VERSION: debug
+            - name: Deploy with Wrangler debug logs
+              env:
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  WRANGLER_LOG: debug
+              run: ./node_modules/.bin/wrangler deploy
