@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Aerotermia vs Gás Natural',
-      proTitle: 'Porquê Aerotermia?',
-      conTitle: 'Porquê Gás?',
       items: [
         { pro: 'Eficiência imbatível (COP 4+)', con: 'Instalação muito mais económica' },
         { pro: 'Independência de fósseis', con: 'Calor instantâneo de alta potência' },

@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { tariffComparator } from './entry';
 export * from './entry';
 export const TARIFF_COMPARATOR_TOOL: ToolDefinition = {

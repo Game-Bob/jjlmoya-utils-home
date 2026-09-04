@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { projectorCalculator } from './entry';
 export * from './entry';
 export const PROJECTOR_CALCULATOR_TOOL: ToolDefinition = {

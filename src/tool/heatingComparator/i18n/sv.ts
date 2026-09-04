@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Värmepump vs Gaspanna',
-      proTitle: 'Varför Värmepump?',
-      conTitle: 'Varför Gas?',
       items: [
         { pro: 'Oslagbar effektivitet (COP 4+)', con: 'Billigare installation inledningsvis' },
         { pro: 'Fossilt oberoende', con: 'Snabb värme med hög effekt' },
@@ -239,9 +237,9 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'list',
       items: [
-        { label: 'De funkar inte i kyla', text: 'Fel. Moderna nordiska modeller funkar ner till -25 °C.' },
-        { label: 'Det blir torr luft', text: 'Gäller bara luft/luft. Vattenburen värme med värmepump är mycket behagligt.' },
-        { label: 'El är för dyrt', text: 'Även om elpriset är högre än gaspriset gör effektiviteten på 400 % att det lönar sig ändå.' },
+        '<strong>De funkar inte i kyla:</strong> Fel. Moderna nordiska modeller funkar ner till -25 °C.',
+        '<strong>Det blir torr luft:</strong> Gäller bara luft/luft. Vattenburen värme med värmepump är mycket behagligt.',
+        '<strong>El är för dyrt:</strong> Även om elpriset är högre än gaspriset gör effektiviteten på 400 % att det lönar sig ändå.',
       ],
     },
     {

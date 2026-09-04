@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: '히트펌프 vs 가스 보일러',
-      proTitle: '왜 히트펌프인가요?',
-      conTitle: '왜 가스인가요?',
       items: [
         { pro: '압도적인 효율 (COP 4+)', con: '설치 비용 저렴' },
         { pro: '화석 연료 독립', con: '즉각적인 고출력 난방' },

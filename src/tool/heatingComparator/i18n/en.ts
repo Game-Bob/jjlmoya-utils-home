@@ -177,8 +177,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Heat Pump vs Natural Gas',
-      proTitle: 'Why Heat Pump?',
-      conTitle: 'Why Gas?',
       items: [
         { pro: 'Unbeatable efficiency (COP 4+)', con: 'Much cheaper installation' },
         { pro: 'Fossil fuel independence', con: 'High power instant heat' },

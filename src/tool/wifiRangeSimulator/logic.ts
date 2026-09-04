@@ -131,9 +131,10 @@ function computeVerdict(percent: number): SignalResult['verdict'] {
 
 function streamStatus(pct: number, thresholds: number[], labels: string[]): string {
   for (let i = 0; i < thresholds.length; i++) {
-    if (pct >= thresholds[i]) return labels[i];
+    const threshold = thresholds[i];
+    if (threshold !== undefined && pct >= threshold) return labels[i] ?? '';
   }
-  return labels[labels.length - 1];
+  return labels[labels.length - 1] ?? '';
 }
 
 function streaming4K(pct: number, labels: string[]): string {

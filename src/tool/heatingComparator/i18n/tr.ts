@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Isı Pompası vs. Doğalgaz Kombi',
-      proTitle: 'Neden Isı Pompası?',
-      conTitle: 'Neden Doğalgaz?',
       items: [
         { pro: 'Rakipsiz verim (COP 4+)', con: 'Daha ekonomik kurulum' },
         { pro: 'Fosil yakıt bağımsızlığı', con: 'Hızlı ve yüksek ısı gücü' },

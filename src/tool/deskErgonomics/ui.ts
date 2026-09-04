@@ -17,7 +17,7 @@ export interface DeskErgonomicsUI extends Record<string, string> {
   badgeChair: string;
   badgeDesk: string;
   badgeMonitor: string;
-  badgeDistance: string;
+  badgeDistance?: string;
   tipScreenLow: string;
   tipScreenHigh: string;
   tipDeskLow: string;

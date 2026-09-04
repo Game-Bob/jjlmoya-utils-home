@@ -1,5 +1,5 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
-import type { ToolLocaleContent } from '../../../types';
+import type { SEOSection, ToolLocaleContent } from '../../../types';
 import type { HeatingComparatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
@@ -177,8 +177,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Aérothermie vs Gaz Naturel',
-      proTitle: 'Pourquoi l\'Aérothermie ?',
-      conTitle: 'Pourquoi le Gaz ?',
       items: [
         { pro: 'Efficacité imbattable (COP 4+)', con: 'Installation moins chère' },
         { pro: 'Indépendance fossile', con: 'Chauffage instantané' },
@@ -307,7 +305,7 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
       text: "Une estimation à compléter",
       level: 3,
     },
-  ].slice(0, 35),
+  ].slice(0, 35) as SEOSection[],
   ui: {
     titleVivienda: '1. Données du logement',
     helperVivienda: 'Configurez votre maison',

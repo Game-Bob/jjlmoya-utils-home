@@ -24,7 +24,7 @@ function getNum(id: string): number { const e = el(id) as HTMLInputElement | nul
 
 function getStr(id: string): string { return (el(id) as HTMLSelectElement | null)?.value ?? ''; }
 
-function colorFor(btu: number): string { return COLORS[Math.min(4, Math.floor(Math.min(1, btu / MAX_BTU) * 5))]; }
+function colorFor(btu: number): string { return COLORS[Math.min(4, Math.floor(Math.min(1, btu / MAX_BTU) * 5))] ?? COLORS[0] ?? '#22c55e'; }
 
 function unitLabel() { return SYS() === 'imperial' ? 'ft' : 'm'; }
 

@@ -17,7 +17,7 @@ export function renderWalls(walls: Segment[]) {
     line.setAttribute('y1', String(wall.a.y));
     line.setAttribute('x2', String(wall.b.x));
     line.setAttribute('y2', String(wall.b.y));
-    line.setAttribute('stroke', MATERIALS[wall.material].color);
+    line.setAttribute('stroke', MATERIALS[wall.material]?.color ?? '#94a3b8');
     line.setAttribute('stroke-width', '6');
     line.setAttribute('stroke-linecap', 'round');
     line.setAttribute('class', 'sketch-wall-line');
@@ -32,7 +32,7 @@ function buildObjRect(g: SVGGElement, obj: PlacedObject) {
   rect.setAttribute('width', String(obj.width));
   rect.setAttribute('height', String(obj.height));
   rect.setAttribute('rx', '4');
-  rect.setAttribute('fill', MATERIALS[obj.material].color);
+  rect.setAttribute('fill', MATERIALS[obj.material]?.color ?? '#94a3b8');
   rect.setAttribute('stroke', 'rgba(0,0,0,0.15)');
   rect.setAttribute('stroke-width', '1');
   g.appendChild(rect);

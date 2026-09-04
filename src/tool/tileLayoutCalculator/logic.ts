@@ -15,6 +15,7 @@ export interface TileLayoutResult {
   tileWidthM: number;
   tileLengthM: number;
   groutM: number;
+  wastePercent: number;
   roomArea: number;
   cols: number;
   rows: number;
@@ -39,6 +40,7 @@ export function calculateTileLayout(i: TileLayoutInput): TileLayoutResult {
     tileWidthM: i.tileWidthM,
     tileLengthM: i.tileLengthM,
     groutM: i.groutM,
+    wastePercent: i.wastePercent,
     roomArea: i.roomWidthM * i.roomLengthM,
     cols,
     rows,

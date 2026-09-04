@@ -49,7 +49,14 @@ function breakdownLabel(key: string): string {
 ---
 
 <div class="ac-wrapper">
-  <div class="ac-card" id="ac-card">
+  <div class="ac-card" id="ac-card"
+    data-label-room-size-ft={aUI.labelRoomSizeFt}
+    data-label-ceiling-height-ft={aUI.labelCeilingHeightFt}
+    data-label-calculate={aUI.labelCalculate}
+    data-label-result={aUI.labelResult}
+    data-label-recommended={aUI.labelRecommended}
+    data-error-required={aUI.errorRequired}
+  >
     <div class="ac-left">
       <div class="ac-unit-toggle" id="ac-unit-toggle">
         <button class="active" data-unit="metric">{aUI.labelMetric}</button>

@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Тепловой насос vs Газовый котел',
-      proTitle: 'Почему насос?',
-      conTitle: 'Почему газ?',
       items: [
         { pro: 'Непревзойденный КПД (COP 4+)', con: 'Более дешевая установка' },
         { pro: 'Независимость от ископаемого топлива', con: 'Мгновенный мощный нагрев' },

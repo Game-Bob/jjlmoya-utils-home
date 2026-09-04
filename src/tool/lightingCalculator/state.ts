@@ -52,7 +52,6 @@ export function saveState(
 }
 
 export function restoreInputs(
-  getNum: (id: string) => number,
   setVal: (id: string, v: string) => void,
 ) {
   const s = localStorage.getItem(LS_KEY);
@@ -62,7 +61,8 @@ export function restoreInputs(
     const ids = ['lc-w', 'lc-l', 'lc-h', 'lc-bw', 'lc-f'];
     const keys = ['w', 'l', 'h', 'bw', 'f'];
     ids.forEach((id, i) => {
-      if (v[keys[i]] !== undefined) setVal(id, String(v[keys[i]]));
+      const key = keys[i];
+      if (key && v[key] !== undefined) setVal(id, String(v[key]));
     });
   } catch {}
 }

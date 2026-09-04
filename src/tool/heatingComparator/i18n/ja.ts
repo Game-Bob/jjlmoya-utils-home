@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'ヒートポンプ vs ガス給湯器',
-      proTitle: 'ヒートポンプを選ぶ理由',
-      conTitle: 'ガスを選ぶ理由',
       items: [
         { pro: '圧倒的な効率 (COP 4+)', con: '導入コストが安い' },
         { pro: '化石燃料からの脱却', con: '瞬時に高い熱量を提供' },

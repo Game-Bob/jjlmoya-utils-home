@@ -12,7 +12,20 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_H = 2.7, INIT_W = 9, INIT_F = 6;
 ---
 
 <div class="lc-wrap">
-  <div class="lc-card">
+  <div class="lc-card"
+    data-label-room-type={lUI.labelRoomType}
+    data-unit-imperial-room={lUI.unitImperialRoom}
+    data-unit-lux={lUI.unitLux}
+    data-label-target-lux={lUI.labelTargetLux}
+    data-label-bulbs-needed={lUI.labelBulbsNeeded}
+    data-label-room-area={lUI.labelRoomArea}
+    data-status-optimal={lUI.statusOptimal}
+    data-status-insufficient={lUI.statusInsufficient}
+    data-status-excess={lUI.statusExcess}
+    data-tip-optimal={lUI.tipOptimal}
+    data-tip-insufficient={lUI.tipInsufficient}
+    data-tip-excess={lUI.tipExcess}
+  >
     <div class="lc-head">
       <span class="lc-title">{lUI.sectionTitle}</span>
       <div class="lc-unit-toggle">
@@ -176,9 +189,11 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_H = 2.7, INIT_W = 9, INIT_F = 6;
     if (statusEl) statusEl.className = 'lc-status ' + r.status;
     if (planWrap) planWrap.className = 'lc-plan-wrap ' + r.status;
     if (stText) {
-      if (r.status === 'optimal') stText.textContent = 'Perfect';
-      else if (r.status === 'insufficient') stText.textContent = 'Too Dim';
-      else stText.textContent = 'Too Bright';
+      const card = document.querySelector('.lc-card') as HTMLElement | null;
+      let key = 'statusExcess';
+      if (r.status === 'optimal') key = 'statusOptimal';
+      else if (r.status === 'insufficient') key = 'statusInsufficient';
+      stText.textContent = card?.dataset[key] ?? '';
     }
     if (stDesc) stDesc.textContent = r.sensoryContext;
   }
@@ -238,7 +253,7 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_H = 2.7, INIT_W = 9, INIT_F = 6;
   }
 
   function init() {
-    restoreInputs(getNum, setVal);
+    restoreInputs(setVal);
     updateUnitLabels(st.unitSys, setTxt);
     document.querySelectorAll('.lc-unit-btn').forEach((b) => b.classList.toggle('lc-unit-active', (b as HTMLElement).dataset.unit === st.unitSys));
     document.querySelectorAll('.lc-chip').forEach((b) => b.classList.toggle('lc-chip-active', (b as HTMLElement).dataset.room === st.roomType));

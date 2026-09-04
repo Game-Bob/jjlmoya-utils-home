@@ -36,7 +36,7 @@ export function calculateAcTonnage(input: AcInput): AcResult {
   const peopleFactor = input.people * 500;
   const heatFactor = input.heatSources * 400;
 
-  const rawBtu = (areaFactor * heightFactor * SUN_MULT[input.sunExposure] * ROOM_MULT[input.roomType]) + peopleFactor + heatFactor;
+  const rawBtu = (areaFactor * heightFactor * (SUN_MULT[input.sunExposure] ?? 1) * (ROOM_MULT[input.roomType] ?? 1)) + peopleFactor + heatFactor;
   const btu = Math.round(rawBtu / 1000) * 1000;
   const frigorias = Math.round(btu / 3.968 / 100) * 100;
   const tons = Math.round((btu / 12000) * 10) / 10;

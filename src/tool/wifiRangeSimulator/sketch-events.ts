@@ -92,6 +92,7 @@ export function handleMouseUp(s: State, svg: SVGSVGElement, h: History, e: Mouse
     const dy = p.y - s.drawStart.y;
     if (Math.sqrt(dx * dx + dy * dy) > 5) {
       const m = MATERIALS[s.tool];
+      if (!m) return;
       s.walls.push({
         a: { ...s.drawStart },
         b: { ...p },
@@ -133,6 +134,7 @@ export function updateDrag(s: State, p: Point) {
     return;
   }
   if (s.drawing && isWallTool(s.tool)) {
-    updatePreviewWall(s.drawStart, p, MATERIALS[s.tool].color);
+    const material = MATERIALS[s.tool];
+    if (material) updatePreviewWall(s.drawStart, p, material.color);
   }
 }

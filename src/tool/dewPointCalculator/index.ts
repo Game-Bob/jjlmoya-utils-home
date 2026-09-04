@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { dewPointCalculator } from './entry';
 export * from './entry';
 export const DEW_POINT_CALCULATOR_TOOL: ToolDefinition = {

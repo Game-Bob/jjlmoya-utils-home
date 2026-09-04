@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Wärmepumpe vs. Gasheizung',
-      proTitle: 'Warum Wärmepumpe?',
-      conTitle: 'Warum Gas?',
       items: [
         { pro: 'Unschlagbare Effizienz (COP 4+)', con: 'Günstigere Installation' },
         { pro: 'Unabhängigkeit von Gas', con: 'Konstant hohe Vorlauftemperaturen' },

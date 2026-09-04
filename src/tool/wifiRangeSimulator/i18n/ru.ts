@@ -384,8 +384,8 @@ export const content: ToolLocaleContent<WifiRangeSimulatorUI> = {
       ],
     },
     {
-      type: 'диагностиц',
-      variant: 'wарнинг',
+      type: 'diagnostic',
+      variant: 'warning',
       title: 'Золотое правило размещения роутера',
       icon: 'mdi:map-marker-radius',
       badge: 'Ключевой совет',

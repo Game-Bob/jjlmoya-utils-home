@@ -1,3 +1,4 @@
+import type { Point } from './logic';
 import type { State, Snapshot } from './sketch-state';
 import {
   defaultState,
@@ -74,7 +75,8 @@ function bindKeyboard(s: State, h: { stack: Snapshot[]; pos: number }) {
       e.preventDefault();
       if (h.pos <= 0) return;
       h.pos--;
-      applySnapshot(s, h.stack[h.pos]);
+      const snapshot = h.stack[h.pos];
+      if (snapshot) applySnapshot(s, snapshot);
       initRender(s);
       saveState(s);
     }

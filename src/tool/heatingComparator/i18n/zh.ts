@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: '热泵 vs 天然气锅炉',
-      proTitle: '为何选择热泵？',
-      conTitle: '为何选择燃气？',
       items: [
         { pro: '无敌的效率 (COP 4+)', con: '安装成本更低' },
         { pro: '摆脱化石燃料', con: '大功率瞬时供热' },

@@ -83,7 +83,9 @@ export function addDevice(s: State, h: History) {
 function doUndo(s: State, h: History) {
   if (h.pos <= 0) return;
   h.pos--;
-  applySnapshot(s, h.stack[h.pos]);
+  const snapshot = h.stack[h.pos];
+  if (!snapshot) return;
+  applySnapshot(s, snapshot);
   renderWalls(s.walls);
   renderObjects(s.objects);
   renderRouter(s.router);

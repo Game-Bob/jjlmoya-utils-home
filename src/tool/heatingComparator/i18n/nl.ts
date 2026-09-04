@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Warmtepomp vs Gas CV',
-      proTitle: 'Waarom Warmtepomp?',
-      conTitle: 'Waarom Gas?',
       items: [
         { pro: 'Onverslaanbare efficiëntie (COP 4+)', con: 'Goedkopere installatie' },
         { pro: 'Onafhankelijk van gas', con: 'Snel hoge temperaturen' },

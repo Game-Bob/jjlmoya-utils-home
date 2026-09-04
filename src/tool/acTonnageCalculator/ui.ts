@@ -1,8 +1,8 @@
 export interface AcTonnageCalculatorUI extends Record<string, string> {
   labelRoomSize: string;
-  labelRoomSizeFt: string;
+  labelRoomSizeFt?: string;
   labelCeilingHeight: string;
-  labelCeilingHeightFt: string;
+  labelCeilingHeightFt?: string;
   labelPeople: string;
   labelHeatSources: string;
   labelSunExposure: string;

@@ -28,7 +28,7 @@ function updateRing(percent: number, color: string) {
   setText('sketch-ring-pct', `${percent}%`);
 }
 
-function getStatusCol(status: string, pct: number): string {
+function getStatusCol(_status: string, pct: number): string {
   if (pct >= 60) return '#22c55e';
   if (pct >= 30) return '#f59e0b';
   return '#ef4444';
@@ -40,8 +40,9 @@ function updateStreaming(result: ReturnType<typeof calculateSignalFromSketch>) {
   keys.forEach((k) => {
     const el = document.getElementById(`sketch-badge-${k}`);
     if (!el) return;
-    el.textContent = result.streamingVerdict[k];
-    const col = getStatusCol(result.streamingVerdict[k], thresholds[k]);
+    const status = result.streamingVerdict[k] ?? '';
+    el.textContent = status;
+    const col = getStatusCol(status, thresholds[k] ?? 0);
     (el as HTMLElement).style.color = col;
     (el as HTMLElement).style.background = col + '14';
   });

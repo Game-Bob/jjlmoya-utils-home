@@ -42,12 +42,12 @@ export function toGpg(value: number, unit: 'gpg' | 'fH'): number {
 }
 
 export function getHardnessCategory(gpg: number): HardnessCategory {
-  if (gpg < 3.5) return CATEGORIES[0];
-  if (gpg < 7.0) return CATEGORIES[1];
-  if (gpg < 10.5) return CATEGORIES[2];
-  if (gpg < 14.0) return CATEGORIES[3];
-  if (gpg < 21.0) return CATEGORIES[4];
-  return CATEGORIES[5];
+  if (gpg < 3.5) return CATEGORIES[0]!;
+  if (gpg < 7.0) return CATEGORIES[1]!;
+  if (gpg < 10.5) return CATEGORIES[2]!;
+  if (gpg < 14.0) return CATEGORIES[3]!;
+  if (gpg < 21.0) return CATEGORIES[4]!;
+  return CATEGORIES[5]!;
 }
 
 export function calculateScale(gpg: number): ScaleResult {

@@ -48,9 +48,9 @@ const UF_MAP: Record<string, number> = {
 };
 
 function getUF(roomHeightM: number): number {
-  if (roomHeightM <= 2.5) return UF_MAP.low;
-  if (roomHeightM <= 3.5) return UF_MAP.medium;
-  return UF_MAP.high;
+  if (roomHeightM <= 2.5) return UF_MAP.low ?? 0.55;
+  if (roomHeightM <= 3.5) return UF_MAP.medium ?? 0.5;
+  return UF_MAP.high ?? 0.45;
 }
 
 function getSensoryContext(currentLux: number, targetLux: number): string {

@@ -116,7 +116,7 @@ export const content: ToolLocaleContent<SolarCalculatorUI> = {
           points: ['Maximiert die Energieausbeute', 'Basis aller Neigungsberechnungen'],
         },
       ],
-      columns: 1,
+      columns: 2,
     },
     {
       type: 'summary',

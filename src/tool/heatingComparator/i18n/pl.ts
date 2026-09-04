@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Pompa Ciepła vs Gaz',
-      proTitle: 'Dlaczego Pompa?',
-      conTitle: 'Dlaczego Gaz?',
       items: [
         { pro: 'Bezkonkurencyjna sprawność (COP 4+)', con: 'Tańsza instalacja başlangıçta' },
         { pro: 'Niezależność od paliw kopalnych', con: 'Szybkie ciepło o dużej mocy' },

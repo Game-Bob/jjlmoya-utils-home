@@ -24,6 +24,9 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT
     data-u-pct={tUI.unitPercent}
     data-u-box={tUI.unitBoxes}
     data-currency={tUI.currency}
+    data-label-cuts={tUI.labelCuts}
+    data-badge-optimal={tUI.badgeOptimal}
+    data-badge-warning={tUI.badgeWarning}
   >
     <div class="tile-left">
       <p class="tile-section-title">{tUI.sectionTitle}</p>
@@ -150,8 +153,8 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT
       : { rm: 0.3048, tm: 0.0254, gm: 0.0254 };
   }
 
-  function makeSVG(ns: string, r: TileLayoutResult): SVGElement {
-    const svg = document.createElementNS(ns, 'svg');
+  function makeSVG(ns: string, r: TileLayoutResult): SVGSVGElement {
+    const svg = document.createElementNS(ns, 'svg') as SVGSVGElement;
     svg.setAttribute('viewBox', `0 0 ${r.roomWidthM} ${r.roomLengthM}`); svg.setAttribute('class', 'tile-svg');
     svg.style.width = '100%'; svg.style.height = '100%';
     return svg;
@@ -227,7 +230,7 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT
   }
 
   function drawDiagonal(ns: string, svg: SVGElement, r: TileLayoutResult) {
-    const g = document.createElementNS(ns, 'g');
+    const g = document.createElementNS(ns, 'g') as SVGGElement;
     g.setAttribute('transform', `rotate(45 ${r.roomWidthM / 2} ${r.roomLengthM / 2})`);
     for (let c = 0; c < r.cols; c++) {
       for (let ro = 0; ro < r.rows; ro++) {
@@ -363,7 +366,7 @@ const INIT_R_W = 4, INIT_R_L = 5, INIT_T_W = 30, INIT_T_L = 30, INIT_G = 3, INIT
     for (let i = 0; i < 5; i++) {
       const p = document.createElement('span');
       p.className = 'tile-particle';
-      p.textContent = ['+', '~', '*'][Math.floor(Math.random() * 3)];
+      p.textContent = ['+', '~', '*'][Math.floor(Math.random() * 3)] ?? '+';
       const a = Math.random() * 6.28;
       const d = 20 + Math.random() * 30;
       p.style.left = `${ev.clientX}px`;

@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Pompa Panas vs Boiler Gas',
-      proTitle: 'Kenapa Pompa Panas?',
-      conTitle: 'Kenapa Gas?',
       items: [
         { pro: 'Efisiensi tak terkalahkan (COP 4+)', con: 'Instalasi jauh lebih murah' },
         { pro: 'Bebas dari bahan bakar fosil', con: 'Panas instan daya tinggi' },

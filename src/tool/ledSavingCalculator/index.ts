@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { ledSavingCalculator } from './entry';
 export * from './entry';
 export const LED_SAVING_CALCULATOR_TOOL: ToolDefinition = {

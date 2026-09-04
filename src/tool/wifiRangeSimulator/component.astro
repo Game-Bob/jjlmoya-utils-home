@@ -17,7 +17,19 @@ const initialResult = calculateSignalFromSketch(initialRouter, initialDevice, []
 ---
 
 <div class="sketch-wrapper">
-  <div class="sketch-card">
+  <div class="sketch-card"
+    data-label-obstacles={wUI.labelObstacles}
+    data-label-add-obstacle={wUI.labelAddObstacle}
+    data-label-remove={wUI.labelRemove}
+    data-label-effective-range={wUI.labelEffectiveRange}
+    data-label-percent={wUI.labelPercent}
+    data-verdict-perfect={wUI.verdictPerfect}
+    data-verdict-good={wUI.verdictGood}
+    data-verdict-fair={wUI.verdictFair}
+    data-verdict-poor={wUI.verdictPoor}
+    data-verdict-dead={wUI.verdictDead}
+    data-tip-title={wUI.tipTitle}
+  >
     <div class="sketch-toolbar" id="sketch-toolbar">
       <div class="sketch-tool-group">
         <button class="sketch-tool active" data-tool="select" type="button">

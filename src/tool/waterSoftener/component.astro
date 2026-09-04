@@ -19,6 +19,9 @@ const cat = getHardnessCategory(gpg);
 const scale = calculateScale(gpg);
 const salt = calculateSalt({ hardnessValue: DEF_HARDNESS, hardnessUnit: DEF_UNIT as 'gpg' | 'fH', occupants: DEF_OCCUPANTS, softenerGrains: DEF_CAPACITY });
 const apps = calculateApplianceLifespan(gpg);
+const washer = apps.washer ?? { baseline: 0, withHardness: 0, saved: 0 };
+const heater = apps.heater ?? { baseline: 0, withHardness: 0, saved: 0 };
+const coffee = apps.coffee ?? { baseline: 0, withHardness: 0, saved: 0 };
 ---
 
 <div class="ws-root">
@@ -29,6 +32,13 @@ const apps = calculateApplianceLifespan(gpg);
     data-ul={wUI.applianceSaved}
     data-um={wUI.scaleUnitMetric}
     data-ui={wUI.scaleUnitImperial}
+    data-hardness-soft={wUI.hardnessSoft}
+    data-hardness-slightly={wUI.hardnessSlightly}
+    data-hardness-moderate={wUI.hardnessModerate}
+    data-hardness-hard={wUI.hardnessHard}
+    data-hardness-very={wUI.hardnessVery}
+    data-hardness-extreme={wUI.hardnessExtreme}
+    data-appliance-title={wUI.applianceTitle}
   >
     <div class="ws-stage">
       <div class="ws-stage-glow"></div>
@@ -131,29 +141,29 @@ const apps = calculateApplianceLifespan(gpg);
         <div class="ws-app">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M12 14v-2"/></svg>
           <p class="ws-app-name">{wUI.applianceWasher}</p>
-          <p class="ws-app-years" id="ws-app-w-base">{apps.washer.baseline}</p>
+          <p class="ws-app-years" id="ws-app-w-base">{washer.baseline}</p>
           <p class="ws-app-sub" id="ws-app-w-sub">{wUI.applianceBaseline}</p>
-          <p class="ws-app-years" id="ws-app-w-cur">{apps.washer.withHardness}</p>
+          <p class="ws-app-years" id="ws-app-w-cur">{washer.withHardness}</p>
           <p class="ws-app-sub">{wUI.applianceWithHardness}</p>
-          <span class="ws-app-saved" id="ws-app-w-saved">{wUI.badgeSaved} {fmt1(apps.washer.saved)} {wUI.applianceSaved}</span>
+          <span class="ws-app-saved" id="ws-app-w-saved">{wUI.badgeSaved} {fmt1(washer.saved)} {wUI.applianceSaved}</span>
         </div>
         <div class="ws-app">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           <p class="ws-app-name">{wUI.applianceHeater}</p>
-          <p class="ws-app-years" id="ws-app-h-base">{apps.heater.baseline}</p>
+          <p class="ws-app-years" id="ws-app-h-base">{heater.baseline}</p>
           <p class="ws-app-sub" id="ws-app-h-sub">{wUI.applianceBaseline}</p>
-          <p class="ws-app-years" id="ws-app-h-cur">{apps.heater.withHardness}</p>
+          <p class="ws-app-years" id="ws-app-h-cur">{heater.withHardness}</p>
           <p class="ws-app-sub">{wUI.applianceWithHardness}</p>
-          <span class="ws-app-saved" id="ws-app-h-saved">{wUI.badgeSaved} {fmt1(apps.heater.saved)} {wUI.applianceSaved}</span>
+          <span class="ws-app-saved" id="ws-app-h-saved">{wUI.badgeSaved} {fmt1(heater.saved)} {wUI.applianceSaved}</span>
         </div>
         <div class="ws-app">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           <p class="ws-app-name">{wUI.applianceCoffee}</p>
-          <p class="ws-app-years" id="ws-app-c-base">{apps.coffee.baseline}</p>
+          <p class="ws-app-years" id="ws-app-c-base">{coffee.baseline}</p>
           <p class="ws-app-sub" id="ws-app-c-sub">{wUI.applianceBaseline}</p>
-          <p class="ws-app-years" id="ws-app-c-cur">{apps.coffee.withHardness}</p>
+          <p class="ws-app-years" id="ws-app-c-cur">{coffee.withHardness}</p>
           <p class="ws-app-sub">{wUI.applianceWithHardness}</p>
-          <span class="ws-app-saved" id="ws-app-c-saved">{wUI.badgeSaved} {fmt1(apps.coffee.saved)} {wUI.applianceSaved}</span>
+          <span class="ws-app-saved" id="ws-app-c-saved">{wUI.badgeSaved} {fmt1(coffee.saved)} {wUI.applianceSaved}</span>
         </div>
       </div>
     </div>
@@ -279,9 +289,10 @@ const apps = calculateApplianceLifespan(gpg);
     const cl = card?.dataset.cl || 'With hard water';
     const sl = card?.dataset.sl || 'Extended by';
     const ul = card?.dataset.ul || 'yrs';
-    setApp({ idPrefix: 'w', r: apps.washer, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
-    setApp({ idPrefix: 'h', r: apps.heater, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
-    setApp({ idPrefix: 'c', r: apps.coffee, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
+    const fallback = { baseline: 0, withHardness: 0, saved: 0 };
+    setApp({ idPrefix: 'w', r: apps.washer ?? fallback, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
+    setApp({ idPrefix: 'h', r: apps.heater ?? fallback, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
+    setApp({ idPrefix: 'c', r: apps.coffee ?? fallback, baseLabel: bl, curLabel: cl, savedLabel: sl, unitLabel: ul });
   }
 
   function bindSysPills() {

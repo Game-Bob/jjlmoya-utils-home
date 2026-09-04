@@ -17,7 +17,7 @@ const DEF_DET = true;
 const DEF_HOUR = 12;
 const DEF_CYCLES = 3;
 
-const initial = calculateCycleCost(DEF_APP, DEF_CYCLE, DEF_ELEC, DEF_WATER, DEF_DET, DEF_HOUR, DEF_CYCLES);
+const initial = calculateCycleCost({ applianceId: DEF_APP, cycle: DEF_CYCLE, electricityPrice: DEF_ELEC, waterPrice: DEF_WATER, detergentEnabled: DEF_DET, hour: DEF_HOUR, cyclesPerWeek: DEF_CYCLES });
 const HOURS = Array.from({ length: 24 }, (_, i) => i);
 const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
 ---
@@ -35,6 +35,13 @@ const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
     data-ct={aUI.comparisonText}
     data-csav={aUI.comparisonSavings}
     data-uc={aUI.unitCycles}
+    data-label-appliance={aUI.labelAppliance}
+    data-label-detergent={aUI.labelDetergent}
+    data-comparison-months={aUI.comparisonMonths}
+    data-badge-peak={aUI.badgePeak}
+    data-badge-off-peak={aUI.badgeOffPeak}
+    data-unit-kwh={aUI.unitKwh}
+    data-unit-liters={aUI.unitLiters}
   >
     <div class="apc-stage">
       <div class="apc-stage-glow"></div>
@@ -185,8 +192,8 @@ const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
     return ds(card, key) || ds(card, 'cs') || '€';
   }
 
-  function toBase(val: number) { return val / RATES[currency]; }
-  function fromBase(val: number) { return val * RATES[currency]; }
+  function toBase(val: number) { return val / (RATES[currency] ?? 1); }
+  function fromBase(val: number) { return val * (RATES[currency] ?? 1); }
 
   function readState(card: HTMLElement) {
     const a = card.querySelector('.apc-appliance.apc-active') as HTMLElement | null;
@@ -232,7 +239,7 @@ const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
 
   function renderTip(card: HTMLElement, r: ReturnType<typeof calculateCycleCost>, cs: string) {
     const tipT = el('apc-tip-text') as HTMLElement | null;
-    if (tipT) tipT.textContent = (ds(card, 'ct') || 'Switch to Eco to save') + ` (${fmt2(r.ecoSavingsPerYear)} ${cs}/${ds(card, 'uc') || 'year'})`;
+    if (tipT) tipT.textContent = `${ds(card, 'ct')} (${fmt2(r.ecoSavingsPerYear)} ${cs}/${ds(card, 'uc')})`;
     const tipB = el('apc-tip-badge') as HTMLElement | null;
     if (tipB) tipB.textContent = `${ds(card, 'csav') || 'Savings'}: ${fmt2(r.ecoSavingsPerYear)} ${cs} / ${ds(card, 'uc') || 'year'}`;
   }
@@ -317,7 +324,7 @@ const PEAK = new Set([8, 9, 10, 11, 18, 19, 20, 21]);
     bindCurrency(card);
     bindInputs(card);
 
-    setHand(DEF_HOUR);
+    setHand(12);
     update(card);
   }
 

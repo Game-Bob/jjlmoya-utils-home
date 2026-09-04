@@ -12,7 +12,7 @@ const initial = calculateProjection(100, 16 / 9, 1.5);
 ---
 
 <div class="proj-wrapper">
-  <div class="proj-card">
+  <div class="proj-card" data-unit-m="m">
 
     <div class="proj-left">
       <div class="proj-header">
@@ -155,7 +155,7 @@ const initial = calculateProjection(100, 16 / 9, 1.5);
       beam.setAttribute('d', `M${projX - 10},300 L${screenX + 10},${300 - screenH / 2} L${screenX + 10},${300 + screenH / 2} Z`);
     }
     if (distText) {
-      distText.textContent = `${(distanceCm / 100).toFixed(1)}m`;
+      distText.textContent = `${(distanceCm / 100).toFixed(1)}${document.querySelector('.proj-card')?.getAttribute('data-unit-m') ?? ''}`;
       distText.setAttribute('x', String((screenX + projX) / 2));
     }
   }
@@ -207,4 +207,3 @@ const initial = calculateProjection(100, 16 / 9, 1.5);
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

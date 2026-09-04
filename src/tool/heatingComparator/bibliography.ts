@@ -5,7 +5,7 @@ export const bibliography = [
   },
   {
     name: 'Portal del Consumidor: Precios de la Energía (CNMC)',
-    url: 'https://comparador.cnmc.gob.es/',
+    url: 'https://comparador.cnmc.gob.es/comparador/',
   },
   {
     name: 'UNE: Eficiencia Energética en Edificios',

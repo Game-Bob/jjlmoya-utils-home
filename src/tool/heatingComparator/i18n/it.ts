@@ -172,8 +172,6 @@ export const content: ToolLocaleContent<HeatingComparatorUI> = {
     {
       type: 'proscons',
       title: 'Pompa di Calore vs Caldaia a Gas',
-      proTitle: 'Perché Pompa di Calore?',
-      conTitle: 'Perché Gas?',
       items: [
         { pro: 'Efficienza imbattibile (COP 4+)', con: 'Installazione più economica' },
         { pro: 'Indipendenza dal gas', con: 'Calore immediato ad alta potenza' },

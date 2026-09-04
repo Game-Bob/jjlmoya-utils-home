@@ -1,5 +1,5 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
-import type { ToolLocaleContent } from '../../../types';
+import type { SEOSection, ToolLocaleContent } from '../../../types';
 import type { AcTonnageCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
@@ -58,7 +58,7 @@ export const content: ToolLocaleContent<AcTonnageCalculatorUI> = {
     { type: 'tip', title: 'Reserve sinnvoll einsetzen', html: '<p>Berücksichtigen Sie außergewöhnliche Hitze und Dämmung, wählen Sie aber nicht automatisch das größte Gerät. Lassen Sie die endgültige Auswahl von einem Fachbetrieb prüfen.</p>' },
     { type: 'summary', title: 'Checkliste für den Kauf', items: ['Raumfläche und Deckenhöhe messen.', 'Personen und Wärmequellen zählen.', 'Sonne und Fensterflächen prüfen.', 'BTU, Frigorien und Tonnage gemeinsam vergleichen.'] },
     { type: 'paragraph', html: 'Mit vollständigen Eingaben erhalten Sie eine belastbarere Orientierung und können Angebote verschiedener Hersteller besser vergleichen.' },
-  ].slice(0, 15),
+  ].slice(0, 15) as SEOSection[],
   ui: {
     labelRoomSize: 'Raumfläche', labelRoomSizeFt: 'Raumfläche', labelCeilingHeight: 'Deckenhöhe', labelCeilingHeightFt: 'Deckenhöhe',
     labelPeople: 'Personen', labelHeatSources: 'Wärmequellen', labelSunExposure: 'Sonneneinstrahlung', labelRoomType: 'Raumtyp',

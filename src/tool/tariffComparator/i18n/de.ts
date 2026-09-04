@@ -1,5 +1,5 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
-import type { ToolLocaleContent } from '../../../types';
+import type { SEOSection, ToolLocaleContent } from '../../../types';
 import type { TariffComparatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<TariffComparatorUI> = {
       title: 'Kleingedrucktes beachten',
       html: '<p>Prüfen Sie Rabatte, Zusatzleistungen und Preisänderungen nach der Aktionsphase. Ein niedriger Einstiegspreis ist nicht automatisch der günstigste Jahrespreis.</p>',
     },
-  ].slice(0, 8),
+  ].slice(0, 8) as SEOSection[],
   ui: {
     labelConsumption: 'Jahresverbrauch',
     unitKwhYear: 'kWh/Jahr',

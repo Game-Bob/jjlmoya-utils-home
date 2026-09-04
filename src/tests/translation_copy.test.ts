@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import { describe, expect, it } from 'vitest';
 import { ALL_ENTRIES } from '../entries';
 
@@ -106,9 +107,9 @@ describe('Locales must not copy another locale wholesale', () => {
 
       for (let leftIndex = 0; leftIndex < locales.length; leftIndex += 1) {
         for (let rightIndex = leftIndex + 1; rightIndex < locales.length; rightIndex += 1) {
-          const left = locales[leftIndex];
-          const right = locales[rightIndex];
-          const similarity = copySimilarity(corpora.get(left) ?? '', corpora.get(right) ?? '');
+          const left = locales[leftIndex] ?? '';
+          const right = locales[rightIndex] ?? '';
+          const similarity = copySimilarity(corpora.get(left) || '', corpora.get(right) || '');
 
           if (similarity >= COPY_THRESHOLD) {
             violations.push(`${left} ↔ ${right}: ${(similarity * 100).toFixed(1)}%`);
@@ -120,5 +121,3 @@ describe('Locales must not copy another locale wholesale', () => {
     });
   });
 });
-
-

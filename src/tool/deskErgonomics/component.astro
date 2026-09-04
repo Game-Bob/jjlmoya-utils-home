@@ -19,7 +19,26 @@ const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
 ---
 
 <div class="ergo-wrapper">
-  <div class="ergo-card" id="ergo-card">
+  <div class="ergo-card" id="ergo-card"
+    data-unit-cm={eUI.unitCm}
+    data-label-mode={eUI.labelMode}
+    data-label-gender={eUI.labelGender}
+    data-label-distance={eUI.labelDistance}
+    data-label-angle={eUI.labelAngle}
+    data-label-good={eUI.labelGood}
+    data-label-adjust={eUI.labelAdjust}
+    data-badge-chair={eUI.badgeChair}
+    data-badge-desk={eUI.badgeDesk}
+    data-badge-monitor={eUI.badgeMonitor}
+    data-badge-distance={eUI.badgeDistance}
+    data-tip-screen-low={eUI.tipScreenLow}
+    data-tip-screen-high={eUI.tipScreenHigh}
+    data-tip-desk-low={eUI.tipDeskLow}
+    data-tip-desk-high={eUI.tipDeskHigh}
+    data-tip-chair-low={eUI.tipChairLow}
+    data-tip-chair-high={eUI.tipChairHigh}
+    data-tip-distance={eUI.tipDistance}
+  >
     <div class="ergo-header">
       <div class="ergo-mode-toggle" id="ergo-mode-toggle">
         <button class="ergo-mode-btn ergo-mode-active" data-mode="sit">{eUI.modeSit}</button>
@@ -108,26 +127,26 @@ const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
 <script>
   import { calculateErgonomics, fmt0 } from './logic';
 
-  function el(id) { return document.getElementById(id); }
-  function setTxt(id, val) { const e = el(id); if (e) e.textContent = val; }
-  function setStyle(id, styles) { const e = el(id); if (!e) return; Object.entries(styles).forEach(([k, v]) => { e.style[k] = v; }); }
-  function toggleClass(sel, attr, val, cls) { document.querySelectorAll(sel).forEach((b) => b.classList.toggle(cls, (b as HTMLElement).dataset[attr] === val)); }
+  function el(id: string): HTMLElement | null { return document.getElementById(id); }
+  function setTxt(id: string, val: string): void { const e = el(id); if (e) e.textContent = val; }
+  function setStyle(id: string, styles: Record<string, string | number>): void { const e = el(id); if (!e) return; Object.entries(styles).forEach(([k, v]) => { e.style.setProperty(k, String(v)); }); }
+  function toggleClass(sel: string, attr: string, val: string, cls: string): void { document.querySelectorAll<HTMLElement>(sel).forEach((b) => b.classList.toggle(cls, b.dataset[attr] === val)); }
 
   let height = 175;
-  let gender = 'male';
-  let mode = 'sit';
+  let gender: 'male' | 'female' = 'male';
+  let mode: 'sit' | 'stand' = 'sit';
 
   const MAX_V = 140;
 
-  function pct(v) { return Math.min((v / MAX_V) * 100, 100); }
+  function pct(v: number): number { return Math.min((v / MAX_V) * 100, 100); }
 
-  function updateTower(p) {
+  function updateTower(p: { id: string; val: number }): void {
     setStyle(`fill-${p.id}`, { height: `${pct(p.val)}%` });
     setStyle(`pip-${p.id}`, { bottom: `${pct(p.val)}%` });
     setTxt(`val-${p.id}`, fmt0(p.val));
   }
 
-  function updateZone(p) {
+  function updateZone(p: { id: string; optMin: number; optMax: number }): void {
     const zone = el(`zone-${p.id}`);
     if (!zone) return;
     const topPct = pct(p.optMax);
@@ -138,10 +157,11 @@ const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
 
   function calculate() {
     const r = calculateErgonomics(height, gender, mode);
-    setTxt('stat-chair', `${fmt0(r.chairHeight)} cm`);
-    setTxt('stat-desk', `${fmt0(r.deskHeight)} cm`);
-    setTxt('stat-monitor', `${fmt0(r.monitorHeight)} cm`);
-    setTxt('arc-label', `${fmt0(r.monitorDistance)} cm`);
+    const unit = (el('ergo-card') as HTMLElement | null)?.dataset.unitCm ?? '';
+    setTxt('stat-chair', `${fmt0(r.chairHeight)} ${unit}`);
+    setTxt('stat-desk', `${fmt0(r.deskHeight)} ${unit}`);
+    setTxt('stat-monitor', `${fmt0(r.monitorHeight)} ${unit}`);
+    setTxt('arc-label', `${fmt0(r.monitorDistance)} ${unit}`);
 
     updateTower({ id: 'chair', val: r.chairHeight });
     updateTower({ id: 'desk', val: r.deskHeight });
@@ -153,12 +173,12 @@ const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
   }
 
   function bindSlider() {
-    const slider = el('ergo-height');
+    const slider = el('ergo-height') as HTMLInputElement | null;
     const val = el('ergo-height-val');
     if (slider) {
       slider.addEventListener('input', () => {
         height = parseInt(slider.value, 10);
-        if (val) val.textContent = `${height} cm`;
+        if (val) val.textContent = `${height} ${(el('ergo-card') as HTMLElement | null)?.dataset.unitCm ?? ''}`;
         calculate();
       });
     }
@@ -167,14 +187,16 @@ const monPct = Math.min((initial.monitorHeight / maxVal) * 100, 100);
   function bindToggles() {
     document.querySelectorAll('#ergo-mode-toggle .ergo-mode-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
-        mode = (btn as HTMLElement).dataset.mode;
+        const nextMode = (btn as HTMLElement).dataset.mode;
+        if (nextMode === 'sit' || nextMode === 'stand') mode = nextMode;
         toggleClass('#ergo-mode-toggle .ergo-mode-btn', 'mode', mode, 'ergo-mode-active');
         calculate();
       });
     });
     document.querySelectorAll('#ergo-gender-row .ergo-gender-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
-        gender = (btn as HTMLElement).dataset.gender;
+        const nextGender = (btn as HTMLElement).dataset.gender;
+        if (nextGender === 'male' || nextGender === 'female') gender = nextGender;
         toggleClass('#ergo-gender-row .ergo-gender-btn', 'gender', gender, 'ergo-gender-active');
         calculate();
       });
