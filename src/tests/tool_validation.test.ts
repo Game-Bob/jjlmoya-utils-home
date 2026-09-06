@@ -4,8 +4,8 @@ import { homeCategory } from '../data';
 
 describe('Tool Validation Suite', () => {
   describe('Library Registration', () => {
-    it('should have 17 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(17);
+    it('should have 19 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(19);
     });
 
     it('homeCategory should be defined', () => {

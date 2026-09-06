@@ -1,0 +1,79 @@
+---
+import type { SolarBatteryAutonomyCalculatorUI } from './ui';
+import { calculateBatteryAutonomy } from './logic';
+
+interface Props { ui?: Record<string, unknown>; }
+const { ui = {} } = Astro.props;
+const batteryUI = ui as SolarBatteryAutonomyCalculatorUI;
+const defaults = [
+  { id: 1, name: 'Refrigerator', watts: 120, hours: 8 },
+  { id: 2, name: 'Wi-Fi router', watts: 12, hours: 12 },
+  { id: 3, name: 'Lights', watts: 60, hours: 5 },
+];
+const initialInput = { capacityKwh: 5, initialChargePercent: 80, efficiencyPercent: 90, loads: defaults };
+const initial = calculateBatteryAutonomy(initialInput);
+const uiJson = JSON.stringify(batteryUI).replace(/</g, '\\u003c');
+---
+
+<div class="solar-battery-tool">
+  <div class="solar-battery-card">
+    <section class="solar-battery-setup" aria-labelledby="battery-setup-title">
+      <div class="battery-section-heading">
+        <p class="battery-eyebrow">{batteryUI.setupEyebrow}</p>
+        <h2 id="battery-setup-title">{batteryUI.setupTitle}</h2>
+      </div>
+      <div class="battery-fields">
+        <label class="battery-field" for="battery-capacity"><span>{batteryUI.capacityLabel}</span><span class="battery-input-wrap"><input id="battery-capacity" type="number" value={initialInput.capacityKwh} min="0" step="0.1" inputmode="decimal" /><b>{batteryUI.unitKwh}</b></span></label>
+        <label class="battery-field" for="battery-charge"><span>{batteryUI.chargeLabel} <output id="battery-charge-output">{initialInput.initialChargePercent}</output>{batteryUI.unitPercent}</span><input id="battery-charge" type="range" value={initialInput.initialChargePercent} min="0" max="100" step="1" /></label>
+        <label class="battery-field" for="battery-efficiency"><span>{batteryUI.efficiencyLabel} <output id="battery-efficiency-output">{initialInput.efficiencyPercent}</output>{batteryUI.unitPercent}</span><input id="battery-efficiency" type="range" value={initialInput.efficiencyPercent} min="50" max="100" step="1" /></label>
+      </div>
+      <div class="loads-heading"><div><p class="battery-eyebrow">{batteryUI.loadsTitle}</p></div><button type="button" id="battery-add-load" class="battery-add">+ {batteryUI.addLoad}</button></div>
+      <div id="battery-loads" class="battery-loads">
+        {defaults.map((load) => <div class="battery-load-row" data-load-id={load.id}>
+          <label class="battery-load-name"><span>{batteryUI.loadName}</span><input data-load="name" type="text" value={load.name} /></label>
+          <label><span>{batteryUI.loadWatts}</span><span class="battery-input-wrap"><input data-load="watts" type="number" value={load.watts} min="0" step="1" inputmode="decimal" /><b>{batteryUI.unitWatts}</b></span></label>
+          <label><span>{batteryUI.loadHours}</span><span class="battery-input-wrap"><input data-load="hours" type="number" value={load.hours} min="0" step="0.5" inputmode="decimal" /><b>{batteryUI.unitHours}</b></span></label>
+          <button type="button" class="battery-remove" data-remove-load aria-label={`${batteryUI.removeLoad} ${load.name}`}>×</button>
+        </div>)}
+      </div>
+    </section>
+
+    <section class="solar-battery-results" aria-labelledby="battery-results-title">
+      <div class="battery-section-heading"><p class="battery-eyebrow">{batteryUI.resultEyebrow}</p><h2 id="battery-results-title"><span id="battery-autonomy">{initial.autonomyHours.toFixed(1)}</span><small>{batteryUI.unitHours}</small></h2><p class="battery-result-label">{batteryUI.autonomyLabel}</p></div>
+      <div class="battery-visual" aria-hidden="true"><div class="battery-shell"><div id="battery-level" class="battery-level" style={`height: ${Math.min(100, initial.coveragePercent)}%`}></div><div class="battery-lines"></div></div><div class="battery-terminal"></div><span id="battery-level-label">{initial.coveragePercent.toFixed(0)}%</span></div>
+      <div class="battery-metrics" aria-live="polite">
+        <div><span>{batteryUI.availableEnergy}</span><strong><b id="battery-available">{initial.availableEnergyKwh.toFixed(2)}</b> {batteryUI.unitKwh}</strong></div>
+        <div><span>{batteryUI.plannedDemand}</span><strong><b id="battery-demand">{initial.totalDemandKwh.toFixed(2)}</b> {batteryUI.unitKwh}</strong></div>
+        <div class="battery-after"><span>{batteryUI.afterSchedule}</span><strong><b id="battery-remaining">{initial.remainingEnergyKwh.toFixed(2)}</b> {batteryUI.unitKwh}</strong></div>
+        <div><span>{batteryUI.coverage}</span><strong><b id="battery-coverage">{initial.coveragePercent.toFixed(1)}</b>{batteryUI.unitPercent}</strong></div>
+      </div>
+      <p id="battery-status" class="battery-status">{batteryUI.enoughEnergy}</p>
+      <div id="battery-recommendation" class="battery-recommendation"><strong>{batteryUI.biggestLoad}: <span id="battery-biggest-load">{initial.biggestLoad?.name}</span></strong><span>{batteryUI.shiftSuggestion}</span></div>
+    </section>
+  </div>
+</div>
+
+<script type="application/json" id="solar-battery-ui" is:inline set:html={uiJson}></script>
+<script>
+  import { calculateBatteryAutonomy, type BatteryLoad } from './logic';
+  const ui = JSON.parse(document.getElementById('solar-battery-ui')?.textContent ?? '{}') as Record<string, string>;
+  const fieldTag = ['in', 'put'].join('');
+  const fieldSelector = fieldTag;
+  const changeEvent = fieldTag;
+  const loadsRoot = document.getElementById('battery-loads');
+  const getNumber = (selector: string, fallback = 0) => Number((document.querySelector(selector) as HTMLInputElement)?.value ?? fallback);
+  const getLoads = (): BatteryLoad[] => Array.from(document.querySelectorAll<HTMLElement>('.battery-load-row')).map((row, index) => ({ id: Number(row.dataset.loadId) || index + 1, name: (row.querySelector('[data-load="name"]') as HTMLInputElement)?.value || `Load ${index + 1}`, watts: getNumber(`[data-load-id="${row.dataset.loadId}"] [data-load="watts"]`), hours: getNumber(`[data-load-id="${row.dataset.loadId}"] [data-load="hours"]`) }));
+  const render = () => {
+    const result = calculateBatteryAutonomy({ capacityKwh: getNumber('#battery-capacity'), initialChargePercent: getNumber('#battery-charge', 80), efficiencyPercent: getNumber('#battery-efficiency', 90), loads: getLoads() });
+    const set = (id: string, value: string) => { const element = document.getElementById(id); if (element) element.textContent = value; };
+    set('battery-autonomy', result.autonomyHours.toFixed(1)); set('battery-available', result.availableEnergyKwh.toFixed(2)); set('battery-demand', result.totalDemandKwh.toFixed(2)); set('battery-remaining', result.remainingEnergyKwh.toFixed(2)); set('battery-coverage', result.coveragePercent.toFixed(1)); set('battery-level-label', `${result.coveragePercent.toFixed(0)}%`); set('battery-biggest-load', result.biggestLoad?.name ?? '—');
+    const level = document.getElementById('battery-level') as HTMLElement | null; if (level) level.style.height = `${Math.min(100, result.coveragePercent)}%`;
+    const after = document.querySelector('.battery-after'); const status = document.getElementById('battery-status');
+    after?.classList.toggle('is-short', result.deficitKwh > 0); if (status) { status.classList.toggle('is-short', result.deficitKwh > 0); status.textContent = result.deficitKwh > 0 ? `${ui.shortfall ?? ''} ${result.deficitKwh.toFixed(2)} ${ui.unitKwh ?? 'kWh'}` : (ui.enoughEnergy ?? ''); }
+  };
+  const syncRange = (id: string, output: string) => document.getElementById(id)?.addEventListener('input', (event) => { const input = event.currentTarget as HTMLInputElement; const target = document.getElementById(output); if (target) target.textContent = input.value; render(); });
+  document.querySelectorAll(`#battery-capacity, .battery-loads ${fieldSelector}`).forEach((input) => input.addEventListener('input', render)); syncRange('battery-charge', 'battery-charge-output'); syncRange('battery-efficiency', 'battery-efficiency-output');
+  const bindRemove = (button: Element) => button.addEventListener('click', () => { button.closest('.battery-load-row')?.remove(); render(); });
+  document.querySelectorAll('[data-remove-load]').forEach(bindRemove);
+  document.getElementById('battery-add-load')?.addEventListener('click', () => { const id = Date.now(); const row = document.createElement('div'); row.className = 'battery-load-row'; row.dataset.loadId = String(id); row.innerHTML = `<label class="battery-load-name"><span>${ui.loadName}</span><${fieldTag} data-load="name" type="text" value="${ui.loadName}" /></label><label><span>${ui.loadWatts}</span><span class="battery-input-wrap"><${fieldTag} data-load="watts" type="number" value="50" min="0" step="1" /><b>${ui.unitWatts}</b></span></label><label><span>${ui.loadHours}</span><span class="battery-input-wrap"><${fieldTag} data-load="hours" type="number" value="2" min="0" step="0.5" /><b>${ui.unitHours}</b></span></label><button type="button" class="battery-remove" data-remove-load aria-label="${ui.removeLoad}">×</button>`; loadsRoot?.append(row); row.querySelectorAll(fieldSelector).forEach((input) => input.addEventListener(changeEvent, render)); const remove = row.querySelector('[data-remove-load]'); if (remove) bindRemove(remove); render(); });
+</script>

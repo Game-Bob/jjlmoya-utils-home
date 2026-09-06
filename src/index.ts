@@ -31,4 +31,6 @@ export { APPLIANCE_COST_CALCULATOR_TOOL } from './tool/applianceCostCalculator';
 export { TILE_LAYOUT_CALCULATOR_TOOL } from './tool/tileLayoutCalculator';
 export { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator';
 export { WATER_SOFTENER_TOOL } from './tool/waterSoftener';
+export { WALLPAPER_ROLL_CALCULATOR_TOOL } from './tool/wallpaperRollCalculator';
+export { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from './tool/solarBatteryAutonomyCalculator';
 

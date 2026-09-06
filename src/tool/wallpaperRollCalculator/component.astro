@@ -1,0 +1,350 @@
+---
+import type { WallpaperRollCalculatorUI } from './ui';
+import { calculateWallpaperRolls, formatLength } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const wUI = ui as WallpaperRollCalculatorUI;
+const initialInput = {
+  roomWidthCm: 350,
+  wallHeightCm: 250,
+  rollWidthCm: 53,
+  rollLengthCm: 1000,
+  patternRepeatCm: 53,
+  wasteAllowancePercent: 10,
+};
+const initialResult = calculateWallpaperRolls(initialInput);
+---
+
+<div class="wallpaper-tool">
+  <div class="wallpaper-card">
+    <form
+      class="wallpaper-form"
+      id="wallpaper-form"
+      data-error-invalid={wUI.invalidMeasurements}
+      data-error-short={wUI.rollTooShort}
+    >
+      <div class="wallpaper-form-heading">
+        <p class="wallpaper-eyebrow">{wUI.configTitle}</p>
+        <h2>{wUI.configSubtitle}</h2>
+        <div class="wallpaper-unit-switch" role="group" aria-label={wUI.unitSystemLabel}>
+          <span class="wallpaper-unit-switch-label">{wUI.unitSystemLabel}</span>
+          <div class="wallpaper-unit-buttons">
+            <button type="button" class="wallpaper-unit-button wallpaper-unit-active" data-unit="metric" aria-pressed="true">{wUI.unitMetric}</button>
+            <button type="button" class="wallpaper-unit-button" data-unit="imperial" aria-pressed="false">{wUI.unitImperial}</button>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="wallpaper-fieldset">
+        <legend>{wUI.roomTitle}</legend>
+        <div class="wallpaper-fields wallpaper-fields-two">
+          <label class="wallpaper-field" for="wallpaper-room-width">
+            <span>{wUI.labelRoomWidth}</span>
+            <span class="wallpaper-input-wrap">
+              <input id="wallpaper-room-width" type="number" value={initialInput.roomWidthCm} min="1" step="1" inputmode="decimal" required />
+              <b id="wallpaper-room-width-unit" data-metric={wUI.unitCentimetres} data-imperial={wUI.unitInches}>{wUI.unitCentimetres}</b>
+            </span>
+          </label>
+          <label class="wallpaper-field" for="wallpaper-wall-height">
+            <span>{wUI.labelWallHeight}</span>
+            <span class="wallpaper-input-wrap">
+              <input id="wallpaper-wall-height" type="number" value={initialInput.wallHeightCm} min="1" step="1" inputmode="decimal" required />
+              <b id="wallpaper-wall-height-unit" data-metric={wUI.unitCentimetres} data-imperial={wUI.unitInches}>{wUI.unitCentimetres}</b>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="wallpaper-fieldset">
+        <legend>{wUI.rollTitle}</legend>
+        <div class="wallpaper-fields wallpaper-fields-two">
+          <label class="wallpaper-field" for="wallpaper-roll-width">
+            <span>{wUI.labelRollWidth}</span>
+            <span class="wallpaper-input-wrap">
+              <input id="wallpaper-roll-width" type="number" value={initialInput.rollWidthCm} min="1" step="1" inputmode="decimal" required />
+              <b id="wallpaper-roll-width-unit" data-metric={wUI.unitCentimetres} data-imperial={wUI.unitInches}>{wUI.unitCentimetres}</b>
+            </span>
+          </label>
+          <label class="wallpaper-field" for="wallpaper-roll-length">
+            <span>{wUI.labelRollLength}</span>
+            <span class="wallpaper-input-wrap">
+              <input id="wallpaper-roll-length" type="number" value={initialInput.rollLengthCm} min="1" step="1" inputmode="decimal" required />
+              <b id="wallpaper-roll-length-unit" data-metric={wUI.unitCentimetres} data-imperial={wUI.unitFeet}>{wUI.unitCentimetres}</b>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="wallpaper-fieldset">
+        <legend>{wUI.patternTitle}</legend>
+        <div class="wallpaper-fields wallpaper-fields-two">
+          <label class="wallpaper-field" for="wallpaper-pattern-repeat">
+            <span>{wUI.labelPatternRepeat}</span>
+            <span class="wallpaper-input-wrap">
+              <input id="wallpaper-pattern-repeat" type="number" value={initialInput.patternRepeatCm} min="0" step="1" inputmode="decimal" required aria-describedby="wallpaper-pattern-hint" />
+              <b id="wallpaper-pattern-repeat-unit" data-metric={wUI.unitCentimetres} data-imperial={wUI.unitInches}>{wUI.unitCentimetres}</b>
+            </span>
+            <small id="wallpaper-pattern-hint">{wUI.patternHint}</small>
+          </label>
+          <label class="wallpaper-field" for="wallpaper-waste-allowance">
+            <span>{wUI.labelWasteAllowance}</span>
+            <span class="wallpaper-input-wrap">
+              <input id="wallpaper-waste-allowance" type="number" value={initialInput.wasteAllowancePercent} min="0" max="99" step="1" inputmode="decimal" required aria-describedby="wallpaper-waste-hint" />
+              <b>{wUI.unitPercent}</b>
+            </span>
+            <small id="wallpaper-waste-hint">{wUI.wasteHint}</small>
+          </label>
+        </div>
+      </fieldset>
+
+      <p class="wallpaper-error" id="wallpaper-error" role="alert" hidden></p>
+      <button class="wallpaper-reset" type="button" id="wallpaper-reset">{wUI.resetLabel}</button>
+    </form>
+
+    <section class="wallpaper-result" aria-labelledby="wallpaper-result-title">
+      <div class="wallpaper-result-heading">
+        <p class="wallpaper-eyebrow">{wUI.resultTitle}</p>
+        <h2 id="wallpaper-result-title"><span id="wallpaper-rolls-result">{initialResult?.rollsNeeded ?? '-'}</span> <span>{wUI.rollsNeededSuffix}</span></h2>
+      </div>
+      <div class="wallpaper-result-grid" id="wallpaper-result-grid" aria-live="polite">
+        <div class="wallpaper-metric wallpaper-metric-primary">
+          <span>{wUI.labelRollsNeeded}</span>
+          <strong id="wallpaper-rolls-metric">{initialResult?.rollsNeeded ?? '-'}</strong>
+        </div>
+        <div class="wallpaper-metric">
+          <span>{wUI.labelDropsNeeded}</span>
+          <strong id="wallpaper-drops-metric">{initialResult?.dropsNeeded ?? '-'}</strong>
+        </div>
+        <div class="wallpaper-metric">
+          <span>{wUI.labelDropsPerRoll}</span>
+          <strong id="wallpaper-drops-per-roll-metric">{initialResult?.dropsPerRoll ?? '-'}</strong>
+        </div>
+        <div class="wallpaper-metric">
+          <span>{wUI.labelCutLength}</span>
+              <strong id="wallpaper-cut-length-metric">{initialResult ? formatLength(initialResult.cutLengthCm, 'metric') : '-'}</strong>
+        </div>
+        <div class="wallpaper-metric wallpaper-metric-wide">
+          <span>{wUI.labelLeftover}</span>
+              <strong id="wallpaper-leftover-metric">{initialResult ? formatLength(initialResult.leftoverLengthCm, 'metric') : '-'}</strong>
+        </div>
+      </div>
+
+      <div class="wallpaper-scene-wrap">
+        <div class="wallpaper-scene-label"><span class="wallpaper-scene-dot"></span>{wUI.visualBadge}</div>
+        <svg class="wallpaper-scene" viewBox="0 0 720 500" role="img" aria-label={wUI.visualBadge}>
+          <defs>
+            <pattern id="wallpaper-pattern" width="76" height="76" patternUnits="userSpaceOnUse">
+              <rect width="76" height="76" fill="var(--wallpaper-art-pattern)"></rect>
+              <path d="M38 4 L70 38 L38 72 L6 38 Z" fill="none" stroke="var(--wallpaper-art-teal)" stroke-width="4"></path>
+              <path d="M38 20 L54 38 L38 56 L22 38 Z" fill="none" stroke="var(--wallpaper-art-coral)" stroke-width="3"></path>
+            </pattern>
+            <linearGradient id="wallpaper-table" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="var(--wallpaper-art-table-light)"></stop>
+              <stop offset="1" stop-color="var(--wallpaper-art-table-dark)"></stop>
+            </linearGradient>
+            <filter id="wallpaper-shadow" x="-20%" y="-20%" width="140%" height="150%">
+              <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="var(--wallpaper-art-shadow)" flood-opacity="0.28"></feDropShadow>
+            </filter>
+          </defs>
+          <rect x="34" y="36" width="652" height="285" rx="14" fill="var(--wallpaper-art-surface)" stroke="var(--wallpaper-art-ink)" stroke-width="4"></rect>
+          <rect x="54" y="56" width="612" height="245" rx="4" fill="url(#wallpaper-pattern)"></rect>
+          <path d="M54 302 H666" stroke="var(--wallpaper-art-ink)" stroke-width="8"></path>
+          <g class="wallpaper-measure-rail">
+            <path d="M594 76 V281" stroke="var(--wallpaper-art-measure)" stroke-width="5"></path>
+            <path d="M586 76 H602 M586 281 H602" stroke="var(--wallpaper-art-measure)" stroke-width="5"></path>
+            <text x="611" y="190" fill="var(--wallpaper-art-measure)" font-size="18" font-weight="700" writing-mode="tb">HEIGHT</text>
+          </g>
+          <path d="M22 350 H698 L660 465 H60 Z" fill="url(#wallpaper-table)" stroke="var(--wallpaper-art-ink)" stroke-width="5"></path>
+          <path d="M72 426 L648 426" stroke="var(--wallpaper-art-table-line)" stroke-width="4" opacity="0.65"></path>
+          <g filter="url(#wallpaper-shadow)">
+            <ellipse cx="130" cy="388" rx="78" ry="28" fill="var(--wallpaper-art-surface)" stroke="var(--wallpaper-art-ink)" stroke-width="4"></ellipse>
+            <ellipse cx="130" cy="388" rx="23" ry="10" fill="var(--wallpaper-art-core)" stroke="var(--wallpaper-art-ink)" stroke-width="4"></ellipse>
+            <path d="M54 388 V430 C54 451 206 451 206 430 V388" fill="var(--wallpaper-art-pattern)" stroke="var(--wallpaper-art-ink)" stroke-width="4"></path>
+            <path d="M56 399 C82 418 179 418 204 399" fill="none" stroke="var(--wallpaper-art-teal)" stroke-width="4"></path>
+          </g>
+          <g transform="translate(256 356) rotate(-7)" filter="url(#wallpaper-shadow)">
+            <rect width="310" height="72" rx="6" fill="var(--wallpaper-art-ruler)" stroke="var(--wallpaper-art-ink)" stroke-width="4"></rect>
+            <path d="M18 36 H290" stroke="var(--wallpaper-art-teal)" stroke-width="5" stroke-dasharray="14 10"></path>
+            <path d="M54 10 L82 36 L54 62 M112 10 L140 36 L112 62 M170 10 L198 36 L170 62 M228 10 L256 36 L228 62" fill="none" stroke="var(--wallpaper-art-coral)" stroke-width="3"></path>
+          </g>
+          <g transform="translate(438 449) rotate(-9)">
+            <rect width="182" height="9" rx="4" fill="var(--wallpaper-art-measure)" stroke="var(--wallpaper-art-ink)" stroke-width="3"></rect>
+            <path d="M20 0 V9 M40 0 V9 M60 0 V9 M80 0 V9 M100 0 V9 M120 0 V9 M140 0 V9 M160 0 V9" stroke="var(--wallpaper-art-ink)" stroke-width="2"></path>
+          </g>
+          <g transform="translate(282 443) rotate(9)">
+            <path d="M0 0 L100 0" stroke="var(--wallpaper-art-ink)" stroke-width="4" stroke-linecap="round"></path>
+            <path d="M94 -8 L120 0 L94 8 Z" fill="var(--wallpaper-art-coral)" stroke="var(--wallpaper-art-ink)" stroke-width="3"></path>
+          </g>
+          <g transform="translate(215 421) rotate(18)">
+            <path d="M0 0 L76 0" stroke="var(--wallpaper-art-ink)" stroke-width="8" stroke-linecap="round"></path>
+            <path d="M70 -18 C98 -18 98 18 70 18" fill="none" stroke="var(--wallpaper-art-ink)" stroke-width="6"></path>
+          </g>
+          <g class="wallpaper-drops-count">
+            <circle cx="84" cy="90" r="21" fill="var(--wallpaper-art-surface)" stroke="var(--wallpaper-art-coral)" stroke-width="4"></circle>
+            <text id="wallpaper-scene-rolls" x="84" y="97" text-anchor="middle" fill="var(--wallpaper-art-ink)" font-size="22" font-weight="800">{initialResult?.rollsNeeded ?? '-'}</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  import { calculateWallpaperRolls, formatLength, fromCentimetres, toCentimetres, type WallpaperInput, type WallpaperMeasurement, type WallpaperUnitSystem } from './logic';
+
+  const defaults = {
+    roomWidthCm: 350,
+    wallHeightCm: 250,
+    rollWidthCm: 53,
+    rollLengthCm: 1000,
+    patternRepeatCm: 53,
+    wasteAllowancePercent: 10,
+  };
+
+  const inputIds = {
+    roomWidthCm: 'wallpaper-room-width',
+    wallHeightCm: 'wallpaper-wall-height',
+    rollWidthCm: 'wallpaper-roll-width',
+    rollLengthCm: 'wallpaper-roll-length',
+    patternRepeatCm: 'wallpaper-pattern-repeat',
+    wasteAllowancePercent: 'wallpaper-waste-allowance',
+  } as const;
+
+  const keys = Object.keys(inputIds) as (keyof typeof inputIds)[];
+  let unitSystem: WallpaperUnitSystem = 'metric';
+
+  const unitLabels = {
+    roomWidthCm: 'wallpaper-room-width-unit',
+    wallHeightCm: 'wallpaper-wall-height-unit',
+    rollWidthCm: 'wallpaper-roll-width-unit',
+    rollLengthCm: 'wallpaper-roll-length-unit',
+    patternRepeatCm: 'wallpaper-pattern-repeat-unit',
+  } as const;
+
+  function measurementFor(key: keyof typeof inputIds): WallpaperMeasurement {
+    return key === 'rollLengthCm' ? 'rollLength' : 'surface';
+  }
+
+  function lengthKeys(): (keyof typeof unitLabels)[] {
+    return Object.keys(unitLabels) as (keyof typeof unitLabels)[];
+  }
+
+  function formatDisplayedValue(value: number, displayUnitSystem: WallpaperUnitSystem) {
+    if (displayUnitSystem === 'metric') return String(Math.round(value));
+    return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(/\.0$/, '');
+  }
+
+  function getInput(): WallpaperInput {
+    return {
+      roomWidthCm: toCentimetres(Number((document.getElementById(inputIds.roomWidthCm) as HTMLInputElement).value), unitSystem, 'surface'),
+      wallHeightCm: toCentimetres(Number((document.getElementById(inputIds.wallHeightCm) as HTMLInputElement).value), unitSystem, 'surface'),
+      rollWidthCm: toCentimetres(Number((document.getElementById(inputIds.rollWidthCm) as HTMLInputElement).value), unitSystem, 'surface'),
+      rollLengthCm: toCentimetres(Number((document.getElementById(inputIds.rollLengthCm) as HTMLInputElement).value), unitSystem, 'rollLength'),
+      patternRepeatCm: toCentimetres(Number((document.getElementById(inputIds.patternRepeatCm) as HTMLInputElement).value), unitSystem, 'surface'),
+      wasteAllowancePercent: Number((document.getElementById(inputIds.wasteAllowancePercent) as HTMLInputElement).value),
+    };
+  }
+
+  function setText(id: string, value: string) {
+    const element = document.getElementById(id);
+    if (element) element.textContent = value;
+  }
+
+  function syncUnitControls() {
+    document.querySelectorAll<HTMLButtonElement>('.wallpaper-unit-button').forEach((button) => {
+      const active = button.dataset.unit === unitSystem;
+      button.classList.toggle('wallpaper-unit-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+
+    lengthKeys().forEach((key) => {
+      const label = document.getElementById(unitLabels[key]);
+      if (label) label.textContent = label.dataset[unitSystem] ?? '';
+      const input = document.getElementById(inputIds[key]) as HTMLInputElement | null;
+      if (input) input.step = unitSystem === 'imperial' ? '0.1' : '1';
+    });
+  }
+
+  function applyUnitSystem(nextUnitSystem: WallpaperUnitSystem) {
+    if (nextUnitSystem !== unitSystem) {
+      lengthKeys().forEach((key) => {
+        const input = document.getElementById(inputIds[key]) as HTMLInputElement | null;
+        if (!input) return;
+        const currentValue = Number(input.value);
+        if (!Number.isFinite(currentValue)) return;
+        const centimetres = toCentimetres(currentValue, unitSystem, measurementFor(key));
+        input.value = formatDisplayedValue(fromCentimetres(centimetres, nextUnitSystem, measurementFor(key)), nextUnitSystem);
+      });
+      unitSystem = nextUnitSystem;
+    }
+    syncUnitControls();
+    localStorage.setItem('wallpaper-unit-system', unitSystem);
+    update();
+  }
+
+  function update() {
+    const form = document.getElementById('wallpaper-form');
+    const error = document.getElementById('wallpaper-error');
+    if (!form || !error) return;
+    const input = getInput();
+    const result = calculateWallpaperRolls(input);
+    if (!result) {
+      const hasInvalidValue = [input.roomWidthCm, input.wallHeightCm, input.rollWidthCm, input.rollLengthCm]
+        .some((value) => !Number.isFinite(value) || value <= 0);
+      error.hidden = false;
+      error.textContent = hasInvalidValue ? form.dataset.errorInvalid ?? '' : form.dataset.errorShort ?? '';
+      return;
+    }
+
+    error.hidden = true;
+    error.textContent = '';
+    setText('wallpaper-rolls-result', String(result.rollsNeeded));
+    setText('wallpaper-rolls-metric', String(result.rollsNeeded));
+    setText('wallpaper-drops-metric', String(result.dropsNeeded));
+    setText('wallpaper-drops-per-roll-metric', String(result.dropsPerRoll));
+    setText('wallpaper-cut-length-metric', formatLength(result.cutLengthCm, unitSystem));
+    setText('wallpaper-leftover-metric', formatLength(result.leftoverLengthCm, unitSystem));
+    setText('wallpaper-scene-rolls', String(result.rollsNeeded));
+  }
+
+  function reset() {
+    keys.forEach((key) => {
+      const element = document.getElementById(inputIds[key]) as HTMLInputElement | null;
+      if (!element) return;
+      if (key === 'wasteAllowancePercent') {
+        element.value = String(defaults[key]);
+        return;
+      }
+      element.value = formatDisplayedValue(fromCentimetres(defaults[key], unitSystem, measurementFor(key)), unitSystem);
+    });
+    update();
+  }
+
+  function init() {
+    keys.forEach((key) => document.getElementById(inputIds[key])?.addEventListener('input', update));
+    document.getElementById('wallpaper-reset')?.addEventListener('click', reset);
+    document.querySelectorAll<HTMLButtonElement>('.wallpaper-unit-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextUnitSystem = button.dataset.unit as WallpaperUnitSystem;
+        if (nextUnitSystem === 'metric' || nextUnitSystem === 'imperial') applyUnitSystem(nextUnitSystem);
+      });
+    });
+    const savedUnitSystem = localStorage.getItem('wallpaper-unit-system');
+    if (savedUnitSystem === 'imperial') unitSystem = 'imperial';
+    syncUnitControls();
+    if (unitSystem === 'imperial') {
+      lengthKeys().forEach((key) => {
+        const input = document.getElementById(inputIds[key]) as HTMLInputElement | null;
+        if (input) input.value = formatDisplayedValue(fromCentimetres(defaults[key], unitSystem, measurementFor(key)), unitSystem);
+      });
+    }
+    update();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

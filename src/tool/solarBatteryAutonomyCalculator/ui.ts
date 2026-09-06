@@ -1,0 +1,3 @@
+export interface SolarBatteryAutonomyCalculatorUI extends Record<string, string> {
+  setupEyebrow: string; setupTitle: string; capacityLabel: string; chargeLabel: string; efficiencyLabel: string; loadsTitle: string; loadName: string; loadWatts: string; loadHours: string; addLoad: string; removeLoad: string; resultEyebrow: string; autonomyLabel: string; availableEnergy: string; plannedDemand: string; afterSchedule: string; coverage: string; shortfall: string; enoughEnergy: string; biggestLoad: string; shiftSuggestion: string; unitKwh: string; unitHours: string; unitWatts: string; unitPercent: string; emptyLoads: string;
+}

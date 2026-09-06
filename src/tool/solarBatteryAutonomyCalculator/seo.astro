@@ -1,0 +1,9 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { solarBatteryAutonomyCalculator } from './index';
+import type { KnownLocale } from '../../types';
+interface Props { locale?: KnownLocale; }
+const { locale = 'en' } = Astro.props;
+const content = await solarBatteryAutonomyCalculator.i18n[locale]?.() ?? await solarBatteryAutonomyCalculator.i18n.en!();
+---
+{content.seo.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}

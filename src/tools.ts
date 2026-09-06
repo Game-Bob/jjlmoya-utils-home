@@ -17,6 +17,8 @@ import { TILE_LAYOUT_CALCULATOR_TOOL } from './tool/tileLayoutCalculator/index';
 import { LIGHTING_CALCULATOR_TOOL } from './tool/lightingCalculator/index';
 import { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator/index';
 import { WATER_SOFTENER_TOOL } from './tool/waterSoftener/index';
+import { WALLPAPER_ROLL_CALCULATOR_TOOL } from './tool/wallpaperRollCalculator/index';
+import { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from './tool/solarBatteryAutonomyCalculator/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   QR_GENERATOR_TOOL,
@@ -36,5 +38,7 @@ export const ALL_TOOLS: ToolDefinition[] = [
   LIGHTING_CALCULATOR_TOOL,
   HUMIDITY_CALCULATOR_TOOL,
   WATER_SOFTENER_TOOL,
+  WALLPAPER_ROLL_CALCULATOR_TOOL,
+  SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL,
 ];
 

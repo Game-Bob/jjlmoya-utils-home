@@ -1,0 +1,15 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { wallpaperRollCalculator } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'en' } = Astro.props;
+const loader = wallpaperRollCalculator.i18n[locale] ?? wallpaperRollCalculator.i18n.en;
+const content = loader ? await loader() : undefined;
+---
+
+{content && <SharedBibliography links={content.bibliography} />}

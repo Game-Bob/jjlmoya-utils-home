@@ -1,0 +1,33 @@
+export interface WallpaperRollCalculatorUI extends Record<string, string> {
+  configTitle: string;
+  configSubtitle: string;
+  unitSystemLabel: string;
+  unitMetric: string;
+  unitImperial: string;
+  roomTitle: string;
+  labelRoomWidth: string;
+  labelWallHeight: string;
+  rollTitle: string;
+  labelRollWidth: string;
+  labelRollLength: string;
+  patternTitle: string;
+  labelPatternRepeat: string;
+  patternHint: string;
+  labelWasteAllowance: string;
+  wasteHint: string;
+  unitCentimetres: string;
+  unitInches: string;
+  unitFeet: string;
+  unitPercent: string;
+  resultTitle: string;
+  labelRollsNeeded: string;
+  rollsNeededSuffix: string;
+  labelDropsNeeded: string;
+  labelDropsPerRoll: string;
+  labelCutLength: string;
+  labelLeftover: string;
+  visualBadge: string;
+  invalidMeasurements: string;
+  rollTooShort: string;
+  resetLabel: string;
+}

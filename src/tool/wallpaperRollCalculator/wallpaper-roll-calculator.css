@@ -1,0 +1,397 @@
+.wallpaper-tool {
+  --wallpaper-ink: #17343b;
+  --wallpaper-teal: #2d9d91;
+  --wallpaper-coral: #e47e58;
+  --wallpaper-result-bg: #f7f1e3;
+  --wallpaper-result-text: #17343b;
+  --wallpaper-result-muted: rgba(23, 52, 59, 0.7);
+  --wallpaper-metric-bg: rgba(255, 255, 255, 0.35);
+  --wallpaper-metric-border: rgba(23, 52, 59, 0.18);
+  --wallpaper-scene-bg: #e7f0eb;
+  --wallpaper-art-ink: #1f3740;
+  --wallpaper-art-surface: #f7f1e3;
+  --wallpaper-art-pattern: #d8eee9;
+  --wallpaper-art-teal: #2b8b83;
+  --wallpaper-art-coral: #e68b5d;
+  --wallpaper-art-measure: #f3be4c;
+  --wallpaper-art-table-light: #c78753;
+  --wallpaper-art-table-dark: #7c4d37;
+  --wallpaper-art-table-line: #e6ae6c;
+  --wallpaper-art-core: #7b5b4b;
+  --wallpaper-art-ruler: #e9d4ad;
+  --wallpaper-art-shadow: #1b2930;
+
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.wallpaper-card {
+  width: calc(100% - 24px);
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.wallpaper-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.wallpaper-form-heading,
+.wallpaper-result-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wallpaper-form-heading h2,
+.wallpaper-result-heading h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.wallpaper-unit-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.wallpaper-unit-switch-label {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wallpaper-unit-buttons {
+  display: inline-flex;
+  padding: 0.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--bg-page);
+}
+
+.wallpaper-unit-button {
+  min-width: 5.25rem;
+  padding: 0.42rem 0.7rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.wallpaper-unit-button:hover,
+.wallpaper-unit-button:focus-visible {
+  color: var(--text-main);
+}
+
+.wallpaper-unit-button:focus-visible {
+  outline: 2px solid var(--wallpaper-teal);
+  outline-offset: 2px;
+}
+
+.wallpaper-unit-button.wallpaper-unit-active {
+  background: var(--wallpaper-teal);
+  color: #fff;
+}
+
+.wallpaper-eyebrow {
+  margin: 0;
+  color: var(--wallpaper-coral);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.wallpaper-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.wallpaper-fieldset legend {
+  margin-bottom: 0.35rem;
+  color: var(--wallpaper-teal);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wallpaper-fields {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.wallpaper-fields-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wallpaper-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.wallpaper-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wallpaper-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.75rem 2.8rem 0.75rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-page);
+  color: var(--text-main);
+  font: inherit;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  outline: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wallpaper-input-wrap input:focus {
+  border-color: var(--wallpaper-teal);
+  box-shadow: 0 0 0 3px rgba(45, 157, 145, 0.18);
+}
+
+.wallpaper-input-wrap b {
+  position: absolute;
+  right: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.wallpaper-field small {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.wallpaper-error {
+  margin: 0;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(228, 126, 88, 0.42);
+  border-radius: 10px;
+  background: rgba(228, 126, 88, 0.1);
+  color: var(--wallpaper-coral);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.wallpaper-reset {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--wallpaper-teal);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.wallpaper-reset:focus-visible {
+  outline: 3px solid rgba(45, 157, 145, 0.35);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.wallpaper-result {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  background: var(--wallpaper-result-bg);
+  color: var(--wallpaper-result-text);
+}
+
+.wallpaper-result .wallpaper-eyebrow {
+  color: var(--wallpaper-result-text);
+  opacity: 0.72;
+}
+
+.wallpaper-result-heading h2 {
+  color: var(--wallpaper-result-text);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.wallpaper-result-heading h2 span:last-child {
+  color: var(--wallpaper-teal);
+  font-size: 0.42em;
+  letter-spacing: 0;
+}
+
+.wallpaper-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.wallpaper-metric {
+  display: flex;
+  min-height: 4.6rem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.45rem;
+  padding: 0.8rem;
+  border: 1px solid var(--wallpaper-metric-border);
+  border-radius: 12px;
+  background: var(--wallpaper-metric-bg);
+}
+
+.wallpaper-metric span {
+  color: var(--wallpaper-result-muted);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wallpaper-metric strong {
+  color: var(--wallpaper-result-text);
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.wallpaper-metric-primary {
+  border-color: var(--wallpaper-coral);
+  background: rgba(228, 126, 88, 0.16);
+}
+
+.wallpaper-metric-primary strong {
+  color: var(--wallpaper-coral);
+  font-size: 1.75rem;
+}
+
+.wallpaper-metric-wide {
+  grid-column: span 2;
+}
+
+.wallpaper-scene-wrap {
+  position: relative;
+  min-height: 0;
+  margin: 0 -0.4rem -0.4rem;
+  overflow: hidden;
+  border: 1px solid var(--wallpaper-metric-border);
+  border-radius: 16px;
+  background: var(--wallpaper-scene-bg);
+}
+
+.wallpaper-scene-label {
+  position: absolute;
+  z-index: 1;
+  top: 0.8rem;
+  left: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--wallpaper-result-text);
+  font-size: 0.63rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wallpaper-scene-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--wallpaper-coral);
+  box-shadow: 0 0 0 4px rgba(228, 126, 88, 0.15);
+}
+
+.wallpaper-scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 260px;
+}
+
+@media (max-width: 820px) {
+  .wallpaper-card {
+    grid-template-columns: 1fr;
+  }
+
+  .wallpaper-result {
+    border-top: 1px solid var(--wallpaper-metric-border);
+  }
+}
+
+.theme-dark .wallpaper-tool {
+  --wallpaper-result-bg: #172131;
+  --wallpaper-result-text: #f8fafc;
+  --wallpaper-result-muted: #b6c4d4;
+  --wallpaper-metric-bg: rgba(255, 255, 255, 0.06);
+  --wallpaper-metric-border: rgba(203, 213, 225, 0.24);
+  --wallpaper-scene-bg: #23343b;
+  --wallpaper-art-ink: #dbe7ec;
+  --wallpaper-art-surface: #263643;
+  --wallpaper-art-pattern: #1e4148;
+  --wallpaper-art-teal: #65c7bd;
+  --wallpaper-art-coral: #ef9b72;
+  --wallpaper-art-measure: #f4c95d;
+  --wallpaper-art-table-light: #9a633f;
+  --wallpaper-art-table-dark: #4d302b;
+  --wallpaper-art-table-line: #c68a55;
+  --wallpaper-art-core: #5c4540;
+  --wallpaper-art-ruler: #bca77f;
+  --wallpaper-art-shadow: #020617;
+}
+
+@media (max-width: 520px) {
+  .wallpaper-fields-two {
+    grid-template-columns: 1fr;
+  }
+
+  .wallpaper-form,
+  .wallpaper-result {
+    padding: 1rem;
+  }
+
+  .wallpaper-result-grid {
+    gap: 0.5rem;
+  }
+
+  .wallpaper-metric {
+    min-height: 4.2rem;
+    padding: 0.65rem;
+  }
+}
