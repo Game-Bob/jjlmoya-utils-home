@@ -1,1205 +1,1205 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T12:06:34.048Z",
+  "generatedAt": "2026-09-07T06:35:33.343Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/beleuchtungs-und-lumen-rechner-fuer-zuhause/": {
-      "hash": "96e79771f03e0d7967d1803f6cbb4ce3bb9556f89c044fc1a80098ed6f107797",
+      "hash": "d0ee5d34ff871264fbe2ae332dee021c99a77d5f829a618652d83ffc60f9d975",
       "route": "/de/werkzeuge/kategorien/haushalt/beleuchtungs-und-lumen-rechner-fuer-zuhause/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/ergonomie-am-schreibtisch/": {
-      "hash": "018594ec4591526d174fb5404fa7dbd33c20c42eeebad63647797b1d450c4765",
+      "hash": "5d67c8e668d8d53dc8ab261f3004f51efc5f665cd85119998a655ee3a769f610",
       "route": "/de/werkzeuge/kategorien/haushalt/ergonomie-am-schreibtisch/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/fliesen-layout-und-verschnitt-rechner/": {
-      "hash": "384b3a102b388ee1496e4827920bcc654a02065b3555058f58930e9769721a15",
+      "hash": "df75cd8205bcadd3388c5abd315b41dd4e5d55951926a5862fc7cb36f7843c42",
       "route": "/de/werkzeuge/kategorien/haushalt/fliesen-layout-und-verschnitt-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/geraetekosten-rechner/": {
-      "hash": "137bdd957e3c7b0fe2fdd34122802578d99aa296badd86e2de0d3c267d7158fa",
+      "hash": "719dfa2c2531f64fd917a118118e0978e0ff3f694430f17f598901935ec49e77",
       "route": "/de/werkzeuge/kategorien/haushalt/geraetekosten-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/heizungs-vergleich-gas-vs-waermepumpe/": {
-      "hash": "ab1de17f37ba8f09e723bf2e7664a1018bd4b8d8a4d5cc5a314572944eaba6f0",
+      "hash": "a834be89083bedf67985e06a688535990f6be64b87bc74c419a4de0dd2687fd1",
       "route": "/de/werkzeuge/kategorien/haushalt/heizungs-vergleich-gas-vs-waermepumpe/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/": {
-      "hash": "38857f16e36775dd5b82a90c7e827e062d97e1d6db71a9dd22cd24985d5f940f",
+      "hash": "3730730eb4fc862a53ad86c19d47bf87148080d0559ce11df3bfa9b877e1c674",
       "route": "/de/werkzeuge/kategorien/haushalt/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/klimaanlage-tonnage-rechner/": {
-      "hash": "9277b7562388894c3530d56f48ff6f46cf339fe122c6804ea846e309fc2ec67c",
+      "hash": "068ba8e9ab436e8d50b22d888b0c3d93b00294fee3b14045d84c13f2cbd4b1f5",
       "route": "/de/werkzeuge/kategorien/haushalt/klimaanlage-tonnage-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/led-sparrechner/": {
-      "hash": "2627e613f60c1e5326c75e9b94d143fe909e398762396871f6947e6606916c68",
+      "hash": "8102f2745e42b6074e3cd9cdf669c8b76a97dba88669ff7c49ca2578f0f4771c",
       "route": "/de/werkzeuge/kategorien/haushalt/led-sparrechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/luftfeuchtigkeitsrechner/": {
-      "hash": "7ef9f0021b385db4940a507f8d89a076cb931152ccd69fc9ad817b279dfbd18a",
+      "hash": "54c04c2af286b1794ac2008bd3854feba391ecf4d55d773009cc5b95b4393978",
       "route": "/de/werkzeuge/kategorien/haushalt/luftfeuchtigkeitsrechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/offline-qr-code-generator/": {
-      "hash": "452cc8494a211aceb5a245308c8ca7a92372fefcb6e0357619a8c0bc4e96e358",
+      "hash": "086c7a1ae30d862e25c01bc45cfd17fa3a07883ebf5bed05cab3412b78d473bf",
       "route": "/de/werkzeuge/kategorien/haushalt/offline-qr-code-generator/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/projektor-abstand-rechner/": {
-      "hash": "5ebc07cf9d575eb16c81ebed419052464f9c440857f1262177a58629f97d4128",
+      "hash": "f16a336ae65e2a9517d8f73cc0856452cf56e531d25854fb7c783cfa41340252",
       "route": "/de/werkzeuge/kategorien/haushalt/projektor-abstand-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/solar-batterie-autonomie-rechner/": {
-      "hash": "5a50b495b5ae79f093da00f61a547d10049a117312cb0b7a8b3d18f8ecd29008",
+      "hash": "c775a83eec00f60eb43d0e5e8a3397cb3dfb097318ae4c2eb9095ada991ee22f",
       "route": "/de/werkzeuge/kategorien/haushalt/solar-batterie-autonomie-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/solar-neigung-rechner/": {
-      "hash": "f94260a53a7743dcfa91ffc73631dd7304a80f835e2fa2aa0bd1eee1876a2544",
+      "hash": "a7a19d955c9b755f7cfe566cc28a564810e843405d5d20ac63170e300a340c0b",
       "route": "/de/werkzeuge/kategorien/haushalt/solar-neigung-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/standby-verbrauch-simulator/": {
-      "hash": "28a603ebc0c4866fd71d3238d859b90c36d56faeb293ab6f8c55afd6305e473a",
+      "hash": "5bd841557b59e0f7ced35f2e4a8d2472576677c8c3481c1e2a2cbfb68ceca42d",
       "route": "/de/werkzeuge/kategorien/haushalt/standby-verbrauch-simulator/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/stromtarif-vergleich/": {
-      "hash": "7c016f4df47ecac4a92ab9bdaedade6a85f0b8d07704a8a34a46ea844c2a8eb4",
+      "hash": "d6d9b318209ce871105caae72c7cebe10e844470d5a625b70f4f7d0fdccc6e65",
       "route": "/de/werkzeuge/kategorien/haushalt/stromtarif-vergleich/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/tapetenrollen-rechner/": {
-      "hash": "da07b872fcf68b5c6fdecf6d919186df96355a246a45a5537f5b2069a5cfebfe",
+      "hash": "2cbf465bbacde8795f8ff5d64e27eb61aa514c5a5dc4ca1c1f40d2294963638c",
       "route": "/de/werkzeuge/kategorien/haushalt/tapetenrollen-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/taupunkt-rechner/": {
-      "hash": "e791e3b4462c93f6926001468e321a4b0d75d7af7d07b1e8e5dd8565578779ff",
+      "hash": "62971b19ae7da02c8469e3ab323b4338a05ee909fbc48c38947324766dbfe8c9",
       "route": "/de/werkzeuge/kategorien/haushalt/taupunkt-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/w-lan-reichweiten-simulator/": {
-      "hash": "bf2e196e8ae8cf338c412238f18f9fb84a934f4604f8e2d11f4044da9654b075",
+      "hash": "4a608a06bcdebf146aabf9bd2624085eecdc549bad6b817e468d60f017d279fe",
       "route": "/de/werkzeuge/kategorien/haushalt/w-lan-reichweiten-simulator/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/wandfarben-rechner/": {
-      "hash": "d0228757e5f1e3b190dbb693d59a773f9d05a3347ccaa0cb84028af43b5219fa",
+      "hash": "eae17c9f9e3bb106009c3d75c35308cff07a3ef50220deddaa9c3a98834fd520",
       "route": "/de/werkzeuge/kategorien/haushalt/wandfarben-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/haushalt/wasserenthaertungsrechner/": {
-      "hash": "54c9354614ba0471100c9636b0b4be38ef0f772c7b0a45dff5f4a989dce767ee",
+      "hash": "3eb269aa49c9603b04cf010b6e623372706c05f2af669778c874cd9911e09f55",
       "route": "/de/werkzeuge/kategorien/haushalt/wasserenthaertungsrechner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/ac-tonnage-calculator/": {
-      "hash": "18da95001112a899e725b999bb02945dc633ad4637b72bfa178bac4762d3f208",
+      "hash": "9b430370d389658b4f32817913f2ead2ac6e7e94e32aeb5001a1aac3e719d141",
       "route": "/en/utilities/categories/home/ac-tonnage-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/appliance-cost-calculator/": {
-      "hash": "c0e4449e541f40076d7f2ca7da39ecadba08e99ab705c5a62da7e379ce296dbf",
+      "hash": "bab956ece52c2adc1f92c909d0fa53716f80a7ab49b02f1a5d1eaae03b91dc8d",
       "route": "/en/utilities/categories/home/appliance-cost-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/desk-ergonomics/": {
-      "hash": "a669f5d400f21c95211968da5733b69f53daa0d15315c6ca0c5b0b546a44723b",
+      "hash": "35111e3f51d1df1a61b2059c6ed2199855a22ec7f9f8ded43be85799bea85369",
       "route": "/en/utilities/categories/home/desk-ergonomics/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/dew-point-calculator/": {
-      "hash": "c46c02fbd806ef6ff1e834bf0da2210e3532fc564fbe0fc9d834791a03bea4ce",
+      "hash": "9d10e0b62f4afb2e263ed5e06bb519fe5286749e1a60628516711c06ba503d4c",
       "route": "/en/utilities/categories/home/dew-point-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/electricity-tariff-comparator/": {
-      "hash": "7fb61ddf55134fa9c9230697da46ddf24e8c8670e0c5be22fccf6160f62f1559",
+      "hash": "d98bb647a3db4dbf639dba2e8bedc03360377c2d85a1fc90d3bc635290513f2b",
       "route": "/en/utilities/categories/home/electricity-tariff-comparator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/heating-consumption-comparator/": {
-      "hash": "9f303b05a30da0f371e05cdd599faa41942cb53ecab03023f11c92e3b99fbef0",
+      "hash": "467360ed4125b7a578454e92b8f3d826656bfea9c64c22d4d70b109560df666e",
       "route": "/en/utilities/categories/home/heating-consumption-comparator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/how-many-lights-per-room/": {
-      "hash": "4ee8f9e074ec29bec55928c9df6c12623c7ac59fe90fc0602c7432fba6883557",
+      "hash": "40c533de8de1f26f07a6f12125ff90c9c87c1fbfc2cc851ffa3d8a118bdf6a0e",
       "route": "/en/utilities/categories/home/how-many-lights-per-room/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/humidity-calculator/": {
-      "hash": "0765eab4060aa5f723cb4a9251c88e5f4de0fa71fbf7398498ae2fcc597c2d35",
+      "hash": "11444fc6471c5f16315c13371f2b174b96e69f54d0a4ec9adeb499511325d80a",
       "route": "/en/utilities/categories/home/humidity-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/": {
-      "hash": "583e67835e5584a3c86c1aec145bbd44f871f8cd3b8ccbfb4ac15a073a213c53",
+      "hash": "dbb05e536c7faedbddb3ab76fb008094d7fc97ba86f38b00c06bce64feb28bf5",
       "route": "/en/utilities/categories/home/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/led-saving-calculator/": {
-      "hash": "734cdbfc3810ecb34ae23761e66ec9a725362bd41cd2c0c27d6f1c67d1418416",
+      "hash": "00403efdb55db049585be0fdf65ac4838b99f84a1bd11fcb31ee352529f4d867",
       "route": "/en/utilities/categories/home/led-saving-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/projector-throw-calculator/": {
-      "hash": "fe0e8a1d1f6d213f5c39b7d9df4f4cc496832ab3ee837da9a32848b088ebf77e",
+      "hash": "e67b3ba53c7f0a2994c93a8aa1a576d09cf1aa6325e1ea62e66dc3662a2333a8",
       "route": "/en/utilities/categories/home/projector-throw-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/qr-generator/": {
-      "hash": "f6d868b2965dda51bf60d46224f2f4c8ba528fde395194ca61e119b62cb57e80",
+      "hash": "7cea471d4c3b6739801905c5886f379f91a6a98dfadcd0207c6d9debcea91ea9",
       "route": "/en/utilities/categories/home/qr-generator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/solar-battery-autonomy-calculator/": {
-      "hash": "6cc656cc77a5ab0f05581262539518ea80ea9f3ec551a92ba7ca4acac4ce96f3",
+      "hash": "c12111a3123096961a86b9922b1cdd88cbbef330635c0b89b2a925c12c527992",
       "route": "/en/utilities/categories/home/solar-battery-autonomy-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/solar-panel-calculator/": {
-      "hash": "61b4dd20ccdce95cf88162ce6a98d130e9ab4bda1e249c3f4f39e3a611d4feff",
+      "hash": "eaff774903101d135c3b367333eb08bd25bec85ea97a84bb2ce3e61989aa531c",
       "route": "/en/utilities/categories/home/solar-panel-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/tile-layout-calculator/": {
-      "hash": "68835f5d36ded7b83a9fdf0031faf5997310657ed71764b04c25c44d4f025ebf",
+      "hash": "16a0e50140961d81a5cdd584ce367109bc19f1ac2866aef37d2514be60e6e28c",
       "route": "/en/utilities/categories/home/tile-layout-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/vampire-draw-simulator/": {
-      "hash": "9b50a1eafc7fc27908b350760ba5d17dd0f3e0ed3524471014fff717ac0b2ac0",
+      "hash": "1040d678d19933e0fd71878c0debfb1535b1ac1bb7444d7264fdc31be097e376",
       "route": "/en/utilities/categories/home/vampire-draw-simulator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/wall-painting-calculator/": {
-      "hash": "0a95ae0386169ac7a88f0a23bd78106f05ea96bf0b3679ba0f76bcf6cfda4646",
+      "hash": "9e96de873c25b27b45268a6e5341690a479673967ddf12c034d564b844fb0caf",
       "route": "/en/utilities/categories/home/wall-painting-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/wallpaper-roll-calculator/": {
-      "hash": "ce8a38ebce64c81228f0db607cb8dca5428fd80d5086e3059d50ffd2c534a1e4",
+      "hash": "facf9324eb0105879bfde314972a2a16097c66402e9bcea9cbebbafdb6777250",
       "route": "/en/utilities/categories/home/wallpaper-roll-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/water-softener/": {
-      "hash": "22233e3c6d2f6685a81483638549ad0c1be0c3ce436880b8a700622dc6ad00b5",
+      "hash": "f122575682e083a2d503c48acc7ed9bb1c79c366f4dbe5db98a2accf3de95979",
       "route": "/en/utilities/categories/home/water-softener/"
     },
     "https://www.gamebob.dev/en/utilities/categories/home/wifi-range-simulator/": {
-      "hash": "f51381c536d3c3b77556230850e96b8e7b03b3de14d1b01f960701d85f0f0133",
+      "hash": "dd159d433aa89d4c799e039653c39bc40af4a99b8e872ecadf97b28eb8997ba9",
       "route": "/en/utilities/categories/home/wifi-range-simulator/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-adoucisseur/": {
-      "hash": "39672d386a7429b786fed905fcdffd1891360f3281d4b2d7ca341b6b1f78a6a6",
+      "hash": "ed96d5a407a1598a3f98e575851d98fbc68d6084c7e03e54a540109b12e07943",
       "route": "/fr/utilitaires/categories/maison/calculateur-adoucisseur/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-autonomie-batterie-solaire/": {
-      "hash": "21f51cca591524cac879b348f619dd1d92d8e339e577fede82a14b793fecc49b",
+      "hash": "bcf2653aae09de2dd7749567fd6034ad36135617e5ea7b4d30cfe4e4ac3cce04",
       "route": "/fr/utilitaires/categories/maison/calculateur-autonomie-batterie-solaire/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-cout-appareils/": {
-      "hash": "42282ad323d6ad8c0e1731898b9018c019dc08004baf8345adaef6a290f6b65a",
+      "hash": "c37333687cb50268841e0ff7f1f7fdf20e323d3065fe36bc848ca6c7d20c2d35",
       "route": "/fr/utilitaires/categories/maison/calculateur-cout-appareils/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-declairage-et-de-lumens-pour-la-maison/": {
-      "hash": "3e1ae6c1c87458d54d3d6668a47dfd38754a4c3bbf009b41602406f2480ea92a",
+      "hash": "81523618c47797c4376743bfb77d74edc3783f7fff13f8a1b89eafb4f15fcb46",
       "route": "/fr/utilitaires/categories/maison/calculateur-declairage-et-de-lumens-pour-la-maison/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-disposition-carrelage/": {
-      "hash": "975d3b534e709128cdb8d0356a2ed8e58a7995cfc2536a419840dec616e6fa57",
+      "hash": "b3164eaf80c24c134c3fbbf9a09648af10fdaf748420c8943989c36d07ca1758",
       "route": "/fr/utilitaires/categories/maison/calculateur-disposition-carrelage/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-distance-projecteur/": {
-      "hash": "5422f6578ba8c6eed33219ea75d861d28b8cb5567c81e330d0a9d663522f7bcb",
+      "hash": "af8dafcff00b3e832f0acfde548acf1aae7118741493084697b11bc3ddc81b4e",
       "route": "/fr/utilitaires/categories/maison/calculateur-distance-projecteur/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-economies-led/": {
-      "hash": "ce296e5ccab7b1bb2220a95ff96e21839b5e900e0df0cbab4583d2e15e08bf8b",
+      "hash": "35eb57070adf02db7991d7c213f2b16a1bf0b47c2ed22c2953dade3a14eed911",
       "route": "/fr/utilitaires/categories/maison/calculateur-economies-led/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-humidite/": {
-      "hash": "bdf843ba9b2a76e6f05f76a6efcf87703a70adb27019419a6de285e3d8dc7445",
+      "hash": "f7f6d04281411ccaeadceca6d07cf9e99cc2cfab157d023392a03a1119c374de",
       "route": "/fr/utilitaires/categories/maison/calculateur-humidite/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-peinture-murs/": {
-      "hash": "0368379bd895c6f4f50fe8048948d1443023974ee3e4234a9885a017b31e5615",
+      "hash": "a6fdbef411333adfe1cb3c0459ae069851ccfe1015548db122571e072e1b635c",
       "route": "/fr/utilitaires/categories/maison/calculateur-peinture-murs/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-point-de-rosee/": {
-      "hash": "7401b4e304073b8a8d4b3dc87ab7d247a6a3f01a311711acb6b2107304b05562",
+      "hash": "ae98dfbc9303c738c8c5c01a1f072aa9b331de0d84055efc9fa75061d2614a0a",
       "route": "/fr/utilitaires/categories/maison/calculateur-point-de-rosee/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-rouleaux-papier-peint/": {
-      "hash": "bcf89f08e6ec5359c9f1405dd6d057c9dac1ced3a0584428bf096efee0a5aa3d",
+      "hash": "3d51513d0186a61320724c399cc255f5d7c8b8c6235fe7f841863169c71fa7b9",
       "route": "/fr/utilitaires/categories/maison/calculateur-rouleaux-papier-peint/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-solaire/": {
-      "hash": "c66c5a363a203788ab6d54588e6ce09d7e476533d093b7e49855377b75a3d650",
+      "hash": "d5eaf538e2690733585a36c7f856a971c1f4f05941203048ca46431687d990f8",
       "route": "/fr/utilitaires/categories/maison/calculateur-solaire/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/calculateur-tonnage-climatisation/": {
-      "hash": "a476e4b81cceeccba8fa0c33ec4f4d06078d4384ac1121d7879c102bc6a4335a",
+      "hash": "6e4f766f8fe826c4e14f2724e8609ae53d93160ce60bf5e5f05a5d2c1d01a152",
       "route": "/fr/utilitaires/categories/maison/calculateur-tonnage-climatisation/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/comparateur-consommation-chauffage/": {
-      "hash": "89b4cf309c32878d449cd3f0cb580ec3ed758a4504816b38e78da852983e4e83",
+      "hash": "ae39bd0997481060b7e321e126bf535c585ee51d2a0bf5751fb403c5e7b47389",
       "route": "/fr/utilitaires/categories/maison/comparateur-consommation-chauffage/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/comparateur-tarifs-electricite/": {
-      "hash": "13870685c3d1e7bd4b543090e8d98e9ea56c79c836929e72c23bc0d2ddc18678",
+      "hash": "22b02bb8de82e029618216ec42777f3c5c07d7d832002d4bcc3127ad9f78c8a9",
       "route": "/fr/utilitaires/categories/maison/comparateur-tarifs-electricite/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/ergonomie-du-bureau/": {
-      "hash": "d27b3a3ea665c28efb71ab20e737e1a12578b15be0eda3f7eef011b1a7140d5f",
+      "hash": "31aa89526facfb0a06c1886029472b233a821c93b73dac5447371a6ad85be656",
       "route": "/fr/utilitaires/categories/maison/ergonomie-du-bureau/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/generateur-qr/": {
-      "hash": "65b5bc1c497c11bdc561e5afa1f02e7ce469ac64df54e6d4a529da4394862deb",
+      "hash": "37706c4ed9a37c9805e74c04d74ffc98cfecab9e86f2414c86f87f5a2402f7f3",
       "route": "/fr/utilitaires/categories/maison/generateur-qr/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/": {
-      "hash": "adb76a893985f47feec02e1038e735b4773fe8b9f6ad5942a6a088bfa02d1637",
+      "hash": "d6349f8b46fd270f86944701747b0749fa09f10f8aca820f8f8364cf039cc503",
       "route": "/fr/utilitaires/categories/maison/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/simulateur-consommation-veille/": {
-      "hash": "2fa40878182056da0042b71e0a58723f1781392fca500390aaf26c42432856d9",
+      "hash": "100a25b4af464dcc466e1f7a3481602772db161f07dfafe3187a476803d207a4",
       "route": "/fr/utilitaires/categories/maison/simulateur-consommation-veille/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/maison/simulateur-de-portee-wifi/": {
-      "hash": "eab9e7d6e833f9cb1dd5ff95e728eff266833c9e9310d12041bbf9e252ad0717",
+      "hash": "4ca3486413f52e11b7189558bbc04112d13abf042ab8746595c4db3c7e3c3bd8",
       "route": "/fr/utilitaires/categories/maison/simulateur-de-portee-wifi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/": {
-      "hash": "771351a14d50c5da02c556f0758306e9cf1dba366054fdebd53c62e636fd935e",
+      "hash": "70c0957d198578e08d371b9e1e00f1c09e00398984c94763ff8c89a5c5328805",
       "route": "/id/utilitas/kategori/rumah/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-biaya-peralatan/": {
-      "hash": "3213e369bf8cf36e009e0fb550c0334729de55e502c020fe1385c643ee7bcdd6",
+      "hash": "a41121d548d8fac8975f02d3d396a537c4e3753a66b3f9ede317db8f6a93ac6b",
       "route": "/id/utilitas/kategori/rumah/kalkulator-biaya-peralatan/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-cat-tembok/": {
-      "hash": "7b3b3418dc3e50b2dac5e9f227156a4b02513ab725d0e1e46af02b6bcecc5f59",
+      "hash": "d384a65e7a86234abb09ef69383d7148c4d59e48cc7a15f1cc657caf88db974d",
       "route": "/id/utilitas/kategori/rumah/kalkulator-cat-tembok/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-gulungan-wallpaper/": {
-      "hash": "dd391fb892f64f91f3d603f89e48c5612112fc80a9fb53decd24023b98ef9d21",
+      "hash": "7003f98503245edadf8a29a5170389663ba922f3e4cc5cd8b242ab2628fb7ba8",
       "route": "/id/utilitas/kategori/rumah/kalkulator-gulungan-wallpaper/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-hemat-led/": {
-      "hash": "a1b80dac6104ea6ff49132f69c839bcb2cef0b6661e2c49545a93cde6b03edff",
+      "hash": "ec0b23be6fd3e244362e5d75ee5ff3476725e6484775a886523cbab4fc4e88b1",
       "route": "/id/utilitas/kategori/rumah/kalkulator-hemat-led/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-jarak-proyektor/": {
-      "hash": "b9431e2d0ce101fb3da07825788c75320c4a3e85fdc70deb4895cfe9534ca08a",
+      "hash": "e4f2594bc222452105db508475bdff79df3feaa82891be85edf3206ed22f53b8",
       "route": "/id/utilitas/kategori/rumah/kalkulator-jarak-proyektor/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-kelembaban/": {
-      "hash": "98fc13a5838c15b6123c5c5ff6f4565271210a0c115b189447b5a61d5dc4bff0",
+      "hash": "05adbb1b23731cc11175f8cbe20e40843554b7bfa396125f456017b44f3cdca5",
       "route": "/id/utilitas/kategori/rumah/kalkulator-kelembaban/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-kemandirian-baterai-surya/": {
-      "hash": "d917d2682046f6970252916c1b9514fdfd579b88ca26e58e9e857240400e702b",
+      "hash": "3503e7ae7f02be870fc9e48808e9095a6755569f33d6073de1f4f8230a188f11",
       "route": "/id/utilitas/kategori/rumah/kalkulator-kemandirian-baterai-surya/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-pencahayaan-dan-lumen-untuk-rumah/": {
-      "hash": "6ed98dfd3d366d1441db9f226ca886061b0ffe914c705b782ace094d8c636437",
+      "hash": "089fb4de7d57795ed51215c60a6347ccaf0e8fe46b5e7f232b08e6b09bed63db",
       "route": "/id/utilitas/kategori/rumah/kalkulator-pencahayaan-dan-lumen-untuk-rumah/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-penyaring-air/": {
-      "hash": "9a311f9f66a54e3c634ba6ff35335d57f9d649d81fc84f5702a8da3232f5ef54",
+      "hash": "94c0d13b8a9b97aafc4652058c3d34f2b55c57b3ec52e34ab7debc7f73490dd4",
       "route": "/id/utilitas/kategori/rumah/kalkulator-penyaring-air/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-solar/": {
-      "hash": "9dc2d6874dea703e4cb9413046671c0cec6bbc23fb20ca7d6f7d21fa2e2a2b1e",
+      "hash": "cfef7df3f4cfa5d4455302c0b5abc7ce5bf0876c188a8753354d94b06614e972",
       "route": "/id/utilitas/kategori/rumah/kalkulator-solar/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-tata-letak-ubin/": {
-      "hash": "9b877f05520980a5b7f3ab355bc8cd29cdc1998c1a09e559bce4d7f2e0b6222e",
+      "hash": "a056db0e8bbe0240d47b31622d327f833c7d81f5f7923445ff6fe002e16f79c8",
       "route": "/id/utilitas/kategori/rumah/kalkulator-tata-letak-ubin/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/kalkulator-tonase-ac/": {
-      "hash": "65a87089ba12edaba6b3ca6e76820463c7b38cba551405ac52a066d703253a1a",
+      "hash": "913f8b44af8e97594be86895eaee1db5941a855e37153814f580b76dcd8a8499",
       "route": "/id/utilitas/kategori/rumah/kalkulator-tonase-ac/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/meja-ergonomi/": {
-      "hash": "421706e39a5f2d44030d36cd4b8d1913ae3ba17f1ce6509fd53f9cdcef8ad4d9",
+      "hash": "b0b7846a33230e3baf928648d7338f4e0cf25de7eef74edc44e0a369f18dfebe",
       "route": "/id/utilitas/kategori/rumah/meja-ergonomi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/pembuat-kode-qr-offline/": {
-      "hash": "c92f910482817dbc38e8ca64ce950e59c8d75a112c604ca775926728b3c9f75f",
+      "hash": "21a63062f34cd09565d07124e68d388ccad6248fd335ca5c1715387086a4075a",
       "route": "/id/utilitas/kategori/rumah/pembuat-kode-qr-offline/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/perbandingan-pemanas-gas-pompa-panas-aircond/": {
-      "hash": "de6fad098dc08ad532eb6f4a254dca87bcc649d8b0cfb147935f3c3d94010081",
+      "hash": "3449e9d8fd9498e19a0bf0a0ceb1c81308030a57ebf300e5f773c7ba3da240cb",
       "route": "/id/utilitas/kategori/rumah/perbandingan-pemanas-gas-pompa-panas-aircond/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/perbandingan-tarif-listrik/": {
-      "hash": "cd3f77cbb15d7af2d69e36e969795431c948dcb88f3a0d5c7e6d60493b305471",
+      "hash": "ec191021ba24ee51a9994a100dc4119fe11108e4cccec2254241ed783e15d257",
       "route": "/id/utilitas/kategori/rumah/perbandingan-tarif-listrik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/simulator-jangkauan-wifi/": {
-      "hash": "c2c8e5d3ce48ac1c56616a80275071e873615146daa8d906b0a674d233387dc2",
+      "hash": "67444f86e282c26fefa67759a187509f0a49968d4f2d116fa1195f0144e4f107",
       "route": "/id/utilitas/kategori/rumah/simulator-jangkauan-wifi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/simulator-konsumsi-daya-standby/": {
-      "hash": "e4f95008a93bb9f2ec5a770fa2a35a08294dcbb2beb73f2bdabaed86b99a6775",
+      "hash": "7400598fc5b455b3842e7cc3aa04d61de9a90e86719f9803a5800345fad0f87d",
       "route": "/id/utilitas/kategori/rumah/simulator-konsumsi-daya-standby/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/rumah/titik-embun/": {
-      "hash": "a99558c4a74bf907b4b22f46e6b50104e7b9316961984ad5efabe00f8cb37b37",
+      "hash": "9e23b02dd1588df3d29a732a741b7d0c508bde368fda6277d8997fa75d45e49c",
       "route": "/id/utilitas/kategori/rumah/titik-embun/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-addolcitore/": {
-      "hash": "3427caa6b07c31d5ac633bf82e5114d820466acb45e6583491403bc0db7957ce",
+      "hash": "966b688b2ed12e1301b318a4ed52a685e32898c9f7d55e7aee85e9b98c912b24",
       "route": "/it/utilita/categorie/casa/calcolatore-addolcitore/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-autonomia-batteria-solare/": {
-      "hash": "a73abe98b7674fe86c4e6a5633ee0866c2041e6eb6dbaa967abeb0b437900c3e",
+      "hash": "b478b12916c1ab462fb2a4fb1bcc3fdda40295e126f900a280236a2c1051d820",
       "route": "/it/utilita/categorie/casa/calcolatore-autonomia-batteria-solare/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-costo-elettrodomestici/": {
-      "hash": "b61d44655c830ad6c0985190e595e76356e85b8d0763bf7c2cdfa767b7b26566",
+      "hash": "ec550fafef2e98cb2b1dd530dbef7a93201903f26862128672ee565ba19857cf",
       "route": "/it/utilita/categorie/casa/calcolatore-costo-elettrodomestici/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-di-illuminazione-e-lumen-per-la-casa/": {
-      "hash": "809f95dd566e099e0ec27329b9e24a93fdd51e37ec5c02e864bc00b9841867bc",
+      "hash": "1023aaf7751484768898091c7017f7b77ab7e3372d406b0aef98f28b6bb55fa6",
       "route": "/it/utilita/categorie/casa/calcolatore-di-illuminazione-e-lumen-per-la-casa/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-disposizione-piastrelle/": {
-      "hash": "29996578ea618739c10ed2c74f868bbed02fdeb2276cfd96b874b2af8af58cae",
+      "hash": "72e27ba7b1e89cb7c469847a484fb10de54e703a0dfc77e737a4d82bf0a166db",
       "route": "/it/utilita/categorie/casa/calcolatore-disposizione-piastrelle/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-distanza-proiettore/": {
-      "hash": "a455b20f5a223ade9f0cc153607921eeff42a3356e6c9275083bf0e8d5760cb6",
+      "hash": "134fe46b64cfaf4c718f822f1b4ff44778af42d2a0a23031d8ff67d5a854be9e",
       "route": "/it/utilita/categorie/casa/calcolatore-distanza-proiettore/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-pittura-pareti/": {
-      "hash": "74a7653c96cef0f5c1aa362a1af2c72ac031005e8b52b086ec80a29727633dbb",
+      "hash": "c26526250c81424296c76a310df779aaf42688f96f8c95f6a6157a93a625676b",
       "route": "/it/utilita/categorie/casa/calcolatore-pittura-pareti/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-risparmio-led/": {
-      "hash": "ab137743e6565119b9346f54e09764227e9b045fcac58142d68068058eb16672",
+      "hash": "7e38b56b4bd7fa6be4ee0c7acfb26be7e356783d358c60eb42e998aecbdaa534",
       "route": "/it/utilita/categorie/casa/calcolatore-risparmio-led/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-rotoli-carta-da-parati/": {
-      "hash": "8ad5370fde4d6d0dab621204dea7e807d46bce5bfe3d20b49eb3fabaf8ad9385",
+      "hash": "1669717a299e50f08fe600acb4c3d15a9894ef9bcfa6716393dbfd1de34293ff",
       "route": "/it/utilita/categorie/casa/calcolatore-rotoli-carta-da-parati/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-solare/": {
-      "hash": "36fc8d9afa6136788c2689b8150ce284514ef5af25c7530b96f261ff14219dc4",
+      "hash": "ddb378189c1a227a96704b67336985aa33302b6cca02526e8b4eb65acfe5ae39",
       "route": "/it/utilita/categorie/casa/calcolatore-solare/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-tonnellaggio-climatizzatore/": {
-      "hash": "236efe1e7dcc88d52562fd4dbd47064967249024f7edca5b64efd208d91941b0",
+      "hash": "8e60e0a814b01f09744849bbd67635ffb9c63273dff01112daacdd9f976bd511",
       "route": "/it/utilita/categorie/casa/calcolatore-tonnellaggio-climatizzatore/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/calcolatore-umidita/": {
-      "hash": "314a7c234bbe27471222951fc98bb3cc76421f784f90e4a065c676d475d5bf1a",
+      "hash": "5b33634d19481bd991614889965693b11a259a4f6902ea7ba4fc6d7db7a63c5f",
       "route": "/it/utilita/categorie/casa/calcolatore-umidita/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/confronto-riscaldamento-gas-pompa-calore-aria/": {
-      "hash": "bac1a33ad2b8639eccb797744d76b9913b843d42e04c57edea4dd0d721bff13c",
+      "hash": "ae1b1bd4948b20d41723c31e4bc5df0ca8b168545981ae847e35e7ae1f6af52e",
       "route": "/it/utilita/categorie/casa/confronto-riscaldamento-gas-pompa-calore-aria/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/confronto-tariffe-luce/": {
-      "hash": "70fccd8cb85d519671b8dea20edc75b25ee787465461f4a01ebbaeed103ea432",
+      "hash": "0d1790e208b31fc76022b5317b8ad26832b7bc01445a12b31fc3af207418a80e",
       "route": "/it/utilita/categorie/casa/confronto-tariffe-luce/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/ergonomia-della-scrivania/": {
-      "hash": "904b6b0239a91522e51ffe4f8bd282971eaf9521a235eee9060c85a63fb33b06",
+      "hash": "f1320414d63c4c576abf933444f1620e9b6696875b4baedee4a1ce76314f5102",
       "route": "/it/utilita/categorie/casa/ergonomia-della-scrivania/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/generatore-codici-qr-offline/": {
-      "hash": "6cc0097257a335f12d05dff63e4e43187bc7d5f2ff0dd1366a26d945bef04a7a",
+      "hash": "0544e9fbadf85b04a1acb05b1ceaca637c22f333cdfae4103812413feee05793",
       "route": "/it/utilita/categorie/casa/generatore-codici-qr-offline/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/": {
-      "hash": "55bd2c961dbd7e2d817cb2285dd8d060240d5aff1ae82dc398c54aabe17249ae",
+      "hash": "76722c701e04dc082028db7f43416c98dcb99d8ed20f17f5d8857ed8db155880",
       "route": "/it/utilita/categorie/casa/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/punto-di-rugiada/": {
-      "hash": "1cd701572ae726edb4c13566e27672678501bdeadd9ec8130fd1663135b80eda",
+      "hash": "89f2ba32ffe7e1ff658c2e5c991857eb829b87737a7a59da5f15d6638269c88f",
       "route": "/it/utilita/categorie/casa/punto-di-rugiada/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/simulatore-consumo-standby/": {
-      "hash": "e24df323bc02765cd7501821566ef06bcd76889bf8d5d52ac5627bf991b2f1c2",
+      "hash": "7eba53228cb1941aedce8e5f0fd2af9d78dc96e93bb3acba8507fc9bd9f0f25a",
       "route": "/it/utilita/categorie/casa/simulatore-consumo-standby/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/casa/simulatore-copertura-wifi/": {
-      "hash": "0b5f3cd802976cd129b193661e00312dac609839ad28e9790cecd92776039d36",
+      "hash": "983e40b78a7c7e8cbb87620a3dc472ba0c6c02a60b3f59053dd07cccd148237c",
       "route": "/it/utilita/categorie/casa/simulatore-copertura-wifi/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/ac-tonnage-calculator/": {
-      "hash": "0803bbc8221edfb339cd043de8c1e07f2fb8b569cc7ada58e65484d7af0631ed",
+      "hash": "3ad5d24a5887128a5cc6da007880ba11f3e14ddae74dd7e4eee79577560c1f18",
       "route": "/ja/utilities/categories/home/ac-tonnage-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/appliance-cost-calculator/": {
-      "hash": "ab48a6be6e0f503348db4f14bd17d44aeebdc9108c1fbb1e42aab2c9618a8f38",
+      "hash": "cdfffbde55b58586d442778caa7be39a899fd26bbbfc56e030ec782da6c837b8",
       "route": "/ja/utilities/categories/home/appliance-cost-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/desk-ergonomics/": {
-      "hash": "5844ac369f785b0bf09a48a248546eeed835b9cdb05e59d222c08a5b7988b6e7",
+      "hash": "58eb135c6e5a5b8a23e80e4152538498ed0b097cbf6eb94bbdbdb63d1db237c9",
       "route": "/ja/utilities/categories/home/desk-ergonomics/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/dew-point-calculator/": {
-      "hash": "889282291f2a047c57bce883d5af7adabf8e1ba1f63c82d380a4e748a011d62d",
+      "hash": "5161a683dfe14da5b5a9edd3819abeb25f0e32e98b8747d1e89fcf1294cb2426",
       "route": "/ja/utilities/categories/home/dew-point-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/electricity-tariff-comparator/": {
-      "hash": "72de907f8f0d6ac84f7563b6227c294fc2e27fa9d76820bb13fca13c0975bf82",
+      "hash": "a99abd25bbeeb15b84d4b59142f64e45a5a92b2172faeac9a535b7245f6515ea",
       "route": "/ja/utilities/categories/home/electricity-tariff-comparator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/heating-consumption-comparator/": {
-      "hash": "d8537ebfd576d5508381cb43b0a013bd9bfb513bdfecbef940cccf2a0334de12",
+      "hash": "15e3ea693514629ae8b11bfbef0fc3c4e01f2760cd7324428109904618bb1db1",
       "route": "/ja/utilities/categories/home/heating-consumption-comparator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/how-many-lights-per-room/": {
-      "hash": "6462d4097e5329a5c055211532c5707712ef1275b92606056edde368588e75e2",
+      "hash": "5de36a585fcffd3e8481e49e8738989db5c1e5a533e212b734b8ed63f5095359",
       "route": "/ja/utilities/categories/home/how-many-lights-per-room/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/humidity-calculator/": {
-      "hash": "d4dbed7f0565142b66dff2b8da4598bd59dd83b3597597e97af689b28dd95830",
+      "hash": "392718eabaab3efdeb3d6121dc5da39c95211e8b7476a150f326ed03307f3c75",
       "route": "/ja/utilities/categories/home/humidity-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/": {
-      "hash": "cd7f5a51d5798fb64ea62421655d3b161ce1c93deaa33eeced3ab2a39eb85a4c",
+      "hash": "bb24e7d824fb88b6edd5ba4098bd2b1c3c3b02045a95570452b88d00796607f1",
       "route": "/ja/utilities/categories/home/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/led-saving-calculator/": {
-      "hash": "dc32b0590fddf1b840dbf244b6f88fce40fde0a7b47db55585293d18286ab869",
+      "hash": "c9b4ebb2e0021e98de6c6f99755076b302a6033148abce06a25fb25ef4052628",
       "route": "/ja/utilities/categories/home/led-saving-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/projector-throw-calculator/": {
-      "hash": "409f0764d60a5bed02ba94f505ef8b511bb7fcf7db9a7b259b3878f91ebd3001",
+      "hash": "8be437eb2f0c55e1c8a4e86e3c47f4b60d52ee745eb92ac8b68105e4acfb0787",
       "route": "/ja/utilities/categories/home/projector-throw-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/qr-generator/": {
-      "hash": "46e57997cb22ad3877859eb91a9a070ad6257a5474a5991d67b78a17bfff3b24",
+      "hash": "817c66eed15cc8b15c8b63a913108d9747cb9fb5f887f4c57a642d7faa09b861",
       "route": "/ja/utilities/categories/home/qr-generator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/solar-battery-autonomy-calculator/": {
-      "hash": "b35182c6c3d85e1866e4802651b0c9a09171381530eafecfd08f33b330c0d991",
+      "hash": "3fd79cedd62cf309ab675f3b2b9e0fa1397502765144436e1a2787890df1d633",
       "route": "/ja/utilities/categories/home/solar-battery-autonomy-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/solar-panel-calculator/": {
-      "hash": "b94ec1f80d166f46cd2f6fdcb4d6f7dbc6a1a5898d8db88cf48b1236a2780474",
+      "hash": "6a6768e382fd4e9ab3f857bd5edcccd6cde28a976fc2c71ae3ffcdb0e7d2b5e7",
       "route": "/ja/utilities/categories/home/solar-panel-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/tile-layout-calculator/": {
-      "hash": "85c412093695c44206808d9d6c74e50fd8f9520418b92a52636cc2657c1aef9c",
+      "hash": "14001ca7452b50459aa22f85e0f2e5d6859514fa58ffb40cf15008b4396eeab7",
       "route": "/ja/utilities/categories/home/tile-layout-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/vampire-draw-simulator/": {
-      "hash": "ff93a8fbd53bc6303df1cf6b842af69ca2efd7e2d62b9a37868ad16ee87323a2",
+      "hash": "61866f7ed0a74ce4739514eac548f86a38eed8e55aa9e9ffa4dcd9d12b0b6bc0",
       "route": "/ja/utilities/categories/home/vampire-draw-simulator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/wall-painting-calculator/": {
-      "hash": "a44e0055f872b6693bc2a45c97d286c19ae243f9b3bdba25cfa4d3713462cc60",
+      "hash": "b7016342ac4790ad7c8d81b94200136381709454faac8a19e3b8a33754b1f18c",
       "route": "/ja/utilities/categories/home/wall-painting-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/wallpaper-roll-calculator/": {
-      "hash": "c532f3c93c662c4d67bac1651c18b7fce926f9feba070b24d154a75edb193a89",
+      "hash": "ae08bf35f24d74922e2592332b62941d883229d13843b917026dbd73b0e77da0",
       "route": "/ja/utilities/categories/home/wallpaper-roll-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/water-softener/": {
-      "hash": "41935daa1bc5d9e65c0e0123d4d8efde684901dc466387dbb66b30984eefdbe5",
+      "hash": "e4ee98b01963a617f342f3fe9704f550f0b3e70d8100f20eb7e6f534c1fe88bc",
       "route": "/ja/utilities/categories/home/water-softener/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/home/wifi-range-simulator/": {
-      "hash": "031659c42fdc2a478a5dc64c65427dc89a53720c67cd7f0d77176a516bbbdb9a",
+      "hash": "302b16e28b9176b44197923ea8b1de958176386b2b79ff796d78d4f976b9d3f5",
       "route": "/ja/utilities/categories/home/wifi-range-simulator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/ac-tonnage-calculator/": {
-      "hash": "2ffa78aeac866f53cc6115f145814995e0d45ace59fe7e343c6b9c29a51c0a1d",
+      "hash": "db355ff15b0b2f5df161a5c0c379b3ccfefa33145ef79f66df42327cbb7b9c07",
       "route": "/ko/utilities/categories/home/ac-tonnage-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/appliance-cost-calculator/": {
-      "hash": "276ccddbfe826f488109070a573b586fff3f1e300916024bf327e3aa0168c920",
+      "hash": "20015f069324626e1985773a87a8a47fdc14a4b7c68fda5785dba48db417ecfe",
       "route": "/ko/utilities/categories/home/appliance-cost-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/desk-ergonomics/": {
-      "hash": "e285b89b734fa55d9f6f709588994d2408faf2dd13e0f9c5250d9befa0813f06",
+      "hash": "a4b1530382eebb6b1dddec39d6d6d9409cd68c9e4dd78fe4e6756d25cb87169d",
       "route": "/ko/utilities/categories/home/desk-ergonomics/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/dew-point-calculator/": {
-      "hash": "5edf646242912c5630289f9bc7f2167d49fc7da64eaf2cddc3eff5f806668da4",
+      "hash": "f39abaa3a7bab6433bce8ff572230a65085d6d6a6a5e27ac390e61e64e60caf8",
       "route": "/ko/utilities/categories/home/dew-point-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/electricity-tariff-comparator/": {
-      "hash": "c5b0f32217426a10aaad9f27a299945cfaf76ba55e7516eea4122482c7bba06d",
+      "hash": "580377eba6ab24fc41377c6a0cf82c871c76f086885102a01b0e762c8a6433cf",
       "route": "/ko/utilities/categories/home/electricity-tariff-comparator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/heating-consumption-comparator/": {
-      "hash": "995c6d72d77309e8b1467eb3646e975b172e3c0865b89dac08a313fa9cea91aa",
+      "hash": "ffaeb1f8274b21e9c5edcbc0714cfb7e449eb52a80d7b3d2aa16991f82d8b143",
       "route": "/ko/utilities/categories/home/heating-consumption-comparator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/how-many-lights-per-room/": {
-      "hash": "88bcf5dd347c32bdd7b50370e6c90c7594f55a76572ef7a08203f129cd1961d8",
+      "hash": "825a3cfb92f7bc7e54c9bdd232c94e05f48c642ad42e77da6f7fbc5cdbc9f252",
       "route": "/ko/utilities/categories/home/how-many-lights-per-room/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/humidity-calculator/": {
-      "hash": "a1b573acea07108eee1afe95dd2cf0387ea3664b157b16fa91d87470f5d353a8",
+      "hash": "0ac128105de0607f8fb2e55fad629ccb0520595eccfad28e0c603df0c6ab32aa",
       "route": "/ko/utilities/categories/home/humidity-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/": {
-      "hash": "027a0ab3cc73566c807a40d000423238b17e21ad8622dd13d9aa6194a045487d",
+      "hash": "b8f652b23246814770131f69ff6a0412db66dcc7d526ff2daeac48e106448740",
       "route": "/ko/utilities/categories/home/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/led-saving-calculator/": {
-      "hash": "2547246c8fcb68ed57f303e668261443a346434597832fd94d46d6a132cabca5",
+      "hash": "41895317b5ce2c0daa05cae725b532b517e5e6e8fc4129b261fcc4a270c4da32",
       "route": "/ko/utilities/categories/home/led-saving-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/projector-throw-calculator/": {
-      "hash": "70b356d503c8a1cb7ada5fd8ed7cb6d51fcaf42ecb4b5fc455e1855c6563b93f",
+      "hash": "dca944bc45adc52baa4f059680d0a63215648a96c160adbe8f82670d5db433e9",
       "route": "/ko/utilities/categories/home/projector-throw-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/qr-generator/": {
-      "hash": "957a86df8bc2efc81fe3abd070ee45a4f85e3b51d9e1c39c5437f5d91a53eaaa",
+      "hash": "c5602f6aa952093f76c01ae44c101b6d8a505c52b35f892b6ddfa921a054e9c4",
       "route": "/ko/utilities/categories/home/qr-generator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/solar-battery-autonomy-calculator/": {
-      "hash": "73d8fcc3df797254c4f800b655e04bfdb3f6117ffcad6b24d875b1e3b870f3ef",
+      "hash": "7549450ad963299ca4f7c624a29439b117928bd6994a5e61be6803496b35f740",
       "route": "/ko/utilities/categories/home/solar-battery-autonomy-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/solar-panel-calculator/": {
-      "hash": "15fdbb0e39b78db9f98bdaa70c300a00dc2447d719f3cd255b43e23e874b43f7",
+      "hash": "41349e95b19908ac0bc5c86ae3332c2a9a5e034852257c0e9feee26a75526f2f",
       "route": "/ko/utilities/categories/home/solar-panel-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/tile-layout-calculator/": {
-      "hash": "0a67bd3ce792bbb531025206c58e6c1258433603c87466943f4c383e90a5f726",
+      "hash": "bcd5166c9728af549401b14d5fe5e646fdebdb35752fd42daf3d8f85fc9bf4ff",
       "route": "/ko/utilities/categories/home/tile-layout-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/vampire-draw-simulator/": {
-      "hash": "8c2fba8f5d7ecbc06a355a2d9a9a1fd593f81b7dcc434afc626e4fc9203c88bb",
+      "hash": "5f9da06038d6f3fec306b89a7cc92a914c72614488782aa0f530e867fb725ec9",
       "route": "/ko/utilities/categories/home/vampire-draw-simulator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/wall-painting-calculator/": {
-      "hash": "a5a41c502e0150bcf97b6b529c34f0b5b3bc39d8844150103321beaddf078644",
+      "hash": "ffbabd7804da1adec3b7d4a70a2396d5bb38e3389923082d429e0b15c1e42d34",
       "route": "/ko/utilities/categories/home/wall-painting-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/wallpaper-roll-calculator/": {
-      "hash": "58e756f114687f91cf00e5b6513ce1801c57d8ab2a285ffe82c8580a713e8321",
+      "hash": "2b56094a359223c888f2d3e763cf02cdaac813cbd4d486a83914558b5e52e23b",
       "route": "/ko/utilities/categories/home/wallpaper-roll-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/water-softener/": {
-      "hash": "853bf7be4c4b5d5c5616ebde0df027d32124f4b51e6551b4b545e8b489bf4491",
+      "hash": "30279c62020cc4616972fc7f55ea6fe102c038dcfbbc51091bbaf68fb2537b1d",
       "route": "/ko/utilities/categories/home/water-softener/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/home/wifi-range-simulator/": {
-      "hash": "28a96616deb0ecddc5eafe5211c0716f66f3e85cb12d4e77c29f622517802a8f",
+      "hash": "6eb21ad413bc26a1a3069ed4d1b108ffd2bf7cb8a2cd51dc312b0d556b496c0a",
       "route": "/ko/utilities/categories/home/wifi-range-simulator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/airco-tonnage-calculator/": {
-      "hash": "56e41dbe781001a4182fad6c10dff1e92ab8ef49a6295351b5abbef5e22b6fcf",
+      "hash": "b2ac693ff6ce7606128cd0dd724d72e42629788bf63df016affe2b9d31b559c4",
       "route": "/nl/hulpmiddelen/categorieen/huis/airco-tonnage-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/apparaatkosten-rekenmachine/": {
-      "hash": "661e369720bc1c1ba9556c10ee0d9acb85597378fccdfc3eae0805c772f9b839",
+      "hash": "a31225ceba49e54603ca772f0fd364689154c30a85c97a30e0aaf8729f12aeda",
       "route": "/nl/hulpmiddelen/categorieen/huis/apparaatkosten-rekenmachine/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/behangrollen-calculator/": {
-      "hash": "ed5267f4794819701f96c18d6e56439ce13faaaf85676d0f6f612767303ebb4b",
+      "hash": "cdeb363b149851992680a321c46e9c75b7f3b15d4bf74cfd49915c652aa2856a",
       "route": "/nl/hulpmiddelen/categorieen/huis/behangrollen-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/dauwpunt-calculator/": {
-      "hash": "f40e921a6247a997603109f1ccdec4e08d3f75c6d0fe4b9dd4e85c3bc85e94e3",
+      "hash": "ced48dcb2960aaef2af475b825256c981d7ce5ab0767f7e3c81bef143e65f10a",
       "route": "/nl/hulpmiddelen/categorieen/huis/dauwpunt-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/energietarief-vergelijker/": {
-      "hash": "e92a63079b55ac4f705af3a4592aacde978b83e0675ec5cc79fac71923967698",
+      "hash": "a76fd818f283bf6f9b5cbc10509e7685cc770b0e4f078c3037b9df86a62ace99",
       "route": "/nl/hulpmiddelen/categorieen/huis/energietarief-vergelijker/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/ergonomie-aan-bureau/": {
-      "hash": "155598eb369f6c418039db08c2cfc59051097eae5c5817eb2618f9e526cbb50e",
+      "hash": "0b1cb7700259df01624497d75d4f63d2ea1f3d4107645f6b93ce66e845ba654b",
       "route": "/nl/hulpmiddelen/categorieen/huis/ergonomie-aan-bureau/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/": {
-      "hash": "57a26ec2f6e0dc8b763c6532dcb244404ad536a67cce968cffcc1dbe2017d1e7",
+      "hash": "c5aabad7566326abc363c8ef745c5d9cf7e6c76e69f66183bd42affb19fe634a",
       "route": "/nl/hulpmiddelen/categorieen/huis/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/led-besparingscalculator/": {
-      "hash": "a50cc83f6d2aeedc4e6db4aff70d7e22a45de6433c7fc6781a87096761018ea9",
+      "hash": "c2aeb347c99e4fe28fa282e2e770e94e721aa2510cadd354bf059d0a461011c0",
       "route": "/nl/hulpmiddelen/categorieen/huis/led-besparingscalculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/offline-qr-code-generator-dutch/": {
-      "hash": "d3c2486a6593f73575b4cf011ee39f15f96e4c88aaa04105bbeb2badb55763c0",
+      "hash": "33493d6ec98fbf5232714f5f5cce949e8dc544941077d23211c66caf187de809",
       "route": "/nl/hulpmiddelen/categorieen/huis/offline-qr-code-generator-dutch/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/projector-afstand-calculator/": {
-      "hash": "61958c9fa7a2c70d156803593cffb7fcf8c19b98ed88085c879a9098a7946b8e",
+      "hash": "27020cb5de2bdca8e339daf532997273ca002f06ba4a2e6bcfa93f73432a2153",
       "route": "/nl/hulpmiddelen/categorieen/huis/projector-afstand-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/standby-verbruik-simulator/": {
-      "hash": "77be95e81cc6e2b9ef58caf4b3edb022b159263cd75980aef6b8165137626bd9",
+      "hash": "7fd2b29982fe745d3df7fed42a42a96b57ce40533edc2321139ca23087ded39a",
       "route": "/nl/hulpmiddelen/categorieen/huis/standby-verbruik-simulator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/tegel-layout-calculator/": {
-      "hash": "d127c9efe4162107f0d0425ec8e92eb4c9680675411fefd73b8ec76df0e8af89",
+      "hash": "d317046375d778c73f7a0210988ce73207ac6371a82441e9446f737897fa6b85",
       "route": "/nl/hulpmiddelen/categorieen/huis/tegel-layout-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/verf-calculator-muren/": {
-      "hash": "ea08a2bb2fd0a0902b6a852cdf3e99170671699a192ca6c0c64b68f659cea7ca",
+      "hash": "74b4af2fafa8844f89de5b3b7208fe523f51e2a8d41ae5438e5a2e28bfda02c1",
       "route": "/nl/hulpmiddelen/categorieen/huis/verf-calculator-muren/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/verlichtings-en-lumenrekenmachine-voor-thuis/": {
-      "hash": "2a5cdd985ec528fd6d1ddfaecbedce16b29084f46678bc514f8f74ed1be0bb71",
+      "hash": "bb87d9160455b48f9aaa2dd67a557ce46bd89a787aef92d32b2a92a8208e8c09",
       "route": "/nl/hulpmiddelen/categorieen/huis/verlichtings-en-lumenrekenmachine-voor-thuis/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/verwarmingsvergelijker-gas-vs-warmtepomp-vs-airco/": {
-      "hash": "a4c17af0501cde11ba086fc5442399f51f6de976d0253fcb707b9b7f75f97e9a",
+      "hash": "327150c04fb3d9235710f18b6cd33779d194b7597664ff747e46dd06369b2dd4",
       "route": "/nl/hulpmiddelen/categorieen/huis/verwarmingsvergelijker-gas-vs-warmtepomp-vs-airco/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/vochtrekenmachine-calculator/": {
-      "hash": "92938c135fd92c00aadb24109ee6b2071183c008264b509dcb5a2e0a482ef8bb",
+      "hash": "8f1e7ca41c7e6af331ed098c4dd706eda400be3204f06f398edd1fd783c29e26",
       "route": "/nl/hulpmiddelen/categorieen/huis/vochtrekenmachine-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/waterverzachter-calculator/": {
-      "hash": "f5301f183daaea1b0f6090cc007539b2e813a53c4e2275de02d68f171da971a9",
+      "hash": "a161dd360497625522cad99019d43136a97d6ee770b79f7a0b4a03483ab8a6cd",
       "route": "/nl/hulpmiddelen/categorieen/huis/waterverzachter-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/wifi-bereik-simulator/": {
-      "hash": "48a6b8609dea83d5814ef512d38e16002191d0304045afcf7e308f06ef333d7e",
+      "hash": "36d9e249ccb8e5e008bc4e307845f7329ffaf0fc037e97861dd0605f4febdfeb",
       "route": "/nl/hulpmiddelen/categorieen/huis/wifi-bereik-simulator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/zonnebatterij-autonomie-calculator/": {
-      "hash": "8fbfcaa9140c103e7d7a732618451207cc37473378f4f9b1c99ba5767ecd9e4e",
+      "hash": "b10052c660db2cc9e3fec08ec5e539e56fbe1a563fe4de40f939b200848a39c3",
       "route": "/nl/hulpmiddelen/categorieen/huis/zonnebatterij-autonomie-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/huis/zonnepanelen-hellingshoek-calculator/": {
-      "hash": "543286705ee9482e4ab07f0c3c7145ed28c786510db407d851a9074a3d19d97b",
+      "hash": "e61801dd85cf8b630f2dbd19de740b9e23d537386dbd27b8323cf9d2a94881df",
       "route": "/nl/hulpmiddelen/categorieen/huis/zonnepanelen-hellingshoek-calculator/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/ergonomika-biurka/": {
-      "hash": "1a2508d1318ab63a25e1327d2d6476c0bcf8a3db869ba4c93222339d86592bf4",
+      "hash": "110393b23475c5f19ec2d5786dd6a11cc2f04cdf11157f2d4188b14deeaceacf",
       "route": "/pl/narzedzia/kategorie/dom/ergonomika-biurka/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/generator-kodow-qr-offline/": {
-      "hash": "6b0a5a1b852bb9c7e5bd96afcbf979e6a4f01da22507d27bf92469f40849e1e8",
+      "hash": "9037685f497b43e3e4585194d015f4d4725f9fd1a7cb3e9c4294dbaac59405a2",
       "route": "/pl/narzedzia/kategorie/dom/generator-kodow-qr-offline/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/": {
-      "hash": "a03ae7d2bc256238a5e66330086b8ca35d16704e6a1a713a329cda4a8ee9252f",
+      "hash": "b95981f4f6d50a1a4c96930343cbe66eb6a6614c85459b7c14f758ae4a080190",
       "route": "/pl/narzedzia/kategorie/dom/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-autonomii-baterii-solarnej/": {
-      "hash": "482fde91b3842e787b34bac22d10b6de4b53a954b1b51dbe907f54461492b779",
+      "hash": "e9871cbdc195e088e953ce01f80e86b2f9b7ede4e2ca1aea40c7018a9a7e3f7d",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-autonomii-baterii-solarnej/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-farby-sciany/": {
-      "hash": "454b25d8198e556e7186daff8d82afb19f7c5bbce4925b69bc9728eff30c1dce",
+      "hash": "7a457d909589d86c41c2548d3107900e5b67ee87188e701cbfc5a6c243cf86d7",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-farby-sciany/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-kosztow-urzadzen/": {
-      "hash": "888308227afc5d4d813a3297d5f11b8bffc9c03fb79d410266f3fb6733a8a5f3",
+      "hash": "612e8a0ac706a083adf54396baf37f275af707068c3abccbc93ca6c086a71fd9",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-kosztow-urzadzen/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-mocy-klimatyzatora/": {
-      "hash": "2a1336ef8ee4d621ace9f207e8875899adaa3be58562633f3458441a83c2a07e",
+      "hash": "8ace9a1abd1b970acc6b43a8d4586bd9ead0e330df59ed6cbd5b65ce3d2ed88c",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-mocy-klimatyzatora/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-odleglosci-projektora/": {
-      "hash": "9de90fc1d141679e9b8afa28374312143fa36e04025dc2845b8c7fa46f414e64",
+      "hash": "9f2cc33fa0bb3ea50800391f69f58ce8f6dfb182013094ee634337be8e17848e",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-odleglosci-projektora/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-oswietlenia-i-lumenow-dla-domu/": {
-      "hash": "2c931aa64375c91fb1c2dd7eaba04b29c3ee245b4f50eab7a50411f02a81b28a",
+      "hash": "1b62b146959966faa4280f21706357356919945c9d9e6a424cf80a2dc1ca29f6",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-oswietlenia-i-lumenow-dla-domu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-oszczednosci-led/": {
-      "hash": "73ab7d2d1484ece0292f77c45cdbce52e7ac87a7c19c9fba020ee5c2b282247f",
+      "hash": "3d51a137456e0cddf4ac0919f9b6cd6fb5853d6246a0be5140f3017706e1f69f",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-oszczednosci-led/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-paneli-slonecznych/": {
-      "hash": "2c0cc922f7c2a56f0a39d9232fa50bab3c3b8a0818216d4614cd45e6f87b2673",
+      "hash": "f81dd337cbbb1293e64e0af49862ee5ea7fc6d53c418a357a48948dbfa98c748",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-paneli-slonecznych/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-rol-tapety/": {
-      "hash": "e0c128d27b65633a4de124c1b8f6f0430ade4dcc44eff9a6bf3de16e7fb6750c",
+      "hash": "12afd488287b2cded631c0af39cba72c1cb5836f3a6b3656a4e5d11c9073ecc0",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-rol-tapety/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-ukladu-plytek/": {
-      "hash": "f90143cf5b97c25648f94d3c24da3537753a200b8051c44bac984c2606e1a739",
+      "hash": "a73c6dc650b0fd76ede9297444e6eb9112dbc12d92c2797e44820ce2f4d2d558",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-ukladu-plytek/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-wilgotnosci/": {
-      "hash": "cb8348d33fb1f75c26662a9e12cdf448e807069bad54926c1ecfbb9ea2bcaf92",
+      "hash": "2f21dd96cb90d92b4e05cd98e4ef3110b0136e68cfec1a380ed457475cf3cb8f",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-wilgotnosci/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/kalkulator-zmiekczacza/": {
-      "hash": "b6ca1bcad2bfbd7cd135ac5d5749d1203ce2540cb8469986aa61881e49a5b69f",
+      "hash": "bfe8c38d543d973f782490b6e23683771965628edef8386a89eb0bf90e3d0ce3",
       "route": "/pl/narzedzia/kategorie/dom/kalkulator-zmiekczacza/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/porownanie-ogrzewania-gaz-pompa-ciepla-klimatyzacja/": {
-      "hash": "f3a777651762827a3d8c6ce966d7f2b5d591497acbd12faf6c3d0d231372ab1d",
+      "hash": "fcbbb187ec40478c418391920959da2b6d4755513f678fa8bebbd9c9aaeecfec",
       "route": "/pl/narzedzia/kategorie/dom/porownanie-ogrzewania-gaz-pompa-ciepla-klimatyzacja/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/porownanie-taryf-pradu/": {
-      "hash": "3a5db41e842e755e21b742055638ac3b0cd82035bdfb49adf77116d0793bfe69",
+      "hash": "dcf4c38364f88bb1aea755dc920071e55bba5550aee182d2ba42c9c576c93db3",
       "route": "/pl/narzedzia/kategorie/dom/porownanie-taryf-pradu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/punkt-rosy/": {
-      "hash": "121dc4c41cfd1f19ed78f80a879a917bdfd87f0c44a3fc893b3c043b7a445d92",
+      "hash": "2e1ab7a03bb1800113df3b131bc067ac101328904b52ef43aa8d2665f8209fec",
       "route": "/pl/narzedzia/kategorie/dom/punkt-rosy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/symulator-zasiegu-wifi/": {
-      "hash": "13cb355c4fe1f05a7b58f7e6565ebc5738e65047a1c2e2b7ce92bdb88269cc30",
+      "hash": "7d5cf280f27f19a3f95037455c1fbb954a963e3b3f72aad075a59e3d738503c2",
       "route": "/pl/narzedzia/kategorie/dom/symulator-zasiegu-wifi/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/dom/symulator-zuzycia-standby/": {
-      "hash": "992273d2748b4464c4eaec86910735a46f424492c8df54b7593ee1831d278f11",
+      "hash": "ea02970d2b9b7e3062a19670b4be17fa2b644ec0471541751a8cd47442ff74b0",
       "route": "/pl/narzedzia/kategorie/dom/symulator-zuzycia-standby/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-amaciante/": {
-      "hash": "3f1a9f9297b9619a9c071745b87b31436873defd9a7dc0b592beaa97dacb85f8",
+      "hash": "118f25ef3fcb84858a5df712fc64418513cec91f6d57b2563558c9d84dfe4ca4",
       "route": "/pt/utilidades/categorias/lar/calculadora-amaciante/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-autonomia-bateria-fotovoltaica/": {
-      "hash": "1df2df882af42aa352c99b2887da0e5ae179694328c7bfc04c27b04d0f2f2cc7",
+      "hash": "66d012654b0641e0169678f9b6c227347ae08aaee6f6749892fd6883a0bd6c1f",
       "route": "/pt/utilidades/categorias/lar/calculadora-autonomia-bateria-fotovoltaica/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-custo-eletrodomesticos/": {
-      "hash": "05476b3ce04312c36ba6706e126a591cad72848c8038710c1ac8955253f81947",
+      "hash": "c2bb511566ba7ad79fdc23173c389f4dce224ca02abf28300b75eaa53ef9e0ed",
       "route": "/pt/utilidades/categorias/lar/calculadora-custo-eletrodomesticos/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-de-iluminacao-e-lumens-para-casa/": {
-      "hash": "3ffbb25f1cb00e8058b57e8f67a949fe99d53c8beac73cfd4e0b72f2347c40f4",
+      "hash": "cf814b4c0b688f68925cb255eb075bd67589ab5959db06e654fc2bf62a1dfc1a",
       "route": "/pt/utilidades/categorias/lar/calculadora-de-iluminacao-e-lumens-para-casa/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-disposicao-azulejos/": {
-      "hash": "36d1d83c4c5200a07ee406bb143e7dc2e8aed05ef851ca135df299033fed6d3a",
+      "hash": "64eb8c18723a740391cb40b103434380f095d9ec9aae55b6818f0036d254e06d",
       "route": "/pt/utilidades/categorias/lar/calculadora-disposicao-azulejos/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-distancia-projetor/": {
-      "hash": "9ce7a330d5a2e3cc85d131a4a6e2575f166f078cddb330849f142a6284e985de",
+      "hash": "8da9166735e30d0b1ec832446f65825983daa60a952871d5f4beb8abed8a2764",
       "route": "/pt/utilidades/categorias/lar/calculadora-distancia-projetor/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-inclinacao-paineis/": {
-      "hash": "1b0f5272ae7b2962d85f067dfcddfd304a44bf945fc2088dccb8da7af76e797a",
+      "hash": "5546fa4f9fabfd35c5831569b50cb0d81edd3ab5361fc8f6420713089105cf06",
       "route": "/pt/utilidades/categorias/lar/calculadora-inclinacao-paineis/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-poupanca-led/": {
-      "hash": "5ceebbdda5e09bdd382f0b091ad460ce0e5e08ad9413616d5ff0cdc5007baf0d",
+      "hash": "e8f7f441c5d360ccecefd85cace0373ba82ebb3f502eead7a6bfad765f829da7",
       "route": "/pt/utilidades/categorias/lar/calculadora-poupanca-led/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-rolos-papel-parede/": {
-      "hash": "f1122880ec131fd232f423711a4aa8e1fcb1a3b4254a56c68c387e297bbefb23",
+      "hash": "ee876e8f82bdb66a0344dca1199c06feac6c934d27f1d93d2386ca61ea5c95db",
       "route": "/pt/utilidades/categorias/lar/calculadora-rolos-papel-parede/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-tinta-paredes/": {
-      "hash": "3280f297b833ddafae0d12eb642638d8dbe7f509d8911b2bd9ba8371c98bb0de",
+      "hash": "4aca0c11828010e124fab4bbf8c14750c99f99965b05001f9fefabfd4301e920",
       "route": "/pt/utilidades/categorias/lar/calculadora-tinta-paredes/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-tonelagem-ar-condicionado/": {
-      "hash": "09fb94dfce29303470ea3da2973c277df6db0442250b525557d52b9539c734bc",
+      "hash": "19a76e99321489cf3bc44336d1ad7e30bef4bebe0dcc1e50aa0fd6960687d4eb",
       "route": "/pt/utilidades/categorias/lar/calculadora-tonelagem-ar-condicionado/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/calculadora-umidade/": {
-      "hash": "3e2d0ae282e04dcd0af821c80fb410e79ed7d881a327043eecd81181647106f6",
+      "hash": "8db3098f8f5567d24c4476e7691daf18f8fbadd3ed749a2df910cd3395cd8986",
       "route": "/pt/utilidades/categorias/lar/calculadora-umidade/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/comparador-aquecimento-gas-aerotermia-ar-condicionado/": {
-      "hash": "4c215342f57390a6348d4d23fcce3da23fcd2863cbdb2cd03413beab25caa5f3",
+      "hash": "99f96e2754bb61f179a29dbdb68c23428047203db9ec0f8d078cfd32d125e6ba",
       "route": "/pt/utilidades/categorias/lar/comparador-aquecimento-gas-aerotermia-ar-condicionado/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/comparador-tarifas-eletricidade/": {
-      "hash": "046ea968906206c8c7cf47a878e5c0314cd19c059f4ceda609fe0e07daac223b",
+      "hash": "f26e1e59fe129492c6e2180f7796138c108798e794dcdc5dbae00c1a53379a95",
       "route": "/pt/utilidades/categorias/lar/comparador-tarifas-eletricidade/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/ergonomia-da-mesa/": {
-      "hash": "1aa5e2635dbc15cf0b53b1744452f519df713dabf7cc26d6318400817c2ab6b2",
+      "hash": "9f1431fea6518e5e1e56cd50e58f678c243106029a8b3527c2ae28320e020aae",
       "route": "/pt/utilidades/categorias/lar/ergonomia-da-mesa/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/gerador-codigos-qr-offline/": {
-      "hash": "803392aa53e114cd8e5b48449d6647af16678bd7f689c39f929efdbed0c354cd",
+      "hash": "cc138a6e3fec6354dff5b126e54495e1dd85e4983245f238fda8b9d9891c79b5",
       "route": "/pt/utilidades/categorias/lar/gerador-codigos-qr-offline/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/": {
-      "hash": "430e29c236ee84e3e2f06f78b39a0816f5d9811bb8decb20a9a199b0941d21ff",
+      "hash": "e0c9106f822d1cbea49185859b04d99f77d6cbee4484e8eaf5a2876e38ce23f7",
       "route": "/pt/utilidades/categorias/lar/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/ponto-de-orvalho/": {
-      "hash": "309577dbcefa47cd17b62cb9511de62a6eae38dc0ae8e59c9feb2339d46c92e7",
+      "hash": "c42bd1d10af19fef48697b3863f6f59db9179d66c7de6bc3ac00cfb462bc77fb",
       "route": "/pt/utilidades/categorias/lar/ponto-de-orvalho/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/simulador-consumo-em-standby/": {
-      "hash": "49a1de308e628696519e4b983b8a6bda81af258c531fb67b3ba5cbed4b5c0179",
+      "hash": "c919020fec981d698e77455ee2b04b49117733b93bfc8ea5b51d2d3af912dcd1",
       "route": "/pt/utilidades/categorias/lar/simulador-consumo-em-standby/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/lar/simulador-de-alcance-wi-fi/": {
-      "hash": "c26b1d8de3d2e97e305816aaf2d46519de0697d4bf1a1c5f2ba24a1c79285dc6",
+      "hash": "8134ec16428e58969088651feb84ee986fd391a18d341a24b9805e04a3f9fd11",
       "route": "/pt/utilidades/categorias/lar/simulador-de-alcance-wi-fi/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/ergonomika-rabochego-mesta/": {
-      "hash": "73bd06eaff85dcd45bddc413288eac3696c9c2f3613204711ba790137f0f5ada",
+      "hash": "88c64b718c553ffa8788e5e5b724d5b2dff27ddab869e048330e750fda3ce6e0",
       "route": "/ru/instrumenty/kategorii/nash-dom/ergonomika-rabochego-mesta/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/": {
-      "hash": "026e32a398aad7d44e20d34d23914ff744650dcf6633f2e91eb3421142c2b097",
+      "hash": "f0a09a743ab9d190c80d74b4cfc015f5859c33fcac8064ee5b0b465352d49bc6",
       "route": "/ru/instrumenty/kategorii/nash-dom/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-avtonomii-solnechnoy-batarei/": {
-      "hash": "3861a93c91e7c4cbdff00e9f9bad0611ba1cca99477bc626de830df037156ab2",
+      "hash": "458c635148aacde20e4266289389cfa99842964dabd89c7771fa5d603c0b0047",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-avtonomii-solnechnoy-batarei/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-ekonomii-led/": {
-      "hash": "db1677a2ef19e537dee0dee121a6e16dbc5eecf26701a5b0a33e18be90eba31f",
+      "hash": "90e4989d6da71fb36e565e63acbe7fbe292e95e5090b4d6f8b7afa5aea44f30b",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-ekonomii-led/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-kraski-sten/": {
-      "hash": "f3afc23b3c910b375cbf0603a9d8426b638c22f0b26189cabe67a7f38a1747a5",
+      "hash": "e9871a3591312f0a277088e73da23d7bda7ad86a51b6ac7642c5606b3ed26802",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-kraski-sten/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-moshchnosti-konditsionera/": {
-      "hash": "d36cf8843d62723ed9fd64850b1cd96da3e23ba4ca35267288aa53a649c848c2",
+      "hash": "1ea20e2792397886397e96294f53af68cf2bdbd19607b5ff622037ba4e7ec516",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-moshchnosti-konditsionera/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-osveshcheniya-i-lyumenov-dlya-doma/": {
-      "hash": "523767164b87fd5b145add63c4af1298dab1298b58ec02b9db3f26f4bc9e45ff",
+      "hash": "a81854e26360fbc74cc9473f4769de25e95e7e46c147f451287c9ada6c82555a",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-osveshcheniya-i-lyumenov-dlya-doma/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-raskladki-plitki/": {
-      "hash": "fb61232699218123c83b14caea697b369234fea79fcad74bcedf3f06e406c4f7",
+      "hash": "506c0b6a47bd1d0143371ab133c5b473baa52fd2fb7b843ca53423120997c03b",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-raskladki-plitki/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-rasstoyaniya-proektora/": {
-      "hash": "5f0a942d7419bf80d7cbfaa204a72f3cc20538503309fbd0b5786668bdaf8675",
+      "hash": "d71a77f11ec4ad15d5d0cc53af2c8a097505a64e808efa2b9c56a423c3b6ceae",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-rasstoyaniya-proektora/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-rulonov-oboev/": {
-      "hash": "6e6aa5d781ca28eebed9159802cfe95f3d92551a957c388aefb4626c72d3269b",
+      "hash": "b6531df98bc7c04fee7dac51de18db26b61fc61c9418072d0783e485d2e96989",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-rulonov-oboev/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-stoimosti-priborov/": {
-      "hash": "a0f7a34ddafd177392c3bb9555ce016a761860e62edcb2eda64544abb3586c45",
+      "hash": "b0683dd7fc29d050615ad8b7327e882dc5f679f1c27065276121668131db5f98",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-stoimosti-priborov/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-umyagchitelya/": {
-      "hash": "8dab880237f82de31aaa9e3d02480eb8f014d491832a4ccac267b5d2b6d0fcf4",
+      "hash": "93bf2082200c3fcd37950246be86fb914115ee73d1a3fcb4df10726fd67c0d0e",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-umyagchitelya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/kalkulyator-vlazhnosti/": {
-      "hash": "c820c23bdf6a030844c1765e7670c219351097fa60fd9a10a346214bf7cdee8f",
+      "hash": "b0906c75f06932aff41a85e464095fdb909100a17c488978d8cb64eeba57c546",
       "route": "/ru/instrumenty/kategorii/nash-dom/kalkulyator-vlazhnosti/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/oflayn-qr-kod-generator/": {
-      "hash": "230d2960ff7f72bfe200dc1d765a28cd6fa0c322cbb5e2f3b83baaa2a2ceea17",
+      "hash": "6c6eeb609f986570a05336ba786324b333f02b761f7016ce92ea717bb63a18fd",
       "route": "/ru/instrumenty/kategorii/nash-dom/oflayn-qr-kod-generator/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/simulyator-dalnosti-wi-fi/": {
-      "hash": "ab427a4060b4c2cf6e708a209ce0ac8819e8a65f15c7bd57cfc3f27d6cb90ce4",
+      "hash": "133a9fd69c7879d64a1b0c3c5fa6dff82c6e1db2de74d569de6a2028e2eb3910",
       "route": "/ru/instrumenty/kategorii/nash-dom/simulyator-dalnosti-wi-fi/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/simulyator-potrebleniya-ozhidaniya/": {
-      "hash": "c99d9c6176f7c1bb39c59ba03e18ef072fdf5c1f9148ffb780578c8005b08935",
+      "hash": "69e38e9ec22ec4feb381cdefd593ee74fdfdd0d454d3bdf4deb04b831ac3673f",
       "route": "/ru/instrumenty/kategorii/nash-dom/simulyator-potrebleniya-ozhidaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/solnechnyj-kalkulyator/": {
-      "hash": "890e40830c1284ff2a3cc0416a91f0f03922ca56731f99dbd3cd11e0cfc11128",
+      "hash": "47460e17bb5be5f481e7fb4513e0ea2dd5213b319acbb8ea76c1e277d8c614e8",
       "route": "/ru/instrumenty/kategorii/nash-dom/solnechnyj-kalkulyator/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/sravnenie-otopleniya-gaz-teplovoy-nasos-konditsioner/": {
-      "hash": "70accba483f00f7b60947047cd2f594f355da445d7e05a11ff8712ff61d4010e",
+      "hash": "587e26745cc656ed003afa846a8b4f853db6062ecdb6850057c0a38cda2ed2cb",
       "route": "/ru/instrumenty/kategorii/nash-dom/sravnenie-otopleniya-gaz-teplovoy-nasos-konditsioner/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/sravnenie-tarifov-elektrichestva/": {
-      "hash": "71d91114d64b790ed7eba558344b1009f9d7235678e84b4d604bb78e145ca3c8",
+      "hash": "2df2f5301f1693bab7d5ab7072c469a4ce7fa01616fba4a820f6d68bcac28982",
       "route": "/ru/instrumenty/kategorii/nash-dom/sravnenie-tarifov-elektrichestva/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/nash-dom/tochka-rosy/": {
-      "hash": "960a0f3fd745d277ce0309e8adf6f46e8406b7af75e26a6cf443c80f1e1d649f",
+      "hash": "867c7700e611400f2e10205000a29b77cb97d301c9615a1b33ef27961c77fa38",
       "route": "/ru/instrumenty/kategorii/nash-dom/tochka-rosy/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/apparatkostnadskalkylator/": {
-      "hash": "9e37b4ac90b792fbadfe8fb128875111f098386370e0a765ab507045677c3f6f",
+      "hash": "82af50cda159e0fa599b561869c563f413731e6457f2565ce4cfbd385b07bdd2",
       "route": "/sv/verktyg/kategorier/hem/apparatkostnadskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/belysnings-och-lumenkalkylator-for-hemmet/": {
-      "hash": "b381c15cb80bb85d157e0e476eab8ff2c3c3197c60a66d80c15ecc788b498a85",
+      "hash": "ad648f3efaf323856ec30f51150eda0bb6168bde5ff71256d5847316c3515c67",
       "route": "/sv/verktyg/kategorier/hem/belysnings-och-lumenkalkylator-for-hemmet/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/daggpunkt-raknare/": {
-      "hash": "c03f0c5a869fdaa65a47c582e6b7aedc5f9630b0c5fd2d728c199373988ba010",
+      "hash": "1f4a2f60165905630f8dc98db776f193a5005c1f48d06615630a43f458b1237a",
       "route": "/sv/verktyg/kategorier/hem/daggpunkt-raknare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/fargkalkulator-vaggar/": {
-      "hash": "f8ad60da6578cd822c267437c9e45726c61b46e25de1aef3824396ee08c7e10c",
+      "hash": "d00ee63dac4dbab806f9326332241c915a851225f2f122013ed9fb246d69737a",
       "route": "/sv/verktyg/kategorier/hem/fargkalkulator-vaggar/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/": {
-      "hash": "26e01df61de519c8fd562b904b16cdc6d4668bfb393445889e62dfb8de82ed5a",
+      "hash": "7e6abb5f65303bfc67f731a1a4ddf3366059b52e70491bf18b3839d76ce05d99",
       "route": "/sv/verktyg/kategorier/hem/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/jamfor-deltra-priser/": {
-      "hash": "82e918403c0096f97b0a9a7d16e8b3ca23566b812113908458cc5979789dfaad",
+      "hash": "1e365eb7da670a8bf63861c8f1ae1c4e4312d1c2cc271c2f4f93e1b1bf9313fb",
       "route": "/sv/verktyg/kategorier/hem/jamfor-deltra-priser/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/jamforelse-uppvarmning-gas-varmepump-luftkonditionering/": {
-      "hash": "0549ac7e09b78d315d414bf85e1f96fe86c1f962ba04d4e1c7a8f4de06a5f07e",
+      "hash": "0f06c2047bfc798406c9c53e5548d0d7d1d7b832dbe990d58b1aec740b084674",
       "route": "/sv/verktyg/kategorier/hem/jamforelse-uppvarmning-gas-varmepump-luftkonditionering/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/kakel-layout-berakning/": {
-      "hash": "bbc14d7f91ede1ff982cb07b696846d9702afb7ec92d973be3d7f218d5686b17",
+      "hash": "fdb5616913fe35b486e6bebf4ca2b5273962115b7779c0c6d094259f380498a0",
       "route": "/sv/verktyg/kategorier/hem/kakel-layout-berakning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/led-besparingskalkylator/": {
-      "hash": "523f402a15b23b60994d89b14be7cf786b11bd7f07125ceb9d445639d2a203fc",
+      "hash": "521162237b2c3e51059be512116f9639d021db88002a86a5fe3e3f9a02ecd51e",
       "route": "/sv/verktyg/kategorier/hem/led-besparingskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/luftfuktighetskalkylator/": {
-      "hash": "5a4a0dd1806c4133800c4287d87e5e2b23ea43ac9e4a1750121fa9913fd412d0",
+      "hash": "d70d50a0fecba03ab8ee9e2d4d51345d3314df1db06202a1758f8bf47d5054be",
       "route": "/sv/verktyg/kategorier/hem/luftfuktighetskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/offline-qr-kod-generator/": {
-      "hash": "51c685c14861f6572b0b6ad04875655e34b690c46f5713a3b4189a4c762155c6",
+      "hash": "df9d6f32324d2b9f70581469b2bb44692717b7c05612530567a1c1da8aa18fb1",
       "route": "/sv/verktyg/kategorier/hem/offline-qr-kod-generator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/projektor-avstands-kalkylator/": {
-      "hash": "7ead4ef2b70f8976823b8e5ee9ec0a4091ba620acc4faad795b7445c51366099",
+      "hash": "186532f7f1d8c2c04e27c00ec818cd91e3e4b4481fcaa01d4fc1d07051b2ff9a",
       "route": "/sv/verktyg/kategorier/hem/projektor-avstands-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/skrivbordsergonomi/": {
-      "hash": "3709a206a6eabca8bc905437c2c9fc871c0ba73e28e9d6ad51383994b6d52295",
+      "hash": "495cc904babf66e9911e799b81eeee646bc9643090eba45685bbc3a88b9b2345",
       "route": "/sv/verktyg/kategorier/hem/skrivbordsergonomi/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/solbatteri-autonomikalkylator/": {
-      "hash": "026cebdfc3028263f815ffaed4ddff2dedd747b8a8bbd254f5aefccb52d34e8f",
+      "hash": "05082a2b38330b5dd9468d8d40c3c60f03655dec69b534d3a9ab67e3bc5171d0",
       "route": "/sv/verktyg/kategorier/hem/solbatteri-autonomikalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/solkalkylator/": {
-      "hash": "7e7a9e17e9bfd43e95cfc6c8324a12bda5901294a2b7765bfa0895fc391e3808",
+      "hash": "0bf456a09f52ed58c415deefb9f7ef6217606526403afc4944861181bed644de",
       "route": "/sv/verktyg/kategorier/hem/solkalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/standby-forbrukning-simulator/": {
-      "hash": "5fd99d403146e8b4c9f7a50ec7c32fda62c912abc1fb7abf71187f011e16b10c",
+      "hash": "107051d79fbc420d1459c256f6ee277f188158adf0d1f4188f8babb4b2bd11ab",
       "route": "/sv/verktyg/kategorier/hem/standby-forbrukning-simulator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/tapetrullekalkylator/": {
-      "hash": "d8207b899299a8a80ba402627f322f9caa583c455fc4f7a1ff45a4e37c0aed37",
+      "hash": "7a6e70aff2f790f47c639a03f1a85a7b3c20145f08d1b9724e2e2cb3a3bd980e",
       "route": "/sv/verktyg/kategorier/hem/tapetrullekalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/tonnage-kalkylator-luftkonditionering/": {
-      "hash": "c125ec2a6d53d70325345eeb4f2d294f7765deabb84cfc9be1a3eecdfcdf35f2",
+      "hash": "538bd8809561d121ed8c8c9d781aea8317de027d4edb388eeba070bcb2435080",
       "route": "/sv/verktyg/kategorier/hem/tonnage-kalkylator-luftkonditionering/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/vattenavhardningskalkylator/": {
-      "hash": "2a15836b4cdbf4cd9c2242193837a0e7b85fb60a14bd3c42dd93ca363530cd9f",
+      "hash": "f198465dc8c7e55c7865bf8e85c468ffbceb3715b3509d6ecd33a30f7c694411",
       "route": "/sv/verktyg/kategorier/hem/vattenavhardningskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/hem/wifi-rackvidd-simulator/": {
-      "hash": "0e63760e449ac415842a8b4e19d20e8a9e703ec8af35d831c8b245ab99775adc",
+      "hash": "d7587b93abd5f3a08703bd59b5e678cb79bd8d50ca450684fd8252b55234f0c7",
       "route": "/sv/verktyg/kategorier/hem/wifi-rackvidd-simulator/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/bekleme-modu-tuketim-simulatoru/": {
-      "hash": "9ac11297d1b7fbe72f7850ba3d06fc3583d90dfb4ded944dddc5d572c19efc05",
+      "hash": "148529e60c59f133dffc9e1e51cf52ecd8665efb875776585f8822d1eda599ef",
       "route": "/tr/araclar/kategoriler/ev/bekleme-modu-tuketim-simulatoru/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/cevrimdisi-qr-kod-olusturucu/": {
-      "hash": "9912657f99cd5aa050f81afd37916b8fc70cffd7229dd304895b189bd53503fc",
+      "hash": "3d0c67691ee8039388328d69d14c22e6b86c1fa7322e273e09356028e10450bc",
       "route": "/tr/araclar/kategoriler/ev/cevrimdisi-qr-kod-olusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/ciglesme-noktasi-hesaplama/": {
-      "hash": "018b46eca9e1be26808e3026a1943c5a94737c974a87aa29e6d2f9aa334e764e",
+      "hash": "8b7bd31670055d267058db36780700801e044c537ebd30135be673b083bbcece",
       "route": "/tr/araclar/kategoriler/ev/ciglesme-noktasi-hesaplama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/duvar-boya-hesaplayici/": {
-      "hash": "9dfe8aa4e401c06bbd8fa155c764c4d902e7ed6f6b19db13e85b783955714abf",
+      "hash": "32172290bed60874d613d9ac77999842bd17acd3a0b06e8a6c32f57c36ebce8b",
       "route": "/tr/araclar/kategoriler/ev/duvar-boya-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/duvar-kagidi-rulo-hesaplayici/": {
-      "hash": "8e5df4c9ecb6d540bf1c60125c9cff19a2c9efccbb64bc89a8d9a43804425ec5",
+      "hash": "29b7647c05aa79ef5ae62eb63699917340743e6bcadbc774e3397d0a5c07fed4",
       "route": "/tr/araclar/kategoriler/ev/duvar-kagidi-rulo-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/elektrik-tarifesi-karsilastirma/": {
-      "hash": "9b25b9c6010f5eff5fcab70bc9442fc47b79a7ac54f7eb39dd524917909ff792",
+      "hash": "c8d9aa38aada9fa7943b50599552969506f7e385ef18d9e6579e4fd664afbd71",
       "route": "/tr/araclar/kategoriler/ev/elektrik-tarifesi-karsilastirma/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/ev-aletleri-maliyet-hesaplayici/": {
-      "hash": "c70259db6dc0cfd3034b69f46393ad3ae3424585ed9f35a08cd4c15c01313415",
+      "hash": "3d3ec8c41ade90026ad5ba7d7717ad251a8b9818e52ae54c7d6636a27cb10641",
       "route": "/tr/araclar/kategoriler/ev/ev-aletleri-maliyet-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/ev-aydinlatma-ve-lumen-hesaplayici/": {
-      "hash": "ea4582eb6258230c99988397bbc431f3ff9255c803e67786f002d9a59164e165",
+      "hash": "9d185fc1b007d2790aad113147a3d0d43c656e9234978416c17ca27bd200c373",
       "route": "/tr/araclar/kategoriler/ev/ev-aydinlatma-ve-lumen-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/fayans-doseme-hesaplayici/": {
-      "hash": "07726e4b5173528062c1bf087341c70eef4c832876e989d2f6bb16bfe4e3c1d8",
+      "hash": "711474c125bf4d6f856c9750f0b9e17f66f2c563bf04eb7aaeac82c40e60b0b1",
       "route": "/tr/araclar/kategoriler/ev/fayans-doseme-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/gunes-bataryasi-otonomi-hesaplayici/": {
-      "hash": "1ae94a9572f35e35e53415995c194e61893bc677c2b085f2caf0ceb5da082da1",
+      "hash": "4a3c32ab317ac65a91a5102b0f2b40355312069a8b7312600de12e93d519e84f",
       "route": "/tr/araclar/kategoriler/ev/gunes-bataryasi-otonomi-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/gunes-paneli-egim-hesaplama/": {
-      "hash": "5bbb258c31e692d1a64c19328393126b2dfd7b4b3aa900dca17e4aaa8e5a3be0",
+      "hash": "81596a87a3a9908bdd857da3487131236020f0687cc5479ad21cb05611bb543c",
       "route": "/tr/araclar/kategoriler/ev/gunes-paneli-egim-hesaplama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/": {
-      "hash": "d265c5b543aadd394f894b033391f59169c92b55ce9fa15f5f7a792ffb0e4398",
+      "hash": "b14a24886cfee4e4cb11c0ba7c5d10bb9445236c9dde4bffb7271306137e139b",
       "route": "/tr/araclar/kategoriler/ev/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/isitma-karsilastirma-dogalgaz-isi-pompasi-klima/": {
-      "hash": "90bd4f8938a8771ec777b8edbab2e3844aae42c7ee40cd173d8f44a20b14522b",
+      "hash": "6637d1805354e15afe9baf80a34d308cb172427fc3bda20bd126196a8e493c5a",
       "route": "/tr/araclar/kategoriler/ev/isitma-karsilastirma-dogalgaz-isi-pompasi-klima/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/klima-tonaj-hesaplama/": {
-      "hash": "402834dea476667e263fa0074b41a1fadfd31347d47a9113e1e7ea2c4f61b54e",
+      "hash": "572b6aef11b99bf7d40b96bd48db1e78e84c8a22944fa3784eb935cfe6bb41ab",
       "route": "/tr/araclar/kategoriler/ev/klima-tonaj-hesaplama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/led-tasarruf-hesaplama/": {
-      "hash": "e52396e3ba1a6a23627fb531cae3c30dae41588c4ae1da8369451e27c8b2ed41",
+      "hash": "d17643fdfb0d2aae18a571f8fd3b91ed8ff78bfacf7934c708216d06e5beb74b",
       "route": "/tr/araclar/kategoriler/ev/led-tasarruf-hesaplama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/masa-ergonomisi/": {
-      "hash": "a3edfa46f980f8a211c14c03c93d092fdb5c81ac80e5e543a37757c5d901f348",
+      "hash": "7fc0f08baecdd6f94b784a2dfd2eb0371b9013048f49d704cb6e06d67f5bdc65",
       "route": "/tr/araclar/kategoriler/ev/masa-ergonomisi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/nem-hesaplayici/": {
-      "hash": "c138be88ef8c2c0600e0d2e54bd7b94f440eda494638ec7ed316dfa6ee5d9556",
+      "hash": "705f7c540c58c784b1499a19ee61d040cda6151737c09d6cfd9f12afaf3a3cbf",
       "route": "/tr/araclar/kategoriler/ev/nem-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/projektsiyon-mesafe-hesaplama/": {
-      "hash": "89ba2cb8f7a79b1c39629605bd3f5e7e54d0a369e7813ce081e5a03ec71f9dab",
+      "hash": "613c7af672561fb465593e5fcbef270490fbdd77c18521241d97e36ef4c9379c",
       "route": "/tr/araclar/kategoriler/ev/projektsiyon-mesafe-hesaplama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/su-yumusatici-hesaplayici/": {
-      "hash": "49fb1cfbf3e3edc312f844b4497c46c9a11bac9eb2d14d14d37320f2a5ea217b",
+      "hash": "965cb89dbcd34bbaa385bfbc77652c78eeaee4dc2bad3c82b409d1c30931d2d0",
       "route": "/tr/araclar/kategoriler/ev/su-yumusatici-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/ev/wifi-menzil-simulatoru/": {
-      "hash": "18910c77883805471130adb0aca7b3cfc0c484acc791fb3b41cab4a23faa6267",
+      "hash": "b147dcefbed4349d6e56a0afcce6554da4a55e40576fc89341d93a060ec7fce1",
       "route": "/tr/araclar/kategoriler/ev/wifi-menzil-simulatoru/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-ahorro-led/": {
-      "hash": "e2d7ecd39e1868f46201091a803852238ff30cf040bf6bef0c58d453a0de5c52",
+      "hash": "6776650c44056d3bcd3be2399a3f6703c5d974f69d04cd89dc00c602ac05b408",
       "route": "/utilidades/calculadora-ahorro-led/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-autonomia-bateria-solar/": {
-      "hash": "7ade2873e1f09ceb33dd2f57956e883266482f9d2ed0dc2223c038c881b5dd0a",
+      "hash": "c2ea2786933c6e9c4ee9f102fbbe63ffcbc991aee9e4149ee9788316e17f7e4d",
       "route": "/utilidades/calculadora-autonomia-bateria-solar/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-coste-electrodomesticos/": {
-      "hash": "063e31a454d9efd9512d0529536372c7297c7e6774a8c278941dab24489a6906",
+      "hash": "c4a4b2de9fd0166514047fc2d9f9837781bf6bf76c72c00904c6c2ade4acb263",
       "route": "/utilidades/calculadora-coste-electrodomesticos/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-de-iluminacion-y-lumenes-para-el-hogar/": {
-      "hash": "d37b47474a885e65a407b5c143d396caf06148dfc85082040232e2ff9428bd2d",
+      "hash": "61b30bf91a4af5579f3c2a0f58a5d7eea61338023d5ae8545ed7b44bb1a44c42",
       "route": "/utilidades/calculadora-de-iluminacion-y-lumenes-para-el-hogar/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-descalcificador/": {
-      "hash": "27a528a78c77a866c4a4893cb732063cfe47bf4fe9b159fbac3c1f0afdef4263",
+      "hash": "a2f339d7ccb0905359044d803de84b49f8ebc191dc11c1f5a74b145491de4fdf",
       "route": "/utilidades/calculadora-descalcificador/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-disposicion-azulejos/": {
-      "hash": "90c05df2e248a31344d751198207b8dd0840d7ad48d14c159ce5a78707da54b0",
+      "hash": "9b483176193bf9e97d75ba1796873b62084b2d84638ee6a597765af39f91677a",
       "route": "/utilidades/calculadora-disposicion-azulejos/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-humedad/": {
-      "hash": "21a0a1d918aa567efd428a64dc78ffc174cd8b387df3782670adfeb25f5a4648",
+      "hash": "4e69b1d14b504a0fdbe8f93a295cb1e0abce82963d831ce13cf36a57e650118e",
       "route": "/utilidades/calculadora-humedad/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-pintura-paredes/": {
-      "hash": "66d36a2a947840dbe58022cf18000d2cf501897da25a954d55a939532a3038d0",
+      "hash": "38534ba29c300ed143f9bbe9b57799941e5bc68773f1e0e0bb691a0cfdbd036b",
       "route": "/utilidades/calculadora-pintura-paredes/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-rollos-papel-pintado/": {
-      "hash": "8640004545f5d6775a9cb04834bd7f43bef5909b3fbe86d8754d6ede8b6eee46",
+      "hash": "1c2b30c01b5ac9cfb2d2636d47fe2ee20bf8d9e8285ef2b6ba0f83fddb67e4a4",
       "route": "/utilidades/calculadora-rollos-papel-pintado/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-solar/": {
-      "hash": "39a74df56d8b671447f6f79e90f58f26ab7cf199aa17475bdb834b98247a58f4",
+      "hash": "0e6a5fc7c1d14dc3be20c3ed2cf2e4aac31542577e185583a9f8814a4ad13a2e",
       "route": "/utilidades/calculadora-solar/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-tiro-proyector/": {
-      "hash": "0a60983d59fb0476ad0858d5950c5cb91b76e282ea98ea0e37a2d908f6fd6a83",
+      "hash": "42185fe8d8dfc4a237aa052adc5b7d9ad5da14cc1aaa90f3f117fd0b5adaeb1d",
       "route": "/utilidades/calculadora-tiro-proyector/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-tonelaje-ac/": {
-      "hash": "ac2b928f49fa9794136a2fb2f81b6da3790c933cfead939b0f4588eb26958468",
+      "hash": "90ddb915c30df875752357704689299443e17ec44805a83398cdc5a87a4e519c",
       "route": "/utilidades/calculadora-tonelaje-ac/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/hogar/": {
-      "hash": "801d8a172dad5007b6573bc1617cef705e0c0f91cdc09f67a2acb752fd2aa4f4",
+      "hash": "9c8bd2a191d9a2fbd681b76061fb30c4d490732acfcd6c4c3df81528210b750d",
       "route": "/utilidades/categorias/hogar/"
     },
     "https://www.jjlmoya.es/utilidades/comparador-consumo-gas-aerotermia-aire/": {
-      "hash": "18715229504b167d30f7a6b603202c430d0a699440bb80fedca89df477221b62",
+      "hash": "520d6c531b9fa8ac605ba22046376c39542960452a795dc2458ad1513568f422",
       "route": "/utilidades/comparador-consumo-gas-aerotermia-aire/"
     },
     "https://www.jjlmoya.es/utilidades/comparador-tarifas-luz/": {
-      "hash": "2cea262e12d7ff11d950301ed8150bb4859a3df4065cb51743bcd73dd9aadfe9",
+      "hash": "62e2cdf291352075285305e8210e85dc1ffd70d4d68aa5e7df8314271c31a52c",
       "route": "/utilidades/comparador-tarifas-luz/"
     },
     "https://www.jjlmoya.es/utilidades/ergonomia-del-escritorio/": {
-      "hash": "79d10b10f9a3dda673b1a09b168122b67166a6cee45bc493e0532147fa34f529",
+      "hash": "1f416ca465fad09c0a43c1f6837bbf3f1521a010b18c52ed55aa81771dc368e1",
       "route": "/utilidades/ergonomia-del-escritorio/"
     },
     "https://www.jjlmoya.es/utilidades/punto-de-rocio/": {
-      "hash": "e2a730181b22da7ce1500c7cf852a60c0bcfe7e744a56f8852528cf529524264",
+      "hash": "0a0b3d5a0dd6a03d8019ab6fbce1f18efc0bf72e8182fdf757eaedde28b6690b",
       "route": "/utilidades/punto-de-rocio/"
     },
     "https://www.jjlmoya.es/utilidades/qr/": {
-      "hash": "b6529dfe5d70e90f1d0900bf4f49191a2fef67ed11bf287847d7451c19d0a337",
+      "hash": "373092a27f6aa896cc08e3207d85f94a2afee04ebaeb4c810e5d6f2a6165cab9",
       "route": "/utilidades/qr/"
     },
     "https://www.jjlmoya.es/utilidades/simulador-consumo-standby/": {
-      "hash": "2160c9f288a2cb428d28a405b48de5b8bc0278df0b33f5048cd97ce7aa748423",
+      "hash": "0f3604dccfac7ff957a2e89a6c8010c0c11e5a2dbc797ebd0879f5b91c65d8b6",
       "route": "/utilidades/simulador-consumo-standby/"
     },
     "https://www.jjlmoya.es/utilidades/simulador-de-alcance-wifi/": {
-      "hash": "2029ac3aaa78f654c5ee09abb7550a1839123eaf7c29c5799548d37d99927104",
+      "hash": "1ef6935c627a3a866480c9e4970df23628847f15e406014ab6fe30cf28df42d3",
       "route": "/utilidades/simulador-de-alcance-wifi/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/ac-tonnage-calculator/": {
-      "hash": "94c624398f62779fe7e0492ba40774c73e6784d31ab6e974e9de11a63fe7c207",
+      "hash": "e773537e4b4188c35e5ae23bd0423c0ee069810fd952a271606b735c24da224c",
       "route": "/zh/utilities/categories/home/ac-tonnage-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/appliance-cost-calculator/": {
-      "hash": "2f8802624cc2c7402d4273f704f86e7b9d43b83bd0f51c60f4ff61ebd2a0124c",
+      "hash": "8206ac141827bbd0ced553a8a8840a21f53980e68475a67f3bb6e1e78d886d6d",
       "route": "/zh/utilities/categories/home/appliance-cost-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/desk-ergonomics/": {
-      "hash": "53cd5f5bf2365da278dd1a41da8220fd73ec90eef1962c0ae62f36630301746e",
+      "hash": "740fc569fb585dbdc4391f2b8792a6030e34b8a3450b4c3fe154c2872e41e91d",
       "route": "/zh/utilities/categories/home/desk-ergonomics/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/dew-point-calculator/": {
-      "hash": "382c9390504d85026cd91188c41f4575fd3f9086a8655683c5f275a552a59881",
+      "hash": "f85b9d9fcf878c68c0bbe8ab24d5d446163a22187b4bc6a6cc361b2fec7e6abd",
       "route": "/zh/utilities/categories/home/dew-point-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/electricity-tariff-comparator/": {
-      "hash": "cf04abd3947637ef60cd5bd90936c01da5156399f913e331e083caaedffc28dd",
+      "hash": "773e25f3281fd2ca5ad0eb43b48d53361cdaa81e9b0dc564c8b8ddf6b839c0dd",
       "route": "/zh/utilities/categories/home/electricity-tariff-comparator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/heating-consumption-comparator/": {
-      "hash": "754b6d8a0d2a4749392f4d7e4884128952c05330e0a7991ccf867b3b1e1ea798",
+      "hash": "d68a27b8b492bd4c3fb443856b722d4c2f2b987de591ebff019e305b1161b8d5",
       "route": "/zh/utilities/categories/home/heating-consumption-comparator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/how-many-lights-per-room/": {
-      "hash": "2150da74009ea31fbf503e12b14cc0fe3a3f1e34bc4dc0c1e352e58506520c9a",
+      "hash": "a0b2a613c7a30da3da2def19838c7f12871269b61a5a81f7badaf1423e250309",
       "route": "/zh/utilities/categories/home/how-many-lights-per-room/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/humidity-calculator/": {
-      "hash": "b86516655b173365a8777219909d9368a0f4ed5de6f692b5df2e0cb7ffce1338",
+      "hash": "2f811acadb414ff5ae66afb222e17dd8e7f5210c55b22161e1923e8d0d57358e",
       "route": "/zh/utilities/categories/home/humidity-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/": {
-      "hash": "b0d903d8ac1ec58ba0506b3292b8a143f6903c7de876a157338064ea989300fa",
+      "hash": "422078378c2cc2811add0052e15710dc3ba3555075562363286860da95d1915f",
       "route": "/zh/utilities/categories/home/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/led-saving-calculator/": {
-      "hash": "1b35a9f0da89a04af51db2f4b20452bd5392655736c18d4b5864d15f847713b5",
+      "hash": "d7e0ad02eefdaba331267a99816be0071863aa396711aeeab91196eb5d2a3842",
       "route": "/zh/utilities/categories/home/led-saving-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/projector-throw-calculator/": {
-      "hash": "ece7d0a35f740013c85fc1e985d5004e7277a1a87ff45d3c059a6107b098e155",
+      "hash": "bb6379680a3e8d3158089938edcad01dcd162cd2d654f5e4ca779009f8f9cf32",
       "route": "/zh/utilities/categories/home/projector-throw-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/qr-generator/": {
-      "hash": "135acc800415b16d8b148e015c3b555b3363ab8697e1c0d51969b889f2810ca9",
+      "hash": "5d466e8e7802f7d5d697cbb4031dd74b3131dea47ed859f272aaf6fa5ea53a34",
       "route": "/zh/utilities/categories/home/qr-generator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/solar-battery-autonomy-calculator/": {
-      "hash": "6483e345b0db72f39cffb65cd8f4e378d6d70e44a438765c7328dc0ed73c48e7",
+      "hash": "797f713b09930c8b22fe6a34d2efaacbff80e3db3e180a4481342120a69a0834",
       "route": "/zh/utilities/categories/home/solar-battery-autonomy-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/solar-panel-calculator/": {
-      "hash": "e7623abcacde7bc8563ab2c018ab1c679c6c93b79d1182d07b4ecea4cf3f6c5e",
+      "hash": "5bc6ec06c39a9463c22006652b262b49fa88c9f0aba03bb5533d3c59bb9b73ea",
       "route": "/zh/utilities/categories/home/solar-panel-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/tile-layout-calculator/": {
-      "hash": "afba2a5d3afaac1a6e3860e2f36432fce1ee2ba89a42a9fd2c5c088301bc72e7",
+      "hash": "3e108085affb6899afa55ce32d283cd0fe543a4dd7129ca663d71b887f022dc6",
       "route": "/zh/utilities/categories/home/tile-layout-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/vampire-draw-simulator/": {
-      "hash": "8e3c960bb59c40a2acff83706d5b9c995cbef7f8ec343f50f95c8a38970c50d0",
+      "hash": "b2202d9f50195ab8a25ce7545bde7b9b955c424e1d9b180e5ce1fa1b4db4aa7f",
       "route": "/zh/utilities/categories/home/vampire-draw-simulator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/wall-painting-calculator/": {
-      "hash": "de6c0a85e9bc145c5846d67eac733a07f6c5ccf789e686004dc9e4177044badc",
+      "hash": "41db60cda2da449679b322a6ca8b1b8f70321fcd8fefc2151d331a02e999ede3",
       "route": "/zh/utilities/categories/home/wall-painting-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/wallpaper-roll-calculator/": {
-      "hash": "6242db6e53de9a1380e85af226d78814a1585b7b8354a2cbcab942ce554d87b2",
+      "hash": "d457f12b7d466c5d6cd56b9e04eb4b37bf99144b6774d3e8d906f4f73a8fa800",
       "route": "/zh/utilities/categories/home/wallpaper-roll-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/water-softener/": {
-      "hash": "e9475730e8d02c063d1e3469387ba43f968de62173330ff4720a887ea644a1a6",
+      "hash": "44965bdb25fee9b6746c9f4d39015e868d7e4cbc18d0d9432312fbbf0ee9733d",
       "route": "/zh/utilities/categories/home/water-softener/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/home/wifi-range-simulator/": {
-      "hash": "f498e4f77b9e1e423ea65ffa29e1be81863fe9cbec2f2c275c5534c95efe3d77",
+      "hash": "17c60de60120fe14ecd40e242f4a025a4e79cb46586181684a68f418f78066ac",
       "route": "/zh/utilities/categories/home/wifi-range-simulator/"
     }
   }
