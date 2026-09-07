@@ -5,7 +5,7 @@ export type SolarBatteryAutonomyCalculatorLocaleContent = ToolLocaleContent<Sola
 
 export const solarBatteryAutonomyCalculator: HomeToolEntry<SolarBatteryAutonomyCalculatorUI> = {
   id: 'solar-battery-autonomy-calculator',
-  icons: { bg: 'mdi:battery-solar', fg: 'mdi:battery-clock' },
+  icons: { bg: 'mdi:battery', fg: 'mdi:battery-clock' },
   i18n: {
     de: async () => (await import('./i18n/de')).content,
     en: async () => (await import('./i18n/en')).content,
