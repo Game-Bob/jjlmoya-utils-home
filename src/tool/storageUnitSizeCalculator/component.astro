@@ -1,0 +1,44 @@
+---
+import type { StorageUnitSizeCalculatorUI } from './ui';
+import { calculateStoragePlan } from './logic';
+import { renderPlan } from './dom-views';
+import './storage-unit-size-calculator.css';
+
+interface Props { ui: StorageUnitSizeCalculatorUI; locale?: string; }
+const { ui } = Astro.props;
+const config = JSON.stringify(ui).replace(/</g, '\\u003c');
+const initialPlan = renderPlan(calculateStoragePlan(ui.defaults), ui);
+---
+<section class="storage-tool" data-storage-tool>
+  <div class="storage-tool-workbench">
+    <form class="storage-tool-inventory" data-inventory-form>
+      <div class="storage-tool-preset-area">
+        <div class="storage-tool-section-label"><span>{ui.labels.quickScenarios}</span><button type="button" data-reset>{ui.labels.reset}</button></div>
+        <div class="storage-tool-presets">
+          {ui.presets.map((preset, index) => <button type="button" class="storage-tool-preset" data-preset={preset.id} aria-pressed={index === 0 ? 'true' : 'false'}><span class="storage-tool-preset-mark">{String(index + 1).padStart(2, '0')}</span>{preset.label}</button>)}
+        </div>
+      </div>
+      <fieldset class="storage-tool-fieldset"><legend>{ui.labels.boxes}</legend><div class="storage-tool-fields">
+        <label><span>{ui.labels.smallBoxes}</span><input type="number" min="0" max="200" step="1" value={ui.defaults.boxes.small} data-field="small-boxes" /></label>
+        <label><span>{ui.labels.mediumBoxes}</span><input type="number" min="0" max="200" step="1" value={ui.defaults.boxes.medium} data-field="medium-boxes" /></label>
+        <label><span>{ui.labels.largeBoxes}</span><input type="number" min="0" max="200" step="1" value={ui.defaults.boxes.large} data-field="large-boxes" /></label>
+      </div></fieldset>
+      <fieldset class="storage-tool-fieldset"><legend>{ui.labels.furniture}</legend><div class="storage-tool-fields">
+        <label><span>{ui.labels.sofa}</span><input type="number" min="0" max="20" step="1" value={ui.defaults.furniture.sofa} data-field="sofa" /></label>
+        <label><span>{ui.labels.bed}</span><input type="number" min="0" max="20" step="1" value={ui.defaults.furniture.bed} data-field="bed" /></label>
+        <label><span>{ui.labels.wardrobe}</span><input type="number" min="0" max="20" step="1" value={ui.defaults.furniture.wardrobe} data-field="wardrobe" /></label>
+        <label><span>{ui.labels.desk}</span><input type="number" min="0" max="20" step="1" value={ui.defaults.furniture.desk} data-field="desk" /></label>
+        <label><span>{ui.labels.chair}</span><input type="number" min="0" max="40" step="1" value={ui.defaults.furniture.chair} data-field="chair" /></label>
+      </div></fieldset>
+      <fieldset class="storage-tool-fieldset storage-tool-fieldset-access"><legend>{ui.labels.accessLane}</legend><div class="storage-tool-access-options">{ui.accessOptions.map((option) => <label class="storage-tool-access-option"><input type="radio" name="access-percent" value={option.value} data-access-choice={option.value} checked={option.value === ui.defaults.accessPercent} /><span>{option.label}</span></label>)}</div><input class="storage-tool-access-range" type="range" min="10" max="60" step="5" value={ui.defaults.accessPercent} data-field="access-percent" aria-label={ui.labels.accessLane} /><p>{ui.labels.accessHint}</p></fieldset>
+    </form>
+    <section class="storage-tool-result" aria-live="polite"><div data-plan set:html={initialPlan}></div></section>
+  </div>
+</section>
+<script is:inline type="application/json" data-storage-config set:html={config}></script>
+<script>
+  import { mountStorageUnitSizeCalculator } from './controller';
+  const root = document.querySelector<HTMLElement>('[data-storage-tool]');
+  const configNode = document.querySelector<HTMLScriptElement>('[data-storage-config]');
+  if (root && configNode?.textContent) mountStorageUnitSizeCalculator(root, JSON.parse(configNode.textContent));
+</script>

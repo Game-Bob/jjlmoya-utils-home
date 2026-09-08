@@ -1,5 +1,4 @@
 export { ALL_ENTRIES } from './entries';
-import type { ToolDefinition } from './types';
 import { QR_GENERATOR_TOOL } from './tool/qrGenerator/index';
 import { SOLAR_CALCULATOR_TOOL } from './tool/solarCalculator/index';
 import { PROJECTOR_CALCULATOR_TOOL } from './tool/projectorCalculator/index';
@@ -20,8 +19,9 @@ import { WATER_SOFTENER_TOOL } from './tool/waterSoftener/index';
 import { WALLPAPER_ROLL_CALCULATOR_TOOL } from './tool/wallpaperRollCalculator/index';
 import { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from './tool/solarBatteryAutonomyCalculator/index';
 import { WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL } from './tool/waterHeaterRecoveryTimeCalculator/index';
+import { STORAGE_UNIT_SIZE_CALCULATOR_TOOL } from './tool/storageUnitSizeCalculator/index';
 
-export const ALL_TOOLS: ToolDefinition[] = [
+export const ALL_TOOLS = [
   QR_GENERATOR_TOOL,
   SOLAR_CALCULATOR_TOOL,
   PROJECTOR_CALCULATOR_TOOL,
@@ -42,5 +42,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   WALLPAPER_ROLL_CALCULATOR_TOOL,
   SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL,
   WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL,
+  STORAGE_UNIT_SIZE_CALCULATOR_TOOL,
 ];
 

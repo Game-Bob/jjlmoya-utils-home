@@ -1,0 +1,10 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { storageUnitSizeCalculator } from './entry';
+import type { KnownLocale } from '../../types';
+
+interface Props { locale?: KnownLocale; }
+const { locale = 'en' } = Astro.props;
+const content = await storageUnitSizeCalculator.i18n[locale]?.() ?? await storageUnitSizeCalculator.i18n.en!();
+---
+{content.seo.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}

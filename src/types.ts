@@ -59,10 +59,9 @@ export interface HomeCategoryEntry {
   i18n: LocaleMap<CategoryLocaleContent>;
 }
 
-export interface ToolDefinition {
-  entry: HomeToolEntry;
+export interface ToolDefinition<TUI extends object = object> {
+  entry: HomeToolEntry<TUI>;
   Component: unknown;
   SEOComponent: unknown;
   BibliographyComponent: unknown;
 }
-

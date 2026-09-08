@@ -1,0 +1,118 @@
+import type { StorageUnitSizeCalculatorUI } from '../ui';
+import type { StorageUnitSizeCalculatorLocaleContent } from '../entry';
+
+const ui: StorageUnitSizeCalculatorUI = {
+  defaults: {
+    boxes: { small: 8, medium: 6, large: 2 },
+    furniture: { sofa: 1, bed: 1, wardrobe: 1, desk: 1, chair: 2 },
+    accessPercent: 25,
+  },
+  labels: {
+    inventory: 'Your inventory',
+    boxes: 'Boxes',
+    furniture: 'Bulky items',
+    smallBoxes: 'Small boxes',
+    mediumBoxes: 'Medium boxes',
+    largeBoxes: 'Large boxes',
+    sofa: 'Sofa',
+    bed: 'Bed',
+    wardrobe: 'Wardrobe',
+    desk: 'Desk',
+    chair: 'Chairs',
+    accessLane: 'Access lane',
+    accessHint: 'More access space costs area but keeps the items you need reachable.',
+    quickScenarios: 'Load a starting inventory',
+    reset: 'Reset',
+  },
+  presets: [
+    { id: 'studio-move', label: 'Studio move', inputs: { boxes: { small: 6, medium: 5, large: 1 }, furniture: { sofa: 1, bed: 1, wardrobe: 1, desk: 0, chair: 1 }, accessPercent: 25 } },
+    { id: 'one-bedroom', label: 'One bedroom', inputs: { boxes: { small: 8, medium: 6, large: 2 }, furniture: { sofa: 1, bed: 1, wardrobe: 1, desk: 1, chair: 2 }, accessPercent: 25 } },
+    { id: 'office-clearout', label: 'Small office', inputs: { boxes: { small: 12, medium: 10, large: 4 }, furniture: { sofa: 0, bed: 0, wardrobe: 0, desk: 4, chair: 8 }, accessPercent: 40 } },
+  ],
+  accessOptions: [{ value: 15, label: 'Tight' }, { value: 25, label: 'Balanced' }, { value: 40, label: 'Frequent access' }],
+  result: {
+    title: 'The loading board',
+    minimum: 'Minimum unit',
+    comfortable: 'Comfortable unit',
+    emptyStatus: 'Add your items',
+    readyStatus: 'Balanced plan',
+    tightStatus: 'Minimum is tight',
+    emptyMessage: 'The board will draw your storage zones as you add items.',
+    readyMessage: 'The minimum size leaves room for the selected access lane.',
+    tightMessage: 'The minimum size is almost full. The comfortable size will be easier to use.',
+    unit: 'm²',
+    access: 'access',
+    boxesZone: 'Boxes',
+    furnitureZone: 'Bulky items',
+    laneZone: 'Access lane',
+    floorPlanLabel: 'Proportional storage unit plan with boxes, bulky items and an access lane',
+    packedLabel: 'packed',
+    areaLabel: 'Planning area',
+    volumeLabel: 'volume',
+    emptyPlan: 'Add boxes or furniture to draw the plan',
+  },
+};
+
+export const content: StorageUnitSizeCalculatorLocaleContent = {
+  slug: 'storage-unit-size-calculator',
+  title: 'Storage Unit Size Calculator',
+  description: 'Estimate the storage unit size you need from your boxes, furniture and access space.',
+  ui,
+  seo: [
+    { type: 'title', level: 2, text: 'Choose a storage unit from the things you own' },
+    { type: 'paragraph', html: 'A storage unit size calculator is most useful when it starts with your actual inventory. Enter boxes and bulky furniture, then choose whether you need a narrow packing plan or room to reach items without unloading the whole unit.' },
+    { type: 'title', level: 2, text: 'What this storage estimate measures' },
+    { type: 'list', items: ['Packed volume from the box and furniture presets', 'Floor area occupied after boxes are stacked by type', 'An access lane allowance based on how often you expect to retrieve items', 'Minimum and comfortable unit sizes rounded to common square metre steps'] },
+    { type: 'title', level: 2, text: 'How to read the minimum and comfortable sizes' },
+    { type: 'paragraph', html: 'The minimum unit is the first standard size that contains the estimated planning area. It is a capacity check, not a promise that every item will fit in a particular room. The comfortable option adds a buffer and deliberately moves to the next available size so a frequently opened unit is less likely to become a solid wall of boxes.' },
+    { type: 'title', level: 2, text: 'Prepare before you book' },
+    { type: 'paragraph', html: 'Use the result as a shortlist, then compare the provider\'s internal dimensions, door width, ceiling height, columns, stairs and loading access. A unit advertised by cubic metres can look generous if its height is unusable, while a compact floor plan can become frustrating when you need items at the back.' },
+    { type: 'list', items: ['Count boxes by their approximate outside size, not by an ideal catalogue dimension.', 'Add wardrobes and sofas even if you plan to dismantle them, then reduce their count only when you know the packed dimensions.', 'Choose Frequent access when you will retrieve seasonal items, stock or work equipment during the rental.', 'Ask the provider whether the quoted area is internal usable floor area and measure the doorway before moving large furniture.'] },
+    { type: 'tip', title: 'Planning limit', html: 'This is a transparent estimate based on representative item dimensions and stacking assumptions. It does not inspect a provider\'s unit, certify load limits, price a rental or guarantee that an irregular piece of furniture will fit through the door.' },
+  ],
+  faq: [
+    { question: 'Should I choose the minimum or comfortable storage unit?', answer: 'Choose the minimum only when your items can be packed tightly and you rarely need to retrieve anything. Choose the comfortable size when access matters, the inventory may grow, or large furniture cannot be stacked efficiently.' },
+    { question: 'Why does the calculator use square metres?', answer: 'Providers commonly quote the floor area of a unit, and floor area reveals whether you can place and reach items. The calculator also shows packed cubic metres so you can compare the estimate with a provider that quotes volume.' },
+    { question: 'Can I use this for a garage or shipping container?', answer: 'You can use the inventory estimate as a planning starting point, but check the actual internal dimensions, door opening, ceiling, ventilation and any weight or stacking restrictions for that space.' },
+    { question: 'Does the calculator know the real size of my furniture?', answer: 'No. It uses representative footprints and volumes for the selected item types. Measure unusual, fragile or very deep items and leave extra room when the provider\'s shape or access route is uncertain.' },
+  ],
+  howTo: [
+    { name: 'Load a starting inventory', text: 'Choose a scenario close to your move or clearout, or leave the default example and edit each count.' },
+    { name: 'Count boxes and bulky items', text: 'Enter the number of small, medium and large boxes, then add sofas, beds, wardrobes, desks and chairs.' },
+    { name: 'Set your access lane', text: 'Choose Tight, Balanced or Frequent access according to how often you will need to reach the stored items.' },
+    { name: 'Compare the two recommendations', text: 'Use the minimum size as a capacity floor and the comfortable size as the more usable option for regular access.' },
+  ],
+  bibliography: [
+    { name: 'Asociación Española de Self Storage: Cómo elegir un trastero', url: 'https://aesstrasteros.es/que-hay-que-tener-en-cuenta-a-la-hora-de-elegir-trastero/' },
+    { name: 'FEDESSA: How to select a storage provider?', url: 'https://www.fedessa.org/customer-info/thing.html' },
+  ],
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'Storage Unit Size Calculator',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      description: 'Estimate storage unit size from boxes, furniture and access space.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Should I choose the minimum or comfortable storage unit?', acceptedAnswer: { '@type': 'Answer', text: 'Choose the minimum for tight packing and rare access, or the comfortable size when retrieval space matters.' } },
+        { '@type': 'Question', name: 'Why does the calculator use square metres?', acceptedAnswer: { '@type': 'Answer', text: 'Square metres show the usable floor area, while packed cubic metres help compare volume based listings.' } },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: 'Estimate a storage unit size',
+      step: [
+        { '@type': 'HowToStep', name: 'Load an inventory', text: 'Choose a starting scenario or enter your own box and furniture counts.' },
+        { '@type': 'HowToStep', name: 'Set access space', text: 'Choose how much room you need to reach stored items.' },
+        { '@type': 'HowToStep', name: 'Read the plan', text: 'Compare the minimum and comfortable square metre recommendations.' },
+      ],
+    },
+  ],
+};

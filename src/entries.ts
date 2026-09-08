@@ -38,6 +38,8 @@ export { solarBatteryAutonomyCalculator } from './tool/solarBatteryAutonomyCalcu
 export type { SolarBatteryAutonomyCalculatorLocaleContent } from './tool/solarBatteryAutonomyCalculator/entry';
 export { waterHeaterRecoveryTimeCalculator } from './tool/waterHeaterRecoveryTimeCalculator/entry';
 export type { WaterHeaterRecoveryTimeCalculatorLocaleContent } from './tool/waterHeaterRecoveryTimeCalculator/entry';
+export { storageUnitSizeCalculator } from './tool/storageUnitSizeCalculator/entry';
+export type { StorageUnitSizeCalculatorLocaleContent } from './tool/storageUnitSizeCalculator/entry';
 export { homeCategory } from './category';
 import { dewPointCalculator } from './tool/dewPointCalculator/entry';
 import { heatingComparator } from './tool/heatingComparator/entry';
@@ -59,4 +61,5 @@ import { waterSoftener } from './tool/waterSoftener/entry';
 import { wallpaperRollCalculator } from './tool/wallpaperRollCalculator/entry';
 import { solarBatteryAutonomyCalculator } from './tool/solarBatteryAutonomyCalculator/entry';
 import { waterHeaterRecoveryTimeCalculator } from './tool/waterHeaterRecoveryTimeCalculator/entry';
-export const ALL_ENTRIES = [dewPointCalculator, heatingComparator, ledSavingCalculator, projectorCalculator, qrGenerator, solarCalculator, tariffComparator, wifiRangeSimulator, acTonnageCalculator, wallPaintingCalculator, vampireDrawSimulator, deskErgonomics, applianceCostCalculator, tileLayoutCalculator, lightingCalculator, humidityCalculator, waterSoftener, wallpaperRollCalculator, solarBatteryAutonomyCalculator, waterHeaterRecoveryTimeCalculator];
+import { storageUnitSizeCalculator } from './tool/storageUnitSizeCalculator/entry';
+export const ALL_ENTRIES = [dewPointCalculator, heatingComparator, ledSavingCalculator, projectorCalculator, qrGenerator, solarCalculator, tariffComparator, wifiRangeSimulator, acTonnageCalculator, wallPaintingCalculator, vampireDrawSimulator, deskErgonomics, applianceCostCalculator, tileLayoutCalculator, lightingCalculator, humidityCalculator, waterSoftener, wallpaperRollCalculator, solarBatteryAutonomyCalculator, waterHeaterRecoveryTimeCalculator, storageUnitSizeCalculator];
