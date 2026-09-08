@@ -1,0 +1,74 @@
+---
+import type { WaterHeaterRecoveryTimeCalculatorUI } from './ui';
+import { calculateWaterHeaterRecovery, type WaterHeaterRecoveryInput } from './logic';
+import { renderResult, renderTank } from './dom-views';
+
+interface Props {
+  ui: WaterHeaterRecoveryTimeCalculatorUI;
+  locale?: string;
+}
+
+const { ui, locale = 'en' } = Astro.props;
+const initialInput: WaterHeaterRecoveryInput = {
+  volumeL: 150,
+  currentTempC: 35,
+  targetTempC: 55,
+  powerKw: 2,
+  efficiencyPct: 90,
+  startMinutes: 7 * 60,
+  comparePowerKw: null,
+  compareEfficiencyPct: null,
+};
+const initialResult = calculateWaterHeaterRecovery(initialInput);
+---
+<div class="n-tool" data-water-heater-recovery data-locale={locale}>
+  <div class="n-workspace">
+    <section class="n-tank-panel" aria-label={ui.resultTitle}>
+      <div class="n-panel-kicker">{ui.tankCurrent} / {ui.tankTarget}</div>
+      <div id="n-tank-visual" set:html={renderTank(initialInput.currentTempC, initialInput.targetTempC, ui, { locale })}></div>
+      <div class="n-heat-line"><span></span><span></span><span></span><span></span><span></span></div>
+      <h3 class="n-panel-title">{ui.limitsTitle}</h3>
+      <p class="n-panel-caption">{ui.limitsText}</p>
+    </section>
+
+    <section class="n-controls" aria-label={ui.resultTitle}>
+      <fieldset class="n-unit-switch">
+        <legend>{ui.temperatureUnitLabel}</legend>
+        <div class="n-unit-options">
+          <label><input type="radio" name="n-temperature-unit" value="C" checked /><span>{ui.celsiusOption}</span></label>
+          <label><input type="radio" name="n-temperature-unit" value="F" /><span>{ui.fahrenheitOption}</span></label>
+        </div>
+      </fieldset>
+
+      <div class="n-fields">
+        <label class="n-field n-field-wide"><span>{ui.volumeLabel}</span><small>{ui.volumeHint}</small><span class="n-input-shell"><input id="n-volume" type="number" min="1" step="1" value={initialInput.volumeL} inputmode="decimal" /><b>{ui.litersUnit}</b></span></label>
+        <label class="n-field n-field-temperature n-field-temperature-current"><span class="n-field-heading">{ui.currentTempLabel}</span><span class="n-input-shell"><input id="n-current-temp" type="number" step="0.5" value={initialInput.currentTempC} inputmode="decimal" /><b data-temperature-unit>{ui.degreesUnit}</b></span></label>
+        <label class="n-field n-field-temperature n-field-temperature-target"><span class="n-field-heading">{ui.targetTempLabel}</span><span class="n-input-shell"><input id="n-target-temp" type="number" step="0.5" value={initialInput.targetTempC} inputmode="decimal" /><b data-temperature-unit>{ui.degreesUnit}</b></span></label>
+        <label class="n-field"><span>{ui.powerLabel}</span><span class="n-input-shell"><input id="n-power" type="number" min="0.01" step="0.1" value={initialInput.powerKw} inputmode="decimal" /><b>{ui.kilowattsUnit}</b></span></label>
+        <label class="n-field"><span>{ui.efficiencyLabel}</span><span class="n-input-shell"><input id="n-efficiency" type="number" min="1" max="100" step="1" value={initialInput.efficiencyPct} inputmode="decimal" /><b>{ui.percentUnit}</b></span></label>
+        <label class="n-field n-field-wide"><span>{ui.startTimeLabel}</span><span class="n-input-shell"><input id="n-start-time" type="time" value="07:00" /></span></label>
+      </div>
+
+      <fieldset class="n-compare">
+        <legend>{ui.compareTitle}</legend>
+        <p>{ui.compareOptional}</p>
+        <div class="n-fields n-fields--compare">
+          <label class="n-field"><span>{ui.comparePowerLabel}</span><span class="n-input-shell"><input id="n-compare-power" type="number" min="0.01" step="0.1" inputmode="decimal" /><b>{ui.kilowattsUnit}</b></span></label>
+          <label class="n-field"><span>{ui.compareEfficiencyLabel}</span><span class="n-input-shell"><input id="n-compare-efficiency" type="number" min="1" max="100" step="1" inputmode="decimal" /><b>{ui.percentUnit}</b></span></label>
+        </div>
+      </fieldset>
+    </section>
+  </div>
+
+  <section class="n-result" aria-live="polite">
+    <div class="n-result-bar"><span>{ui.resultTitle}</span><span class="n-result-delta" id="n-delta">+20{ui.degreesUnit}</span></div>
+    <div id="n-result-content" set:html={renderResult(initialResult, ui, locale)}></div>
+  </section>
+  <p id="n-status" class="n-status" role="status"></p>
+
+  <script is:inline type="application/json" id="n-water-heater-data" set:html={JSON.stringify({ initialInput, ui, locale })}></script>
+  <script>
+    import { mountWaterHeaterRecovery } from './controller';
+    mountWaterHeaterRecovery();
+  </script>
+</div>

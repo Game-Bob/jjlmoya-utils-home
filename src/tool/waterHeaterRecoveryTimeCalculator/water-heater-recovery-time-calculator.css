@@ -1,0 +1,567 @@
+:root {
+  --n-paper: #f4efe7;
+  --n-surface: #fffdf8;
+  --n-surface-strong: #f0e5d4;
+  --n-ink: #24231f;
+  --n-muted: #706d64;
+  --n-line: #d9cdbd;
+  --n-copper: #aa5b32;
+  --n-copper-dark: #7d3b20;
+  --n-water: #2f7d83;
+  --n-water-light: #bcdedf;
+  --n-steel: #667078;
+  --n-shadow: rgba(79, 52, 31, 0.12);
+}
+
+.theme-dark {
+  --n-paper: #1d1e1b;
+  --n-surface: #292824;
+  --n-surface-strong: #363229;
+  --n-ink: #f6f0e6;
+  --n-muted: #c1b7a9;
+  --n-line: #5c5549;
+  --n-copper: #e28d5a;
+  --n-copper-dark: #f1a777;
+  --n-water: #79c8c9;
+  --n-water-light: #34575a;
+  --n-steel: #b9c5c9;
+  --n-shadow: rgba(0, 0, 0, 0.25);
+}
+
+.n-tool {
+  --n-local-paper: var(--n-paper);
+  --n-local-surface: var(--n-surface);
+  --n-local-strong: var(--n-surface-strong);
+  --n-local-ink: var(--n-ink);
+  --n-local-muted: var(--n-muted);
+  --n-local-line: var(--n-line);
+  --n-local-copper: var(--n-copper);
+  --n-local-copper-dark: var(--n-copper-dark);
+  --n-local-water: var(--n-water);
+  --n-local-water-light: var(--n-water-light);
+  --n-local-steel: var(--n-steel);
+  --n-local-shadow: var(--n-shadow);
+
+  box-sizing: border-box;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border: 1px solid var(--n-local-line);
+  background: var(--n-local-paper);
+  color: var(--n-local-ink);
+}
+
+.n-tool *,
+.n-tool *::before,
+.n-tool *::after {
+  box-sizing: border-box;
+}
+
+.n-workspace {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(18rem, 1.4fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.n-tank-panel,
+.n-controls,
+.n-result {
+  border: 1px solid var(--n-local-line);
+  background: var(--n-local-surface);
+  box-shadow: 0 0.8rem 1.8rem var(--n-local-shadow);
+}
+
+.n-tank-panel {
+  position: relative;
+  display: grid;
+  min-height: 28rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  align-content: center;
+  justify-items: center;
+}
+
+.n-panel-kicker,
+.n-result-bar > span:first-child {
+  color: var(--n-local-copper);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.n-panel-kicker {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+}
+
+#n-tank-visual {
+  display: grid;
+  width: min(100%, 16rem);
+  place-items: center;
+}
+
+.n-tank {
+  position: relative;
+  width: min(12rem, 100%);
+  height: 20rem;
+  border: 0.7rem solid var(--n-local-steel);
+  border-radius: 1.4rem 1.4rem 2.2rem 2.2rem;
+  background: var(--n-local-strong);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 0.25rem var(--n-local-line);
+}
+
+.n-tank-water {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--n-fill);
+  background: var(--n-local-water-light);
+  border-top: 0.25rem solid var(--n-local-water);
+  transition: height 180ms ease;
+}
+
+.n-tank-water::after {
+  position: absolute;
+  top: 0.55rem;
+  right: 8%;
+  left: 8%;
+  height: 0.18rem;
+  border-radius: 50%;
+  background: var(--n-local-water);
+  content: "";
+  opacity: 0.6;
+  animation: n-water-pulse 2.4s ease-in-out infinite;
+}
+
+.n-tank-mark {
+  position: absolute;
+  right: -4.2rem;
+  display: grid;
+  gap: 0.15rem;
+  color: var(--n-local-muted);
+  font-size: 0.65rem;
+  line-height: 1.1;
+}
+
+.n-tank-mark b {
+  color: var(--n-local-ink);
+  font-size: 0.8rem;
+}
+
+.n-tank-mark-current {
+  bottom: var(--n-fill);
+  transform: translateY(50%);
+}
+
+.n-tank-mark-target {
+  top: 0.4rem;
+}
+
+.n-tank-coil {
+  position: absolute;
+  right: 20%;
+  bottom: 1.1rem;
+  left: 20%;
+  height: 3.8rem;
+  border: 0.3rem solid var(--n-local-copper);
+  border-radius: 50%;
+  box-shadow: 0 0.9rem 0 -0.1rem var(--n-local-copper), 0 1.8rem 0 -0.1rem var(--n-local-copper);
+  animation: n-coil-pulse 1.8s ease-in-out infinite;
+}
+
+.n-heat-line {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.n-heat-line span {
+  display: block;
+  width: 1.4rem;
+  height: 0.16rem;
+  background: var(--n-local-copper);
+  transform: rotate(-25deg);
+  animation: n-heat-rise 1.8s ease-in-out infinite;
+}
+
+.n-heat-line span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.n-heat-line span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.n-heat-line span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.n-heat-line span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes n-water-pulse {
+  0%, 100% {
+    transform: scaleX(0.72);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes n-coil-pulse {
+  0%, 100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes n-heat-rise {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0) rotate(-25deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-0.18rem) rotate(-25deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .n-tank-water::after,
+  .n-tank-coil,
+  .n-heat-line span {
+    animation: none;
+  }
+}
+
+.n-panel-caption {
+  max-width: 18rem;
+  margin: 1.2rem 0 0;
+  color: var(--n-local-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.n-controls {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.n-unit-switch {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.n-unit-switch legend {
+  margin-bottom: 0.45rem;
+  color: var(--n-local-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.n-unit-options {
+  display: inline-flex;
+  max-width: 100%;
+  border: 1px solid var(--n-local-line);
+  border-radius: 0.45rem;
+  overflow: hidden;
+}
+
+.n-unit-options label {
+  position: relative;
+  display: block;
+  min-width: 8.5rem;
+  color: var(--n-local-muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.n-unit-options label + label {
+  border-left: 1px solid var(--n-local-line);
+}
+
+.n-unit-options input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.n-unit-options span {
+  display: block;
+  padding: 0.55rem 0.8rem;
+}
+
+.n-unit-options input:checked + span {
+  background: var(--n-local-copper);
+  color: var(--n-local-surface);
+}
+
+.n-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.n-field {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  color: var(--n-local-ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.n-field-temperature {
+  --n-temperature-accent: var(--n-local-water);
+  --n-temperature-surface: var(--n-local-water-light);
+
+  padding: 0.8rem;
+  border: 1px solid var(--n-temperature-accent);
+  border-radius: 0.7rem;
+  background: var(--n-temperature-surface);
+  box-shadow: inset 0 -0.22rem 0 var(--n-temperature-accent);
+}
+
+.n-field-temperature-target {
+  --n-temperature-accent: var(--n-local-copper);
+  --n-temperature-surface: var(--n-local-strong);
+}
+
+.n-field-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.n-field-wide {
+  grid-column: span 2;
+}
+
+.n-field small,
+.n-compare p {
+  color: var(--n-local-muted);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.n-field input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 2.5rem 0.75rem 0.8rem;
+  border: 1px solid var(--n-local-line);
+  border-radius: 0.35rem;
+  background: var(--n-local-paper);
+  color: var(--n-local-ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.n-input-shell {
+  position: relative;
+  display: block;
+}
+
+.n-field-temperature input {
+  border-color: var(--n-temperature-accent);
+  background: var(--n-local-surface);
+}
+
+.n-field input:focus {
+  outline: 0.18rem solid var(--n-local-water-light);
+  border-color: var(--n-local-water);
+}
+
+.n-field b {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  color: var(--n-local-muted);
+  font-size: 0.72rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.n-compare {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--n-local-line);
+}
+
+.n-compare legend {
+  padding: 0 0.35rem;
+  color: var(--n-local-copper);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.n-compare p {
+  margin: 0 0 0.8rem;
+}
+
+.n-result {
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.n-result-bar,
+.n-result-facts,
+.n-comparison-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.n-result-delta {
+  color: var(--n-local-copper);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.n-result-headline {
+  display: grid;
+  gap: 0.4rem;
+  margin: 1.2rem 0;
+}
+
+.n-result-headline span,
+.n-result-facts span,
+.n-comparison > span {
+  color: var(--n-local-muted);
+  font-size: 0.75rem;
+}
+
+.n-result-headline strong {
+  color: var(--n-local-copper-dark);
+  font-size: clamp(2rem, 6vw, 3.7rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.n-result-facts {
+  flex-wrap: wrap;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--n-local-line);
+  border-bottom: 1px solid var(--n-local-line);
+}
+
+.n-result-facts div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.n-result-facts strong {
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.n-comparison {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-left: 0.25rem solid var(--n-local-water);
+  background: var(--n-local-strong);
+}
+
+.n-scenario-time {
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.n-scenario-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: var(--n-local-muted);
+  font-size: 0.75rem;
+}
+
+.n-result-note,
+.n-result-invalid,
+.n-status {
+  color: var(--n-local-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.n-result-note {
+  margin: 1rem 0 0;
+}
+
+.n-status {
+  min-height: 1.2rem;
+  margin: 0;
+}
+
+.n-status-invalid {
+  color: var(--n-local-copper-dark);
+}
+
+@media (max-width: 42rem) {
+  .n-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .n-tank-panel {
+    min-height: 21rem;
+  }
+
+  .n-tank {
+    width: 8rem;
+    height: 14rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .n-unit-options {
+    display: flex;
+    width: 100%;
+  }
+
+  .n-unit-options label {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .n-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .n-field-wide {
+    grid-column: span 1;
+  }
+
+  .n-result-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

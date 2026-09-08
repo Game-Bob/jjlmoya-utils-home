@@ -33,4 +33,5 @@ export { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator';
 export { WATER_SOFTENER_TOOL } from './tool/waterSoftener';
 export { WALLPAPER_ROLL_CALCULATOR_TOOL } from './tool/wallpaperRollCalculator';
 export { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from './tool/solarBatteryAutonomyCalculator';
+export { WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL } from './tool/waterHeaterRecoveryTimeCalculator';
 

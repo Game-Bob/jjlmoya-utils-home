@@ -19,6 +19,7 @@ import { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator/index';
 import { WATER_SOFTENER_TOOL } from './tool/waterSoftener/index';
 import { WALLPAPER_ROLL_CALCULATOR_TOOL } from './tool/wallpaperRollCalculator/index';
 import { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from './tool/solarBatteryAutonomyCalculator/index';
+import { WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL } from './tool/waterHeaterRecoveryTimeCalculator/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   QR_GENERATOR_TOOL,
@@ -40,5 +41,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   WATER_SOFTENER_TOOL,
   WALLPAPER_ROLL_CALCULATOR_TOOL,
   SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL,
+  WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL,
 ];
 

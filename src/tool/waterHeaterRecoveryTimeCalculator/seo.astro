@@ -1,0 +1,9 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { waterHeaterRecoveryTimeCalculator } from './index';
+import type { KnownLocale } from '../../types';
+interface Props { locale?: KnownLocale; }
+const { locale = 'en' } = Astro.props;
+const content = await waterHeaterRecoveryTimeCalculator.i18n[locale]?.() ?? await waterHeaterRecoveryTimeCalculator.i18n.en!();
+---
+{content.seo.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}
