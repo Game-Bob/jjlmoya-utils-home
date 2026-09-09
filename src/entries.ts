@@ -1,65 +1,91 @@
-export { dewPointCalculator } from './tool/dewPointCalculator/entry';
-export type { DewPointCalculatorLocaleContent } from './tool/dewPointCalculator/entry';
-export { heatingComparator } from './tool/heatingComparator/entry';
-export type { HeatingComparatorLocaleContent } from './tool/heatingComparator/entry';
-export { ledSavingCalculator } from './tool/ledSavingCalculator/entry';
-export type { LedSavingCalculatorLocaleContent } from './tool/ledSavingCalculator/entry';
-export { projectorCalculator } from './tool/projectorCalculator/entry';
-export type { ProjectorCalculatorLocaleContent } from './tool/projectorCalculator/entry';
-export { qrGenerator } from './tool/qrGenerator/entry';
-export type { QRGeneratorLocaleContent } from './tool/qrGenerator/entry';
-export { solarCalculator } from './tool/solarCalculator/entry';
-export type { SolarCalculatorLocaleContent } from './tool/solarCalculator/entry';
-export { tariffComparator } from './tool/tariffComparator/entry';
-export type { TariffComparatorLocaleContent } from './tool/tariffComparator/entry';
-export { wifiRangeSimulator } from './tool/wifiRangeSimulator/entry';
-export type { WifiRangeSimulatorLocaleContent } from './tool/wifiRangeSimulator/entry';
-export { acTonnageCalculator } from './tool/acTonnageCalculator/entry';
-export type { AcTonnageCalculatorLocaleContent } from './tool/acTonnageCalculator/entry';
-export { wallPaintingCalculator } from './tool/wallPaintingCalculator/entry';
-export type { WallPaintingCalculatorLocaleContent } from './tool/wallPaintingCalculator/entry';
-export { vampireDrawSimulator } from './tool/vampireDrawSimulator/entry';
-export type { VampireDrawSimulatorLocaleContent } from './tool/vampireDrawSimulator/entry';
-export { deskErgonomics } from './tool/deskErgonomics/entry';
-export type { DeskErgonomicsLocaleContent } from './tool/deskErgonomics/entry';
-export { applianceCostCalculator } from './tool/applianceCostCalculator/entry';
-export type { ApplianceCostCalculatorLocaleContent } from './tool/applianceCostCalculator/entry';
-export { tileLayoutCalculator } from './tool/tileLayoutCalculator/entry';
-export type { TileLayoutCalculatorLocaleContent } from './tool/tileLayoutCalculator/entry';
-export { lightingCalculator } from './tool/lightingCalculator/entry';
-export type { LightingCalculatorLocaleContent } from './tool/lightingCalculator/entry';
-export { humidityCalculator } from './tool/humidityCalculator/entry';
-export type { HumidityCalculatorLocaleContent } from './tool/humidityCalculator/entry';
-export { waterSoftener } from './tool/waterSoftener/entry';
-export type { WaterSoftenerLocaleContent } from './tool/waterSoftener/entry';
-export { wallpaperRollCalculator } from './tool/wallpaperRollCalculator/entry';
-export type { WallpaperRollCalculatorLocaleContent } from './tool/wallpaperRollCalculator/entry';
-export { solarBatteryAutonomyCalculator } from './tool/solarBatteryAutonomyCalculator/entry';
-export type { SolarBatteryAutonomyCalculatorLocaleContent } from './tool/solarBatteryAutonomyCalculator/entry';
-export { waterHeaterRecoveryTimeCalculator } from './tool/waterHeaterRecoveryTimeCalculator/entry';
-export type { WaterHeaterRecoveryTimeCalculatorLocaleContent } from './tool/waterHeaterRecoveryTimeCalculator/entry';
-export { storageUnitSizeCalculator } from './tool/storageUnitSizeCalculator/entry';
-export type { StorageUnitSizeCalculatorLocaleContent } from './tool/storageUnitSizeCalculator/entry';
-export { homeCategory } from './category';
-import { dewPointCalculator } from './tool/dewPointCalculator/entry';
-import { heatingComparator } from './tool/heatingComparator/entry';
-import { ledSavingCalculator } from './tool/ledSavingCalculator/entry';
-import { projectorCalculator } from './tool/projectorCalculator/entry';
-import { qrGenerator } from './tool/qrGenerator/entry';
-import { solarCalculator } from './tool/solarCalculator/entry';
-import { tariffComparator } from './tool/tariffComparator/entry';
-import { wifiRangeSimulator } from './tool/wifiRangeSimulator/entry';
-import { acTonnageCalculator } from './tool/acTonnageCalculator/entry';
-import { wallPaintingCalculator } from './tool/wallPaintingCalculator/entry';
-import { vampireDrawSimulator } from './tool/vampireDrawSimulator/entry';
-import { deskErgonomics } from './tool/deskErgonomics/entry';
-import { applianceCostCalculator } from './tool/applianceCostCalculator/entry';
-import { tileLayoutCalculator } from './tool/tileLayoutCalculator/entry';
-import { lightingCalculator } from './tool/lightingCalculator/entry';
-import { humidityCalculator } from './tool/humidityCalculator/entry';
-import { waterSoftener } from './tool/waterSoftener/entry';
-import { wallpaperRollCalculator } from './tool/wallpaperRollCalculator/entry';
-import { solarBatteryAutonomyCalculator } from './tool/solarBatteryAutonomyCalculator/entry';
-import { waterHeaterRecoveryTimeCalculator } from './tool/waterHeaterRecoveryTimeCalculator/entry';
-import { storageUnitSizeCalculator } from './tool/storageUnitSizeCalculator/entry';
-export const ALL_ENTRIES = [dewPointCalculator, heatingComparator, ledSavingCalculator, projectorCalculator, qrGenerator, solarCalculator, tariffComparator, wifiRangeSimulator, acTonnageCalculator, wallPaintingCalculator, vampireDrawSimulator, deskErgonomics, applianceCostCalculator, tileLayoutCalculator, lightingCalculator, humidityCalculator, waterSoftener, wallpaperRollCalculator, solarBatteryAutonomyCalculator, waterHeaterRecoveryTimeCalculator, storageUnitSizeCalculator];
+export { dewPointCalculator } from "./tool/dewPointCalculator/entry";
+export type { DewPointCalculatorLocaleContent } from "./tool/dewPointCalculator/entry";
+export { heatingComparator } from "./tool/heatingComparator/entry";
+export type { HeatingComparatorLocaleContent } from "./tool/heatingComparator/entry";
+export { ledSavingCalculator } from "./tool/ledSavingCalculator/entry";
+export type { LedSavingCalculatorLocaleContent } from "./tool/ledSavingCalculator/entry";
+export { projectorCalculator } from "./tool/projectorCalculator/entry";
+export type { ProjectorCalculatorLocaleContent } from "./tool/projectorCalculator/entry";
+export { qrGenerator } from "./tool/qrGenerator/entry";
+export type { QRGeneratorLocaleContent } from "./tool/qrGenerator/entry";
+export { solarCalculator } from "./tool/solarCalculator/entry";
+export type { SolarCalculatorLocaleContent } from "./tool/solarCalculator/entry";
+export { tariffComparator } from "./tool/tariffComparator/entry";
+export type { TariffComparatorLocaleContent } from "./tool/tariffComparator/entry";
+export { wifiRangeSimulator } from "./tool/wifiRangeSimulator/entry";
+export type { WifiRangeSimulatorLocaleContent } from "./tool/wifiRangeSimulator/entry";
+export { acTonnageCalculator } from "./tool/acTonnageCalculator/entry";
+export type { AcTonnageCalculatorLocaleContent } from "./tool/acTonnageCalculator/entry";
+export { wallPaintingCalculator } from "./tool/wallPaintingCalculator/entry";
+export type { WallPaintingCalculatorLocaleContent } from "./tool/wallPaintingCalculator/entry";
+export { vampireDrawSimulator } from "./tool/vampireDrawSimulator/entry";
+export type { VampireDrawSimulatorLocaleContent } from "./tool/vampireDrawSimulator/entry";
+export { deskErgonomics } from "./tool/deskErgonomics/entry";
+export type { DeskErgonomicsLocaleContent } from "./tool/deskErgonomics/entry";
+export { applianceCostCalculator } from "./tool/applianceCostCalculator/entry";
+export type { ApplianceCostCalculatorLocaleContent } from "./tool/applianceCostCalculator/entry";
+export { tileLayoutCalculator } from "./tool/tileLayoutCalculator/entry";
+export type { TileLayoutCalculatorLocaleContent } from "./tool/tileLayoutCalculator/entry";
+export { lightingCalculator } from "./tool/lightingCalculator/entry";
+export type { LightingCalculatorLocaleContent } from "./tool/lightingCalculator/entry";
+export { humidityCalculator } from "./tool/humidityCalculator/entry";
+export type { HumidityCalculatorLocaleContent } from "./tool/humidityCalculator/entry";
+export { waterSoftener } from "./tool/waterSoftener/entry";
+export type { WaterSoftenerLocaleContent } from "./tool/waterSoftener/entry";
+export { wallpaperRollCalculator } from "./tool/wallpaperRollCalculator/entry";
+export type { WallpaperRollCalculatorLocaleContent } from "./tool/wallpaperRollCalculator/entry";
+export { solarBatteryAutonomyCalculator } from "./tool/solarBatteryAutonomyCalculator/entry";
+export type { SolarBatteryAutonomyCalculatorLocaleContent } from "./tool/solarBatteryAutonomyCalculator/entry";
+export { waterHeaterRecoveryTimeCalculator } from "./tool/waterHeaterRecoveryTimeCalculator/entry";
+export type { WaterHeaterRecoveryTimeCalculatorLocaleContent } from "./tool/waterHeaterRecoveryTimeCalculator/entry";
+export { storageUnitSizeCalculator } from "./tool/storageUnitSizeCalculator/entry";
+export type { StorageUnitSizeCalculatorLocaleContent } from "./tool/storageUnitSizeCalculator/entry";
+export { householdWaterUsageCalculator } from "./tool/householdWaterUsageCalculator/entry";
+export type { HouseholdWaterUsageLocaleContent } from "./tool/householdWaterUsageCalculator/entry";
+export { homeCategory } from "./category";
+import { dewPointCalculator } from "./tool/dewPointCalculator/entry";
+import { heatingComparator } from "./tool/heatingComparator/entry";
+import { ledSavingCalculator } from "./tool/ledSavingCalculator/entry";
+import { projectorCalculator } from "./tool/projectorCalculator/entry";
+import { qrGenerator } from "./tool/qrGenerator/entry";
+import { solarCalculator } from "./tool/solarCalculator/entry";
+import { tariffComparator } from "./tool/tariffComparator/entry";
+import { wifiRangeSimulator } from "./tool/wifiRangeSimulator/entry";
+import { acTonnageCalculator } from "./tool/acTonnageCalculator/entry";
+import { wallPaintingCalculator } from "./tool/wallPaintingCalculator/entry";
+import { vampireDrawSimulator } from "./tool/vampireDrawSimulator/entry";
+import { deskErgonomics } from "./tool/deskErgonomics/entry";
+import { applianceCostCalculator } from "./tool/applianceCostCalculator/entry";
+import { tileLayoutCalculator } from "./tool/tileLayoutCalculator/entry";
+import { lightingCalculator } from "./tool/lightingCalculator/entry";
+import { humidityCalculator } from "./tool/humidityCalculator/entry";
+import { waterSoftener } from "./tool/waterSoftener/entry";
+import { wallpaperRollCalculator } from "./tool/wallpaperRollCalculator/entry";
+import { solarBatteryAutonomyCalculator } from "./tool/solarBatteryAutonomyCalculator/entry";
+import { waterHeaterRecoveryTimeCalculator } from "./tool/waterHeaterRecoveryTimeCalculator/entry";
+import { storageUnitSizeCalculator } from "./tool/storageUnitSizeCalculator/entry";
+import { householdWaterUsageCalculator } from "./tool/householdWaterUsageCalculator/entry";
+export const ALL_ENTRIES = [
+  dewPointCalculator,
+  heatingComparator,
+  ledSavingCalculator,
+  projectorCalculator,
+  qrGenerator,
+  solarCalculator,
+  tariffComparator,
+  wifiRangeSimulator,
+  acTonnageCalculator,
+  wallPaintingCalculator,
+  vampireDrawSimulator,
+  deskErgonomics,
+  applianceCostCalculator,
+  tileLayoutCalculator,
+  lightingCalculator,
+  humidityCalculator,
+  waterSoftener,
+  wallpaperRollCalculator,
+  solarBatteryAutonomyCalculator,
+  waterHeaterRecoveryTimeCalculator,
+  storageUnitSizeCalculator,
+  householdWaterUsageCalculator,
+];

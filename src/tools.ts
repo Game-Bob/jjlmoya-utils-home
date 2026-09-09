@@ -1,25 +1,26 @@
-export { ALL_ENTRIES } from './entries';
-import { QR_GENERATOR_TOOL } from './tool/qrGenerator/index';
-import { SOLAR_CALCULATOR_TOOL } from './tool/solarCalculator/index';
-import { PROJECTOR_CALCULATOR_TOOL } from './tool/projectorCalculator/index';
-import { DEW_POINT_CALCULATOR_TOOL } from './tool/dewPointCalculator/index';
-import { LED_SAVING_CALCULATOR_TOOL } from './tool/ledSavingCalculator/index';
-import { TARIFF_COMPARATOR_TOOL } from './tool/tariffComparator/index';
-import { HEATING_COMPARATOR_TOOL } from './tool/heatingComparator/index';
-import { WIFI_RANGE_SIMULATOR_TOOL } from './tool/wifiRangeSimulator/index';
-import { AC_TONNAGE_CALCULATOR_TOOL } from './tool/acTonnageCalculator/index';
-import { WALL_PAINTING_CALCULATOR_TOOL } from './tool/wallPaintingCalculator/index';
-import { VAMPIRE_DRAW_SIMULATOR_TOOL } from './tool/vampireDrawSimulator/index';
-import { DESK_ERGONOMICS_TOOL } from './tool/deskErgonomics/index';
-import { APPLIANCE_COST_CALCULATOR_TOOL } from './tool/applianceCostCalculator/index';
-import { TILE_LAYOUT_CALCULATOR_TOOL } from './tool/tileLayoutCalculator/index';
-import { LIGHTING_CALCULATOR_TOOL } from './tool/lightingCalculator/index';
-import { HUMIDITY_CALCULATOR_TOOL } from './tool/humidityCalculator/index';
-import { WATER_SOFTENER_TOOL } from './tool/waterSoftener/index';
-import { WALLPAPER_ROLL_CALCULATOR_TOOL } from './tool/wallpaperRollCalculator/index';
-import { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from './tool/solarBatteryAutonomyCalculator/index';
-import { WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL } from './tool/waterHeaterRecoveryTimeCalculator/index';
-import { STORAGE_UNIT_SIZE_CALCULATOR_TOOL } from './tool/storageUnitSizeCalculator/index';
+export { ALL_ENTRIES } from "./entries";
+import { QR_GENERATOR_TOOL } from "./tool/qrGenerator/index";
+import { SOLAR_CALCULATOR_TOOL } from "./tool/solarCalculator/index";
+import { PROJECTOR_CALCULATOR_TOOL } from "./tool/projectorCalculator/index";
+import { DEW_POINT_CALCULATOR_TOOL } from "./tool/dewPointCalculator/index";
+import { LED_SAVING_CALCULATOR_TOOL } from "./tool/ledSavingCalculator/index";
+import { TARIFF_COMPARATOR_TOOL } from "./tool/tariffComparator/index";
+import { HEATING_COMPARATOR_TOOL } from "./tool/heatingComparator/index";
+import { WIFI_RANGE_SIMULATOR_TOOL } from "./tool/wifiRangeSimulator/index";
+import { AC_TONNAGE_CALCULATOR_TOOL } from "./tool/acTonnageCalculator/index";
+import { WALL_PAINTING_CALCULATOR_TOOL } from "./tool/wallPaintingCalculator/index";
+import { VAMPIRE_DRAW_SIMULATOR_TOOL } from "./tool/vampireDrawSimulator/index";
+import { DESK_ERGONOMICS_TOOL } from "./tool/deskErgonomics/index";
+import { APPLIANCE_COST_CALCULATOR_TOOL } from "./tool/applianceCostCalculator/index";
+import { TILE_LAYOUT_CALCULATOR_TOOL } from "./tool/tileLayoutCalculator/index";
+import { LIGHTING_CALCULATOR_TOOL } from "./tool/lightingCalculator/index";
+import { HUMIDITY_CALCULATOR_TOOL } from "./tool/humidityCalculator/index";
+import { WATER_SOFTENER_TOOL } from "./tool/waterSoftener/index";
+import { WALLPAPER_ROLL_CALCULATOR_TOOL } from "./tool/wallpaperRollCalculator/index";
+import { SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL } from "./tool/solarBatteryAutonomyCalculator/index";
+import { WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL } from "./tool/waterHeaterRecoveryTimeCalculator/index";
+import { STORAGE_UNIT_SIZE_CALCULATOR_TOOL } from "./tool/storageUnitSizeCalculator/index";
+import { HOUSEHOLD_WATER_USAGE_CALCULATOR_TOOL } from "./tool/householdWaterUsageCalculator/index";
 
 export const ALL_TOOLS = [
   QR_GENERATOR_TOOL,
@@ -43,5 +44,5 @@ export const ALL_TOOLS = [
   SOLAR_BATTERY_AUTONOMY_CALCULATOR_TOOL,
   WATER_HEATER_RECOVERY_TIME_CALCULATOR_TOOL,
   STORAGE_UNIT_SIZE_CALCULATOR_TOOL,
+  HOUSEHOLD_WATER_USAGE_CALCULATOR_TOOL,
 ];
-

@@ -1,0 +1,101 @@
+---
+import type { HouseholdWaterUsageUI } from './ui';
+import { calculateWaterUsage, DEFAULT_WATER_USAGE } from './logic';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const wUI = ui as HouseholdWaterUsageUI;
+const initial = calculateWaterUsage(DEFAULT_WATER_USAGE);
+const inputValue = (key: keyof typeof DEFAULT_WATER_USAGE): number => DEFAULT_WATER_USAGE[key];
+---
+
+<div class="n-root" data-tool="household-water-usage-calculator" data-ui={JSON.stringify(wUI)}>
+  <div class="n-card">
+    <div class="n-preset-bar">
+      <div class="n-presets" aria-label={wUI.presetLabel}>
+        <span class="n-presets-label">{wUI.presetLabel}</span>
+        <div class="n-preset-list">
+          <button class="n-preset n-active" type="button" data-preset="everyday">{wUI.presetEveryday}</button>
+          <button class="n-preset" type="button" data-preset="waterAware">{wUI.presetWaterAware}</button>
+          <button class="n-preset" type="button" data-preset="lowFlow">{wUI.presetLowFlow}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="n-layout">
+      <section class="n-controls" aria-label={wUI.controlsLabel}>
+        <div class="n-field n-field-featured">
+          <label for="n-people">{wUI.peopleLabel}</label>
+          <div class="n-input-wrap"><input id="n-people" data-input="people" type="number" min="1" max="20" step="1" value={inputValue('people')} /><span>{wUI.peopleUnit}</span></div>
+        </div>
+
+        <div class="n-field-group">
+          <div class="n-group-title"><span class="n-icon n-icon-shower" aria-hidden="true"></span><h4>{wUI.showerTitle}</h4></div>
+          <div class="n-field-grid">
+            <div class="n-field"><label for="n-showers">{wUI.showersPerWeekLabel}</label><div class="n-input-wrap"><input id="n-showers" data-input="showersPerPersonPerWeek" type="number" min="0" max="50" step="1" value={inputValue('showersPerPersonPerWeek')} /><span>/ week</span></div></div>
+            <div class="n-field"><label for="n-shower-minutes">{wUI.showerMinutesLabel}</label><div class="n-input-wrap"><input id="n-shower-minutes" data-input="showerMinutes" type="number" min="0" max="60" step="1" value={inputValue('showerMinutes')} /><span>min</span></div></div>
+            <div class="n-field"><label for="n-shower-flow">{wUI.showerFlowLabel}</label><div class="n-input-wrap"><input id="n-shower-flow" data-input="showerFlowLpm" type="number" min="0" max="40" step="0.5" value={inputValue('showerFlowLpm')} /><span>L/min</span></div></div>
+          </div>
+        </div>
+
+        <div class="n-field-group">
+          <div class="n-group-title"><span class="n-icon n-icon-toilet" aria-hidden="true"></span><h4>{wUI.toiletTitle}</h4></div>
+          <div class="n-field-grid">
+            <div class="n-field"><label for="n-flushes">{wUI.flushesPerDayLabel}</label><div class="n-input-wrap"><input id="n-flushes" data-input="flushesPerPersonPerDay" type="number" min="0" max="30" step="1" value={inputValue('flushesPerPersonPerDay')} /><span>/ day</span></div></div>
+            <div class="n-field"><label for="n-flush-volume">{wUI.flushVolumeLabel}</label><div class="n-input-wrap"><input id="n-flush-volume" data-input="flushLitres" type="number" min="0" max="30" step="0.5" value={inputValue('flushLitres')} /><span>L/flush</span></div></div>
+          </div>
+        </div>
+
+        <div class="n-field-group">
+          <div class="n-group-title"><span class="n-icon n-icon-tap" aria-hidden="true"></span><h4>{wUI.tapTitle}</h4></div>
+          <div class="n-field-grid">
+            <div class="n-field"><label for="n-tap-minutes">{wUI.tapMinutesLabel}</label><div class="n-input-wrap"><input id="n-tap-minutes" data-input="tapMinutesPerPersonPerDay" type="number" min="0" max="60" step="0.5" value={inputValue('tapMinutesPerPersonPerDay')} /><span>min/day</span></div></div>
+            <div class="n-field"><label for="n-tap-flow">{wUI.tapFlowLabel}</label><div class="n-input-wrap"><input id="n-tap-flow" data-input="tapFlowLpm" type="number" min="0" max="30" step="0.5" value={inputValue('tapFlowLpm')} /><span>L/min</span></div></div>
+          </div>
+        </div>
+
+        <details class="n-field-group n-optional-group">
+          <summary class="n-group-summary"><span class="n-icon n-icon-wash" aria-hidden="true"></span><span>{wUI.optionalInputsTitle}</span></summary>
+          <div class="n-field-grid">
+            <div class="n-field"><label for="n-washing-loads">{wUI.washingLoadsLabel}</label><div class="n-input-wrap"><input id="n-washing-loads" data-input="washingLoadsPerWeek" type="number" min="0" max="30" step="1" value={inputValue('washingLoadsPerWeek')} /><span>/ week</span></div></div>
+            <div class="n-field"><label for="n-washing-volume">{wUI.washingVolumeLabel}</label><div class="n-input-wrap"><input id="n-washing-volume" data-input="washingLitres" type="number" min="0" max="200" step="1" value={inputValue('washingLitres')} /><span>L/load</span></div></div>
+            <div class="n-field"><label for="n-dishwasher-loads">{wUI.dishwasherLoadsLabel}</label><div class="n-input-wrap"><input id="n-dishwasher-loads" data-input="dishwasherLoadsPerWeek" type="number" min="0" max="30" step="1" value={inputValue('dishwasherLoadsPerWeek')} /><span>/ week</span></div></div>
+            <div class="n-field"><label for="n-dishwasher-volume">{wUI.dishwasherVolumeLabel}</label><div class="n-input-wrap"><input id="n-dishwasher-volume" data-input="dishwasherLitres" type="number" min="0" max="100" step="1" value={inputValue('dishwasherLitres')} /><span>L/load</span></div></div>
+          </div>
+          <div class="n-field n-leak-field"><label for="n-leaks">{wUI.leakLabel}</label><div class="n-input-wrap"><input id="n-leaks" data-input="leakLitresPerDay" type="number" min="0" max="200" step="1" value={inputValue('leakLitresPerDay')} /><span>L/day</span></div></div>
+        </details>
+      </section>
+
+      <section class="n-results" aria-live="polite">
+        <div class="n-water-scene">
+          <div class="n-scene-top"><span>{wUI.currentScenario}</span><span class="n-reference-badge" data-output="reference-badge"></span></div>
+          <div class="n-hero-number" data-output="daily">{Math.round(initial.totalDailyLitres)} L</div>
+          <div class="n-hero-label" data-output="daily-label">{wUI.litresPerDay}</div>
+          <div class="n-water-line"><span></span><span></span><span></span><span></span><span></span></div>
+          <p class="n-reference-detail" data-output="reference-detail">{wUI.referenceDescription}</p>
+        </div>
+        <div class="n-metrics">
+          <div class="n-metric"><strong data-output="monthly">{Math.round(initial.monthlyLitres)} L</strong><span data-output="monthly-label">{wUI.litresPerMonth}</span></div>
+          <div class="n-metric"><strong data-output="annual">{Math.round(initial.annualLitres)} L</strong><span data-output="annual-label">{wUI.litresPerYear}</span></div>
+          <div class="n-metric"><strong data-output="per-person">{Math.round(initial.perPersonDailyLitres)} L</strong><span data-output="per-person-label">{wUI.perPerson}</span></div>
+        </div>
+        <div class="n-savings-panel">
+          <div><span class="n-kicker" data-output="saving-title">{wUI.savingTitle}</span><strong data-output="saving">{Math.round(initial.monthlySavingsLitres)} L</strong><span data-output="saving-label">{wUI.monthlySaving}</span></div>
+          <div class="n-savings-compare"><span data-output="current-label">{wUI.currentScenario}</span><span class="n-compare-line"></span><span data-output="efficient-label">{wUI.efficientScenario}</span><strong data-output="efficient">{Math.round(initial.efficientMonthlyLitres)} L</strong></div>
+          <p data-output="saving-description">{wUI.savingDescription}</p>
+        </div>
+        <div class="n-breakdown-panel"><div class="n-breakdown-heading"><h3 data-output="breakdown-title">{wUI.breakdownTitle}</h3><span>{wUI.litresPerMonth}</span></div><div data-output="breakdown"></div></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  import './household-water-usage-calculator.css';
+  import { initializeHouseholdWaterUsage } from './controller';
+
+  initializeHouseholdWaterUsage();
+</script>
